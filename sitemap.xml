@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://MilLoong.blog/post/hello-world/</loc>
+    <loc>https://MilLoong.github.io/post/hello-world/</loc>
     <lastmod>2025-07-19T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://MilLoong.blog/</loc>
+    <loc>https://MilLoong.github.io/</loc>
     <lastmod>2025-07-19T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://MilLoong.blog/post/</loc>
+    <loc>https://MilLoong.github.io/post/</loc>
     <lastmod>2025-07-19T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://MilLoong.blog/categories/</loc>
+    <loc>https://MilLoong.github.io/categories/</loc>
   </url><url>
-    <loc>https://MilLoong.blog/tags/</loc>
+    <loc>https://MilLoong.github.io/tags/</loc>
   </url>
 </urlset>

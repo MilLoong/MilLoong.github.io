@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on MilLoong的博客</title>
-    <link>https://MilLoong.blog/categories/</link>
+    <link>https://MilLoong.github.io/categories/</link>
     <description>Recent content from MilLoong的博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
@@ -13,7 +13,7 @@
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
     
-    <atom:link href="https://MilLoong.blog/categories/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://MilLoong.github.io/categories/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
