@@ -1,0 +1,908 @@
+<!doctype html>
+<html
+  lang="zh-cn" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  git教程——下载，SSH配置，clone，pull，push，pull request（PR） | MilLoong
+</title>
+<meta name="description" content="个人博客，记录学习日常"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="git教程——下载，SSH配置，clone，pull，push，pull request（PR） | MilLoong" />
+  <meta
+    property="og:description"
+    content="个人博客，记录学习日常"
+  />
+  <meta property="og:url" content="https://MilLoong.github.io/post/git%E6%95%99%E7%A8%8B%E4%B8%8B%E8%BD%BDssh%E9%85%8D%E7%BD%AEclonepullpushpull-requestpr/" />
+  <meta
+    property="og:site_name"
+    content="MilLoong的博客"
+  />
+  <meta
+    property="og:image"
+    content="/"
+  />
+  <meta property="article:author" content="MilLoong" />
+  <meta property="article:published_time" content="2025-11-24T15:00:00&#43;08:00" />
+  <meta property="article:modified_time" content="2025-11-24T15:00:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.9cf7519e1a5d47578b3ac524c705a2fbbd4c38542a9c26985b817037279d0cc9.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">咻——马上就加载好啦...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+This article does not have a corresponding language version
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">Home</span>
+      </a><a class="main-nav-link-wrap" href="/archives">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">Archives</span>
+      </a><a class="main-nav-link-wrap" href="/about">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">About</span>
+      </a><a class="main-nav-link-wrap" href="/friend">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">Friend</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav></div>
+<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="git教程——下载，SSH配置，clone，pull，push，pull request（PR）"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">git教程——下载，SSH配置，clone，pull，push，pull request（PR）</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言：</a></li>
+    <li><a href="#下载">下载：</a></li>
+    <li><a href="#ssh配置">SSH配置：</a>
+      <ul>
+        <li><a href="#生成ssh-key">生成ssh key：</a></li>
+        <li><a href="#将ssh-key添加到ssh-agent">将ssh-key添加到ssh-agent:</a></li>
+        <li><a href="#将ssh-key添加到你的github账户">将ssh key添加到你的github账户：</a></li>
+        <li><a href="#验证key">验证key：</a></li>
+      </ul>
+    </li>
+    <li><a href="#clone">clone：</a></li>
+    <li><a href="#pull">pull：</a>
+      <ul>
+        <li><a href="#创建仓库">创建仓库：</a></li>
+        <li><a href="#初始化">初始化：</a></li>
+        <li><a href="#连接远程仓库">连接远程仓库：</a></li>
+        <li><a href="#进行pull">进行pull：</a></li>
+      </ul>
+    </li>
+    <li><a href="#push">push：</a>
+      <ul>
+        <li><a href="#添加新加入的文件"><strong>添加新加入的文件：</strong></a></li>
+        <li><a href="#提交更改">提交更改：</a></li>
+        <li><a href="#进行push">进行push：</a></li>
+      </ul>
+    </li>
+    <li><a href="#pull-requestpr">pull request（PR）：</a>
+      <ul>
+        <li><a href="#fork仓库">Fork仓库：</a></li>
+        <li><a href="#clone分叉仓库和添加上游仓库">clone分叉仓库和添加上游仓库：</a></li>
+        <li><a href="#进行pr">进行PR：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Posts</div><div class="sidebar-state-number">3</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>Categories</div>
+    <div class="sidebar-state-number">
+      0
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>Tags</div>
+    <div class="sidebar-state-number">0</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="Home"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Home</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="Archives"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Archives</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="About"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">About</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="Friend"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Friend</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-11-24 15:00:00 &#43;0800 CST" itemprop="datePublished"
+      >2025-11-24</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-11-24</time
+    >
+  </span></div>
+<div class="article-category"></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="git教程下载ssh配置clonepullpushpull-requestpr">
+<a class="header-anchor" href="#git%e6%95%99%e7%a8%8b%e4%b8%8b%e8%bd%bdssh%e9%85%8d%e7%bd%aeclonepullpushpull-requestpr"></a>
+git教程——下载，SSH配置，clone，pull，push，pull request（PR）
+</h1><blockquote>
+<p>原文：https://blog.csdn.net/qq_30618989/article/details/145622471<br>
+此原文也是本人所写</p>
+</blockquote>
+<h2 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言：
+</h2><p><strong>git</strong> 是 <strong>开源的分布式版本控制系统</strong> （版本控制就是支持一些版本的操作，比如你想找到你之前的版本；分布式就是区别于中心式的，相当于把整个项目的内容都放到每一个用户而不是一个中央用户，这样能保证一些操作可以离线处理。）</p>
+<p>由于本人在初学git时尝遇多次困难，而且在找文章的时候发现分布不均，不是能找到一个很系统的教学（要么就是不全，要么就是过时了用不了，还有的要钱。。），所以在此总结一下有关git的基本操作教程，如有不对之处，还望各位海涵</p>
+<h2 id="下载">
+<a class="header-anchor" href="#%e4%b8%8b%e8%bd%bd"></a>
+下载：
+</h2><p>首先先看看电脑上有没有下载git。打开windows终端（右键开始按钮-&gt;终端），输入以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git --version
+</span></span></code></pre></div><p>如果显示git的版本号，比如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git version 2.46.1.windows.1
+</span></span></code></pre></div><p>那么已经安装git成功了。</p>
+<p>否则如果没有安装，就会返回：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git: <span class="nb">command</span> not found
+</span></span><span class="line"><span class="cl">或者在某些系统上：
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;git&#39;</span> is not recognized as an internal or external command, operable program or batch file.
+</span></span></code></pre></div><p>如果说没有安装，则应在 <a href="https://git-scm.com/">git官网</a> 下安装：</p>
+<p>首先打开Downloads：</p>
+<!-- raw HTML omitted -->
+<p>接着进入对应操作系统（这里以windows为例）：
+<img src="assets/0_2.png" alt=""></p>
+<p>接着选择这个版本（现在的操作系统大多都是64位的了）：
+<img src="assets/0_3.png" alt=""></p>
+<p>接着就按照默认安装程序来做就好了（或者可以参考这篇文章，里面有详细的安装教程 <a href="https://blog.csdn.net/sanxd/article/details/82624127">Git下载安装及设置详细教程</a> ）</p>
+<p>安装好了以后，就可以在指定的文件夹中， <strong>右键-&gt;（显示更多选项）-&gt;Open Git Bash here</strong> 来打开git bash了。</p>
+<h2 id="ssh配置">
+<a class="header-anchor" href="#ssh%e9%85%8d%e7%bd%ae"></a>
+SSH配置：
+</h2><p>git下载好以后，我们就可以在git bash上输入一些指令了。不过在这之前，还要注意SSH的配置，不然一些操作，比如clone,pull,push等，会出现以下报错：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> clone https://github.com/......
+</span></span><span class="line"><span class="cl">fatal: unable to access <span class="s1">&#39;https://github.com/......&#39;</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">~<span class="nv">$git</span> pull origin master
+</span></span><span class="line"><span class="cl">fatal: Could not <span class="nb">read</span> from remote repository.
+</span></span></code></pre></div><p>这种情况下就是SSH配置的问题，需要生成ssh key（ssh key的相关知识请自行搜索）。</p>
+<h3 id="生成ssh-key">
+<a class="header-anchor" href="#%e7%94%9f%e6%88%90ssh-key"></a>
+生成ssh key：
+</h3><p>参考文章： <a href="https://blog.csdn.net/weixin_40922744/article/details/107576748">解决 “fatal: Could not read from remote repository.“</a></p>
+<p>首先先看电脑中是否生成了ssh key。在终端（windows的终端）中输入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">PS C:<span class="se">\U</span>sers<span class="se">\x</span>xx&gt; dir
+</span></span></code></pre></div><p>将会列举本目录的所有文件及文件夹，如果说能找到：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Mode                 LastWriteTime         Length Name
+</span></span><span class="line"><span class="cl">----                 -------------         ------ ----
+</span></span><span class="line"><span class="cl">d-----         xxxx/x/xx     xx:xx                .ssh
+</span></span></code></pre></div><p>则说明已经配置好了ssh key，那么这步可以跳过。如果没有的话，说明要生成新的ssh key了。</p>
+<p>打开git bash，输入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -C <span class="s2">&#34;youremail@example.com&#34;</span>（比如123456@qq.com）
+</span></span><span class="line"><span class="cl">或者是:
+</span></span><span class="line"><span class="cl">ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;邮箱&#34;</span>
+</span></span></code></pre></div><p><strong>补充</strong> ：ssh-keygen -t rsa -b 4096 -C &ldquo;邮箱&rdquo;：这条命令的目的是为了让本地机器ssh登录远程机器上的GitHub账户无需输入密码。</p>
+<p>来生成ssh key。以下是ssh-keygen命令以及各个参数的说明：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen（基于密匙的安全验证）：需要依靠密钥进行安全验证，必须为自己创建一对密钥，并把公用密钥放在需要访问的服务器上。
+</span></span><span class="line"><span class="cl">	-t 即指定密钥的类型。密钥的类型有两种，一种是RSA，一种是DSA。
+</span></span><span class="line"><span class="cl">	-b 指定密钥长度。对于RSA密钥，最小要求768位，默认是2048位。命令中的4096指的是RSA密钥长度为4096位。DSA密钥必须恰好是1024位<span class="o">(</span>FIPS 186-2 标准的要求<span class="o">)</span>。
+</span></span><span class="line"><span class="cl">	-C 表示要提供一个新注释，用于识别这个密钥。“”里面不一定非要填邮箱，可以是任何内容，邮箱仅仅是识别用的key。
+</span></span></code></pre></div><p>生成的部分大概类似如下（图取自参考文章）：</p>
+<!-- raw HTML omitted -->
+<h3 id="将ssh-key添加到ssh-agent">
+<a class="header-anchor" href="#%e5%b0%86ssh-key%e6%b7%bb%e5%8a%a0%e5%88%b0ssh-agent"></a>
+将ssh-key添加到ssh-agent:
+</h3><p>生成完ssh-key后，还需要将ssh-key添加到ssh-agent，在git bash中输入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-add ~/.ssh/id_rsa
+</span></span></code></pre></div><p>即可完成添加（图取自参考文章）：</p>
+<!-- raw HTML omitted -->
+<p><strong>补充：</strong> 如果出现“Could not open a connection to your authentication agent.”的错误可以使用以下两种方式解决：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>ssh-agent -s<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">或者
+</span></span><span class="line"><span class="cl"><span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span>
+</span></span></code></pre></div><p>然后再次使用ssh-add ~/.ssh/id_rsa指令。</p>
+<h3 id="将ssh-key添加到你的github账户">
+<a class="header-anchor" href="#%e5%b0%86ssh-key%e6%b7%bb%e5%8a%a0%e5%88%b0%e4%bd%a0%e7%9a%84github%e8%b4%a6%e6%88%b7"></a>
+将ssh key添加到你的github账户：
+</h3><p>生成完ssh key之后，你可以按照“ <strong>生成ssh key</strong> ”中的步骤查看是否生成ssh key成功。如果找到相应文件夹了，就可以将ssh key添加到你的github账户了。</p>
+<p>首先找到对应的密钥。打开终端，如果说dir能找到.ssh文件夹的话，使用cd .ssh进入文件夹，然后用cat id_rsa.pub来读取：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">PS C:<span class="se">\U</span>sers<span class="se">\x</span>xxx&gt; <span class="nb">cd</span> .ssh
+</span></span><span class="line"><span class="cl">PS C:<span class="se">\U</span>sers<span class="se">\x</span>xxx<span class="se">\.</span>ssh&gt; cat id_rsa.pub
+</span></span><span class="line"><span class="cl">ssh-rsa ....
+</span></span></code></pre></div><p>在账户选项中选择 “ <strong>Settings”–&gt;“SSH and GPG keys”–&gt;“New SSH key</strong> ”，然后打开之前新生成的 <strong>id_rsa.pub</strong> 文件，将密钥复制后填写到账户中：（图取自参考文章）</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="验证key">
+<a class="header-anchor" href="#%e9%aa%8c%e8%af%81key"></a>
+验证key：
+</h3><p>添加好了以后，可以用ssh -T <a href="mailto:git@github.com">git@github.com</a>，对ssh key进行验证：（图取自参考文章）</p>
+<p><img src="assets/0_8.png" alt=""></p>
+<p>当上述界面出现时说明配置成功，那么恭喜你成功配置了SSH！</p>
+<h2 id="clone">
+<a class="header-anchor" href="#clone"></a>
+clone：
+</h2><p>clone就是把远程仓库复制到本地进行使用。指令很简单，就是直接git clone <a href="https://github.com/">https://github.com/</a>&hellip;&hellip;里面填仓库地址就可以了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> clone https://github.com/......
+</span></span></code></pre></div><p>这里的仓库地址可以直接复制仓库的网址，或者 <strong>在进入仓库后，点击&quot;&lt;&gt; Code&quot;-&gt;&ldquo;HTTPS&quot;或者&quot;SSH&rdquo;，然后点击右边那个两个正方形的图案进行复制</strong> 即可：</p>
+<p><img src="assets/0_9.png" alt=""></p>
+<p><strong>注：1.</strong> 在git bash中的复制粘贴的快捷键并不是ctrl+c/v，而是 <strong>复制：ctrl+Insert，粘贴：shift+Insert，</strong> 如果不习惯的话可以直接右键进行复制粘贴。</p>
+<p><strong>2.</strong> 由于github是国外的网站，国内登进去的话没有梯子会不稳定。所以建议是在git clone或者push等等的时候，最好是开着梯子进行操作，否则会出现无法clone或者无法push的情况。比如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">fatal: unable to access ...: Failed to connect to github.com port <span class="m">443</span> after <span class="m">21147</span> ms: Could not connect to server
+</span></span></code></pre></div><h2 id="pull">
+<a class="header-anchor" href="#pull"></a>
+pull：
+</h2><h3 id="创建仓库">
+<a class="header-anchor" href="#%e5%88%9b%e5%bb%ba%e4%bb%93%e5%ba%93"></a>
+创建仓库：
+</h3><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>创建好仓库之后，你就可以点击 <strong>右上角你的头像-&gt;Your Respositoris</strong> 来查看你的仓库了！</p>
+<p><strong>补充：</strong> README.md文件大概是显示在你的仓库的下面这个地方：
+<img src="assets/0_12.png" alt=""></p>
+<p>如果你想要对README文件进行修改，可以点击README右边的那个小铅笔，然后用markdown语法来写就可以了（关于markdown语法可以自行查找资料），写完之后记得点击右上角的 <strong>Commit Changes，</strong> 然后README的内容就会改变了。</p>
+<h3 id="初始化">
+<a class="header-anchor" href="#%e5%88%9d%e5%a7%8b%e5%8c%96"></a>
+初始化：
+</h3><p>创建好仓库之后，我们如果要在本地连接远程仓库，就必须要在本地初始化。</p>
+<p>那么初始化很简单，只需要先在你想要连接远程仓库的地方（文件夹），打开git bash，然后输入git init：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git init
+</span></span><span class="line"><span class="cl">Initialized empty Git repository in C:/test/.git/#这里是测试用，我不建议放在C盘
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p>如果没有的话，点击上面的 <strong>查看-&gt;显示-&gt;勾选隐藏的项目（注：作者用的是win11）</strong> ：</p>
+<!-- raw HTML omitted -->
+<p>那么这个时候就可以看到.git文件了，这个就是初始化成功后的结果。</p>
+<h3 id="连接远程仓库">
+<a class="header-anchor" href="#%e8%bf%9e%e6%8e%a5%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93"></a>
+连接远程仓库：
+</h3><p>初始化成功之后，就可以使用git remote addoriginhttps://github.com/&hellip;&hellip;来连接远程仓库了（这里的地址可以用HTTPS或者SSH）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> remote add origin https://github.com/......
+</span></span></code></pre></div><p><strong>注：</strong> origin是远程仓库的别名，相当于说不管你的仓库叫什么名字，在本地都可以用origin进行代替</p>
+<p><strong>补充：</strong> 如果显示error: remote origin already exists.：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">error: remote origin already exists.
+</span></span></code></pre></div><p>则说明已经有连接的仓库了，这时候可以用git remote -v来查看连接的是哪个远程仓库：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> remote -v
+</span></span></code></pre></div><p>如果不是你想要的仓库的话，可以用git remote rm origin：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> remote rm origin
+</span></span></code></pre></div><h3 id="进行pull">
+<a class="header-anchor" href="#%e8%bf%9b%e8%a1%8cpull"></a>
+进行pull：
+</h3><p>以上准备工作做完了以后，我们就可以利用git pull origin master（分支名字，github用master作为默认分支）来pull了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> pull origin master
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<h2 id="push">
+<a class="header-anchor" href="#push"></a>
+push：
+</h2><h3 id="添加新加入的文件">
+<a class="header-anchor" href="#%e6%b7%bb%e5%8a%a0%e6%96%b0%e5%8a%a0%e5%85%a5%e7%9a%84%e6%96%87%e4%bb%b6"></a>
+<strong>添加新加入的文件：</strong>
+</h3><p>pull仓库下来之后，我们就可以对仓库中的文件进行修改或者向其中添加（删除）新的文件了。（注意如果要删除文件不能直接在github上进行删除，只能按下面push的步骤来进行修改（删除））。比如我这里为测试写了一个hello.c文件：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;stdio.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;hello,world.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>写完保存之后，我们在当前文件夹进入git bash。</p>
+<p>这时候我们可以用git add .来添加新的文件（当然进行修改也是用这个指令）（.代表的是当前目录）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> add .
+</span></span></code></pre></div><h3 id="提交更改">
+<a class="header-anchor" href="#%e6%8f%90%e4%ba%a4%e6%9b%b4%e6%94%b9"></a>
+提交更改：
+</h3><p>接着我们可以用git status来查看我们添加的情况：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> status
+</span></span><span class="line"><span class="cl">On branch master
+</span></span><span class="line"><span class="cl">Changes to be committed:
+</span></span><span class="line"><span class="cl">  <span class="o">(</span>use <span class="s2">&#34;git restore --staged &lt;file&gt;...&#34;</span> to unstage<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        new file:   hello.c
+</span></span><span class="line"><span class="cl">        new file:   output/hello.exe
+</span></span></code></pre></div><p>确定了之后，就可以使用git commit -m &ldquo;hello,world&rdquo;（这里是提交标志，可以随便写一些东西。当然为了让别人看懂，最好写“你干了些什么”的概况）来提交更改了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> commit -m <span class="s2">&#34;hello,world&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>master fae8218<span class="o">]</span> hello,world
+</span></span><span class="line"><span class="cl"> <span class="m">2</span> files changed, <span class="m">5</span> insertions<span class="o">(</span>+<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> create mode <span class="m">100644</span> hello.c
+</span></span><span class="line"><span class="cl"> create mode <span class="m">100644</span> output/hello.exe
+</span></span></code></pre></div><h3 id="进行push">
+<a class="header-anchor" href="#%e8%bf%9b%e8%a1%8cpush"></a>
+进行push：
+</h3><p>准备工作做完之后，我们就可以用git push origin master（分支名字），来push东西到我们的仓库了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> push origin master
+</span></span><span class="line"><span class="cl">Enumerating objects: 6, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">Counting objects: 100% <span class="o">(</span>6/6<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">Delta compression using up to <span class="m">16</span> threads
+</span></span><span class="line"><span class="cl">Compressing objects: 100% <span class="o">(</span>4/4<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">Writing objects: 100% <span class="o">(</span>5/5<span class="o">)</span>, 24.81 KiB <span class="p">|</span> 2.76 MiB/s, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">Total <span class="m">5</span> <span class="o">(</span>delta 0<span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta 0<span class="o">)</span>, pack-reused <span class="m">0</span> <span class="o">(</span>from 0<span class="o">)</span>
+</span></span><span class="line"><span class="cl">To https://github.com/......
+</span></span><span class="line"><span class="cl">   efd8d2d..fae8218  master -&gt; master
+</span></span></code></pre></div><p>接下来我们再到仓库的网址进行刷新，就可以看到我们更改的内容了：
+<img src="assets/0_16.png" alt=""></p>
+<p><strong>注：1.</strong> commit可以一次性提交多个更改，所以实际上add和commit可以这样用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> add .
+</span></span><span class="line"><span class="cl"><span class="c1">#第一次更改</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">~<span class="nv">$git</span> add .
+</span></span><span class="line"><span class="cl"><span class="c1">#第二次更改</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">~<span class="nv">$git</span> commit -m <span class="s2">&#34;FirstChang+SecondChang&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#提交两次更改的内容</span>
+</span></span></code></pre></div><p><strong>2.</strong> 如果出现类似以下警告：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">warning: LF will be replaced by CRLF in ...
+</span></span></code></pre></div><p>可以直接忽略。因为LF是Linux/Unix的换行符，CRLF是windows的换行符，那么git会自动将LF替换成CRLF。</p>
+<h2 id="pull-requestpr">
+<a class="header-anchor" href="#pull-requestpr"></a>
+pull request（PR）：
+</h2><p>众所周知github是个开源社区，而我们可以使用pull request对开源代码做出贡献，这对我们以后求职经历是一个加分项。那么该怎么进行PR呢？接下来就让我来讲讲。</p>
+<h3 id="fork仓库">
+<a class="header-anchor" href="#fork%e4%bb%93%e5%ba%93"></a>
+Fork仓库：
+</h3><p>首先找到开源项目，并进入其仓库，让后点击Fork按钮来Fork仓库：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>然后我们就能得到一个Fork原仓库后的分叉仓库了。</p>
+<h3 id="clone分叉仓库和添加上游仓库">
+<a class="header-anchor" href="#clone%e5%88%86%e5%8f%89%e4%bb%93%e5%ba%93%e5%92%8c%e6%b7%bb%e5%8a%a0%e4%b8%8a%e6%b8%b8%e4%bb%93%e5%ba%93"></a>
+clone分叉仓库和添加上游仓库：
+</h3><p>Fork好了仓库之后，接下来我们就clone分叉仓库（Fork仓库）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git clone https://github.com/......
+</span></span><span class="line"><span class="cl"><span class="c1">#这里的地址写Fork仓库的地址</span>
+</span></span></code></pre></div><p>然后通过git remote -v来查看本地仓库的情况：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git remote -v
+</span></span><span class="line"><span class="cl">origin: https://github.com/...... <span class="o">(</span>fetch<span class="o">)</span>
+</span></span><span class="line"><span class="cl">origin: https://github.com/...... <span class="o">(</span>push<span class="o">)</span>
+</span></span></code></pre></div><p>然后我们回到Fork仓库的原仓库，这里可以点击forked from xxx的xxx来回到原仓库：</p>
+<!-- raw HTML omitted -->
+<p>然后接下来就是要添加上游仓库：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git remote add upstream https://github.com/......
+</span></span><span class="line"><span class="cl"><span class="c1">#这里填写的是原始仓库的地址</span>
+</span></span></code></pre></div><p>然后这里可以git remote -v来看一下是否添加成功：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git remote -v
+</span></span><span class="line"><span class="cl">origin: https://github.com/...... <span class="o">(</span>fetch<span class="o">)</span>
+</span></span><span class="line"><span class="cl">origin: https://github.com/...... <span class="o">(</span>push<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Fork仓库</span>
+</span></span><span class="line"><span class="cl">origin:     https://github.com/...... <span class="o">(</span>fetch<span class="o">)</span>
+</span></span><span class="line"><span class="cl">origin:     https://github.com/...... <span class="o">(</span>push<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#原仓库</span>
+</span></span></code></pre></div><p>然后利用git checkout -b upstream-local upstream/master来创建一个本地分支：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git checkout -b upstream-local upstream/master
+</span></span><span class="line"><span class="cl"><span class="c1">#这里的upstream-local就是你要创建的分支的名字，可以随意修改</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#这里的upstream/master意思是在原仓库的master分支基础上建立的，如果要PR其他分支则可以自行修改master</span>
+</span></span></code></pre></div><blockquote>
+<p><strong>注：</strong> 这一部分如果出现问题的话，可以先：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git fetch upstream
+</span></span></code></pre></div><p>连接到远程仓库</p>
+</blockquote>
+<p>这时候可以通过git branch查看一下创建的分支了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git branch
+</span></span><span class="line"><span class="cl">   master
+</span></span><span class="line"><span class="cl">*  upstream-local
+</span></span></code></pre></div><p>接下来我们要把开源仓库的提交rebase（同步到本地）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git fetch origin
+</span></span><span class="line"><span class="cl"><span class="c1">#连接远程分支</span>
+</span></span><span class="line"><span class="cl">~$ git rebase upstream/master
+</span></span><span class="line"><span class="cl"><span class="c1">#同步到本地</span>
+</span></span></code></pre></div><p>做完这些以后，我们就可以对代码进行修改，作出贡献了。</p>
+<h3 id="进行pr">
+<a class="header-anchor" href="#%e8%bf%9b%e8%a1%8cpr"></a>
+进行PR：
+</h3><p>等到修改完了之后，就进行提交就行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git add .
+</span></span><span class="line"><span class="cl">~$ git commit -m <span class="s2">&#34;Test-PR&#34;</span>
+</span></span><span class="line"><span class="cl">~$ git push --set-upstream origin
+</span></span></code></pre></div><p>如果push成功了，那么在github上就会出现：</p>
+<!-- raw HTML omitted -->
+<p>点击Compare &amp; pull request，接下来就是进行一个比较。</p>
+<!-- raw HTML omitted -->
+<p>这里的意思就是把我们的本地仓库的upstream-local提交到原仓库的master上面。</p>
+<p>然后写好标题和留言（comment）之后，就可以Create pull request了：</p>
+<!-- raw HTML omitted -->
+<p>虽然上面的步骤看上去很复杂，但这只是在我们 <strong>刚使用PR</strong> 的时候需要稍微有点复杂的初始化罢了。实际上，后面如果要继续对文章进行贡献，上面的 <strong>Fork仓库、创建分支</strong> 等操作是不需要的，只需要：</p>
+<ul>
+<li>
+<p>在 <strong>upsteam-local</strong> 进行修改
+注意不要在 <strong>master</strong> 修改，因为我们要用这个分支来同步远程的分支</p>
+</li>
+<li>
+<p>如果说你现在 本地的版本 是某个历史版本，而远程已经更新了，这时候你就需要先把 远程仓库 的最新版本 同步到本地```bash</p>
+<h1 id="切换回本地-master-分支">
+<a class="header-anchor" href="#%e5%88%87%e6%8d%a2%e5%9b%9e%e6%9c%ac%e5%9c%b0-master-%e5%88%86%e6%94%af"></a>
+切换回本地 master 分支
+</h1><p>git checkout master</p>
+<h1 id="从上游仓库获取最新信息不合并">
+<a class="header-anchor" href="#%e4%bb%8e%e4%b8%8a%e6%b8%b8%e4%bb%93%e5%ba%93%e8%8e%b7%e5%8f%96%e6%9c%80%e6%96%b0%e4%bf%a1%e6%81%af%e4%b8%8d%e5%90%88%e5%b9%b6"></a>
+从上游仓库获取最新信息（不合并）
+</h1><p>git fetch upstream</p>
+<h1 id="将上游-master-分支的内容-同步变基-到本地-master-分支">
+<a class="header-anchor" href="#%e5%b0%86%e4%b8%8a%e6%b8%b8-master-%e5%88%86%e6%94%af%e7%9a%84%e5%86%85%e5%ae%b9-%e5%90%8c%e6%ad%a5%e5%8f%98%e5%9f%ba-%e5%88%b0%e6%9c%ac%e5%9c%b0-master-%e5%88%86%e6%94%af"></a>
+将上游 master 分支的内容 同步(变基) 到本地 master 分支
+</h1><p>git rebase upstream/master</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></div></li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 切换到 upstream-local</span>
+</span></span><span class="line"><span class="cl">git checkout upstream-local
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将工作分支 同步(变基) 到最新的 master 分支上</span>
+</span></span><span class="line"><span class="cl">git rebase master
+</span></span></code></pre></div><p>这一步完成之后，有可能 git 会由于 旧提交 和 新提交 有冲突而报：```bash
+CONFLICT (content): Merge conflict in &hellip;(文件名)
+error: could not apply &hellip;(提交信息)
+Resolve all conflicts manually, mark them as resolved with &ldquo;git add/rm <!-- raw HTML omitted -->&rdquo;, then run &ldquo;git rebase &ndash;continue&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">这个时候就去到对应 文件 解决 **文件冲突** 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">关于怎么解决 文件冲突，一般 ide 都会有 可视化的界面 进行处理，这里以 **vs2022** 为例子
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">如果存在文件冲突，界面大概是长下图这样，其中应该会有 **打开合并编辑器** （图中是
+</span></span><span class="line"><span class="cl">**Open Merge Editor** ）：
+</span></span><span class="line"><span class="cl">（下面的图取自 [这个教程](https://learn.microsoft.com/zh-cn/visualstudio/version-control/git-resolve-conflicts?view=vs-2022) ）
+</span></span><span class="line"><span class="cl"> ![](assets/0_23.png)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">然后就可以解决冲突了。图中 **Incoming: Remote** 是 远程仓库的更新， **Current: Local** 是本地的修改（当然有可能是中文的）。
+</span></span><span class="line"><span class="cl">下图中 **橙色圈** 的位置就是 是否要选择，然后 最终的结果 就会出现在下面的 **Result** 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> ![](assets/0_24.png)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">修改完了之后，就可以点击 **Accept Merge** 来保存修改了：
+</span></span><span class="line"><span class="cl"> ![](assets/0_25.png)
+</span></span></code></pre></div></li>
+<li>
+<p>修改完之后，就可以用 git add 命令存入暂存区：```bash
+git add &hellip;(文件名)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">接着继续修改剩余 冲突
+</span></span><span class="line"><span class="cl">如果冲突处理完了，就可以再次执行：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">```bash
+</span></span><span class="line"><span class="cl">git rebase master
+</span></span></code></pre></div><p>来完成整个步骤
+如果不出意外的话，这时候 upstream-local 分支就是包含 <strong>远程仓库最新分支内容 和 你在本地的修改</strong> ，然后你就能用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git add .
+</span></span><span class="line"><span class="cl">~$ git commit -m <span class="s2">&#34;Test-PR&#34;</span>
+</span></span><span class="line"><span class="cl">~$ git push --set-upstream origin
+</span></span></code></pre></div><p>进行 pull request 了，剩下的步骤上面已经说过</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>注：</strong></p>
+<p>上面我是用的 <strong>rebase（变基）</strong> 来进行 合并（准确地讲，应该是将提交放到分支末端），这和网上常用的 <strong>merge</strong> 有所不同</p>
+<p>比如，当前有一个文件 file.txt：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">// file.txt
+</span></span><span class="line"><span class="cl">A: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">B: <span class="m">2</span>
+</span></span><span class="line"><span class="cl">C: <span class="m">3</span>
+</span></span></code></pre></div><p>远程的最新版本的修改：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">// file.txt
+</span></span><span class="line"><span class="cl">A: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">B: <span class="m">5</span>
+</span></span><span class="line"><span class="cl">C: <span class="m">6</span>
+</span></span></code></pre></div><p>本地 upstream-local 分支的修改：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">// file.txt
+</span></span><span class="line"><span class="cl">A: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">B: <span class="m">3</span>
+</span></span><span class="line"><span class="cl">C: <span class="m">4</span>
+</span></span></code></pre></div><p>执行完：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 将工作分支 同步(变基) 到最新的 master 分支上</span>
+</span></span><span class="line"><span class="cl">git rebase master
+</span></span></code></pre></div><p>之后，git 会报 冲突信息，其中 冲突信息 指向 file.txt，用 文本编辑器 或 ide 打开后可能是（这里说“可能是”，是因为可能有其他信息）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">// file.txt
+</span></span><span class="line"><span class="cl">A: <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt; HEAD
+</span></span><span class="line"><span class="cl">B: <span class="m">5</span>
+</span></span><span class="line"><span class="cl">C: <span class="nv">6</span>
+</span></span><span class="line"><span class="cl"><span class="o">=======</span>
+</span></span><span class="line"><span class="cl">B: <span class="m">3</span>
+</span></span><span class="line"><span class="cl">C: <span class="m">4</span>
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</span></span></code></pre></div><p>其中 ====== 上面 的是 <strong>远程分支 的修改</strong> ，下面 的是 <strong>本地 upstream-local 分支的修改</strong></p>
+<p>可以看到 rebase 是将 upstream-local 的修改放在 下面，这样就可以看出来是 <strong>基于 远程分支 做的修改</strong></p>
+<p>如果说是用 <strong>git merge master</strong> 的话，就是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">// file.txt
+</span></span><span class="line"><span class="cl">A: <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt; HEAD
+</span></span><span class="line"><span class="cl">B: <span class="m">3</span>
+</span></span><span class="line"><span class="cl">C: <span class="nv">4</span>
+</span></span><span class="line"><span class="cl"><span class="o">=======</span>
+</span></span><span class="line"><span class="cl">B: <span class="m">5</span>
+</span></span><span class="line"><span class="cl">C: <span class="m">6</span>
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt;&gt;&gt;&gt;&gt; main
+</span></span></code></pre></div><p>刚好反过来了，其实就是在 upstream-local 后面加上 master 的内容</p>
+</blockquote>
+<p>要注意的是，虽然 <strong>解决文件冲突</strong> 像上面那样，看起来不难，但其实</p>
+<p>至此，我们的PR就已经成功了！接下来就需要等原仓库的作者看到我们PR的内容并进行审核，如果确定可以添加到原仓库上的话就可以为原仓库作贡献了！</p>
+</div>
+    <footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
+              data-sizes="auto"
+              alt="真值表计算主合取范式和主析取范式的理论依据"
+              class="lazyload"
+            /><a
+          href="/post/%E7%9C%9F%E5%80%BC%E8%A1%A8%E8%AE%A1%E7%AE%97%E4%B8%BB%E5%90%88%E5%8F%96%E8%8C%83%E5%BC%8F%E5%92%8C%E4%B8%BB%E6%9E%90%E5%8F%96%E8%8C%83%E5%BC%8F%E7%9A%84%E7%90%86%E8%AE%BA%E4%BE%9D%E6%8D%AE/"
+          aria-label="Prev:真值表计算主合取范式和主析取范式的理论依据"
+          title="Prev:真值表计算主合取范式和主析取范式的理论依据"
+        ></a>
+        <div class="article-nav-caption">Prev</div>
+        <h3 class="article-nav-title">真值表计算主合取范式和主析取范式的理论依据</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2025<span class="footer-info-sep rotate"></span>
+      MilLoong
+    </div><div>
+        Powered by&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp; Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;1.4k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;00:09</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >Number of visits&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >Number of visitors&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言：</a></li>
+    <li><a href="#下载">下载：</a></li>
+    <li><a href="#ssh配置">SSH配置：</a>
+      <ul>
+        <li><a href="#生成ssh-key">生成ssh key：</a></li>
+        <li><a href="#将ssh-key添加到ssh-agent">将ssh-key添加到ssh-agent:</a></li>
+        <li><a href="#将ssh-key添加到你的github账户">将ssh key添加到你的github账户：</a></li>
+        <li><a href="#验证key">验证key：</a></li>
+      </ul>
+    </li>
+    <li><a href="#clone">clone：</a></li>
+    <li><a href="#pull">pull：</a>
+      <ul>
+        <li><a href="#创建仓库">创建仓库：</a></li>
+        <li><a href="#初始化">初始化：</a></li>
+        <li><a href="#连接远程仓库">连接远程仓库：</a></li>
+        <li><a href="#进行pull">进行pull：</a></li>
+      </ul>
+    </li>
+    <li><a href="#push">push：</a>
+      <ul>
+        <li><a href="#添加新加入的文件"><strong>添加新加入的文件：</strong></a></li>
+        <li><a href="#提交更改">提交更改：</a></li>
+        <li><a href="#进行push">进行push：</a></li>
+      </ul>
+    </li>
+    <li><a href="#pull-requestpr">pull request（PR）：</a>
+      <ul>
+        <li><a href="#fork仓库">Fork仓库：</a></li>
+        <li><a href="#clone分叉仓库和添加上游仓库">clone分叉仓库和添加上游仓库：</a></li>
+        <li><a href="#进行pr">进行PR：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Posts</div><div class="sidebar-state-number">3</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>Categories</div>
+    <div class="sidebar-state-number">
+      0
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>Tags</div>
+    <div class="sidebar-state-number">0</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="Home"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Home</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="Archives"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Archives</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="About"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">About</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="Friend"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Friend</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+    if (window.firework) {
+      const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+      options.excludeElements = options.excludeelements;
+      delete options.excludeelements;
+      window.firework(options);
+    }
+  }
+</script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "MilLoong",
+          title: "git教程——下载，SSH配置，clone，pull，push，pull request（PR）",
+          url: "https:\/\/MilLoong.github.io\/post\/git%E6%95%99%E7%A8%8B%E4%B8%8B%E8%BD%BDssh%E9%85%8D%E7%BD%AEclonepullpushpull-requestpr\/",
+          description: " git教程——下载，SSH配置，clone，pull，push，pull request（PR） 原文：https:\/\/blog.csdn.net\/qq_30618989\/article\/details\/145622471\n此原文也是本人所写\n前言： git 是 开源的分布式版本控制系统 （版本控制就是支持一些版本的操作，比如你想找到你之前的版本；分布式就是区别于中心式的，相当于把整个项目的内容都放到每一个用户而不是一个中央用户，这样能保证一些操作可以离线处理。）\n由于本人在初学git时尝遇多次困难，而且在找文章的时候发现分布不均，不是能找到一个很系统的教学（要么就是不全，要么就是过时了用不 …",
+          cover: "https:\/\/MilLoong.github.io\/images\/banner.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>

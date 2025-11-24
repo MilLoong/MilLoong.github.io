@@ -12,7 +12,7 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Sat, 19 Jul 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="https://MilLoong.github.io/index.xml" rel="self" type="application/rss&#43;xml" />
@@ -22,17 +22,87 @@
     
 
     <item>
+      <title>git教程——下载，SSH配置，clone，pull，push，pull request（PR）</title>
+      <link>https://MilLoong.github.io/post/git_education/</link>
+      <pubDate>Mon, 24 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (MilLoong)</author>
+      <guid>https://MilLoong.github.io/post/git_education/</guid>
+      <description>
+        <![CDATA[<h1>git教程——下载，SSH配置，clone，pull，push，pull request（PR）</h1><p>Author: MilLoong(xxx@example.com)</p>
+        
+          <h1 id="git教程下载ssh配置clonepullpushpull-requestpr">
+<a class="header-anchor" href="#git%e6%95%99%e7%a8%8b%e4%b8%8b%e8%bd%bdssh%e9%85%8d%e7%bd%aeclonepullpushpull-requestpr"></a>
+git教程——下载，SSH配置，clone，pull，push，pull request（PR）
+</h1><blockquote>
+<p>原文：https://blog.csdn.net/qq_30618989/article/details/145622471<br>
+此原文也是本人所写</p>
+</blockquote>
+<h2 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言：
+</h2><p><strong>git</strong> 是 <strong>开源的分布式版本控制系统</strong> （版本控制就是支持一些版本的操作，比如你想找到你之前的版本；分布式就是区别于中心式的，相当于把整个项目的内容都放到每一个用户而不是一个中央用户，这样能保证一些操作可以离线处理。）</p>
+<p>由于本人在初学git时尝遇多次困难，而且在找文章的时候发现分布不均，不是能找到一个很系统的教学（要么就是不全，要么就是过时了用不了，还有的要钱。。），所以在此总结一下有关git的基本操作教程，如有不对之处，还望各位海涵</p>
+<h2 id="下载">
+<a class="header-anchor" href="#%e4%b8%8b%e8%bd%bd"></a>
+下载：
+</h2><p>首先先看看电脑上有没有下载git。打开windows终端（右键开始按钮-&gt;终端），输入以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git --version
+</span></span></code></pre></div><p>如果显示git的版本号，比如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git version 2.46.1.windows.1
+</span></span></code></pre></div><p>那么已经安装git成功了。</p>
+<p>否则如果没有安装，就会返回：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git: <span class="nb">command</span> not found
+</span></span><span class="line"><span class="cl">或者在某些系统上：
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;git&#39;</span> is not recognized as an internal or external command, operable program or batch file.
+</span></span></code></pre></div><p>如果说没有安装，则应在 <a href="https://git-scm.com/">git官网</a> 下安装：</p>
+<ul>
+<li>首先打开Downloads：</li>
+</ul>
+<p>​			<img src="/01_assets/0_26.png" alt="alt text"></p>
+<ul>
+<li>
+<p>接着进入对应操作系统（这里以windows为例）：
+<img src="/01_assets/0_2.png" alt=""></p>
+</li>
+<li>
+<p>接着选择这个版本（现在的操作系统大多都是64位的了）：
+<img src="/01_assets/0_3.png" alt=""></p>
+</li>
+<li>
+<p>接着就按照默认安装程序来做就好了（或者可以参考<a href="https://blog.csdn.net/sanxd/article/details/82624127">这篇文章</a>，里面有详细的安装教程）</p>
+</li>
+</ul>
+<p>安装好了以后，就可以在指定的文件夹中， <strong>右键-&gt;（显示更多选项）-&gt;Open Git Bash here</strong> 来打开git bash了。</p>
+<h2 id="ssh配置">
+<a class="header-anchor" href="#ssh%e9%85%8d%e7%bd%ae"></a>
+SSH配置：
+</h2><p>git下载好以后，我们就可以在git bash上输入一些指令了。不过在这之前，还要注意SSH的配置，不然一些操作，比如clone,pull,push等，会出现以下报错：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> clone https://github.com/......
+</span></span><span class="line"><span class="cl">fatal: unable to access <span class="s1">&#39;https://github.com/......&#39;</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">~<span class="nv">$git</span> pull origin master
+</span></span><span class="line"><span class="cl">fatal: Could not <span class="nb">read</span> from remote repository.
+</span></span></code></pre></div><p>这种情况下就是SSH配置的问题，需要生成ssh key（ssh key的相关知识请自行搜索）。</p>
+        
+        <hr><p>Published on 2025-11-24 at <a href='https://MilLoong.github.io/'>MilLoong的博客</a>, last modified on 2025-11-24</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
       <title>Hello World</title>
       <link>https://MilLoong.github.io/post/hello-world/</link>
-      <pubDate>Sat, 19 Jul 2025 15:00:00 &#43;0800</pubDate>
+      <pubDate>Sun, 23 Nov 2025 15:00:00 &#43;0800</pubDate>
       <author>xxx@example.com (MilLoong)</author>
       <guid>https://MilLoong.github.io/post/hello-world/</guid>
       <description>
         <![CDATA[<h1>Hello World</h1><p>Author: MilLoong(xxx@example.com)</p>
         
-          <p>这是我的第一篇博客文章！</p>
+          <p>这是我的第一篇博客文章</p>
         
-        <hr><p>Published on 2025-07-19 at <a href='https://MilLoong.github.io/'>MilLoong的博客</a>, last modified on 2025-07-19</p>]]>
+        <hr><p>Published on 2025-11-23 at <a href='https://MilLoong.github.io/'>MilLoong的博客</a>, last modified on 2025-11-23</p>]]>
       </description>
       
     </item>
