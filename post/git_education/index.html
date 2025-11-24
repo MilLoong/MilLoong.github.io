@@ -617,7 +617,7 @@ clone分叉仓库和添加上游仓库：
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add ...<span class="o">(</span>文件名<span class="o">)</span>
 </span></span></code></pre></div><p>接着继续修改剩余 冲突
 如果冲突处理完了，就可以再次执行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git rebase master
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git rebase master
 </span></span></code></pre></div><p>来完成整个步骤
 如果不出意外的话，这时候 <code>upstream-local</code> 分支就是包含 <strong>远程仓库最新分支内容 和 你在本地的修改</strong> ，然后你就能用：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git add .
