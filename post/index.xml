@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on MilLoong的博客</title>
-    <link>https://MilLoong.github.io/post/</link>
+    <link>https://MilLoong.blog/post/</link>
     <description>Recent content from MilLoong的博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sat, 19 Jul 2025 15:00:00 +0800</lastBuildDate>
     
     
-    <atom:link href="https://MilLoong.github.io/post/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://MilLoong.blog/post/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,16 +23,16 @@
 
     <item>
       <title>Hello World</title>
-      <link>https://MilLoong.github.io/post/hello-world/</link>
+      <link>https://MilLoong.blog/post/hello-world/</link>
       <pubDate>Sat, 19 Jul 2025 15:00:00 &#43;0800</pubDate>
       <author>xxx@example.com (MilLoong)</author>
-      <guid>https://MilLoong.github.io/post/hello-world/</guid>
+      <guid>https://MilLoong.blog/post/hello-world/</guid>
       <description>
         <![CDATA[<h1>Hello World</h1><p>Author: MilLoong(xxx@example.com)</p>
         
           <p>这是我的第一篇博客文章！</p>
         
-        <hr><p>Published on 2025-07-19 at <a href='https://MilLoong.github.io/'>MilLoong的博客</a>, last modified on 2025-07-19</p>]]>
+        <hr><p>Published on 2025-07-19 at <a href='https://MilLoong.blog/'>MilLoong的博客</a>, last modified on 2025-07-19</p>]]>
       </description>
       
     </item>
