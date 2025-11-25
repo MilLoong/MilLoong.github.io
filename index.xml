@@ -10,7 +10,7 @@
     <managingEditor>xxx@example.com (MilLoong)</managingEditor>
     <webMaster>xxx@example.com (MilLoong)</webMaster>
     
-    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
     <lastBuildDate>Mon, 24 Nov 2025 15:00:00 +0800</lastBuildDate>
     
@@ -28,7 +28,7 @@
       <author>xxx@example.com (MilLoong)</author>
       <guid>https://MilLoong.github.io/post/git_education/</guid>
       <description>
-        <![CDATA[<h1>git教程——下载，SSH配置，clone，pull，push，pull request（PR）</h1><p>Author: MilLoong(xxx@example.com)</p>
+        <![CDATA[<h1>git教程——下载，SSH配置，clone，pull，push，pull request（PR）</h1><p>作者：MilLoong（xxx@example.com）</p>
         
           <h1 id="git教程下载ssh配置clonepullpushpull-requestpr">
 <a class="header-anchor" href="#git%e6%95%99%e7%a8%8b%e4%b8%8b%e8%bd%bdssh%e9%85%8d%e7%bd%aeclonepullpushpull-requestpr"></a>
@@ -84,7 +84,7 @@ SSH配置：
 </span></span><span class="line"><span class="cl">fatal: Could not <span class="nb">read</span> from remote repository.
 </span></span></code></pre></div><p>这种情况下就是SSH配置的问题，需要生成ssh key（ssh key的相关知识请自行搜索）。</p>
         
-        <hr><p>Published on 2025-11-24 at <a href='https://MilLoong.github.io/'>MilLoong的博客</a>, last modified on 2025-11-24</p>]]>
+        <hr><p>本文2025-11-24首发于<a href='https://MilLoong.github.io/'>MilLoong的博客</a>，最后修改于2025-11-24</p>]]>
       </description>
       
     </item>
@@ -98,11 +98,11 @@ SSH配置：
       <author>xxx@example.com (MilLoong)</author>
       <guid>https://MilLoong.github.io/post/hello-world/</guid>
       <description>
-        <![CDATA[<h1>Hello World</h1><p>Author: MilLoong(xxx@example.com)</p>
+        <![CDATA[<h1>Hello World</h1><p>作者：MilLoong（xxx@example.com）</p>
         
           <p>初来乍到，测试发布，可以忽略本文(<em>´∀ ˋ</em>)</p>
         
-        <hr><p>Published on 2025-11-23 at <a href='https://MilLoong.github.io/'>MilLoong的博客</a>, last modified on 2025-11-23</p>]]>
+        <hr><p>本文2025-11-23首发于<a href='https://MilLoong.github.io/'>MilLoong的博客</a>，最后修改于2025-11-23</p>]]>
       </description>
       
     </item>

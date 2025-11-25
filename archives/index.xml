@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MilLoong的博客</title>
+    <title>归档 on MilLoong的博客</title>
     <link>https://MilLoong.github.io/archives/</link>
     <description>Recent content from MilLoong的博客</description>
     <generator>Hugo</generator>
@@ -10,7 +10,7 @@
     <managingEditor>xxx@example.com (MilLoong)</managingEditor>
     <webMaster>xxx@example.com (MilLoong)</webMaster>
     
-    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
     <lastBuildDate></lastBuildDate>
     

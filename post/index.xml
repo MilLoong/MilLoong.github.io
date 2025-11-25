@@ -10,7 +10,7 @@
     <managingEditor>xxx@example.com (MilLoong)</managingEditor>
     <webMaster>xxx@example.com (MilLoong)</webMaster>
     
-    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
     <lastBuildDate>Mon, 24 Nov 2025 15:00:00 +0800</lastBuildDate>
     
@@ -28,7 +28,7 @@
       <author>xxx@example.com (MilLoong)</author>
       <guid>http://localhost:1313/post/%E7%9C%9F%E5%80%BC%E8%A1%A8%E8%AE%A1%E7%AE%97%E4%B8%BB%E5%90%88%E5%8F%96%E8%8C%83%E5%BC%8F%E5%92%8C%E4%B8%BB%E6%9E%90%E5%8F%96%E8%8C%83%E5%BC%8F%E7%9A%84%E7%90%86%E8%AE%BA%E4%BE%9D%E6%8D%AE/</guid>
       <description>
-        <![CDATA[<h1>真值表计算主合取范式和主析取范式的理论依据</h1><p>Author: MilLoong(xxx@example.com)</p>
+        <![CDATA[<h1>真值表计算主合取范式和主析取范式的理论依据</h1><p>作者：MilLoong（xxx@example.com）</p>
         
           <h1 id="真值表计算主合取范式和主析取范式的理论依据">
 <a class="header-anchor" href="#%e7%9c%9f%e5%80%bc%e8%a1%a8%e8%ae%a1%e7%ae%97%e4%b8%bb%e5%90%88%e5%8f%96%e8%8c%83%e5%bc%8f%e5%92%8c%e4%b8%bb%e6%9e%90%e5%8f%96%e8%8c%83%e5%bc%8f%e7%9a%84%e7%90%86%e8%ae%ba%e4%be%9d%e6%8d%ae"></a>
@@ -121,7 +121,7 @@
 </table>
 <p><strong>主合取范式：</strong></p>
         
-        <hr><p>Published on 2025-11-24 at <a href='http://localhost:1313/'>MilLoong的博客</a>, last modified on 2025-11-24</p>]]>
+        <hr><p>本文2025-11-24首发于<a href='http://localhost:1313/'>MilLoong的博客</a>，最后修改于2025-11-24</p>]]>
       </description>
       
     </item>
@@ -135,7 +135,7 @@
       <author>xxx@example.com (MilLoong)</author>
       <guid>http://localhost:1313/post/git_education/</guid>
       <description>
-        <![CDATA[<h1>git教程——下载，SSH配置，clone，pull，push，pull request（PR）</h1><p>Author: MilLoong(xxx@example.com)</p>
+        <![CDATA[<h1>git教程——下载，SSH配置，clone，pull，push，pull request（PR）</h1><p>作者：MilLoong（xxx@example.com）</p>
         
           <h1 id="git教程下载ssh配置clonepullpushpull-requestpr">
 <a class="header-anchor" href="#git%e6%95%99%e7%a8%8b%e4%b8%8b%e8%bd%bdssh%e9%85%8d%e7%bd%aeclonepullpushpull-requestpr"></a>
@@ -191,7 +191,7 @@ SSH配置：
 </span></span><span class="line"><span class="cl">fatal: Could not <span class="nb">read</span> from remote repository.
 </span></span></code></pre></div><p>这种情况下就是SSH配置的问题，需要生成ssh key（ssh key的相关知识请自行搜索）。</p>
         
-        <hr><p>Published on 2025-11-24 at <a href='http://localhost:1313/'>MilLoong的博客</a>, last modified on 2025-11-24</p>]]>
+        <hr><p>本文2025-11-24首发于<a href='http://localhost:1313/'>MilLoong的博客</a>，最后修改于2025-11-24</p>]]>
       </description>
       
     </item>
@@ -205,11 +205,11 @@ SSH配置：
       <author>xxx@example.com (MilLoong)</author>
       <guid>http://localhost:1313/post/hello-world/</guid>
       <description>
-        <![CDATA[<h1>Hello World</h1><p>Author: MilLoong(xxx@example.com)</p>
+        <![CDATA[<h1>Hello World</h1><p>作者：MilLoong（xxx@example.com）</p>
         
           <p>初来乍到，测试发布，可以忽略本文(<em>´∀ ˋ</em>)</p>
         
-        <hr><p>Published on 2025-11-23 at <a href='http://localhost:1313/'>MilLoong的博客</a>, last modified on 2025-11-23</p>]]>
+        <hr><p>本文2025-11-23首发于<a href='http://localhost:1313/'>MilLoong的博客</a>，最后修改于2025-11-23</p>]]>
       </description>
       
     </item>
