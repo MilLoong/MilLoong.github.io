@@ -16,7 +16,7 @@
         </style>
       </head>
       <body>
-        <h1>RSS功能暂未开放</h1>
+        <h1>RSS</h1>
         <div class="items">
           <xsl:for-each select="rss/channel/item">
             <div class="item">
