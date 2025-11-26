@@ -1,23 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="rss-style.xsl"?>
+<rss version="2.0">
   <channel>
-    <title>归档 on MilLoong的博客</title>
-    <link>https://MilLoong.github.io/archives/</link>
-    <description>Recent content from MilLoong的博客</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
+    <title>RSS功能暂未开放</title>
+    <description>RSS功能暂未开放</description>
     
-    <managingEditor>xxx@example.com (MilLoong)</managingEditor>
-    <webMaster>xxx@example.com (MilLoong)</webMaster>
-    
-    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
-    
-    <lastBuildDate></lastBuildDate>
-    
-    
-    <atom:link href="https://MilLoong.github.io/archives/index.xml" rel="self" type="application/rss&#43;xml" />
-    
-
-    
+    <item>
+      <title>RSS功能暂未开放</title>
+      <guid isPermaLink="false">rss-not-available</guid>
+      <description><![CDATA[RSS订阅功能暂未开放，敬请期待。]]></description>
+    </item>
   </channel>
 </rss>
