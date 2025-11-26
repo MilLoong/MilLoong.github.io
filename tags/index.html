@@ -52,7 +52,7 @@
   <meta property="article:published_time" content="0001-01-01T00:00:00&#43;00:00" />
   <meta property="article:modified_time" content="0001-01-01T00:00:00&#43;00:00" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="https://MilLoong.github.io/tags/index.xml" title="MilLoong的博客">
-<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.9cf7519e1a5d47578b3ac524c705a2fbbd4c38542a9c26985b817037279d0cc9.css" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.aeb054b6e9a58b1028ae0a13998bb5c204c0ea6d9ec9a28e821bfdb96f6c4ac1.css" />
 <link
     rel="preload"
     as="style"
@@ -128,7 +128,7 @@
         <span class="main-nav-link">友链</span>
       </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
-  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-rss-link" class="nav-icon" href="/tags/index.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a></nav></div>
+  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-rss-link" class="nav-icon" href="/tags/index.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
 <header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="Tags"><div id="header-outer">
     <div id="header-title"><span id="logo">
             <h1 data-aos="slide-up">标签</h1>
@@ -336,7 +336,21 @@
       <div class="sidebar-menu-link">友链</div>
     </div></div>
 </div></nav>
-</div><script
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><script
     src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
     integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
     src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
@@ -354,7 +368,28 @@
     } else {
       aosInit();
     }
-  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "TT8YY4JPRF",
+        apiKey: "4d450286d17ecfeb7b0c6f78ebceb3d4",
+        indexName: "MilLoongBlog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
     src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
     integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
   if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
