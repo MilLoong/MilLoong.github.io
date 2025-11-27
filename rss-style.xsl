@@ -22,7 +22,6 @@
             <div class="item">
               <div class="title"><xsl:value-of select="title"/></div>
               <div class="description"><xsl:value-of select="description" disable-output-escaping="yes"/></div>
-              <button onclick="window.close();">关闭页面</button>
             </div>
           </xsl:for-each>
         </div>
