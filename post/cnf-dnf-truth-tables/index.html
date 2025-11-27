@@ -8,9 +8,9 @@
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 /><title>
-  关于 | MilLoong
+  真值表计算主合取范式和主析取范式的理论依据 | MilLoong
 </title>
-<meta name="description" content="关于"/><script>
+<meta name="description" content="个人博客，记录学习日常"/><script>
   window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
 </script>
@@ -34,24 +34,24 @@
     crossorigin="anonymous"
   /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
 <meta property="og:type" content="website" />
-  <meta property="og:title" content="关于 | MilLoong" />
+  <meta property="og:title" content="真值表计算主合取范式和主析取范式的理论依据 | MilLoong" />
   <meta
     property="og:description"
-    content="关于"
+    content="个人博客，记录学习日常"
   />
-  <meta property="og:url" content="https://MilLoong.github.io/about/" />
+  <meta property="og:url" content="https://MilLoong.github.io/post/cnf-dnf-truth-tables/" />
   <meta
     property="og:site_name"
     content="MilLoong的博客"
   />
   <meta
     property="og:image"
-    content="/"
+    content="/backgrounds/bg1.webp"
   />
   <meta property="article:author" content="MilLoong" />
-  <meta property="article:published_time" content="2025-11-24T20:12:52&#43;08:00" />
-  <meta property="article:modified_time" content="2025-11-24T20:12:52&#43;08:00" /><meta name="twitter:card" content="summary" />
-  <meta name="twitter:image" content="/" />
+  <meta property="article:published_time" content="2025-11-24T15:00:00&#43;08:00" />
+  <meta property="article:modified_time" content="2025-11-24T15:00:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/backgrounds/bg1.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.a20a6b6d9416c6f7186a84c375f4631d2e6551c612685e0882427e02c1bb0cea.css" />
 <link
     rel="preload"
@@ -135,19 +135,29 @@
       </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
   <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
-<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="关于"><div id="header-outer">
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/backgrounds/bg1.webp" alt="真值表计算主合取范式和主析取范式的理论依据"><div id="header-outer">
     <div id="header-title"><span id="logo">
-            <h1 data-aos="slide-up">关于</h1>
+            <h1 data-aos="slide-up">真值表计算主合取范式和主析取范式的理论依据</h1>
           </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
   </div>
 </header><div id="content"
           aria-label="Page content"
           
-          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container "><div class="sidebar-wrapper">
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
     <div
       class="sidebar-wrap"
       data-aos="fade-up"
-    ><div class="sidebar-author">
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#引入">引入</a></li>
+    <li><a href="#正文">正文</a></li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
     data-src="/avatar/avatar.webp"
     data-sizes="auto"
@@ -206,24 +216,11 @@
       <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
       <div class="sidebar-menu-link">友链</div>
     </div></div>
-</div>
-  </div><div class="sidebar-widget"><div class="widget-wrapper">
-    <div
-      class="widget-wrap"
-      data-aos="fade-up"
-    >
-      <h3 class="widget-title">最新文章</h3>
-      <div class="widget">
-        <ul><li>
-              <a href="/post/git-education/" title="git教程——下载，SSH配置，clone，pull，push，pull request（PR）">git教程——下载，SSH配置，clone，pull，push，pull request（PR）</a>
-            </li><li>
-              <a href="/post/cnf-dnf-truth-tables/" title="真值表计算主合取范式和主析取范式的理论依据">真值表计算主合取范式和主析取范式的理论依据</a>
-            </li><li>
-              <a href="/post/hello-world/" title="Hello World">Hello World</a>
-            </li></ul>
-      </div>
-    </div>
-  </div></div></div></aside>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
 <section id="main" aria-label="Main content"><article
   class="h-entry article"
   itemscope
@@ -238,7 +235,7 @@
     class="article-date-link icon-calendar"
     data-aos="zoom-in"
   >
-    <time datetime="2025-11-24 20:12:52 &#43;0800 CST" itemprop="datePublished"
+    <time datetime="2025-11-24 15:00:00 &#43;0800 CST" itemprop="datePublished"
       >2025-11-24</time
     >
     <time style="display: none;" id="post-update-time"
@@ -246,20 +243,495 @@
     >
   </span></div>
 <div class="article-category"></div>
-</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="望周知">
-<a class="header-anchor" href="#%e6%9c%9b%e5%91%a8%e7%9f%a5"></a>
-望周知
-</h1><p>博主纯萌新，本博客只是作为学习记录，如果说得不好或有误，还望各位海涵<br>
-如果有问题，可以到 <a href="https://github.com/MilLoong/MilLoong.github.io/issues">github issues</a> 上提出，我有时间会解决，不过如果是不好的言论的话就算了（）</p>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="真值表计算主合取范式和主析取范式的理论依据">
+<a class="header-anchor" href="#%e7%9c%9f%e5%80%bc%e8%a1%a8%e8%ae%a1%e7%ae%97%e4%b8%bb%e5%90%88%e5%8f%96%e8%8c%83%e5%bc%8f%e5%92%8c%e4%b8%bb%e6%9e%90%e5%8f%96%e8%8c%83%e5%bc%8f%e7%9a%84%e7%90%86%e8%ae%ba%e4%be%9d%e6%8d%ae"></a>
+真值表计算主合取范式和主析取范式的理论依据
+</h1><blockquote>
+<p>原文：https://blog.csdn.net/qq_30618989/article/details/151085520<br>
+此原文也是本人所写</p>
+</blockquote>
+<h2 id="引入">
+<a class="header-anchor" href="#%e5%bc%95%e5%85%a5"></a>
+引入
+</h2><p>博主初次接触用 <strong>真值表技术</strong> 来计算 <strong>主合取范式</strong> 和 <strong>主析取范式</strong> 时，对其原理百思不得其解，而且网上也没有一个准确的说法，要么就是说死记硬背，要么就是说是规律，所以一直搁置了很久。</p>
+<p>但今灵光一现，发现了 <strong>真值表技术</strong> 的奥秘所在，也逐渐理解了为什么要这么做，为什么能这么做，今天就拿个例子来做个简单的理解和证明，相信读者会对其有比较深刻的理解。</p>
+<blockquote>
+<p><strong>注：</strong> 具体什么是 <strong>主合取范式</strong> 和 <strong>主析取范式</strong> ，什么是 <strong>真值表技术</strong> ，本篇博客默认读者已了解，如不了解的，可以自行搜索</p>
+</blockquote>
+<h2 id="正文">
+<a class="header-anchor" href="#%e6%ad%a3%e6%96%87"></a>
+正文
+</h2><p>举个经典的例子： <strong><!-- raw HTML omitted -->(p∨q)→¬r<!-- raw HTML omitted --></strong></p>
+<p><strong>真值表：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"><strong>p</strong></th>
+          <th style="text-align: center">q</th>
+          <th style="text-align: center">r</th>
+          <th style="text-align: center">p∨q</th>
+          <th style="text-align: center">(p∨q)→¬r</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>主合取范式：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>p</strong></th>
+          <th><strong>q</strong></th>
+          <th><strong>r</strong></th>
+          <th><img src="https://latex.csdn.net/eq?%24M_%7B1%7D%24" alt=""></th>
+          <th><img src="https://latex.csdn.net/eq?M_2" alt="M_2"></th>
+          <th><img src="https://latex.csdn.net/eq?M_3" alt="M_3"></th>
+          <th><img src="https://latex.csdn.net/eq?M_4" alt="M_4"></th>
+          <th><img src="https://latex.csdn.net/eq?M_5" alt="M_5"></th>
+          <th><img src="https://latex.csdn.net/eq?M_6" alt="M_6"></th>
+          <th><img src="https://latex.csdn.net/eq?M_7" alt="M_7"></th>
+          <th><img src="https://latex.csdn.net/eq?M_8" alt="M_8"></th>
+          <th><strong>(p∨q)→¬r</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>
+<p><strong>(p∨q)→¬r=0</strong> 的情况以 <strong>p=1,q=1,r=1</strong> 为例，可以看到，唯一与其他不同的 </p>
+$$
+  M
+  $$<p> 是 </p>
+$$
+  M_8
+  $$<p>，其值为0，而其他均为1，那么可以认为 <strong>p=1,q=1,r=1对应的</strong> <strong>$$
+  M
+  $$ 是 $$
+  M_8
+  $$。</strong></p>
+<p>然后我们考虑 </p>
+$$
+  M_8
+  $$<p>在不在主合取范式中，事实上，若 </p>
+$$
+  M_8
+  $$<p> 在主合取范式中，那么是合法的：
+</p>
+$$
+  (p\or q)\rightarrow \neg r=M_8\and ...\and...=0
+  $$<p>所以对于 <strong>(p∨q)→¬r=0</strong> 的情况， <strong>其对应的</strong> <strong>$$
+  M
+  $$ 都是需要的</strong></p>
+</li>
+<li>
+<p><strong>(p∨q)→¬r=1</strong> 的情况以 <strong>p=1,q=1,r=0</strong> 为例，可以看到，唯一与其他不同的 </p>
+$$
+  M
+  $$<p> 是 </p>
+$$
+  M_7
+  $$<p>，其值为0，而其他均为1，那么可以认为 <strong>p=1,q=1,r=0对应的</strong> <strong>$$
+  M
+  $$ 是</strong> </p>
+$$
+  M_7
+  $$<p> <strong>。</strong></p>
+<p>然后我们考虑 </p>
+$$
+  M_7
+  $$<p> 在不在主合取范式中，事实上，若 </p>
+$$
+  M_7
+  $$<p> 在主合取范式中，那么是非法的：
+</p>
+$$
+  (p\or q)\rightarrow \neg r=M_7\and ...\and...=0
+  $$<p>
+<strong>但实际上，这种情况(p∨q)→¬r=1</strong></p>
+<p>所以对于 <strong>(p∨q)→¬r=1</strong> 的情况， <strong>其对应的</strong> <strong>$$
+  M
+  $$ 都是不需要的</strong></p>
+</li>
+</ul>
+<p>这样的话就可以得到最终的主合取范式： <strong>(p∨q)→¬r=(¬p∨¬q∨¬r)∧(¬p∨q∨¬r)∧(p∨¬q∨¬r)</strong></p>
+<p>那这样的话就可以在理解的基础上进行记忆了</p>
+<p><strong>主析取范式：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>p</strong></th>
+          <th><strong>q</strong></th>
+          <th><strong>r</strong></th>
+          <th><img src="https://latex.csdn.net/eq?m_1" alt="m_1"></th>
+          <th><img src="https://latex.csdn.net/eq?m_2" alt="m_2"></th>
+          <th><img src="https://latex.csdn.net/eq?m_3" alt="m_3"></th>
+          <th><img src="https://latex.csdn.net/eq?m_4" alt="m_4"></th>
+          <th><img src="https://latex.csdn.net/eq?m_5" alt="m_5"></th>
+          <th><img src="https://latex.csdn.net/eq?m_6" alt="m_6"></th>
+          <th><img src="https://latex.csdn.net/eq?m_7" alt="m_7"></th>
+          <th><img src="https://latex.csdn.net/eq?m_8" alt="m_8"></th>
+          <th><strong>(p∨q)→¬r</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+  </tbody>
+</table>
+<p>主析取范式的处理和主合取范式的处理是差不多的：</p>
+<ul>
+<li>
+<p><strong>(p∨q)→¬r=0</strong> 的情况以 <strong>p=1,q=1,r=1</strong> 为例，可以看到，唯一与其他不同的 </p>
+$$
+  m
+  $$<p> 是 </p>
+$$
+  m_1
+  $$<p>，其值为1，而其他均为0，那么可以认为 <strong>p=1,q=1,r=1对应的</strong> </p>
+$$
+  m
+  $$<p> <strong>是</strong> </p>
+$$
+  m_1
+  $$<p> <strong>。</strong></p>
+<p>然后我们考虑 </p>
+$$
+  m_1
+  $$<p> 在不在主析取范式中，事实上，若 </p>
+$$
+  m_1
+  $$<p> 在主析取范式中，那么是非法的：
+</p>
+$$
+  (p\or q)\rightarrow \neg r=m_1\or ...\or...=1
+  $$<p>
+<strong>但实际上，这种情况(p∨q)→¬r=0</strong></p>
+<p>所以对于 <strong>(p∨q)→¬r=0</strong> 的情况， <strong>其对应的</strong> </p>
+$$
+  m
+  $$<p> <strong>都是不需要的</strong></p>
+</li>
+<li>
+<p><strong>(p∨q)→¬r=1</strong> 的情况以 <strong>p=1,q=1,r=0</strong> 为例，可以看到，唯一与其他不同的 </p>
+$$
+  m
+  $$<p>是 </p>
+$$
+  m_2
+  $$<p>，其值为1，而其他均为0，那么可以认为 <strong>p=1,q=1,r=0对应的</strong> </p>
+$$
+  m
+  $$<p> <strong>是</strong> </p>
+$$
+  m_2
+  $$<p> <strong>。</strong></p>
+<p>然后我们考虑 </p>
+$$
+  m_1
+  $$<p>在不在主析取范式中，事实上，若 </p>
+$$
+  m_2
+  $$<p> 在主析取范式中，那么是合法的：
+</p>
+$$
+  (p\or q)\rightarrow \neg r=m_2\or ...\or...=1
+  $$<p>
+所以对于 <strong>(p∨q)→¬r=0</strong> 的情况， <strong>其对应的</strong> </p>
+$$
+  m
+  $$<p> <strong>都是需要的</strong></p>
+</li>
+</ul>
+<p>这样的话就可以得到最终的主析取范式： <strong>(p∨q)→¬r=(p∧q∧¬r)∨(p∧¬q∧¬r)∨(¬p∧q∧¬r)∨(¬p∧¬q∧r)∨(¬p∧¬q∧¬r)</strong></p>
+<p>同样地，可以在理解的基础上进行记忆</p>
 </div>
     <footer class="article-footer"><a
           data-aos="zoom-in"
-          href="/about/#comments"
+          href="/post/cnf-dnf-truth-tables/#comments"
           class="article-comment-link"
         >
           <span
             class="post-comments-count waline-comment-count"
-            data-path="/about/"
+            data-path="/post/cnf-dnf-truth-tables/"
             itemprop="commentCount"
           ></span>
           留言
@@ -269,13 +741,41 @@
         >
           <span
             class="waline-pageview-count"
-            data-path="/about/"
+            data-path="/post/cnf-dnf-truth-tables/"
             >0</span
           >
           <em class="post-meta-item-text">阅读量</em>
         </span><ul class="article-tag-list" itemprop="keywords"></ul>
 </footer>
-  </div></article><section id="comments" data-aos="fade-up">
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+            data-src="/backgrounds/bg2.webp"
+            data-sizes="auto"
+            alt="Hello World"
+            class="lazyload"
+          /><a
+          href="/post/hello-world/"
+          aria-label="前一篇:Hello World"
+          title="前一篇:Hello World"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">Hello World</h3>
+      </div><div class="article-nav-link-wrap right"><img
+            data-src="/backgrounds/bg3.webp"
+            data-sizes="auto"
+            alt="git教程——下载，SSH配置，clone，pull，push，pull request（PR）"
+            class="lazyload"
+          /><a
+          href="/post/git-education/"
+          aria-label="后一篇:git教程——下载，SSH配置，clone，pull，push，pull request（PR）"
+          title="后一篇:git教程——下载，SSH配置，clone，pull，push，pull request（PR）"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">git教程——下载，SSH配置，clone，pull，push，pull request（PR）</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
 <div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
   <div class="comment-selector">
     <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
@@ -338,7 +838,16 @@
             <div class="arrow-up"></div>
           </div><div id="mask" class="hide"></div>
       </div><nav id="mobile-nav" aria-label="Mobile navigation">
-  <div class="sidebar-wrap"><div class="sidebar-author">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#引入">引入</a></li>
+    <li><a href="#正文">正文</a></li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
     data-src="/avatar/avatar.webp"
     data-sizes="auto"
@@ -397,7 +906,10 @@
       <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
       <div class="sidebar-menu-link">友链</div>
     </div></div>
-</div></nav>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
 </div><div class="site-search">
         <div class="reimu-popup popup">
           <div class="reimu-search">
@@ -471,10 +983,10 @@
   <div><script data-pjax>
         window.REIMU_POST = {
           author: "MilLoong",
-          title: "关于",
-          url: "https:\/\/MilLoong.github.io\/about\/",
-          description: "关于",
-          cover: "https:\/\/MilLoong.github.io\/images\/banner.webp",
+          title: "真值表计算主合取范式和主析取范式的理论依据",
+          url: "https:\/\/MilLoong.github.io\/post\/cnf-dnf-truth-tables\/",
+          description: " 真值表计算主合取范式和主析取范式的理论依据 原文：https:\/\/blog.csdn.net\/qq_30618989\/article\/details\/151085520\n此原文也是本人所写\n引入 博主初次接触用 真值表技术 来计算 主合取范式 和 主析取范式 时，对其原理百思不得其解，而且网上也没有一个准确的说法，要么就是说死记硬背，要么就是说是规律，所以一直搁置了很久。\n但今灵光一现，发现了 真值表技术 的奥秘所在，也逐渐理解了为什么要这么做，为什么能这么做，今天就拿个例子来做个简单的理解和证明，相信读者会对其有比较深刻的理解。\n注： 具体什么是 主合取范式 和 主析取范式 ，什么是 真值 …",
+          cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg1.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
           if (_$$(`${gallery} ${children}`).length > 0) {
@@ -650,7 +1162,28 @@
     }
   };
   loadComments();
-</script></div>
+</script><script
+    src="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.js"
+    data-pjaxintegrity="sha384-MWNUH0WmtsYGhn2cbH6ELRCbf9LG3QDqCC&#43;gqPB3IBNO35xjZK3Ejb6oONRpDbPg" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/katex@0.16.24/dist/contrib/auto-render.min.js"
+    data-pjaxintegrity="sha384-hCXGrW6PitJEwbkoStFjeJxv&#43;fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script><script data-pjax>
+          var renderMath = () => {
+            if (!window.renderMathInElement) return;
+            window.renderMathInElement(_$("article"), {
+              delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "\\[", right: "\\]", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+              ],
+            });
+          };
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", renderMath, { once: true });
+          } else {
+            renderMath();
+          }
+        </script></div>
 </div><script
     src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
     asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>

@@ -4,10 +4,16 @@
     "permalink": "/post/git_education/",
     "title": "git教程——下载，SSH配置，clone，pull，push，pull request（PR）","content": " git教程 下载SSH配置 clone pull push pull request（PR）基本操作教程","date": "2025-11-24 15:00:00",
     "updated": "2025-11-24 15:00:00"
+  },
+  {
+    "objectID": "3173499c99791ec38a279a42c2a44237c7a82133",
+    "permalink": "/post/cnf-dnf-truth-tables/",
+    "title": "真值表计算主合取范式和主析取范式的理论依据","content": "真值表技术 主合取范式 主析取范式 原理 理解 证明","date": "2025-11-24 15:00:00",
+    "updated": "2025-11-24 15:00:00"
   }, 
   {
     "objectID": "61a893da1bbe4c35fe4f8120cfc1f5c28f826ada",
     "permalink": "/post/hello-world/",
-    "title": "Hello World","content": "初来乍到，测试发布，可以忽略本文","date": "2025-11-23 15:00:00",
+    "title": "Hello World","content": "初来乍到，测试发布，可以忽略本文(´∀ ˋ)\n","date": "2025-11-23 15:00:00",
     "updated": "2025-11-23 15:00:00"
   }]
