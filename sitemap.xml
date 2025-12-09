@@ -2,52 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/post/</loc>
+    <loc>https://MilLoong.github.io/</loc>
     <lastmod>2025-11-24T21:46:25+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://MilLoong.github.io/archives/</loc>
     <lastmod>2025-11-24T21:46:25+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
-    <lastmod>2025-11-24T21:46:25+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://MilLoong.github.io/about/</loc>
     <lastmod>2025-11-24T20:12:52+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/friend/</loc>
+    <loc>https://MilLoong.github.io/friend/</loc>
     <lastmod>2025-11-24T20:12:52+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://MilLoong.github.io/categories/</loc>
     <lastmod>2025-11-24T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/git/</loc>
+    <loc>https://MilLoong.github.io/tags/git/</loc>
     <lastmod>2025-11-24T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/git-education/</loc>
+    <loc>https://MilLoong.github.io/post/git-education/</loc>
     <lastmod>2025-11-24T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://MilLoong.github.io/tags/</loc>
     <lastmod>2025-11-24T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://MilLoong.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2025-11-24T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</loc>
+    <loc>https://MilLoong.github.io/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2025-11-24T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <loc>https://MilLoong.github.io/tags/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2025-11-24T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E7%9C%9F%E5%80%BC%E8%A1%A8/</loc>
+    <loc>https://MilLoong.github.io/tags/%E7%9C%9F%E5%80%BC%E8%A1%A8/</loc>
     <lastmod>2025-11-24T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/cnf-dnf-truth-tables/</loc>
+    <loc>https://MilLoong.github.io/post/cnf-dnf-truth-tables/</loc>
     <lastmod>2025-11-24T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/hello-world/</loc>
+    <loc>https://MilLoong.github.io/post/hello-world/</loc>
     <lastmod>2025-11-23T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/whattoeat/</loc>
+    <loc>https://MilLoong.github.io/whattoeat/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url>
 </urlset>
