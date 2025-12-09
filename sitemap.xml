@@ -17,7 +17,28 @@
     <loc>http://localhost:1313/friend/</loc>
     <lastmod>2025-11-24T20:12:52+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-11-24T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/git/</loc>
+    <lastmod>2025-11-24T15:00:00+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/post/git-education/</loc>
+    <lastmod>2025-11-24T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-11-24T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2025-11-24T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2025-11-24T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2025-11-24T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E7%9C%9F%E5%80%BC%E8%A1%A8/</loc>
     <lastmod>2025-11-24T15:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/cnf-dnf-truth-tables/</loc>
@@ -28,9 +49,5 @@
   </url><url>
     <loc>http://localhost:1313/whattoeat/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

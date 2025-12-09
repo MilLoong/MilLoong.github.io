@@ -1,12 +1,13 @@
 /* whattoeat.css - 吃什么页面样式 */
+
+/* 响应式变量定义 */
+:root {
+  --mobile-breakpoint: 480px;
+  --tablet-breakpoint: 768px;
+  --desktop-breakpoint: 992px;
+}
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-}
-
-/* 增大h2标题字体大小 */
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
 }
 
 p {
@@ -17,6 +18,15 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* 移动设备基础样式调整 */
+@media (max-width: 480px) {
+  .whattoeat-container {
+    padding: 1rem;
+    max-width: 100%;
+  }
 }
 
 .whattoeat-header {
@@ -44,19 +54,45 @@ p {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
+/* 移动设备下的标题和描述适配 */
+@media (max-width: 480px) {
+  .whattoeat-header {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+  }
+  
+  .whattoeat-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .whattoeat-header .description {
+    font-size: 1rem;
+  }
+}
+
 .food-randomizer {
   background-color: rgba(248, 249, 250, 0.95);
   border-radius: 12px;
-  padding: 2.5rem;
-  margin-bottom: 4rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
 }
 
-.food-randomizer p {
-  margin: 1rem 0;
-  font-size: 1.1rem;
+/* 移动设备下的随机选择器适配 */
+@media (max-width: 480px) {
+  .food-randomizer {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .food-result {
+    min-height: 120px;
+    padding: 1rem;
+  }
 }
 
 .random-btn {
@@ -71,6 +107,19 @@ p {
   margin: 1rem 0;
   font-weight: bold;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  /* 触摸友好的按钮大小 */
+  min-height: 44px;
+  min-width: 120px;
+  box-sizing: border-box;
+}
+
+/* 移动设备下的按钮适配 */
+@media (max-width: 480px) {
+  .random-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
 }
 
 .random-btn:hover {
@@ -143,6 +192,22 @@ p {
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
+  /* 触摸友好的输入框大小 */
+  min-height: 44px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+  /* 触摸友好的输入框大小 */
+  min-height: 44px;
+}
+
+.form-group textarea {
+  min-height: 100px;
 }
 
 .form-group input:focus,
@@ -170,6 +235,7 @@ p {
   gap: 1rem;
   margin-bottom: 1rem;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .parameter-group label {
@@ -181,10 +247,34 @@ p {
 .parameter-group input[type="range"] {
   flex: 2;
   min-width: 200px;
+  box-sizing: border-box;
 }
 
 .parameter-group input[type="number"] {
   width: 100px;
+  box-sizing: border-box;
+}
+
+/* 移动设备下的参数控制适配 */
+@media (max-width: 480px) {
+  .parameter-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .parameter-group label {
+    min-width: auto;
+  }
+  
+  .parameter-group input[type="range"] {
+    min-width: 100%;
+    width: 100%;
+  }
+  
+  .parameter-group input[type="number"] {
+    width: 100%;
+    min-width: 80px;
+  }
 }
 
 .parameter-group span {
@@ -206,6 +296,10 @@ p {
   align-self: center;
   margin-top: 1rem;
   box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  /* 触摸友好的按钮大小 */
+  min-height: 44px;
+  min-width: 150px;
+  box-sizing: border-box;
 }
 
 .add-food-btn:hover {
@@ -219,20 +313,14 @@ p {
 }
 
 .food-list-section {
-  margin-bottom: 4rem;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  padding: 2.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 3rem;
 }
 
 .food-list-section h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: #2c3e50;
-  font-size: 2rem;
-  /* 使用全局h2样式，但增加居中对齐和颜色 */
+  font-size: 1.75rem;
 }
 
 .empty-state {
@@ -259,6 +347,9 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .sort-options label {
@@ -358,8 +449,8 @@ p {
   color: white;
   border: none;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -368,6 +459,10 @@ p {
   line-height: 1;
   transition: all 0.3s ease;
   opacity: 0;
+  /* 触摸友好的按钮大小 */
+  min-height: 36px;
+  min-width: 36px;
+  box-sizing: border-box;
 }
 
 .food-item:hover .remove-btn {
@@ -433,6 +528,7 @@ p {
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .daily-special {
@@ -440,6 +536,18 @@ p {
   border-radius: 8px;
   padding: 1rem;
   margin-top: 1rem;
+  box-sizing: border-box;
+}
+
+/* 移动设备下的推荐区域适配 */
+@media (max-width: 480px) {
+  .daily-recommendation {
+    padding: 1.5rem;
+  }
+  
+  .daily-special {
+    padding: 0.75rem;
+  }
 }
 
 .daily-reason {
@@ -447,6 +555,48 @@ p {
   margin-top: 0.5rem;
 }
 
+/* 小屏移动设备适配 (手机) */
+@media (max-width: 480px) {
+  /* 食物网格布局调整 */
+  .food-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* 各区块通用内边距调整 */
+  .food-adder,
+  .randomizer-settings,
+  .food-list-section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+  }
+  
+  /* 食物项调整 */
+  .food-item {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .food-info {
+    padding: 1rem;
+  }
+  
+  .food-info h3 {
+    font-size: 1.1rem;
+  }
+  
+  /* 表单样式调整 */
+  .add-food-btn {
+    width: 100%;
+  }
+  
+  /* 移除按钮始终可见，方便触摸 */
+  .remove-btn {
+    opacity: 1;
+  }
+}
+
+/* 平板设备适配 */
 @media (max-width: 768px) {
   .food-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -459,5 +609,68 @@ p {
   
   .daily-info {
     text-align: center;
+  }
+  
+  .whattoeat-container {
+    padding: 1rem;
+  }
+  
+  .food-adder,
+  .randomizer-settings {
+    box-sizing: border-box;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  /* 针对触摸设备的按钮样式 */
+  .random-btn,
+  .add-food-btn {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    transition: background-color 0.2s ease;
+  }
+  
+  /* 触摸设备不需要hover效果，使用active状态 */
+  .random-btn:active {
+    background-color: #ff5252;
+  }
+  
+  .add-food-btn:active {
+    background-color: #218838;
+  }
+  
+  /* 触摸设备上移除按钮始终可见 */
+  .remove-btn {
+    opacity: 1;
+  }
+  
+  /* 增大交互元素的点击区域 */
+  .sort-options select {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* 确保在高对比度模式下的可读性 */
+@media (prefers-contrast: high) {
+  .food-item,
+  .food-randomizer,
+  .food-adder {
+    border: 2px solid currentColor;
+  }
+  
+  .random-btn,
+  .add-food-btn {
+    border: 2px solid transparent;
+  }
+}
+
+/* 减少动画效果以提高性能 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
