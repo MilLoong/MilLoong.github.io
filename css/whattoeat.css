@@ -6,6 +6,58 @@
   --tablet-breakpoint: 768px;
   --desktop-breakpoint: 992px;
 }
+
+/* AOS动画相关样式 */
+.whattoeat-container[data-aos="fade-up"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 增强交互效果 */
+.whattoeat-header h1,
+.whattoeat-header p {
+  transition: all 0.3s ease;
+}
+
+.whattoeat-header:hover h1 {
+  transform: scale(1.05);
+}
+
+.random-btn {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.random-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.random-btn:active {
+  transform: scale(0.98);
+}
+
+.food-result {
+  transition: all 0.3s ease;
+}
+
+.food-result:hover {
+  transform: translateY(-2px);
+}
+
+.food-list-section {
+  transition: all 0.3s ease;
+}
+
+/* 食品项增强动画 */
+.food-item {
+  transition: all 0.3s ease;
+}
+
+.food-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }

@@ -281,5 +281,20 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// 初始化AOS动画
+function initAOS() {
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 1000,
+      easing: "ease",
+      once: true,
+      offset: 50,
+    });
+  }
+}
+
 // 当页面加载完成后初始化
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('DOMContentLoaded', function() {
+  init();
+  initAOS();
+});
