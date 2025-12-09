@@ -1,0 +1,30 @@
+/* 自定义CSS样式 - 修复导航图标位置偏下问题 */
+
+/* 修复导航图标位置 */
+.main-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 1;
+  padding: 10px 5px !important;
+}
+
+/* 修复图标字体垂直对齐 */
+.main-nav-icon:before {
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* 确保导航链接容器也正确对齐 */
+.main-nav-link-wrap {
+  display: flex;
+  align-items: center;
+}
+
+/* 修复导航链接文本垂直对齐 */
+.main-nav-link {
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+}

@@ -1,85 +1,62 @@
 // whattoeat.js - 吃什么页面交互逻辑
 
-// 硬编码的食品数据
-const foods = [
-  {
-    id: '1',
-    name: '红烧肉',
-    description: '经典中华美食，肥而不腻，入口即化',
-    parameters: { price: 3, taste: 5, health: 2, cookTime: 4, favorite: 5 },
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '2',
-    name: '宫保鸡丁',
-    description: '麻辣鲜香，开胃下饭，配以花生增添口感',
-    parameters: { price: 2, taste: 4, health: 3, cookTime: 3, favorite: 4 },
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '3',
-    name: '蔬菜沙拉',
-    description: '新鲜蔬菜，健康轻食，营养均衡',
-    parameters: { price: 1, taste: 3, health: 5, cookTime: 1, favorite: 3 },
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '4',
-    name: '蛋炒饭',
-    description: '简单快捷，家常美味，饱腹感强',
-    parameters: { price: 1, taste: 4, health: 3, cookTime: 2, favorite: 4 },
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '5',
-    name: '番茄鸡蛋面',
-    description: '酸甜可口，家常面食，制作简单',
-    parameters: { price: 1, taste: 4, health: 4, cookTime: 2, favorite: 5 },
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '6',
-    name: '麻婆豆腐',
-    description: '麻辣鲜香，豆腐嫩滑，下饭神器',
-    parameters: { price: 2, taste: 5, health: 3, cookTime: 2, favorite: 5 },
-    createdAt: new Date().toISOString()
-  }
-];
+// 引入模型加载器
+const modelLoader = window.modelLoader || {};
 
-// 固定参数权重设置
-const paramWeights = {
-  price: 1,       // 价格因素权重 (1-5, 1=价格越低优先级越高)
-  taste: 3,       // 口味偏好权重 (1-5, 5=越喜欢)
-  health: 2,      // 健康指数权重 (1-5, 5=越健康优先级越高)
-  cookTime: 1,    // 烹饪时间权重 (1-5, 1=时间越短优先级越高)
-  favorite: 5     // 喜爱程度权重 (1-5, 5=越喜欢)
-};
+// 食物数据，将从模型加载器获取
+let foods = [];
+let modelParams = {};
+let currentContext = { season: getCurrentSeason(), context: getCurrentContext() };
 
-// 计算食物的加权分数
+// 获取当前季节
+function getCurrentSeason() {
+  const month = new Date().getMonth() + 1; // JavaScript月份从0开始
+  if (month >= 3 && month <= 5) return '春季';
+  if (month >= 6 && month <= 8) return '夏季';
+  if (month >= 9 && month <= 11) return '秋季';
+  return '冬季';
+}
+
+// 获取当前场景
+function getCurrentContext() {
+  const hour = new Date().getHours();
+  // 只保留午餐(11:00-14:00)和晚餐(17:00-19:00)
+  if (hour >= 11 && hour < 14) return 'lunch';
+  if (hour >= 17 && hour < 19) return 'dinner';
+  return 'general';
+}
+
+// 计算食物的加权分数（基于模型参数）
 function calculateFoodScore(food) {
-  const { parameters } = food;
-  let score = 0;
+  let score = modelParams.base_scores?.[food.id] || 0.5; // 默认基础分数
   
-  // 价格：价格越低分数越高
-  score += (6 - parameters.price) * paramWeights.price;
+  // 应用标签权重
+  if (food.tags && modelParams.tag_weights) {
+    food.tags.forEach(tag => {
+      score += (modelParams.tag_weights[tag] || 0) * 0.1;
+    });
+  }
   
-  // 口味：越喜欢分数越高
-  score += parameters.taste * paramWeights.taste;
+  // 应用分类权重
+  if (food.category && modelParams.category_weights) {
+    score += (modelParams.category_weights[food.category] || 0) * 0.2;
+  }
   
-  // 健康：越健康分数越高
-  score += parameters.health * paramWeights.health;
+  // 应用季节权重
+  if (food.seasons && food.seasons.includes(currentContext.season) && modelParams.season_weights) {
+    score += (modelParams.season_weights[currentContext.season] || 0) * 0.2;
+  }
   
-  // 烹饪时间：时间越短分数越高
-  score += (6 - parameters.cookTime) * paramWeights.cookTime;
-  
-  // 喜爱程度：越喜欢分数越高
-  score += parameters.favorite * paramWeights.favorite;
+  // 应用场景权重
+  if (food.contexts && food.contexts.includes(currentContext.context) && modelParams.context_weights) {
+    score += (modelParams.context_weights[currentContext.context] || 0) * 0.2;
+  }
   
   return score;
 }
 
 // 当前排序方式
-let currentSort = { field: 'createdAt', order: 'desc' };
+let currentSort = { field: 'name', order: 'asc' };
 
 // 排序食物列表
 function sortFoods(foodsArray, sortField, sortOrder) {
@@ -87,16 +64,16 @@ function sortFoods(foodsArray, sortField, sortOrder) {
     let aValue, bValue;
     
     // 根据排序字段获取值
-    if (sortField === 'createdAt') {
-      aValue = new Date(a[sortField]).getTime();
-      bValue = new Date(b[sortField]).getTime();
-    } else if (sortField === 'name') {
+    if (sortField === 'name') {
       aValue = a[sortField].toLowerCase();
       bValue = b[sortField].toLowerCase();
+    } else if (sortField === 'category') {
+      aValue = a[sortField] || '';
+      bValue = b[sortField] || '';
     } else {
-      // 参数字段
-      aValue = a.parameters[sortField];
-      bValue = b.parameters[sortField];
+      // 基于分数排序
+      aValue = calculateFoodScore(a);
+      bValue = calculateFoodScore(b);
     }
     
     // 排序逻辑
@@ -131,8 +108,8 @@ function renderFoodList(sortField = currentSort.field, sortOrder = currentSort.o
     
     foodGrid.innerHTML = `
       <div class="no-foods-message">
-        <h3>还没有添加任何食物</h3>
-        <p>请在上方添加您喜欢的美食，然后开始随机选择！</p>
+        <h3>还没有加载任何食物数据</h3>
+        <p>正在从服务器加载食物数据，请稍候...</p>
       </div>
     `;
     return;
@@ -148,14 +125,20 @@ function renderFoodList(sortField = currentSort.field, sortOrder = currentSort.o
       <div class="sort-options">
         <label>排序方式：</label>
         <select id="sort-select">
-          <option value="createdAt-desc" ${sortField === 'createdAt' && sortOrder === 'desc' ? 'selected' : ''}>最新添加</option>
-          <option value="createdAt-asc" ${sortField === 'createdAt' && sortOrder === 'asc' ? 'selected' : ''}>最早添加</option>
           <option value="name-asc" ${sortField === 'name' && sortOrder === 'asc' ? 'selected' : ''}>名称 A-Z</option>
-          <option value="taste-desc" ${sortField === 'taste' && sortOrder === 'desc' ? 'selected' : ''}>口味评分（高到低）</option>
-          <option value="favorite-desc" ${sortField === 'favorite' && sortOrder === 'desc' ? 'selected' : ''}>喜爱程度（高到低）</option>
-          <option value="health-desc" ${sortField === 'health' && sortOrder === 'desc' ? 'selected' : ''}>健康指数（高到低）</option>
-          <option value="price-asc" ${sortField === 'price' && sortOrder === 'asc' ? 'selected' : ''}>价格（低到高）</option>
+          <option value="category-asc" ${sortField === 'category' && sortOrder === 'asc' ? 'selected' : ''}>分类</option>
+          <option value="score-desc" ${sortField === 'score' && sortOrder === 'desc' ? 'selected' : ''}>推荐度（高到低）</option>
         </select>
+      </div>
+      <div class="context-info">
+        ${(() => {
+          const contextLabel = getContextLabel(currentContext.context);
+          if (contextLabel) {
+            return `<span>当前场景：${currentContext.season} ${contextLabel}</span>`;
+          } else {
+            return `<span>当前场景：${currentContext.season}</span>`;
+          }
+        })()}
       </div>
     `;
     
@@ -171,7 +154,6 @@ function renderFoodList(sortField = currentSort.field, sortOrder = currentSort.o
   
   // 渲染食物列表
   foodGrid.innerHTML = sortedFoods.map(food => {
-    const { parameters } = food;
     return `
       <div class="food-item" data-id="${food.id}">
         <div class="food-image-placeholder">
@@ -179,27 +161,35 @@ function renderFoodList(sortField = currentSort.field, sortOrder = currentSort.o
         </div>
         <div class="food-info">
           <h3>${food.name}</h3>
-          <p>${food.description}</p>
-          <div class="food-params">
-            <span class="param-tag">价格: ${parameters.price}/5</span>
-            <span class="param-tag">口味: ${parameters.taste}/5</span>
-            <span class="param-tag">健康: ${parameters.health}/5</span>
-            <span class="param-tag">时间: ${parameters.cookTime}/5</span>
-            <span class="param-tag">喜爱: ${parameters.favorite}/5</span>
+          <div class="food-tags">
+            ${food.tags ? food.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ') : ''}
           </div>
+          ${food.category ? `<p class="food-category">分类：${food.category}</p>` : ''}
         </div>
-        <!-- 移除删除按钮 -->
       </div>
     `;
   }).join('');
 }
 
-// 基于参数权重的随机选择算法
+// 获取场景中文标签
+function getContextLabel(context) {
+  const contextMap = {
+    lunch: '午餐',
+    dinner: '晚餐',
+    general: '' // 通用场景不显示标签
+  };
+  return contextMap[context] || '';
+}
+
+// 基于模型参数的随机选择算法
 function weightedRandomSelect() {
   if (foods.length === 0) {
-    alert('请先添加一些食物！');
+    alert('食物数据正在加载中，请稍候重试！');
     return;
   }
+
+  // 更新当前上下文
+  currentContext = { season: getCurrentSeason(), context: getCurrentContext() };
 
   // 获取结果显示区域
   const resultArea = document.getElementById('foodResult');
@@ -208,61 +198,148 @@ function weightedRandomSelect() {
   
   // 添加动画效果
   resultArea.classList.add('loading');
-  resultArea.innerHTML = '<p>🍽️ 正在为你寻找美食...</p>';
+  
+  // 根据时间段显示不同文案
+  let message = '🍽️ 正在为你推荐美食...';
+  const contextLabel = getContextLabel(currentContext.context);
+  if (contextLabel) {
+    message = '🍽️ 正在为你推荐适合' + contextLabel + '的美食...';
+  }
+  
+  resultArea.innerHTML = '<p>' + message + '</p>';
 
   // 延迟显示结果，模拟思考过程
   setTimeout(() => {
-    // 计算每个食物的得分
+    // 计算每个食物的得分（考虑当前上下文）
     const foodScores = foods.map(food => ({
       food,
       score: calculateFoodScore(food)
     }));
     
-    // 找出最高分数
-    const maxScore = Math.max(...foodScores.map(item => item.score));
+    // 使用softmax归一化，生成概率分布
+    const totalExpScore = foodScores.reduce((sum, { score }) => sum + Math.exp(score), 0);
+    const foodProbabilities = foodScores.map(({ food, score }) => ({
+      food,
+      probability: Math.exp(score) / totalExpScore
+    }));
     
-    // 根据分数创建权重数组
-    // 分数越高，被选中的概率越大
-    let weightedPool = [];
-    foodScores.forEach(({ food, score }) => {
-      // 归一化分数，最高分为10份，其他按比例分配
-      const weight = Math.max(1, Math.round((score / maxScore) * 10));
-      // 根据权重将食物添加到池中多次
-      for (let i = 0; i < weight; i++) {
-        weightedPool.push(food);
+    // 根据概率选择食物
+    const randomValue = Math.random();
+    let cumulativeProbability = 0;
+    let selectedFood = null;
+    
+    for (const { food, probability } of foodProbabilities) {
+      cumulativeProbability += probability;
+      if (randomValue < cumulativeProbability) {
+        selectedFood = food;
+        break;
       }
-    });
+    }
     
-    // 从加权池中随机选择一个食物
-    const randomIndex = Math.floor(Math.random() * weightedPool.length);
-    const selectedFood = weightedPool[randomIndex];
+    // 确保至少选择一个食物
+    selectedFood = selectedFood || foods[Math.floor(Math.random() * foods.length)];
 
     // 更新显示内容
     resultArea.classList.remove('loading');
+    
+    // 构建描述文本
+    let description = '';
+    if (selectedFood.tags && selectedFood.tags.length > 0) {
+      description = selectedFood.tags.join('，');
+    }
+    
     resultArea.innerHTML = `
       <div class="food-item-large">
         <div class="food-image-placeholder" style="background-color: #${Math.floor(Math.random()*16777215).toString(16)}">
           🥘
         </div>
         <h3>${selectedFood.name}</h3>
-        <p>${selectedFood.description || ''}</p>
+        <p class="food-description">${description}</p>
       </div>
     `;
+    
+    // 刷新列表，更新上下文显示
+    renderFoodList();
   }, 1500);
+}
+
+// 加载数据函数
+async function loadData() {
+    try {
+      // 更新加载状态显示
+    const foodGrid = document.querySelector('.food-grid');
+    if (foodGrid) {
+      foodGrid.innerHTML = '<div class="loading-message"><p>📊 正在加载食物数据...</p></div>';
+    } else {
+      console.warn('未找到食物列表容器元素(.food-grid)');
+    }
+    
+    // 从模型加载器获取数据
+    if (modelLoader.loadModel) {
+      await modelLoader.loadModel();
+      foods = modelLoader.getFoodData() || [];
+      modelParams = modelLoader.getModelParams() || {};
+    } else {
+      // 如果模型加载器不可用，尝试直接加载JSON
+      console.log('开始加载JSON文件...');
+      
+      // 先加载food_data.json
+      const foodResponse = await fetch('/data/food_data.json');
+      console.log('food_data.json 响应状态:', foodResponse.status);
+      if (!foodResponse.ok) {
+        throw new Error('食物数据加载失败，状态码: ' + foodResponse.status);
+      }
+      
+      const foodText = await foodResponse.text();
+      console.log('成功获取food_data.json文本内容，长度:', foodText.length);
+      
+      try {
+        foods = JSON.parse(foodText);
+        console.log('food_data.json 解析成功，数据长度:', foods.length);
+      } catch (jsonError) {
+        console.error('解析food_data.json时出错:', jsonError);
+        console.log('出错位置附近的内容:', foodText.substring(Math.max(0, jsonError.position - 50), Math.min(foodText.length, jsonError.position + 50)));
+        throw new Error('解析食物数据失败: ' + jsonError.message);
+      }
+      
+      // 再加载model_params.json
+      const paramsResponse = await fetch('/data/model_params.json');
+      console.log('model_params.json 响应状态:', paramsResponse.status);
+      if (!paramsResponse.ok) {
+        throw new Error('模型参数加载失败，状态码: ' + paramsResponse.status);
+      }
+      
+      const paramsText = await paramsResponse.text();
+      console.log('成功获取model_params.json文本内容，长度:', paramsText.length);
+      
+      try {
+        modelParams = JSON.parse(paramsText);
+        console.log('model_params.json 解析成功');
+      } catch (jsonError) {
+        console.error('解析model_params.json时出错:', jsonError);
+        console.log('出错位置附近的内容:', paramsText.substring(Math.max(0, jsonError.position - 50), Math.min(paramsText.length, jsonError.position + 50)));
+        throw new Error('解析模型参数失败: ' + jsonError.message);
+      }
+    }
+    
+    // 数据加载完成后渲染列表
+    renderFoodList();
+  } catch (error) {
+    console.error('加载数据时出错:', error);
+    alert('食物数据加载失败: ' + error.message + '，请检查控制台获取更多信息。');
+  }
 }
 
 // 初始化页面
 function init() {
-  // 渲染食物列表
-  renderFoodList();
+  // 加载食物数据
+  loadData();
   
   // 绑定随机按钮点击事件
   const randomBtn = document.getElementById('randomFoodBtn');
   if (randomBtn) {
     randomBtn.addEventListener('click', weightedRandomSelect);
   }
-  
-  // 移除权重滑块事件绑定，使用固定权重
 }
 
 // 添加CSS动画
