@@ -1,0 +1,463 @@
+/* whattoeat.css - 吃什么页面样式 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+/* 增大h2标题字体大小 */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.whattoeat-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.whattoeat-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  color: white;
+}
+
+.whattoeat-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.whattoeat-header .description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.food-randomizer {
+  background-color: rgba(248, 249, 250, 0.95);
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.food-randomizer p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.random-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1rem 0;
+  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.random-btn:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.food-result {
+  min-height: 150px;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid rgba(222, 226, 230, 0.5);
+}
+
+.food-result.loading {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.food-adder {
+  margin-bottom: 3rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(222, 226, 230, 0.5);
+}
+
+.food-adder h2 {
+  margin-bottom: 2rem;
+}
+
+.food-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4dabf7;
+}
+
+.parameters-section {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.parameters-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.parameter-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.parameter-group label {
+  flex: 1;
+  min-width: 150px;
+  font-weight: 500;
+}
+
+.parameter-group input[type="range"] {
+  flex: 2;
+  min-width: 200px;
+}
+
+.parameter-group input[type="number"] {
+  width: 100px;
+}
+
+.parameter-group span {
+  min-width: 20px;
+  font-weight: bold;
+  color: #4dabf7;
+}
+
+.add-food-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  align-self: center;
+  margin-top: 1rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.add-food-btn:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.food-list {
+  margin-bottom: 3rem;
+}
+
+.food-list-section {
+  margin-bottom: 4rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.food-list-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 2rem;
+  /* 使用全局h2样式，但增加居中对齐和颜色 */
+}
+
+.empty-state {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #6c757d;
+  padding: 1.5rem;
+}
+
+.food-list {
+  margin-top: 2rem;
+}
+
+.sort-controls {
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  background-color: rgba(248, 249, 250, 0.95);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.sort-options {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sort-options label {
+  font-weight: 600;
+  color: #495057;
+  white-space: nowrap;
+}
+
+.sort-options select {
+  padding: 0.5rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  min-width: 150px;
+  transition: border-color 0.3s ease;
+}
+
+.sort-options select:focus {
+  outline: none;
+  border-color: #4dabf7;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.food-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.food-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.food-image-placeholder {
+  height: 160px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.food-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.food-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.food-info p {
+  margin-bottom: 1rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.food-params {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.param-tag {
+  background-color: #4dabf7;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: rgba(220, 53, 69, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.food-item:hover .remove-btn {
+  opacity: 1;
+}
+
+.remove-btn:hover {
+  background-color: #dc3545;
+}
+
+.randomizer-settings {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin-bottom: 3rem;
+}
+
+.randomizer-settings h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-size: 1.75rem;
+}
+
+.settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.randomizer-settings .parameter-group {
+  margin-bottom: 0;
+}
+
+.no-foods-message {
+  text-align: center;
+  padding: 3rem;
+  color: #6c757d;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  border: 2px dashed #adb5bd;
+}
+
+.food-item-large {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+.food-item-large .food-image-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+.daily-recommendation {
+  background-color: rgba(255, 243, 205, 0.95);
+  border: 1px solid #ffeaa7;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.daily-special {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.daily-reason {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .food-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .food-item-large {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .daily-info {
+    text-align: center;
+  }
+}

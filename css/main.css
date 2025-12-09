@@ -242,6 +242,11 @@ body [data-aos="zoom-in"] {
   content: "\e631";
 }
 
+#nav-whattoeat-link:before {
+  font-family: "iconfont";
+  content: "\e607";
+}
+
 #nav-sun-btn:before {
   font-family: "iconfont";
   content: "\e621";

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易HTML程序示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            border-left: 4px solid #4CAF50;
+        }
+        .error {
+            color: #d9534f;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>简易计算器</h1>
+        
+        <div class="form-group">
+            <label for="num1">第一个数字:</label>
+            <input type="number" id="num1" placeholder="请输入第一个数字">
+        </div>
+        
+        <div class="form-group">
+            <label for="operator">操作符:</label>
+            <select id="operator">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="num2">第二个数字:</label>
+            <input type="number" id="num2" placeholder="请输入第二个数字">
+        </div>
+        
+        <button onclick="calculate()">计算</button>
+        
+        <div class="result" id="result">
+            <h3>计算结果</h3>
+            <p>点击计算按钮查看结果</p>
+        </div>
+    </div>
+    
+    <script>
+        function calculate() {
+            // 获取输入值
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operator = document.getElementById('operator').value;
+            const resultDiv = document.getElementById('result');
+            
+            // 验证输入
+            if (isNaN(num1) || isNaN(num2)) {
+                resultDiv.innerHTML = `
+                    <h3>计算结果</h3>
+                    <p class="error">请输入有效的数字！</p>
+                `;
+                return;
+            }
+            
+            // 执行计算
+            let result;
+            switch(operator) {
+                case 'add':
+                    result = num1 + num2;
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    break;
+                case 'divide':
+                    if (num2 === 0) {
+                        resultDiv.innerHTML = `
+                            <h3>计算结果</h3>
+                            <p class="error">除数不能为零！</p>
+                        `;
+                        return;
+                    }
+                    result = num1 / num2;
+                    break;
+            }
+            
+            // 显示结果
+            resultDiv.innerHTML = `
+                <h3>计算结果</h3>
+                <p>${num1} ${getOperatorSymbol(operator)} ${num2} = ${result}</p>
+            `;
+        }
+        
+        function getOperatorSymbol(op) {
+            switch(op) {
+                case 'add': return '+';
+                case 'subtract': return '-';
+                case 'multiply': return '*';
+                case 'divide': return '/';
+                default: return '';
+            }
+        }
+        
+        // 添加键盘事件监听
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculate();
+            }
+        });
+    </script>
+</body>
+</html>
