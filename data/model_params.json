@@ -50,8 +50,8 @@
   "training_time": "2025-12-09 17:49:10",
   "metadata": {
     "training_date": "2025-12-09 17:49:10",
-    "food_data_source": "C:\\code\\My_Blog\\MilLoong-blog\\backend\\food_recommender\\data\\foods.json",
-    "feedback_data_source": "C:\\code\\My_Blog\\MilLoong-blog\\backend\\food_recommender\\data\\frequency_feedback.json",
+    "food_data_source": "backend/food_recommender/data/foods.json",
+    "feedback_data_source": "backend/food_recommender/data/frequency_feedback.json",
     "algorithm": "基于频率的食物推荐算法"
   }
 }
