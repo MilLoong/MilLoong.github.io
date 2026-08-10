@@ -38,7 +38,7 @@ const DEFAULT_MODEL = {
  * @param {boolean} forceRefresh - 是否强制刷新缓存
  * @returns {Promise<Object>} - 模型数据
  */
-async function loadModel(modelUrl = '/static/data/js_model_data.json', forceRefresh = false) {
+async function loadModel(modelUrl = '/data/model_params.json', forceRefresh = false) {
     try {
         // 首先检查是否有缓存的模型数据
         if (!forceRefresh) {
@@ -275,7 +275,7 @@ function getFeaturePreference(featureType, featureValue) {
  * @param {string} modelUrl - 模型URL
  * @returns {Promise<Object>} - 新的模型数据
  */
-async function refreshModel(modelUrl = '/static/data/js_model_data.json') {
+async function refreshModel(modelUrl = '/data/model_params.json') {
     return loadModel(modelUrl, true);
 }
 
