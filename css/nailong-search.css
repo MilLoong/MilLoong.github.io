@@ -1,0 +1,330 @@
+/* nailong-search.css - 对齐 whattoeat 的页面风格与动效 */
+
+:root {
+  --mobile-breakpoint: 480px;
+}
+
+.nailong-search-container[data-aos="fade-up"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nailong-search-header h1,
+.nailong-search-header p {
+  transition: all 0.3s ease;
+}
+
+.nailong-search-header:hover h1 {
+  transform: scale(1.05);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.nailong-search-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .nailong-search-container {
+    padding: 1rem;
+    max-width: 100%;
+  }
+}
+
+.nailong-search-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  color: white;
+}
+
+.nailong-search-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.nailong-search-header .description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 480px) {
+  .nailong-search-header {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+  }
+
+  .nailong-search-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .nailong-search-header .description {
+    font-size: 1rem;
+  }
+}
+
+.nailong-search-box {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  background-color: rgba(248, 249, 250, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.nailong-search-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+}
+
+.nailong-search-main {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.nailong-search-box input[type="search"] {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(222, 226, 230, 0.9);
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.95);
+  box-sizing: border-box;
+  min-height: 48px;
+  transition: all 0.3s ease;
+}
+
+.nailong-search-box input[type="search"]:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+.nailong-search-box button {
+  flex: 0 0 auto;
+  padding: 0 1.6rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff6b6b;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  min-height: 48px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.nailong-search-box button:hover {
+  background-color: #ff5252;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.nailong-search-box button:active {
+  transform: translateY(0);
+}
+
+.nailong-search-extra {
+  display: block;
+  width: 100%;
+}
+
+.nailong-semantic-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nailong-semantic-option input {
+  width: 0.95rem;
+  height: 0.95rem;
+  margin: 0;
+  accent-color: #ff6b6b;
+  flex-shrink: 0;
+}
+
+.nailong-semantic-hint {
+  color: #999;
+  font-size: 0.82em;
+}
+
+@media (max-width: 480px) {
+  .nailong-search-box {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .nailong-search-main {
+    flex-direction: column;
+  }
+
+  .nailong-search-box button {
+    width: 100%;
+  }
+}
+
+.nailong-results-section {
+  background-color: rgba(248, 249, 250, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.nailong-results-section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .nailong-results-section {
+    padding: 1.5rem;
+  }
+}
+
+.nailong-status {
+  margin-bottom: 1rem;
+  text-align: center;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+.nailong-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1rem;
+  align-items: start;
+}
+
+.nailong-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  animation: nailongFadeIn 0.35s ease both;
+}
+
+.nailong-item img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: min(52vh, 420px);
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+
+.nailong-item .score {
+  font-size: 0.75rem;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.nailong-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.nailong-action-btn {
+  min-width: 88px;
+  min-height: 36px;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #444;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nailong-download-btn {
+  border-color: rgba(255, 107, 107, 0.45);
+  color: #e25555;
+}
+
+.nailong-action-btn:hover {
+  border-color: #ff6b6b;
+  color: #ff5252;
+}
+
+.nailong-action-btn.done {
+  background: #ff6b6b;
+  border-color: #ff6b6b;
+  color: #fff;
+}
+
+@keyframes nailongFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .nailong-grid {
+    gap: 1rem 0.75rem;
+  }
+
+  .nailong-item img {
+    max-height: min(42vh, 320px);
+  }
+
+  .nailong-action-btn {
+    min-height: 40px;
+    flex: 1 1 auto;
+    max-width: 160px;
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "note": "name/aliases index; semantic embeddings are built in the browser",
+  "items": [
+    {
+      "name": "你真讨厌",
+      "aliases": [],
+      "file": "你真讨厌.gif",
+      "text": "你真讨厌"
+    },
+    {
+      "name": "包在我身上，你就放心吧",
+      "aliases": [
+        "你就放心吧"
+      ],
+      "file": "包在我身上，你就放心吧.gif",
+      "text": "包在我身上，你就放心吧 你就放心吧"
+    },
+    {
+      "name": "吃包子",
+      "aliases": [],
+      "file": "吃包子.gif",
+      "text": "吃包子"
+    },
+    {
+      "name": "哈哈哈",
+      "aliases": [],
+      "file": "哈哈哈.gif",
+      "text": "哈哈哈"
+    },
+    {
+      "name": "嘻嘻嘻",
+      "aliases": [],
+      "file": "嘻嘻嘻.gif",
+      "text": "嘻嘻嘻"
+    },
+    {
+      "name": "快跑💨",
+      "aliases": [],
+      "file": "快跑💨.gif",
+      "text": "快跑💨"
+    },
+    {
+      "name": "我不知道啊",
+      "aliases": [],
+      "file": "我不知道啊.gif",
+      "text": "我不知道啊"
+    },
+    {
+      "name": "我也想要",
+      "aliases": [],
+      "file": "我也想要.gif",
+      "text": "我也想要"
+    },
+    {
+      "name": "我来保护你",
+      "aliases": [],
+      "file": "我来保护你.gif",
+      "text": "我来保护你"
+    },
+    {
+      "name": "我能有什么坏心思呢",
+      "aliases": [],
+      "file": "我能有什么坏心思呢.gif",
+      "text": "我能有什么坏心思呢"
+    },
+    {
+      "name": "瞄准~peng",
+      "aliases": [
+        "peng"
+      ],
+      "file": "瞄准~peng.gif",
+      "text": "瞄准~peng peng"
+    }
+  ]
+}

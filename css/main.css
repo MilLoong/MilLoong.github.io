@@ -247,6 +247,11 @@ body [data-aos="zoom-in"] {
   content: "\e607";
 }
 
+#nav-nailong-search-link:before {
+  font-family: "iconfont";
+  content: "\e648";
+}
+
 #nav-sun-btn:before {
   font-family: "iconfont";
   content: "\e621";
