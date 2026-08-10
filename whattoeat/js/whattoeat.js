@@ -284,7 +284,7 @@ async function loadData() {
       console.log('开始加载JSON文件...');
       
       // 先加载food_data.json
-      const foodResponse = await fetch('/data/food_data.json');
+      const foodResponse = await fetch('data/food_data.json');
       console.log('food_data.json 响应状态:', foodResponse.status);
       if (!foodResponse.ok) {
         throw new Error('食物数据加载失败，状态码: ' + foodResponse.status);
@@ -303,7 +303,7 @@ async function loadData() {
       }
       
       // 再加载model_params.json
-      const paramsResponse = await fetch('/data/model_params.json');
+      const paramsResponse = await fetch('data/model_params.json');
       console.log('model_params.json 响应状态:', paramsResponse.status);
       if (!paramsResponse.ok) {
         throw new Error('模型参数加载失败，状态码: ' + paramsResponse.status);

@@ -1,0 +1,57 @@
+{
+  "base_scores": {
+    "food_001": 0.7890824929174289,
+    "food_002": 0.6460849555887883,
+    "food_003": 0.9,
+    "food_004": 0.4445412464587145,
+    "food_005": 0.6460849555887883,
+    "food_006": 0.1,
+    "food_007": 0.1,
+    "food_008": 0.1
+  },
+  "time_preferences": {},
+  "tag_preferences": {},
+  "season_preferences": {},
+  "category_preferences": {
+    "川菜": 0.4166666666666667,
+    "家常菜": 0.25,
+    "汤品": 0.3333333333333333
+  },
+  "frequency_preferences": {
+    "food_001": {
+      "food_name": "宫保鸡丁",
+      "frequency": 3
+    },
+    "food_002": {
+      "food_name": "青椒土豆丝",
+      "frequency": 2
+    },
+    "food_003": {
+      "food_name": "西红柿鸡蛋汤",
+      "frequency": 4
+    },
+    "food_004": {
+      "food_name": "红烧肉",
+      "frequency": 1
+    },
+    "food_005": {
+      "food_name": "鱼香肉丝",
+      "frequency": 2
+    }
+  },
+  "features": {
+    "tags": [],
+    "categories": [],
+    "times": [],
+    "seasons": []
+  },
+  "training_timestamp": "2025-12-09T17:49:10.370712",
+  "training_type": "frequency",
+  "training_time": "2025-12-09 17:49:10",
+  "metadata": {
+    "training_date": "2025-12-09 17:49:10",
+    "food_data_source": "C:\\code\\My_Blog\\MilLoong-blog\\backend\\food_recommender\\data\\foods.json",
+    "feedback_data_source": "C:\\code\\My_Blog\\MilLoong-blog\\backend\\food_recommender\\data\\frequency_feedback.json",
+    "algorithm": "基于频率的食物推荐算法"
+  }
+}
