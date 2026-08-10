@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "宫保鸡丁",
+    "tags": ["辣", "鸡肉", "川菜"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["lunch", "dinner"]
+  },
+  {
+    "id": 2,
+    "name": "西红柿鸡蛋面",
+    "tags": ["酸甜", "面食", "家常"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["breakfast", "lunch"]
+  },
+  {
+    "id": 3,
+    "name": "红烧肉",
+    "tags": ["甜", "猪肉", "家常"],
+    "category": "main",
+    "seasons": ["winter", "autumn"],
+    "contexts": ["lunch", "dinner", "weekend"]
+  },
+  {
+    "id": 4,
+    "name": "凉拌黄瓜",
+    "tags": ["清爽", "素食", "凉菜"],
+    "category": "side",
+    "seasons": ["summer", "spring"],
+    "contexts": ["all"]
+  },
+  {
+    "id": 5,
+    "name": "清蒸鱼",
+    "tags": ["清淡", "海鲜", "健康"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["dinner", "weekend"]
+  },
+  {
+    "id": 6,
+    "name": "酸辣土豆丝",
+    "tags": ["酸辣", "素食", "家常"],
+    "category": "side",
+    "seasons": ["all"],
+    "contexts": ["all"]
+  },
+  {
+    "id": 7,
+    "name": "蛋炒饭",
+    "tags": ["米饭", "家常", "快餐"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["lunch", "snack"]
+  },
+  {
+    "id": 8,
+    "name": "麻婆豆腐",
+    "tags": ["辣", "豆腐", "川菜"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["lunch", "dinner"]
+  },
+  {
+    "id": 9,
+    "name": "糖醋排骨",
+    "tags": ["酸甜", "猪肉", "家常"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["dinner", "weekend"]
+  },
+  {
+    "id": 10,
+    "name": "青菜汤",
+    "tags": ["清淡", "素食", "汤品"],
+    "category": "soup",
+    "seasons": ["all"],
+    "contexts": ["all"]
+  },
+  {
+    "id": 11,
+    "name": "炸鸡排",
+    "tags": ["油炸", "鸡肉", "快餐"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["lunch", "snack"]
+  },
+  {
+    "id": 12,
+    "name": "韭菜盒子",
+    "tags": ["面食", "家常", "素食"],
+    "category": "snack",
+    "seasons": ["spring", "winter"],
+    "contexts": ["breakfast", "snack"]
+  },
+  {
+    "id": 13,
+    "name": "可乐鸡翅",
+    "tags": ["甜", "鸡肉", "家常"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["lunch", "dinner"]
+  },
+  {
+    "id": 14,
+    "name": "蒜蓉油麦菜",
+    "tags": ["素食", "清淡", "家常"],
+    "category": "side",
+    "seasons": ["all"],
+    "contexts": ["all"]
+  },
+  {
+    "id": 15,
+    "name": "扬州炒饭",
+    "tags": ["米饭", "家常", "快餐"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["lunch", "dinner"]
+  },
+  {
+    "id": 16,
+    "name": "鱼香肉丝",
+    "tags": ["辣", "猪肉", "川菜"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["lunch", "dinner"]
+  },
+  {
+    "id": 17,
+    "name": "冬瓜排骨汤",
+    "tags": ["汤品", "清淡", "猪肉"],
+    "category": "soup",
+    "seasons": ["summer", "autumn"],
+    "contexts": ["lunch", "dinner"]
+  },
+  {
+    "id": 18,
+    "name": "葱油拌面",
+    "tags": ["面食", "家常", "素食"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["breakfast", "lunch"]
+  },
+  {
+    "id": 19,
+    "name": "可乐鸭翅",
+    "tags": ["甜", "鸭肉", "家常"],
+    "category": "main",
+    "seasons": ["all"],
+    "contexts": ["lunch", "dinner", "snack"]
+  },
+  {
+    "id": 20,
+    "name": "醋溜白菜",
+    "tags": ["素食", "酸甜", "家常"],
+    "category": "side",
+    "seasons": ["all"],
+    "contexts": ["all"]
+  }
+]
