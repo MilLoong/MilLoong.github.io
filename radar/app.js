@@ -1,15 +1,8 @@
 
 async function main() {
   const data = await (await fetch('./data.json', { cache: 'no-store' })).json();
-  const hz = (data.project && data.project.horizon) || {};
-  const lookahead = hz.lookahead_days != null ? hz.lookahead_days : 14;
   document.getElementById('generated-at').textContent =
     '更新时间：' + (data.project.generated_at || '');
-  const horizonNote = document.getElementById('horizon-note');
-  if (horizonNote) {
-    horizonNote.textContent =
-      '默认展示未来 ' + lookahead + ' 天内的节点（含仍在进行中的跨天赛程）。下方列表仅含该窗口；全量见 JSON / ICS。';
-  }
   const horizonNodes = data.horizon_milestones || data.milestones || [];
   document.getElementById('stat-comp').textContent = data.competitions.length;
   document.getElementById('stat-node').textContent = horizonNodes.length;

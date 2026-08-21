@@ -5,7 +5,7 @@ CALSCALE:GREGORIAN
 X-WR-CALNAME:电子科大推免竞赛日程雷达
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T145222
+DTSTART:20260821T145649
 UID:milestone-1@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/\n证据: 全国大学生数学建模竞赛\n首页\n竞赛组
@@ -37,7 +37,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T145222
+DTSTART:20260821T145649
 UID:milestone-2@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/section/302f2c2355b1179ada9b99a06d7109f5.html\n证据:
@@ -71,7 +71,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T145222
+DTSTART:20260821T145649
 UID:milestone-3@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/56839f97c847c3ab2646b42819446621.html\n证据: 
@@ -105,7 +105,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T145222
+DTSTART:20260821T145649
 UID:milestone-4@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/fef94648f2836ab6cc81586f4c38512b.html\n证据: 
@@ -139,7 +139,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T145222
+DTSTART:20260821T145649
 UID:milestone-5@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/0e05b857c0474518ad1d112d36edc486.html\n证据: 
@@ -173,7 +173,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T145222
+DTSTART:20260821T145649
 UID:milestone-6@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/3703fb7f6e16f999f45aac0593b1e1ff.html\n证据: 
@@ -207,7 +207,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T145222
+DTSTART:20260821T145649
 UID:milestone-7@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/b8e2aa5ba9c62412de516208a3a0490e.html\n证据: 
@@ -241,7 +241,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T145222
+DTSTART:20260821T145649
 UID:milestone-8@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/d6fd7a0ee8f3a3d525e30af1c365fcec.html\n证据: 
@@ -275,7 +275,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T145222
+DTSTART:20260821T145649
 UID:milestone-9@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/c579a2643888f6b2f6c7f2d285e09a81.html\n证据: 
