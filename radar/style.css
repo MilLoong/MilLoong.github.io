@@ -362,6 +362,10 @@ button.danger { background: var(--danger); }
   display: flex;
   flex-direction: column;
 }
+/* display:flex 会盖掉 details 默认折叠，需显式隐藏 */
+details.cat-row:not([open]) > .cat-messages {
+  display: none;
+}
 .cat-msg {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--line);
