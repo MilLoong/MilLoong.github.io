@@ -5,7 +5,7 @@ CALSCALE:GREGORIAN
 X-WR-CALNAME:电子科大推免竞赛日程雷达
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T142013
+DTSTART:20260821T145222
 UID:milestone-1@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/\n证据: 全国大学生数学建模竞赛\n首页\n竞赛组
@@ -16,13 +16,28 @@ DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
 URL:https://www.mcm.edu.cn/
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 数学建模 其他节点
+DESCRIPTION:提醒: 数学建模 其他节点（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T142013
+DTSTART:20260821T145222
 UID:milestone-2@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/section/302f2c2355b1179ada9b99a06d7109f5.html\n证据:
@@ -35,13 +50,28 @@ URL:https://www.mcm.edu.cn/html_cn/section/302f2c2355b1179ada9b99a06d7109f
  5.html
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 数学建模 其他节点
+DESCRIPTION:提醒: 数学建模 其他节点（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T142013
+DTSTART:20260821T145222
 UID:milestone-3@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/56839f97c847c3ab2646b42819446621.html\n证据: 
@@ -54,13 +84,28 @@ URL:https://www.mcm.edu.cn/html_cn/node/56839f97c847c3ab2646b42819446621.h
  tml
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 数学建模 其他节点
+DESCRIPTION:提醒: 数学建模 其他节点（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T142013
+DTSTART:20260821T145222
 UID:milestone-4@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/fef94648f2836ab6cc81586f4c38512b.html\n证据: 
@@ -73,13 +118,28 @@ URL:https://www.mcm.edu.cn/html_cn/node/fef94648f2836ab6cc81586f4c38512b.h
  tml
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 数学建模 其他节点
+DESCRIPTION:提醒: 数学建模 其他节点（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T142013
+DTSTART:20260821T145222
 UID:milestone-5@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/0e05b857c0474518ad1d112d36edc486.html\n证据: 
@@ -92,13 +152,28 @@ URL:https://www.mcm.edu.cn/html_cn/node/0e05b857c0474518ad1d112d36edc486.h
  tml
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 数学建模 其他节点
+DESCRIPTION:提醒: 数学建模 其他节点（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T142013
+DTSTART:20260821T145222
 UID:milestone-6@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/3703fb7f6e16f999f45aac0593b1e1ff.html\n证据: 
@@ -111,13 +186,28 @@ URL:https://www.mcm.edu.cn/html_cn/node/3703fb7f6e16f999f45aac0593b1e1ff.h
  tml
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 数学建模 其他节点
+DESCRIPTION:提醒: 数学建模 其他节点（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T142013
+DTSTART:20260821T145222
 UID:milestone-7@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/b8e2aa5ba9c62412de516208a3a0490e.html\n证据: 
@@ -130,13 +220,28 @@ URL:https://www.mcm.edu.cn/html_cn/node/b8e2aa5ba9c62412de516208a3a0490e.h
  tml
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 数学建模 其他节点
+DESCRIPTION:提醒: 数学建模 其他节点（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T142013
+DTSTART:20260821T145222
 UID:milestone-8@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/d6fd7a0ee8f3a3d525e30af1c365fcec.html\n证据: 
@@ -149,13 +254,28 @@ URL:https://www.mcm.edu.cn/html_cn/node/d6fd7a0ee8f3a3d525e30af1c365fcec.h
  tml
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 数学建模 其他节点
+DESCRIPTION:提醒: 数学建模 其他节点（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:数学建模 · 其他节点
-DTSTART:20260821T142013
+DTSTART:20260821T145222
 UID:milestone-9@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
  .mcm.edu.cn/html_cn/node/c579a2643888f6b2f6c7f2d285e09a81.html\n证据: 
@@ -168,7 +288,22 @@ URL:https://www.mcm.edu.cn/html_cn/node/c579a2643888f6b2f6c7f2d285e09a81.h
  tml
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 数学建模 其他节点
+DESCRIPTION:提醒: 数学建模 其他节点（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
