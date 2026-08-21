@@ -9,10 +9,10 @@ function fmtRange(start, end) {
 async function main() {
   const data = await (await fetch('./data.json', { cache: 'no-store' })).json();
   document.getElementById('generated-at').textContent =
-    '更新时间：' + (data.project.generated_at || '');
-  const horizonNodes = data.horizon_milestones || data.milestones || [];
+    '更新时间：' + (data.generated_at || '');
+  const nodes = data.milestones || [];
   document.getElementById('stat-comp').textContent = data.competitions.length;
-  document.getElementById('stat-node').textContent = horizonNodes.length;
+  document.getElementById('stat-node').textContent = nodes.length;
   document.getElementById('stat-group').textContent = data.milestone_groups.length;
 
   const feed = document.getElementById('feed');
@@ -41,7 +41,6 @@ async function main() {
               <span class="badge">${escapeHtml(m.event_label)}</span>
               <span class="badge ${m.status === 'verified' ? 'ok' : 'warn'}">${escapeHtml(m.status)}</span>
             </div>
-            <div class="snippet">${escapeHtml(m.evidence_snippet || '')}</div>
             <div class="cat-msg-meta">
               <span>${fmtDate(m.starts_at) || '待定'}${m.ends_at && m.ends_at !== m.starts_at ? ' ~ ' + fmtDate(m.ends_at) : ''}</span>
             </div>
