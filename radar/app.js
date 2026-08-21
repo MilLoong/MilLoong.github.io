@@ -1,4 +1,11 @@
 
+function fmtRange(start, end) {
+  if (!start) return '日期待定';
+  const a = fmtDate(start);
+  const b = fmtDate(end);
+  if (b && b !== a) return a + ' ~ ' + b;
+  return a;
+}
 async function main() {
   const data = await (await fetch('./data.json', { cache: 'no-store' })).json();
   document.getElementById('generated-at').textContent =
@@ -10,17 +17,22 @@ async function main() {
 
   const feed = document.getElementById('feed');
   if (!data.milestone_groups.length) {
-    feed.innerHTML = '<p class="meta">该时间窗口内暂无赛程节点。等待下次 Actions 抓取，或查看 JSON 全量数据。</p>';
+    feed.innerHTML = '<p class="meta">暂无赛程节点。</p>';
     return;
   }
   feed.innerHTML = data.milestone_groups.map(g => `
-    <article class="cat-row">
-      <aside class="cat-box">
-        <div class="cat-id">#${g.competition_id || '—'}</div>
-        <div class="cat-name">${escapeHtml(g.name)}</div>
-        <div class="cat-sub">${escapeHtml(g.full_name || '')}</div>
-        <div class="cat-count">${g.count} 条</div>
-      </aside>
+    <details class="cat-row">
+      <summary class="cat-summary">
+        <div class="cat-summary-left">
+          <span class="cat-id">#${g.competition_id || '—'}</span>
+          <span class="cat-name">${escapeHtml(g.name)}</span>
+          <span class="cat-sub">${escapeHtml(g.full_name || '')}</span>
+        </div>
+        <div class="cat-summary-right">
+          <span class="cat-range">${escapeHtml(fmtRange(g.range_start, g.range_end))}</span>
+          <span class="cat-count">${g.count} 条</span>
+        </div>
+      </summary>
       <ul class="cat-messages">
         ${g.messages.map(m => `
           <li class="cat-msg">
@@ -35,9 +47,9 @@ async function main() {
             </div>
           </li>`).join('')}
       </ul>
-    </article>`).join('');
+    </details>`).join('');
 }
-function fmtDate(s){ if(!s) return ''; return s.slice(0,10); }
+function fmtDate(s){ if(!s) return ''; return String(s).slice(0,10); }
 function escapeHtml(s){
   return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }

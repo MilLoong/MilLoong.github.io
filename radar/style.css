@@ -229,9 +229,10 @@ button.danger { background: var(--danger); }
 .site-footer {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1rem 1.5rem 2rem;
+  padding: 0.5rem 1.5rem 1.5rem;
   color: var(--muted);
   font-size: 0.82rem;
+  min-height: 0;
 }
 
 .crawl-bar {
@@ -284,31 +285,44 @@ button.danger { background: var(--danger); }
 }
 .group-label { color: var(--brand-dark); }
 
-/* 左类别 + 右消息流 */
+/* 左类别 + 右消息流（赛事默认折叠） */
 .cat-feed {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.65rem;
 }
 .cat-row {
-  display: grid;
-  grid-template-columns: minmax(140px, 200px) 1fr;
-  gap: 0;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
   background: #fff;
-  min-height: 120px;
 }
-.cat-box {
+.cat-summary {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.35rem;
-  padding: 1rem 0.9rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  list-style: none;
   background:
     linear-gradient(160deg, #e7f3ec 0%, #d7e8de 100%);
-  border-right: 1px solid var(--line);
+}
+.cat-summary::-webkit-details-marker { display: none; }
+.cat-summary::marker { content: ""; }
+.cat-summary-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.cat-summary-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  flex-shrink: 0;
+  text-align: right;
 }
 .cat-id {
   font-size: 0.75rem;
@@ -317,7 +331,7 @@ button.danger { background: var(--danger); }
 }
 .cat-name {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--brand-dark);
   line-height: 1.3;
@@ -327,11 +341,19 @@ button.danger { background: var(--danger); }
   color: var(--muted);
   line-height: 1.35;
 }
+.cat-range {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--brand-dark);
+  font-variant-numeric: tabular-nums;
+}
 .cat-count {
-  margin-top: 0.35rem;
   font-size: 0.78rem;
   color: var(--brand);
   font-weight: 600;
+}
+.cat-row[open] > .cat-summary {
+  border-bottom: 1px solid var(--line);
 }
 .cat-messages {
   list-style: none;
@@ -370,7 +392,35 @@ button.danger { background: var(--danger); }
 }
 
 @media (max-width: 700px) {
-  .cat-row {
+  .cat-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cat-summary-right {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* 日历 / 来源页仍用左右分栏卡片 */
+article.cat-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  gap: 0;
+  min-height: 0;
+}
+.cat-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1rem 0.9rem;
+  background:
+    linear-gradient(160deg, #e7f3ec 0%, #d7e8de 100%);
+  border-right: 1px solid var(--line);
+}
+@media (max-width: 700px) {
+  article.cat-row {
     grid-template-columns: 1fr;
   }
   .cat-box {
