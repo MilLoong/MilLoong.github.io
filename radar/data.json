@@ -1,0 +1,845 @@
+{
+  "project": {
+    "name_zh": "电子科大推免竞赛日程雷达",
+    "name_en": "UESTC Baoyan Competition Radar",
+    "generated_at": "2026-08-21T14:20:23.090123+00:00",
+    "catalog": "校教〔2026〕39号 学科竞赛目录（56项）"
+  },
+  "competitions": [
+    {
+      "id": "1",
+      "name": "中国国际大学生创新大赛",
+      "short_name": "创新大赛",
+      "directions": [
+        "创新创业",
+        "软件产品"
+      ],
+      "official_url": "https://cy.ncss.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "10",
+      "name": "全国大学生智能汽车竞赛",
+      "short_name": "智能汽车竞赛",
+      "directions": [
+        "嵌入式",
+        "控制",
+        "AI"
+      ],
+      "official_url": "https://smartcar.cdstm.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "11",
+      "name": "全国大学生机器人大赛（CURC）",
+      "short_name": "CURC",
+      "directions": [
+        "机器人"
+      ],
+      "official_url": "https://www.cnrobocon.net/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "12",
+      "name": "全国大学生光电设计竞赛",
+      "short_name": "光电设计",
+      "directions": [
+        "光电",
+        "光学"
+      ],
+      "official_url": "http://gdjs.ciomp.ac.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "13",
+      "name": "全国大学生信息安全竞赛",
+      "short_name": "信息安全竞赛",
+      "directions": [
+        "安全",
+        "攻防",
+        "数据安全"
+      ],
+      "official_url": "https://www.ciscn.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "14",
+      "name": "外研社·国才杯·理解当代中国全国大学生外语能力大赛",
+      "short_name": "国才杯",
+      "directions": [
+        "外语"
+      ],
+      "official_url": "https://uc.unipus.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "15",
+      "name": "全国大学生电子商务创新、创意及创业挑战赛",
+      "short_name": "三创赛",
+      "directions": [
+        "电商",
+        "创新创业"
+      ],
+      "official_url": "http://www.3chuang.net/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "16",
+      "name": "全国大学生节能减排社会实践与科技竞赛",
+      "short_name": "节能减排",
+      "directions": [
+        "能源",
+        "环保"
+      ],
+      "official_url": "http://www.jienengjianpai.net/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "17",
+      "name": "中国大学生工程实践与创新能力大赛",
+      "short_name": "工程实践创新大赛",
+      "directions": [
+        "工程实践",
+        "嵌入式",
+        "系统"
+      ],
+      "official_url": "https://www.gcxl.edu.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "18",
+      "name": "全国大学生创新创业训练计划年会展示",
+      "short_name": "大创年会",
+      "directions": [
+        "创新创业"
+      ],
+      "official_url": "https://www.csrp.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "19",
+      "name": "西门子杯中国智能制造挑战赛",
+      "short_name": "西门子杯",
+      "directions": [
+        "智能制造"
+      ],
+      "official_url": "https://www.siemenscup-cimc.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "2",
+      "name": "挑战杯全国大学生课外学术科技作品竞赛",
+      "short_name": "挑战杯学术竞赛",
+      "directions": [
+        "科研项目"
+      ],
+      "official_url": "https://www.tiaozhanbei.net/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "20",
+      "name": "全国大学生先进成图技术与产品信息建模创新大赛",
+      "short_name": "先进成图",
+      "directions": [
+        "成图",
+        "建模"
+      ],
+      "official_url": "http://www.china-adt.com/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "21",
+      "name": "中国大学生计算机设计大赛",
+      "short_name": "计算机设计大赛",
+      "directions": [
+        "软件",
+        "AI",
+        "应用开发"
+      ],
+      "official_url": "https://jsjds.com.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "22",
+      "name": "全国大学生市场调查与分析大赛",
+      "short_name": "市调大赛",
+      "directions": [
+        "数据分析",
+        "调研"
+      ],
+      "official_url": "https://www.china-msa.org/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "23",
+      "name": "中国大学生服务外包创新创业大赛",
+      "short_name": "服务外包大赛",
+      "directions": [
+        "软件工程",
+        "项目交付"
+      ],
+      "official_url": "https://www.fwwb.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "24",
+      "name": "中国高校计算机大赛",
+      "short_name": "高校计算机大赛",
+      "directions": [
+        "软件",
+        "数据",
+        "AI",
+        "网络"
+      ],
+      "official_url": "https://www.c4best.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "25",
+      "name": "中国机器人大赛暨 RoboCup 机器人世界杯中国赛",
+      "short_name": "RoboCup",
+      "directions": [
+        "AI",
+        "机器人",
+        "软件系统"
+      ],
+      "official_url": "https://www.cnrobocon.net/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "26",
+      "name": "全国周培源大学生力学竞赛",
+      "short_name": "周培源力学竞赛",
+      "directions": [
+        "力学"
+      ],
+      "official_url": "http://zpy.cstam.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "27",
+      "name": "中国软件杯大学生软件设计大赛",
+      "short_name": "软件杯",
+      "directions": [
+        "软件工程",
+        "应用开发"
+      ],
+      "official_url": "http://www.cnsoftbei.com/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "28",
+      "name": "未来设计师·全国高校数字艺术设计大赛",
+      "short_name": "数字艺术设计大赛",
+      "directions": [
+        "设计",
+        "数字艺术"
+      ],
+      "official_url": "http://www.ncda.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "29",
+      "name": "中美青年创客大赛",
+      "short_name": "中美创客大赛",
+      "directions": [
+        "创新创业"
+      ],
+      "official_url": "http://chinaus-maker.org/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "3",
+      "name": "挑战杯中国大学生创业计划大赛",
+      "short_name": "挑战杯创业计划",
+      "directions": [
+        "创业"
+      ],
+      "official_url": "https://www.tiaozhanbei.net/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "30",
+      "name": "全国大学生集成电路创新创业大赛",
+      "short_name": "集成电路创新创业大赛",
+      "directions": [
+        "芯片",
+        "集成电路"
+      ],
+      "official_url": "https://univ-ic.cesa.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "31",
+      "name": "全国大学生广告艺术大赛",
+      "short_name": "大广赛",
+      "directions": [
+        "创意",
+        "设计"
+      ],
+      "official_url": "http://www.sun-ada.net/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "32",
+      "name": "中国大学生医学技术技能大赛",
+      "short_name": "医学技术技能大赛",
+      "directions": [
+        "医学"
+      ],
+      "official_url": "https://www.nmec.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "33",
+      "name": "中国大学生机械工程创新创意大赛",
+      "short_name": "机械工程创新创意",
+      "directions": [
+        "机械"
+      ],
+      "official_url": "http://www.csmec.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "34",
+      "name": "全国大学生金相技能大赛",
+      "short_name": "金相技能大赛",
+      "directions": [
+        "材料"
+      ],
+      "official_url": "http://www.jinxiang.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "35",
+      "name": "两岸新锐设计竞赛·华灿奖",
+      "short_name": "华灿奖",
+      "directions": [
+        "设计"
+      ],
+      "official_url": "http://www.huacanjiang.com/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "36",
+      "name": "全国大学生结构设计竞赛",
+      "short_name": "结构设计",
+      "directions": [
+        "土木",
+        "结构"
+      ],
+      "official_url": "http://www.structurecontest.org/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "37",
+      "name": "米兰设计周--中国高校设计学科师生优秀作品展",
+      "short_name": "米兰设计周作品展",
+      "directions": [
+        "设计"
+      ],
+      "official_url": "http://www.milan-design.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "38",
+      "name": "美国大学生数学建模竞赛",
+      "short_name": "MCM/ICM",
+      "directions": [
+        "建模",
+        "数据分析"
+      ],
+      "official_url": "https://www.comap.com/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "39",
+      "name": "国际基因工程机器大赛（iGEM）",
+      "short_name": "iGEM",
+      "directions": [
+        "生物工程",
+        "合成生物学"
+      ],
+      "official_url": "https://igem.org/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "4",
+      "name": "全国大学生数学竞赛",
+      "short_name": "数学竞赛",
+      "directions": [
+        "数学"
+      ],
+      "official_url": "http://www.cmathc.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "40",
+      "name": "中国机器人及人工智能大赛",
+      "short_name": "机器人及AI大赛",
+      "directions": [
+        "机器人",
+        "AI"
+      ],
+      "official_url": "http://www.caai.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "41",
+      "name": "全国高校商业精英挑战赛",
+      "short_name": "商业精英挑战赛",
+      "directions": [
+        "商科"
+      ],
+      "official_url": "http://www.nfib.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "42",
+      "name": "中国好创意暨全国数字艺术设计大赛",
+      "short_name": "中国好创意",
+      "directions": [
+        "设计",
+        "数字艺术"
+      ],
+      "official_url": "http://www.ncda.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "43",
+      "name": "全国三维数字化创新设计大赛",
+      "short_name": "3D创新设计大赛",
+      "directions": [
+        "三维设计"
+      ],
+      "official_url": "http://www.3dds.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "44",
+      "name": "学创杯全国大学生创业综合模拟大赛",
+      "short_name": "学创杯",
+      "directions": [
+        "创业"
+      ],
+      "official_url": "http://www.xcbsim.com/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "45",
+      "name": "大唐杯全国大学生新一代信息通信技术大赛",
+      "short_name": "大唐杯",
+      "directions": [
+        "通信",
+        "网络"
+      ],
+      "official_url": "http://www.dtexam.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "46",
+      "name": "全国大学生物理实验竞赛",
+      "short_name": "物理实验竞赛",
+      "directions": [
+        "物理"
+      ],
+      "official_url": "http://physlab.ustc.edu.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "47",
+      "name": "睿抗机器人开发者大赛（RAICOM）",
+      "short_name": "RAICOM",
+      "directions": [
+        "机器人"
+      ],
+      "official_url": "https://www.raicom.com.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "48",
+      "name": "全国大学生生命科学竞赛（CULSC）",
+      "short_name": "生命科学竞赛",
+      "directions": [
+        "生物",
+        "生命科学"
+      ],
+      "official_url": "http://www.culsc.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "49",
+      "name": "华为 ICT 大赛",
+      "short_name": "华为ICT",
+      "directions": [
+        "云",
+        "网络",
+        "AI",
+        "编程"
+      ],
+      "official_url": "https://e.huawei.com/cn/talent/ict-competition/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "5",
+      "name": "中国大学生物理学术竞赛",
+      "short_name": "物理学术竞赛",
+      "directions": [
+        "物理"
+      ],
+      "official_url": "http://www.cupt.org.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "50",
+      "name": "全国大学生嵌入式芯片与系统设计竞赛",
+      "short_name": "嵌入式芯片竞赛",
+      "directions": [
+        "嵌入式",
+        "芯片",
+        "系统软件"
+      ],
+      "official_url": "https://www.socchina.net/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "51",
+      "name": "中国高校智能机器人创意大赛",
+      "short_name": "智能机器人创意大赛",
+      "directions": [
+        "机器人",
+        "AI"
+      ],
+      "official_url": "http://www.roboticcontest.com/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "52",
+      "name": "全国大学生计算机系统能力大赛",
+      "short_name": "计算机系统能力大赛",
+      "directions": [
+        "系统软件",
+        "计算机"
+      ],
+      "official_url": "https://compiler.educg.net/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "53",
+      "name": "21世纪杯全国英语演讲比赛",
+      "short_name": "21世纪杯",
+      "directions": [
+        "外语",
+        "演讲"
+      ],
+      "official_url": "http://contest.i21st.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "54",
+      "name": "外教社杯全国高校学生跨文化能力大赛",
+      "short_name": "外教社杯",
+      "directions": [
+        "外语",
+        "跨文化"
+      ],
+      "official_url": "http://icc.sflep.com/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "55",
+      "name": "全国大学生物联网设计竞赛",
+      "short_name": "物联网设计",
+      "directions": [
+        "物联网",
+        "嵌入式"
+      ],
+      "official_url": "http://www.iotcontest.org/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "56",
+      "name": "全国大学生医学创新大赛暨一带一路国际竞赛",
+      "short_name": "医学创新大赛",
+      "directions": [
+        "医学",
+        "创新"
+      ],
+      "official_url": "https://www.cmda.net/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "6",
+      "name": "ACM-ICPC 国际大学生程序设计竞赛",
+      "short_name": "ACM-ICPC",
+      "directions": [
+        "算法",
+        "竞赛编程"
+      ],
+      "official_url": "https://icpc.global/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "7",
+      "name": "全国大学生数学建模竞赛",
+      "short_name": "数学建模",
+      "directions": [
+        "建模",
+        "数据分析"
+      ],
+      "official_url": "https://www.mcm.edu.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "8",
+      "name": "全国大学生电子设计竞赛",
+      "short_name": "电子设计竞赛",
+      "directions": [
+        "电子",
+        "嵌入式",
+        "硬件"
+      ],
+      "official_url": "https://www.nuedc-training.com.cn/",
+      "recognition_status": "confirmed_by_school_2027"
+    },
+    {
+      "id": "9",
+      "name": "全国大学生机械创新设计大赛",
+      "short_name": "机械创新",
+      "directions": [
+        "机械",
+        "工程"
+      ],
+      "official_url": "http://www.jixiechuangxin.com/",
+      "recognition_status": "confirmed_by_school_2027"
+    }
+  ],
+  "milestone_groups": [
+    {
+      "competition_id": "7",
+      "name": "数学建模",
+      "full_name": "全国大学生数学建模竞赛",
+      "count": 9,
+      "messages": [
+        {
+          "id": 1,
+          "title": "全国大学生数学建模竞赛",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-21T14:20:13.944993+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "confidence": 0.35,
+          "evidence_snippet": "全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n欢迎参加世界上规模最大的数学建模竞赛 ---- 一次参赛，终身受益！\n该竞赛创办于1992年，每年一届，2025年来自全国及美国、英国、加",
+          "source_url": "https://www.mcm.edu.cn/"
+        },
+        {
+          "id": 2,
+          "title": "竞赛组织",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-21T14:20:13.954601+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "confidence": 0.35,
+          "evidence_snippet": "全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n宗旨与原则\n章程及规则\n全国组委会\n赛区组委会\n信息管理系统\n联系我们\n位置:\n首页\n竞赛组织\n本竞赛一般在每年9月中旬某个周末举行（从2",
+          "source_url": "https://www.mcm.edu.cn/html_cn/section/302f2c2355b1179ada9b99a06d7109f5.html"
+        },
+        {
+          "id": 3,
+          "title": "竞赛30周年视频",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-21T14:20:13.957849+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "confidence": 0.35,
+          "evidence_snippet": "全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏\n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n经典收藏\n竞赛30周年视",
+          "source_url": "https://www.mcm.edu.cn/html_cn/node/56839f97c847c3ab2646b42819446621.html"
+        },
+        {
+          "id": 4,
+          "title": "全国大学生数学建模竞赛人工智能工具使用规定 （2026年试行）",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-21T14:20:13.960307+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "confidence": 0.35,
+          "evidence_snippet": "全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n宗旨与原则\n章程及规则\n全国组委会\n赛区组委会\n信息管理系统\n联系我们\n位置:\n首页\n竞赛组织\n章程及规则\n全国大学生数学建模竞赛人工智能",
+          "source_url": "https://www.mcm.edu.cn/html_cn/node/fef94648f2836ab6cc81586f4c38512b.html"
+        },
+        {
+          "id": 5,
+          "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会成功举行",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-21T14:20:13.962874+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "confidence": 0.35,
+          "evidence_snippet": "全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏\n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n新闻\n2026年全国大学",
+          "source_url": "https://www.mcm.edu.cn/html_cn/node/0e05b857c0474518ad1d112d36edc486.html"
+        },
+        {
+          "id": 6,
+          "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第二次通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-21T14:20:13.965288+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "confidence": 0.35,
+          "evidence_snippet": "全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏\n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n通知与公告\n2026年全",
+          "source_url": "https://www.mcm.edu.cn/html_cn/node/3703fb7f6e16f999f45aac0593b1e1ff.html"
+        },
+        {
+          "id": 7,
+          "title": "关于推荐“全国大学生数学建模竞赛优秀指导教师、优秀组织工作者”的通知（2026年）",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-21T14:20:13.968273+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "confidence": 0.35,
+          "evidence_snippet": "全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏\n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n优秀教师与组织者\n关于推",
+          "source_url": "https://www.mcm.edu.cn/html_cn/node/b8e2aa5ba9c62412de516208a3a0490e.html"
+        },
+        {
+          "id": 8,
+          "title": "2026高教社杯全国大学生数学建模竞赛第一次通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-21T14:20:13.971005+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "confidence": 0.35,
+          "evidence_snippet": "全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏\n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n通知与公告\n2026高教",
+          "source_url": "https://www.mcm.edu.cn/html_cn/node/d6fd7a0ee8f3a3d525e30af1c365fcec.html"
+        },
+        {
+          "id": 9,
+          "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第一次通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-21T14:20:13.973504+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "confidence": 0.35,
+          "evidence_snippet": "全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏\n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n通知与公告\n2026年全",
+          "source_url": "https://www.mcm.edu.cn/html_cn/node/c579a2643888f6b2f6c7f2d285e09a81.html"
+        }
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "id": 1,
+      "competition_id": "7",
+      "competition_name": "数学建模",
+      "title": "全国大学生数学建模竞赛",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-21T14:20:13.944993+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.mcm.edu.cn/"
+    },
+    {
+      "id": 2,
+      "competition_id": "7",
+      "competition_name": "数学建模",
+      "title": "竞赛组织",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-21T14:20:13.954601+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.mcm.edu.cn/html_cn/section/302f2c2355b1179ada9b99a06d7109f5.html"
+    },
+    {
+      "id": 3,
+      "competition_id": "7",
+      "competition_name": "数学建模",
+      "title": "竞赛30周年视频",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-21T14:20:13.957849+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.mcm.edu.cn/html_cn/node/56839f97c847c3ab2646b42819446621.html"
+    },
+    {
+      "id": 4,
+      "competition_id": "7",
+      "competition_name": "数学建模",
+      "title": "全国大学生数学建模竞赛人工智能工具使用规定 （2026年试行）",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-21T14:20:13.960307+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.mcm.edu.cn/html_cn/node/fef94648f2836ab6cc81586f4c38512b.html"
+    },
+    {
+      "id": 5,
+      "competition_id": "7",
+      "competition_name": "数学建模",
+      "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会成功举行",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-21T14:20:13.962874+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.mcm.edu.cn/html_cn/node/0e05b857c0474518ad1d112d36edc486.html"
+    },
+    {
+      "id": 6,
+      "competition_id": "7",
+      "competition_name": "数学建模",
+      "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第二次通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-21T14:20:13.965288+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.mcm.edu.cn/html_cn/node/3703fb7f6e16f999f45aac0593b1e1ff.html"
+    },
+    {
+      "id": 7,
+      "competition_id": "7",
+      "competition_name": "数学建模",
+      "title": "关于推荐“全国大学生数学建模竞赛优秀指导教师、优秀组织工作者”的通知（2026年）",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-21T14:20:13.968273+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.mcm.edu.cn/html_cn/node/b8e2aa5ba9c62412de516208a3a0490e.html"
+    },
+    {
+      "id": 8,
+      "competition_id": "7",
+      "competition_name": "数学建模",
+      "title": "2026高教社杯全国大学生数学建模竞赛第一次通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-21T14:20:13.971005+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.mcm.edu.cn/html_cn/node/d6fd7a0ee8f3a3d525e30af1c365fcec.html"
+    },
+    {
+      "id": 9,
+      "competition_id": "7",
+      "competition_name": "数学建模",
+      "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第一次通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-21T14:20:13.973504+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.mcm.edu.cn/html_cn/node/c579a2643888f6b2f6c7f2d285e09a81.html"
+    }
+  ]
+}

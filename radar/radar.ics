@@ -1,0 +1,175 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//UESTC Baoyan Competition Radar//CN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:电子科大推免竞赛日程雷达
+BEGIN:VEVENT
+SUMMARY:数学建模 · 其他节点
+DTSTART:20260821T142013
+UID:milestone-1@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
+ .mcm.edu.cn/\n证据: 全国大学生数学建模竞赛\n首页\n竞赛组
+ 织\n历程与动态\n赛题与评奖\n挑战赛\n中学生\n赞助商专
+ 栏\n相关信息\n欢迎参加世界上规模最大的数学建模竞赛 
+ ---- 一次参赛，终身受益！\n该竞赛创办于1992年，每年一
+ 届，2025年来自全国及美国、英国、加
+URL:https://www.mcm.edu.cn/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:数学建模 · 其他节点
+DTSTART:20260821T142013
+UID:milestone-2@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
+ .mcm.edu.cn/html_cn/section/302f2c2355b1179ada9b99a06d7109f5.html\n证据:
+  全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态
+ \n赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n
+ 宗旨与原则\n章程及规则\n全国组委会\n赛区组委会\n信息
+ 管理系统\n联系我们\n位置:\n首页\n竞赛组织\n本竞赛一般
+ 在每年9月中旬某个周末举行（从2
+URL:https://www.mcm.edu.cn/html_cn/section/302f2c2355b1179ada9b99a06d7109f
+ 5.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:数学建模 · 其他节点
+DTSTART:20260821T142013
+UID:milestone-3@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
+ .mcm.edu.cn/html_cn/node/56839f97c847c3ab2646b42819446621.html\n证据: 
+ 全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n
+ 赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通
+ 知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏
+ \n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n
+ 经典收藏\n竞赛30周年视
+URL:https://www.mcm.edu.cn/html_cn/node/56839f97c847c3ab2646b42819446621.h
+ tml
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:数学建模 · 其他节点
+DTSTART:20260821T142013
+UID:milestone-4@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
+ .mcm.edu.cn/html_cn/node/fef94648f2836ab6cc81586f4c38512b.html\n证据: 
+ 全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n
+ 赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n宗
+ 旨与原则\n章程及规则\n全国组委会\n赛区组委会\n信息管
+ 理系统\n联系我们\n位置:\n首页\n竞赛组织\n章程及规则\n
+ 全国大学生数学建模竞赛人工智能
+URL:https://www.mcm.edu.cn/html_cn/node/fef94648f2836ab6cc81586f4c38512b.h
+ tml
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:数学建模 · 其他节点
+DTSTART:20260821T142013
+UID:milestone-5@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
+ .mcm.edu.cn/html_cn/node/0e05b857c0474518ad1d112d36edc486.html\n证据: 
+ 全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n
+ 赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通
+ 知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏
+ \n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n
+ 新闻\n2026年全国大学
+URL:https://www.mcm.edu.cn/html_cn/node/0e05b857c0474518ad1d112d36edc486.h
+ tml
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:数学建模 · 其他节点
+DTSTART:20260821T142013
+UID:milestone-6@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
+ .mcm.edu.cn/html_cn/node/3703fb7f6e16f999f45aac0593b1e1ff.html\n证据: 
+ 全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n
+ 赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通
+ 知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏
+ \n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n
+ 通知与公告\n2026年全
+URL:https://www.mcm.edu.cn/html_cn/node/3703fb7f6e16f999f45aac0593b1e1ff.h
+ tml
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:数学建模 · 其他节点
+DTSTART:20260821T142013
+UID:milestone-7@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
+ .mcm.edu.cn/html_cn/node/b8e2aa5ba9c62412de516208a3a0490e.html\n证据: 
+ 全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n
+ 赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通
+ 知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏
+ \n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n
+ 优秀教师与组织者\n关于推
+URL:https://www.mcm.edu.cn/html_cn/node/b8e2aa5ba9c62412de516208a3a0490e.h
+ tml
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:数学建模 · 其他节点
+DTSTART:20260821T142013
+UID:milestone-8@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
+ .mcm.edu.cn/html_cn/node/d6fd7a0ee8f3a3d525e30af1c365fcec.html\n证据: 
+ 全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n
+ 赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通
+ 知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏
+ \n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n
+ 通知与公告\n2026高教
+URL:https://www.mcm.edu.cn/html_cn/node/d6fd7a0ee8f3a3d525e30af1c365fcec.h
+ tml
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:数学建模 · 其他节点
+DTSTART:20260821T142013
+UID:milestone-9@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.35\n官方链接: https://www
+ .mcm.edu.cn/html_cn/node/c579a2643888f6b2f6c7f2d285e09a81.html\n证据: 
+ 全国大学生数学建模竞赛\n首页\n竞赛组织\n历程与动态\n
+ 赛题与评奖\n挑战赛\n中学生\n赞助商专栏\n相关信息\n通
+ 知与公告\n新闻\nCUMCM通讯\n优秀教师与组织者\n经典收藏
+ \n参赛统计数据\n竞赛大事记\n位置:\n首页\n历程与动态\n
+ 通知与公告\n2026年全
+URL:https://www.mcm.edu.cn/html_cn/node/c579a2643888f6b2f6c7f2d285e09a81.h
+ tml
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 数学建模 其他节点
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

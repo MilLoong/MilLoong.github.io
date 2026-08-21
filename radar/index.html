@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>电子科大推免竞赛日程雷达</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      电子科大推免竞赛日程雷达
+      <small>UESTC Baoyan Competition Radar</small>
+    </div>
+    <nav>
+      <a href="./competitions.html">赛事目录</a>
+      <a href="./radar.ics">订阅 ICS</a>
+      <a href="./data.json">JSON</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>电子科大推免竞赛日程雷达</h1>
+      <p>面向电子科技大学推免：追踪校级学科竞赛目录官方通知，演算归类为赛程节点。数据由 GitHub Actions 定时更新。</p>
+      <p class="meta" id="generated-at">加载中…</p>
+    </section>
+    <div class="stats">
+      <div class="stat"><strong id="stat-comp">—</strong><span>目录赛事</span></div>
+      <div class="stat"><strong id="stat-node">—</strong><span>赛程节点</span></div>
+      <div class="stat"><strong id="stat-group">—</strong><span>已覆盖赛事</span></div>
+    </div>
+    <section class="panel">
+      <h2>赛程节点</h2>
+      <p class="meta">左侧赛事，右侧节点；点击标题可打开官方链接。</p>
+      <div id="feed" class="cat-feed"></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    获奖不等于推免得分，以学校正式文件与学院审核为准。静态站托管于 GitHub Pages。
+  </footer>
+  <script src="./app.js"></script>
+</body>
+</html>
