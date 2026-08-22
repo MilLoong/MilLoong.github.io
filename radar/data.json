@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T00:45:42.883365+00:00",
+  "generated_at": "2026-08-22T03:44:28.468350+00:00",
   "competitions": [
     {
       "id": "1",
@@ -127,7 +127,7 @@
         "攻防",
         "数据安全"
       ],
-      "official_url": "https://www.ciscn.cn/"
+      "official_url": "http://www.ciscn.cn/"
     },
     {
       "id": "14",
@@ -206,7 +206,7 @@
         "AI",
         "应用开发"
       ],
-      "official_url": "https://jsjds.com.cn/"
+      "official_url": "https://jsjds.blcu.edu.cn/"
     },
     {
       "id": "22",
@@ -567,7 +567,7 @@
           "title": "全国大学生数学建模竞赛",
           "event_type": "other",
           "event_label": "其他节点",
-          "starts_at": "2026-08-22T00:45:34.708554+00:00",
+          "starts_at": "2026-08-22T03:43:32.718400+00:00",
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.mcm.edu.cn/"
@@ -577,7 +577,7 @@
           "title": "竞赛组织",
           "event_type": "other",
           "event_label": "其他节点",
-          "starts_at": "2026-08-22T00:45:34.718492+00:00",
+          "starts_at": "2026-08-22T03:43:32.728477+00:00",
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.mcm.edu.cn/html_cn/section/302f2c2355b1179ada9b99a06d7109f5.html"
@@ -587,7 +587,7 @@
           "title": "竞赛30周年视频",
           "event_type": "other",
           "event_label": "其他节点",
-          "starts_at": "2026-08-22T00:45:34.721902+00:00",
+          "starts_at": "2026-08-22T03:43:32.732034+00:00",
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.mcm.edu.cn/html_cn/node/56839f97c847c3ab2646b42819446621.html"
@@ -597,7 +597,7 @@
           "title": "全国大学生数学建模竞赛人工智能工具使用规定 （2026年试行）",
           "event_type": "other",
           "event_label": "其他节点",
-          "starts_at": "2026-08-22T00:45:34.724617+00:00",
+          "starts_at": "2026-08-22T03:43:32.734811+00:00",
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.mcm.edu.cn/html_cn/node/fef94648f2836ab6cc81586f4c38512b.html"
@@ -607,7 +607,7 @@
           "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会成功举行",
           "event_type": "other",
           "event_label": "其他节点",
-          "starts_at": "2026-08-22T00:45:34.727540+00:00",
+          "starts_at": "2026-08-22T03:43:32.737717+00:00",
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.mcm.edu.cn/html_cn/node/0e05b857c0474518ad1d112d36edc486.html"
@@ -617,7 +617,7 @@
           "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第二次通知",
           "event_type": "other",
           "event_label": "其他节点",
-          "starts_at": "2026-08-22T00:45:34.730702+00:00",
+          "starts_at": "2026-08-22T03:43:32.740456+00:00",
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.mcm.edu.cn/html_cn/node/3703fb7f6e16f999f45aac0593b1e1ff.html"
@@ -627,7 +627,7 @@
           "title": "关于推荐“全国大学生数学建模竞赛优秀指导教师、优秀组织工作者”的通知（2026年）",
           "event_type": "other",
           "event_label": "其他节点",
-          "starts_at": "2026-08-22T00:45:34.734021+00:00",
+          "starts_at": "2026-08-22T03:43:32.743996+00:00",
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.mcm.edu.cn/html_cn/node/b8e2aa5ba9c62412de516208a3a0490e.html"
@@ -637,7 +637,7 @@
           "title": "2026高教社杯全国大学生数学建模竞赛第一次通知",
           "event_type": "other",
           "event_label": "其他节点",
-          "starts_at": "2026-08-22T00:45:34.737074+00:00",
+          "starts_at": "2026-08-22T03:43:32.747048+00:00",
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.mcm.edu.cn/html_cn/node/d6fd7a0ee8f3a3d525e30af1c365fcec.html"
@@ -647,10 +647,420 @@
           "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第一次通知",
           "event_type": "other",
           "event_label": "其他节点",
-          "starts_at": "2026-08-22T00:45:34.739900+00:00",
+          "starts_at": "2026-08-22T03:43:32.749904+00:00",
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.mcm.edu.cn/html_cn/node/c579a2643888f6b2f6c7f2d285e09a81.html"
+        }
+      ]
+    },
+    {
+      "competition_id": "13",
+      "name": "信息安全竞赛",
+      "full_name": "全国大学生信息安全竞赛",
+      "count": 12,
+      "range_start": "2026-08-22",
+      "range_end": "2026-08-22",
+      "messages": [
+        {
+          "id": 69,
+          "title": "全国大学生信息安全竞赛官方网站",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.933609+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement"
+        },
+        {
+          "id": 68,
+          "title": "竞赛章程",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.943540+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/competitioncharter"
+        },
+        {
+          "id": 33,
+          "title": "竞赛目录",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.948322+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/competition"
+        },
+        {
+          "id": 67,
+          "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛奖项设置的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.951399+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/420"
+        },
+        {
+          "id": 66,
+          "title": "第十九届全国大学生信息安全竞赛创新实践能力赛（总决赛）参赛手册",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.954136+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/418"
+        },
+        {
+          "id": 65,
+          "title": "第十九届全国大学生信息安全竞赛创新实践能力赛总决赛通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.965070+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/417"
+        },
+        {
+          "id": 64,
+          "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛开赛通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.970325+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/416"
+        },
+        {
+          "id": 63,
+          "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛团队名单公示",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.973507+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/415"
+        },
+        {
+          "id": 62,
+          "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）进入初赛评审阶段名单通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.978279+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/414"
+        },
+        {
+          "id": 61,
+          "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）初赛团队名单公示",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.981187+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/413"
+        },
+        {
+          "id": 45,
+          "title": "关于举办第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.985961+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/412"
+        },
+        {
+          "id": 60,
+          "title": "第三届“长城杯” 网数智安全大赛（防护赛）总决赛开赛通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:14.988604+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/411"
+        }
+      ]
+    },
+    {
+      "competition_id": "21",
+      "name": "计算机设计大赛",
+      "full_name": "中国大学生计算机设计大赛",
+      "count": 17,
+      "range_start": "2026-08-22",
+      "range_end": "2026-08-22",
+      "messages": [
+        {
+          "id": 86,
+          "title": "中国大学生计算机设计大赛",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.013456+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/"
+        },
+        {
+          "id": 85,
+          "title": "大赛动态",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.022210+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/dsdt.htm"
+        },
+        {
+          "id": 84,
+          "title": "关于大赛",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.026655+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/gyds1/dsjj.htm"
+        },
+        {
+          "id": 83,
+          "title": "我与大赛",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.031216+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/gyds1/wyds.htm"
+        },
+        {
+          "id": 82,
+          "title": "08-04 .2026 2026年（第19届）中国大学生计算机设计大赛 第3场国赛决赛在安徽大学圆满落幕",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.034973+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2854.htm"
+        },
+        {
+          "id": 81,
+          "title": "07-26 .2026 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设计大赛杭州决赛区圆满落幕",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.041862+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2834.htm"
+        },
+        {
+          "id": 80,
+          "title": "07-23 .2026 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.048243+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2804.htm"
+        },
+        {
+          "id": 79,
+          "title": "06-24 .2026 2026年（第19届）中国大学生计算机设计大赛关于参赛作品信息限时核查完善的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.054419+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2774.htm"
+        },
+        {
+          "id": 78,
+          "title": "06-24 .2026 2026年（第19届）中国大学生计算机设计大赛国赛入围作品信息公告",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.058798+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2764.htm"
+        },
+        {
+          "id": 77,
+          "title": "23 2026.07 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.063684+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2824.htm"
+        },
+        {
+          "id": 76,
+          "title": "24 2026.06 2026年（第19届）中国大学生计算机设计大赛关于参赛作品信息...",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.069999+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2794.htm"
+        },
+        {
+          "id": 75,
+          "title": "24 2026.06 2026年（第19届）中国大学生计算机设计大赛国赛入围作品信息...",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.074521+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2784.htm"
+        },
+        {
+          "id": 74,
+          "title": "2025年（第18届）中国大学生计算机设计大赛 申诉投诉处理结果公告",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.079182+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1043/2204.htm"
+        },
+        {
+          "id": 73,
+          "title": "2025年（第18届）中国大学生计算机设计大赛获奖公告",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.083296+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1043/2434.htm"
+        },
+        {
+          "id": 72,
+          "title": "2025年（第18届）中国大学生计算机设计大赛 评审结果公示",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.089321+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1043/2424.htm"
+        },
+        {
+          "id": 71,
+          "title": "4C2025关于参赛作品信息限时核查完善的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.094063+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1043/2194.htm"
+        },
+        {
+          "id": 70,
+          "title": "4C2025年国赛入围作品信息公告",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:43:59.098567+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1043/2184.htm"
+        }
+      ]
+    },
+    {
+      "competition_id": "23",
+      "name": "服务外包大赛",
+      "full_name": "中国大学生服务外包创新创业大赛",
+      "count": 9,
+      "range_start": "2026-08-22",
+      "range_end": "2026-08-22",
+      "messages": [
+        {
+          "id": 49,
+          "title": "大赛新闻",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:28.251842+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/news/index"
+        },
+        {
+          "id": 59,
+          "title": "大赛公告",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:28.255527+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/public/index"
+        },
+        {
+          "id": 58,
+          "title": "大赛花絮",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:28.263168+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/activity/index"
+        },
+        {
+          "id": 51,
+          "title": "大赛视频",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:28.266212+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/video/index"
+        },
+        {
+          "id": 52,
+          "title": "关于大赛",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:28.268806+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/about/index"
+        },
+        {
+          "id": 53,
+          "title": "关于中国大学生服务外包创新创业大赛开通D赛道的说明",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:28.271886+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/news/show/595"
+        },
+        {
+          "id": 54,
+          "title": "关于服创大赛指定江苏万维艾斯网络智能产业创新中心有限公司为比赛运营商的说明",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:28.274662+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/news/show/594"
+        },
+        {
+          "id": 57,
+          "title": "第十五届中国大学生服务外包创新创业大赛在锡圆满收官",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:28.277336+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/news/show/529"
+        },
+        {
+          "id": 56,
+          "title": "第十三届中国大学生服务外包创新创业大赛在锡落幕，感谢你们的热爱！",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-22T03:44:28.280984+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/news/show/392"
         }
       ]
     }
@@ -663,7 +1073,7 @@
       "title": "全国大学生数学建模竞赛",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-08-22T00:45:34.708554+00:00",
+      "starts_at": "2026-08-22T03:43:32.718400+00:00",
       "ends_at": null,
       "status": "unverified",
       "source_url": "https://www.mcm.edu.cn/"
@@ -675,7 +1085,7 @@
       "title": "竞赛组织",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-08-22T00:45:34.718492+00:00",
+      "starts_at": "2026-08-22T03:43:32.728477+00:00",
       "ends_at": null,
       "status": "unverified",
       "source_url": "https://www.mcm.edu.cn/html_cn/section/302f2c2355b1179ada9b99a06d7109f5.html"
@@ -687,7 +1097,7 @@
       "title": "竞赛30周年视频",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-08-22T00:45:34.721902+00:00",
+      "starts_at": "2026-08-22T03:43:32.732034+00:00",
       "ends_at": null,
       "status": "unverified",
       "source_url": "https://www.mcm.edu.cn/html_cn/node/56839f97c847c3ab2646b42819446621.html"
@@ -699,7 +1109,7 @@
       "title": "全国大学生数学建模竞赛人工智能工具使用规定 （2026年试行）",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-08-22T00:45:34.724617+00:00",
+      "starts_at": "2026-08-22T03:43:32.734811+00:00",
       "ends_at": null,
       "status": "unverified",
       "source_url": "https://www.mcm.edu.cn/html_cn/node/fef94648f2836ab6cc81586f4c38512b.html"
@@ -711,7 +1121,7 @@
       "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会成功举行",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-08-22T00:45:34.727540+00:00",
+      "starts_at": "2026-08-22T03:43:32.737717+00:00",
       "ends_at": null,
       "status": "unverified",
       "source_url": "https://www.mcm.edu.cn/html_cn/node/0e05b857c0474518ad1d112d36edc486.html"
@@ -723,7 +1133,7 @@
       "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第二次通知",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-08-22T00:45:34.730702+00:00",
+      "starts_at": "2026-08-22T03:43:32.740456+00:00",
       "ends_at": null,
       "status": "unverified",
       "source_url": "https://www.mcm.edu.cn/html_cn/node/3703fb7f6e16f999f45aac0593b1e1ff.html"
@@ -735,7 +1145,7 @@
       "title": "关于推荐“全国大学生数学建模竞赛优秀指导教师、优秀组织工作者”的通知（2026年）",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-08-22T00:45:34.734021+00:00",
+      "starts_at": "2026-08-22T03:43:32.743996+00:00",
       "ends_at": null,
       "status": "unverified",
       "source_url": "https://www.mcm.edu.cn/html_cn/node/b8e2aa5ba9c62412de516208a3a0490e.html"
@@ -747,7 +1157,7 @@
       "title": "2026高教社杯全国大学生数学建模竞赛第一次通知",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-08-22T00:45:34.737074+00:00",
+      "starts_at": "2026-08-22T03:43:32.747048+00:00",
       "ends_at": null,
       "status": "unverified",
       "source_url": "https://www.mcm.edu.cn/html_cn/node/d6fd7a0ee8f3a3d525e30af1c365fcec.html"
@@ -759,10 +1169,466 @@
       "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第一次通知",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-08-22T00:45:34.739900+00:00",
+      "starts_at": "2026-08-22T03:43:32.749904+00:00",
       "ends_at": null,
       "status": "unverified",
       "source_url": "https://www.mcm.edu.cn/html_cn/node/c579a2643888f6b2f6c7f2d285e09a81.html"
+    },
+    {
+      "id": 86,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "中国大学生计算机设计大赛",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.013456+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/"
+    },
+    {
+      "id": 85,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "大赛动态",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.022210+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/dsdt.htm"
+    },
+    {
+      "id": 84,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "关于大赛",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.026655+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/gyds1/dsjj.htm"
+    },
+    {
+      "id": 83,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "我与大赛",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.031216+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/gyds1/wyds.htm"
+    },
+    {
+      "id": 82,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "08-04 .2026 2026年（第19届）中国大学生计算机设计大赛 第3场国赛决赛在安徽大学圆满落幕",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.034973+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2854.htm"
+    },
+    {
+      "id": 81,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "07-26 .2026 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设计大赛杭州决赛区圆满落幕",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.041862+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2834.htm"
+    },
+    {
+      "id": 80,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "07-23 .2026 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.048243+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2804.htm"
+    },
+    {
+      "id": 79,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "06-24 .2026 2026年（第19届）中国大学生计算机设计大赛关于参赛作品信息限时核查完善的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.054419+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2774.htm"
+    },
+    {
+      "id": 78,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "06-24 .2026 2026年（第19届）中国大学生计算机设计大赛国赛入围作品信息公告",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.058798+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2764.htm"
+    },
+    {
+      "id": 77,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "23 2026.07 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.063684+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1042/2824.htm"
+    },
+    {
+      "id": 76,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "24 2026.06 2026年（第19届）中国大学生计算机设计大赛关于参赛作品信息...",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.069999+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1042/2794.htm"
+    },
+    {
+      "id": 75,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "24 2026.06 2026年（第19届）中国大学生计算机设计大赛国赛入围作品信息...",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.074521+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1042/2784.htm"
+    },
+    {
+      "id": 74,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "2025年（第18届）中国大学生计算机设计大赛 申诉投诉处理结果公告",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.079182+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1043/2204.htm"
+    },
+    {
+      "id": 73,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "2025年（第18届）中国大学生计算机设计大赛获奖公告",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.083296+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1043/2434.htm"
+    },
+    {
+      "id": 72,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "2025年（第18届）中国大学生计算机设计大赛 评审结果公示",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.089321+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1043/2424.htm"
+    },
+    {
+      "id": 71,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "4C2025关于参赛作品信息限时核查完善的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.094063+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1043/2194.htm"
+    },
+    {
+      "id": 70,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "4C2025年国赛入围作品信息公告",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:43:59.098567+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1043/2184.htm"
+    },
+    {
+      "id": 69,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "全国大学生信息安全竞赛官方网站",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.933609+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement"
+    },
+    {
+      "id": 68,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "竞赛章程",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.943540+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/competitioncharter"
+    },
+    {
+      "id": 33,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "竞赛目录",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.948322+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/competition"
+    },
+    {
+      "id": 67,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛奖项设置的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.951399+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/420"
+    },
+    {
+      "id": 66,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国大学生信息安全竞赛创新实践能力赛（总决赛）参赛手册",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.954136+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/418"
+    },
+    {
+      "id": 65,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国大学生信息安全竞赛创新实践能力赛总决赛通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.965070+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/417"
+    },
+    {
+      "id": 64,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛开赛通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.970325+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/416"
+    },
+    {
+      "id": 63,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛团队名单公示",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.973507+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/415"
+    },
+    {
+      "id": 62,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）进入初赛评审阶段名单通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.978279+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/414"
+    },
+    {
+      "id": 61,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）初赛团队名单公示",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.981187+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/413"
+    },
+    {
+      "id": 45,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "关于举办第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.985961+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/412"
+    },
+    {
+      "id": 60,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第三届“长城杯” 网数智安全大赛（防护赛）总决赛开赛通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:14.988604+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/411"
+    },
+    {
+      "id": 49,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "大赛新闻",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:28.251842+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/news/index"
+    },
+    {
+      "id": 59,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "大赛公告",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:28.255527+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/public/index"
+    },
+    {
+      "id": 58,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "大赛花絮",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:28.263168+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/activity/index"
+    },
+    {
+      "id": 51,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "大赛视频",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:28.266212+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/video/index"
+    },
+    {
+      "id": 52,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "关于大赛",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:28.268806+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/about/index"
+    },
+    {
+      "id": 53,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "关于中国大学生服务外包创新创业大赛开通D赛道的说明",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:28.271886+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/news/show/595"
+    },
+    {
+      "id": 54,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "关于服创大赛指定江苏万维艾斯网络智能产业创新中心有限公司为比赛运营商的说明",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:28.274662+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/news/show/594"
+    },
+    {
+      "id": 57,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "第十五届中国大学生服务外包创新创业大赛在锡圆满收官",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:28.277336+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/news/show/529"
+    },
+    {
+      "id": 56,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "第十三届中国大学生服务外包创新创业大赛在锡落幕，感谢你们的热爱！",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-22T03:44:28.280984+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/news/show/392"
     }
   ]
 }
