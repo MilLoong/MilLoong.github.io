@@ -192,75 +192,44 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20190201
-UID:milestone-10@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
- ds.blcu.edu.cn/info/1041/2764.htm\n证据: 动态 往届赛事 关于大
- 赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
- 赛决赛 上海决赛区 杭州决赛区 南京南决赛区 南京东2决
- 赛区 济南决赛区 南京东1决赛
-URL:https://jsjds.blcu.edu.cn/info/1041/2764.htm
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:计算机设计大赛 · 决赛
-DTSTART;VALUE=DATE:20190201
-UID:milestone-9@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
- ds.blcu.edu.cn/info/1041/2774.htm\n证据: 动态 往届赛事 关于大
- 赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
- 赛决赛 上海决赛区 杭州决赛区 南京南决赛区 南京东2决
- 赛区 济南决赛区 南京东1决赛
-URL:https://jsjds.blcu.edu.cn/info/1041/2774.htm
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:计算机设计大赛 · 决赛
-DTSTART;VALUE=DATE:20190201
-UID:milestone-6@uestc-baoyan-radar
+UID:milestone-8@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1041/2854.htm\n证据: 动态 往届赛事 关于大
  赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
  赛决赛 上海决赛区 杭州决赛区 南京南决赛区 南京东2决
  赛区 济南决赛区 南京东1决赛
 URL:https://jsjds.blcu.edu.cn/info/1041/2854.htm
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:计算机设计大赛 · 决赛
+DTSTART;VALUE=DATE:20190201
+UID:milestone-7@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
+ ds.blcu.edu.cn/info/1041/2864.htm\n证据: 动态 往届赛事 关于大
+ 赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
+ 赛决赛 上海决赛区 杭州决赛区 南京南决赛区 南京东2决
+ 赛区 济南决赛区 南京东1决赛
+URL:https://jsjds.blcu.edu.cn/info/1041/2864.htm
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
@@ -442,7 +411,7 @@ SUMMARY:服务外包大赛 · 决赛
 DTSTART;VALUE=DATE:20240130
 UID:milestone-42@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
- .fwwb.org.cn/news/show/529\n证据: : 31547 2024年8月7日-9日，第十
+ .fwwb.org.cn/news/show/529\n证据: : 31615 2024年8月7日-9日，第十
  五届中国大学生服务外包创新创业大赛决赛在江苏无锡
  举行。经过预审、区域赛决赛和全国总决赛的激烈角逐
  ，重庆大学、东北大学、
@@ -752,12 +721,43 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20260119
-UID:milestone-8@uestc-baoyan-radar
+UID:milestone-10@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1041/2804.htm\n证据: 第19届中国大学生计算
  机设计大赛上海决赛区圆满落幕-中国大学生计算机设计
  大赛 首页 大赛动态 往届赛事 关于大赛 大赛简
 URL:https://jsjds.blcu.edu.cn/info/1041/2804.htm
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:计算机设计大赛 · 决赛
+DTSTART;VALUE=DATE:20260119
+UID:milestone-6@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
+ ds.blcu.edu.cn/info/1041/2874.htm\n证据: 2026年（第19届）中国大
+ 学生计算机设计大赛软件应用与开发类别全国决赛在青
+ 岛农业大学圆满落幕-中国大学生计算机设计大赛 首页 
+ 大赛动态 往届赛事 关于
+URL:https://jsjds.blcu.edu.cn/info/1041/2874.htm
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
@@ -1189,7 +1189,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20260119
-UID:milestone-7@uestc-baoyan-radar
+UID:milestone-9@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1041/2834.htm\n证据: 物联赋能创新 青春唱响
  钱塘—2026年第19届中国大学生计算机设计大赛杭州决赛
