@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T00:49:26.729506+00:00",
+  "generated_at": "2026-08-25T00:48:54.308828+00:00",
   "competitions": [
     {
       "id": "1",
@@ -553,40 +553,6 @@
       "official_url": "https://www.cmda.net/"
     }
   ],
-  "milestone_groups": [
-    {
-      "competition_id": "21",
-      "name": "计算机设计大赛",
-      "full_name": "中国大学生计算机设计大赛",
-      "count": 1,
-      "range_start": "2026-08-24",
-      "range_end": "2026-08-24",
-      "messages": [
-        {
-          "id": 59,
-          "title": "08-24 .2026 2026年（第19届）中国大学生计算机设计大赛软件应用与开发类别全国决赛在青岛农业大学圆满落幕",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-08-24T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2874.htm"
-        }
-      ]
-    }
-  ],
-  "milestones": [
-    {
-      "id": 59,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "08-24 .2026 2026年（第19届）中国大学生计算机设计大赛软件应用与开发类别全国决赛在青岛农业大学圆满落幕",
-      "event_type": "other",
-      "event_label": "其他节点",
-      "starts_at": "2026-08-24T00:00:00+00:00",
-      "ends_at": null,
-      "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2874.htm"
-    }
-  ]
+  "milestone_groups": [],
+  "milestones": []
 }

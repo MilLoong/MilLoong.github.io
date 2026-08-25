@@ -161,7 +161,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:服务外包大赛 · 决赛
 DTSTART;VALUE=DATE:20180601
-UID:milestone-39@uestc-baoyan-radar
+UID:milestone-40@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
  .fwwb.org.cn/activity/index\n证据: 首页 / 大赛花絮 第十一届大
  赛决赛颁奖5 第十一届大赛决赛颁奖4 第十一届大赛决赛
@@ -409,9 +409,9 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:服务外包大赛 · 决赛
 DTSTART;VALUE=DATE:20240130
-UID:milestone-42@uestc-baoyan-radar
+UID:milestone-43@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
- .fwwb.org.cn/news/show/529\n证据: : 31615 2024年8月7日-9日，第十
+ .fwwb.org.cn/news/show/529\n证据: : 31691 2024年8月7日-9日，第十
  五届中国大学生服务外包创新创业大赛决赛在江苏无锡
  举行。经过预审、区域赛决赛和全国总决赛的激烈角逐
  ，重庆大学、东北大学、
@@ -500,6 +500,38 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:服务外包大赛 · 获奖公布
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260108
+UID:milestone-38@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .fwwb.org.cn/public/index\n证据: 关于大赛 首页 / 大赛公告 第
+ 十七届中国大学生服务外包创新创业大赛全国赛决赛获
+ 奖名单公告 2026-08-24 15:48:07 第十七届中国大学生服务外
+ 包创新创业
+URL:https://www.fwwb.org.cn/public/index
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 服务外包大赛 获奖公布（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 服务外包大赛 获奖公布（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 服务外包大赛 获奖公布（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 服务外包大赛 获奖公布（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:服务外包大赛 · 决赛
 DTSTART;VALUE=DATE:20260101
 DTEND;VALUE=DATE:20260108
@@ -507,8 +539,8 @@ UID:milestone-37@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
  .fwwb.org.cn/public/index\n证据: 视频 关于大赛 首页 / 大赛公
  告 第十七届中国大学生服务外包创新创业大赛全国赛决
- 赛参赛手册(无锡场) 2026-08-19 11:17:02 第十七届中国大学生
- 服
+ 赛获奖名单公告 2026-08-24 15:48:07 第十七届中国大学生服
+ 务外包
 URL:https://www.fwwb.org.cn/public/index
 BEGIN:VALARM
 ACTION:DISPLAY
