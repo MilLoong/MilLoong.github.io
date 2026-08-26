@@ -6,7 +6,7 @@ X-WR-CALNAME:电子科大推免竞赛日程雷达
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:19800101
-UID:milestone-23@uestc-baoyan-radar
+UID:milestone-26@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
  ciscn.cn/announcement/view/417\n证据: 晋级赛队： 恭喜各晋级赛
  队成功入围第十九届全国大学生信息安全竞赛创新实践
@@ -36,76 +36,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
-DTSTART;VALUE=DATE:20040201
-UID:milestone-17@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
- ds.blcu.edu.cn/info/1043/2184.htm\n证据: 动态 往届赛事 关于大
- 赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
- 赛决赛 上海决赛区 杭州决赛区 南京南决赛区 南京东2决
- 赛区 济南决赛区 南京东1决赛
-URL:https://jsjds.blcu.edu.cn/info/1043/2184.htm
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:计算机设计大赛 · 决赛
-DTSTART;VALUE=DATE:20040201
-UID:milestone-16@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
- ds.blcu.edu.cn/info/1043/2194.htm\n证据: 动态 往届赛事 关于大
- 赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
- 赛决赛 上海决赛区 杭州决赛区 南京南决赛区 南京东2决
- 赛区 济南决赛区 南京东1决赛
-URL:https://jsjds.blcu.edu.cn/info/1043/2194.htm
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20080201
-UID:milestone-2@uestc-baoyan-radar
+UID:milestone-21@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
- ds.blcu.edu.cn/gyds1/dsjj.htm\n证据: 动态 往届赛事 关于大赛 
- 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国赛决
- 赛 上海决赛区 杭州决赛区 南京南决赛区 南京东2决赛区
-  济南决赛区 南京东1决赛
-URL:https://jsjds.blcu.edu.cn/gyds1/dsjj.htm
+ ds.blcu.edu.cn/info/1045/2013.htm\n证据: 动态 往届赛事 关于大
+ 赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
+ 赛决赛 上海决赛区 杭州决赛区 南京南决赛区 南京东2决
+ 赛区 济南决赛区 南京东1决赛
+URL:https://jsjds.blcu.edu.cn/info/1045/2013.htm
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
@@ -128,40 +66,43 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:服务外包大赛 · 决赛
-DTSTART;VALUE=DATE:20180601
-UID:milestone-33@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
- .fwwb.org.cn/activity/index\n证据: 首页 / 大赛花絮 第十一届大
- 赛决赛颁奖5 第十一届大赛决赛颁奖4 第十一届大赛决赛
- 颁奖3 第十一届大赛决赛颁奖2 第十一届大赛决赛颁奖1 
- 第十一届大赛创新创业线上
-URL:https://www.fwwb.org.cn/activity/index
+SUMMARY:计算机设计大赛 · 材料/作品截止
+DTSTART;VALUE=DATE:20080417
+UID:milestone-20@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
+ ds.blcu.edu.cn/info/1045/2013.htm\n证据: 4C2026参赛作品提交要求
+ （11大类，4月17日）-中国大学生计算机设计大赛 首页 大
+ 赛动态 往届赛事
+URL:https://jsjds.blcu.edu.cn/info/1045/2013.htm
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 30 天）
+DESCRIPTION:提醒: 计算机设计大赛 材料/作品截止（提前 30 
+ 天）
 TRIGGER:-P30D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 14 天）
+DESCRIPTION:提醒: 计算机设计大赛 材料/作品截止（提前 14 
+ 天）
 TRIGGER:-P14D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 7 天）
+DESCRIPTION:提醒: 计算机设计大赛 材料/作品截止（提前 7 
+ 天）
 TRIGGER:-P7D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 1 天）
+DESCRIPTION:提醒: 计算机设计大赛 材料/作品截止（提前 1 
+ 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20190201
-UID:milestone-6@uestc-baoyan-radar
+UID:milestone-9@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1041/2854.htm\n证据: 动态 往届赛事 关于大
  赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
@@ -192,7 +133,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20190201
-UID:milestone-5@uestc-baoyan-radar
+UID:milestone-8@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1041/2864.htm\n证据: 动态 往届赛事 关于大
  赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
@@ -223,7 +164,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20200201
-UID:milestone-15@uestc-baoyan-radar
+UID:milestone-19@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1043/2424.htm\n证据: 动态 往届赛事 关于大
  赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
@@ -254,7 +195,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20200201
-UID:milestone-13@uestc-baoyan-radar
+UID:milestone-17@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1043/2434.htm\n证据: 动态 往届赛事 关于大
  赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
@@ -285,7 +226,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20200201
-UID:milestone-12@uestc-baoyan-radar
+UID:milestone-16@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1043/2204.htm\n证据: 动态 往届赛事 关于大
  赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
@@ -316,7 +257,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20200201
-UID:milestone-11@uestc-baoyan-radar
+UID:milestone-15@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1042/2784.htm\n证据: 动态 往届赛事 关于大
  赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
@@ -347,7 +288,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20200201
-UID:milestone-10@uestc-baoyan-radar
+UID:milestone-14@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1042/2794.htm\n证据: 动态 往届赛事 关于大
  赛 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国
@@ -376,40 +317,42 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:服务外包大赛 · 决赛
-DTSTART;VALUE=DATE:20240130
-UID:milestone-36@uestc-baoyan-radar
+SUMMARY:数学建模 · 决赛
+DTSTART;VALUE=DATE:20250101
+DTEND;VALUE=DATE:20250105
+UID:milestone-6@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
- .fwwb.org.cn/news/show/529\n证据: : 31769 2024年8月7日-9日，第十
- 五届中国大学生服务外包创新创业大赛决赛在江苏无锡
- 举行。经过预审、区域赛决赛和全国总决赛的激烈角逐
- ，重庆大学、东北大学、
-URL:https://www.fwwb.org.cn/news/show/529
+ .mcm.edu.cn/html_cn/node/4db2d73b716e0a622184e956e71e3c64.html\n证据: 
+ 事记 位置: 首页 历程与动态 通知与公告 第五届数学建
+ 模微课程（案例）教学竞赛决赛的通知（附名单） 作者:
+  www.mcm.edu.cn 		2025-05-15
+URL:https://www.mcm.edu.cn/html_cn/node/4db2d73b716e0a622184e956e71e3c64.h
+ tml
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 30 天）
+DESCRIPTION:提醒: 数学建模 决赛（提前 30 天）
 TRIGGER:-P30D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 14 天）
+DESCRIPTION:提醒: 数学建模 决赛（提前 14 天）
 TRIGGER:-P14D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 7 天）
+DESCRIPTION:提醒: 数学建模 决赛（提前 7 天）
 TRIGGER:-P7D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 1 天）
+DESCRIPTION:提醒: 数学建模 决赛（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 获奖公布
 DTSTART;VALUE=DATE:20250118
-UID:milestone-14@uestc-baoyan-radar
+UID:milestone-18@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1043/2434.htm\n证据: 对申诉与举报信息逐条
  核查，对涉及作品进行复审，并报大赛组委会审核通过
@@ -438,104 +381,75 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:服务外包大赛 · 获奖公布
-DTSTART;VALUE=DATE:20260101
-DTEND;VALUE=DATE:20260108
-UID:milestone-32@uestc-baoyan-radar
+SUMMARY:数学建模 · 获奖公布
+DTSTART;VALUE=DATE:20250125
+DTEND;VALUE=DATE:20260111
+UID:milestone-5@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
- .fwwb.org.cn/public/index\n证据: 大赛组委会2026年8月25日 第十
- 七届中国大学生服务外包创新创业大赛全国赛决赛获奖
- 名单公告 2026-08-24 15:48:07 第十七届中国大学生服务外包
- 创新创业
-URL:https://www.fwwb.org.cn/public/index
+ .mcm.edu.cn/html_cn/node/f0cd9759627fb5d775892c3ce9334737.html\n证据: 
+ 区评奖结果（初稿） (25-11-01) 2025高教社杯全国大学生数
+ 学建模竞赛获奖名单（初稿） (25-11-01) 2024-2025年数学建
+ 模的赛题后续研究课题批
+URL:https://www.mcm.edu.cn/html_cn/node/f0cd9759627fb5d775892c3ce9334737.h
+ tml
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 获奖公布（提前 30 天）
+DESCRIPTION:提醒: 数学建模 获奖公布（提前 30 天）
 TRIGGER:-P30D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 获奖公布（提前 14 天）
+DESCRIPTION:提醒: 数学建模 获奖公布（提前 14 天）
 TRIGGER:-P14D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 获奖公布（提前 7 天）
+DESCRIPTION:提醒: 数学建模 获奖公布（提前 7 天）
 TRIGGER:-P7D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 获奖公布（提前 1 天）
+DESCRIPTION:提醒: 数学建模 获奖公布（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:服务外包大赛 · 决赛
-DTSTART;VALUE=DATE:20260101
-DTEND;VALUE=DATE:20260108
-UID:milestone-31@uestc-baoyan-radar
+SUMMARY:数学建模 · 获奖公布
+DTSTART;VALUE=DATE:20250125
+DTEND;VALUE=DATE:20260111
+UID:milestone-4@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
- .fwwb.org.cn/public/index\n证据: 封面大赛组委会2026年8月25日 
- 第十七届中国大学生服务外包创新创业大赛全国赛决赛
- 获奖名单公告 2026-08-24 15:48:07 第十七届中国大学生服务
- 外包
-URL:https://www.fwwb.org.cn/public/index
+ .mcm.edu.cn/html_cn/node/270c01b62cdc7c7531065e3a65572054.html\n证据: 
+ 区评奖结果（初稿） (25-11-01) 2025高教社杯全国大学生数
+ 学建模竞赛获奖名单（初稿） (25-11-01) 2024-2025年数学建
+ 模的赛题后续研究课题批
+URL:https://www.mcm.edu.cn/html_cn/node/270c01b62cdc7c7531065e3a65572054.h
+ tml
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 30 天）
+DESCRIPTION:提醒: 数学建模 获奖公布（提前 30 天）
 TRIGGER:-P30D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 14 天）
+DESCRIPTION:提醒: 数学建模 获奖公布（提前 14 天）
 TRIGGER:-P14D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 7 天）
+DESCRIPTION:提醒: 数学建模 获奖公布（提前 7 天）
 TRIGGER:-P7D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 服务外包大赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:信息安全竞赛 · 决赛
-DTSTART;VALUE=DATE:20260102
-UID:milestone-18@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
- ciscn.cn/competitioncharter\n证据: 。全国组委会秘书处不受理
- 匿名质疑投诉。 1．授权全国组委会秘书处在预审开始至
- 终审决赛结束前接受参赛学校和学生、评委、社会各界
- 人士对参赛作品资格的质疑投诉。 2．在终
-URL:http://www.ciscn.cn/competitioncharter
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 1 天）
+DESCRIPTION:提醒: 数学建模 获奖公布（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 初赛
 DTSTART;VALUE=DATE:20260115
-UID:milestone-27@uestc-baoyan-radar
+UID:milestone-30@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
  ciscn.cn/announcement/view/414\n证据: 全国大学生信息安全竞赛
  （作品赛）暨第三届“长城杯” 网数智安全大赛（作品
@@ -566,7 +480,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20260119
-UID:milestone-9@uestc-baoyan-radar
+UID:milestone-13@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1042/2824.htm\n证据: 第19届中国大学生计算
  机设计大赛上海决赛区圆满落幕-中国大学生计算机设计
@@ -596,7 +510,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20260119
-UID:milestone-8@uestc-baoyan-radar
+UID:milestone-11@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1041/2804.htm\n证据: 第19届中国大学生计算
  机设计大赛上海决赛区圆满落幕-中国大学生计算机设计
@@ -626,7 +540,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20260119
-UID:milestone-4@uestc-baoyan-radar
+UID:milestone-7@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1041/2874.htm\n证据: 2026年（第19届）中国大
  学生计算机设计大赛软件应用与开发类别全国决赛在青
@@ -655,72 +569,9 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:计算机设计大赛 · 决赛
-DTSTART;VALUE=DATE:20260201
-UID:milestone-3@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
- ds.blcu.edu.cn/gyds1/wyds.htm\n证据: 动态 往届赛事 关于大赛 
- 大赛简介 参赛要求 联系方式 我与大赛 资料下载 国赛决
- 赛 上海决赛区 杭州决赛区 南京南决赛区 南京东2决赛区
-  济南决赛区 南京东1决赛
-URL:https://jsjds.blcu.edu.cn/gyds1/wyds.htm
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:计算机设计大赛 · 决赛
-DTSTART;VALUE=DATE:20260201
-DTEND;VALUE=DATE:20260119
-UID:milestone-1@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
- ds.blcu.edu.cn/dsdt.htm\n证据: 动态 往届赛事 关于大赛 大赛
- 简介 参赛要求 联系方式 我与大赛 资料下载 国赛决赛 
- 上海决赛区 杭州决赛区 南京南决赛区 南京东2决赛区 济
- 南决赛区 南京东1决赛
-URL:https://jsjds.blcu.edu.cn/dsdt.htm
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:20260105
-UID:milestone-30@uestc-baoyan-radar
+UID:milestone-33@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: http://www.
  ciscn.cn/announcement/view/411\n证据: 专家库 首页 公告列表 公
  告详情 第三届“长城杯” 网数智安全大赛（防护赛）总
@@ -751,7 +602,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 获奖公布
 DTSTART;VALUE=DATE:20260105
-UID:milestone-29@uestc-baoyan-radar
+UID:milestone-32@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: http://www.
  ciscn.cn/announcement/view/413\n证据: 大学生信息安全竞赛（作
  品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）
@@ -782,7 +633,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 初赛
 DTSTART;VALUE=DATE:20260105
-UID:milestone-28@uestc-baoyan-radar
+UID:milestone-31@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: http://www.
  ciscn.cn/announcement/view/413\n证据: 安全竞赛（作品赛）暨第
  三届“长城杯” 网数智安全大赛（作品赛）初赛团队名
@@ -813,7 +664,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 获奖公布
 DTSTART;VALUE=DATE:20260105
-UID:milestone-26@uestc-baoyan-radar
+UID:milestone-29@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: http://www.
  ciscn.cn/announcement/view/415\n证据: 大学生信息安全竞赛（作
  品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）
@@ -844,7 +695,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:20260105
-UID:milestone-25@uestc-baoyan-radar
+UID:milestone-28@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: http://www.
  ciscn.cn/announcement/view/415\n证据: 安全竞赛（作品赛）暨第
  三届“长城杯” 网数智安全大赛（作品赛）决赛团队名
@@ -875,7 +726,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:20260105
-UID:milestone-24@uestc-baoyan-radar
+UID:milestone-27@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: http://www.
  ciscn.cn/announcement/view/416\n证据: 信息安全竞赛（作品赛）
  暨第三届“长城杯” 网数智安全大赛（作品赛）决赛开
@@ -906,7 +757,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:20230222
-UID:milestone-22@uestc-baoyan-radar
+UID:milestone-25@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: http://www.
  ciscn.cn/announcement/view/418\n证据: 步行515米到达齐鲁工业大
  学（长清校区）南门/西门。 2.参赛对象 经过初赛与半决
@@ -937,7 +788,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 复赛
 DTSTART;VALUE=DATE:20230222
-UID:milestone-21@uestc-baoyan-radar
+UID:milestone-24@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: http://www.
  ciscn.cn/announcement/view/418\n证据: —步行515米到达齐鲁工业
  大学（长清校区）南门/西门。 2.参赛对象 经过初赛与半
@@ -968,7 +819,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 初赛
 DTSTART;VALUE=DATE:20230222
-UID:milestone-20@uestc-baoyan-radar
+UID:milestone-23@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: http://www.
  ciscn.cn/announcement/view/418\n证据: 出站——步行515米到达齐
  鲁工业大学（长清校区）南门/西门。 2.参赛对象 经过初
@@ -999,7 +850,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:20260105
-UID:milestone-19@uestc-baoyan-radar
+UID:milestone-22@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: http://www.
  ciscn.cn/announcement/view/420\n证据: 九届全国大学生信息安全
  竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（
@@ -1030,7 +881,38 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20260119
-UID:milestone-7@uestc-baoyan-radar
+UID:milestone-12@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: https://jsj
+ ds.blcu.edu.cn/info/1042/2844.htm\n证据: 物联赋能创新 青春唱响
+ 钱塘—2026年第19届中国大学生计算机设计大赛杭州决赛
+ 区圆满落幕-中国大学生计算机设计大赛 首页 大赛动态 
+ 往届赛事 关于大赛 大赛简
+URL:https://jsjds.blcu.edu.cn/info/1042/2844.htm
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:计算机设计大赛 · 决赛
+DTSTART;VALUE=DATE:20260119
+UID:milestone-10@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1041/2834.htm\n证据: 物联赋能创新 青春唱响
  钱塘—2026年第19届中国大学生计算机设计大赛杭州决赛
