@@ -411,7 +411,7 @@ SUMMARY:服务外包大赛 · 决赛
 DTSTART;VALUE=DATE:20240130
 UID:milestone-43@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
- .fwwb.org.cn/news/show/529\n证据: : 31691 2024年8月7日-9日，第十
+ .fwwb.org.cn/news/show/529\n证据: : 31758 2024年8月7日-9日，第十
  五届中国大学生服务外包创新创业大赛决赛在江苏无锡
  举行。经过预审、区域赛决赛和全国总决赛的激烈角逐
  ，重庆大学、东北大学、
@@ -505,10 +505,10 @@ DTSTART;VALUE=DATE:20260101
 DTEND;VALUE=DATE:20260108
 UID:milestone-38@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
- .fwwb.org.cn/public/index\n证据: 关于大赛 首页 / 大赛公告 第
- 十七届中国大学生服务外包创新创业大赛全国赛决赛获
- 奖名单公告 2026-08-24 15:48:07 第十七届中国大学生服务外
- 包创新创业
+ .fwwb.org.cn/public/index\n证据: 大赛组委会2026年8月25日 第十
+ 七届中国大学生服务外包创新创业大赛全国赛决赛获奖
+ 名单公告 2026-08-24 15:48:07 第十七届中国大学生服务外包
+ 创新创业
 URL:https://www.fwwb.org.cn/public/index
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -537,10 +537,10 @@ DTSTART;VALUE=DATE:20260101
 DTEND;VALUE=DATE:20260108
 UID:milestone-37@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
- .fwwb.org.cn/public/index\n证据: 视频 关于大赛 首页 / 大赛公
- 告 第十七届中国大学生服务外包创新创业大赛全国赛决
- 赛获奖名单公告 2026-08-24 15:48:07 第十七届中国大学生服
- 务外包
+ .fwwb.org.cn/public/index\n证据: 封面大赛组委会2026年8月25日 
+ 第十七届中国大学生服务外包创新创业大赛全国赛决赛
+ 获奖名单公告 2026-08-24 15:48:07 第十七届中国大学生服务
+ 外包
 URL:https://www.fwwb.org.cn/public/index
 BEGIN:VALARM
 ACTION:DISPLAY
