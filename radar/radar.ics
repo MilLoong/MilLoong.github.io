@@ -225,69 +225,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:20260802
-UID:milestone-43@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
- ciscn.cn/announcement/view/417\n证据: 参与。经过全国线上初赛
- 和全国五大赛区层层选拔，最终遴选出80支优秀队伍入围
- 全国总决赛。 本届总决赛由教育部高等学校网络空间安
- 全专业教学指导委员会主办，齐鲁工业大学（
-URL:http://www.ciscn.cn/announcement/view/417
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:信息安全竞赛 · 决赛
-DTSTART;VALUE=DATE:20260802
-UID:milestone-40@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
- ciscn.cn/announcement/view/417\n证据: 参与。经过全国线上初赛
- 和全国五大赛区层层选拔，最终遴选出80支优秀队伍入围
- 全国总决赛。 本届总决赛由教育部高等学校网络空间安
- 全专业教学指导委员会主办，齐鲁工业大学（
-URL:http://www.ciscn.cn/announcement/view/417
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:信息安全竞赛 · 决赛
-DTSTART;VALUE=DATE:20260802
-UID:milestone-21@uestc-baoyan-radar
+UID:milestone-22@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
  ciscn.cn/announcement/view/417\n证据: 参与。经过全国线上初赛
  和全国五大赛区层层选拔，最终遴选出80支优秀队伍入围
@@ -318,7 +256,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:20260811
-UID:milestone-20@uestc-baoyan-radar
+UID:milestone-21@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
  ciscn.cn/announcement/view/418\n证据: 院代章） 2026年8月11 日 第
  十九届全国大学生信息安全竞赛创新实践能力赛（总决
