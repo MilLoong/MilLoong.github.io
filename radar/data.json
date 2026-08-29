@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T08:14:41.310032+00:00",
+  "generated_at": "2026-08-29T04:59:51.439537+00:00",
   "competitions": [
     {
       "id": "1",
@@ -618,7 +618,7 @@
       "competition_id": "13",
       "name": "信息安全竞赛",
       "full_name": "全国大学生信息安全竞赛",
-      "count": 17,
+      "count": 18,
       "range_start": "2026-04-02",
       "range_end": "2026-08-26",
       "messages": [
@@ -771,6 +771,16 @@
           "ends_at": null,
           "status": "unverified",
           "source_url": "http://www.ciscn.cn/announcement/view/420"
+        },
+        {
+          "id": 45,
+          "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖团队名单公示",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-26T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/421"
         },
         {
           "id": 42,
@@ -1539,6 +1549,18 @@
       "ends_at": null,
       "status": "unverified",
       "source_url": "https://jsjds.blcu.edu.cn/info/1041/2874.htm"
+    },
+    {
+      "id": 45,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖团队名单公示",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-26T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/421"
     },
     {
       "id": 42,
