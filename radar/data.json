@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T02:46:30.403346+00:00",
+  "generated_at": "2026-08-31T02:40:35.075100+00:00",
   "competitions": [
     {
       "id": "1",
@@ -738,9 +738,9 @@
       "competition_id": "21",
       "name": "计算机设计大赛",
       "full_name": "中国大学生计算机设计大赛",
-      "count": 20,
+      "count": 22,
       "range_start": "2025-09-08",
-      "range_end": "2026-08-24",
+      "range_end": "2026-08-30",
       "messages": [
         {
           "id": 17,
@@ -923,6 +923,16 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1041/2854.htm"
         },
         {
+          "id": 39,
+          "title": "08-30 .2026 2026 年（第 19 届）中国大学生计算机设计大赛 第 6 场国赛决赛在江南大学圆满落幕",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2026-08-16T00:00:00+00:00",
+          "ends_at": "2026-08-16T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2884.htm"
+        },
+        {
           "id": 7,
           "title": "08-23 .2026 2026年（第19届）中国大学生计算机设计大赛第4场国赛决赛在长春圆满落幕",
           "event_type": "other",
@@ -941,6 +951,16 @@
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://jsjds.blcu.edu.cn/info/1041/2874.htm"
+        },
+        {
+          "id": 40,
+          "title": "08-30 .2026 2026 年（第 19 届）中国大学生计算机设计大赛 第 6 场国赛决赛在江南大学圆满落幕",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-08-30T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2884.htm"
         }
       ]
     },
@@ -1385,6 +1405,18 @@
       "source_url": "http://www.ciscn.cn/announcement/view/418"
     },
     {
+      "id": 39,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "08-30 .2026 2026 年（第 19 届）中国大学生计算机设计大赛 第 6 场国赛决赛在江南大学圆满落幕",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": "2026-08-16T00:00:00+00:00",
+      "ends_at": "2026-08-16T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2884.htm"
+    },
+    {
       "id": 20,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
@@ -1431,6 +1463,18 @@
       "ends_at": null,
       "status": "unverified",
       "source_url": "http://www.ciscn.cn/announcement/view/421"
+    },
+    {
+      "id": 40,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "08-30 .2026 2026 年（第 19 届）中国大学生计算机设计大赛 第 6 场国赛决赛在江南大学圆满落幕",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-08-30T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2884.htm"
     }
   ]
 }
