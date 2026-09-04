@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T02:20:26.653895+00:00",
+  "generated_at": "2026-09-04T02:15:40.857591+00:00",
   "competitions": [
     {
       "id": "1",
@@ -618,9 +618,9 @@
       "competition_id": "13",
       "name": "信息安全竞赛",
       "full_name": "全国大学生信息安全竞赛",
-      "count": 13,
+      "count": 16,
       "range_start": "2026-05-29",
-      "range_end": "2026-09-02",
+      "range_end": "2026-09-03",
       "messages": [
         {
           "id": 27,
@@ -733,11 +733,31 @@
           "source_url": "http://www.ciscn.cn/announcement/view/421"
         },
         {
+          "id": 45,
+          "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2026-08-29T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/422"
+        },
+        {
           "id": 42,
           "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
           "event_type": "final",
           "event_label": "决赛",
           "starts_at": "2026-08-29T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/422"
+        },
+        {
+          "id": 46,
+          "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-09-02T00:00:00+00:00",
           "ends_at": null,
           "status": "unverified",
           "source_url": "http://www.ciscn.cn/announcement/view/422"
@@ -751,6 +771,16 @@
           "ends_at": null,
           "status": "unverified",
           "source_url": "http://www.ciscn.cn/announcement/view/422"
+        },
+        {
+          "id": 44,
+          "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖名单公布",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-09-03T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/423"
         }
       ]
     },
@@ -1495,6 +1525,18 @@
       "source_url": "http://www.ciscn.cn/announcement/view/421"
     },
     {
+      "id": 45,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": "2026-08-29T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/422"
+    },
+    {
       "id": 42,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
@@ -1531,6 +1573,18 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1041/2894.htm"
     },
     {
+      "id": 46,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-09-02T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/422"
+    },
+    {
       "id": 43,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
@@ -1541,6 +1595,18 @@
       "ends_at": null,
       "status": "unverified",
       "source_url": "http://www.ciscn.cn/announcement/view/422"
+    },
+    {
+      "id": 44,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖名单公布",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-09-03T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/423"
     }
   ]
 }

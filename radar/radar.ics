@@ -318,6 +318,37 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:20260829
+UID:milestone-45@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
+ ciscn.cn/announcement/view/422\n证据: 库 首页 公告列表 公告详
+ 情 第十九届全国大学生信息安全竞赛（创新实践能力赛
+ ）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）
+ 顺利举行 8月29日至30日，第十九届全
+URL:http://www.ciscn.cn/announcement/view/422
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:信息安全竞赛 · 决赛
+DTSTART;VALUE=DATE:20260829
 UID:milestone-42@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
  ciscn.cn/announcement/view/422\n证据: 库 首页 公告列表 公告详
