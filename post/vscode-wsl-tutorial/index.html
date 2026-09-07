@@ -1,0 +1,986 @@
+<!doctype html>
+<html
+  lang="zh-cn" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  Windows和Linux（本篇讲WSL）中vscode安装及使用教程 | MilLoong
+</title>
+<meta name="description" content="个人博客，记录学习日常"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="Windows和Linux（本篇讲WSL）中vscode安装及使用教程 | MilLoong" />
+  <meta
+    property="og:description"
+    content="个人博客，记录学习日常"
+  />
+  <meta property="og:url" content="https://MilLoong.github.io/post/vscode-wsl-tutorial/" />
+  <meta
+    property="og:site_name"
+    content="MilLoong的博客"
+  />
+  <meta
+    property="og:image"
+    content="/backgrounds/bg5.webp"
+  />
+  <meta property="article:author" content="MilLoong" />
+  <meta property="article:published_time" content="2025-08-04T21:29:05&#43;08:00" />
+  <meta property="article:modified_time" content="2025-08-04T21:29:05&#43;08:00" /><meta property="article:tag" content="VSCodeWSLLinux" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/backgrounds/bg5.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">咻——马上就加载好啦...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">关于</span>
+      </a><a class="main-nav-link-wrap" href="/friend">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">友链</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-whattoeat-link" class="nav-icon" href="/whattoeat" title="吃什么" aria-label="吃什么"></a>
+      <a id="nav-nailong-search-link" class="nav-icon" href="/nailong-search" title="奶龙表情库" aria-label="奶龙表情库"></a><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/backgrounds/bg5.webp" alt="Windows和Linux（本篇讲WSL）中vscode安装及使用教程"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">Windows和Linux（本篇讲WSL）中vscode安装及使用教程</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言：</a></li>
+    <li><a href="#下载">下载：</a>
+      <ul>
+        <li><a href="#软件安装">软件安装：</a></li>
+        <li><a href="#中文插件">中文插件：</a></li>
+      </ul>
+    </li>
+    <li><a href="#vscode配置">vscode配置：</a>
+      <ul>
+        <li><a href="#mingw-w64下载">MinGW-w64下载：</a></li>
+        <li><a href="#配置环境变量">配置环境变量：</a></li>
+      </ul>
+    </li>
+    <li><a href="#运行与调试"><strong>运行与调试：</strong></a>
+      <ul>
+        <li><a href="#创建文件">创建文件：</a></li>
+        <li><a href="#配置编译选项">配置编译选项：</a></li>
+        <li><a href="#运行文件">运行文件：</a></li>
+      </ul>
+    </li>
+    <li><a href="#在wsl上运行程序">在WSL上运行程序：</a></li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">10</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">18</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-08-04 21:29:05 &#43;0800 CST" itemprop="datePublished"
+      >2025-08-04</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-08-04</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/%e5%bc%80%e5%8f%91%e5%b7%a5%e5%85%b7"
+      data-aos="zoom-in"
+      >开发工具</a
+    ></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="windows和linux本篇讲wsl中vscode安装及使用教程">
+<a class="header-anchor" href="#windows%e5%92%8clinux%e6%9c%ac%e7%af%87%e8%ae%b2wsl%e4%b8%advscode%e5%ae%89%e8%a3%85%e5%8f%8a%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b"></a>
+Windows和Linux（本篇讲WSL）中vscode安装及使用教程
+</h1><blockquote>
+<p>原文：https://blog.csdn.net/qq_30618989/article/details/145636234<br>
+此原文也是本人所写</p>
+</blockquote>
+<h2 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言：
+</h2><p>说到文本编辑工具，相信大多数人对vscode并不陌生。虽然vscode确实有些年代了，但是其自身拥有的拓展，编辑代码的手感等等还是让许多人坚持使用。所以本篇博客给新进入大学的计算机新生以及对vscode的热爱但不会安装和使用的爱好者提供vscode的使用教程。而且还有一个原因就是，作者在网上看到的文章专业语言有点多，不适合新手阅读，导致我也是逐渐摸索才找到正确使用方法的，所以在此写一篇文章进行总结，如有不对之处，希望读者指正。</p>
+<h2 id="下载">
+<a class="header-anchor" href="#%e4%b8%8b%e8%bd%bd"></a>
+下载：
+</h2><h3 id="软件安装">
+<a class="header-anchor" href="#%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85"></a>
+软件安装：
+</h3><p>到 <a href="https://code.visualstudio.com/">vscode官网</a> 进行下载：
+<img src="/01_assets/vscode-wsl-tutorial_0_1.png" alt=""></p>
+<p>下载完之后，打开安装程序，选择 <strong>我同意此协议</strong> ，然后点击 <strong>“下一步”</strong> ：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_1.png" alt=""></p>
+<p>接下来可以根据需要是否 <strong>创建桌面快捷方式，</strong> 然后 <strong>其他</strong> 下面的不要动，然后点击 <strong>下一步：</strong></p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_3.png" alt=""></p>
+<p>点击 <strong>安装</strong> ：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_2.png" alt=""></p>
+<p>接着等待安装成功即可。</p>
+<h3 id="中文插件">
+<a class="header-anchor" href="#%e4%b8%ad%e6%96%87%e6%8f%92%e4%bb%b6"></a>
+中文插件：
+</h3><p>下载好vscode之后，我们将其打开。如果对自己英文水平满意的小伙伴可以跳过这步，如果英语实在不行的，可以按照下面的步骤安装 <strong>中文插件。</strong> 首先点开 <strong>拓展</strong> 选项：
+<img src="/01_assets/vscode-wsl-tutorial_0_5.png" alt=""></p>
+<p>点开之后搜索chinese，找到 <strong>Chinese (Simplified) (简体中文)</strong> 并安装，重启vscode即可：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_3.png" alt=""></p>
+<h2 id="vscode配置">
+<a class="header-anchor" href="#vscode%e9%85%8d%e7%bd%ae"></a>
+vscode配置：
+</h2><p>vscode是一个很高级的编辑器，但并不是一个编译器。换句话说，相当于一个高级的记事本，只能用来编写代码，而不自带运行，编译和调试。所以，我们需要安装编译器来配置语言环境。这里在windows下最常用的是MinGW（也就是gcc的windows版本）。</p>
+<h3 id="mingw-w64下载">
+<a class="header-anchor" href="#mingw-w64%e4%b8%8b%e8%bd%bd"></a>
+MinGW-w64下载：
+</h3><p>MinGW在其他文章中可能会推荐在 <a href="http://www.mingw.org/">mingw官网</a> 下载，不过实际上，这个MinGW原始项目已经停止维护，官网也进不了了。所以这里推荐的是使用MinGW-w64这个拓展版本，它和MinGW的区别在于这个可以支持64位或者32位可执行程序，而MinGW只能支持32位可执行程序。</p>
+<p>这里推荐一个 <a href="https://sourceforge.net/projects/mingw-w64/">第三方下载网站</a> 。打开后，先不着急下载，按照下面步骤进行安装：</p>
+<p>首先进入 <strong>Files</strong> :</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_4.png" alt=""></p>
+<p>接着进入 <strong>Toolchains targetting Win64</strong> ：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_8.png" alt=""></p>
+<p>然后进入 <strong>Personal Builds</strong> ：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_5.png" alt=""></p>
+<p>然后进入 <strong>mingw-builds</strong> ：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_10.png" alt=""></p>
+<p>在这里我们选择用8.1.0的版本，因为8.1.0版本针对 x86_64 架构进行了优化，采用 POSIX 线程模型，集成 SEH（结构化异常处理），适用于跨平台开发、高性能计算、嵌入式系统开发等多种场景，且社区支持活跃，简单来讲就是更稳定，更灵活，更高效。</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_6.png" alt=""></p>
+<p>这里选择posix，因为其启用 C++11/C11 多线程功能。</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_7.png" alt=""></p>
+<p>这里选择seh。</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_13.png" alt=""></p>
+<p>然后点击下载即可。</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_8.png" alt=""></p>
+<p>下载完之后可以得到一个压缩包，然后就可以解压到随便一个文件夹了。</p>
+<h3 id="配置环境变量">
+<a class="header-anchor" href="#%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f"></a>
+配置环境变量：
+</h3><blockquote>
+<p><strong>环境变量</strong> 是操作系统中用于指定运行环境的一些参数，是具有特定名称的对象。</p>
+<p>在这里我们要配置环境变量中的 <strong>path 环境变量</strong> ，其作用简单来讲就是：指定可执行文件的搜索路径。具体来说，如果当前目录下找不到可执行文件，就到 <strong>path 路径</strong> 去找，这样就会方便找到编译器的一些可执行文件。</p>
+<p>比如，可执行文件a.exe在C:\xxx\yyy，没配置 <strong>path 变量</strong> 前，如果你要执行它，可能要输：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">C:<span class="se">\x</span>xx<span class="se">\y</span>yy a
+</span></span></code></pre></div><p>但配置后，你在任何目录下都只需要：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">a
+</span></span></code></pre></div></blockquote>
+<p>解压完mingw64之后，我们打开 <strong>mingw64文件夹</strong> ，并进入 <strong>bin文件夹</strong> ：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_9.png" alt=""></p>
+<p>然后复制这个路径，这就是我们要配置环境变量的路径：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_16.png" alt=""></p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_10.png" alt=""></p>
+<p>接下来就开始配置环境变量了。首先在win11中，我们可以在windows图标的旁边搜索环境变量：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_11.png" alt=""></p>
+<p>然后点击 <strong>“编辑系统环境变量”</strong> ：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_19.png" alt=""></p>
+<p>然后双击打开 <strong>环境变量</strong> ：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_12.png" alt=""></p>
+<p>找到用户变量的 <strong>Path</strong> ，并双击打开，或者鼠标选中之后点击 <strong>编辑</strong> ：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_21.png" alt=""></p>
+<p>然后点击新建，再把刚刚的路径粘贴进去即可：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_13.png" alt=""></p>
+<p>做完之后，记得点击三个“确定”进行保存：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_19.png" alt=""></p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_24.png" alt=""></p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_14.png" alt=""></p>
+<p>这里的话为了确保万无一失也可以在系统变量进行如上操作，作者试过了，并无影响。</p>
+<p>到此，环境变量就配置完成了。</p>
+<h2 id="运行与调试">
+<a class="header-anchor" href="#%e8%bf%90%e8%a1%8c%e4%b8%8e%e8%b0%83%e8%af%95"></a>
+<strong>运行与调试：</strong>
+</h2><p>环境变量配置完成后，我们就可以写一个c语言程序运行调试一下了。</p>
+<h3 id="创建文件">
+<a class="header-anchor" href="#%e5%88%9b%e5%bb%ba%e6%96%87%e4%bb%b6"></a>
+创建文件：
+</h3><p>我们先去到vscode的 <strong>拓展</strong> 里面搜索 <strong>C/C++，</strong> 并安装即可。当然这里也推荐安装第一个拓展，比较方便运行：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_15.png" alt=""></p>
+<p>我们可以新建一个code文件夹（举个例子），然后在里面通过右键-&gt;（显示更多选项）-&gt;通过code打开（这里是勾选了之前 <strong>其他</strong> 里的附加选项后会有的）：
+<img src="/01_assets/vscode-wsl-tutorial_0_27.png" alt=""></p>
+<p>这样就可以直接用vscode打开这个文件夹。或者在vscode里选择<strong>文件-&gt;打开文件夹</strong>，然后选择你的文件夹即可：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_20.png" alt=""></p>
+<p><strong>补充：</strong> 这里的话有可能是三条杠，那么就先点开三条杠，然后在点击 <strong>文件-&gt;打开文件夹：</strong></p>
+<p><strong><img src="/01_assets/vscode-wsl-tutorial_0_29.png" alt=""></strong></p>
+<p>接着我们就可以点击如下图所示的按钮新建文件：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_21.png" alt=""></p>
+<p>这里为示例我新建了一个hello.c的文件，注意要记得写文件的后缀，否则文件就是一个文本文件，不是任何语言。如果写是c语言程序图标应该是这样：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_31.png" alt=""></p>
+<p>否则就是这样：</p>
+<p>​​​​​​​        ​​​​​​​        ​​​​​​​        ​​​​​​​        ​​​​​​​ <img src="/01_assets/vscode-wsl-tutorial_0_32.png" alt=""></p>
+<p>创建成功之后，我这里随便写一个程序：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;stdio.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Hello,World&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>   
+</span></span></code></pre></div><p>然后 <strong>ctrl+s</strong> 保存即可。</p>
+<h3 id="配置编译选项">
+<a class="header-anchor" href="#%e9%85%8d%e7%bd%ae%e7%bc%96%e8%af%91%e9%80%89%e9%a1%b9"></a>
+配置编译选项：
+</h3><p>写好文件之后，接下来就是配置编译选项部分了。</p>
+<p>我们先用 <strong>ctrl+shift+P</strong> 快捷键打开命令面板，然后输入c/c++进行搜索，选择c/c++配置UI：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_33.png" alt=""></p>
+<p>点击之后下拉找到 <strong>编译器路径，</strong> 并点击右边的 <strong>下拉窗口:</strong></p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_34.png" alt=""></p>
+<p>找到 <strong>gcc.exe</strong> ，并选择 <img src="/01_assets/vscode-wsl-tutorial_0_35.png" alt=""></p>
+<p>点击之后可能会出现类似的配置警告，这个不用管，直接叉掉就好：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_22.png" alt=""></p>
+<p>接着找到 <strong>IntelliSense模式</strong> ，并将其改为 <strong>gcc-x64：</strong></p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_37.png" alt=""></p>
+<p>那么完成这一步之后编译选项就配置好了。</p>
+<h3 id="运行文件">
+<a class="header-anchor" href="#%e8%bf%90%e8%a1%8c%e6%96%87%e4%bb%b6"></a>
+运行文件：
+</h3><p>配置完成编译选项之后，我们就可以回到刚才所在的hello.c文件了。那么我们先配置编译任务。 <strong>点击三个点-&gt;终端-&gt;配置任务</strong> ：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_16.png" alt=""></p>
+<p>然后选择C/C++:gcc.exe 生成活动文件：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_17.png" alt=""></p>
+<p><strong>注：</strong> 这里如果没有这个选项的话可以先按Ctrl+F5或者F5运行一下程序，如果还是没有的话就重启vscode，还是没有的话就看看自己是否已经完成本篇文章前面的配置编译选项的步骤。</p>
+<p>点击之后就会生成一个 <strong>task.json</strong> 文件，这就是专门用来编译的文件，里面都是一些编译的内容：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_40.png" alt=""></p>
+<p>然后我们回到<strong>hello.c</strong>文件，再次找到<strong>终端</strong>，然后点击<strong>运行生成任务（或者直接按ctrl+shift+B）</strong>：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_23.png" alt=""></p>
+<p>然后再点击 C/C++: gcc.exe 生成活动文件即可：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_0_42.png" alt=""></p>
+<p>那么这个时候可以看到文件那里就出现了一个 <strong>hello.exe</strong> 文件：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_18.png" alt=""></p>
+<p>那么我们怎么执行hello.exe文件呢？我们先按<strong>任意键</strong>把刚才生成活动文件时的打开的窗口关掉，然后用ctrl+<code>打开终端。这里的</code>就是ESC下面那个键：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_24.png" alt=""></p>
+<p>打开之后就输入.\hello.exe就可以运行文件了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">PS C:<span class="se">\t</span>est<span class="se">\c</span>ode&gt; .<span class="se">\h</span>ello.exe
+</span></span><span class="line"><span class="cl"><span class="c1">#注意这里.\和./都可以</span>
+</span></span><span class="line"><span class="cl">hello,world.
+</span></span></code></pre></div><p><strong>补充：</strong> 事实上，还有更简单的方法可以运行C/C++程序。</p>
+<p><strong>1.</strong> 用之前提到的C/C++ Compile Run插件，直接按F6就可以运行了。</p>
+<p><strong>2.</strong> 用Code Runner拓展：</p>
+<pre><code>  ![](/01_assets/vscode-wsl-tutorial_remote_25.png)
+</code></pre>
+<p>下载之后，右键，Run Code即可运行代码：</p>
+<p><img src="/01_assets/vscode-wsl-tutorial_remote_26.png" alt=""></p>
+<p><strong>3.</strong> 在终端直接生成.exe文件。直接在终端利用gcc，输入gcc hello.c -o hello.exe即可生成.exe文件，然后.\hello.exe即可：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">PS C:<span class="se">\t</span>est<span class="se">\c</span>ode&gt; gcc hello.c -o hello.exe
+</span></span><span class="line"><span class="cl">PS C:<span class="se">\t</span>est<span class="se">\c</span>ode&gt; .<span class="se">\h</span>ello.exe
+</span></span><span class="line"><span class="cl">hello,world.
+</span></span></code></pre></div><p>当然你也可以：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">预处理：gcc -E xxx.c -o xxx.i
+</span></span><span class="line"><span class="cl">编译：gcc -S xxx.i -o xxx.s
+</span></span><span class="line"><span class="cl">汇编：gcc -c xxx.s -o xxx.o
+</span></span><span class="line"><span class="cl">链接：gcc xxx.o -o xxx.exe
+</span></span></code></pre></div><p>就是了，不过关于gcc的更多内容这里不多赘述，感兴趣的可以自行搜索了解。</p>
+<p>至此，我们就完成了文件的运行。如果要调试的话，可以按F5进行调试即可，这里关于调试的内容不多赘述，请读者自行查阅。</p>
+<h2 id="在wsl上运行程序">
+<a class="header-anchor" href="#%e5%9c%a8wsl%e4%b8%8a%e8%bf%90%e8%a1%8c%e7%a8%8b%e5%ba%8f"></a>
+在WSL上运行程序：
+</h2><p>关于WSL的内容，比如如何安装WSL，本篇文章不涉及。那么要在WSL上运行vscode所写的程序，也就是生成的.exe文件，我们只需要 <strong>找到在WSL上对应到windows的文件夹</strong> 即可。比如我刚才在C:\test\code里写了hello.exe文件，那么我就要在WSL的对应路径上找到它，找到之后就可以用.\hello.exe来运行了。实际上，windows里的C盘中的文件夹对应到WSL中的路径是在\usr\mnt\c中（D盘在\d，E盘在\e中），那么我们只要找到这个路径即可。</p>
+<p>首先我们打开WSL后，默认进入的是\usr文件夹（这里的usr实际上就是你的windows账号的用户名），大概是xxx@xxxx:~$的格式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">xxx@xxx:~$
+</span></span></code></pre></div><p>这时我们用cd/mnt进入mnt文件夹，然后输入cd /c进入c文件夹。接着进入你在windows下对应存放文件的位置，我这里是放在C:\test\code，所以我只要进入cd test\code即可：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">xxx@xxx:~$ <span class="nb">cd</span> /mnt
+</span></span><span class="line"><span class="cl">xxx@xxx:/mnt$ <span class="nb">cd</span> /c
+</span></span><span class="line"><span class="cl">xxx@xxx:/mnt/c$ <span class="nb">cd</span> test/code
+</span></span><span class="line"><span class="cl">xxx@xxx:/mnt/c/test/code$
+</span></span></code></pre></div><p>接着用./hello.exe运行程序就好了（ <strong>&quot;/&quot;</strong> 和 <strong>&quot;&quot;</strong> 都可以）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">xxx@xxx:/mnt/c/test/code$ ./hello.exe
+</span></span><span class="line"><span class="cl">hello,world.
+</span></span></code></pre></div></div>
+    <footer class="article-footer"><a
+          data-aos="zoom-in"
+          href="/post/vscode-wsl-tutorial/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="/post/vscode-wsl-tutorial/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/post/vscode-wsl-tutorial/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/vscode"
+        rel="tag"
+        >VSCODE</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/wsl"
+        rel="tag"
+        >WSL</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/linux"
+        rel="tag"
+        >LINUX</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+            data-src="/backgrounds/bg7.webp"
+            data-sizes="auto"
+            alt="类似于双指针的线性遍历模板"
+            class="lazyload"
+          /><a
+          href="/post/two-pointers-template/"
+          aria-label="前一篇:类似于双指针的线性遍历模板"
+          title="前一篇:类似于双指针的线性遍历模板"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">类似于双指针的线性遍历模板</h3>
+      </div><div class="article-nav-link-wrap right"><img
+            data-src="/backgrounds/bg6.webp"
+            data-sizes="auto"
+            alt="xcpc中几种排序算法的几种简单写法"
+            class="lazyload"
+          /><a
+          href="/post/xcpc-sorting/"
+          aria-label="后一篇:xcpc中几种排序算法的几种简单写法"
+          title="后一篇:xcpc中几种排序算法的几种简单写法"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">xcpc中几种排序算法的几种简单写法</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>
+      MilLoong
+    </div><div>
+        <a
+          href="https://github.com/MilLoong"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noopener nofollow noreferrer"
+          style="display: inline-block; transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt="GitHub"
+            style="width: 32px; height: 32px; vertical-align: middle; background: transparent;"
+          >
+        </a>
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;3.2k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;00:20</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言：</a></li>
+    <li><a href="#下载">下载：</a>
+      <ul>
+        <li><a href="#软件安装">软件安装：</a></li>
+        <li><a href="#中文插件">中文插件：</a></li>
+      </ul>
+    </li>
+    <li><a href="#vscode配置">vscode配置：</a>
+      <ul>
+        <li><a href="#mingw-w64下载">MinGW-w64下载：</a></li>
+        <li><a href="#配置环境变量">配置环境变量：</a></li>
+      </ul>
+    </li>
+    <li><a href="#运行与调试"><strong>运行与调试：</strong></a>
+      <ul>
+        <li><a href="#创建文件">创建文件：</a></li>
+        <li><a href="#配置编译选项">配置编译选项：</a></li>
+        <li><a href="#运行文件">运行文件：</a></li>
+      </ul>
+    </li>
+    <li><a href="#在wsl上运行程序">在WSL上运行程序：</a></li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">10</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">18</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><meting-js
+        theme="var(--color-link)"
+        id="784227484"server="netease"type="playlist"fixed="true"autoplay="false"loop="all"order="list"preload="auto"volume="0.7"mutex="true"list-folded="false"lrc-type="0">
+      </meting-js><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "TT8YY4JPRF",
+        apiKey: "4d450286d17ecfeb7b0c6f78ebceb3d4",
+        indexName: "MilLoongBlog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+    if (window.firework) {
+      const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+      options.excludeElements = options.excludeelements;
+      delete options.excludeelements;
+      window.firework(options);
+    }
+  }
+</script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "MilLoong",
+          title: "Windows和Linux（本篇讲WSL）中vscode安装及使用教程",
+          url: "https:\/\/MilLoong.github.io\/post\/vscode-wsl-tutorial\/",
+          description: " Windows和Linux（本篇讲WSL）中vscode安装及使用教程 原文：https:\/\/blog.csdn.net\/qq_30618989\/article\/details\/145636234\n此原文也是本人所写\n前言： 说到文本编辑工具，相信大多数人对vscode并不陌生。虽然vscode确实有些年代了，但是其自身拥有的拓展，编辑代码的手感等等还是让许多人坚持使用。所以本篇博客给新进入大学的计算机新生以及对vscode的热爱但不会安装和使用的爱好者提供vscode的使用教程。而且还有一个原因就是，作者在网上看到的文章专业语言有点多，不适合新手阅读，导致我也是逐渐摸索才找到正确使用方法的 …",
+          cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg5.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus', 'disqus'];
+  var commentConfig = {waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/vercelproject-sage-beta.vercel.app\/',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  0 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },};
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig?.[key]?.enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig?.[sys]?.enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.matchMedia('(max-width: 959px)').matches) {
+        const meting = _$('meting-js');
+        if (meting) {
+          meting.setAttribute('fixed', 'true');
+          const aside = meting.parentNode?.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            meting.parentNode.removeChild(meting);
+            document.body.appendChild(meting);
+          }
+        }
+      }
+      const script = document.createElement('script');
+      script.src = "https:\/\/npm.webcache.cn\/meting@2.0.1\/dist\/Meting.min.js";
+      script.integrity = "sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8\u002b0maanw1S\/IyB\u002bY4JG\u002bZDU7GpKE8";
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+  </script></body>
+</html>

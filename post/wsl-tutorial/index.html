@@ -1,0 +1,918 @@
+<!doctype html>
+<html
+  lang="zh-cn" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  WSL下载，使用の教程 | MilLoong
+</title>
+<meta name="description" content="个人博客，记录学习日常"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="WSL下载，使用の教程 | MilLoong" />
+  <meta
+    property="og:description"
+    content="个人博客，记录学习日常"
+  />
+  <meta property="og:url" content="https://MilLoong.github.io/post/wsl-tutorial/" />
+  <meta
+    property="og:site_name"
+    content="MilLoong的博客"
+  />
+  <meta
+    property="og:image"
+    content="/backgrounds/bg4.webp"
+  />
+  <meta property="article:author" content="MilLoong" />
+  <meta property="article:published_time" content="2025-08-11T21:28:12&#43;08:00" />
+  <meta property="article:modified_time" content="2025-08-11T21:28:12&#43;08:00" /><meta property="article:tag" content="WSLLinuxWindows" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/backgrounds/bg4.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">咻——马上就加载好啦...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">关于</span>
+      </a><a class="main-nav-link-wrap" href="/friend">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">友链</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-whattoeat-link" class="nav-icon" href="/whattoeat" title="吃什么" aria-label="吃什么"></a>
+      <a id="nav-nailong-search-link" class="nav-icon" href="/nailong-search" title="奶龙表情库" aria-label="奶龙表情库"></a><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/backgrounds/bg4.webp" alt="WSL下载，使用の教程"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">WSL下载，使用の教程</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#下载">下载</a>
+      <ul>
+        <li><a href="#设置启用wsl选项">设置启用WSL选项</a></li>
+        <li><a href="#下载linux系统">下载Linux系统</a></li>
+        <li><a href="#打开ubuntu">打开Ubuntu</a></li>
+        <li><a href="#创建账户">创建账户</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用">使用</a>
+      <ul>
+        <li><a href="#gcc">gcc</a></li>
+        <li><a href="#python">python</a></li>
+        <li><a href="#编译运行">编译运行</a></li>
+      </ul>
+    </li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">10</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">18</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-08-11 21:28:12 &#43;0800 CST" itemprop="datePublished"
+      >2025-08-11</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-08-11</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/%e5%bc%80%e5%8f%91%e5%b7%a5%e5%85%b7"
+      data-aos="zoom-in"
+      >开发工具</a
+    ></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="wsl下载使用の教程">
+<a class="header-anchor" href="#wsl%e4%b8%8b%e8%bd%bd%e4%bd%bf%e7%94%a8%e3%81%ae%e6%95%99%e7%a8%8b"></a>
+WSL下载，使用の教程
+</h1><blockquote>
+<p>原文：https://blog.csdn.net/qq_30618989/article/details/149073574<br>
+此原文也是本人所写</p>
+</blockquote>
+<h2 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h2><p>当今最流行的操作系统无疑是微软发布的 <strong>Windows系统，</strong> 其上面生态丰富，易用，为大众传播最广。但在程序员的世界， <strong>Linux系统</strong> 同样也是一种生态丰富且易用，简洁的系统，但它相比于 <strong>Windows，</strong> 具有 <strong>更大的优势，因为它是开源的，而Windows不是。</strong> 那么开源系统的好处自然不用多说，如果是闭源的，那么遇到一些有关os的情况就不能处理。而且还有一个原因是github上有一些项目只能用Linux运行。</p>
+<p>但如上所述，现在主流的系统是 <strong>Windows系统，</strong> 我们装的系统呢也自然多数是 <strong>Windows系统，</strong> 那我们如果想要用Linux系统，该怎么做呢？一种是用 <strong>虚拟机，</strong> 另一种就是本篇文章讲的 <strong>WSL。</strong> 两者各有优劣，虚拟机的话占内存较大，需要空出许多内存，但功能比较齐全。而WSL的话是比较轻量的，但有些功能可能会没有涉及到。 <strong>不过如果是学生党的话，我建议还是直接装WSL就好了，毕竟不花时间，而且我们大多数也只是用到终端的功能。</strong></p>
+<h2 id="下载">
+<a class="header-anchor" href="#%e4%b8%8b%e8%bd%bd"></a>
+下载
+</h2><h3 id="设置启用wsl选项">
+<a class="header-anchor" href="#%e8%ae%be%e7%bd%ae%e5%90%af%e7%94%a8wsl%e9%80%89%e9%a1%b9"></a>
+设置启用WSL选项
+</h3><blockquote>
+<p><strong>注：</strong></p>
+<p><strong>1、WSL的下载和使用也和Windows的用户名有关，请务必保证你当前Windows系统的用户名是全英的，不然后续容易出现各种各样的问题，到时候就只能重装系统了</strong></p>
+<p><strong>2、博主用的是Win11</strong></p>
+</blockquote>
+<p>首先去到 <strong>控制面板</strong> ，那么可以从设置里面去，不过我觉得还是直接搜比较简单方便：</p>
+<p><img src="/01_assets/wsl-tutorial_0_1.png" alt=""></p>
+<p><strong>然后找到程序和功能：</strong></p>
+<p><img src="/01_assets/wsl-tutorial_0_2.png" alt=""></p>
+<p><strong>启用或关闭Windows功能：</strong></p>
+<p><img src="/01_assets/wsl-tutorial_remote_1.png" alt=""></p>
+<p>找到 <strong>Virtual Machine Platform和适用于Linux的Windows子系统，如果没勾要勾上，</strong> 确保后续操作没有问题，如果还有 <strong>虚拟机平台</strong> 这个选项，记得也勾上 <strong>：</strong></p>
+<p><img src="/01_assets/wsl-tutorial_remote_2.png" alt=""></p>
+<p>如果之前没有勾上的话，重新勾上要 <strong>重启系统</strong> 才能生效</p>
+<h3 id="下载linux系统">
+<a class="header-anchor" href="#%e4%b8%8b%e8%bd%bdlinux%e7%b3%bb%e7%bb%9f"></a>
+下载Linux系统
+</h3><p><strong>启用了上述选项并生效之后，</strong> 我们就可以在 <strong>Microsoft Store软件</strong> 下载Linux系统了</p>
+<blockquote>
+<p><strong>注：</strong></p>
+<p><strong>1、其实按照官网的说法，是可以直接在终端用以下命令安装的：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">wsl</span><span class="w"> </span><span class="c1">--install
+</span></span></span></code></pre></div><p>不过好像是下载源有问题还是什么，博主用这个命令安装得很慢，所以是改用的在Microsoft Store下载安装，如果你用上述命令没有问题的话，那也可以尝试</p>
+<p><strong>2、Microsoft Store是Windows系统自带的软件，同样可以直接搜出来</strong></p>
+<p><strong>3、如果Microsoft Store无法打开，可以去 <a href="https://support.microsoft.com/zh-cn/account-billing/microsoft%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80-126a875d-8b72-def1-0af6-d325276a058b">官方帮助</a> 去看看能不能解决，如果不行的话，如果出现Microsoft Store初始化失败，可以这样来：</strong></p>
+<p>（1）Win+R打开打开 <strong>运行</strong></p>
+<p>（2）输入inetcpl.cpl然后回车，打开Internet选项窗口</p>
+<p>（3）点击上方的 <strong>高级</strong></p>
+<p>（4）向下滑，找到 <strong>安全</strong></p>
+<p>（5）把 <strong>使用TLS 1.x</strong> 的那几个选项全都勾上，如果只有 <strong>TLS 1.1</strong> ，那么就会出现问题</p>
+<p>如果还是不能解决，Microsoft Store还是抽风的话，可以参考 <a href="https://zhuanlan.zhihu.com/p/669384502"> <strong>这篇文章</strong> </a></p>
+</blockquote>
+<p>打开 <strong>Microsoft Store</strong> ，然后我们要下载 <strong>Linux系统</strong> ，当下适合学生党使用的是 <strong>Ubuntu系统（就是一种Linux系统了，Linux系统分为好几种）</strong> ，当然如果你对 <strong>网络安全</strong> 感兴趣的话，也可以下 <strong>kali</strong> ，那么本篇文章讲的是 <strong>Ubuntu：</strong></p>
+<p><img src="/01_assets/wsl-tutorial_remote_3.png" alt=""></p>
+<p>这么多版本中，比较推荐的是比较老的 <strong>Ubuntu 20.04.6 LTS</strong> ，因为最新的会有些问题，这里不细讲。</p>
+<h3 id="打开ubuntu">
+<a class="header-anchor" href="#%e6%89%93%e5%bc%80ubuntu"></a>
+打开Ubuntu
+</h3><p>下好之后，系统会弹出一个终端，这就是 <strong>Ubuntu系统的终端</strong> ，在后续如果你想打开的话，可以直接点击 <strong>Ubuntu的那个系统文件</strong> 打开：</p>
+<p><img src="/01_assets/wsl-tutorial_0_6.png" alt=""></p>
+<p>或在 <strong>Windows终端</strong> 打开 <strong>：</strong></p>
+<p><img src="/01_assets/wsl-tutorial_remote_4.png" alt=""></p>
+<h3 id="创建账户">
+<a class="header-anchor" href="#%e5%88%9b%e5%bb%ba%e8%b4%a6%e6%88%b7"></a>
+创建账户
+</h3><p>在弹出的窗口中，等待 <strong>加载完毕</strong> 后，系统会要求创建一个 <strong>新账户和密码，</strong> 这里就直接按页面操作就好了，没什么好讲的，操作都是默认，然后就输入账户和密码。</p>
+<p>界面大概就是这样的（当然没有后面的#注释就是了）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Installing, this may take a few minutes...
+</span></span><span class="line"><span class="cl">Please create a default UNIX user account. The username does not need to match your Windows username.
+</span></span><span class="line"><span class="cl">For more information visit: https://aka.ms/wslusers
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">Enter new UNIX username: lilei <span class="c1">#用户名</span>
+</span></span><span class="line"><span class="cl">New password:         <span class="c1">#密码，无回显</span>
+</span></span><span class="line"><span class="cl">Retype new password: 
+</span></span><span class="line"><span class="cl">passwd: password updated successfully
+</span></span><span class="line"><span class="cl">Installation successful!
+</span></span></code></pre></div><blockquote>
+<p><strong>注：</strong></p>
+<p><strong>1、创建密码时，密码的输入是没有回显的，就是说你在界面上看不到密码的输入的，这是系统的一种安全措施，不是出错了，要注意，所以一定要记住你打了什么，你的密码是什么。</strong></p>
+<p><strong>如果实在是忘了密码，可以参考 <a href="https://zhuanlan.zhihu.com/p/387283272">这个教程</a></strong></p>
+<p><strong>2、忘了用户名，可以在终端中用：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">whoami
+</span></span></code></pre></div><p><strong>来看</strong></p>
+</blockquote>
+<h2 id="使用">
+<a class="header-anchor" href="#%e4%bd%bf%e7%94%a8"></a>
+使用
+</h2><h3 id="gcc">
+<a class="header-anchor" href="#gcc"></a>
+gcc
+</h3><p>如果不知道 <strong>gcc</strong> 是什么的话，请自行搜索了解，本文不涉及。</p>
+<p>在 <strong>Linux</strong> 中安装 <strong>gcc</strong> 是及其方便的，只需要输入如下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update    <span class="c1">#更新</span>
+</span></span><span class="line"><span class="cl">sudo apt install build-essential    <span class="c1">#安装gcc（实际是整个开发工具集）</span>
+</span></span></code></pre></div><p>然后的话就默认安装就好了。</p>
+<p>可以通过：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gcc -v
+</span></span></code></pre></div><p>来查看 <strong>gcc</strong> 的版本，如果显示类似于：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">xxx@xxx:~$ gcc -v
+</span></span><span class="line"><span class="cl">Using built-in specs.
+</span></span><span class="line"><span class="cl"><span class="nv">COLLECT_GCC</span><span class="o">=</span>gcc
+</span></span><span class="line"><span class="cl"><span class="nv">COLLECT_LTO_WRAPPER</span><span class="o">=</span>/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
+</span></span><span class="line"><span class="cl"><span class="nv">OFFLOAD_TARGET_NAMES</span><span class="o">=</span>nvptx-none:amdgcn-amdhsa
+</span></span><span class="line"><span class="cl"><span class="nv">OFFLOAD_TARGET_DEFAULT</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">Target: x86_64-linux-gnu
+</span></span><span class="line"><span class="cl">Configured with: ../src/configure -v --with-pkgversion<span class="o">=</span><span class="s1">&#39;Ubuntu 13.3.0-6ubuntu2~24.04&#39;</span> --with-bugurl<span class="o">=</span>file:///usr/share/doc/gcc-13/README.Bugs --enable-languages<span class="o">=</span>c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix<span class="o">=</span>/usr --with-gcc-major-version-only --program-suffix<span class="o">=</span>-13 --program-prefix<span class="o">=</span>x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir<span class="o">=</span>/usr/libexec --without-included-gettext --enable-threads<span class="o">=</span>posix --libdir<span class="o">=</span>/usr/lib --enable-nls --enable-bootstrap --enable-clocale<span class="o">=</span>gnu --enable-libstdcxx-debug --enable-libstdcxx-time<span class="o">=</span>yes --with-default-libstdcxx-abi<span class="o">=</span>new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking<span class="o">=</span>release --with-target-system-zlib<span class="o">=</span>auto --enable-objc-gc<span class="o">=</span>auto --enable-multiarch --disable-werror --enable-cet --with-arch-32<span class="o">=</span>i686 --with-abi<span class="o">=</span>m64 --with-multilib-list<span class="o">=</span>m32,m64,mx32 --enable-multilib --with-tune<span class="o">=</span>generic --enable-offload-targets<span class="o">=</span>nvptx-none<span class="o">=</span>/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa<span class="o">=</span>/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking<span class="o">=</span>release --build<span class="o">=</span>x86_64-linux-gnu --host<span class="o">=</span>x86_64-linux-gnu --target<span class="o">=</span>x86_64-linux-gnu --with-build-config<span class="o">=</span>bootstrap-lto-lean --enable-link-serialization<span class="o">=</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">Thread model: posix
+</span></span><span class="line"><span class="cl">Supported LTO compression algorithms: zlib zstd
+</span></span><span class="line"><span class="cl">gcc version 13.3.0 <span class="o">(</span>Ubuntu 13.3.0-6ubuntu2~24.04<span class="o">)</span>
+</span></span></code></pre></div><p>则说明已经安装成功。</p>
+<h3 id="python">
+<a class="header-anchor" href="#python"></a>
+python
+</h3><p><strong>Ubuntu系统</strong> 是自带 <strong>python3</strong> 的，可以用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python3 -v
+</span></span></code></pre></div><p>来看版本，是否安装什么的。</p>
+<p>而不一定有 <strong>python2，</strong> 如果要安装的话可以这样 <strong>：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt install python2
+</span></span></code></pre></div><p>然后看版本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python2 -v
+</span></span></code></pre></div><h3 id="编译运行">
+<a class="header-anchor" href="#%e7%bc%96%e8%af%91%e8%bf%90%e8%a1%8c"></a>
+编译运行
+</h3><p>至于具体的怎么在 <strong>Linux</strong> 中编译运行我们在 <strong>Windows</strong> 中写好程序，可以看我的 <a href="https://blog.csdn.net/qq_30618989/article/details/145636234?spm=1001.2014.3001.5501">另一篇博客</a></p>
+<h2 id="结语">
+<a class="header-anchor" href="#%e7%bb%93%e8%af%ad"></a>
+结语
+</h2><p>由于博主也是学生党，所以暂时分享到这了qwq。而如果有什么问题的话，欢迎私聊我，我会尽量抽出时间解答的（当然是在你搜索和问AI都不能解决的前提下了，还是要学会自己解答问题=v=）</p>
+</div>
+    <footer class="article-footer"><a
+          data-aos="zoom-in"
+          href="/post/wsl-tutorial/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="/post/wsl-tutorial/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/post/wsl-tutorial/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/wsl"
+        rel="tag"
+        >WSL</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/linux"
+        rel="tag"
+        >LINUX</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/windows"
+        rel="tag"
+        >WINDOWS</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+            data-src="/backgrounds/bg6.webp"
+            data-sizes="auto"
+            alt="xcpc中几种排序算法的几种简单写法"
+            class="lazyload"
+          /><a
+          href="/post/xcpc-sorting/"
+          aria-label="前一篇:xcpc中几种排序算法的几种简单写法"
+          title="前一篇:xcpc中几种排序算法的几种简单写法"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">xcpc中几种排序算法的几种简单写法</h3>
+      </div><div class="article-nav-link-wrap right"><img
+            data-src="/backgrounds/bg2.webp"
+            data-sizes="auto"
+            alt="Hello World"
+            class="lazyload"
+          /><a
+          href="/post/hello-world/"
+          aria-label="后一篇:Hello World"
+          title="后一篇:Hello World"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">Hello World</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>
+      MilLoong
+    </div><div>
+        <a
+          href="https://github.com/MilLoong"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noopener nofollow noreferrer"
+          style="display: inline-block; transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt="GitHub"
+            style="width: 32px; height: 32px; vertical-align: middle; background: transparent;"
+          >
+        </a>
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;3.2k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;00:20</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#下载">下载</a>
+      <ul>
+        <li><a href="#设置启用wsl选项">设置启用WSL选项</a></li>
+        <li><a href="#下载linux系统">下载Linux系统</a></li>
+        <li><a href="#打开ubuntu">打开Ubuntu</a></li>
+        <li><a href="#创建账户">创建账户</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用">使用</a>
+      <ul>
+        <li><a href="#gcc">gcc</a></li>
+        <li><a href="#python">python</a></li>
+        <li><a href="#编译运行">编译运行</a></li>
+      </ul>
+    </li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">10</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">18</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><meting-js
+        theme="var(--color-link)"
+        id="784227484"server="netease"type="playlist"fixed="true"autoplay="false"loop="all"order="list"preload="auto"volume="0.7"mutex="true"list-folded="false"lrc-type="0">
+      </meting-js><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "TT8YY4JPRF",
+        apiKey: "4d450286d17ecfeb7b0c6f78ebceb3d4",
+        indexName: "MilLoongBlog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+    if (window.firework) {
+      const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+      options.excludeElements = options.excludeelements;
+      delete options.excludeelements;
+      window.firework(options);
+    }
+  }
+</script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "MilLoong",
+          title: "WSL下载，使用の教程",
+          url: "https:\/\/MilLoong.github.io\/post\/wsl-tutorial\/",
+          description: " WSL下载，使用の教程 原文：https:\/\/blog.csdn.net\/qq_30618989\/article\/details\/149073574\n此原文也是本人所写\n前言 当今最流行的操作系统无疑是微软发布的 Windows系统， 其上面生态丰富，易用，为大众传播最广。但在程序员的世界， Linux系统 同样也是一种生态丰富且易用，简洁的系统，但它相比于 Windows， 具有 更大的优势，因为它是开源的，而Windows不是。 那么开源系统的好处自然不用多说，如果是闭源的，那么遇到一些有关os的情况就不能处理。而且还有一个原因是github上有一些项目只能用Linux运行。\n但如上所述 …",
+          cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg4.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus', 'disqus'];
+  var commentConfig = {waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/vercelproject-sage-beta.vercel.app\/',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  0 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },};
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig?.[key]?.enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig?.[sys]?.enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.matchMedia('(max-width: 959px)').matches) {
+        const meting = _$('meting-js');
+        if (meting) {
+          meting.setAttribute('fixed', 'true');
+          const aside = meting.parentNode?.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            meting.parentNode.removeChild(meting);
+            document.body.appendChild(meting);
+          }
+        }
+      }
+      const script = document.createElement('script');
+      script.src = "https:\/\/npm.webcache.cn\/meting@2.0.1\/dist\/Meting.min.js";
+      script.integrity = "sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8\u002b0maanw1S\/IyB\u002bY4JG\u002bZDU7GpKE8";
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+  </script></body>
+</html>

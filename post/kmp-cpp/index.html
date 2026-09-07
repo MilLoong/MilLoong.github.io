@@ -1,0 +1,1090 @@
+<!doctype html>
+<html
+  lang="zh-cn" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  KMP算法——透彻的理论理解&代码理解（c&#43;&#43;） | MilLoong
+</title>
+<meta name="description" content="个人博客，记录学习日常"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="KMP算法——透彻的理论理解&代码理解（c&#43;&#43;） | MilLoong" />
+  <meta
+    property="og:description"
+    content="个人博客，记录学习日常"
+  />
+  <meta property="og:url" content="https://MilLoong.github.io/post/kmp-cpp/" />
+  <meta
+    property="og:site_name"
+    content="MilLoong的博客"
+  />
+  <meta
+    property="og:image"
+    content="/backgrounds/bg9.webp"
+  />
+  <meta property="article:author" content="MilLoong" />
+  <meta property="article:published_time" content="2025-07-05T22:32:52&#43;08:00" />
+  <meta property="article:modified_time" content="2025-07-05T22:32:52&#43;08:00" /><meta property="article:tag" content="KMP字符串C&#43;&#43;" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/backgrounds/bg9.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">咻——马上就加载好啦...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">关于</span>
+      </a><a class="main-nav-link-wrap" href="/friend">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">友链</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-whattoeat-link" class="nav-icon" href="/whattoeat" title="吃什么" aria-label="吃什么"></a>
+      <a id="nav-nailong-search-link" class="nav-icon" href="/nailong-search" title="奶龙表情库" aria-label="奶龙表情库"></a><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/backgrounds/bg9.webp" alt="KMP算法——透彻的理论理解&amp;代码理解（c&#43;&#43;）"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">KMP算法——透彻的理论理解&amp;代码理解（c&#43;&#43;）</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#理论理解">理论理解</a>
+      <ul>
+        <li><a href="#基本定义">基本定义</a></li>
+        <li><a href="#基本原理">基本原理</a></li>
+      </ul>
+    </li>
+    <li><a href="#代码理解">代码理解</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">10</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">18</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-07-05 22:32:52 &#43;0800 CST" itemprop="datePublished"
+      >2025-07-05</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-07-05</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/%e7%ae%97%e6%b3%95"
+      data-aos="zoom-in"
+      >算法</a
+    ></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="kmp算法透彻的理论理解代码理解c">
+<a class="header-anchor" href="#kmp%e7%ae%97%e6%b3%95%e9%80%8f%e5%bd%bb%e7%9a%84%e7%90%86%e8%ae%ba%e7%90%86%e8%a7%a3%e4%bb%a3%e7%a0%81%e7%90%86%e8%a7%a3c"></a>
+KMP算法——透彻的理论理解&amp;代码理解（c++）
+</h1><blockquote>
+<p>原文：https://blog.csdn.net/qq_30618989/article/details/149081820<br>
+此原文也是本人所写</p>
+</blockquote>
+<h2 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h2><p>相信大家在学 <strong>字符串算法</strong> 的时候第一个接触的就是 <strong>kmp算法</strong> ，因为 <strong>字符串匹配问题</strong> 太经典了，而kmp算法竟然能把一个 <strong>O(mn)</strong> 的时间复杂度用及其妙的前缀表来优化到线性的时间复杂度 <strong>O(m+n)。</strong> 不过虽然 <strong>kmp算法</strong> 是 <strong>字符串算法</strong> 中及其重要的算法，但实际上还是比较难理解的。</p>
+<p>以博主的经验来看，网上所讲的 <strong>kmp算法</strong> 以及 <strong>next数组（prefix数组）</strong> 的理解其实都差点意思，最后是我冥思苦想许久才彻底搞明白 <strong>kmp算法到底在讲什么</strong> 、 <strong>next数组（prefix数组）</strong> 到底代表什么含义，以及怎么理解的。所以本文就以我的理解，来给各位透彻的解释一下 <strong>kmp算法，以及它的代码</strong> 是怎么理解的，虽然可能不是最透彻最简洁的，但我想应该是会比网上绝大部分文章讲得通俗易懂的，相信你应该可以看懂。</p>
+<h2 id="理论理解">
+<a class="header-anchor" href="#%e7%90%86%e8%ae%ba%e7%90%86%e8%a7%a3"></a>
+理论理解
+</h2><h3 id="基本定义">
+<a class="header-anchor" href="#%e5%9f%ba%e6%9c%ac%e5%ae%9a%e4%b9%89"></a>
+基本定义
+</h3><p><strong>kmp算法</strong> 涉及 <strong>字符串匹配问题，</strong> 其中有许多需要我们理解的 <strong>定义</strong> ，而有些博客对这些定义基本不谈或者草草而过，我认为这是不妥的，有可能会对我们理解 <strong>kmp算法</strong> 造成阻碍。所以在本篇文章来详细讲讲这些 <strong>定义</strong> ：</p>
+<h4 id="一文本串模式串">
+<a class="header-anchor" href="#%e4%b8%80%e6%96%87%e6%9c%ac%e4%b8%b2%e6%a8%a1%e5%bc%8f%e4%b8%b2"></a>
+<strong>一：文本串，模式串</strong>
+</h4><p><strong>文本串</strong> ：要在其中查找 <strong>模式串</strong> 的 <strong>目标字符串</strong></p>
+<p><strong>模式串</strong> ：要在 <strong>文本串</strong> 中查找的 <strong>字符串</strong></p>
+<p>比如：</p>
+<blockquote>
+<p><strong>文本串（S）：</strong> abcabacabcacbab</p>
+<p><strong>模式串（P）：</strong> aba</p>
+</blockquote>
+<p>那么 <strong>字符串匹配</strong> 其实就是要在 <strong>S</strong> 中找到等于 <strong>T</strong> 的子串 <strong>，</strong> 并有可能重复出现 <strong>。</strong></p>
+<h4 id="二前后缀相等前后缀">
+<a class="header-anchor" href="#%e4%ba%8c%e5%89%8d%e5%90%8e%e7%bc%80%e7%9b%b8%e7%ad%89%e5%89%8d%e5%90%8e%e7%bc%80"></a>
+<strong>二：前后缀，相等前后缀</strong>
+</h4><p>有些文章对 <strong>前后缀</strong> 貌似是以为我们都懂，讲述是直接省略了的。但我认为呢，既然要讲定义就要讲得详细一点，所以在本文就详细解释一下 <strong>前后缀：</strong></p>
+<p><strong>前缀：</strong> 字符串 <strong>从头开始</strong> ，不包含 <strong>整个字符串本身</strong> 的 <strong>连续子串</strong> 。</p>
+<p>直接说不容易明白，举个例子：</p>
+<blockquote>
+<p><strong>字符串：</strong> abcde</p>
+<p>前缀：</p>
+<p>a</p>
+<p>ab</p>
+<p>abc</p>
+<p>abcd</p>
+<p>而没有abcde</p>
+</blockquote>
+<p><strong>后缀：</strong> 字符串 <strong>从尾开始</strong> ，不包含 <strong>整个字符串本身</strong> 的 <strong>连续子串</strong> 。</p>
+<p>还是上述例子：</p>
+<blockquote>
+<p><strong>字符串：</strong> abcde</p>
+<p>后缀：</p>
+<p>e</p>
+<p>de</p>
+<p>cde</p>
+<p>bcde</p>
+<p>而没有abcde</p>
+</blockquote>
+<p><strong>特别地，长度为1的字符串比如&quot;a&quot;，没有前后缀。</strong></p>
+<p>理解了前后缀之后，我们就可以定义 <strong>相等前后缀</strong> 了（网上好像有的说的都是公共前后缀，不过我觉不太好理解，前缀和后缀相等比较好理解） ：</p>
+<p><strong>相等前后缀：既是字符串的前缀，也是字符串的后缀，</strong> 但 <strong>不等于整个字符串自身。</strong></p>
+<p>比如：</p>
+<blockquote>
+<p><strong>字符串：</strong> ababa</p>
+<p>前缀：</p>
+<p>a</p>
+<p>ab</p>
+<p>aba</p>
+<p>abab</p>
+<p>后缀：</p>
+<p>a</p>
+<p>ba</p>
+<p>aba</p>
+<p>baba</p>
+<p>相等前后缀（就是在前缀中挑一个Sa和后缀中挑一个Sb，且Sa=Sb=S，相等前后缀就是S）：</p>
+<p>a</p>
+<p>aba</p>
+<p><strong>注：</strong> 实际在手算相等前后缀的时候，可以先从前缀开始看，遍历每一个前缀，然后看每一个前缀对应的相等长度的后缀是否和前缀相等，如果相等的话该前缀就是相等前后缀</p>
+</blockquote>
+<p><strong>同样，长度为1的字符串比如&quot;a&quot;，没有相等前后缀</strong></p>
+<p>这样子理解的话应该是能对前后缀及相等前后缀理解得比较通透的。</p>
+<h4 id="三next数组prefix数组">
+<a class="header-anchor" href="#%e4%b8%89next%e6%95%b0%e7%bb%84prefix%e6%95%b0%e7%bb%84"></a>
+<strong>三：next数组（prefix数组）</strong>
+</h4><p>这个数组可以称得上是 <strong>kmp算法</strong> 的关键了，所以有必要详细解释。</p>
+<p><strong>next数组（prefix数组）</strong> 是针对 <strong>模式串</strong> 来定义的。实际上，这个数组的中文名称应该叫做 <strong>前缀表</strong> ，我的理解的话是 <strong>相等前缀表</strong> ，这样的话听这个名字就知道是干嘛的了： <strong>假设现在遍历到位置 i，那么就是求从起点到位置 i 的子串的<!-- raw HTML omitted -->最长<!-- raw HTML omitted -->相等前后缀长度。</strong></p>
+<p>举个例子，可以稍微手算一下：</p>
+<blockquote>
+<p><strong>字符串：</strong> ababa</p>
+<p>索引        字符串 <strong>最长</strong> 相等前后缀 <strong>最长</strong> 相等前后缀长度</p>
+<p>i=0             &ldquo;a&rdquo;                    无                                    0</p>
+<p>i=1            &ldquo;ab&rdquo;                   无                                    0</p>
+<p>i=2           &ldquo;aba&rdquo;                 &ldquo;a&rdquo;                                    1</p>
+<p>i=3          &ldquo;abab&rdquo;               &ldquo;ab&rdquo;                                   2</p>
+<p>i=4         &ldquo;ababa&rdquo;             &ldquo;aba&rdquo;                                  3</p>
+<p>所以：</p>
+<p><strong>前缀表：[0,0,1,2,3]</strong></p>
+</blockquote>
+<p>可以看到貌似 <strong>prefix数组</strong> 是比较符合名称的，那叫 <strong>next数组</strong> 又有什么意义呢？这个我们在后面用程序求 <strong>前缀表</strong> 的部分会详细讲到，这里就预告一下： <strong>next就是指，指针 j 要跳转到的下一个位置。</strong></p>
+<p>相信大家在初学时应该会和我有同样的疑问：为什么要定义这么个 <strong>next数组</strong> 呢？</p>
+<p>其实这就是 <strong>kmp算法的妙处</strong> 所在了：利用 <strong>最长相等前后缀</strong> 来避免 <strong>多余的遍历</strong> ，从而优化成 <strong>线性时间复杂度</strong> 。</p>
+<p>这个的理解我会在后面 <strong>基本原理</strong> 的部分讲到</p>
+<h4 id="四指针-i-和指针-j">
+<a class="header-anchor" href="#%e5%9b%9b%e6%8c%87%e9%92%88-i-%e5%92%8c%e6%8c%87%e9%92%88-j"></a>
+<strong>四：指针 i 和指针 j</strong>
+</h4><p>这部分主要是细说一下 <strong>代码部分</strong> 的两个指针。</p>
+<p>这部分的定义我目前在网上没看到详细讲的，但是我觉得对理解代码还是很重要的，不讲通的话不好理解算法本身。所以这里也详细讲一下：</p>
+<h5 id="求next数组时">
+<a class="header-anchor" href="#%e6%b1%82next%e6%95%b0%e7%bb%84%e6%97%b6"></a>
+求next数组时：
+</h5><p><strong>next数组</strong> 肯定不能靠手算的，那么我们在 <strong>用程序求next数组</strong> 的时候其实是不那么简单的。这里就定义两个指针来辅助代码的书写，其中 <strong>指针 i</strong> 和 <strong>指针 j</strong> 都是关于 <strong>模式串</strong> 的：</p>
+<p><strong>指针 i ：用来从左到右遍历模式串的每一个字符（当然也是next数组的下标了）</strong></p>
+<p><strong>指针 j ：指向模式串的某个前缀末尾（末尾指的是前缀最后一个字符的下一个，不要搞错；注意这里说的是“某个”，事实上，在写代码的时候 j 会不断进行移动的，所以它将会是许多个前缀的末尾，在后面原理讲解的时候就知道了），</strong> 如果 <strong>字符串下标从0开始，那么也代表<!-- raw HTML omitted -->从起点到 当前位置之前的一个位置<!-- raw HTML omitted -->的这个子串前缀的长度（这点很重要，很多教程都没说 j 代表子串前缀的长度。）</strong></p>
+<p>这个 <strong>指针 j</strong> 的意义大概是这样的：</p>
+<blockquote>
+<p>假设 <strong>模式串</strong> ：abcab</p>
+<p>相等前后缀是：ab</p>
+<p><strong>指针 j</strong> 的意义就是：</p>
+<p>j=2</p>
+<p>↓</p>
+<p>a b | c | a b</p>
+<p>0 1   2   3 4</p>
+<p>可以看到： <strong>ab的长度= j =2</strong></p>
+</blockquote>
+<p>这里的 <strong>指针 i</strong> 就是正常遍历，不难理解。但 <strong>指针 j</strong> 可就有讲究了，是 <strong>kmp算法的核心部分</strong> ，所以一定要深入理解上面的定义，不然理解kmp算法就会变得很困难。</p>
+<h5 id="进行字符串匹配时">
+<a class="header-anchor" href="#%e8%bf%9b%e8%a1%8c%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%8c%b9%e9%85%8d%e6%97%b6"></a>
+进行字符串匹配时
+</h5><p>为了 <strong>遍历文本串和模式串</strong> ，我们可以定义 <strong>关于S的指针 i 和关于T的指针 j ：</strong></p>
+<p><strong>指针 i ：用来从左到右遍历S的每一个字符，不会回退（这个不会回退是保证kmp算法时间复杂度是O(m+n)的关键）</strong></p>
+<p><strong>指针 j ：和求next数组的指针 j 定义一样，注意是关于模式串T的</strong></p>
+<p>比 <strong>求next数组</strong> 时的两个指针的定义要简单一点，所以 <strong>重点理解求next数组的两个指针的定义</strong> 就好了。</p>
+<h3 id="基本原理">
+<a class="header-anchor" href="#%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86"></a>
+基本原理
+</h3><h4 id="求next数组">
+<a class="header-anchor" href="#%e6%b1%82next%e6%95%b0%e7%bb%84"></a>
+求next数组
+</h4><p>在真正进行字符串匹配的时候，我们先来求一下 <strong>next数组。</strong></p>
+<p>用这个 <strong>模式串</strong> 作例子：</p>
+<blockquote>
+<p><strong>s：</strong> bccbccb</p>
+</blockquote>
+<p>我们前面说过，其实 <strong>next数组就是前缀表，next[i]代表的是 0 - i 子串的最长相等前后缀的长度</strong> ，所以其实我们口算next数组的话是比较简单的， <strong>真正难的在于用代码实现</strong> （也就是后面代码的部分），所以这里就仅是简单说一下口算next数组，步骤：</p>
+<blockquote>
+<p><strong>（1）遍历每个 i ，找到对应的 0 到 i 的子串。</strong></p>
+<p><strong>（2）对于每个子串，遍历每个前缀，然后看位置对应，相等长度的后缀是否和该前缀相同。</strong></p>
+<p>这个（2）的话可以举个例子：</p>
+<p><strong>对于子串（不一定是上面的s的子串，这里随便举个例子）：ababa</strong></p>
+<p><strong>前缀                对应的后缀                是否是上述子串的相等前后缀</strong></p>
+<p>&ldquo;a&rdquo;                        &ldquo;a&rdquo;                                              是</p>
+<p>&ldquo;ab&rdquo;                      &ldquo;ba&rdquo;                                            否</p>
+<p>&ldquo;aba&rdquo;                    &ldquo;aba&rdquo;                                          是</p>
+<p>&ldquo;abab&rdquo;                  &ldquo;baba&rdquo;                                        否</p>
+<p><strong>最长相等前后缀</strong> 是&quot;aba&quot;，长度为4</p>
+<p>从上面那个例子来看，我们可以通过下面这个表来清晰看到求next数组的过程：</p>
+<p><strong>遍历字符串s：</strong></p>
+<p><strong>子串                        对应最长相等前后缀                next[i]</strong></p>
+<p>i=0                 &ldquo;b&rdquo;                                       无                                    0</p>
+<p>i=1                 &ldquo;bc&rdquo;                                     无                                    0</p>
+<p>i=2                 &ldquo;bcc&rdquo;                                   无                                    0</p>
+<p>i=3                 &ldquo;bccb&rdquo;                                 &ldquo;b&rdquo;                                   1</p>
+<p>i=4                 &ldquo;bccbc&rdquo;                               无                                     0</p>
+<p>i=5                 &ldquo;bccbcc&rdquo;                              无                                    0</p>
+<p>i=6                 &ldquo;bccbccb&rdquo;                          &ldquo;bccb&rdquo;                                4</p>
+<p>这样手动就可以求出next数组了</p>
+</blockquote>
+<p>可以看到 <strong>我们手动求next数组的话其实并不是那么麻烦，但如果要用程序的话，这样求就太耗时间了，所以实际上重点是理解代码是怎么求next数组。</strong></p>
+<h4 id="进行字符串匹配">
+<a class="header-anchor" href="#%e8%bf%9b%e8%a1%8c%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%8c%b9%e9%85%8d"></a>
+进行字符串匹配
+</h4><p>我们在 <strong>基本定义的时候</strong> 提到：</p>
+<blockquote>
+<p><strong>kmp算法的妙处</strong> 所在：利用 <strong>最长相等前后缀</strong> 来避免 <strong>多余的遍历</strong> ，从而优化成 <strong>线性时间复杂度</strong> 。</p>
+</blockquote>
+<p>这个怎么理解呢？举个例子：</p>
+<blockquote>
+<p><strong>文本串（S）：</strong> bcbccbcbcb</p>
+<p><strong>模式串（P）：</strong> bcbcb</p>
+<p><strong>（P）的next数组：0 0 1 2 3</strong></p>
+</blockquote>
+<p>如果说用暴力匹配的方法，我们是 <strong>先有遍历S的 i 和遍历P的 j ，然后双重for循环，那这样我们知道是不行的，时间复杂度是O(mn)</strong></p>
+<p>但实际上我们可以发现， <strong>在每次发现不匹配后，实际上不用再从s[i+1]开始了，而是可以利用最长相等前后缀来进行处理的。</strong> 文字说的有点抽象，可以拿画图来说明：</p>
+<p>首先是暴力算法：</p>
+<p><img src="/01_assets/kmp-cpp_remote_1.png" alt=""></p>
+<p>如上图①， <strong>红色框就是模式串P以及其在S中相等的部分，而绿色框就是S中与T不相等的地方。</strong></p>
+<p><strong>暴力算法的话就是直接遍历每个文本串S的位置，然后对于每个 i ，再在P中遍历 j ，如果匹配的话就 j 就往前，不匹配就移动 i ，这个过程在上图中就是从图①到图②。</strong></p>
+<p>kmp算法：</p>
+<p><img src="/01_assets/kmp-cpp_remote_2.png" alt=""></p>
+<p>kmp算法的话就是利用最长相等前后缀。 <strong>在上图中蓝色框就是 0 到 i-1 子串的最长相等前后缀，</strong> 那我们可以从图中看到 <strong>，实际上如果s[i]和p[j]不匹配的话，我们移动指针的时候，其实就只需要移动 j 到 0 到 i-1 子串的最长相等前后缀的末尾，接着继续看s[i]和p[j]匹不匹配就好了。</strong></p>
+<p><strong>如果不匹配的话就继续往前面的最长相等前后缀的末尾去跳（就是最左边蓝色框的最长相等前后缀的末尾），直到p[j]=s[i]或者 j 不能再移动（j=0时）为止。</strong></p>
+<p><strong>如果匹配的话就能继续往后匹配（比如上图②中，如果p[j]=a，那么“s的右边蓝色框+a”=“p的左边蓝色框+p[j]”，然后继续看 j 后面的模式串是否和 i 后面的文本串是否匹配就行了）（图中字符串P实际上是没有“移动”的，实际上是 j 移动，这里这样画是为了让 j 和 i 对齐，便于观察）。</strong></p>
+<p>那么这样就有 <strong>两个好处：不用移动文本串的指针 i ； j 移动的范围是取决于最长相等前后缀长度的，所以移动的范围可以变得很大。</strong></p>
+<p>所以这就是为什么 <strong>kmp算法</strong> 可以把时间复杂度降为 <strong>O(m+n)</strong> 了。</p>
+<p>理解了之后，上面的那个具体的例子用 <strong>kmp算法</strong> 就是这样进行匹配的：</p>
+<blockquote>
+<p><strong>文本串（S）：</strong> bcbccbcbcb</p>
+<p><strong>模式串（P）：</strong> bcbcb</p>
+<p><strong>（P）的next数组：0 0 1 2 3</strong></p>
+<p><strong>过程如下图：</strong></p>
+<p><img src="/01_assets/kmp-cpp_remote_3.png" alt=""></p>
+</blockquote>
+<p>这里如果没看懂也没关系，在后面 <strong>“代码理解”</strong> 的部分会再次强调，不过这里如果能一下看懂的话，后面也不用花力去理解就是了。</p>
+<h2 id="代码理解">
+<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e7%90%86%e8%a7%a3"></a>
+代码理解
+</h2><p>了解了定义之后我们就可以来讲一下 <strong>kmp算法</strong> 的代码了，讲讲这个 <strong>代码</strong> 究竟怎么理解。</p>
+<p><strong>注：本篇博客的代码是用c++写的，然后的话字符串下标是从0开始的，我并没有只用一个while循环来完成全部判断而不用在外边写if（有的博客可能引入一个k，然后在while循环里完成整个判断），然后next[0]初始化是0，这可能与别的博客讲的不同（有的博客可能会初始化成next[0]=-1，不过我理解的是既然next是前缀表，表示前缀长度，就不能出现负数，所以稍微引入了一个[虚前缀]的假想概念），不过我能保证代码是相对简单的。</strong></p>
+<h4 id="求next数组-1">
+<a class="header-anchor" href="#%e6%b1%82next%e6%95%b0%e7%bb%84-1"></a>
+求next数组
+</h4><p>为了方便理解，可以 <strong>先给出代码，然后解释，最后再给一个带注释的代码便于理解</strong> 。</p>
+<p>代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//定义的变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">next</span><span class="p">[</span><span class="n">max_len</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">;</span><span class="c1">//t是文本串，s是模式串
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> 
+</span></span><span class="line"><span class="cl"><span class="c1">//代码部分：求next数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">next</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="o">++</span><span class="n">i</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">j</span><span class="o">=</span><span class="n">next</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">++</span><span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">next</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>我们求next数组的是这样的：</p>
+<blockquote>
+<p><strong>（1）初始化 j=0</strong> ，可以理解成开始的时候 j 是在最开头假想的“虚前缀”的末尾，也就是第一个元素的位置（大概就是：&quot;[虚前缀]abcdcba&quot;）</p>
+<p><strong>（2）遍历模式串，索引 i 从 1 开始</strong> （因为第一个元素肯定没有前后缀，那么next[0]=0就是已知的。） <strong>，将s[i]与s[j]比较：</strong></p>
+<p><strong>①如果s[i]=s[j]，</strong> 那么直接 <strong>j ++</strong> 就好了，也就是前缀长度+1，或者说前缀末尾向后移一格</p>
+<p><strong>②如果s[i]!=s[j]，</strong> 这个时候情况比较复杂，但也是 <strong>kmp算法的精髓</strong> ，从代码中可以看到，我们做了这样一个操作：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">j</span><span class="o">=</span><span class="n">next</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+</span></span></code></pre></div><p>这个是怎么理解的呢？我们说过 <strong>next数组也就是前缀表，它存储的是<!-- raw HTML omitted -->从起点到当前位置<!-- raw HTML omitted -->的子串的<!-- raw HTML omitted -->最长相等前后缀<!-- raw HTML omitted -->的长度</strong> ，那么 <strong>如果模式串的下标是从0开始的话，存储的也是<!-- raw HTML omitted -->前面的最长相等前后缀的末尾<!-- raw HTML omitted --></strong> ，所以这段代码的意义其实就是： <strong>将指针 j 移动到<!-- raw HTML omitted -->前面的最长相等前后缀的末尾，直到s[i]=s[j]或者 j 移动不了为止<!-- raw HTML omitted --></strong> 。举个例子：</p>
+<p>图是用windows自带的画图画的，有点粗糙，见谅</p>
+<p>如下图①，假设现在遍历到 i ， <strong>红色框部分就是已经遍历的子串的最长相等前后缀</strong> ， <strong>黑色框部分就是不属于最长相等前后缀的部分，根据 j 的定义知此时 j 应该是最长前后缀子串的前缀的末尾</strong> ，所以位置如图①。</p>
+<p>然后此时 <strong>s[i]!=s[j]</strong> ，然后的话 j 应该是要跳到 <strong>左边红色框部分前面的最长相等前后缀的末尾，就是图②中 j 的位置，</strong> 这个应该看图应该好理解，相当于你要 <strong>找到 0 到 (i-1) 这个子串前面的最长相等前后缀的末尾，就是图①中最左边绿色框后面的那个位置，记作pos，然后比较一下s[pos]和s[i]，如果相同的话“最左边绿色框+pos”就和“最右边绿色框+i”相等，那么这就是 0 到 i 子串的最长相等前后缀。</strong> 而 <strong>next[j-1]</strong> 就是 <strong>左边红色框部分的<!-- raw HTML omitted -->最长相等前后缀的长度<!-- raw HTML omitted -->，同时也是左边红色框部分的<!-- raw HTML omitted -->前面的最长相等前后缀的末尾<!-- raw HTML omitted -->（因为字符串下标从0开始，这个如果没看懂的话可以看看“基本定义”中关于指针 j 意义的理解，和这里的理解差不多）。</strong></p>
+<p><strong>如果 j 跳位置了之后s[j]和s[i]还是不相等，那么就继续跳，直到s[j]=s[i]或 j 不能往前跳为止（也就是 j =0），就像下图中②跳到③的过程，</strong> 这也就是为什么我们要用while而不是if，因为要跳的不止一次。</p>
+<p>而 <strong>如果s[i]=s[j]（如图③）或者 j 不能往前跳了（也就是 j =0）</strong> ，那么 j 就可以停下了。</p>
+<p><img src="/01_assets/kmp-cpp_0_4.png" alt=""></p>
+<p>从这个操作中我们也 <strong>可以理解为什么要叫next数组，其实就是 j 跳到的下一个位置嘛</strong> 。</p>
+<p><strong>注：可以看到代码中我们是先移动 j 的位置，再判断 j 是否相等的，也就是先判断s[i]!=s[j]，然后再判断s[i]=s[j]。</strong> 这个好理解， <strong>我们肯定是先移动 j 到s[i]=s[j]的地方（情况1）或 j 不能移动（也就是 j =0的地方）（情况2），然后再让 j 变成前缀末尾。</strong></p>
+<p><strong>情况1</strong> 可以从上图③中理解，此时 <strong>next[i]应该是要等于黄色框的长度的，所以要让 j ++，也就是变成黄色框的末尾，</strong> 否则j就代表黄色框内蓝色小框的长度。</p>
+<p><strong>情况2</strong> 中， <strong>如果s[i]=s[j]</strong> ，那么 0 到 i 子串的 <strong>最长相等前后缀</strong> 就是 <strong>只有s[0]一个字符的字符串</strong> ， j 的长度同样要+1，变成&quot;s[0]&ldquo;的末尾，也就是要让 j ++； <strong>而如果s[i]!=s[j]</strong> ，说明整个 0 到 i 子串没有相等前后缀， j 应该是要变成[虚前缀]的末尾，那也就是让 j 不动；</p>
+<p>而你 <strong>如果先判断s[i]=s[j]的话，那么就会在开始的时候 j 就往前动了一格，而最后 j 会停在如上图③中的位置而不是前缀末尾，这会造成后面更新next[i]时出现错误。</strong></p>
+<p><strong>（3）更新next数组，也就是next[i]= j ，这个可以从前缀表的意义理解，next[i]就是 0 到 i 子串的最长相等前后缀的长度，而我们在（2）中已经更新 j 到正确的位置了， j 的意义就是最长相等前后缀的长度。</strong></p>
+</blockquote>
+<p>带注释的代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//定义的变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">next</span><span class="p">[</span><span class="n">max_len</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">;</span><span class="c1">//t是文本串，s是模式串
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> 
+</span></span><span class="line"><span class="cl"><span class="c1">//代码部分：求next数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//初始化j
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">next</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//初始化next[0]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="o">++</span><span class="n">i</span><span class="p">){</span><span class="c1">//遍历s
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//先处理s[i]!=s[j]，再处理s[i]==s[j]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">j</span><span class="o">=</span><span class="n">next</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span><span class="c1">//处理s[i]!=s[j]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">++</span><span class="n">j</span><span class="p">;</span><span class="c1">//处理s[i]==s[j]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">next</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">j</span><span class="p">;</span><span class="c1">//更新next[i]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>那么这就是求next数组的代码解释了。</p>
+<p>要说明的是，上面那个 <strong>s[i]!=s[j]</strong> 的处理的情况的图我好像没在别的博客发现有雷同的，因为别的博客基本上都是用具体的例子来做解释，不过我初学的时候总觉得 <strong>拿具体的例子来理解kmp算法差点意思，</strong> 所以在这篇博客中举了一个 <strong>比较抽象，一般的例子</strong> ，自认为比具体的例子好理解，如果大家觉得用具体的例子比较好的话，也可以去看看其他的博客了。</p>
+<h4 id="进行字符串匹配-1">
+<a class="header-anchor" href="#%e8%bf%9b%e8%a1%8c%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%8c%b9%e9%85%8d-1"></a>
+<strong>进行字符串匹配</strong>
+</h4><p>还是 <strong>先给代码，再给解释，最后给带注释的代码便于理解：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//i,j的含义在基本定义里讲有
+</span></span></span><span class="line"><span class="cl"><span class="c1">//t是文本串，s是模式串
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">t</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="o">++</span><span class="n">i</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&amp;&amp;</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">j</span><span class="o">=</span><span class="n">next</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">++</span><span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="o">-</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">j</span><span class="o">=</span><span class="n">next</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>其实这个代码是和 <strong>求next数组</strong> 差不多的。不同点在于： <strong>i 是遍历文本串的指针，是不用回退的，一直往下走的，而如果s[i]!=s[j]，也就是说不匹配的话， j 要回到前缀的位置，这个我们在“基本原理”那里讲过。</strong></p>
+<p>具体过程如下：</p>
+<blockquote>
+<p><strong>（1）初始化 j =0，就是从模式串的第一个字符开始匹配</strong></p>
+<p><strong>（2）用指针 i 遍历文本串，还是两种情况：</strong></p>
+<p><strong>①t[i]==s[j]，直接让 j ++就好，这里的意义就是当前s[j]已经匹配了，让 j ++去匹配模式串的下一个字符</strong></p>
+<p><strong>②t[i]!=s[j]，那么就让 j 跳到前缀末尾，这里的话在“基本原理”已经讲过了，就是用最长相等前缀去避免重复的比较嘛。举个例子：</strong></p>
+<p><img src="/01_assets/kmp-cpp_remote_4.png" alt=""></p>
+<p>可以发现， <strong>从图①到图②实际上就是把 j 移动到next[j-1]，相当于<!-- raw HTML omitted -->s中前面的最长相等前后缀<!-- raw HTML omitted -->和<!-- raw HTML omitted -->t中后面的最长相同前后缀<!-- raw HTML omitted --><!-- raw HTML omitted -->已经是<!-- raw HTML omitted -->匹配的了，然后继续看t[i]和s[j]是否相等，相等的话就继续往下匹配（也就是在图②中在紫色框匹配，前面的不用管了），不相等就继续跳 j 就好了（s是实际上没有“移动”的，这里图上是为了让 j 和 i 在视觉上是对齐的，便于理解）</strong></p>
+<p><strong>（3）如果 j ==s.length()，也就是说 j 在模式串s的末尾了，那么就已经匹配完了一个模式串，由于</strong> <strong>这时候 i 应该是会在文本串的 0 到 i 子串的最后一个位置（也就是对于遍历时的每个 i ，开始时 j 始终在 i 的后一个位置），并且s的长度是s.length()，所以</strong> <strong>其起始位置就是i-s.length()+1（下标从0开始），我们就可以输出它的起始位置了。然后 j 继续回到前缀末尾，相当于接下来要继续匹配下一个位置。还是举个例子：</strong></p>
+<p><img src="/01_assets/kmp-cpp_0_6.png" alt=""></p>
+<p><strong>图①中是匹配成功的状态</strong> ，可以发现 <strong>起点位置就是i-s.length()+1，图②是利用最长相等前后缀来移动指针 j 。</strong></p>
+</blockquote>
+<p>带注释的代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//初始化j
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">t</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="o">++</span><span class="n">i</span><span class="p">){</span><span class="c1">//遍历i
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&amp;&amp;</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">j</span><span class="o">=</span><span class="n">next</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span><span class="c1">//处理t[i]!=s[j]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">++</span><span class="n">j</span><span class="p">;</span><span class="c1">//处理t[i]==s[j]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()){</span><span class="c1">//处理匹配成功的情况
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="o">-</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="c1">//输出起始位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">j</span><span class="o">=</span><span class="n">next</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span><span class="c1">//j移动到前缀末尾，继续匹配下一个位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>其实从代码中我们也可以发现， <strong>真正进行字符串匹配的时候，指针 i 是不会变的，而变的只是指针 j ，然后我们就利用最长相等前后缀，来避免重复的比较，从而把时间复杂度优化成线性。</strong></p>
+<h2 id="结语">
+<a class="header-anchor" href="#%e7%bb%93%e8%af%ad"></a>
+结语
+</h2><p>本篇文章应该算得上是网上讲 <strong>kmp算法</strong> 的博客中讲得比较 <strong>详细透彻</strong> 的了，如果大家 <strong>对文章有哪些地方不理解或者文章里出现错误的</strong> ，欢迎和我私信交流！</p>
+</div>
+    <footer class="article-footer"><a
+          data-aos="zoom-in"
+          href="/post/kmp-cpp/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="/post/kmp-cpp/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/post/kmp-cpp/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/kmp"
+        rel="tag"
+        >KMP</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e5%ad%97%e7%ac%a6%e4%b8%b2"
+        rel="tag"
+        >字符串</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/c&#43;&#43;"
+        rel="tag"
+        >C&#43;&#43;</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+            data-src="/backgrounds/bg10.webp"
+            data-sizes="auto"
+            alt="CTFWeb-Python爬虫入门——Bugku秋名山车神"
+            class="lazyload"
+          /><a
+          href="/post/ctf-bugku-qiumingshan/"
+          aria-label="前一篇:CTFWeb-Python爬虫入门——Bugku秋名山车神"
+          title="前一篇:CTFWeb-Python爬虫入门——Bugku秋名山车神"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">CTFWeb-Python爬虫入门——Bugku秋名山车神</h3>
+      </div><div class="article-nav-link-wrap right"><img
+            data-src="/backgrounds/bg8.webp"
+            data-sizes="auto"
+            alt="xcpc中二分的几种写法的细节&amp;记忆"
+            class="lazyload"
+          /><a
+          href="/post/xcpc-binary-search/"
+          aria-label="后一篇:xcpc中二分的几种写法的细节&amp;记忆"
+          title="后一篇:xcpc中二分的几种写法的细节&amp;记忆"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">xcpc中二分的几种写法的细节&amp;记忆</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>
+      MilLoong
+    </div><div>
+        <a
+          href="https://github.com/MilLoong"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noopener nofollow noreferrer"
+          style="display: inline-block; transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt="GitHub"
+            style="width: 32px; height: 32px; vertical-align: middle; background: transparent;"
+          >
+        </a>
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;3.2k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;00:20</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#理论理解">理论理解</a>
+      <ul>
+        <li><a href="#基本定义">基本定义</a></li>
+        <li><a href="#基本原理">基本原理</a></li>
+      </ul>
+    </li>
+    <li><a href="#代码理解">代码理解</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">10</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">18</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><meting-js
+        theme="var(--color-link)"
+        id="784227484"server="netease"type="playlist"fixed="true"autoplay="false"loop="all"order="list"preload="auto"volume="0.7"mutex="true"list-folded="false"lrc-type="0">
+      </meting-js><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "TT8YY4JPRF",
+        apiKey: "4d450286d17ecfeb7b0c6f78ebceb3d4",
+        indexName: "MilLoongBlog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+    if (window.firework) {
+      const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+      options.excludeElements = options.excludeelements;
+      delete options.excludeelements;
+      window.firework(options);
+    }
+  }
+</script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "MilLoong",
+          title: "KMP算法——透彻的理论理解\u0026代码理解（c\u002b\u002b）",
+          url: "https:\/\/MilLoong.github.io\/post\/kmp-cpp\/",
+          description: " KMP算法——透彻的理论理解\u0026amp;代码理解（c\u002b\u002b） 原文：https:\/\/blog.csdn.net\/qq_30618989\/article\/details\/149081820\n此原文也是本人所写\n前言 相信大家在学 字符串算法 的时候第一个接触的就是 kmp算法 ，因为 字符串匹配问题 太经典了，而kmp算法竟然能把一个 O(mn) 的时间复杂度用及其妙的前缀表来优化到线性的时间复杂度 O(m\u002bn)。 不过虽然 kmp算法 是 字符串算法 中及其重要的算法，但实际上还是比较难理解的。\n以博主的经验来看，网上所讲的 kmp算法 以及 next数组（prefix数组） 的理解其实都差点意 …",
+          cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg9.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus', 'disqus'];
+  var commentConfig = {waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/vercelproject-sage-beta.vercel.app\/',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  0 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },};
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig?.[key]?.enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig?.[sys]?.enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script><script data-pjax>
+          window.MathJax = JSON.parse("[{\"loader\":{\"load\":[\"input/asciimath\",\"[tex]/noerrors\"]},\"options\":{\"ignoreHtmlClass\":\"tex2jax_ignore\",\"processHtmlClass\":\"tex2jax_process\",\"skipHtmlTags\":[\"script\",\"noscript\",\"style\",\"textarea\",\"pre\",\"code\"]},\"tex\":{\"autoload\":{\"color\":[],\"colorv2\":[\"color\"]},\"displayMath\":[[\"$$\",\"$$\"],[\"\\\\\\\\[\",\"\\\\\\\\]\"]],\"inlineMath\":[[\"$\",\"$\"],[\"\\\\\\\\(\",\"\\\\\\\\)\"]],\"packages\":{\"[+]\":[\"noerrors\",\"amssymb\",\"amsmath\"]},\"processEnvironments\":true,\"processEscapes\":true,\"tags\":\"ams\",\"useLabelIds\":true}}]")[0];
+        </script><script
+    src="https://npm.webcache.cn/mathjax@3.2.2/es5/tex-mml-chtml.js"
+    deferdata-pjaxintegrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.matchMedia('(max-width: 959px)').matches) {
+        const meting = _$('meting-js');
+        if (meting) {
+          meting.setAttribute('fixed', 'true');
+          const aside = meting.parentNode?.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            meting.parentNode.removeChild(meting);
+            document.body.appendChild(meting);
+          }
+        }
+      }
+      const script = document.createElement('script');
+      script.src = "https:\/\/npm.webcache.cn\/meting@2.0.1\/dist\/Meting.min.js";
+      script.integrity = "sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8\u002b0maanw1S\/IyB\u002bY4JG\u002bZDU7GpKE8";
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+  </script></body>
+</html>
