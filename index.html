@@ -678,7 +678,7 @@
           >2025-11-20</span
         ><span
           ><span class="icon-pencil"></span
-          >2576 字</span
+          >2573 字</span
         >
         <span
           ><span class="icon-clock"></span
@@ -686,12 +686,13 @@
         >
       </div>
       <h2 class="post-title">CNSS / 面试笔记</h2>
-      <article class="post-article"> CNSS / 面试笔记 mianshi 内存对齐 一些 编译器 都有 对齐数 的概念，而引入 内存对齐 是为了高效访问数据
+      <article class="post-article"> CNSS / 面试笔记 内存对齐 一些 编译器 都有 对齐数 的概念，而引入 内存对齐 是为了高效访问数据
 因为某些 编译器 随机访问的性能较差，只能访问特定区域，所以引入 内存对齐 就能解决一些重复访问和访问不到的问题
 对齐数=min(编译器的对齐数,数据类型大小(可以嵌套))
 成员 在内存中的位置一定要是本身 对齐数 的整数倍
-比如结构体： 结构体 的 对齐数 是 min(max(成员对齐数),编译器的对齐数) 结构体 的 大小 是 结构体对齐数 的 整数倍
-struct b{ int a; } struct node{ char c; int a; struct b; …</article>
+比如结构体：
+结构体 的 对齐数 是 min(max(成员对齐数),编译器的对齐数) 结构体 的 大小 是 结构体对齐数 的 整数倍
+struct b{ int a; } struct node{ char c; int a; struct b; }; []里面就 …</article>
     </div>
   </div>
 </div>
