@@ -1,0 +1,1302 @@
+<!doctype html>
+<html
+  lang="zh-cn" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  CNSS 2025 招新：Beyond Compare | MilLoong
+</title>
+<meta name="description" content="个人博客，记录学习日常"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":18},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="CNSS 2025 招新：Beyond Compare | MilLoong" />
+  <meta
+    property="og:description"
+    content="个人博客，记录学习日常"
+  />
+  <meta property="og:url" content="https://MilLoong.github.io/post/cnss2025-dev-beyond-compare/" />
+  <meta
+    property="og:site_name"
+    content="MilLoong的博客"
+  />
+  <meta
+    property="og:image"
+    content="/backgrounds/bg32.webp"
+  />
+  <meta property="article:author" content="MilLoong" />
+  <meta property="article:published_time" content="2025-10-12T20:00:00&#43;08:00" />
+  <meta property="article:modified_time" content="2025-10-12T20:00:00&#43;08:00" /><meta property="article:tag" content="CNSS招新DevWriteup" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/backgrounds/bg32.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/><link rel="stylesheet" href="/css/custom.css" /></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">咻——马上就加载好啦...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">关于</span>
+      </a><a class="main-nav-link-wrap" href="/friend">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">友链</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-whattoeat-link" class="nav-icon" href="/whattoeat" title="吃什么" aria-label="吃什么"></a>
+      <a id="nav-nailong-search-link" class="nav-icon" href="/nailong-search" title="奶龙表情库" aria-label="奶龙表情库"></a><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/backgrounds/bg32.webp" alt="CNSS 2025 招新：Beyond Compare"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">CNSS 2025 招新：Beyond Compare</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-beyond-compare">♾️ Beyond Compare</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#ch1">❓CH1</a></li>
+            <li><a href="#ch2">❓CH2</a></li>
+            <li><a href="#ch3">❓CH3</a></li>
+          </ul>
+        </li>
+        <li><a href="#修订">修订</a>
+          <ul>
+            <li><a href="#ch4">❓CH4</a></li>
+          </ul>
+        </li>
+        <li><a href="#再修订">再修订</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">43</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      5
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">39</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-10-12 20:00:00 &#43;0800 CST" itemprop="datePublished"
+      >2025-10-12</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-10-12</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/%e5%ae%89%e5%85%a8"
+      data-aos="zoom-in"
+      >安全</a
+    ></div>
+</div><div class="hr-line"></div><div
+      class="e-content article-entry"
+      itemprop="articleBody"><h1 id="-beyond-compare">
+<a class="header-anchor" href="#-beyond-compare"></a>
+♾️ Beyond Compare
+</h1><h3 id="ch1">
+<a class="header-anchor" href="#ch1"></a>
+❓CH1
+</h3><ul>
+<li>
+<p><strong>用偏序关系外加逻辑运算符实现等价关系：</strong></p>
+<ul>
+<li>
+<p>不是小于的且不是大于的，就是等于了</p>
+</li>
+<li>
+<blockquote>
+<p>这里为方便描述还是 <code>define</code> 一下</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define equ(a, b) (!(a &lt; b) &amp;&amp; !(b &lt; a))
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>用偏序和等价关系外加逻辑运算符实现其余四种比较运算符：</strong></p>
+<ul>
+<li>
+<p><strong>不等价 <code>!=</code></strong></p>
+<ul>
+<li>
+<p>等价关系的否定：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define not_equ(a, b) (!equ(a, b))
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>大于 <code>&gt;</code></strong></p>
+<ul>
+<li>
+<p>小于的反向，也就是反向的偏序：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define gra(a, b) (b &lt; a)
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>小于等于 <code>&lt;=</code></strong></p>
+<ul>
+<li>
+<p>大于的否定：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define less_equ(a, b) (!(b &lt; a))
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>大于等于 <code>&gt;=</code></strong></p>
+<ul>
+<li>
+<p>小于的否定：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define gra_equ(a, b) (!(a &lt; b))
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ch2">
+<a class="header-anchor" href="#ch2"></a>
+❓CH2
+</h3><ul>
+<li>
+<p><strong>原代码：</strong></p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>问题：</strong></p>
+<ul>
+<li>很显然，如果 <code>a-b</code> 超出 <code>int</code> 的范围，就会导致溢出，导致<strong>出现负数</strong>等问题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>正确代码：</strong></p>
+<ul>
+<li>
+<p>其实不需要用具体的值，直接用表示 <code>a</code> 和 <code>b</code> 大小关系的 <code>bool</code> 就行了</p>
+</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h3 id="ch3">
+<a class="header-anchor" href="#ch3"></a>
+❓CH3
+</h3><ul>
+<li>
+<p><strong>原代码：</strong></p>
+<blockquote>
+<p>这里的 <code>compare</code> 我就视作和 <strong>CH2原代码</strong> 一样吧，不然用我上面改的代码来做我好像找不出什么问题（）</p>
+</blockquote>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">reverse_compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="n">compare</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>问题：</strong></p>
+<ul>
+<li>我们知道 <code>int</code> 表示的范围是 $[2^{-31},2^{31}-1]$，所以如果直接取 <code>-</code> ，当 <code>compare</code> 返回的值是 $2^{-31}$时，再取负号就变成了 $2^{31}$ 那么就会导致溢出，变成负数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>正确代码：</strong></p>
+<ul>
+<li>
+<p>其实直接反转一下 <code>a</code> 和 <code>b</code> 就可以了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">reverse_compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">compare</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<p>###❓CH4</p>
+<ul>
+<li>
+<p><strong>对于表达同样字符串的三种编码，字典序比较的结果是否相同？</strong></p>
+<ul>
+<li>
+<p><strong>不一定相同</strong></p>
+<blockquote>
+<p>既然编码不同，那肯定不一定相同吧（</p>
+</blockquote>
+</li>
+<li>
+<p>这个举个反例就好了：</p>
+<ul>
+<li>
+<p><code>S1</code> 和 <code>S2</code></p>
+<ul>
+<li><code>UTF-8</code>：
+<ul>
+<li><code>S1</code>：<code>F0 90 80 80</code></li>
+<li><code>S2</code>：<code>EE 80 80</code></li>
+<li>由于 <code>0xF0&gt;0xEE</code> 所以 <code>S1&gt;S2</code></li>
+</ul>
+</li>
+<li><code>UTF-16</code>：
+<ul>
+<li><code>S1</code>：<code>D800 DC00</code></li>
+<li><code>S2</code>：<code>E000</code></li>
+<li>由于 <code>0xD800&lt;0xE000</code> 所以 <code>S1&lt;S2</code></li>
+</ul>
+</li>
+<li><code>UTF-32</code>：
+<ul>
+<li><code>S1</code>：<code>00010000</code></li>
+<li><code>S2</code>：<code>0000E000</code></li>
+<li>由于 <code>0x00010000&gt;0x0000E000</code> 所以 <code>S1&gt;S2</code></li>
+</ul>
+</li>
+<li>可以发现在这个例子中 <code>UTF-8</code> 和 <code>UTF-32</code> 的结果是相同的，均与 <code>UTF-16</code> 的结果不同</li>
+</ul>
+<p>然后是怎么证明 <code>UTF-8</code> 和 <code>UTF-32</code> 有可能不同，这个样例有点难找，然后我搜到了一个比较奇怪的反例（</p>
+</li>
+<li>
+<p><code>Ā</code> 和 <code>A</code></p>
+<ul>
+<li><code>UTF-8</code>：
+<ul>
+<li><code>Ā</code>：<code>C4 80</code></li>
+<li><code>A</code>：<code>41</code></li>
+<li><code>0xC4&gt;0x41</code> 所以 <code>Ā&gt;A</code></li>
+</ul>
+</li>
+<li><code>UTF-32LE</code>（<code>UTF-32</code> 的小端序，大端序的话目前我没有找到qwq）：
+<ul>
+<li><code>Ā</code>：<code>00 01 00 00</code></li>
+<li><code>A</code>：<code>41 00 00 00</code></li>
+<li><code>0x00&lt;0x41</code> 所以 <code>Ā&lt;A</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>从这两个例子就可以证明比较的结果是不一定相同的了</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="修订">
+<a class="header-anchor" href="#%e4%bf%ae%e8%ae%a2"></a>
+修订
+</h2><blockquote>
+<p>昨晚凌晨速通的，只能说糖丸了</p>
+<p>主要是看到字符串比较就想着按每个代码单元比了，然后也没具体测试函数，导致弄了个 <code>UTF-32LE</code> 出来（</p>
+<p>所以来写个正经的第四题吧（）</p>
+</blockquote>
+<h3 id="ch4">
+<a class="header-anchor" href="#ch4"></a>
+❓CH4
+</h3><ul>
+<li>
+<p>首先答案肯定还是，<strong>不完全相同（<code>UTF-8</code> 和 <code>UTF-32</code> 相同，均与 <code>UTF-16</code> 不同）</strong></p>
+</li>
+<li>
+<p>由于题目中涉及到 <code>char8_t</code>，<code>char16_t</code>，<code>char32_t</code>，所以首先先来看一下他们的定义：</p>
+<ul>
+<li><code>char8_t</code>：
+<ul>
+<li><strong>UTF-8 编码</strong>的代码单元</li>
+<li><strong>一个字节</strong></li>
+</ul>
+</li>
+<li><code>char16_t</code>：
+<ul>
+<li><strong>UTF-16 编码</strong>的代码单元</li>
+<li><strong>两个字节</strong></li>
+</ul>
+</li>
+<li><code>char32_t</code>：
+<ul>
+<li><strong>UTF-32 编码</strong>的代码单元，用于存储完整的 <strong>Unicode</strong> 码点</li>
+<li><strong>四个字节</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>理论上</strong>，相同的字符串在不同编码下进行字典序比较应该得到一致的结果</p>
+</li>
+<li>
+<p>不过这里要注意，<code>UTF-16</code> 有一个特殊的编码机制：<strong>代理对</strong>，这是 <code>UTF-8</code> 和 <code>UTF-32</code> 都没有的</p>
+<ul>
+<li>
+<p><strong>代理对</strong>是用来在 <code>UTF-16</code> 中表示补充字符的方法，它用两个对应于基本平面的码元（码元所对应的码点在基本平面中均未定义字符）来表示增补平面的码点值。</p>
+<p>简单来讲，对于所有大于 0xFFFF 的码点值，如果要编码成 <code>UTF-16</code> ，就要用一个**“代理对”**来表示</p>
+</li>
+<li>
+<p>这样的话，<code>UTF-16</code> 使用代理对时，会用<strong>较小</strong>的代理码点来表示<strong>较大</strong>的 <code>Unicode</code> 码点，就可能导致字典序比较结果与实际码点大小不同</p>
+</li>
+</ul>
+</li>
+<li>
+<p>举个反例：</p>
+<ul>
+<li>
+<p>这里举反例的话就用上面的<strong>代理对</strong>的内容来构造就可以了。</p>
+</li>
+<li>
+<p><code>UTF-16</code> 的基本平面最大码点值是 0xFFFF 的话，我们可以直接拿其中一个字符的编号是 <code>U+10000</code> ，查了一下它对应的字符是 <code>𐀀</code>。然后它对应的 <code>UTF-16</code> 编码，根据我们上面的<strong>代理对</strong>机制，是<code>0xd800 0xdc00</code>，所以要把它卡掉的话，就拿一个码点值小于 <code>U+10000</code> ，但在 <code>UTF-16</code> 编码中第一个码元比 <code>0xd800</code> 大的字符就好了，显然拿 <code>U+E000</code>，对应的字符是 <code></code></p>
+</li>
+<li>
+<p><code>𐀀</code> 和 <code></code>：</p>
+<ul>
+<li>
+<p>然后这里我就不用纯理论分析了，不然容易像第一次提交的时候搞错（，所以就用程序来验证吧</p>
+</li>
+<li>
+<p>先把题目给的三个比较函数补全：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">strcmp_utf8</span><span class="p">(</span><span class="k">const</span> <span class="kt">char8_t</span> <span class="o">*</span><span class="n">s1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char8_t</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span> <span class="o">&amp;&amp;</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span> <span class="o">&lt;</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span> <span class="o">&gt;</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">++</span><span class="n">s1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">++</span><span class="n">s2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">strcmp_utf16</span><span class="p">(</span><span class="k">const</span> <span class="kt">char16_t</span> <span class="o">*</span><span class="n">s1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char16_t</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span> <span class="o">&amp;&amp;</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span> <span class="o">&lt;</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span> <span class="o">&gt;</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">++</span><span class="n">s1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">++</span><span class="n">s2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">strcmp_utf32</span><span class="p">(</span><span class="k">const</span> <span class="kt">char32_t</span> <span class="o">*</span><span class="n">s1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char32_t</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span> <span class="o">&amp;&amp;</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span> <span class="o">&lt;</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span> <span class="o">&gt;</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">++</span><span class="n">s1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">++</span><span class="n">s2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s2</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>然后分别用三种编码方式硬编码刚才说过的两个字符：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char8_t</span> <span class="n">u8_s1</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">u8</span><span class="s">&#34;𐀀&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char8_t</span> <span class="n">u8_s2</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">u8</span><span class="s">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char16_t</span> <span class="n">u16_s1</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">u</span><span class="s">&#34;𐀀&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char16_t</span> <span class="n">u16_s2</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">u</span><span class="s">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char32_t</span> <span class="n">u32_s1</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">U</span><span class="s">&#34;𐀀&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char32_t</span> <span class="n">u32_s2</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">U</span><span class="s">&#34;&#34;</span><span class="p">;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>接着调试一下比较结果：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;UTF-8: &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">cmp8</span> <span class="o">=</span> <span class="n">strcmp_utf8</span><span class="p">(</span><span class="n">u8_s1</span><span class="p">,</span> <span class="n">u8_s2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">cmp8</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;𐀀 &gt; </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">cmp8</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;𐀀 &lt; </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;𐀀 = </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;UTF-16: &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">cmp16</span> <span class="o">=</span> <span class="n">strcmp_utf16</span><span class="p">(</span><span class="n">u16_s1</span><span class="p">,</span> <span class="n">u16_s2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">cmp16</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;𐀀 &gt; </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">cmp16</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;𐀀 &lt; </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;𐀀 = </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;UTF-32: &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">cmp32</span> <span class="o">=</span> <span class="n">strcmp_utf32</span><span class="p">(</span><span class="n">u32_s1</span><span class="p">,</span> <span class="n">u32_s2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">cmp32</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;𐀀 &gt; </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">cmp32</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;𐀀 &lt; </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;𐀀 = </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>得到的结果是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">UTF-8: 𐀀 &gt; 
+</span></span><span class="line"><span class="cl">UTF-16: 𐀀 &lt; 
+</span></span><span class="line"><span class="cl">UTF-32: 𐀀 &gt; 
+</span></span></code></pre></div><p>可以看到确实 <code>UTF-16</code> 的结果和 <code>UTF-8</code> 与 <code>UTF-32</code> 均不同</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>而 <code>UTF-8</code> 和 <code>UTF-32</code> 没有类似于<strong>代理对</strong>的机制，所以说他们的字符串比较结果通常是相同的</p>
+</li>
+</ul>
+<h2 id="再修订">
+<a class="header-anchor" href="#%e5%86%8d%e4%bf%ae%e8%ae%a2"></a>
+再修订
+</h2><blockquote>
+<p>哦确实没有证，那再交个版本证一下吧（</p>
+<p>竟然忘了，最粗心的一集</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>证明 <code>UTF-8</code> 和 <code>UTF-32</code> 的字符串比较结果相同</strong></p>
+<ul>
+<li>
+<p><strong><code>UTF-32</code></strong></p>
+<ul>
+<li>
+<p>每个 <code>Unicode</code> 码点用固定的 4 字节表示</p>
+</li>
+<li>
+<p>字典序比较时，本质上就是直接比较码点值的大小</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>UTF-8</code></strong></p>
+<ul>
+<li>
+<p>可变长编码，长度为 1~4 字节</p>
+</li>
+<li>
+<p>是一种<strong>前缀码</strong>：不同长度的编码区间互不重叠。</p>
+<ul>
+<li>
+<p>根据 <strong>UTF8, 16进制编码表</strong> 有：</p>
+<table>
+  <thead>
+      <tr>
+          <th>UTF8-1</th>
+          <th>0x00-0x7F</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>UTF8-2</td>
+          <td>0xC2-0xDF <strong>0x80-0xBF</strong></td>
+      </tr>
+      <tr>
+          <td>UTF8-3</td>
+          <td>0xE0 <strong>0xA0-0xBF</strong> 0x80-0xBF  <!-- raw HTML omitted -->0xE1-0xEC <strong>0x80-0xBF</strong> 0x80-0xBF <!-- raw HTML omitted -->0xED <strong>0x80-0x9F</strong> 0x80-0xBF<!-- raw HTML omitted -->0xEE-0xEF <strong>0x80-0xBF</strong> 0x80-0xBF</td>
+      </tr>
+      <tr>
+          <td>UTF8-4</td>
+          <td>0xF0 <strong>0x90-0xBF</strong> 0x80-0xBF <strong>0x80-0xBF</strong><!-- raw HTML omitted -->0xF1-0xF3 <strong>0x80-0xBF</strong> 0x80-0xBF <strong>0x80-0xBF</strong><!-- raw HTML omitted -->0xF4 <strong>0x80-0x8F</strong> 0x80-0xBF <strong>0x80-0xBF</strong></td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p>可以看出，对于所有合法 <code>UTF-8</code> 序列，<strong>不同长度的编码区间互不重叠且严格递增</strong>，因此较长编码的首字节区间整体大于较短编码的首字节区间，所以 <strong>较长编码对应的码点值一定更大</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p>编码规则确保：如果码点 <code>A &gt; B</code>，那么它们对应的 <code>UTF-8</code> 字节序列在字典序下也满足 <code>A &gt; B</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>思路</strong></p>
+<p>这等价于证明：</p>
+<ul>
+<li>
+<p><strong><code>UTF-8</code> 编码的字节序列是 <code>Unicode</code> 码点值 的单调递增函数</strong></p>
+</li>
+<li>
+<p>即如果 <code>UTF-32(U+X) &gt; UTF-32(U+Y)</code>，则 <code>UTF-8(U+X) &gt; UTF-8(U+Y)</code> （按 字节 字典序比较）</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>分类讨论</strong></p>
+<ul>
+<li>
+<p><strong>同一字节长度的情况</strong>：</p>
+<ul>
+<li><strong>若 <code>A</code> 和 <code>B</code> 都是单字节</strong>（<code>U+0000 .. U+007F</code>）：编码结果就是码点本身，大小关系保持不变</li>
+<li><strong>若 <code>A</code> 和 <code>B</code> 都是多字节</strong>：
+<ul>
+<li><code>UTF-8</code> 是一种<strong>前缀码</strong>，首字节保存了高位信息，并且区分了编码长度</li>
+<li>后续字节都在 <code>0x80..0xBF</code> 范围内</li>
+<li>由于这是 <strong>高位在前</strong> 的逐字节比较，因此第一个 <strong>不同的字节</strong> 对应 <strong>原始码点</strong> 的大小关系，也就是说，如果 <strong>原始码点</strong> 是 <code>A</code> &gt; <code>B</code> ，那么第一个 <strong>不同的字节</strong> 所对应的位置，也是 <code>A</code> 的大于 <code>B</code> 的（因为你 <code>UTF-32</code> 翻译成 <code>UTF-8</code> 的时候，也是按顺序翻译的，所以遵循 <strong>原始码点</strong> 的大小关系）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>不同字节长度的情况</strong>：</p>
+<ul>
+<li>
+<p>假设 <code>A</code> 编码长度大于 <code>B</code>。</p>
+<ul>
+<li>
+<p><code>UTF-8</code> 的设计保证：</p>
+<ul>
+<li>
+<p>所有 2 字节编码的首字节区间（<code>0xC2..0xDF</code>） &gt; 所有 1 字节编码（<code>0x00..0x7F</code>）</p>
+</li>
+<li>
+<p>所有 3 字节编码的首字节区间（<code>0xE0..0xEF</code>） &gt; 所有 2 字节编码（<code>0xC2..0xDF</code>）</p>
+</li>
+<li>
+<p>所有 4 字节编码的首字节区间（<code>0xF0..0xF4</code>） &gt; 所有 3 字节编码（<code>0xE0..0xEF</code>）</p>
+</li>
+</ul>
+</li>
+<li>
+<p>因此 <strong>较长编码的首字节一定大于较短编码的首字节</strong>，从 第一个字节 就能直接比较出大小，保持与码点顺序一致</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>结论</strong></p>
+<ul>
+<li>
+<p><strong><code>UTF-8</code> 编码的字节序列是 码点值 的单调递增函数</strong></p>
+</li>
+<li>
+<p>因此，<strong><code>UTF-8</code> 和 <code>UTF-32</code> 的字符串比较结果是相同的</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+    <footer class="article-footer"><a
+          data-aos="zoom-in"
+          href="/post/cnss2025-dev-beyond-compare/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="/post/cnss2025-dev-beyond-compare/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/post/cnss2025-dev-beyond-compare/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/cnss"
+        rel="tag"
+        >CNSS</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e6%8b%9b%e6%96%b0"
+        rel="tag"
+        >招新</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/dev"
+        rel="tag"
+        >DEV</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/writeup"
+        rel="tag"
+        >WRITEUP</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+            data-src="/backgrounds/bg31.webp"
+            data-sizes="auto"
+            alt="CNSS 2025 招新：依赖这一块"
+            class="lazyload"
+          /><a
+          href="/post/cnss2025-dev-yi-lai/"
+          aria-label="前一篇:CNSS 2025 招新：依赖这一块"
+          title="前一篇:CNSS 2025 招新：依赖这一块"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">CNSS 2025 招新：依赖这一块</h3>
+      </div><div class="article-nav-link-wrap right"><img
+            data-src="/backgrounds/bg33.webp"
+            data-sizes="auto"
+            alt="CNSS 2025 招新：反恐精英之神"
+            class="lazyload"
+          /><a
+          href="/post/cnss2025-dev-fan-kong/"
+          aria-label="后一篇:CNSS 2025 招新：反恐精英之神"
+          title="后一篇:CNSS 2025 招新：反恐精英之神"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">CNSS 2025 招新：反恐精英之神</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>
+      MilLoong
+    </div><div>
+        <a
+          href="https://github.com/MilLoong"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noopener nofollow noreferrer"
+          style="display: inline-block; transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt="GitHub"
+            style="width: 32px; height: 32px; vertical-align: middle; background: transparent;"
+          >
+        </a>
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;47.5k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;04:12</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-beyond-compare">♾️ Beyond Compare</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#ch1">❓CH1</a></li>
+            <li><a href="#ch2">❓CH2</a></li>
+            <li><a href="#ch3">❓CH3</a></li>
+          </ul>
+        </li>
+        <li><a href="#修订">修订</a>
+          <ul>
+            <li><a href="#ch4">❓CH4</a></li>
+          </ul>
+        </li>
+        <li><a href="#再修订">再修订</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">43</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      5
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">39</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><meting-js
+        theme="var(--color-link)"
+        id="784227484"server="netease"type="playlist"fixed="true"autoplay="false"loop="all"order="list"preload="auto"volume="0.7"mutex="true"list-folded="false"lrc-type="0">
+      </meting-js><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "TT8YY4JPRF",
+        apiKey: "4d450286d17ecfeb7b0c6f78ebceb3d4",
+        indexName: "MilLoongBlog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+    if (window.firework) {
+      const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+      options.excludeElements = options.excludeelements;
+      delete options.excludeelements;
+      window.firework(options);
+    }
+  }
+</script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "MilLoong",
+          title: "CNSS 2025 招新：Beyond Compare",
+          url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-beyond-compare\/",
+          description: " ♾️ Beyond Compare ❓CH1 用偏序关系外加逻辑运算符实现等价关系：\n不是小于的且不是大于的，就是等于了\n这里为方便描述还是 define 一下\n#define equ(a, b) (!(a \u0026lt; b) \u0026amp;\u0026amp; !(b \u0026lt; a)) 用偏序和等价关系外加逻辑运算符实现其余四种比较运算符：\n不等价 !=\n等价关系的否定：\n#define not_equ(a, b) (!equ(a, b)) 大于 \u0026gt;\n小于的反向，也就是反向的偏序：\n#define gra(a, b) (b \u0026lt; a) 小于等于 \u0026lt;=\n大于的否定：\n#define …",
+          cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg32.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus', 'disqus'];
+  var commentConfig = {waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/vercelproject-sage-beta.vercel.app\/',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  0 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },};
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig?.[key]?.enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig?.[sys]?.enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script><script data-pjax>
+          window.MathJax = JSON.parse("[{\"loader\":{\"load\":[\"input/asciimath\",\"[tex]/noerrors\"]},\"options\":{\"ignoreHtmlClass\":\"tex2jax_ignore\",\"processHtmlClass\":\"tex2jax_process\",\"skipHtmlTags\":[\"script\",\"noscript\",\"style\",\"textarea\",\"pre\",\"code\"]},\"tex\":{\"autoload\":{\"color\":[],\"colorv2\":[\"color\"]},\"displayMath\":[[\"$$\",\"$$\"],[\"\\\\\\\\[\",\"\\\\\\\\]\"]],\"inlineMath\":[[\"$\",\"$\"],[\"\\\\\\\\(\",\"\\\\\\\\)\"]],\"packages\":{\"[+]\":[\"noerrors\",\"amssymb\",\"amsmath\"]},\"processEnvironments\":true,\"processEscapes\":true,\"tags\":\"ams\",\"useLabelIds\":true}}]")[0];
+        </script><script
+    src="https://npm.webcache.cn/mathjax@3.2.2/es5/tex-mml-chtml.js"
+    deferdata-pjaxintegrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.matchMedia('(max-width: 959px)').matches) {
+        const meting = _$('meting-js');
+        if (meting) {
+          meting.setAttribute('fixed', 'true');
+          const aside = meting.parentNode?.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            meting.parentNode.removeChild(meting);
+            document.body.appendChild(meting);
+          }
+        }
+      }
+      const script = document.createElement('script');
+      script.src = "https:\/\/npm.webcache.cn\/meting@2.0.1\/dist\/Meting.min.js";
+      script.integrity = "sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8\u002b0maanw1S\/IyB\u002bY4JG\u002bZDU7GpKE8";
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+  </script></body>
+</html>
