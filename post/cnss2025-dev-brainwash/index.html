@@ -154,16 +154,12 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#-brainwash-final">🧠 Brainwash Final</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#ch1">❓CH1</a></li>
-            <li><a href="#ch2---bonus-task">❓CH2 &amp;&amp; 😎 Bonus Task</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#思考">思考</a></li>
+    <li><a href="#证明">证明</a></li>
+    <li><a href="#ch2---bonus-task">❓CH2 &amp;&amp; 😎 Bonus Task</a></li>
+    <li><a href="#思考-1">思考</a></li>
+    <li><a href="#示例程序">示例程序</a></li>
   </ul>
 </nav>
 </div></div>
@@ -266,13 +262,13 @@
 </h1><blockquote>
 <p>既然是完整的 wp 的话，那我还是直接 copy 第一次交的 .md 吧，然后改动一些地方</p>
 </blockquote>
-<h3 id="ch1">
+<h2 id="ch1">
 <a class="header-anchor" href="#ch1"></a>
 ❓CH1
-</h3><ul>
-<li>
-<p><strong>思考</strong></p>
-<p>根据 Hint：</p>
+</h2><h2 id="思考">
+<a class="header-anchor" href="#%e6%80%9d%e8%80%83"></a>
+思考
+</h2><p>根据 Hint：</p>
 <blockquote>
 <p><strong>Brainfuck</strong> 是图灵完备的。</p>
 </blockquote>
@@ -377,10 +373,10 @@
 <p>然后的话看起来应该不是每次都要执行这个 表 中的内容，所以就不在程序中自动执行 <code>stdlib.bw</code> 了</p>
 <p>这样， <code>.bw</code> 文件的话每次执行的时候先执行 <code>stdlib.bw</code> 的内容，然后再执行相应的逻辑就好了</p>
 <p>然后我加了一个注释代码的 <code>#</code>，这样便于对 <code>.bw</code> 进行注释</p>
-</li>
-<li>
-<p><strong>证明</strong></p>
-<p>要证明所给的 <strong>Brainwash</strong> 可以实现 <strong>Brainfuck</strong> 的所有功能，其实就是证明 指令集 可以实现 <strong>Brainfuck</strong> 的 8 条命令：</p>
+<h2 id="证明">
+<a class="header-anchor" href="#%e8%af%81%e6%98%8e"></a>
+证明
+</h2><p>要证明所给的 <strong>Brainwash</strong> 可以实现 <strong>Brainfuck</strong> 的所有功能，其实就是证明 指令集 可以实现 <strong>Brainfuck</strong> 的 8 条命令：</p>
 <table>
   <thead>
       <tr>
@@ -525,20 +521,18 @@
   </tbody>
 </table>
 <p>于是就能证明 <strong>Brainwash</strong> 是 <strong>图灵完备</strong> 的了</p>
-</li>
-</ul>
-<h3 id="ch2---bonus-task">
+<h2 id="ch2---bonus-task">
 <a class="header-anchor" href="#ch2---bonus-task"></a>
 ❓CH2 &amp;&amp; 😎 Bonus Task
-</h3><ul>
-<li>
-<p><strong>思考</strong></p>
-<p>Hint 是说：</p>
+</h2><h2 id="思考-1">
+<a class="header-anchor" href="#%e6%80%9d%e8%80%83-1"></a>
+思考
+</h2><p>Hint 是说：</p>
 <blockquote>
 <p>手写这样的程序似乎有些困难，有没有什么复用已有程序的办法呢？</p>
 </blockquote>
 <p>显然这个指令集和 <strong>Brainfuck</strong> 是很像的，所以我考虑能不能复用一些已经写好的 <strong>Brainfuck</strong> 的解释器</p>
-</li>
+<ul>
 <li>
 <p>由于题目没有限制，所以我就直接在 github 上找一个开源项目了（当然后面如果说有限制再改吧）：</p>
 <blockquote>
@@ -754,9 +748,11 @@ call extern_putchar</p>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>示例程序</strong></p>
-<p>然后 测试程序 我参考了 <a href="https://zh.wikipedia.org/wiki/Brainfuck">https://zh.wikipedia.org/wiki/Brainfuck</a> 上的几个例子：</p>
+</ul>
+<h2 id="示例程序">
+<a class="header-anchor" href="#%e7%a4%ba%e4%be%8b%e7%a8%8b%e5%ba%8f"></a>
+示例程序
+</h2><p>然后 测试程序 我参考了 <a href="https://zh.wikipedia.org/wiki/Brainfuck">https://zh.wikipedia.org/wiki/Brainfuck</a> 上的几个例子：</p>
 <ul>
 <li>
 <p><strong>Hello World!</strong></p>
@@ -836,8 +832,6 @@ call extern_putchar</p>
 <li>
 <p><code>JIT</code> 模式：</p>
 <p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928224639480.png" alt="image-20250928224639480"></p>
-</li>
-</ul>
 </li>
 </ul>
 </li>
@@ -989,16 +983,12 @@ call extern_putchar</p>
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#-brainwash-final">🧠 Brainwash Final</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#ch1">❓CH1</a></li>
-            <li><a href="#ch2---bonus-task">❓CH2 &amp;&amp; 😎 Bonus Task</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#思考">思考</a></li>
+    <li><a href="#证明">证明</a></li>
+    <li><a href="#ch2---bonus-task">❓CH2 &amp;&amp; 😎 Bonus Task</a></li>
+    <li><a href="#思考-1">思考</a></li>
+    <li><a href="#示例程序">示例程序</a></li>
   </ul>
 </nav>
 </div></div>
@@ -1140,7 +1130,7 @@ call extern_putchar</p>
           author: "MilLoong",
           title: "CNSS 2025 招新：Brainwash",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-brainwash\/",
-          description: " 🧠 Brainwash Final 既然是完整的 wp 的话，那我还是直接 copy 第一次交的 .md 吧，然后改动一些地方\n❓CH1 思考\n根据 Hint：\nBrainfuck 是图灵完备的。\n所以其实就很明显了，证明题目给的 指令集 可以实现 Brainfuck 的所有功能就好了。\n不过指令集涉及 i^=1 、i^=1\u0026lt;\u0026lt;ctz(i)\u002b1、popcount 的条件分支等操作，如果对 标准二进制 作操作的话，要实现 Brainfuck 中的 \u0026lt;\u0026gt; 和 \u002b- 是会很困难的，并且每次操作的操作序列是不固定的。所以我刚开始的时候按照 标准二进制 来搞，发现其实 i^=1 …",
+          description: " 🧠 Brainwash Final 既然是完整的 wp 的话，那我还是直接 copy 第一次交的 .md 吧，然后改动一些地方\n❓CH1 思考 根据 Hint：\nBrainfuck 是图灵完备的。\n所以其实就很明显了，证明题目给的 指令集 可以实现 Brainfuck 的所有功能就好了。\n不过指令集涉及 i^=1 、i^=1\u0026lt;\u0026lt;ctz(i)\u002b1、popcount 的条件分支等操作，如果对 标准二进制 作操作的话，要实现 Brainfuck 中的 \u0026lt;\u0026gt; 和 \u002b- 是会很困难的，并且每次操作的操作序列是不固定的。所以我刚开始的时候按照 标准二进制 来搞，发现其实 i^=1 …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg30.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

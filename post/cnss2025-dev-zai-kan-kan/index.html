@@ -154,7 +154,11 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#再看看你后面呢">👁再看看你后面呢</a></li>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#为什么两份代码都运行失败">为什么两份代码都运行失败？</a></li>
+    <li><a href="#为什么第二份代码在-o2后能运行">为什么第二份代码在<code>-O2</code>后能运行？</a></li>
+    <li><a href="#ch2">❓CH2</a></li>
+    <li><a href="#code">Code</a></li>
   </ul>
 </nav>
 </div></div>
@@ -254,11 +258,13 @@
       itemprop="articleBody"><h1 id="再看看你后面呢">
 <a class="header-anchor" href="#%e5%86%8d%e7%9c%8b%e7%9c%8b%e4%bd%a0%e5%90%8e%e9%9d%a2%e5%91%a2"></a>
 👁再看看你后面呢
-</h1><p>###❓CH1</p>
-<ul>
-<li>
-<p><strong>为什么两份代码都运行失败？</strong></p>
-<blockquote>
+</h1><h2 id="ch1">
+<a class="header-anchor" href="#ch1"></a>
+❓CH1
+</h2><h2 id="为什么两份代码都运行失败">
+<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%b8%a4%e4%bb%bd%e4%bb%a3%e7%a0%81%e9%83%bd%e8%bf%90%e8%a1%8c%e5%a4%b1%e8%b4%a5"></a>
+为什么两份代码都运行失败？
+</h2><blockquote>
 <p>一眼看上去，好像输出的是<strong>long long</strong>但递归里面是返回的 <code>int</code> ，这样的话应该会 <code>UB</code> ，不过这只会导致结果可能错误，运行失败好像不关这个事？所以我这里就不管了qwq</p>
 </blockquote>
 <ul>
@@ -268,10 +274,10 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>为什么第二份代码在<code>-O2</code>后能运行？</strong></p>
-<ul>
+<h2 id="为什么第二份代码在-o2后能运行">
+<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e7%ac%ac%e4%ba%8c%e4%bb%bd%e4%bb%a3%e7%a0%81%e5%9c%a8-o2%e5%90%8e%e8%83%bd%e8%bf%90%e8%a1%8c"></a>
+为什么第二份代码在<code>-O2</code>后能运行？
+</h2><ul>
 <li><strong>尾递归优化：</strong>
 <ul>
 <li>因为 <code>fib2</code> 在尾位置调用自身，函数的最后一次操作是<strong>递归调用</strong>，所以它属于尾递归。</li>
@@ -288,21 +294,23 @@
 </ul>
 </li>
 </ul>
-</li>
+<h2 id="ch2">
+<a class="header-anchor" href="#ch2"></a>
+❓CH2
+</h2><ul>
+<li>这就是一个<strong>记忆化</strong>了，直接<strong>开一个数组记录每次计算的值，然后如果已经计算过就直接用记录的值，不再重复计算</strong>。</li>
 </ul>
-<p>###❓CH2</p>
-<ul>
-<li>
-<p>这就是一个<strong>记忆化</strong>了，直接<strong>开一个数组记录每次计算的值，然后如果已经计算过就直接用记录的值，不再重复计算</strong>。</p>
-</li>
-<li>
-<p><strong>Code：</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+<h2 id="code">
+<a class="header-anchor" href="#code"></a>
+Code
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">f</span><span class="p">[</span><span class="mi">105</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
@@ -324,6 +332,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">45</span><span class="p">;</span>
@@ -333,6 +342,7 @@
 </span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">time_used</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">clock_gettime</span><span class="p">(</span><span class="n">CLOCK_MONOTONIC</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">start</span><span class="p">);</span> <span class="c1">// 记录开始时间
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
@@ -340,9 +350,11 @@
 </span></span><span class="line"><span class="cl">    <span class="n">clock_gettime</span><span class="p">(</span><span class="n">CLOCK_MONOTONIC</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">end</span><span class="p">);</span>   <span class="c1">// 记录结束时间
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">time_used</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span><span class="p">.</span><span class="n">tv_sec</span> <span class="o">-</span> <span class="n">start</span><span class="p">.</span><span class="n">tv_sec</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">end</span><span class="p">.</span><span class="n">tv_nsec</span> <span class="o">-</span> <span class="n">start</span><span class="p">.</span><span class="n">tv_nsec</span><span class="p">)</span><span class="o">/</span><span class="mf">1e9</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Time taken: %f </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">time_used</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -354,9 +366,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">Time taken: 0.000001
 </span></span></span><span class="line"><span class="cl"><span class="cm">
 </span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
-</span></span></code></pre></div></li>
-</ul>
-</div>
+</span></span></code></pre></div></div>
     <footer class="article-footer"><a
           data-aos="zoom-in"
           href="/post/cnss2025-dev-zai-kan-kan/#comments"
@@ -503,7 +513,11 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#再看看你后面呢">👁再看看你后面呢</a></li>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#为什么两份代码都运行失败">为什么两份代码都运行失败？</a></li>
+    <li><a href="#为什么第二份代码在-o2后能运行">为什么第二份代码在<code>-O2</code>后能运行？</a></li>
+    <li><a href="#ch2">❓CH2</a></li>
+    <li><a href="#code">Code</a></li>
   </ul>
 </nav>
 </div></div>
@@ -645,7 +659,7 @@
           author: "MilLoong",
           title: "CNSS 2025 招新：再看看你后面呢",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-zai-kan-kan\/",
-          description: " 👁再看看你后面呢 ###❓CH1\n为什么两份代码都运行失败？\n一眼看上去，好像输出的是long long但递归里面是返回的 int ，这样的话应该会 UB ，不过这只会导致结果可能错误，运行失败好像不关这个事？所以我这里就不管了qwq\n栈溢出： 很明显由于函数递归要用到栈帧，所以如果递归深度太大的话会占用太大的栈空间，从而造成栈溢出 为什么第二份代码在-O2后能运行？\n尾递归优化： 因为 fib2 在尾位置调用自身，函数的最后一次操作是递归调用，所以它属于尾递归。 没开 -O2 时： 如果不开 -O2 的话，它还是像普通的递归函数一样，每次新建栈帧，有很大的递归层数，所以还是会造成栈溢出。 …",
+          description: " 👁再看看你后面呢 ❓CH1 为什么两份代码都运行失败？ 一眼看上去，好像输出的是long long但递归里面是返回的 int ，这样的话应该会 UB ，不过这只会导致结果可能错误，运行失败好像不关这个事？所以我这里就不管了qwq\n栈溢出： 很明显由于函数递归要用到栈帧，所以如果递归深度太大的话会占用太大的栈空间，从而造成栈溢出 为什么第二份代码在-O2后能运行？ 尾递归优化： 因为 fib2 在尾位置调用自身，函数的最后一次操作是递归调用，所以它属于尾递归。 没开 -O2 时： 如果不开 -O2 的话，它还是像普通的递归函数一样，每次新建栈帧，有很大的递归层数，所以还是会造成栈溢出。 开 …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg17.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

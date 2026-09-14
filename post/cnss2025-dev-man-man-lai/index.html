@@ -154,7 +154,11 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#慢慢来">🕛慢慢来</a></li>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#想法-1错解">想法 1（错解）</a></li>
+    <li><a href="#ch2">❓CH2</a></li>
+    <li><a href="#分析">分析</a></li>
+    <li><a href="#code">Code</a></li>
   </ul>
 </nav>
 </div></div>
@@ -254,23 +258,26 @@
       itemprop="articleBody"><h1 id="慢慢来">
 <a class="header-anchor" href="#%e6%85%a2%e6%85%a2%e6%9d%a5"></a>
 🕛慢慢来
-</h1><p>###❓CH1</p>
-<ul>
+</h1><h2 id="ch1">
+<a class="header-anchor" href="#ch1"></a>
+❓CH1
+</h2><ul>
+<li>考虑到 <code>infiniteStream()</code> 是<strong>无限流</strong>，是一个<strong>生成器</strong></li>
+</ul>
+<h2 id="想法-1错解">
+<a class="header-anchor" href="#%e6%83%b3%e6%b3%95-1%e9%94%99%e8%a7%a3"></a>
+想法 1（错解）
+</h2><ul>
 <li>
-<p>考虑到 <code>infiniteStream()</code> 是<strong>无限流</strong>，是一个<strong>生成器</strong></p>
-</li>
-<li>
-<p><strong>想法 1（错解）：</strong></p>
-<ul>
-<li>它生成的是<strong>所有正整数</strong>，要想生成特定的<strong>斐波那契数列</strong>，可以对它进行 <code>filter</code> 过滤，因为有一个定理能够$O(1)$地判断一个数是否是<strong>斐波那契数</strong>：
+<p>它生成的是<strong>所有正整数</strong>，要想生成特定的<strong>斐波那契数列</strong>，可以对它进行 <code>filter</code> 过滤，因为有一个定理能够$O(1)$地判断一个数是否是<strong>斐波那契数</strong>：
+</p>
 $$
     S_{x} = \frac{φ^x - ψ^x}{φ - ψ}\\
     其中φ=\frac{1 + \sqrt{5}}{2}，ψ=1-φ=\frac{1-\sqrt{5}}{2}\\
     那么有：\\
     满足：5n^2+4或5n^2-4其中之一是完全平方数的n，是斐波那契数
-    $$
-但这样不好处理相同的数的情况，比如<strong>斐波那契数</strong>就是$A_1=A_2=1$，而 <code>infiniteStream()</code> 里并没有两个 1，这样进行特判不太好</li>
-</ul>
+    $$<p>
+但这样不好处理相同的数的情况，比如<strong>斐波那契数</strong>就是$A_1=A_2=1$，而 <code>infiniteStream()</code> 里并没有两个 1，这样进行特判不太好</p>
 </li>
 <li>
 <p><strong>想法 2（正解）</strong></p>
@@ -337,11 +344,13 @@ $$
 </ul>
 </li>
 </ul>
-<p>###❓CH2</p>
-<ul>
-<li>
-<p><strong>分析：</strong></p>
-<p>这个第二问提示有点明显了，既然是 <code>lazy calculation</code> 那就可以：</p>
+<h2 id="ch2">
+<a class="header-anchor" href="#ch2"></a>
+❓CH2
+</h2><h2 id="分析">
+<a class="header-anchor" href="#%e5%88%86%e6%9e%90"></a>
+分析
+</h2><p>这个第二问提示有点明显了，既然是 <code>lazy calculation</code> 那就可以：</p>
 <ul>
 <li><strong>先不建当前节点的左子树和右子树</strong></li>
 <li>而是<strong>保存当前节点的左子树数组和右子树数组</strong></li>
@@ -359,10 +368,10 @@ $$
 </span></span><span class="line"><span class="cl"><span class="n">left_arr</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">right_arr</span>
-</span></span></code></pre></div></li>
-<li>
-<p><strong>Code：</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">LazyBST</span><span class="p">:</span>
+</span></span></code></pre></div><h2 id="code">
+<a class="header-anchor" href="#code"></a>
+Code
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">LazyBST</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
@@ -391,6 +400,7 @@ $$
 </span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">right_arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">idx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">left_arr</span><span class="p">):</span>
@@ -413,6 +423,7 @@ $$
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">idx</span><span class="p">(</span><span class="n">index</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">left_arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># N=[5,2,8,1,3,7,9,10,4]</span>
 </span></span><span class="line"><span class="cl">
@@ -421,9 +432,11 @@ $$
 </span></span><span class="line"><span class="cl"><span class="c1"># bst=LazyBST(N)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># for i in range(len(M)):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#     print(f&#39;rk:{M[i]},val:{bst.idx(M[i])}&#39;)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;
@@ -437,9 +450,7 @@ $$
 </span></span></span><span class="line"><span class="cl"><span class="s1">rk:7,val:9
 </span></span></span><span class="line"><span class="cl"><span class="s1">
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;</span>
-</span></span></code></pre></div></li>
-</ul>
-<p>​</p>
+</span></span></code></pre></div><p>​</p>
 </div>
     <footer class="article-footer"><a
           data-aos="zoom-in"
@@ -587,7 +598,11 @@ $$
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#慢慢来">🕛慢慢来</a></li>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#想法-1错解">想法 1（错解）</a></li>
+    <li><a href="#ch2">❓CH2</a></li>
+    <li><a href="#分析">分析</a></li>
+    <li><a href="#code">Code</a></li>
   </ul>
 </nav>
 </div></div>
@@ -729,7 +744,7 @@ $$
           author: "MilLoong",
           title: "CNSS 2025 招新：慢慢来",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-man-man-lai\/",
-          description: " 🕛慢慢来 ###❓CH1\n考虑到 infiniteStream() 是无限流，是一个生成器\n想法 1（错解）：\n它生成的是所有正整数，要想生成特定的斐波那契数列，可以对它进行 filter 过滤，因为有一个定理能够$O(1)$地判断一个数是否是斐波那契数： $$\rS_{x} = \\frac{φ^x - ψ^x}{φ - ψ}\\\\\r其中φ=\\frac{1 \u002b \\sqrt{5}}{2}，ψ=1-φ=\\frac{1-\\sqrt{5}}{2}\\\\\r那么有：\\\\\r满足：5n^2\u002b4或5n^2-4其中之一是完全平方数的n，是斐波那契数\r$$ 但这样不好处理相同的数的情况，比如斐波那契数就是 …",
+          description: " 🕛慢慢来 ❓CH1 考虑到 infiniteStream() 是无限流，是一个生成器 想法 1（错解） 它生成的是所有正整数，要想生成特定的斐波那契数列，可以对它进行 filter 过滤，因为有一个定理能够$O(1)$地判断一个数是否是斐波那契数： $$\rS_{x} = \\frac{φ^x - ψ^x}{φ - ψ}\\\\\r其中φ=\\frac{1 \u002b \\sqrt{5}}{2}，ψ=1-φ=\\frac{1-\\sqrt{5}}{2}\\\\\r那么有：\\\\\r满足：5n^2\u002b4或5n^2-4其中之一是完全平方数的n，是斐波那契数\r$$ 但这样不好处理相同的数的情况，比如斐波那契数就是 …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg20.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

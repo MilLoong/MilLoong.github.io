@@ -154,15 +154,13 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#村长的烦恼">👴村长的烦恼</a>
+    <li><a href="#ch1">✍CH1</a>
       <ul>
-        <li>
-          <ul>
-            <li><a href="#ch1">✍CH1</a></li>
-          </ul>
-        </li>
+        <li><a href="#1">1</a></li>
+        <li><a href="#2">2</a></li>
       </ul>
     </li>
+    <li><a href="#ch2">✍CH2</a></li>
   </ul>
 </nav>
 </div></div>
@@ -262,11 +260,13 @@
       itemprop="articleBody"><h1 id="村长的烦恼">
 <a class="header-anchor" href="#%e6%9d%91%e9%95%bf%e7%9a%84%e7%83%a6%e6%81%bc"></a>
 👴村长的烦恼
-</h1><h3 id="ch1">
+</h1><h2 id="ch1">
 <a class="header-anchor" href="#ch1"></a>
 ✍CH1
-</h3><p>####1.</p>
-<ul>
+</h2><h3 id="1">
+<a class="header-anchor" href="#1"></a>
+1
+</h3><ul>
 <li>
 <p>**Q: **在第二种田地的分配方式中， <strong>B村民眼里的</strong>第b23是实际农田中的第几号block？</p>
 <p><strong>A: <strong>B村民的开头是block32，所以</strong>b23是block(32+23)=block55</strong></p>
@@ -295,8 +295,10 @@ $$
 $$
 real\_num = (page << k) | relative\_num
 $$<hr>
-<p>####2.</p>
-<ul>
+<h3 id="2">
+<a class="header-anchor" href="#2"></a>
+2
+</h3><ul>
 <li>
 <p>**Q: **想出一个在减少 record 使用 和 减少空置block 中作出平衡的方案，将这个方案弄成代码更改到<code>GiveBlockTo</code>函数上。（可以结合第一问的快速翻译思考一下）</p>
 <p>**A: **</p>
@@ -819,8 +821,10 @@ $$
 </li>
 </ul>
 <hr>
-<p>###✍CH2</p>
-<p>这题其实就是<strong>多级页表</strong>嘛</p>
+<h2 id="ch2">
+<a class="header-anchor" href="#ch2"></a>
+✍CH2
+</h2><p>这题其实就是<strong>多级页表</strong>嘛</p>
 </div>
     <footer class="article-footer"><a
           data-aos="zoom-in"
@@ -968,15 +972,13 @@ $$
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#村长的烦恼">👴村长的烦恼</a>
+    <li><a href="#ch1">✍CH1</a>
       <ul>
-        <li>
-          <ul>
-            <li><a href="#ch1">✍CH1</a></li>
-          </ul>
-        </li>
+        <li><a href="#1">1</a></li>
+        <li><a href="#2">2</a></li>
       </ul>
     </li>
+    <li><a href="#ch2">✍CH2</a></li>
   </ul>
 </nav>
 </div></div>
@@ -1118,7 +1120,7 @@ $$
           author: "MilLoong",
           title: "CNSS 2025 夏令营：村长的烦恼",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-summer-cunzhang\/",
-          description: " 👴村长的烦恼 ✍CH1 ####1.\n**Q: **在第二种田地的分配方式中， B村民眼里的第b23是实际农田中的第几号block？\nA: B村民的开头是block32，所以b23是block(32\u002b23)=block55\n**Q: **观察 23 和 实际block序号 的二进制，有什么规律？\nA: $(23)_{10}=(10111)_{2}$，$(55)_{10}=(110111)_{2}$，可以发现其实就是在23的二进制位的最高位的下一位加上一个 1 。\n其实这是显然的，因为页面大小是$(32)_{10}=(100000)_{2}$，刚好是 2 的整数次幂（$2^{5}$），所以当然 …",
+          description: " 👴村长的烦恼 ✍CH1 1 **Q: **在第二种田地的分配方式中， B村民眼里的第b23是实际农田中的第几号block？\nA: B村民的开头是block32，所以b23是block(32\u002b23)=block55\n**Q: **观察 23 和 实际block序号 的二进制，有什么规律？\nA: $(23)_{10}=(10111)_{2}$，$(55)_{10}=(110111)_{2}$，可以发现其实就是在23的二进制位的最高位的下一位加上一个 1 。\n其实这是显然的，因为页面大小是$(32)_{10}=(100000)_{2}$，刚好是 2 的整数次幂（$2^{5}$），所以当然会在第五位 …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg12.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

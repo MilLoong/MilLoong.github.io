@@ -152,7 +152,16 @@
       data-aos="fade-up"
     ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
 <div class="sidebar-toc-wrapper toc-div-class">
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#分析">分析</a></li>
+    <li><a href="#code">Code</a></li>
+    <li><a href="#ch2">❓CH2</a></li>
+    <li><a href="#分析-1">分析</a></li>
+    <li><a href="#code-1">Code</a></li>
+  </ul>
+</nav>
 </div></div>
           <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
@@ -247,12 +256,16 @@
     ></div>
 </div><div class="hr-line"></div><div
       class="e-content article-entry"
-      itemprop="articleBody"><p>#🤓堆的堆的</p>
-<p>###❓CH1</p>
-<ul>
-<li>
-<p><strong>分析：</strong></p>
-<ul>
+      itemprop="articleBody"><h1 id="堆的堆的">
+<a class="header-anchor" href="#%e5%a0%86%e7%9a%84%e5%a0%86%e7%9a%84"></a>
+🤓堆的堆的
+</h1><h2 id="ch1">
+<a class="header-anchor" href="#ch1"></a>
+❓CH1
+</h2><h2 id="分析">
+<a class="header-anchor" href="#%e5%88%86%e6%9e%90"></a>
+分析
+</h2><ul>
 <li>
 <p>就简单的堆排序吧，了解堆排序的原理就好：</p>
 <ul>
@@ -269,10 +282,10 @@
 <p>然后由于<strong>堆</strong>的每次维护是$O(logn)$的，循环 n 轮，显然总时间复杂度就是$O(nlogn)$的</p>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>Code：</strong></p>
-<blockquote>
+<h2 id="code">
+<a class="header-anchor" href="#code"></a>
+Code
+</h2><blockquote>
 <p>注：mt19937是我用来测试数据的随机数生成器，忽略就好（</p>
 </blockquote>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
@@ -388,13 +401,13 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div></li>
-</ul>
-<p>###❓CH2</p>
-<ul>
-<li>
-<p><strong>分析：</strong></p>
-<ul>
+</span></span></code></pre></div><h2 id="ch2">
+<a class="header-anchor" href="#ch2"></a>
+❓CH2
+</h2><h2 id="分析-1">
+<a class="header-anchor" href="#%e5%88%86%e6%9e%90-1"></a>
+分析
+</h2><ul>
 <li>
 <p><strong>OPT</strong> 的概念我这里就不多说了，反正就是用了一个<strong>贪心策略</strong>，每次选取<strong>最长时间不用的页面</strong>，来达到一个<strong>理论的最优页面置换</strong>，这样子就能达到<strong>最小缺页率</strong>。</p>
 <p>具体问题上就是说：<strong>在一个能保存有限页面的内存里，每次都用上述贪心策略选取页面来置换，以此来降低最小缺页率</strong>，而这里的<strong>缺页率</strong>可以简单理解成在当前页面不在内存里。</p>
@@ -439,10 +452,10 @@ $$
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>Code：</strong></p>
-<ul>
+<h2 id="code-1">
+<a class="header-anchor" href="#code-1"></a>
+Code
+</h2><ul>
 <li>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -518,8 +531,6 @@ $$
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div></li>
-</ul>
-</li>
 </ul>
 </div>
     <footer class="article-footer"><a
@@ -666,7 +677,16 @@ $$
       </div><nav id="mobile-nav" aria-label="Mobile navigation">
   <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
 <div class="sidebar-toc-wrapper toc-div-class">
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#分析">分析</a></li>
+    <li><a href="#code">Code</a></li>
+    <li><a href="#ch2">❓CH2</a></li>
+    <li><a href="#分析-1">分析</a></li>
+    <li><a href="#code-1">Code</a></li>
+  </ul>
+</nav>
 </div></div>
         <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
@@ -806,7 +826,7 @@ $$
           author: "MilLoong",
           title: "CNSS 2025 招新：堆的堆的",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-dui-de-dui-de\/",
-          description: "#🤓堆的堆的\n###❓CH1\n分析：\n就简单的堆排序吧，了解堆排序的原理就好：\n不妨考虑从小到大排的情况，也就是保持数组单调不减，这样的话就选取小根堆，也就是根是所有元素中最小的。\n然后在每次插入元素的时候维护小根堆的性质，即父节点的权值小于等于子节点的权值\n由于根肯定是最小的，所以循环 n 轮，每轮直接取堆顶元素并 pop() 掉，这样的话下次堆顶的元素就是剩下所有元素中最小的，以此往复就好\n然后由于堆的每次维护是$O(logn)$的，循环 n 轮，显然总时间复杂度就是$O(nlogn)$的\nCode：\n注：mt19937是我用来测试数据的随机数生成器，忽略就好（ …",
+          description: " 🤓堆的堆的 ❓CH1 分析 就简单的堆排序吧，了解堆排序的原理就好：\n不妨考虑从小到大排的情况，也就是保持数组单调不减，这样的话就选取小根堆，也就是根是所有元素中最小的。\n然后在每次插入元素的时候维护小根堆的性质，即父节点的权值小于等于子节点的权值\n由于根肯定是最小的，所以循环 n 轮，每轮直接取堆顶元素并 pop() 掉，这样的话下次堆顶的元素就是剩下所有元素中最小的，以此往复就好\n然后由于堆的每次维护是$O(logn)$的，循环 n 轮，显然总时间复杂度就是$O(nlogn)$的\nCode 注：mt19937是我用来测试数据的随机数生成器，忽略就好（ …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg21.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

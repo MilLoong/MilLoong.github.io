@@ -154,15 +154,12 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#问题一">✍问题一</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#问题一">✍问题一</a></li>
+    <li><a href="#基于协程的埃式筛">基于协程的埃式筛</a></li>
+    <li><a href="#问题二">✍问题二</a></li>
+    <li><a href="#为什么有问题">🤔为什么有问题？</a></li>
+    <li><a href="#问题一样吗">🤔问题一样吗？</a></li>
+    <li><a href="#问题三">✍问题三</a></li>
   </ul>
 </nav>
 </div></div>
@@ -259,11 +256,13 @@
     ></div>
 </div><div class="hr-line"></div><div
       class="e-content article-entry"
-      itemprop="articleBody"><p>#🧮Prime</p>
-<h3 id="问题一">
+      itemprop="articleBody"><h1 id="prime">
+<a class="header-anchor" href="#prime"></a>
+🧮Prime
+</h1><h2 id="问题一">
 <a class="header-anchor" href="#%e9%97%ae%e9%a2%98%e4%b8%80"></a>
 ✍问题一
-</h3><ul>
+</h2><ul>
 <li>
 <p>本题筛素数的协程用了生成器，叫做 <strong>基于生成器的协程</strong>（<code>generator-based coroutine</code>）。
 而我稍微搜了一下，其实可以更详细一点：</p>
@@ -309,18 +308,18 @@ $$
     \sum_{p\leqslant n,p\in prime}{\lfloor\frac{n}{p}\rfloor}=nloglogn
     $$<p>​			  所以<strong>埃式筛</strong>的时间复杂度是</p>
 $$O(nloglogn)$$</li>
-<li>
-<p><strong>基于协程的埃式筛</strong></p>
+</ul>
+<h2 id="基于协程的埃式筛">
+<a class="header-anchor" href="#%e5%9f%ba%e4%ba%8e%e5%8d%8f%e7%a8%8b%e7%9a%84%e5%9f%83%e5%bc%8f%e7%ad%9b"></a>
+基于协程的埃式筛
+</h2><ul>
+<li><strong>iota</strong></li>
+</ul>
+<pre><code>- `iota(i, n)` 是一个**序列生成器**，会依次产生区间 `[i, n)` 的整数。
+
+- 在本题中，`iota(2, 100)` 就生成了从 `2` 到 `99` 的整数流，作为筛法的初始数据源。
+</code></pre>
 <ul>
-<li>
-<p><strong>iota</strong></p>
-</li>
-<li>
-<p><code>iota(i, n)</code> 是一个<strong>序列生成器</strong>，会依次产生区间 <code>[i, n)</code> 的整数。</p>
-</li>
-<li>
-<p>在本题中，<code>iota(2, 100)</code> 就生成了从 <code>2</code> 到 <code>99</code> 的整数流，作为筛法的初始数据源。</p>
-</li>
 <li>
 <p><strong>filter</strong></p>
 <ul>
@@ -358,14 +357,14 @@ $$
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <hr>
-<p>###✍问题二</p>
-<ul>
-<li>
-<p><strong>🤔为什么有问题？</strong></p>
-<ul>
+<h2 id="问题二">
+<a class="header-anchor" href="#%e9%97%ae%e9%a2%98%e4%ba%8c"></a>
+✍问题二
+</h2><h2 id="为什么有问题">
+<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%9c%89%e9%97%ae%e9%a2%98"></a>
+🤔为什么有问题？
+</h2><ul>
 <li>
 <p>第二份代码和第三份代码用的都是内置的 <code>filter</code> 函数，而里面传的第一个参数用的是（以第二份代码为例）：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">lambda</span> <span class="n">incoming</span><span class="p">:</span> <span class="n">incoming</span> <span class="o">%</span> <span class="n">value</span>
@@ -378,17 +377,17 @@ $$
 <p>那这样在最外层<code>filter</code>或许传入的 <code>value</code> 是对的，但到内层的<code>filter</code>的时候，筛的数仍然是 <code>value</code> 的倍数，那结果自然就不对了。</p>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>🤔问题一样吗？</strong></p>
-<ul>
+<h2 id="问题一样吗">
+<a class="header-anchor" href="#%e9%97%ae%e9%a2%98%e4%b8%80%e6%a0%b7%e5%90%97"></a>
+🤔问题一样吗？
+</h2><ul>
 <li>这样看来，两者的问题是一样的，并不取决于 Python 或 JS 内置 <code>filter</code> 的实现，而是由于 <code>lambda</code> 捕获外部变量时保存的是 <strong>引用</strong>（类似闭包的特性），导致嵌套的 filter 条件共享了同一个变量，筛选逻辑被破坏。</li>
 </ul>
-</li>
-</ul>
 <hr>
-<p>###✍问题三</p>
-<p>由于 <code>lambda</code> 捕获的是外层变量的引用，直接使用外部变量会导致内层 <code>filter</code> 逻辑错误（<code>value</code>不对），所以我们需要在创建函数时固定当前值。</p>
+<h2 id="问题三">
+<a class="header-anchor" href="#%e9%97%ae%e9%a2%98%e4%b8%89"></a>
+✍问题三
+</h2><p>由于 <code>lambda</code> 捕获的是外层变量的引用，直接使用外部变量会导致内层 <code>filter</code> 逻辑错误（<code>value</code>不对），所以我们需要在创建函数时固定当前值。</p>
 <ul>
 <li>
 <p><strong>💻第二份代码修改</strong></p>
@@ -614,15 +613,12 @@ $$
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#问题一">✍问题一</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#问题一">✍问题一</a></li>
+    <li><a href="#基于协程的埃式筛">基于协程的埃式筛</a></li>
+    <li><a href="#问题二">✍问题二</a></li>
+    <li><a href="#为什么有问题">🤔为什么有问题？</a></li>
+    <li><a href="#问题一样吗">🤔问题一样吗？</a></li>
+    <li><a href="#问题三">✍问题三</a></li>
   </ul>
 </nav>
 </div></div>
@@ -764,7 +760,7 @@ $$
           author: "MilLoong",
           title: "CNSS 2025 夏令营：Prime",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-summer-prime\/",
-          description: "#🧮Prime\n✍问题一 本题筛素数的协程用了生成器，叫做 基于生成器的协程（generator-based coroutine）。 而我稍微搜了一下，其实可以更详细一点：\n它是 非对称协程（asymmetric coroutine）：挂起时控制权返回给调用者，而不是任意协程之间切换； 它是 非栈式协程（stackless coroutine）：只保存 Python\/JS 的执行帧，不保存完整的原生调用栈，因此不能在任意深度的普通函数中间点挂起； 它是 第一类对象协程（first-class coroutine）：生成器对象可以自由创建、赋值、传递和组合，不受限于特定的语法结构。 它是 嵌套协 …",
+          description: " 🧮Prime ✍问题一 本题筛素数的协程用了生成器，叫做 基于生成器的协程（generator-based coroutine）。 而我稍微搜了一下，其实可以更详细一点：\n它是 非对称协程（asymmetric coroutine）：挂起时控制权返回给调用者，而不是任意协程之间切换； 它是 非栈式协程（stackless coroutine）：只保存 Python\/JS 的执行帧，不保存完整的原生调用栈，因此不能在任意深度的普通函数中间点挂起； 它是 第一类对象协程（first-class coroutine）：生成器对象可以自由创建、赋值、传递和组合，不受限于特定的语法结构。 它是 嵌套协 …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg13.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

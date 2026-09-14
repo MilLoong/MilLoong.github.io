@@ -154,7 +154,10 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#call-of-process">📞Call of Process</a></li>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#是主进程先输出还是子进程先输出">是主进程先输出还是子进程先输出？</a></li>
+    <li><a href="#ch2">❓CH2</a></li>
+    <li><a href="#code">Code</a></li>
   </ul>
 </nav>
 </div></div>
@@ -254,10 +257,13 @@
       itemprop="articleBody"><h1 id="call-of-process">
 <a class="header-anchor" href="#call-of-process"></a>
 📞Call of Process
-</h1><p>###❓CH1</p>
-<ul>
-<li><strong>是主进程先输出还是子进程先输出？</strong>
-<ul>
+</h1><h2 id="ch1">
+<a class="header-anchor" href="#ch1"></a>
+❓CH1
+</h2><h2 id="是主进程先输出还是子进程先输出">
+<a class="header-anchor" href="#%e6%98%af%e4%b8%bb%e8%bf%9b%e7%a8%8b%e5%85%88%e8%be%93%e5%87%ba%e8%bf%98%e6%98%af%e5%ad%90%e8%bf%9b%e7%a8%8b%e5%85%88%e8%be%93%e5%87%ba"></a>
+是主进程先输出还是子进程先输出？
+</h2><ul>
 <li><strong>子程序先输出</strong>
 <ul>
 <li><strong>子进程和父进程并行</strong></li>
@@ -267,16 +273,16 @@
 </ul>
 </li>
 </ul>
-</li>
+<h2 id="ch2">
+<a class="header-anchor" href="#ch2"></a>
+❓CH2
+</h2><ul>
+<li>这个就写个程序递归就好，然后注意在递归函数里写一下<strong>分成子进程和父进程</strong>的逻辑。</li>
 </ul>
-<p>###❓CH2</p>
-<ul>
-<li>
-<p>这个就写个程序递归就好，然后注意在递归函数里写一下<strong>分成子进程和父进程</strong>的逻辑。</p>
-</li>
-<li>
-<p><strong>Code：</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include&lt;stdio.h&gt;
+<h2 id="code">
+<a class="header-anchor" href="#code"></a>
+Code
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include&lt;stdio.h&gt;
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include&lt;stdlib.h&gt;
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -285,8 +291,10 @@
 </span></span><span class="line"><span class="cl"><span class="cp">#include&lt;unistd.h&gt; 
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">#define ll long long
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">ll</span> <span class="nf">cal</span><span class="p">(</span><span class="kt">int</span> <span class="n">st</span><span class="p">,</span><span class="kt">int</span> <span class="n">ed</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">
@@ -297,9 +305,11 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//0:读端,1:写端
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">pipe_fd</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">pipe</span><span class="p">(</span><span class="n">pipe_fd</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">){</span>
@@ -311,7 +321,9 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">mid</span><span class="o">=</span><span class="p">(</span><span class="n">st</span><span class="o">+</span><span class="n">ed</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">cpid</span><span class="o">=</span><span class="n">fork</span><span class="p">();</span>
@@ -321,11 +333,13 @@
 </span></span><span class="line"><span class="cl">        <span class="n">close</span><span class="p">(</span><span class="n">pipe_fd</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">ll</span> <span class="n">ls</span><span class="o">=</span><span class="n">cal</span><span class="p">(</span><span class="n">st</span><span class="p">,</span><span class="n">mid</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">write</span><span class="p">(</span><span class="n">pipe_fd</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="o">&amp;</span><span class="n">ls</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">ll</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">close</span><span class="p">(</span><span class="n">pipe_fd</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -335,6 +349,7 @@
 </span></span><span class="line"><span class="cl">        <span class="n">close</span><span class="p">(</span><span class="n">pipe_fd</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">ll</span> <span class="n">ls</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">read</span><span class="p">(</span><span class="n">pipe_fd</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="o">&amp;</span><span class="n">ls</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">ll</span><span class="p">));</span>
@@ -342,12 +357,15 @@
 </span></span><span class="line"><span class="cl">        <span class="n">close</span><span class="p">(</span><span class="n">pipe_fd</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">wait</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">ll</span> <span class="n">rs</span><span class="o">=</span><span class="n">cal</span><span class="p">(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">ed</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">ll</span> <span class="n">sum</span><span class="o">=</span><span class="n">ls</span><span class="o">+</span><span class="n">rs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;The sum from %d to %d=%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">st</span><span class="p">,</span><span class="n">ed</span><span class="p">,</span><span class="n">sum</span><span class="p">);</span>
@@ -359,11 +377,13 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">st</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ed</span><span class="o">=</span><span class="mi">64</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">cal</span><span class="p">(</span><span class="n">st</span><span class="p">,</span><span class="n">ed</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">ll</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
@@ -511,9 +531,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">The Correct Result:89440
 </span></span></span><span class="line"><span class="cl"><span class="cm">
 </span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
-</span></span></code></pre></div></li>
-</ul>
-</div>
+</span></span></code></pre></div></div>
     <footer class="article-footer"><a
           data-aos="zoom-in"
           href="/post/cnss2025-dev-call-of-process/#comments"
@@ -667,7 +685,10 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#call-of-process">📞Call of Process</a></li>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#是主进程先输出还是子进程先输出">是主进程先输出还是子进程先输出？</a></li>
+    <li><a href="#ch2">❓CH2</a></li>
+    <li><a href="#code">Code</a></li>
   </ul>
 </nav>
 </div></div>
@@ -809,7 +830,7 @@
           author: "MilLoong",
           title: "CNSS 2025 招新：Call of Process",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-call-of-process\/",
-          description: " 📞Call of Process ###❓CH1\n是主进程先输出还是子进程先输出？ 子程序先输出 子进程和父进程并行 那么父进程就向 pipe_fd1 写入 p，然后在 pipe_fd2 等待子进程的写入，这时候阻塞后续代码。 而子进程是先在 pipe_fd1 等待父进程的写入，这时候父进程已经发送了，所以先执行后面的输出代码，然后再在 pipe_fd2 写入 c。 而父进程在子进程输出之后的 write 代码执行之后才能输出，所以先输出的是子进程的。 ###❓CH2\n这个就写个程序递归就好，然后注意在递归函数里写一下分成子进程和父进程的逻辑。\nCode： …",
+          description: " 📞Call of Process ❓CH1 是主进程先输出还是子进程先输出？ 子程序先输出 子进程和父进程并行 那么父进程就向 pipe_fd1 写入 p，然后在 pipe_fd2 等待子进程的写入，这时候阻塞后续代码。 而子进程是先在 pipe_fd1 等待父进程的写入，这时候父进程已经发送了，所以先执行后面的输出代码，然后再在 pipe_fd2 写入 c。 而父进程在子进程输出之后的 write 代码执行之后才能输出，所以先输出的是子进程的。 ❓CH2 这个就写个程序递归就好，然后注意在递归函数里写一下分成子进程和父进程的逻辑。 Code #include\u0026lt;stdio.h\u0026gt; …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg19.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

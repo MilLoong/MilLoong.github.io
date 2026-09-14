@@ -512,11 +512,8 @@
         >
       </div>
       <h2 class="post-title">CNSS 2025 招新：再看看你后面呢</h2>
-      <article class="post-article"> 👁再看看你后面呢 ###❓CH1
-为什么两份代码都运行失败？
-一眼看上去，好像输出的是long long但递归里面是返回的 int ，这样的话应该会 UB ，不过这只会导致结果可能错误，运行失败好像不关这个事？所以我这里就不管了qwq
-栈溢出： 很明显由于函数递归要用到栈帧，所以如果递归深度太大的话会占用太大的栈空间，从而造成栈溢出 为什么第二份代码在-O2后能运行？
-尾递归优化： 因为 fib2 在尾位置调用自身，函数的最后一次操作是递归调用，所以它属于尾递归。 没开 -O2 时： 如果不开 -O2 的话，它还是像普通的递归函数一样，每次新建栈帧，有很大的递归层数，所以还是会造成栈溢出。 …</article>
+      <article class="post-article"> 👁再看看你后面呢 ❓CH1 为什么两份代码都运行失败？ 一眼看上去，好像输出的是long long但递归里面是返回的 int ，这样的话应该会 UB ，不过这只会导致结果可能错误，运行失败好像不关这个事？所以我这里就不管了qwq
+栈溢出： 很明显由于函数递归要用到栈帧，所以如果递归深度太大的话会占用太大的栈空间，从而造成栈溢出 为什么第二份代码在-O2后能运行？ 尾递归优化： 因为 fib2 在尾位置调用自身，函数的最后一次操作是递归调用，所以它属于尾递归。 没开 -O2 时： 如果不开 -O2 的话，它还是像普通的递归函数一样，每次新建栈帧，有很大的递归层数，所以还是会造成栈溢出。 开 …</article>
     </div>
   </div>
 </div>
@@ -557,13 +554,10 @@
         >
       </div>
       <h2 class="post-title">CNSS 2025 招新：咕咕嘎嘎</h2>
-      <article class="post-article"> 🐧咕咕嘎嘎 ###❓CH1
-###❓CH2
-用到的命令及作用：
-mkdir tomorin
+      <article class="post-article"> 🐧咕咕嘎嘎 ❓CH1 ❓CH2 用到的命令及作用 mkdir tomorin
 作用：创建名为 tomorin 的文件夹 cp gugugaga.txt tomorin/
 作用：将 gugugaga.txt 文件复制到 tomorin 文件夹下 echo &ldquo;result:&rdquo; &gt; tomorin/answer.txt
-作用：输出字符串 &quot;result:&quot; 并使用重定向符 &gt; 将内容写入 answer.txt 文件（&gt; 是覆盖写入） echo &ldquo;The num of …</article>
+作用：输出字符串 &quot;result:&quot; 并使用重定向符 &gt; 将内容写入 answer.txt 文件（&gt; 是覆盖写入） echo &ldquo;The num of &ldquo;gu&rdquo;:$(grep -o …</article>
     </div>
   </div>
 </div>
@@ -596,7 +590,7 @@ mkdir tomorin
           >2025-09-11</span
         ><span
           ><span class="icon-pencil"></span
-          >916 字</span
+          >918 字</span
         >
         <span
           ><span class="icon-clock"></span
@@ -608,10 +602,7 @@ mkdir tomorin
 运行的话，我是在 Linux 环境下用 makefile 来运行的，具体运行步骤：
 make ./mini_shell_basis （由于终端模式会切换就不写 make run 了，编译之后 ./mini_shell_basis 就好）
 注：
-依赖环境（requirements 文件就不写了，直接在文档里说明）： GCC/G++ 编译器（本题我是用的 C17） Linux 环境 cmake 基本功能实现：
-基本命令： 作业控制：
-你是如何处理输入输出重定向的？
-当然只是简单实现题目说的 …</article>
+依赖环境（requirements 文件就不写了，直接在文档里说明）： GCC/G++ 编译器（本题我是用的 C17） Linux 环境 cmake 基本功能实现 基本命令： 作业控制 - …</article>
     </div>
   </div>
 </div>
@@ -652,12 +643,11 @@ make ./mini_shell_basis （由于终端模式会切换就不写 make run 了，�
         >
       </div>
       <h2 class="post-title">CNSS 2025 夏令营：村长的烦恼</h2>
-      <article class="post-article"> 👴村长的烦恼 ✍CH1 ####1.
-**Q: **在第二种田地的分配方式中， B村民眼里的第b23是实际农田中的第几号block？
+      <article class="post-article"> 👴村长的烦恼 ✍CH1 1 **Q: **在第二种田地的分配方式中， B村民眼里的第b23是实际农田中的第几号block？
 A: B村民的开头是block32，所以b23是block(32+23)=block55
 **Q: **观察 23 和 实际block序号 的二进制，有什么规律？
 A: $(23)_{10}=(10111)_{2}$，$(55)_{10}=(110111)_{2}$，可以发现其实就是在23的二进制位的最高位的下一位加上一个 1 。
-其实这是显然的，因为页面大小是$(32)_{10}=(100000)_{2}$，刚好是 2 的整数次幂（$2^{5}$），所以当然 …</article>
+其实这是显然的，因为页面大小是$(32)_{10}=(100000)_{2}$，刚好是 2 的整数次幂（$2^{5}$），所以当然会在第五位 …</article>
     </div>
   </div>
 </div>
@@ -690,7 +680,7 @@ A: $(23)_{10}=(10111)_{2}$，$(55)_{10}=(110111)_{2}$，可以发现其实就是
           >2025-08-30</span
         ><span
           ><span class="icon-pencil"></span
-          >296 字</span
+          >298 字</span
         >
         <span
           ><span class="icon-clock"></span
@@ -698,8 +688,7 @@ A: $(23)_{10}=(10111)_{2}$，$(55)_{10}=(110111)_{2}$，可以发现其实就是
         >
       </div>
       <h2 class="post-title">CNSS 2025 夏令营：Prime</h2>
-      <article class="post-article">#🧮Prime
-✍问题一 本题筛素数的协程用了生成器，叫做 基于生成器的协程（generator-based coroutine）。 而我稍微搜了一下，其实可以更详细一点：
+      <article class="post-article"> 🧮Prime ✍问题一 本题筛素数的协程用了生成器，叫做 基于生成器的协程（generator-based coroutine）。 而我稍微搜了一下，其实可以更详细一点：
 它是 非对称协程（asymmetric coroutine）：挂起时控制权返回给调用者，而不是任意协程之间切换； 它是 非栈式协程（stackless coroutine）：只保存 Python/JS 的执行帧，不保存完整的原生调用栈，因此不能在任意深度的普通函数中间点挂起； 它是 第一类对象协程（first-class coroutine）：生成器对象可以自由创建、赋值、传递和组合，不受限于特定的语法结构。 它是 嵌套协 …</article>
     </div>
   </div>

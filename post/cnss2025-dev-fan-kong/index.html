@@ -154,7 +154,10 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#-反恐精英之神">👶 反恐精英之神</a></li>
+    <li><a href="#15-成功实现一个内核模块并成功运行">15% 成功实现一个内核模块并成功运行</a></li>
+    <li><a href="#50-基于内核模块成功实现一个块设备驱动并被-linux-识别">50% 基于内核模块，成功实现一个块设备驱动并被 Linux 识别</a></li>
+    <li><a href="#100-基于块设备驱动成功实现块缓存">100% 基于块设备驱动，成功实现块缓存</a></li>
+    <li><a href="#20-列举并说明-linux-中其他的缓存模块或者行为">+20% 列举并说明 Linux 中其他的缓存模块或者行为。</a></li>
   </ul>
 </nav>
 </div></div>
@@ -254,10 +257,10 @@
       itemprop="articleBody"><h1 id="-反恐精英之神">
 <a class="header-anchor" href="#-%e5%8f%8d%e6%81%90%e7%b2%be%e8%8b%b1%e4%b9%8b%e7%a5%9e"></a>
 👶 反恐精英之神
-</h1><ul>
-<li>
-<p><strong>15% 成功实现一个内核模块并成功运行</strong></p>
-<blockquote>
+</h1><h2 id="15-成功实现一个内核模块并成功运行">
+<a class="header-anchor" href="#15-%e6%88%90%e5%8a%9f%e5%ae%9e%e7%8e%b0%e4%b8%80%e4%b8%aa%e5%86%85%e6%a0%b8%e6%a8%a1%e5%9d%97%e5%b9%b6%e6%88%90%e5%8a%9f%e8%bf%90%e8%a1%8c"></a>
+15% 成功实现一个内核模块并成功运行
+</h2><blockquote>
 <p>注：我用的内核版本是6.6.87.2，感觉好像就 请求处理 有点区别，就懒得在 [4.0,5.0] 弄了</p>
 </blockquote>
 <ul>
@@ -431,10 +434,10 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>50% 基于内核模块，成功实现一个块设备驱动并被 Linux 识别</strong></p>
-<ul>
+<h2 id="50-基于内核模块成功实现一个块设备驱动并被-linux-识别">
+<a class="header-anchor" href="#50-%e5%9f%ba%e4%ba%8e%e5%86%85%e6%a0%b8%e6%a8%a1%e5%9d%97%e6%88%90%e5%8a%9f%e5%ae%9e%e7%8e%b0%e4%b8%80%e4%b8%aa%e5%9d%97%e8%ae%be%e5%a4%87%e9%a9%b1%e5%8a%a8%e5%b9%b6%e8%a2%ab-linux-%e8%af%86%e5%88%ab"></a>
+50% 基于内核模块，成功实现一个块设备驱动并被 Linux 识别
+</h2><ul>
 <li>
 <p><strong>代码（./bcache_blkdev/bcache_blkdev.c）</strong></p>
 <ul>
@@ -784,10 +787,10 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>100% 基于块设备驱动，成功实现块缓存</strong></p>
-<ul>
+<h2 id="100-基于块设备驱动成功实现块缓存">
+<a class="header-anchor" href="#100-%e5%9f%ba%e4%ba%8e%e5%9d%97%e8%ae%be%e5%a4%87%e9%a9%b1%e5%8a%a8%e6%88%90%e5%8a%9f%e5%ae%9e%e7%8e%b0%e5%9d%97%e7%bc%93%e5%ad%98"></a>
+100% 基于块设备驱动，成功实现块缓存
+</h2><ul>
 <li>
 <p>这里我参考 xv6 Buffer Cache 写吧，然后有一些地方改了一下（比如 xv6 手写双向链表，我就直接用 list_head 了）</p>
 </li>
@@ -1593,10 +1596,10 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>+20% 列举并说明 Linux 中其他的缓存模块或者行为。</strong></p>
-<ul>
+<h2 id="20-列举并说明-linux-中其他的缓存模块或者行为">
+<a class="header-anchor" href="#20-%e5%88%97%e4%b8%be%e5%b9%b6%e8%af%b4%e6%98%8e-linux-%e4%b8%ad%e5%85%b6%e4%bb%96%e7%9a%84%e7%bc%93%e5%ad%98%e6%a8%a1%e5%9d%97%e6%88%96%e8%80%85%e8%a1%8c%e4%b8%ba"></a>
++20% 列举并说明 Linux 中其他的缓存模块或者行为。
+</h2><ul>
 <li>
 <p><strong>页缓存（Page Cache）</strong></p>
 <ul>
@@ -1682,8 +1685,6 @@
 </li>
 <li>
 <p>按对象类型分组</p>
-</li>
-</ul>
 </li>
 </ul>
 </li>
@@ -1842,7 +1843,10 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#-反恐精英之神">👶 反恐精英之神</a></li>
+    <li><a href="#15-成功实现一个内核模块并成功运行">15% 成功实现一个内核模块并成功运行</a></li>
+    <li><a href="#50-基于内核模块成功实现一个块设备驱动并被-linux-识别">50% 基于内核模块，成功实现一个块设备驱动并被 Linux 识别</a></li>
+    <li><a href="#100-基于块设备驱动成功实现块缓存">100% 基于块设备驱动，成功实现块缓存</a></li>
+    <li><a href="#20-列举并说明-linux-中其他的缓存模块或者行为">+20% 列举并说明 Linux 中其他的缓存模块或者行为。</a></li>
   </ul>
 </nav>
 </div></div>
@@ -1984,7 +1988,7 @@
           author: "MilLoong",
           title: "CNSS 2025 招新：反恐精英之神",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-fan-kong\/",
-          description: " 👶 反恐精英之神 15% 成功实现一个内核模块并成功运行\n注：我用的内核版本是6.6.87.2，感觉好像就 请求处理 有点区别，就懒得在 [4.0,5.0] 弄了\n代码（.\/bcache_module\/bcache_basic.c）\n#include \u0026lt;linux\/module.h\u0026gt; #include \u0026lt;linux\/kernel.h\u0026gt; #include \u0026lt;linux\/init.h\u0026gt; MODULE_LICENSE(\u0026#34;GPL\u0026#34;); MODULE_AUTHOR(\u0026#34;Nailong\u0026#34;); …",
+          description: " 👶 反恐精英之神 15% 成功实现一个内核模块并成功运行 注：我用的内核版本是6.6.87.2，感觉好像就 请求处理 有点区别，就懒得在 [4.0,5.0] 弄了\n代码（.\/bcache_module\/bcache_basic.c）\n#include \u0026lt;linux\/module.h\u0026gt; #include \u0026lt;linux\/kernel.h\u0026gt; #include \u0026lt;linux\/init.h\u0026gt; MODULE_LICENSE(\u0026#34;GPL\u0026#34;); MODULE_AUTHOR(\u0026#34;Nailong\u0026#34;); …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg33.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

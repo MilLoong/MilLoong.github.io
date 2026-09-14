@@ -154,23 +154,21 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#-beyond-compare">♾️ Beyond Compare</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#ch1">❓CH1</a></li>
-            <li><a href="#ch2">❓CH2</a></li>
-            <li><a href="#ch3">❓CH3</a></li>
-          </ul>
-        </li>
-        <li><a href="#修订">修订</a>
-          <ul>
-            <li><a href="#ch4">❓CH4</a></li>
-          </ul>
-        </li>
-        <li><a href="#再修订">再修订</a></li>
-      </ul>
-    </li>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#用偏序关系外加逻辑运算符实现等价关系">用偏序关系外加逻辑运算符实现等价关系</a></li>
+    <li><a href="#用偏序和等价关系外加逻辑运算符实现其余四种比较运算符">用偏序和等价关系外加逻辑运算符实现其余四种比较运算符</a></li>
+    <li><a href="#ch2">❓CH2</a></li>
+    <li><a href="#原代码">原代码</a></li>
+    <li><a href="#正确代码">正确代码</a></li>
+    <li><a href="#ch3">❓CH3</a></li>
+    <li><a href="#原代码-1">原代码</a></li>
+    <li><a href="#正确代码-1">正确代码</a></li>
+    <li><a href="#ch4">❓CH4</a></li>
+    <li><a href="#对于表达同样字符串的三种编码字典序比较的结果是否相同">对于表达同样字符串的三种编码，字典序比较的结果是否相同？</a></li>
+    <li><a href="#修订">修订</a></li>
+    <li><a href="#ch4-1">❓CH4</a></li>
+    <li><a href="#再修订">再修订</a></li>
+    <li><a href="#证明-utf-8-和-utf-32-的字符串比较结果相同">证明 <code>UTF-8</code> 和 <code>UTF-32</code> 的字符串比较结果相同</a></li>
   </ul>
 </nav>
 </div></div>
@@ -270,13 +268,13 @@
       itemprop="articleBody"><h1 id="-beyond-compare">
 <a class="header-anchor" href="#-beyond-compare"></a>
 ♾️ Beyond Compare
-</h1><h3 id="ch1">
+</h1><h2 id="ch1">
 <a class="header-anchor" href="#ch1"></a>
 ❓CH1
-</h3><ul>
-<li>
-<p><strong>用偏序关系外加逻辑运算符实现等价关系：</strong></p>
-<ul>
+</h2><h2 id="用偏序关系外加逻辑运算符实现等价关系">
+<a class="header-anchor" href="#%e7%94%a8%e5%81%8f%e5%ba%8f%e5%85%b3%e7%b3%bb%e5%a4%96%e5%8a%a0%e9%80%bb%e8%be%91%e8%bf%90%e7%ae%97%e7%ac%a6%e5%ae%9e%e7%8e%b0%e7%ad%89%e4%bb%b7%e5%85%b3%e7%b3%bb"></a>
+用偏序关系外加逻辑运算符实现等价关系
+</h2><ul>
 <li>
 <p>不是小于的且不是大于的，就是等于了</p>
 </li>
@@ -287,10 +285,10 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define equ(a, b) (!(a &lt; b) &amp;&amp; !(b &lt; a))
 </span></span></span></code></pre></div></li>
 </ul>
-</li>
-<li>
-<p><strong>用偏序和等价关系外加逻辑运算符实现其余四种比较运算符：</strong></p>
-<ul>
+<h2 id="用偏序和等价关系外加逻辑运算符实现其余四种比较运算符">
+<a class="header-anchor" href="#%e7%94%a8%e5%81%8f%e5%ba%8f%e5%92%8c%e7%ad%89%e4%bb%b7%e5%85%b3%e7%b3%bb%e5%a4%96%e5%8a%a0%e9%80%bb%e8%be%91%e8%bf%90%e7%ae%97%e7%ac%a6%e5%ae%9e%e7%8e%b0%e5%85%b6%e4%bd%99%e5%9b%9b%e7%a7%8d%e6%af%94%e8%be%83%e8%bf%90%e7%ae%97%e7%ac%a6"></a>
+用偏序和等价关系外加逻辑运算符实现其余四种比较运算符
+</h2><ul>
 <li>
 <p><strong>不等价 <code>!=</code></strong></p>
 <ul>
@@ -328,15 +326,13 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="ch2">
+<h2 id="ch2">
 <a class="header-anchor" href="#ch2"></a>
 ❓CH2
-</h3><ul>
-<li>
-<p><strong>原代码：</strong></p>
-<ul>
+</h2><h2 id="原代码">
+<a class="header-anchor" href="#%e5%8e%9f%e4%bb%a3%e7%a0%81"></a>
+原代码
+</h2><ul>
 <li>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
@@ -351,10 +347,10 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>正确代码：</strong></p>
-<ul>
+<h2 id="正确代码">
+<a class="header-anchor" href="#%e6%ad%a3%e7%a1%ae%e4%bb%a3%e7%a0%81"></a>
+正确代码
+</h2><ul>
 <li>
 <p>其实不需要用具体的值，直接用表示 <code>a</code> 和 <code>b</code> 大小关系的 <code>bool</code> 就行了</p>
 </li>
@@ -366,15 +362,13 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div></li>
 </ul>
-</li>
-</ul>
-<h3 id="ch3">
+<h2 id="ch3">
 <a class="header-anchor" href="#ch3"></a>
 ❓CH3
-</h3><ul>
-<li>
-<p><strong>原代码：</strong></p>
-<blockquote>
+</h2><h2 id="原代码-1">
+<a class="header-anchor" href="#%e5%8e%9f%e4%bb%a3%e7%a0%81-1"></a>
+原代码
+</h2><blockquote>
 <p>这里的 <code>compare</code> 我就视作和 <strong>CH2原代码</strong> 一样吧，不然用我上面改的代码来做我好像找不出什么问题（）</p>
 </blockquote>
 <ul>
@@ -392,10 +386,10 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>正确代码：</strong></p>
-<ul>
+<h2 id="正确代码-1">
+<a class="header-anchor" href="#%e6%ad%a3%e7%a1%ae%e4%bb%a3%e7%a0%81-1"></a>
+正确代码
+</h2><ul>
 <li>
 <p>其实直接反转一下 <code>a</code> 和 <code>b</code> 就可以了：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">reverse_compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
@@ -405,13 +399,13 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div></li>
 </ul>
-</li>
-</ul>
-<p>###❓CH4</p>
-<ul>
-<li>
-<p><strong>对于表达同样字符串的三种编码，字典序比较的结果是否相同？</strong></p>
-<ul>
+<h2 id="ch4">
+<a class="header-anchor" href="#ch4"></a>
+❓CH4
+</h2><h2 id="对于表达同样字符串的三种编码字典序比较的结果是否相同">
+<a class="header-anchor" href="#%e5%af%b9%e4%ba%8e%e8%a1%a8%e8%be%be%e5%90%8c%e6%a0%b7%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e4%b8%89%e7%a7%8d%e7%bc%96%e7%a0%81%e5%ad%97%e5%85%b8%e5%ba%8f%e6%af%94%e8%be%83%e7%9a%84%e7%bb%93%e6%9e%9c%e6%98%af%e5%90%a6%e7%9b%b8%e5%90%8c"></a>
+对于表达同样字符串的三种编码，字典序比较的结果是否相同？
+</h2><ul>
 <li>
 <p><strong>不一定相同</strong></p>
 <blockquote>
@@ -474,8 +468,6 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h2 id="修订">
 <a class="header-anchor" href="#%e4%bf%ae%e8%ae%a2"></a>
 修订
@@ -484,10 +476,10 @@
 <p>主要是看到字符串比较就想着按每个代码单元比了，然后也没具体测试函数，导致弄了个 <code>UTF-32LE</code> 出来（</p>
 <p>所以来写个正经的第四题吧（）</p>
 </blockquote>
-<h3 id="ch4">
-<a class="header-anchor" href="#ch4"></a>
+<h2 id="ch4-1">
+<a class="header-anchor" href="#ch4-1"></a>
 ❓CH4
-</h3><ul>
+</h2><ul>
 <li>
 <p>首先答案肯定还是，<strong>不完全相同（<code>UTF-8</code> 和 <code>UTF-32</code> 相同，均与 <code>UTF-16</code> 不同）</strong></p>
 </li>
@@ -635,10 +627,10 @@
 <p>哦确实没有证，那再交个版本证一下吧（</p>
 <p>竟然忘了，最粗心的一集</p>
 </blockquote>
-<ul>
-<li>
-<p><strong>证明 <code>UTF-8</code> 和 <code>UTF-32</code> 的字符串比较结果相同</strong></p>
-<ul>
+<h2 id="证明-utf-8-和-utf-32-的字符串比较结果相同">
+<a class="header-anchor" href="#%e8%af%81%e6%98%8e-utf-8-%e5%92%8c-utf-32-%e7%9a%84%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%af%94%e8%be%83%e7%bb%93%e6%9e%9c%e7%9b%b8%e5%90%8c"></a>
+证明 <code>UTF-8</code> 和 <code>UTF-32</code> 的字符串比较结果相同
+</h2><ul>
 <li>
 <p><strong><code>UTF-32</code></strong></p>
 <ul>
@@ -759,8 +751,6 @@
 </li>
 <li>
 <p>因此，<strong><code>UTF-8</code> 和 <code>UTF-32</code> 的字符串比较结果是相同的</strong></p>
-</li>
-</ul>
 </li>
 </ul>
 </li>
@@ -912,23 +902,21 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#-beyond-compare">♾️ Beyond Compare</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#ch1">❓CH1</a></li>
-            <li><a href="#ch2">❓CH2</a></li>
-            <li><a href="#ch3">❓CH3</a></li>
-          </ul>
-        </li>
-        <li><a href="#修订">修订</a>
-          <ul>
-            <li><a href="#ch4">❓CH4</a></li>
-          </ul>
-        </li>
-        <li><a href="#再修订">再修订</a></li>
-      </ul>
-    </li>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#用偏序关系外加逻辑运算符实现等价关系">用偏序关系外加逻辑运算符实现等价关系</a></li>
+    <li><a href="#用偏序和等价关系外加逻辑运算符实现其余四种比较运算符">用偏序和等价关系外加逻辑运算符实现其余四种比较运算符</a></li>
+    <li><a href="#ch2">❓CH2</a></li>
+    <li><a href="#原代码">原代码</a></li>
+    <li><a href="#正确代码">正确代码</a></li>
+    <li><a href="#ch3">❓CH3</a></li>
+    <li><a href="#原代码-1">原代码</a></li>
+    <li><a href="#正确代码-1">正确代码</a></li>
+    <li><a href="#ch4">❓CH4</a></li>
+    <li><a href="#对于表达同样字符串的三种编码字典序比较的结果是否相同">对于表达同样字符串的三种编码，字典序比较的结果是否相同？</a></li>
+    <li><a href="#修订">修订</a></li>
+    <li><a href="#ch4-1">❓CH4</a></li>
+    <li><a href="#再修订">再修订</a></li>
+    <li><a href="#证明-utf-8-和-utf-32-的字符串比较结果相同">证明 <code>UTF-8</code> 和 <code>UTF-32</code> 的字符串比较结果相同</a></li>
   </ul>
 </nav>
 </div></div>
@@ -1070,7 +1058,7 @@
           author: "MilLoong",
           title: "CNSS 2025 招新：Beyond Compare",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-beyond-compare\/",
-          description: " ♾️ Beyond Compare ❓CH1 用偏序关系外加逻辑运算符实现等价关系：\n不是小于的且不是大于的，就是等于了\n这里为方便描述还是 define 一下\n#define equ(a, b) (!(a \u0026lt; b) \u0026amp;\u0026amp; !(b \u0026lt; a)) 用偏序和等价关系外加逻辑运算符实现其余四种比较运算符：\n不等价 !=\n等价关系的否定：\n#define not_equ(a, b) (!equ(a, b)) 大于 \u0026gt;\n小于的反向，也就是反向的偏序：\n#define gra(a, b) (b \u0026lt; a) 小于等于 \u0026lt;=\n大于的否定：\n#define …",
+          description: " ♾️ Beyond Compare ❓CH1 用偏序关系外加逻辑运算符实现等价关系 不是小于的且不是大于的，就是等于了\n这里为方便描述还是 define 一下\n#define equ(a, b) (!(a \u0026lt; b) \u0026amp;\u0026amp; !(b \u0026lt; a)) 用偏序和等价关系外加逻辑运算符实现其余四种比较运算符 不等价 !=\n等价关系的否定：\n#define not_equ(a, b) (!equ(a, b)) 大于 \u0026gt;\n小于的反向，也就是反向的偏序：\n#define gra(a, b) (b \u0026lt; a) 小于等于 \u0026lt;=\n大于的否定：\n#define …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg32.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

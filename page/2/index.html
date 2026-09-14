@@ -512,8 +512,7 @@
         >
       </div>
       <h2 class="post-title">CNSS 2025：向量值函数自动微分</h2>
-      <article class="post-article"> Automatic_Differentiation_For_Vector 15% 在标量函数自动微分的基础上，实现对向量值函数的自动微分，除基本初等函数外你还需要实现以下函数：ReLU函数，Softmax函数，Sigmoid函数
-其实上面 标量函数自动微分 的代码中已经可以处理 向量 了，因为我用了 numpy
+      <article class="post-article"> Automatic_Differentiation_For_Vector 15% 在标量函数自动微分的基础上，实现对向量值函数的自动微分，除基本初等函数外你还需要实现以下函数：ReLU函数，Softmax函数，Sigmoid函数 其实上面 标量函数自动微分 的代码中已经可以处理 向量 了，因为我用了 numpy
 不过要想对 向量 进行 自动微分，还需要添加 ReLU、Sigmoid、Softmax 这三个激活函数
 以及处理好**广播（broadcasting）**的 梯度传播
 广播
@@ -559,8 +558,7 @@
         >
       </div>
       <h2 class="post-title">CNSS 2025：标量函数自动微分</h2>
-      <article class="post-article"> Automatic_Differentiation_For_Scalar 30% 能对标量函数实现 自动微分，标量函数为基本初等函数的复合函数。也就是说，你的自动微分程序中需要包含所有基本初等函数的求导
-因为后面跟这部分是相关的，所以这部分就写详细点吧qwq
+      <article class="post-article"> Automatic_Differentiation_For_Scalar 30% 能对标量函数实现 自动微分，标量函数为基本初等函数的复合函数。也就是说，你的自动微分程序中需要包含所有基本初等函数的求导 因为后面跟这部分是相关的，所以这部分就写详细点吧qwq
 自动微分（Automatic Differentiation）
 自动微分 其实就是利用 链式求导法则，在进行 传播 的时候计算 微分值，这个过程可以在 计算图 中体现，这样每次利用的就是 已经求过 的值，就可以把 复合函数 转为 基本初等函数 解决了 自动微分 分为 正向模式 和 反向模式，这里我就直接用 反向模式 了，因为一般来说 输 …</article>
     </div>
@@ -649,8 +647,7 @@ autodiff_nn_core 对带正态分布噪声的线性相关的数据进行线性回
         >
       </div>
       <h2 class="post-title">CNSS 2025 招新：噼里啪啦动画</h2>
-      <article class="post-article"> 🎞️ 噼里啪啦动画 30% 在没有操作系统的虚拟机环境（或者真的硬件环境，如果你愿意）中，在屏幕上输出任何字符串，如Hello World!
-运行环境
+      <article class="post-article"> 🎞️ 噼里啪啦动画 30% 在没有操作系统的虚拟机环境（或者真的硬件环境，如果你愿意）中，在屏幕上输出任何字符串，如Hello World! 运行环境
 这题我依然直接用 WSL 来做了，然后是 WSL2 虚拟机 用的是 Qemu（qemu-system-x86_64） 启动方式 用的是 UEFI，因为我不是很想用 BIOS 来做 指令集架构 是 x86 编译工具： mingw-w64 UEFI库：gnu-efi UEFI固件：OVMF.fd 磁盘工具：mtools 代码（./hello/hello.c）
 #include &lt;efi.h&gt; #include …</article>
     </div>
@@ -693,8 +690,7 @@ autodiff_nn_core 对带正态分布噪声的线性相关的数据进行线性回
         >
       </div>
       <h2 class="post-title">CNSS 2025 招新：反恐精英之神</h2>
-      <article class="post-article"> 👶 反恐精英之神 15% 成功实现一个内核模块并成功运行
-注：我用的内核版本是6.6.87.2，感觉好像就 请求处理 有点区别，就懒得在 [4.0,5.0] 弄了
+      <article class="post-article"> 👶 反恐精英之神 15% 成功实现一个内核模块并成功运行 注：我用的内核版本是6.6.87.2，感觉好像就 请求处理 有点区别，就懒得在 [4.0,5.0] 弄了
 代码（./bcache_module/bcache_basic.c）
 #include &lt;linux/module.h&gt; #include &lt;linux/kernel.h&gt; #include &lt;linux/init.h&gt; MODULE_LICENSE(&#34;GPL&#34;); MODULE_AUTHOR(&#34;Nailong&#34;); …</article>
     </div>
@@ -737,11 +733,9 @@ autodiff_nn_core 对带正态分布噪声的线性相关的数据进行线性回
         >
       </div>
       <h2 class="post-title">CNSS 2025 招新：Beyond Compare</h2>
-      <article class="post-article"> ♾️ Beyond Compare ❓CH1 用偏序关系外加逻辑运算符实现等价关系：
-不是小于的且不是大于的，就是等于了
+      <article class="post-article"> ♾️ Beyond Compare ❓CH1 用偏序关系外加逻辑运算符实现等价关系 不是小于的且不是大于的，就是等于了
 这里为方便描述还是 define 一下
-#define equ(a, b) (!(a &lt; b) &amp;&amp; !(b &lt; a)) 用偏序和等价关系外加逻辑运算符实现其余四种比较运算符：
-不等价 !=
+#define equ(a, b) (!(a &lt; b) &amp;&amp; !(b &lt; a)) 用偏序和等价关系外加逻辑运算符实现其余四种比较运算符 不等价 !=
 等价关系的否定：
 #define not_equ(a, b) (!equ(a, b)) 大于 &gt;
 小于的反向，也就是反向的偏序：
@@ -788,8 +782,7 @@ autodiff_nn_core 对带正态分布噪声的线性相关的数据进行线性回
         >
       </div>
       <h2 class="post-title">CNSS 2025 招新：依赖这一块</h2>
-      <article class="post-article"> 🧪 依赖这一块 CH1 什么是数据依赖？一般分为哪些类型？
-什么是 数据依赖 ？
+      <article class="post-article"> 🧪 依赖这一块 CH1 什么是数据依赖？一般分为哪些类型？ 什么是 数据依赖 ？
 这里应该显然是 编译原理 中的定义，所以涉及其他领域的应该不用写（
 数据依赖
 是指一种状态，当 程序结构 导致 数据 引用之前 处理过的数据 时的状态
@@ -840,8 +833,7 @@ a = b + c; d = 2 * a; 在 编译原理 中，数据依赖 是 数据分析 的�
       </div>
       <h2 class="post-title">CNSS 2025 招新：Brainwash</h2>
       <article class="post-article"> 🧠 Brainwash Final 既然是完整的 wp 的话，那我还是直接 copy 第一次交的 .md 吧，然后改动一些地方
-❓CH1 思考
-根据 Hint：
+❓CH1 思考 根据 Hint：
 Brainfuck 是图灵完备的。
 所以其实就很明显了，证明题目给的 指令集 可以实现 Brainfuck 的所有功能就好了。
 不过指令集涉及 i^=1 、i^=1&lt;&lt;ctz(i)+1、popcount 的条件分支等操作，如果对 标准二进制 作操作的话，要实现 Brainfuck 中的 &lt;&gt; 和 +- 是会很困难的，并且每次操作的操作序列是不固定的。所以我刚开始的时候按照 标准二进制 来搞，发现其实 i^=1 …</article>

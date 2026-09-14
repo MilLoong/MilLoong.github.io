@@ -154,54 +154,50 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#cnss--面试笔记">CNSS / 面试笔记</a>
+    <li><a href="#内存对齐">内存对齐</a></li>
+    <li><a href="#c-类型转换">C++ 类型转换</a></li>
+    <li><a href="#jit">JIT</a></li>
+    <li><a href="#锁">锁</a></li>
+    <li><a href="#原子操作">原子操作</a></li>
+    <li><a href="#内存顺序memory-order">内存顺序（Memory Order）</a></li>
+    <li><a href="#虚拟内存-和-物理内存">虚拟内存 和 物理内存</a></li>
+    <li><a href="#分页">分页</a></li>
+    <li><a href="#页面置换算法">页面置换算法</a></li>
+    <li><a href="#内存映射">内存映射</a></li>
+    <li><a href="#扇区">扇区</a></li>
+    <li><a href="#slab-slub-slob分配器">Slab Slub Slob分配器</a></li>
+    <li><a href="#块设备使用-多队列muti-queue-的原因">块设备使用 多队列Muti-queue 的原因</a></li>
+    <li><a href="#user-space用户空间-与-kernel-space内核空间">User space(用户空间) 与 Kernel space(内核空间)</a></li>
+    <li><a href="#内核">内核</a></li>
+    <li><a href="#uefi启动-和-bios启动">UEFI启动 和 BIOS启动</a></li>
+    <li><a href="#汇编的-数据单位">汇编的 数据单位</a></li>
+    <li><a href="#gpu-和-cpu">GPU 和 CPU</a></li>
+    <li><a href="#tcp-和-udp">TCP 和 UDP</a></li>
+    <li><a href="#tcpip协议层">TCP/IP协议层</a></li>
+    <li><a href="#ebpf">eBPF</a></li>
+    <li><a href="#c函数的调用过程原理和栈分析">C函数的调用过程原理和栈分析</a></li>
+    <li><a href="#内存结构">内存结构</a></li>
+    <li><a href="#socket">Socket</a></li>
+    <li><a href="#栈对齐">栈对齐</a></li>
+    <li><a href="#hook点">hook点</a></li>
+    <li><a href="#cgroup">cgroup</a></li>
+    <li><a href="#kprobe">Kprobe</a></li>
+    <li><a href="#协议栈">协议栈</a></li>
+    <li><a href="#iptables">iptables</a></li>
+    <li><a href="#寄存器">寄存器</a></li>
+    <li><a href="#inode">inode</a></li>
+    <li><a href="#为什么-cd-不能用-execvp且不能当做-外部命令">为什么 <code>cd</code> 不能用 <code>execvp</code>，且不能当做 外部命令</a></li>
+    <li><a href="#linux-job">Linux Job</a>
       <ul>
-        <li><a href="#内存对齐">内存对齐</a></li>
-        <li><a href="#c-类型转换">C++ 类型转换</a></li>
-        <li><a href="#jit">JIT</a></li>
-        <li><a href="#锁">锁</a></li>
-        <li><a href="#原子操作">原子操作</a></li>
-        <li><a href="#内存顺序memory-order">内存顺序（Memory Order）</a></li>
-        <li><a href="#虚拟内存-和-物理内存">虚拟内存 和 物理内存</a></li>
-        <li><a href="#分页">分页</a></li>
-        <li><a href="#页面置换算法">页面置换算法</a></li>
-        <li><a href="#内存映射">内存映射</a></li>
-        <li><a href="#扇区">扇区</a></li>
-        <li><a href="#slab-slub-slob分配器">Slab Slub Slob分配器</a></li>
-        <li><a href="#块设备使用-多队列muti-queue-的原因">块设备使用 多队列Muti-queue 的原因</a></li>
-        <li><a href="#user-space用户空间-与-kernel-space内核空间">User space(用户空间) 与 Kernel space(内核空间)</a></li>
-        <li><a href="#内核">内核</a></li>
-        <li><a href="#uefi启动-和-bios启动">UEFI启动 和 BIOS启动</a></li>
-        <li><a href="#汇编的-数据单位">汇编的 数据单位</a></li>
-        <li><a href="#gpu-和-cpu">GPU 和 CPU</a></li>
-        <li><a href="#tcp-和-udp">TCP 和 UDP</a></li>
-        <li><a href="#tcpip协议层">TCP/IP协议层</a></li>
-        <li><a href="#ebpf">eBPF</a></li>
-        <li><a href="#c函数的调用过程原理和栈分析">C函数的调用过程原理和栈分析</a></li>
-        <li><a href="#内存结构">内存结构</a></li>
-        <li><a href="#socket">Socket</a></li>
-        <li><a href="#栈对齐">栈对齐</a></li>
-        <li><a href="#hook点">hook点</a></li>
-        <li><a href="#cgroup">cgroup</a></li>
-        <li><a href="#kprobe">Kprobe</a></li>
-        <li><a href="#协议栈">协议栈</a></li>
-        <li><a href="#iptables">iptables</a></li>
-        <li><a href="#寄存器">寄存器</a></li>
-        <li><a href="#inode">inode</a></li>
-        <li><a href="#为什么-cd-不能用-execvp且不能当做-外部命令">为什么 <code>cd</code> 不能用 <code>execvp</code>，且不能当做 外部命令</a></li>
-        <li><a href="#linux-job">Linux Job</a>
-          <ul>
-            <li><a href="#进程分组管理setpgid">进程分组管理（<code>setpgid</code>）</a></li>
-            <li><a href="#前后台控制foregroundbackground">前后台控制（Foreground/Background）</a></li>
-            <li><a href="#状态追踪和回收waitpid-和-sigchld">状态追踪和回收（<code>waitpid</code> 和 <code>SIGCHLD</code>）</a></li>
-            <li><a href="#终端-io-控制">终端 I/O 控制</a></li>
-          </ul>
-        </li>
-        <li><a href="#惰性计算">惰性计算</a></li>
-        <li><a href="#工厂模式">工厂模式</a></li>
-        <li><a href="#omega-test-完整概括">Omega Test 完整概括</a></li>
+        <li><a href="#进程分组管理setpgid">进程分组管理（<code>setpgid</code>）</a></li>
+        <li><a href="#前后台控制foregroundbackground">前后台控制（Foreground/Background）</a></li>
+        <li><a href="#状态追踪和回收waitpid-和-sigchld">状态追踪和回收（<code>waitpid</code> 和 <code>SIGCHLD</code>）</a></li>
+        <li><a href="#终端-io-控制">终端 I/O 控制</a></li>
       </ul>
     </li>
+    <li><a href="#惰性计算">惰性计算</a></li>
+    <li><a href="#工厂模式">工厂模式</a></li>
+    <li><a href="#omega-test-完整概括">Omega Test 完整概括</a></li>
   </ul>
 </nav>
 </div></div>
@@ -2167,54 +2163,50 @@ Omega Test 完整概括
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#cnss--面试笔记">CNSS / 面试笔记</a>
+    <li><a href="#内存对齐">内存对齐</a></li>
+    <li><a href="#c-类型转换">C++ 类型转换</a></li>
+    <li><a href="#jit">JIT</a></li>
+    <li><a href="#锁">锁</a></li>
+    <li><a href="#原子操作">原子操作</a></li>
+    <li><a href="#内存顺序memory-order">内存顺序（Memory Order）</a></li>
+    <li><a href="#虚拟内存-和-物理内存">虚拟内存 和 物理内存</a></li>
+    <li><a href="#分页">分页</a></li>
+    <li><a href="#页面置换算法">页面置换算法</a></li>
+    <li><a href="#内存映射">内存映射</a></li>
+    <li><a href="#扇区">扇区</a></li>
+    <li><a href="#slab-slub-slob分配器">Slab Slub Slob分配器</a></li>
+    <li><a href="#块设备使用-多队列muti-queue-的原因">块设备使用 多队列Muti-queue 的原因</a></li>
+    <li><a href="#user-space用户空间-与-kernel-space内核空间">User space(用户空间) 与 Kernel space(内核空间)</a></li>
+    <li><a href="#内核">内核</a></li>
+    <li><a href="#uefi启动-和-bios启动">UEFI启动 和 BIOS启动</a></li>
+    <li><a href="#汇编的-数据单位">汇编的 数据单位</a></li>
+    <li><a href="#gpu-和-cpu">GPU 和 CPU</a></li>
+    <li><a href="#tcp-和-udp">TCP 和 UDP</a></li>
+    <li><a href="#tcpip协议层">TCP/IP协议层</a></li>
+    <li><a href="#ebpf">eBPF</a></li>
+    <li><a href="#c函数的调用过程原理和栈分析">C函数的调用过程原理和栈分析</a></li>
+    <li><a href="#内存结构">内存结构</a></li>
+    <li><a href="#socket">Socket</a></li>
+    <li><a href="#栈对齐">栈对齐</a></li>
+    <li><a href="#hook点">hook点</a></li>
+    <li><a href="#cgroup">cgroup</a></li>
+    <li><a href="#kprobe">Kprobe</a></li>
+    <li><a href="#协议栈">协议栈</a></li>
+    <li><a href="#iptables">iptables</a></li>
+    <li><a href="#寄存器">寄存器</a></li>
+    <li><a href="#inode">inode</a></li>
+    <li><a href="#为什么-cd-不能用-execvp且不能当做-外部命令">为什么 <code>cd</code> 不能用 <code>execvp</code>，且不能当做 外部命令</a></li>
+    <li><a href="#linux-job">Linux Job</a>
       <ul>
-        <li><a href="#内存对齐">内存对齐</a></li>
-        <li><a href="#c-类型转换">C++ 类型转换</a></li>
-        <li><a href="#jit">JIT</a></li>
-        <li><a href="#锁">锁</a></li>
-        <li><a href="#原子操作">原子操作</a></li>
-        <li><a href="#内存顺序memory-order">内存顺序（Memory Order）</a></li>
-        <li><a href="#虚拟内存-和-物理内存">虚拟内存 和 物理内存</a></li>
-        <li><a href="#分页">分页</a></li>
-        <li><a href="#页面置换算法">页面置换算法</a></li>
-        <li><a href="#内存映射">内存映射</a></li>
-        <li><a href="#扇区">扇区</a></li>
-        <li><a href="#slab-slub-slob分配器">Slab Slub Slob分配器</a></li>
-        <li><a href="#块设备使用-多队列muti-queue-的原因">块设备使用 多队列Muti-queue 的原因</a></li>
-        <li><a href="#user-space用户空间-与-kernel-space内核空间">User space(用户空间) 与 Kernel space(内核空间)</a></li>
-        <li><a href="#内核">内核</a></li>
-        <li><a href="#uefi启动-和-bios启动">UEFI启动 和 BIOS启动</a></li>
-        <li><a href="#汇编的-数据单位">汇编的 数据单位</a></li>
-        <li><a href="#gpu-和-cpu">GPU 和 CPU</a></li>
-        <li><a href="#tcp-和-udp">TCP 和 UDP</a></li>
-        <li><a href="#tcpip协议层">TCP/IP协议层</a></li>
-        <li><a href="#ebpf">eBPF</a></li>
-        <li><a href="#c函数的调用过程原理和栈分析">C函数的调用过程原理和栈分析</a></li>
-        <li><a href="#内存结构">内存结构</a></li>
-        <li><a href="#socket">Socket</a></li>
-        <li><a href="#栈对齐">栈对齐</a></li>
-        <li><a href="#hook点">hook点</a></li>
-        <li><a href="#cgroup">cgroup</a></li>
-        <li><a href="#kprobe">Kprobe</a></li>
-        <li><a href="#协议栈">协议栈</a></li>
-        <li><a href="#iptables">iptables</a></li>
-        <li><a href="#寄存器">寄存器</a></li>
-        <li><a href="#inode">inode</a></li>
-        <li><a href="#为什么-cd-不能用-execvp且不能当做-外部命令">为什么 <code>cd</code> 不能用 <code>execvp</code>，且不能当做 外部命令</a></li>
-        <li><a href="#linux-job">Linux Job</a>
-          <ul>
-            <li><a href="#进程分组管理setpgid">进程分组管理（<code>setpgid</code>）</a></li>
-            <li><a href="#前后台控制foregroundbackground">前后台控制（Foreground/Background）</a></li>
-            <li><a href="#状态追踪和回收waitpid-和-sigchld">状态追踪和回收（<code>waitpid</code> 和 <code>SIGCHLD</code>）</a></li>
-            <li><a href="#终端-io-控制">终端 I/O 控制</a></li>
-          </ul>
-        </li>
-        <li><a href="#惰性计算">惰性计算</a></li>
-        <li><a href="#工厂模式">工厂模式</a></li>
-        <li><a href="#omega-test-完整概括">Omega Test 完整概括</a></li>
+        <li><a href="#进程分组管理setpgid">进程分组管理（<code>setpgid</code>）</a></li>
+        <li><a href="#前后台控制foregroundbackground">前后台控制（Foreground/Background）</a></li>
+        <li><a href="#状态追踪和回收waitpid-和-sigchld">状态追踪和回收（<code>waitpid</code> 和 <code>SIGCHLD</code>）</a></li>
+        <li><a href="#终端-io-控制">终端 I/O 控制</a></li>
       </ul>
     </li>
+    <li><a href="#惰性计算">惰性计算</a></li>
+    <li><a href="#工厂模式">工厂模式</a></li>
+    <li><a href="#omega-test-完整概括">Omega Test 完整概括</a></li>
   </ul>
 </nav>
 </div></div>

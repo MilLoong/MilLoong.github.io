@@ -154,7 +154,7 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#automatic_differentiation_for_vector">Automatic_Differentiation_For_Vector</a></li>
+    <li><a href="#15-在标量函数自动微分的基础上实现对向量值函数的自动微分除基本初等函数外你还需要实现以下函数relu函数softmax函数sigmoid函数">15% 在标量函数自动微分的基础上，实现对向量值函数的自动微分，除基本初等函数外你还需要实现以下函数：ReLU函数，Softmax函数，Sigmoid函数</a></li>
   </ul>
 </nav>
 </div></div>
@@ -254,10 +254,10 @@
       itemprop="articleBody"><h1 id="automatic_differentiation_for_vector">
 <a class="header-anchor" href="#automatic_differentiation_for_vector"></a>
 Automatic_Differentiation_For_Vector
-</h1><ul>
-<li>
-<p><strong>15% 在标量函数自动微分的基础上，实现对向量值函数的自动微分，除基本初等函数外你还需要实现以下函数：ReLU函数，Softmax函数，Sigmoid函数</strong></p>
-<ul>
+</h1><h2 id="15-在标量函数自动微分的基础上实现对向量值函数的自动微分除基本初等函数外你还需要实现以下函数relu函数softmax函数sigmoid函数">
+<a class="header-anchor" href="#15-%e5%9c%a8%e6%a0%87%e9%87%8f%e5%87%bd%e6%95%b0%e8%87%aa%e5%8a%a8%e5%be%ae%e5%88%86%e7%9a%84%e5%9f%ba%e7%a1%80%e4%b8%8a%e5%ae%9e%e7%8e%b0%e5%af%b9%e5%90%91%e9%87%8f%e5%80%bc%e5%87%bd%e6%95%b0%e7%9a%84%e8%87%aa%e5%8a%a8%e5%be%ae%e5%88%86%e9%99%a4%e5%9f%ba%e6%9c%ac%e5%88%9d%e7%ad%89%e5%87%bd%e6%95%b0%e5%a4%96%e4%bd%a0%e8%bf%98%e9%9c%80%e8%a6%81%e5%ae%9e%e7%8e%b0%e4%bb%a5%e4%b8%8b%e5%87%bd%e6%95%b0relu%e5%87%bd%e6%95%b0softmax%e5%87%bd%e6%95%b0sigmoid%e5%87%bd%e6%95%b0"></a>
+15% 在标量函数自动微分的基础上，实现对向量值函数的自动微分，除基本初等函数外你还需要实现以下函数：ReLU函数，Softmax函数，Sigmoid函数
+</h2><ul>
 <li>
 <p>其实上面 <strong>标量函数自动微分</strong> 的代码中已经可以处理 <strong>向量</strong> 了，因为我用了 <strong>numpy</strong></p>
 <p>不过要想对 <strong>向量</strong> 进行 <strong>自动微分</strong>，还需要添加 <code>ReLU</code>、<code>Sigmoid</code>、<code>Softmax</code> 这三个激活函数</p>
@@ -1257,8 +1257,6 @@ $$</p>
 </ul>
 </li>
 <li></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -2809,7 +2807,7 @@ $$</p>
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#automatic_differentiation_for_vector">Automatic_Differentiation_For_Vector</a></li>
+    <li><a href="#15-在标量函数自动微分的基础上实现对向量值函数的自动微分除基本初等函数外你还需要实现以下函数relu函数softmax函数sigmoid函数">15% 在标量函数自动微分的基础上，实现对向量值函数的自动微分，除基本初等函数外你还需要实现以下函数：ReLU函数，Softmax函数，Sigmoid函数</a></li>
   </ul>
 </nav>
 </div></div>
@@ -2951,7 +2949,7 @@ $$</p>
           author: "MilLoong",
           title: "CNSS 2025：向量值函数自动微分",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-autodiff-vector\/",
-          description: " Automatic_Differentiation_For_Vector 15% 在标量函数自动微分的基础上，实现对向量值函数的自动微分，除基本初等函数外你还需要实现以下函数：ReLU函数，Softmax函数，Sigmoid函数\n其实上面 标量函数自动微分 的代码中已经可以处理 向量 了，因为我用了 numpy\n不过要想对 向量 进行 自动微分，还需要添加 ReLU、Sigmoid、Softmax 这三个激活函数\n以及处理好**广播（broadcasting）**的 梯度传播\n广播\n广播 其实就是 自动对齐维度，也就是说，如果两个张量的维度不同，会把低维扩展\n而 numpy 在 前向传播 的 …",
+          description: " Automatic_Differentiation_For_Vector 15% 在标量函数自动微分的基础上，实现对向量值函数的自动微分，除基本初等函数外你还需要实现以下函数：ReLU函数，Softmax函数，Sigmoid函数 其实上面 标量函数自动微分 的代码中已经可以处理 向量 了，因为我用了 numpy\n不过要想对 向量 进行 自动微分，还需要添加 ReLU、Sigmoid、Softmax 这三个激活函数\n以及处理好**广播（broadcasting）**的 梯度传播\n广播\n广播 其实就是 自动对齐维度，也就是说，如果两个张量的维度不同，会把低维扩展\n而 numpy 在 前向传播 的 …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg37.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

@@ -733,8 +733,7 @@ struct b{ int a; } struct node{ char c; int a; struct b; }; []里面就 …</art
         >
       </div>
       <h2 class="post-title">CNSS 2025 招新：牛走她的心</h2>
-      <article class="post-article"> ❣️ 牛走她的心 实现一个网络应用，分为服务端和客户端。客户端将某种请求发给服务端，服务端收到请求，将结果发回给客户端。例如，你要实现的请求功能可以是询问四则运算的结果，或者是提供prompt进行大模型推理。应用层协议由你自己设计。
-客户端
+      <article class="post-article"> ❣️ 牛走她的心 实现一个网络应用，分为服务端和客户端。客户端将某种请求发给服务端，服务端收到请求，将结果发回给客户端。例如，你要实现的请求功能可以是询问四则运算的结果，或者是提供prompt进行大模型推理。应用层协议由你自己设计。 客户端
 我这里实现的 客户端 请求功能 就用 询问四则运算结果 了吧
 启动客户端
 首先，要实现 客户端 和 服务端 之间的 通信和连接，可以使用 Socket（套接字）
@@ -828,8 +827,7 @@ import numpy as …</article>
       </div>
       <h2 class="post-title">CNSS 2025：MNIST 自定义自动微分</h2>
       <article class="post-article"> train_mnist_custom_autograd 25% 能对 MNIST 数据集进行分类并评估训练准确度
-MNIST 数据集
-MNIST（modified national institute of standard and technology）数据集 是由Yann LeCun及其同事于1994年创建一个大型手写数字数据库（包含0~9十个数字）
+MNIST 数据集 MNIST（modified national institute of standard and technology）数据集 是由Yann LeCun及其同事于1994年创建一个大型手写数字数据库（包含0~9十个数字）
 下载和加载
 用 torchvision 库 来 下载和加载 MNIST 数据集
 代码
@@ -874,8 +872,7 @@ MNIST（modified national institute of standard and technology）数据集 是�
         >
       </div>
       <h2 class="post-title">CNSS 2025：带噪声线性回归</h2>
-      <article class="post-article"> test_linear_regression 20% 能对带正态分布噪声的线性相关的数据进行线性回归求解
-正态分布噪声（高斯噪声）
+      <article class="post-article"> test_linear_regression 20% 能对带正态分布噪声的线性相关的数据进行线性回归求解 正态分布噪声（高斯噪声）
 高斯噪声 是一种常见的随机噪声，也称为 正态分布 噪声
 它是由高斯分布（正态分布）产生的随机信号，具有均值为零和方差为常数的特性
 高斯噪声 的特点是在 均值附近 产生 大部分噪声值，而在 离均值较远的地方 噪声值较少。这使得 高斯噪声 更接近真实世界中的许多 随机现象
@@ -922,8 +919,7 @@ MNIST（modified national institute of standard and technology）数据集 是�
         >
       </div>
       <h2 class="post-title">CNSS 2025：神经网络与损失函数自动微分</h2>
-      <article class="post-article"> autodiff_nn_core 10% 实现一到两个常见损失函数并能对神经网络每层的参数进行梯度的求解
-损失函数
+      <article class="post-article"> autodiff_nn_core 10% 实现一到两个常见损失函数并能对神经网络每层的参数进行梯度的求解 损失函数
 这里我选择的 损失函数 是 MSE（均方方差） 和 Cross-Entropy（交叉熵）
 先写一个 损失函数基类
 class Loss: # 损失函数基类 def __call__(self, predictions, targets): # 计算损失值 raise NotImplementedError MSE

@@ -154,17 +154,18 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#-依赖这一块">🧪 依赖这一块</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#ch1">CH1</a></li>
-            <li><a href="#ch2">CH2</a></li>
-            <li><a href="#ch3">CH3</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#ch1">CH1</a></li>
+    <li><a href="#什么是数据依赖一般分为哪些类型">什么是数据依赖？一般分为哪些类型？</a></li>
+    <li><a href="#下面这个循环可以并行吗为什么">下面这个循环可以并行吗？为什么？</a></li>
+    <li><a href="#在什么条件下循环可以安全地并行执行">在什么条件下循环可以安全地并行执行？</a></li>
+    <li><a href="#ch2">CH2</a></li>
+    <li><a href="#不等式约束">不等式约束</a></li>
+    <li><a href="#等式约束">等式约束</a></li>
+    <li><a href="#示例程序">示例程序</a></li>
+    <li><a href="#ch3">CH3</a></li>
+    <li><a href="#ch1-和-ch2-有什么关系">CH1 和 CH2 有什么关系？</a></li>
+    <li><a href="#你还知道哪些常见的循环变换它们需要满足哪些条件">你还知道哪些常见的循环变换？它们需要满足哪些条件？</a></li>
+    <li><a href="#ch2-的整数约束求解工具可以如何应用于并行等循环变换的分析">CH2 的整数约束求解工具可以如何应用于并行等循环变换的分析？</a></li>
   </ul>
 </nav>
 </div></div>
@@ -264,13 +265,13 @@
       itemprop="articleBody"><h1 id="-依赖这一块">
 <a class="header-anchor" href="#-%e4%be%9d%e8%b5%96%e8%bf%99%e4%b8%80%e5%9d%97"></a>
 🧪 依赖这一块
-</h1><h3 id="ch1">
+</h1><h2 id="ch1">
 <a class="header-anchor" href="#ch1"></a>
 CH1
-</h3><ul>
-<li>
-<p><strong>什么是数据依赖？一般分为哪些类型？</strong></p>
-<ul>
+</h2><h2 id="什么是数据依赖一般分为哪些类型">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af%e6%95%b0%e6%8d%ae%e4%be%9d%e8%b5%96%e4%b8%80%e8%88%ac%e5%88%86%e4%b8%ba%e5%93%aa%e4%ba%9b%e7%b1%bb%e5%9e%8b"></a>
+什么是数据依赖？一般分为哪些类型？
+</h2><ul>
 <li>
 <p>什么是 <strong>数据依赖</strong> ？</p>
 <blockquote>
@@ -385,10 +386,10 @@ CH1
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>下面这个循环可以并行吗？为什么？</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<h2 id="下面这个循环可以并行吗为什么">
+<a class="header-anchor" href="#%e4%b8%8b%e9%9d%a2%e8%bf%99%e4%b8%aa%e5%be%aa%e7%8e%af%e5%8f%af%e4%bb%a5%e5%b9%b6%e8%a1%8c%e5%90%97%e4%b8%ba%e4%bb%80%e4%b9%88"></a>
+下面这个循环可以并行吗？为什么？
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -421,10 +422,10 @@ CH1
 <p>综上，<strong>这个循环可以并行</strong></p>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>在什么条件下循环可以安全地并行执行？</strong></p>
-<ul>
+<h2 id="在什么条件下循环可以安全地并行执行">
+<a class="header-anchor" href="#%e5%9c%a8%e4%bb%80%e4%b9%88%e6%9d%a1%e4%bb%b6%e4%b8%8b%e5%be%aa%e7%8e%af%e5%8f%af%e4%bb%a5%e5%ae%89%e5%85%a8%e5%9c%b0%e5%b9%b6%e8%a1%8c%e6%89%a7%e8%a1%8c"></a>
+在什么条件下循环可以安全地并行执行？
+</h2><ul>
 <li>
 <p><strong>不存在循环携带的数据依赖</strong></p>
 <ul>
@@ -501,30 +502,28 @@ CH1
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="ch2">
+<h2 id="ch2">
 <a class="header-anchor" href="#ch2"></a>
 CH2
-</h3><ul>
-<li><strong>不等式约束</strong>
-<ul>
+</h2><h2 id="不等式约束">
+<a class="header-anchor" href="#%e4%b8%8d%e7%ad%89%e5%bc%8f%e7%ba%a6%e6%9d%9f"></a>
+不等式约束
+</h2><ul>
 <li>这里我就直接用 Hint 的 Omega Test 了（），不过具体的 Omega Test 实现好像稍微有点麻烦，所以我根据 Omega Test，只在 傅里叶-莫茨金消元法 的基础上 加了一些优化，当然作了点 保守 策略</li>
 </ul>
-</li>
-<li><strong>等式约束</strong>
-<ul>
+<h2 id="等式约束">
+<a class="header-anchor" href="#%e7%ad%89%e5%bc%8f%e7%ba%a6%e6%9d%9f"></a>
+等式约束
+</h2><ul>
 <li>等式其实就是 丢番图方程组 嘛</li>
 <li>处理这个的话 二元 一般是用 <code>exgcd</code> 的，不过三元及以上好像不是很好用</li>
 <li>然后我查了一下发现一个 史密斯标准型（SNF），好像用这个解决二元以上的 丢番图方程 更稳定可靠一点，所以简单实现了一下</li>
 </ul>
-</li>
-</ul>
 <p>然后具体代码细节就不在这里讲了吧，为了提高精度我用了一下 int128，然后定义了一个 <code>Raditinal</code> 类来控制，包括重载运算符什么的</p>
-<ul>
-<li>
-<p><strong>示例程序</strong></p>
-<blockquote>
+<h2 id="示例程序">
+<a class="header-anchor" href="#%e7%a4%ba%e4%be%8b%e7%a8%8b%e5%ba%8f"></a>
+示例程序
+</h2><blockquote>
 <p>示例程序的话 我的程序 的结果都是和预期相同的，不过更多的不知道行不行（）</p>
 <p>感觉确实只是简单模拟 Omega Test 和 SNF，所以应该会有例子能卡的（</p>
 </blockquote>
@@ -1097,15 +1096,13 @@ CH2
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
 </span></span></code></pre></div></li>
 </ul>
-</li>
-</ul>
-<h3 id="ch3">
+<h2 id="ch3">
 <a class="header-anchor" href="#ch3"></a>
 CH3
-</h3><ul>
-<li>
-<p><strong>CH1 和 CH2 有什么关系？</strong></p>
-<ul>
+</h2><h2 id="ch1-和-ch2-有什么关系">
+<a class="header-anchor" href="#ch1-%e5%92%8c-ch2-%e6%9c%89%e4%bb%80%e4%b9%88%e5%85%b3%e7%b3%bb"></a>
+CH1 和 CH2 有什么关系？
+</h2><ul>
 <li>
 <p>判断是否有 <strong>数据依赖</strong>，可以通过 CH2 中的 <strong>整数约束求解工具</strong> 来处理</p>
 <ul>
@@ -1133,10 +1130,10 @@ CH3
 <p>在 <strong>循环嵌套</strong> 进行了 <strong>循环交换变换</strong> 以后，需要重新计算各个层级 <strong>循环变量</strong> 的上下界，而在 <strong>多面体编译</strong> 领域要求更严格的 <strong>循环变量</strong> 的约束形式，即要写成 <strong>更外层循环变量</strong> 的 <strong>仿射表达式</strong> 形式，这时候就需要 CH2 中写的 <strong>整数约束求解工具</strong> 来进行处理了</p>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>你还知道哪些常见的循环变换？它们需要满足哪些条件？</strong></p>
-<p>查了一下，大概有：</p>
+<h2 id="你还知道哪些常见的循环变换它们需要满足哪些条件">
+<a class="header-anchor" href="#%e4%bd%a0%e8%bf%98%e7%9f%a5%e9%81%93%e5%93%aa%e4%ba%9b%e5%b8%b8%e8%a7%81%e7%9a%84%e5%be%aa%e7%8e%af%e5%8f%98%e6%8d%a2%e5%ae%83%e4%bb%ac%e9%9c%80%e8%a6%81%e6%bb%a1%e8%b6%b3%e5%93%aa%e4%ba%9b%e6%9d%a1%e4%bb%b6"></a>
+你还知道哪些常见的循环变换？它们需要满足哪些条件？
+</h2><p>查了一下，大概有：</p>
 <ul>
 <li>
 <p><strong>改变指令实例执行顺序的变换</strong></p>
@@ -1267,10 +1264,10 @@ CH3
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>CH2 的整数约束求解工具可以如何应用于并行等循环变换的分析？</strong></p>
-<ul>
+<h2 id="ch2-的整数约束求解工具可以如何应用于并行等循环变换的分析">
+<a class="header-anchor" href="#ch2-%e7%9a%84%e6%95%b4%e6%95%b0%e7%ba%a6%e6%9d%9f%e6%b1%82%e8%a7%a3%e5%b7%a5%e5%85%b7%e5%8f%af%e4%bb%a5%e5%a6%82%e4%bd%95%e5%ba%94%e7%94%a8%e4%ba%8e%e5%b9%b6%e8%a1%8c%e7%ad%89%e5%be%aa%e7%8e%af%e5%8f%98%e6%8d%a2%e7%9a%84%e5%88%86%e6%9e%90"></a>
+CH2 的整数约束求解工具可以如何应用于并行等循环变换的分析？
+</h2><ul>
 <li>
 <p><strong>调度变换与线性整数规划</strong>：</p>
 <ul>
@@ -1351,8 +1348,6 @@ CH3
 </li>
 <li>
 <p>如果 <code>f(i) = g(j)</code> 且 <code>i ≠ j</code> 无整数解，则说明不存在 循环携带依赖 ，可以并行</p>
-</li>
-</ul>
 </li>
 </ul>
 </li>
@@ -1504,17 +1499,18 @@ CH3
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#-依赖这一块">🧪 依赖这一块</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#ch1">CH1</a></li>
-            <li><a href="#ch2">CH2</a></li>
-            <li><a href="#ch3">CH3</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#ch1">CH1</a></li>
+    <li><a href="#什么是数据依赖一般分为哪些类型">什么是数据依赖？一般分为哪些类型？</a></li>
+    <li><a href="#下面这个循环可以并行吗为什么">下面这个循环可以并行吗？为什么？</a></li>
+    <li><a href="#在什么条件下循环可以安全地并行执行">在什么条件下循环可以安全地并行执行？</a></li>
+    <li><a href="#ch2">CH2</a></li>
+    <li><a href="#不等式约束">不等式约束</a></li>
+    <li><a href="#等式约束">等式约束</a></li>
+    <li><a href="#示例程序">示例程序</a></li>
+    <li><a href="#ch3">CH3</a></li>
+    <li><a href="#ch1-和-ch2-有什么关系">CH1 和 CH2 有什么关系？</a></li>
+    <li><a href="#你还知道哪些常见的循环变换它们需要满足哪些条件">你还知道哪些常见的循环变换？它们需要满足哪些条件？</a></li>
+    <li><a href="#ch2-的整数约束求解工具可以如何应用于并行等循环变换的分析">CH2 的整数约束求解工具可以如何应用于并行等循环变换的分析？</a></li>
   </ul>
 </nav>
 </div></div>
@@ -1656,7 +1652,7 @@ CH3
           author: "MilLoong",
           title: "CNSS 2025 招新：依赖这一块",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-yi-lai\/",
-          description: " 🧪 依赖这一块 CH1 什么是数据依赖？一般分为哪些类型？\n什么是 数据依赖 ？\n这里应该显然是 编译原理 中的定义，所以涉及其他领域的应该不用写（\n数据依赖\n是指一种状态，当 程序结构 导致 数据 引用之前 处理过的数据 时的状态\n具体来说，\n如果两个 存储访问 操作访问 同一个变量，其中一个访问是写（或更新）操作，则两个操作间存在 数据依赖\n数据依赖关系 体现了两个 存储访问操作 的 执行顺序，必须按照该顺序执行两个操作才能得到正确的结果\n比如：\na = b \u002b c; d = 2 * a; 在 编译原理 中，数据依赖 是 数据分析 的一部分，是 数据流 之间的一种依赖\n数据依赖 分为 哪 …",
+          description: " 🧪 依赖这一块 CH1 什么是数据依赖？一般分为哪些类型？ 什么是 数据依赖 ？\n这里应该显然是 编译原理 中的定义，所以涉及其他领域的应该不用写（\n数据依赖\n是指一种状态，当 程序结构 导致 数据 引用之前 处理过的数据 时的状态\n具体来说，\n如果两个 存储访问 操作访问 同一个变量，其中一个访问是写（或更新）操作，则两个操作间存在 数据依赖\n数据依赖关系 体现了两个 存储访问操作 的 执行顺序，必须按照该顺序执行两个操作才能得到正确的结果\n比如：\na = b \u002b c; d = 2 * a; 在 编译原理 中，数据依赖 是 数据分析 的一部分，是 数据流 之间的一种依赖\n数据依赖 分为 哪 …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg31.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

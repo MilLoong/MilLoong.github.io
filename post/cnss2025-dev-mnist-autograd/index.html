@@ -154,7 +154,9 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#train_mnist_custom_autograd">train_mnist_custom_autograd</a></li>
+    <li><a href="#mnist-数据集">MNIST 数据集</a></li>
+    <li><a href="#训练模型">训练模型</a></li>
+    <li><a href="#测试代码">测试代码</a></li>
   </ul>
 </nav>
 </div></div>
@@ -255,10 +257,10 @@
 <a class="header-anchor" href="#train_mnist_custom_autograd"></a>
 train_mnist_custom_autograd
 </h1><p><strong>25% 能对 MNIST 数据集进行分类并评估训练准确度</strong></p>
-<ul>
-<li>
-<p><strong>MNIST 数据集</strong></p>
-<ul>
+<h2 id="mnist-数据集">
+<a class="header-anchor" href="#mnist-%e6%95%b0%e6%8d%ae%e9%9b%86"></a>
+MNIST 数据集
+</h2><ul>
 <li>
 <p><strong>MNIST（modified national institute of standard and technology）数据集</strong> 是由Yann LeCun及其同事于1994年创建一个大型手写数字数据库（包含0~9十个数字）</p>
 </li>
@@ -297,10 +299,10 @@ train_mnist_custom_autograd
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>训练模型</strong></p>
-<ul>
+<h2 id="训练模型">
+<a class="header-anchor" href="#%e8%ae%ad%e7%bb%83%e6%a8%a1%e5%9e%8b"></a>
+训练模型
+</h2><ul>
 <li>
 <p>创建 <strong>MLP</strong></p>
 <ul>
@@ -455,10 +457,10 @@ train_mnist_custom_autograd
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>测试代码</strong></p>
-<ul>
+<h2 id="测试代码">
+<a class="header-anchor" href="#%e6%b5%8b%e8%af%95%e4%bb%a3%e7%a0%81"></a>
+测试代码
+</h2><ul>
 <li>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="c1"># 测试</span>
 </span></span><span class="line"><span class="cl">
@@ -2193,8 +2195,6 @@ train_mnist_custom_autograd
 </span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">num_epochs</span><span class="si">}</span><span class="se">\n</span><span class="s2">train_acc: </span><span class="si">{</span><span class="n">train_acc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">test_acc: </span><span class="si">{</span><span class="n">test_acc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span></code></pre></div></li>
 </ul>
-</li>
-</ul>
 </div>
     <footer class="article-footer"><a
           data-aos="zoom-in"
@@ -2356,7 +2356,9 @@ train_mnist_custom_autograd
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#train_mnist_custom_autograd">train_mnist_custom_autograd</a></li>
+    <li><a href="#mnist-数据集">MNIST 数据集</a></li>
+    <li><a href="#训练模型">训练模型</a></li>
+    <li><a href="#测试代码">测试代码</a></li>
   </ul>
 </nav>
 </div></div>
@@ -2498,7 +2500,7 @@ train_mnist_custom_autograd
           author: "MilLoong",
           title: "CNSS 2025：MNIST 自定义自动微分",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-mnist-autograd\/",
-          description: " train_mnist_custom_autograd 25% 能对 MNIST 数据集进行分类并评估训练准确度\nMNIST 数据集\nMNIST（modified national institute of standard and technology）数据集 是由Yann LeCun及其同事于1994年创建一个大型手写数字数据库（包含0~9十个数字）\n下载和加载\n用 torchvision 库 来 下载和加载 MNIST 数据集\n代码\n# 数据加载 # torchvision 来 下载和加载 MNIST 数据集 transform = …",
+          description: " train_mnist_custom_autograd 25% 能对 MNIST 数据集进行分类并评估训练准确度\nMNIST 数据集 MNIST（modified national institute of standard and technology）数据集 是由Yann LeCun及其同事于1994年创建一个大型手写数字数据库（包含0~9十个数字）\n下载和加载\n用 torchvision 库 来 下载和加载 MNIST 数据集\n代码\n# 数据加载 # torchvision 来 下载和加载 MNIST 数据集 transform = …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg40.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
