@@ -1,0 +1,1330 @@
+<!doctype html>
+<html
+  lang="zh-cn" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  CNSS 2025 招新：Brainwash | MilLoong
+</title>
+<meta name="description" content="个人博客，记录学习日常"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":18},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="CNSS 2025 招新：Brainwash | MilLoong" />
+  <meta
+    property="og:description"
+    content="个人博客，记录学习日常"
+  />
+  <meta property="og:url" content="https://MilLoong.github.io/post/cnss2025-dev-brainwash/" />
+  <meta
+    property="og:site_name"
+    content="MilLoong的博客"
+  />
+  <meta
+    property="og:image"
+    content="/backgrounds/bg30.webp"
+  />
+  <meta property="article:author" content="MilLoong" />
+  <meta property="article:published_time" content="2025-09-28T22:37:00&#43;08:00" />
+  <meta property="article:modified_time" content="2025-09-28T22:37:00&#43;08:00" /><meta property="article:tag" content="CNSS招新DevWriteup" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/backgrounds/bg30.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/><link rel="stylesheet" href="/css/custom.css" /></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">咻——马上就加载好啦...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">关于</span>
+      </a><a class="main-nav-link-wrap" href="/friend">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">友链</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-whattoeat-link" class="nav-icon" href="/whattoeat" title="吃什么" aria-label="吃什么"></a>
+      <a id="nav-nailong-search-link" class="nav-icon" href="/nailong-search" title="奶龙表情库" aria-label="奶龙表情库"></a><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/backgrounds/bg30.webp" alt="CNSS 2025 招新：Brainwash"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">CNSS 2025 招新：Brainwash</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#思考">思考</a></li>
+    <li><a href="#证明">证明</a></li>
+    <li><a href="#ch2---bonus-task">❓CH2 &amp;&amp; 😎 Bonus Task</a></li>
+    <li><a href="#思考-1">思考</a></li>
+    <li><a href="#示例程序">示例程序</a></li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">11</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      5
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">39</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-09-28 22:37:00 &#43;0800 CST" itemprop="datePublished"
+      >2025-09-28</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-09-28</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/%e5%ae%89%e5%85%a8"
+      data-aos="zoom-in"
+      >安全</a
+    ></div>
+</div><div class="hr-line"></div><div
+      class="e-content article-entry"
+      itemprop="articleBody"><h1 id="-brainwash-final">
+<a class="header-anchor" href="#-brainwash-final"></a>
+🧠 Brainwash Final
+</h1><blockquote>
+<p>既然是完整的 wp 的话，那我还是直接 copy 第一次交的 .md 吧，然后改动一些地方</p>
+</blockquote>
+<h2 id="ch1">
+<a class="header-anchor" href="#ch1"></a>
+❓CH1
+</h2><h2 id="思考">
+<a class="header-anchor" href="#%e6%80%9d%e8%80%83"></a>
+思考
+</h2><p>根据 Hint：</p>
+<blockquote>
+<p><strong>Brainfuck</strong> 是图灵完备的。</p>
+</blockquote>
+<p>所以其实就很明显了，证明题目给的 指令集 可以实现 <strong>Brainfuck</strong> 的所有功能就好了。</p>
+<p>不过指令集涉及 <code>i^=1</code> 、<code>i^=1&lt;&lt;ctz(i)+1</code>、<code>popcount</code> 的条件分支等操作，如果对 <strong>标准二进制</strong> 作操作的话，要实现 <strong>Brainfuck</strong> 中的 <code>&lt;&gt;</code> 和 <code>+-</code> 是会很困难的，并且每次操作的操作序列是不固定的。所以我刚开始的时候按照 <strong>标准二进制</strong> 来搞，发现其实 <code>i^=1</code> 、<code>i^=1&lt;&lt;ctz(i)+1</code> 这类操作的出现次数不会连着出现两次，所以一直在构造 <code>s</code> 和 <code>z</code> 的交替序列来看有什么性质，不过这样的话就不能用 <code>popcount</code> 了，然后就卡住了（</p>
+<p>接着我就考虑怎么使用 <code>qab</code> 或 <code>pab</code>，也就是涉及 <code>popcount</code> 的操作。这个的话，可以联系一下 <code>i^=1</code> 、<code>i^=1&lt;&lt;ctz(i)+1</code> 这两种操作，这不就是<strong>k 位格雷码的构造操作</strong>吗？所以想到这题其实是用 <strong>格雷码</strong> 来做。</p>
+<p>而<strong>格雷码</strong>有个关于 <code>popcount</code> 的性质：</p>
+<ul>
+<li><strong>格雷码任意两个相邻的代码只有一位二进制数不同</strong>，也就是说，相邻两项的 <code>popcount</code> 差 1 ，且相邻两项异或起来的值的 <code>popcount=1</code></li>
+</ul>
+<p>可以打个表来看一下：</p>
+<table>
+  <thead>
+      <tr>
+          <th>十进制</th>
+          <th>标准二进制</th>
+          <th>格雷码</th>
+          <th><code>popcount(格雷码)</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>000</td>
+          <td>000</td>
+          <td>0 (偶)</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>001</td>
+          <td>001</td>
+          <td>1 (奇)</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>010</td>
+          <td>011</td>
+          <td>2 (偶)</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>011</td>
+          <td>010</td>
+          <td>1 (奇)</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>100</td>
+          <td>110</td>
+          <td>2 (偶)</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>101</td>
+          <td>111</td>
+          <td>3 (奇)</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>110</td>
+          <td>101</td>
+          <td>2 (偶)</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>111</td>
+          <td>100</td>
+          <td>1 (奇)</td>
+      </tr>
+  </tbody>
+</table>
+<p>可以看到，初态是 <code>0</code> 的时候：</p>
+<ul>
+<li>若 <code>popcount</code> 为偶数，则当前项 <code>+1</code> 就是 <code>^1</code>，<code>-1</code> 就是 <code>^1&lt;&lt;ctz(i)+1</code></li>
+<li>若 <code>popcount</code> 为奇数，则当前项 <code>+1</code> 就是 <code>^1&lt;&lt;ctz(i)+1</code>，<code>-1</code> 就是 <code>^1</code></li>
+</ul>
+<p>而这恰好和 <code>qab</code> 与 <code>pab</code> 中的 <code>popcount(i)&amp;1</code> 的判断相匹配，所以这题肯定就是这么写的</p>
+<p>那题目给的指针操作及内存操作都是有 <code>^1</code>、<code>^1&lt;&lt;ctz(i)+1</code>、<code>判断popcount&amp;1</code> 的操作的，所以两者可以分别实现 <code>&lt;&gt;</code> 和 <code>+-</code> 的</p>
+<hr>
+<p>然后 指针 就用 <strong>格雷码</strong> 保存了，这没问题</p>
+<p>不过 内存 是用 <code>getchar</code> 作为输入，<code>putchar</code> 作为输出，这两者都是输入或输出 <strong>标准二进制</strong> 的，要考虑输入以后怎么转换成 <strong>格雷码</strong>，以及怎么从 <strong>格雷码</strong> 转换为 <strong>标准二进制</strong> 来输出。</p>
+<p>这个时候可以利用 <code>mem[i]</code> 有而 <code>i</code> 没有的一些操作来证明了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="nl">u</span><span class="p">:</span> <span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mem</span><span class="p">[</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nl">v</span><span class="p">:</span> <span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mem</span><span class="p">[</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">256</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[...]</span><span class="o">:</span> <span class="k">while</span> <span class="p">(</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">goto</span> <span class="n">corresponding</span> <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">]</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">goto</span> <span class="n">corresponding</span> <span class="p">[</span>
+</span></span></code></pre></div><p>可以看到 <code>u</code> 和 <code>v</code> 是间接寻址，要利用的话，就要 <strong>打表</strong></p>
+<p>先找一下规律，发现，其实 <code>u</code> 操作中 索引 的取值范围是 <code>[0,255]</code>，<code>v</code> 操作中 索引 的取值范围是 <code>[256,511]</code>，两者是错开的，互不重叠</p>
+<p>于是我们可以将 <code>[0,255]</code> 当作 <code>binary2gray</code>，<code>[256,511]</code> 当作 <code>gray2binary</code></p>
+<p>那这个 打表 的话，肯定是在 <code>.bw</code> 来打，也就是说在 正常程序 运行前先执行这个打表代码</p>
+<p>考虑怎么生成这个 打表代码</p>
+<p>既然是在 <code>.bw</code> 打表，而且这个表应该是要打完 <code>[0,511]</code> 的，不然 动态 打的话不能预测 <code>i</code> 输入进来的字符</p>
+<p>那就直接写个 <code>generate.py</code> 来生成 打表 的操作序列</p>
+<p>写这个 生成器 的思路也很简单，对于 <code>binary2gray</code>，直接根据 <code>i</code> 的 格雷码 对应十进制，来决定 <code>mem[i]</code> 加多少</p>
+<p>而 <code>gray2binary</code> 复杂一点，要先求出 <code>i</code> 对应的 <code>binary</code>，然后用一个 <code>binary</code> 和 <code>gray</code> 的对应关系，找到对应的 <code>qzs</code> 序列</p>
+<p>这样就能生成一个 <code>stdlib.bw</code> 的表</p>
+<p>然后的话看起来应该不是每次都要执行这个 表 中的内容，所以就不在程序中自动执行 <code>stdlib.bw</code> 了</p>
+<p>这样， <code>.bw</code> 文件的话每次执行的时候先执行 <code>stdlib.bw</code> 的内容，然后再执行相应的逻辑就好了</p>
+<p>然后我加了一个注释代码的 <code>#</code>，这样便于对 <code>.bw</code> 进行注释</p>
+<h2 id="证明">
+<a class="header-anchor" href="#%e8%af%81%e6%98%8e"></a>
+证明
+</h2><p>要证明所给的 <strong>Brainwash</strong> 可以实现 <strong>Brainfuck</strong> 的所有功能，其实就是证明 指令集 可以实现 <strong>Brainfuck</strong> 的 8 条命令：</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">字符</th>
+          <th style="text-align: center">含义</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><code>&gt;</code></td>
+          <td style="text-align: center">指针加一</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>&lt;</code></td>
+          <td style="text-align: center">指针减一</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>+</code></td>
+          <td style="text-align: center">指针所指字节的值加一</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-</code></td>
+          <td style="text-align: center">指针所指字节的值减一</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>.</code></td>
+          <td style="text-align: center">输出指针所指字节内容（<a href="https://zh.wikipedia.org/wiki/ASCII%E7%A0%81">ASCII码</a>）</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>,</code></td>
+          <td style="text-align: center">向指针所指的字节输入内容（ASCII码）</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>[</code></td>
+          <td style="text-align: center">若指针所指字节的值为零，则向后跳转，跳转到其对应的<code>]</code>的下一个指令处</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>]</code></td>
+          <td style="text-align: center">若指针所指字节的值不为零，则向前跳转，跳转到其对应的<code>[</code>的下一个指令处</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>
+<p><code>[</code>，<code>]</code></p>
+<p>先从最简单的入手，因为题目已经说了：</p>
+<ul>
+<li><code>[]</code> 和 <strong>Brainfuck</strong> 中的 <code>[]</code> 含义完全一致，括号是允许嵌套的。</li>
+</ul>
+<p>所以就不难证明其能完成 <strong>Brainfuck</strong> 的 <code>[]</code> 功能了</p>
+</li>
+<li>
+<p><code>&lt;</code>，<code>&gt;</code></p>
+<p><strong>Brainwash</strong> 中涉及 当前指针 移动的操作有：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="nl">x</span><span class="p">:</span> <span class="n">i</span> <span class="o">^=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nl">y</span><span class="p">:</span> <span class="n">i</span> <span class="o">^=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">ctz</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nl">qab</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">popcount</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span>
+</span></span></code></pre></div><p>根据 <strong>思考</strong> 得知，<code>popcount(i)</code> 是奇数时，当前指针 <code>+1</code> 就是 <code>^1&lt;&lt;ctz(i)+1</code>，<code>-1</code> 就是 <code>^1</code>，偶数反之，所以 <code>&lt;</code> 的 <strong>Brainwash</strong> 表示是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">qxy
+</span></span></code></pre></div><p><code>&gt;</code> 的 <strong>Brainwash</strong> 表示是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">qyx
+</span></span></code></pre></div></li>
+<li>
+<p><code>+</code>，<code>-</code></p>
+<p><strong>Brainwash</strong> 中涉及 内存 加减的操作有：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="nl">s</span><span class="p">:</span> <span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nl">z</span><span class="p">:</span> <span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">min</span><span class="p">(</span><span class="n">ctz</span><span class="p">(</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nl">pab</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">popcount</span><span class="p">(</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span>
+</span></span></code></pre></div><p>那么就和 <code>&lt;</code>，<code>&gt;</code> 的处理同理，<code>+</code> 的 <strong>Brainwash</strong> 表示是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">pzs</span>
+</span></span></code></pre></div><p><code>-</code> 的 <strong>Brainwash</strong> 表示是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">psz</span>
+</span></span></code></pre></div></li>
+<li>
+<p><code>,</code>，<code>.</code></p>
+<p>如 <strong>思考</strong> 中所说，我们先执行 <code>stdlib.bw</code> 的打表指令，然后就能够用</p>
+<ul>
+<li><code>u</code>：<code>binary2gray</code></li>
+<li><code>v</code>：<code>gray2binary</code></li>
+</ul>
+<p>对于 <code>,</code>：</p>
+<ul>
+<li>
+<p><code>i</code> 输入进来的是 <code>binary</code>，并且会对 <code>mem[i]</code> 进行覆盖，所以在 <code>i</code> 之后直接执行 <code>u</code> 就好了，所以是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">iu
+</span></span></code></pre></div></li>
+</ul>
+<p>对于 <code>.</code>：</p>
+<ul>
+<li>
+<p><code>o</code> 要先用 <code>u</code> 把 <code>mem[i]</code> 的 格雷码 转换为 <code>bianry</code>，然后输出之后，还要用 <code>v</code> 转回去，所以是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vou
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<p>所以这样我们就证明了 <strong>Brainwash</strong> 能实现 <strong>Brainfuck</strong> ，对应的 <strong>Brainfuck</strong> 命令与 <strong>Brainwash</strong> 等价实现 的关系是：</p>
+<table>
+  <thead>
+      <tr>
+          <th>Brainfuck 指令</th>
+          <th>Brainwash 等价实现</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>+</code></td>
+          <td><code>pzs</code></td>
+      </tr>
+      <tr>
+          <td><code>-</code></td>
+          <td><code>psz</code></td>
+      </tr>
+      <tr>
+          <td><code>&gt;</code></td>
+          <td><code>qyx</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;</code></td>
+          <td><code>qxy</code></td>
+      </tr>
+      <tr>
+          <td><code>.</code></td>
+          <td><code>vou</code></td>
+      </tr>
+      <tr>
+          <td><code>,</code></td>
+          <td><code>iu</code></td>
+      </tr>
+      <tr>
+          <td><code>[</code></td>
+          <td><code>[</code></td>
+      </tr>
+      <tr>
+          <td><code>]</code></td>
+          <td><code>]</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>于是就能证明 <strong>Brainwash</strong> 是 <strong>图灵完备</strong> 的了</p>
+<h2 id="ch2---bonus-task">
+<a class="header-anchor" href="#ch2---bonus-task"></a>
+❓CH2 &amp;&amp; 😎 Bonus Task
+</h2><h2 id="思考-1">
+<a class="header-anchor" href="#%e6%80%9d%e8%80%83-1"></a>
+思考
+</h2><p>Hint 是说：</p>
+<blockquote>
+<p>手写这样的程序似乎有些困难，有没有什么复用已有程序的办法呢？</p>
+</blockquote>
+<p>显然这个指令集和 <strong>Brainfuck</strong> 是很像的，所以我考虑能不能复用一些已经写好的 <strong>Brainfuck</strong> 的解释器</p>
+<ul>
+<li>
+<p>由于题目没有限制，所以我就直接在 github 上找一个开源项目了（当然后面如果说有限制再改吧）：</p>
+<blockquote>
+<p><a href="https://github.com/Misakait/brainfuck">https://github.com/Misakait/brainfuck#</a></p>
+</blockquote>
+<p>这个项目基于 <code>Rust</code> 开发</p>
+<p>同时这个项目也包含 <strong>Brainfuck</strong> 的 <code>JIT</code> 的实现了，所以也可以很方便地去做 <strong>Bonus Task</strong></p>
+<p>这里的话由于多加了个 <code>pab</code> 和 <code>qab</code> 这样的条件跳转，所以这里改动比较多，加了一些执行 单个操作 的函数</p>
+<p>关于 项目架构，参考上述 项目 的：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">├── Cargo.toml                <span class="c1"># Rust 项目配置文件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">├── src/                      <span class="c1"># 源码目录</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">│   ├── main.rs               <span class="c1"># 程序入口</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">│   ├── Interpreter.rs        <span class="c1"># 解释器实现</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">│   ├── jit_compiler.rs       <span class="c1"># JIT 编译器实现</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">│   ├── ir.rs                 <span class="c1"># 中间表示(IR)相关</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">│   └── opcode.rs             <span class="c1"># 操作码定义</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">├── res/                      <span class="c1"># Brainwash 示例程序</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">│   ├── HelloWorld.bw
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">│   ├── IO.bw
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">│   ├── Condition.bw
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">│   └── mandelbrot.bw
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">│   └── stdlib.bw
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">└── target/                   <span class="c1"># 编译输出目录</span>
+</span></span></code></pre></div><p>关于 平台与架构：</p>
+<ul>
+<li><strong>平台：</strong>
+<ul>
+<li><strong>Windows</strong> 平台</li>
+</ul>
+</li>
+<li><strong>架构：</strong>
+<ul>
+<li><strong>x86-64</strong> 架构</li>
+</ul>
+</li>
+</ul>
+<p>关于 环境与编译运行（同样，参考项目的）：</p>
+<ul>
+<li>
+<p><strong>环境：</strong></p>
+<ul>
+<li><code>Rust</code></li>
+</ul>
+</li>
+<li>
+<p><strong>编译项目：</strong></p>
+<ul>
+<li><code>cargo build --release</code></li>
+</ul>
+</li>
+<li>
+<p><strong>运行 Brainwash 程序：</strong></p>
+<ul>
+<li>
+<p>解释器 模式：</p>
+<ul>
+<li>
+<p>原始模式</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cargo run --release -- -or res/HelloWorld.bw
+</span></span></code></pre></div><p>如果是下载已经编译的二进制文件，可以直接运行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./brainwash.exe -or ./yourcode.bw
+</span></span></code></pre></div><p>如需运行其他示例，将路径替换为对应 <code>.bw</code> 文件。</p>
+</li>
+<li>
+<p>IR 优化：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cargo run --release -- -ir res/HelloWorld.bw
+</span></span></code></pre></div><p>如果是下载已经编译的二进制文件，可以直接运行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./brainwash.exe -ir ./yourcode.bw
+</span></span></code></pre></div><p>如需运行其他示例，将路径替换为对应 <code>.bw</code> 文件。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>JIT 编译模式：</strong></p>
+<p>可通过命令行参数切换来启用 <code>JIT</code> 编译模式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cargo run --release -- -jit res/HelloWorld.bw
+</span></span></code></pre></div><p>如果是下载已经编译的二进制文件，可以直接运行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./brainwash.exe -jit ./yourcode.bw
+</span></span></code></pre></div><p>（具体参数请参考 <code>main.rs</code> 或命令行帮助）</p>
+<ul>
+<li>
+<p><strong>JIT 简要设计思路</strong></p>
+<blockquote>
+<p>既然题目说要简要说一下 <strong>JIT</strong> 的设计思路，那这里虽然是用的开源项目，我还是说一下吧</p>
+</blockquote>
+<p>首先我们知道，<strong>JIT</strong> 是在 运行时 将一部分代码动态地编译成机器码，而不是整个代码都编译成机器码，然后程序就直接跳转到这段 机器码 上执行，就会比逐条指令放到 解释器 中快，也不像 AOT 那样复杂</p>
+<p>而其需要向 内存 中申请一块<strong>可读、可写、可执行</strong>（RWX）的内存区域，用于存放动态生成的机器码</p>
+<p>然后通过维护 CPU 寄存器（如 <code>rdi</code> 或 <code>rbx</code>）始终指向 Brainwash 的&quot;纸带&quot;内存的当前单元格，这样，对指针的操作就变成了对这个寄存器的简单加减操作（如<code>inc rdi</code>, <code>dec rdi</code>）</p>
+<p>然后对于 <strong>I/O</strong> 操作，需要调用外部的 <code>getchar</code> 和 <code>putchar</code>，这个不难实现，用 <code>extern</code> 就行</p>
+<p>然后是 <code>[]</code> 这种跳转命令，确实也是一个难点，需要预留跳转地址的空位，在后续生成回跳的机器码时计算偏移量，并将其填入原先预留的空位中，并且要注意字节序等</p>
+<p>关于 <strong>汇编代码</strong> 的处理：</p>
+<ul>
+<li>使用 <code>dynasm-rs</code> 这个库来编写 x86-64 汇编指令</li>
+</ul>
+<p>关于 <strong>地址指针</strong>：</p>
+<ul>
+<li>**内存指针 (<code>rdi</code>)：**内部的数据指针 (<code>data_ptr</code>)</li>
+<li>**内存基地址 (<code>rbx</code>)：**用 <code>rbx</code> 寄存器保存了 <code>mem</code> 数组的基地址，以此来计算 偏移量</li>
+</ul>
+<p>各个 <strong>指令</strong> 翻译成 <strong>汇编</strong>：</p>
+<ul>
+<li>
+<p><strong><code>s(mem[i] ^= 1)</code></strong>：</p>
+<ul>
+<li>直接翻译成 <code>xor BYTE [rdi], 1</code>。其中<code>[rdi]</code> 表示 <code>rdi</code> 寄存器中地址所指向的内存位置，<code>BYTE</code> 表明操作单位是一个字节</li>
+</ul>
+</li>
+<li>
+<p><strong><code>x(i ^= 1)</code></strong>：</p>
+<ul>
+<li><code>i</code> 的值通过 <code>rdi - rbx</code> 得到。所以先计算出偏移量 <code>rax = rdi - rbx</code>，然后 <code>xor rax, 1</code>，最后再将新的地址写回 <code>rdi</code>（<code>rdi = rbx + rax</code>）</li>
+</ul>
+</li>
+<li>
+<p><strong><code>z</code> 和 <code>y</code></strong>：</p>
+<ul>
+<li>这两个指令需要计算 <code>ctz</code>，这在汇编中没有直接对应的指令</li>
+<li>所以要<strong>调用外部 Rust 函数</strong> <code>extern_ctz</code> 和 <code>extern_ctz_u32</code> 来完成计算</li>
+<li>先 <code>movzx rcx, BYTE [rdi]</code> 准备参数，然后 <code>call rax</code> 调用函数，最后利用返回值完成后续的位移和异或操作</li>
+</ul>
+</li>
+<li>
+<p><strong><code>i</code> / <code>o</code></strong>：</p>
+<ul>
+<li>
+<p><strong>输入 <code>I</code></strong>：</p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"></code></pre></div></li>
+</ul>
+<p>call extern_getchar
+&hellip;
+mov BYTE [rdi], al</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">即先获取字符，再存入内存
+</span></span></code></pre></div></li>
+<li>
+<p><strong>输出 <code>O</code></strong>：</p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"></code></pre></div></li>
+</ul>
+<p>movzx rcx, BYTE [rdi]
+&hellip;
+call extern_putchar</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">即先从内存加载格雷码，再调用打印函数
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>u(mem[i] = mem[mem[i]])</code></strong>：</p>
+<ul>
+<li>
+<p>先用<code>movzx rax, BYTE [rdi]</code> 读取 <code>mem[i]</code> 的值（地址偏移），然后 <code>add rax, rbx</code> 将其转换成绝对地址</p>
+<p><code>mov al, BYTE [rax]</code> 再从这个新地址读取数据，最后 <code>mov BYTE [rdi], al</code> 写回</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>p</code> / <code>q</code></strong>:</p>
+<ul>
+<li>调用外部 <code>popcount</code> 函数</li>
+</ul>
+</li>
+<li>
+<p>准备参数、调用函数，然后 <code>and eax, 1</code> 和 <code>cmp eax, 0</code> 检查返回值的奇偶性，最后使用 <code>je</code> 条件跳转指令 来选择执行 <code>a</code> 分支还是 <code>b</code> 分支的代码</p>
+<ul>
+<li>我这里是写了个辅助函数 <code>compile_single_instruction</code> 来生成分支内的代码</li>
+</ul>
+</li>
+<li>
+<p>**<code>JIZ</code> / <code>JNZ</code> **:</p>
+<ul>
+<li>首先为每个 IR 指令创建了一个动态标签 <code>labels[i]</code></li>
+<li>然后 <code>JIZ</code> 指令被编译为 <code>cmp BYTE [rdi], 0</code> 和 <code>jz =&gt;labels[*target_idx]</code></li>
+<li><code>JNZ</code> 同理</li>
+</ul>
+</li>
+<li>
+<p><code>dynasm</code> 在最后链接阶段把这些标签解析成正确的跳转地址</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>主要文件说明：</strong></p>
+<ul>
+<li><code>src/Interpreter.rs</code>：<strong>Brainwash</strong> 解释器核心逻辑</li>
+<li><code>src/jit_compiler.rs</code>：<strong>JIT</strong> 编译器实现</li>
+<li><code>src/ir.rs</code>：中间表示定义与优化</li>
+<li><code>src/opcode.rs</code>：操作码与指令集定义</li>
+<li><code>src/main.rs</code>：命令行参数解析与程序入口</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="示例程序">
+<a class="header-anchor" href="#%e7%a4%ba%e4%be%8b%e7%a8%8b%e5%ba%8f"></a>
+示例程序
+</h2><p>然后 测试程序 我参考了 <a href="https://zh.wikipedia.org/wiki/Brainfuck">https://zh.wikipedia.org/wiki/Brainfuck</a> 上的几个例子：</p>
+<ul>
+<li>
+<p><strong>Hello World!</strong></p>
+<p><strong>HelloWorld.bw</strong></p>
+<p>在屏幕上打印 <code>Hello World!</code></p>
+<p><strong>output：</strong></p>
+<ul>
+<li>
+<p><code>OR</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928223737500.png" alt="image-20250928223737500"></p>
+</li>
+<li>
+<p><code>IR</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928223756975.png" alt="image-20250928223756975"></p>
+</li>
+<li>
+<p><code>JIT</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928223813377.png" alt="image-20250928223813377"></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>字符I/O</strong></p>
+<p><strong>IO.bw</strong></p>
+<p>从键盘读取一个字符并输出到屏幕上</p>
+<p><strong>output：</strong></p>
+<ul>
+<li>
+<p><code>OR</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928223839372.png" alt="image-20250928223839372"></p>
+</li>
+<li>
+<p><code>IR</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928223856333.png" alt="image-20250928223856333"></p>
+</li>
+<li>
+<p><code>JIT</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928223913115.png" alt="image-20250928223913115"></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>条件指令</strong></p>
+<p><strong>Condition.bw</strong></p>
+<p>从键盘读来小写字符，转成大写。按回车键退出程序。</p>
+<p>这里的话由于 <code>\r</code> 的 ASCII 码是 13，所以我在前面是先减的 13</p>
+<p><strong>output：</strong></p>
+<ul>
+<li>
+<p><code>OR</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928223942599.png" alt="image-20250928223942599"></p>
+</li>
+<li>
+<p><code>IR</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928224000502.png" alt="image-20250928224000502"></p>
+</li>
+<li>
+<p><code>JIT</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928224017447.png" alt="image-20250928224017447"></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>打印曼德勃罗集</strong></p>
+<p><strong>mandelbrot.bw</strong></p>
+<p>打印曼德勃罗集</p>
+<p><strong>output：</strong></p>
+<ul>
+<li>
+<p><code>OR</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928224225574.png" alt="image-20250928224225574"></p>
+</li>
+<li>
+<p><code>IR</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928224409056.png" alt="image-20250928224409056"></p>
+</li>
+<li>
+<p><code>JIT</code> 模式：</p>
+<p><img src="/01_assets/cnss2025-dev-brainwash_image-20250928224639480.png" alt="image-20250928224639480"></p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+    <footer class="article-footer"><a
+          data-aos="zoom-in"
+          href="/post/cnss2025-dev-brainwash/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="/post/cnss2025-dev-brainwash/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/post/cnss2025-dev-brainwash/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/cnss"
+        rel="tag"
+        >CNSS</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e6%8b%9b%e6%96%b0"
+        rel="tag"
+        >招新</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/dev"
+        rel="tag"
+        >DEV</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/writeup"
+        rel="tag"
+        >WRITEUP</a
+      >
+    </li></ul>
+</footer>
+  </div></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>
+      MilLoong
+    </div><div>
+        <a
+          href="https://github.com/MilLoong"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noopener nofollow noreferrer"
+          style="display: inline-block; transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt="GitHub"
+            style="width: 32px; height: 32px; vertical-align: middle; background: transparent;"
+          >
+        </a>
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;14.1k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;01:12</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ch1">❓CH1</a></li>
+    <li><a href="#思考">思考</a></li>
+    <li><a href="#证明">证明</a></li>
+    <li><a href="#ch2---bonus-task">❓CH2 &amp;&amp; 😎 Bonus Task</a></li>
+    <li><a href="#思考-1">思考</a></li>
+    <li><a href="#示例程序">示例程序</a></li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">11</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      5
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">39</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><meting-js
+        theme="var(--color-link)"
+        id="784227484"server="netease"type="playlist"fixed="true"autoplay="false"loop="all"order="list"preload="auto"volume="0.7"mutex="true"list-folded="false"lrc-type="0">
+      </meting-js><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "TT8YY4JPRF",
+        apiKey: "4d450286d17ecfeb7b0c6f78ebceb3d4",
+        indexName: "MilLoongBlog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+    if (window.firework) {
+      const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+      options.excludeElements = options.excludeelements;
+      delete options.excludeelements;
+      window.firework(options);
+    }
+  }
+</script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "MilLoong",
+          title: "CNSS 2025 招新：Brainwash",
+          url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-brainwash\/",
+          description: " 🧠 Brainwash Final 既然是完整的 wp 的话，那我还是直接 copy 第一次交的 .md 吧，然后改动一些地方\n❓CH1 思考 根据 Hint：\nBrainfuck 是图灵完备的。\n所以其实就很明显了，证明题目给的 指令集 可以实现 Brainfuck 的所有功能就好了。\n不过指令集涉及 i^=1 、i^=1\u0026lt;\u0026lt;ctz(i)\u002b1、popcount 的条件分支等操作，如果对 标准二进制 作操作的话，要实现 Brainfuck 中的 \u0026lt;\u0026gt; 和 \u002b- 是会很困难的，并且每次操作的操作序列是不固定的。所以我刚开始的时候按照 标准二进制 来搞，发现其实 i^=1 …",
+          cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg30.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus', 'disqus'];
+  var commentConfig = {waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/vercelproject-sage-beta.vercel.app\/',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  0 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },};
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig?.[key]?.enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig?.[sys]?.enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.matchMedia('(max-width: 959px)').matches) {
+        const meting = _$('meting-js');
+        if (meting) {
+          meting.setAttribute('fixed', 'true');
+          const aside = meting.parentNode?.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            meting.parentNode.removeChild(meting);
+            document.body.appendChild(meting);
+          }
+        }
+      }
+      const script = document.createElement('script');
+      script.src = "https:\/\/npm.webcache.cn\/meting@2.0.1\/dist\/Meting.min.js";
+      script.integrity = "sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8\u002b0maanw1S\/IyB\u002bY4JG\u002bZDU7GpKE8";
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+  </script></body>
+</html>

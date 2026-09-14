@@ -1,0 +1,2552 @@
+<!doctype html>
+<html
+  lang="zh-cn" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  CNSS / 面试笔记 | MilLoong
+</title>
+<meta name="description" content="个人博客，记录学习日常"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":18},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="CNSS / 面试笔记 | MilLoong" />
+  <meta
+    property="og:description"
+    content="个人博客，记录学习日常"
+  />
+  <meta property="og:url" content="https://MilLoong.github.io/post/cnss2025-mianshi/" />
+  <meta
+    property="og:site_name"
+    content="MilLoong的博客"
+  />
+  <meta
+    property="og:image"
+    content="/backgrounds/bg43.webp"
+  />
+  <meta property="article:author" content="MilLoong" />
+  <meta property="article:published_time" content="2025-11-20T21:00:00&#43;08:00" />
+  <meta property="article:modified_time" content="2025-11-20T21:00:00&#43;08:00" /><meta property="article:tag" content="面试C&#43;&#43;操作系统CNSS" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/backgrounds/bg43.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/><link rel="stylesheet" href="/css/custom.css" /></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">咻——马上就加载好啦...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">关于</span>
+      </a><a class="main-nav-link-wrap" href="/friend">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">友链</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-whattoeat-link" class="nav-icon" href="/whattoeat" title="吃什么" aria-label="吃什么"></a>
+      <a id="nav-nailong-search-link" class="nav-icon" href="/nailong-search" title="奶龙表情库" aria-label="奶龙表情库"></a><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/backgrounds/bg43.webp" alt="CNSS / 面试笔记"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">CNSS / 面试笔记</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#内存对齐">内存对齐</a></li>
+    <li><a href="#c-类型转换">C++ 类型转换</a></li>
+    <li><a href="#jit">JIT</a></li>
+    <li><a href="#锁">锁</a></li>
+    <li><a href="#原子操作">原子操作</a></li>
+    <li><a href="#内存顺序memory-order">内存顺序（Memory Order）</a></li>
+    <li><a href="#虚拟内存-和-物理内存">虚拟内存 和 物理内存</a></li>
+    <li><a href="#分页">分页</a></li>
+    <li><a href="#页面置换算法">页面置换算法</a></li>
+    <li><a href="#内存映射">内存映射</a></li>
+    <li><a href="#扇区">扇区</a></li>
+    <li><a href="#slab-slub-slob分配器">Slab Slub Slob分配器</a></li>
+    <li><a href="#块设备使用-多队列muti-queue-的原因">块设备使用 多队列Muti-queue 的原因</a></li>
+    <li><a href="#user-space用户空间-与-kernel-space内核空间">User space(用户空间) 与 Kernel space(内核空间)</a></li>
+    <li><a href="#内核">内核</a></li>
+    <li><a href="#uefi启动-和-bios启动">UEFI启动 和 BIOS启动</a></li>
+    <li><a href="#汇编的-数据单位">汇编的 数据单位</a></li>
+    <li><a href="#gpu-和-cpu">GPU 和 CPU</a></li>
+    <li><a href="#tcp-和-udp">TCP 和 UDP</a></li>
+    <li><a href="#tcpip协议层">TCP/IP协议层</a></li>
+    <li><a href="#ebpf">eBPF</a></li>
+    <li><a href="#c函数的调用过程原理和栈分析">C函数的调用过程原理和栈分析</a></li>
+    <li><a href="#内存结构">内存结构</a></li>
+    <li><a href="#socket">Socket</a></li>
+    <li><a href="#栈对齐">栈对齐</a></li>
+    <li><a href="#hook点">hook点</a></li>
+    <li><a href="#cgroup">cgroup</a></li>
+    <li><a href="#kprobe">Kprobe</a></li>
+    <li><a href="#协议栈">协议栈</a></li>
+    <li><a href="#iptables">iptables</a></li>
+    <li><a href="#寄存器">寄存器</a></li>
+    <li><a href="#inode">inode</a></li>
+    <li><a href="#为什么-cd-不能用-execvp且不能当做-外部命令">为什么 <code>cd</code> 不能用 <code>execvp</code>，且不能当做 外部命令</a></li>
+    <li><a href="#linux-job">Linux Job</a>
+      <ul>
+        <li><a href="#进程分组管理setpgid">进程分组管理（<code>setpgid</code>）</a></li>
+        <li><a href="#前后台控制foregroundbackground">前后台控制（Foreground/Background）</a></li>
+        <li><a href="#状态追踪和回收waitpid-和-sigchld">状态追踪和回收（<code>waitpid</code> 和 <code>SIGCHLD</code>）</a></li>
+        <li><a href="#终端-io-控制">终端 I/O 控制</a></li>
+      </ul>
+    </li>
+    <li><a href="#惰性计算">惰性计算</a></li>
+    <li><a href="#工厂模式">工厂模式</a></li>
+    <li><a href="#omega-test-完整概括">Omega Test 完整概括</a></li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">11</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      5
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">39</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-11-20 21:00:00 &#43;0800 CST" itemprop="datePublished"
+      >2025-11-20</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-11-20</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/%e5%90%8e%e7%ab%af"
+      data-aos="zoom-in"
+      >后端</a
+    ></div>
+</div><div class="hr-line"></div><div
+      class="e-content article-entry"
+      itemprop="articleBody"><h1 id="cnss--面试笔记">
+<a class="header-anchor" href="#cnss--%e9%9d%a2%e8%af%95%e7%ac%94%e8%ae%b0"></a>
+CNSS / 面试笔记
+</h1><h2 id="内存对齐">
+<a class="header-anchor" href="#%e5%86%85%e5%ad%98%e5%af%b9%e9%bd%90"></a>
+内存对齐
+</h2><ul>
+<li>
+<p>一些 编译器 都有 <strong>对齐数</strong> 的概念，而引入 <strong>内存对齐</strong> 是为了高效访问数据</p>
+</li>
+<li>
+<p>因为某些 编译器 随机访问的性能较差，只能访问特定区域，所以引入 <strong>内存对齐</strong> 就能解决一些重复访问和访问不到的问题</p>
+</li>
+<li>
+<p><strong>对齐数</strong>=<strong>min(编译器的对齐数,数据类型大小(可以嵌套))</strong></p>
+</li>
+<li>
+<p><strong>成员</strong> 在内存中的位置一定要是本身 <strong>对齐数</strong> 的整数倍</p>
+</li>
+<li>
+<p>比如结构体：<br>
+结构体 的 对齐数 是 <strong>min(max(成员对齐数),编译器的对齐数)</strong>
+结构体 的 大小 是 <strong>结构体对齐数 的 整数倍</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">b</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">node</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">struct</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>[]里面就是用到的内存
+[0] 1 2 3 [ 4 5 6 7 ][ 8 9 10 11]</p>
+</li>
+<li>
+<p>在 C 中，可以用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#pragma pack(1)
+</span></span></span></code></pre></div><p>来改变默认的对齐数</p>
+</li>
+</ul>
+<h2 id="c-类型转换">
+<a class="header-anchor" href="#c-%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2"></a>
+C++ 类型转换
+</h2><ul>
+<li><strong>static_cast</strong>
+<ul>
+<li>普通的类型转换，比如 double 到 int</li>
+<li>类层次结构中的类型转换</li>
+</ul>
+</li>
+<li><strong>const_cast</strong>
+<ul>
+<li>改变 const 的类型转换，比如把 const 的 指针 或 对象 转成 非const 的</li>
+</ul>
+</li>
+<li><strong>dynamic_cast</strong>
+<ul>
+<li>运行时的动态转换，有安全检查</li>
+<li>进行 类 之间的转换，比如 父类 和 子类</li>
+</ul>
+</li>
+<li><strong>reinterpret_cast</strong>
+<ul>
+<li>重新解释，也就是说逐字节改变</li>
+<li>没有安全检查</li>
+</ul>
+</li>
+</ul>
+<h2 id="jit">
+<a class="header-anchor" href="#jit"></a>
+JIT
+</h2><ul>
+<li><strong>JIT</strong> 是 在 <strong>运行时</strong> 将 <strong>热代码(hot code)</strong> 编译成本地机器码，之后直接执行，跳过解释过程</li>
+<li>而 <strong>解释器</strong> 是 一行一行读取字节码，不转化成机器码</li>
+<li><strong>热代码</strong> 就是 执行多次 或 频繁执行 的代码，将其 缓存，之后运行时直接执行 编译的机器码 而不再逐行解释，就会快很多</li>
+<li>但 <strong>JIT</strong> 不一定就比 <strong>解释器</strong> 快，因为 <strong>JIT</strong> 还是涉及 编译过程，启动较慢，如果 执行次数 很少，反而会比 <strong>解释器</strong> 慢</li>
+<li><strong>IR(中间代码)</strong> 是“源代码”和“机器码”之间使用的一种中间形式，是优化 解释 或 编译 的过程</li>
+</ul>
+<h2 id="锁">
+<a class="header-anchor" href="#%e9%94%81"></a>
+锁
+</h2><ul>
+<li><strong>锁</strong> 是 <strong>多线程</strong> 的一个概念，它是为了防止 多个线程 在 同一时刻 访问和修改 一片内存资源，防止出现 数据不一致 或 冲突，也就是避免 条件竞争。而 <strong>锁</strong> 能 确保 同一时刻 只有一个 线程 可以访问 共享资源。相当于把 <strong>共享资源</strong> 锁起来</li>
+<li>而 <strong>互斥锁(mutex)</strong> 保证在任何时刻只有一个线程能获得 <strong>锁</strong> 并 访问和修改 内存资源</li>
+<li><strong>互斥锁</strong> 和 <strong>自旋锁</strong> 的区别
+<ul>
+<li><strong>互斥锁</strong>
+<ul>
+<li>让 线程 等待直到 锁 被释放</li>
+<li>当一个 线程 获取到 互斥锁 后，其他线程如果想要获取同一个锁，就必须 等待，期间这些线程会进入 睡眠状态，直到锁被释放</li>
+<li>休眠时，不占用CPU资源</li>
+</ul>
+</li>
+<li><strong>自旋锁</strong>
+<ul>
+<li>忙等待</li>
+<li>当一个 线程 尝试获取 锁 时，如果 锁 已经被其他线程持有，线程 不会进入睡眠状态，而是 持续检查 锁的状态，直到获取到锁为止</li>
+<li>等待时，占用CPU资源</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>死锁</strong>
+<ul>
+<li><strong>死锁</strong>是指系统中的线程因 相互等待 而陷入一种僵局，导致程序无法继续执行下去</li>
+<li>比如，A占有资源1，B占有资源2，A想要资源2，B想要资源1，但A和B都需要等待对方，所以就卡住了，形成死锁</li>
+</ul>
+</li>
+</ul>
+<h2 id="原子操作">
+<a class="header-anchor" href="#%e5%8e%9f%e5%ad%90%e6%93%8d%e4%bd%9c"></a>
+原子操作
+</h2><ul>
+<li>在 多线程 中，有 多个线程 访问或修改 共享数据，共享数据就可能会出现 数据不一致 或 竞争条件 的问题，这时候就引入 <strong>原子</strong></li>
+<li><strong>原子变量</strong>即不会被 多个线程 同时访问和修改 的变量，就不需要加锁，减少了加锁的开销</li>
+<li><strong>原子操作</strong>即不可中断的操作，要么执行完要么就不执行</li>
+</ul>
+<h2 id="内存顺序memory-order">
+<a class="header-anchor" href="#%e5%86%85%e5%ad%98%e9%a1%ba%e5%ba%8fmemory-order"></a>
+内存顺序（Memory Order）
+</h2><ul>
+<li>为了 线程同步 而设计的，要考虑 内存顺序</li>
+<li><code>memory_order_relaxed</code>
+<ul>
+<li>只保证当前操作的原子性，不考虑线程间的同步，其他线程可能读到新值，也可能读到旧值</li>
+<li>就是其他线程看不到一定操作</li>
+</ul>
+</li>
+<li><code>memory_order_release</code>（可以理解为 mutex 的 unlock 操作）
+<ul>
+<li>对写入施加 release 语义（store），在代码中这条语句前面的所有读写操作都无法被重排到这个操作之后，即 store-store 不能重排为 store-store, load-store 也无法重排为 store-load，也就是 确保“写入之前的动作”都完成</li>
+<li>其他程序的<code>acquire</code>能看到<code>release</code>前面的操作而不能看到后面的</li>
+<li>当前线程内的所有写操作，对于其他对这个原子变量进行 acquire 的线程可见</li>
+<li>当前线程内的与这块内存有关的所有写操作，对于其他对这个原子变量进行 consume 的线程可见</li>
+</ul>
+</li>
+<li><code>memory_order_acquire</code>（可以理解为 mutex 的 lock 操作）
+<ul>
+<li>对读取施加 acquire 语义（load），在代码中这条语句后面所有读写操作都无法重排到这个操作之前，即 load-store 不能重排为 store-load, load-load 也无法重排为 load-load，也就是 确保“读取之后的动作”都在写入完成之后执行</li>
+<li>在这个原子变量上施加 release 语义的操作发生之后，acquire 可以保证读到所有在 release 前发生的写入，举个例子：
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">thread</span> <span class="mi">1</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">.</span><span class="nf">store</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">memory_order_relaxed</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="p">.</span><span class="nf">store</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">memory_order_release</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">thread</span> <span class="mi">2</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">memory_order_acquire</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 以下 assert 永远不会失败
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">assert</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">assert</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">memory_order_relaxed</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li><code>memory_order_consume</code>
+<ul>
+<li>对当前<strong>要读取的内存</strong>施加 release 语义（store），在代码中这条语句后面所有<strong>与这块内存有关</strong>的读写操作都无法被重排到这个操作之前</li>
+<li>也就是只能看到这条语句后面的操作</li>
+<li>在这个原子变量上施加 release 语义的操作发生之后，consume 可以保证读到所有在 release 前发生的并且与这块内存有关的写入，举个例子：
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">thread</span> <span class="mi">1</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="p">.</span><span class="nf">store</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">memory_order_release</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">thread</span> <span class="mi">2</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">memory_order_consume</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">assert</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// assert 可能失败也可能不失败
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">assert</span><span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li><code>memory_order_acq_rel</code>
+<ul>
+<li>对读取和写入施加 acquire-release 语义，无法被重排</li>
+<li>可以看见其他线程施加 release 语义的所有写入，同时自己的 release 结束后所有写入对其他施加 acquire 语义的线程可见</li>
+</ul>
+</li>
+<li><code>memory_order_seq_cst</code>（顺序一致性）</li>
+<li>如果是读取就是 acquire 语义，如果是写入就是 release 语义，如果是读取+写入就是 acquire-release 语义</li>
+<li>同时会对所有使用此 memory order 的原子操作进行同步，所有线程看到的内存操作的顺序都是一样的，就像单个线程在执行所有线程的指令一样</li>
+</ul>
+<h2 id="虚拟内存-和-物理内存">
+<a class="header-anchor" href="#%e8%99%9a%e6%8b%9f%e5%86%85%e5%ad%98-%e5%92%8c-%e7%89%a9%e7%90%86%e5%86%85%e5%ad%98"></a>
+虚拟内存 和 物理内存
+</h2><ul>
+<li><strong>物理内存</strong> 就是 RAM 上的内存</li>
+<li>而 <strong>虚拟内存</strong> 是 操作系统 使用 硬盘空间 来 模拟物理内存的一种技术，是为了避免 RAM 上空间不够而设计的，它是将 RAM 中使用 频率较低或不用 的 数据 转移到 硬盘 上来</li>
+</ul>
+<h2 id="分页">
+<a class="header-anchor" href="#%e5%88%86%e9%a1%b5"></a>
+分页
+</h2><ul>
+<li><strong>物理地址</strong>
+<ul>
+<li><strong>物理内存</strong> 就是真实的内存，而其地址就是 <strong>物理地址</strong></li>
+<li>而 <strong>虚拟内存</strong> 是用于扩展内存空间的，这就存在了 <strong>虚拟地址</strong></li>
+<li>于是一个 app 从编写到执行，就存在 两次映射，一次是映射到 虚拟内存，一次是映射回 物理内存。承担这个任务的 硬件部分 叫做 存储管理单元MMU，软件部分 就是 操作系统 的 内存管理模块</li>
+<li><strong>虚拟地址和物理地址的关系</strong>
+<ul>
+<li><strong>分页</strong> 就是把整个 虚拟和物理内存 切成一段段固定大小的空间，连续且尺寸固定的内存空间叫页，Linux下每一页大小4KB</li>
+<li>虚拟内存 和 物理内存 之间通过 <strong>页表</strong> 来映射；虚拟地址分为：页号 和 页内偏移</li>
+<li><strong>页号</strong> 作为 <strong>页表</strong> 的索引，<strong>页表</strong> 包含 <strong>物理页每页所在 物理内存 的基地址</strong>（也就是说，<strong>虚拟地址的 页号</strong>通过 <strong>页表</strong> 可以得到 <strong>物理地址 的页号</strong>），这个 基地址 与 页内偏移 的组合就形成了 <strong>物理内存地址</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="页面置换算法">
+<a class="header-anchor" href="#%e9%a1%b5%e9%9d%a2%e7%bd%ae%e6%8d%a2%e7%ae%97%e6%b3%95"></a>
+页面置换算法
+</h2><ul>
+<li><strong>OPT（最优置换）</strong>
+<ul>
+<li>换掉 未来最久不用 的</li>
+</ul>
+</li>
+<li><strong>LRU（最近最少使用）</strong>
+<ul>
+<li>换掉 最近 最少 使用 的，就是 最久未被使用 的</li>
+<li>其实就是 在栈中且最先入栈 的</li>
+</ul>
+</li>
+</ul>
+<h2 id="内存映射">
+<a class="header-anchor" href="#%e5%86%85%e5%ad%98%e6%98%a0%e5%b0%84"></a>
+内存映射
+</h2><ul>
+<li><strong>内存映射 (kmap_atomic 和 kunmap_atomic) 为什么需要？</strong>
+<ul>
+<li><strong>目的：解决数据传输的地址难题</strong>
+当 文件系统（如 ext4）向你的 块设备驱动 发出 读写请求 时，它提供的数据是存储在 页 (Page) 中的。这些页位于内核的 <strong>高端内存 (High Memory)</strong> 或 <strong>非线性地址空间</strong> 中。
+在 32 位系统上，或者在现代 Linux 内核处理大量内存时：</li>
+<li><strong>内核直接访问</strong>： 内核代码（你的驱动）通常运行在**固定的、线性的地址空间（低端内存）**中。</li>
+<li><strong>请求数据页的地址</strong>： I/O 请求 (req) 携带的数据（bvec.bv_page）可能位于内核当前无法直接寻址的高端内存中。
+映射的作用：</li>
+<li>kmap_atomic(bvec.bv_page)：
+<ul>
+<li><strong>作用</strong>： 临时地将请求中的数据页 (bvec.bv_page) 映射到一个内核可以直接访问的虚拟地址空间中。</li>
+<li><strong>返回值</strong>： buffer。这个 buffer 就是数据页的线性地址，现在你的驱动可以直接使用它进行 memcpy 操作。</li>
+<li><strong>atomic</strong> 的含义： 这是一种快速的映射方式，用于原子上下文（如中断或块请求队列），不能被阻塞。</li>
+</ul>
+</li>
+<li>kunmap_atomic(buffer)：
+<ul>
+<li><strong>作用</strong>： 在数据传输完成后，必须立即解除这个临时映射，将地址资源释放回给内核。</li>
+<li><strong>重要性</strong>： 如果不解除映射，可能会耗尽内核的地址空间，导致系统崩溃。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>： 映射是为了给内核驱动程序提供一个临时的、可用的虚拟地址，以便访问 I/O 请求中包含的实际数据。</p>
+<h2 id="扇区">
+<a class="header-anchor" href="#%e6%89%87%e5%8c%ba"></a>
+扇区
+</h2><ul>
+<li><strong>扇区</strong>就是磁盘的 <strong>最小可寻址存储单元</strong>，512个字节</li>
+</ul>
+<h2 id="slab-slub-slob分配器">
+<a class="header-anchor" href="#slab-slub-slob%e5%88%86%e9%85%8d%e5%99%a8"></a>
+Slab Slub Slob分配器
+</h2><ul>
+<li><strong>引导内存分配器</strong>
+<ul>
+<li>在 内核初始化 的过程中需要分配内存（包括<strong>物理内存分配器</strong> 也要被分配内存和初始化），内核提供了临时的 <strong>引导内存分配器</strong>，在 页分配器 和 块分配器 初始化完毕后，把空闲的物理页交给页分配器管理，丢弃引导内存分配器。</li>
+</ul>
+</li>
+<li><strong>Slab 分配器</strong>
+<ul>
+<li><strong>slab分配器</strong> 分配内存以<strong>字节</strong>为单位，基于 伙伴分配器（分配 <strong>页</strong>） 的 大内存 进一步细分成 小内存 分配（将 内存页 切割成一组 大小相同 的 对象）。换句话说，slab 分配器仍然从 Buddy 分配器中申请内存，之后自己对申请来的内存细分管理。</li>
+<li>除了提供小内存外，slab 分配器的第二个任务是维护常用对象的缓存。对于内核中使用的许多结构，<strong>初始化对象</strong>所需的时间可 等于或超过 <strong>为其分配空间</strong>的成本
+<ul>
+<li>当创建一个 新的 slab 时，许多对象将被 打包到其中 并使用构造函数（如果有）进行初始化。释放对象后，它会 保持其<strong>初始化状态</strong>，这样可以 <strong>快速分配对象</strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>slub</strong>就是在之前slab上优化后的一个产物，去除了许多臃肿的实现，逐渐会完全替代老的slab
+<ul>
+<li>SLUB 通过 <strong>使用对象的 SLAB（不再缓存对象本身，而是缓存“当前 slab 页”到 每个CPU，然后用 bitmap 来处理）</strong> 而不是 <strong>对象队列</strong> 来实现 每个CPU 的缓存</li>
+</ul>
+</li>
+<li>而<strong>slob</strong>则是一个很轻量级的slab实现，代码量不大，官方说适合一些嵌入式设备</li>
+</ul>
+<h2 id="块设备使用-多队列muti-queue-的原因">
+<a class="header-anchor" href="#%e5%9d%97%e8%ae%be%e5%a4%87%e4%bd%bf%e7%94%a8-%e5%a4%9a%e9%98%9f%e5%88%97muti-queue-%e7%9a%84%e5%8e%9f%e5%9b%a0"></a>
+块设备使用 多队列Muti-queue 的原因
+</h2><ul>
+<li><strong>单队列blk-sq</strong>的弊端
+<ul>
+<li><strong>请求队列锁竞争</strong>
+<ul>
+<li>blk-sq 使用 spinlock(自旋锁)，而IO要访问请求队列，必须要获取锁，就会有很大开销</li>
+</ul>
+</li>
+<li><strong>硬件中断</strong>
+<ul>
+<li>高的IOPS意味着高的中断数量</li>
+</ul>
+</li>
+<li><strong>远端内存访问</strong>
+<ul>
+<li>如果提交IO请求的cpu不是接收硬件中断的cpu且这两个cpu没有共享缓存，那么获取请求队列锁的过程中还存在远端内存访问问题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Multi-queue的组成</strong>
+<ul>
+<li><strong>软件暂存队列（Software Staging Queue）</strong>
+<ul>
+<li>blk-mq中为每个cpu分配一个软件队列，bio的提交/完成处理、IO请求暂存（合并、排序等）、IO请求标记、IO调度、IO记账都在这个队列上进行。由于每个cpu有单独的队列，所以每个cpu上的这些IO操作可以 同时进行 ，而不存在锁竞争问题</li>
+</ul>
+</li>
+<li><strong>硬件派发队列（Hardware Dispatch Queue）</strong>
+<ul>
+<li>blk-mq为存储器件的每个硬件队列（目前多数存储器件只有1个）分配一个硬件派发队列，负责存放软件队列往这个硬件队列派发的IO请求</li>
+<li>在存储设备驱动初始化时，blk-mq会通过固定的映射关系将一个或多个软件队列映射（map）到一个硬件派发队列（同时保证映射到每个硬件队列的软件队列数量基本一致），之后这些软件队列上的IO请求会往对应的硬件队列上派发。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>tag_set</strong>
+<ul>
+<li>
+<p>为了处理<strong>并行</strong>，追踪<strong>IO请求</strong>，保证硬件在 并行处理中如果 某个请求 完成，就可以找到 这个请求 的数据结构，就能一下子处理很多个请求了</p>
+</li>
+<li>
+<p><strong>发送</strong>： 当内核需要发送一个 I/O 请求给硬件时，它从一个标签集 (tag_set) 中获取一个可用的 Tag（一个小的整数，例如 0 到 255）。</p>
+</li>
+<li>
+<p><strong>并行</strong>： 内核可以将数百个带有不同 Tag 的请求（例如 Tag 1, Tag 2, Tag 3&hellip;）并行发送给硬件。</p>
+</li>
+<li>
+<p><strong>接收</strong>： 当硬件完成其中一个请求（例如 Tag 25）时，它只告诉内核：“Tag 25 的请求完成了。”</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="user-space用户空间-与-kernel-space内核空间">
+<a class="header-anchor" href="#user-space%e7%94%a8%e6%88%b7%e7%a9%ba%e9%97%b4-%e4%b8%8e-kernel-space%e5%86%85%e6%a0%b8%e7%a9%ba%e9%97%b4"></a>
+User space(用户空间) 与 Kernel space(内核空间)
+</h2><ul>
+<li>
+<p><strong>Kernel space</strong> 是 Linux 内核的运行空间，<strong>User space</strong> 是用户程序的运行空间</p>
+</li>
+<li>
+<p><strong>Kernel space</strong> 可以执行任意命令，调用系统的一切资源。而<strong>User space</strong> 只能执行简单的运算，不能直接调用系统资源，必须通过系统接口（又称 system call），才能向内核发出指令</p>
+<p><img src="https://pic1.zhimg.com/v2-5e1335bb2a6936da1b6cb6ab712a6ad6_1440w.jpg" alt="img"></p>
+</li>
+</ul>
+<h2 id="内核">
+<a class="header-anchor" href="#%e5%86%85%e6%a0%b8"></a>
+内核
+</h2><ul>
+<li><strong>内核</strong>，是一个 操作系统 的 核心。是基于 硬件 的 第一层软件扩充，提供操作系统的 最基本的功能，是 操作系统工作 的 基础，决定着整个操作系统的性能 和 稳定性</li>
+<li><strong>内核</strong>分为
+<ul>
+<li><strong>微内核（Micro Kernel）</strong>
+<ul>
+<li>在 微内核架构 中，内核 只提供 操作系统核心功能，如实现 进程管理、存储器管理、进程间通信、I/O设备管理等， 而其它的 应用层IPC、文件系统功能、设备驱动模块 则不被包含到内核功能中，属于微内核之外的模块，所以针对这些模块的修改不会影响到 微内核的核心功能。</li>
+<li>微内核 具有 动态扩展性强 的优点。Windows操作系统、华为的鸿蒙操作系统就属于这类微内核架构。</li>
+</ul>
+</li>
+<li><strong>宏内核（Monolithic Kernel）</strong>
+<ul>
+<li>宏内核架构 是将上述包括微内核以及微内核之外的应用层IPC、文件系统功能、设备驱动模块都编译成一个 整体。其优点是执行效率非常高，但缺点也是十分明显的，一旦我们想要修改、增加内核某个功能时（如增加设备驱动程序）都需要重新编译一遍内核。 Linux操作系统正是采用了宏内核结构。为了解决这一缺点，linux中引入了内核模块这一机制</li>
+<li>其中 <strong>微内核</strong> 模块运行不依赖内核（模块运行在 用户空间），但 <strong>宏内核</strong> 编译 内核模块，且 内核模块 运行在 内核空间，这也就是为什么称作 <strong>内核模块</strong></li>
+<li><strong>内核模块</strong>
+<ul>
+<li>内核模块 就是实现了 某个功能的一段内核代码，在内核运行过程，可以 动态加载这部分代码到内核中，从而动态地增加了内核的功能</li>
+<li>模块 是具有 独立功能 的程序，它可以被 单独编译，但不能 独立运行，在运行时它被链接到内核作为内核的一部分在 内核空间 运行，这与运行在 用户空间 的进程是不一样的。模块 由一组函数和数据结构组成，用来实现一种文件系统、一个驱动程序和其他内核上层功能。 因此内核模块具备如下特点：
+<ul>
+<li>模块本身不被编译入内核映像，这控制了内核的大小。</li>
+<li>模块一旦被加载，它就和内核中的其它部分完全一样。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://doc.embedfire.com/linux/imx6/driver/zh/latest/_images/module001.png" alt="微内核与宏内核的体系结构"></li>
+</ul>
+</li>
+</ul>
+<h2 id="uefi启动-和-bios启动">
+<a class="header-anchor" href="#uefi%e5%90%af%e5%8a%a8-%e5%92%8c-bios%e5%90%af%e5%8a%a8"></a>
+UEFI启动 和 BIOS启动
+</h2><ul>
+<li><strong>固件</strong>
+<ul>
+<li>可以理解成 <strong>计算机启动时第一个加载的软件</strong>，负责 硬件初始化 和 系统启动</li>
+<li>许多硬件 在其内部的 只读存储器（ROM） 中拥有预置的 <strong>软件</strong>，称为 <strong>固件</strong></li>
+<li>通过正确地调用 <strong>固件所提供的接口</strong>，我们可以达到 <strong>“直接操作硬件”</strong> 这一目的</li>
+</ul>
+</li>
+<li><strong>UEFI（统一可扩展固件接口）启动</strong>是指用 <strong>UEFI 固件</strong> 启动操作系统，同时 <strong>UEFI应用程序</strong> 也通过 <strong>UEFI 固件</strong> 执行。
+<ul>
+<li><strong>UEFI</strong>是一个 公开的规范，定义了 操作系统和平台固件 之间的 软件接口</li>
+<li><strong>UEFI启动模式</strong>将 引导数据 存储在 .efi 文件中，而不是固件中。你经常会在新款的主板中找到 UEFI 启动模式。UEFI 启动模式 包含一个特殊的 EFI 分区，用于存储 .efi 文件并用于 引导过程 和 引导加载程序，少了 <strong>BIOS自检</strong> 的过程（<a href="https://www.zhihu.com/question/28815746">(27 封私信) UEFI是不需要自检还是弱化了自检这个概念？ - 知乎</a>）</li>
+<li>用 <strong>UEFI固件</strong> 加载并执行 的程序称为，<strong>UEFI应用程序</strong></li>
+<li><strong>UEFI</strong>功能分为很多个单元，每个单元称为 <strong>协议</strong>，并且它们被定义成以 _PROTOCOL 结尾的结构体。名如 ~_PROTOCOL 这样的结构体包含一系列的函数指针，通过这些 函数指针 可以调用UEFI固件中的内置功能</li>
+<li><strong>uefi_call_wrapper()</strong> 是在 UEFI 应用或驱动 中用于调用 EFI 函数指针 的一个宏，使得函数在 <strong>不同编译环境下</strong> 也能正常运行</li>
+</ul>
+</li>
+<li>**BIOS启动（基本输入输出系统）**是存储在主板上的一个 <strong>固件</strong>，负责在计算机启动时进行 硬件初始化 和 操作系统的引导。BIOS的主要功能包括：
+<ul>
+<li>硬件检测和初始化</li>
+<li>系统配置和设置</li>
+<li>引导操作系统</li>
+</ul>
+</li>
+<li><strong>Legacy启动模式</strong>是指 BIOS 固件用来初始化 <strong>硬件设备</strong> 的 引导过程，Legacy启动模式 包含一系列 已安装的设备，这些设备在 引导过程 中计算机执行 POST （开机自检）测试时会被初始化</li>
+</ul>
+<h2 id="汇编的-数据单位">
+<a class="header-anchor" href="#%e6%b1%87%e7%bc%96%e7%9a%84-%e6%95%b0%e6%8d%ae%e5%8d%95%e4%bd%8d"></a>
+汇编的 数据单位
+</h2><ul>
+<li>位（bit）
+<ul>
+<li>来自英文bit，音译为“比特”，表示二进制位。位是计算机内部 数据储存 的最小单位，11010100是一个8位二进制数。一个二进制位只可以表示0和1两种状态（21）；两个二进制位可以表示00、01、10、11四种（22）状态；三位二进制数可表示八种状态（23）。</li>
+</ul>
+</li>
+<li>字节（byte）
+<ul>
+<li>字节来自英文Byte，音译为“拜特”，习惯上用大写的“B”表示。</li>
+<li>字节是计算机中 数据处理 的基本单位。计算机中以字节为单位存储和解释信息，规定一个字节由八个二进制位构成，即1个字节等于8个比特（1Byte=8bit）。八位二进制数最小为00000000，最大为11111111；通常1个字节可以存入一个ASCII码，2个字节可以存放一个汉字国标码。</li>
+</ul>
+</li>
+<li>字
+<ul>
+<li>计算机进行数据处理时，一次存取、加工和传送的数据长度称为字（word）。一个字通常由一个或多个（一般是字节的整数位）字节构成。例如286微机的字由2个字节组成，它的字长为16；486微机的字由4个字节组成，它的字长为32位机。</li>
+<li>计算机的字长决定了其CPU一次操作处理实际位数的多少，由此可见计算机的字长越大，其性能越优越。</li>
+<li>也就是说，字 是 CPU 进行数据操作的基本单位</li>
+</ul>
+</li>
+</ul>
+<h2 id="gpu-和-cpu">
+<a class="header-anchor" href="#gpu-%e5%92%8c-cpu"></a>
+GPU 和 CPU
+</h2><ul>
+<li><strong>串行计算</strong> 和 <strong>并行计算</strong>
+<ul>
+<li><strong>串行运算</strong>
+<ul>
+<li>类似于 <strong>串联</strong>，当有 <strong>数据依赖</strong> 的时候只能用 串行运算，就类似于一个队列</li>
+</ul>
+</li>
+<li><strong>并行运算</strong>
+<ul>
+<li>就是 <strong>多核计算</strong>，每个 核 处理一个任务，这样就能同时处理很多任务，最后再整合就好了，速度就会快很多</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>CPU</strong>
+<ul>
+<li>CPU 是专为 <strong>顺序串行处理</strong> 而 优化 的几个核心组成，适合处理 <strong>串行任务</strong></li>
+<li>CPU 虽然每个核心 自身能力极强，处理任务上非常强悍，无奈他核心少，在 并行计算 上表现不佳</li>
+<li>CPU 是计算机的 运算和控制 的核心</li>
+<li>CPU 擅长流程控制和逻辑处理，不规则数据结构，不可预测存储结构，单线程程序，分支密集型算法</li>
+</ul>
+</li>
+<li><strong>GPU</strong>
+<ul>
+<li>GPU 则由 数以千计 的 更小、更高效 的 核心 组成，这些核心专门为同时处理 多任务 而设计，可高效地处理并行任务</li>
+<li>GPU，虽然他的每个核心的计算能力不算强，但他胜在核心非常多，可以同时处理多个计算任务，在并行计算的支持上做得很好</li>
+<li>GPU 主要用作 图形图像处理。图像在计算机呈现的形式就是矩阵，我们对图像的处理其实就是操作各种矩阵进行计算，而很多矩阵的运算其实可以做并行化，这使得图像处理可以做得很快，因此GPU在图形图像领域也有了大展拳脚的机会</li>
+<li>GPU 擅长数据并行计算，规则数据结构，可预测存储模式</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/8f7fac9339a7dfa54ce6ea65f8a36972.png" alt="img"></p>
+<ul>
+<li>
+<p><strong>CUDA加速</strong></p>
+<ul>
+<li>
+<p>要完成 CUDA 并行计算，单靠 GPU 一人之力是不能完成计算任务的，必须借助CPU来协同配合完成一次高性能的并行计算任务</p>
+</li>
+<li>
+<p>一般而言，并行部分 在 GPU 上运行，串行部分在CPU运行，这就是 <strong>异构计算</strong></p>
+<p>具体一点，异构计算 的意思就是 不同体系结构的处理器 相互协作 完成计算任务</p>
+<p>CPU 负责总体的 程序流程，而 GPU 负责 具体的计算任务，当GPU各个线程完成计算任务后，我们就将 GPU 那边计算得到的结果 <strong>拷贝到 CPU 端</strong>，完成一次计算任务</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="tcp-和-udp">
+<a class="header-anchor" href="#tcp-%e5%92%8c-udp"></a>
+TCP 和 UDP
+</h2><ul>
+<li>
+<p><strong>TPC</strong> 和 <strong>UDP</strong> 都是 <strong>传输层</strong> 上的 协议</p>
+</li>
+<li>
+<p><strong>传输层</strong></p>
+<ul>
+<li><strong>传输层</strong> 是 <strong>TCP/IP协议五层模型</strong> 中的 <strong>第四层</strong></li>
+<li>它提供了 <strong>应用程序</strong> 间的通信，它负责数据能够从 发送端 传输到 接收端</li>
+<li>其功能包括
+<ul>
+<li>一、格式化信息流</li>
+<li>二、提供可靠传输</li>
+</ul>
+</li>
+<li>为实现后者，传输层协议 规定 接收端 必须发回 确认，并且假如 分组丢失，必须 重新发送</li>
+</ul>
+</li>
+<li>
+<p><strong>端口号</strong></p>
+<ul>
+<li><strong>端口号</strong> 标识了 一个主机 上进行通信的不同 应用程序</li>
+<li>一个进程可以绑定多个 端口号，但是一个 端口号 不能被多个进程绑定</li>
+<li>在<code>TCP/IP</code>协议中, 用<code>&quot;源IP&quot;, &quot;源端口号&quot;, &quot;目的IP&quot;, &quot;目的端口号&quot;, &quot;协议号&quot;</code> 这样一个五元组来标识一个<code>通信</code></li>
+<li>端口号范围划分：
+<ul>
+<li>0 - 1023
+<ul>
+<li>知名端口号，HTTP、FTP、 SSH等这些广为使用的应用层协议他们的端口号都是固定的，自己写的程序中，不能随意绑定知名端口号</li>
+</ul>
+</li>
+<li>1024 - 65535
+<ul>
+<li>操作系统动态分配的端口号。 客户端程序的端口号，就是由操作系统从这个范围分配的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>UDP</strong></p>
+<ul>
+<li>
+<p><strong>报文格式</strong></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/00d1821abded524b2e9429691b0cc153.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>
+<p>16位 UDP长度 表示整个 数据报 <code>(UDP首部+UDP数据)</code> 的长度</p>
+</li>
+<li>
+<p>如果 校验和 出错，就会 直接丢弃(UDP 校验首部 和 数据部分)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>UDP协议的特点</strong></p>
+<ul>
+<li>
+<p><strong>无连接</strong></p>
+<ul>
+<li>只知道对端的IP和端口号就可以发送，不需要实现建立连接。</li>
+</ul>
+</li>
+<li>
+<p><strong>不可靠</strong></p>
+<ul>
+<li>没有 确认机制， 没有 重传机制</li>
+<li>如果因为网络故障该段无法发到对方， UDP协议层也不会给应用层返回任何 错误信息。</li>
+</ul>
+</li>
+<li>
+<p><strong>面向数据报</strong></p>
+<ul>
+<li><strong>应用层</strong> 交给UDP多长的报文， UDP原样发送既不会拆分，也不会合并</li>
+<li>如果发送端调用一次 <code>sendto</code>, 发送100个字节, 那么接收端也必须调用对应的 一次 <code>recvfrom</code>, 接收100个 字节，而 不能循环 调用10次 <code>recvfrom</code>, 每次接收10个字节</li>
+<li>所以UDP不能够灵活的控制读写数据的 次数 和 数量</li>
+</ul>
+</li>
+<li>
+<p><strong>发送速度快</strong></p>
+<ul>
+<li>没有 <strong>安全检查</strong>，自然 <strong>发送的速度</strong> 就会快很多</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>UDP的缓冲区</strong></p>
+<ul>
+<li>
+<p>UDP存在接收缓冲区，但不存在发送缓冲区。</p>
+</li>
+<li>
+<p>UDP没有 <strong>发送缓冲区</strong>，在调用 <code>sendto</code> 时会直接将数据交给内核，由内核将数据传给网络层协议进行后续的传输动作</p>
+<p><strong>为什么UDP不需要发送缓冲区？ 因为UDP不保证可靠性，它没有重传机制，当报文丢失时，UDP不需要重新发送，而TCP不同，他必须具备发送缓冲区，当报文丢失时，TCP必须保证重新发送，用户不会管，所以必须要具备发送缓冲区。</strong></p>
+</li>
+<li>
+<p>UDP具有 <strong>接收缓冲区</strong>，但是这个接收缓冲区<strong>不能保证 收到的UDP报文的顺序 和 发送UDP报的顺序一致</strong>，如果<strong>缓冲区满了再到达的UDP数据报就会被丢弃</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>TCP</strong></p>
+<ul>
+<li>
+<p>TCP全称<code>传输控制</code>协议，必须对 数据的传输 进行 控制</p>
+</li>
+<li>
+<p><strong>报文格式</strong></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/26bb30f0808ad9fd94ba350157f278e7.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>
+<p><strong>源端口号/目的端口号</strong></p>
+<ul>
+<li>表示数据从哪个进程来，要到那个进程去</li>
+</ul>
+</li>
+<li>
+<p>32位序号</p>
+<ul>
+<li>序号是 <strong>可靠传输</strong> 的关键因素</li>
+<li>TCP将要传输的每个字节都进行了<strong>编号</strong>，序号是本报文段发送的数据组的第一个字节的编号，序号可以保证传输信息的有效性。比如：一个报文段的序号为300，此报文段数据部分共有100字节，则下一个报文段的序号为401。</li>
+</ul>
+</li>
+<li>
+<p>32位 <strong>确认序号</strong></p>
+<ul>
+<li>每一个 ACK 对应这一个 <strong>确认号</strong>，它指明下一个期待收到的字节序号，表明该序号之前的所有数据已经正确无误的收到</li>
+<li><strong>确认号</strong> 只有当 ACK 标志为 1 时才有效。比如建立连接时，SYN 报文的 ACK 标志位为 0</li>
+</ul>
+</li>
+<li>
+<p>4位首部长度(数据偏移)：</p>
+<ul>
+<li>表示该TCP头部有多少个32位bit(有多少个4字节)，所以TCP头部大长度是15 * 4 = 60</li>
+<li>根据该部分可以将TCP报头 和 有效载荷分离。TCP报文默认大小为20个字节。</li>
+</ul>
+</li>
+<li>
+<p>6位标志位：</p>
+<ul>
+<li>
+<p>URG</p>
+<ul>
+<li>它为了标志紧急指针是否有效。</li>
+</ul>
+</li>
+<li>
+<p>ACK</p>
+<ul>
+<li>标识确认号是否有效。</li>
+</ul>
+</li>
+<li>
+<p>PSH</p>
+<ul>
+<li>
+<p>提示接收端应用程序立即将接收缓冲区的数据拿走。</p>
+</li>
+<li>
+<p>RST</p>
+<ul>
+<li>它是为了处理异常连接的， 告诉连接不一致的一方，我们的连接还没有建立好， 要求对方重新建立连接。我们把携带RST标识的称为复位报文段。</li>
+</ul>
+</li>
+<li>
+<p>SYN</p>
+<ul>
+<li>请求建立连接; 我们把携带SYN标识的称为同步报文段。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>FIN</p>
+<ul>
+<li>通知对方, 本端要关闭连接了, 我们称携带FIN标识的为结束报文段。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>16位的紧急指针</p>
+<ul>
+<li><strong>按序到达</strong> 是TCP协议保证可靠性的一种机制，但是也存在一些报文想 <strong>优先被处理</strong>，这时就可以设置 紧急指针，指向该报文即可，同时将 紧急指针 有效位置为1</li>
+</ul>
+</li>
+<li>
+<p>16位窗口大小</p>
+<ul>
+<li>
+<p>如果 <strong>发送方</strong> 发送大量数据，接收方接收不过来，会导致大量数据丢失</p>
+<p>然后接收方可以发送给发送发消息让发送方 发慢一点，这是 <strong>流量控制</strong></p>
+<p>接收方将自己 <strong>接收缓冲器剩余空间</strong> 的大小告诉发送方叫做16位窗口大小</p>
+<p>发送方 可以根据窗口大小来适配发送的速度和大小，窗口大小最大是2的16次方，及64KB，但也可以根据选项中的某些位置扩展，最大扩展1G</p>
+</li>
+</ul>
+</li>
+<li>
+<p>16位校验和</p>
+<ul>
+<li>发送端填充，CRC校验。如果接收端校验不通过， 则认为数据有问题(此处的检验和不光包含TCP首部也包含TCP数据部分)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>确认应答</strong></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/e27e14acbab7b83fff1bcf5b719e6a4e.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>
+<p>接收端收到一条报文后，向发送端发送一条确认ACK，此ACK的作用就是告诉发送端：接收端已经成功的收到了消息，并且希望收到 下一条报文的序列号 是什么</p>
+<p>这个确认号就是期望的 下一个报文的序号</p>
+</li>
+<li>
+<p>每一个ACK都带有对应的确认序列号，意思是告诉发送者，我们已经收到了哪些数据，下一个发送数据应该从哪里开始</p>
+<p>如上图，主机A给主机B发送了1-1000的数据，ACK应答，携带了1001序列号。告诉主机A，我已经接受到了1-1000数据，下一次你从1001开始发送数据。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>超时重传</strong></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/8045b254ccbd5506ccc8be4dcaeea1b8.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>
+<p>TCP在传输数据过程中，还加入了超时重传机制</p>
+<p>假设主机A发送数据给主机B，主机B没有收到数据包，主机B自然就不会应答，如果主机A在一个特定时间间隔内没有收到主机B发来的确认应答，就会进行重发，这就是 超时重传机制</p>
+</li>
+<li>
+<p>当然还存在另一种可能就是主机A未收到B发来的确认应答，也可能是因为 <strong>ACK 丢失了</strong></p>
+</li>
+<li>
+<p>因此主机B会收到很多<code>重复</code>数据，那么TCP协议需要能够识别出那些包是<code>重复的包</code>， 并且把重复的包丢弃掉，这时候我们可以利用前面提到的<code>16位序列号</code>， 就可以很容易做到<code>去重</code>的效果</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>连接管理机制</strong></p>
+<ul>
+<li>
+<p><strong>三次握手，四次挥手</strong></p>
+<ul>
+<li>
+<p><strong>三次握手的原因</strong></p>
+<ul>
+<li>
+<p><strong>TCP建立连接</strong> 需要 <strong>三次握手</strong>，为了 <strong>确认信息</strong>，<strong>确认双方的接收能力和发送能力是否正常</strong></p>
+</li>
+<li>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/850de5c566ae60989f45cff4b1aad94c.png" alt="在这里插入图片描述"></p>
+</li>
+<li>
+<p>比如 A 与 B 通信，A 向 B 发一个 请求，B 收到后作出响应，然后 A 再对 B 作出的响应作出回复</p>
+</li>
+<li>
+<p>举个栗子
+公安局长王哥 和 陈某打电话</p>
+<p>公安局：你好！陈某，听得到吗？（一次会话）
+陈某：听到了，王哥，你能听到吗 （二次会话）
+公安局：听到了，你过来自首吧 （开始会话）（三次会话）</p>
+</li>
+<li>
+<p>为什么要进行 <strong>第三次握手</strong>？</p>
+<ul>
+<li>
+<p><strong>主要原因：防止已经失效的连接请求报文突然又传送到了服务器，从而产生错误</strong></p>
+</li>
+<li>
+<p><strong>第一次握手</strong>： 客户端 向 服务器端 发送报文
+证明客户端的发送能力正常</p>
+</li>
+<li>
+<p><strong>第二次握手</strong>：服务器端 接收到报文并向 客户端 发送报文
+证明服务器端的接收能力、发送能力正常</p>
+</li>
+<li>
+<p><strong>第三次握手</strong>：客户端向服务器发送报文
+证明客户端的接收能力正常</p>
+</li>
+<li>
+<p>如果采用<strong>两次握手</strong>会出现以下情况：
+客户端向服务器端发送的请求报文由于网络等原因滞留，<strong>未能发送到服务器端</strong></p>
+<p>此时连接请求报文失效，客户端会再次向服务器端发送请求报文，之后与服务器端建立连接，当<strong>连接释放</strong>后，由于网络通畅了，第一次客户端发送的请求报文又 突然 到达了服务器端，这条请求报文本该失效了，但此时服务器端误认为客户端<strong>又发送了一次连接请求</strong>，两次握手建立好连接，此时 客户端 忽略 服务器端 发来的确认（因为是 <strong>两次握手</strong>），也不发送数据，造成不必要的错误和网络资源的浪费（服务端 有 过时报文）（<strong>在两次握手的情景下，服务器建立连接只需要经过1次确认</strong>）</p>
+</li>
+<li>
+<p>如果采用<strong>三次握手</strong>的话，就算那条失效的报文发送到服务器端，服务器端确认并向客户端发送报文，但此时 客户端 不会发出确认，由于客户端没有确认（因为是 过时的报文），由于服务器端没有接收到确认，就会知道客户端没有请求连接（<strong>在三次握手的情景下，服务器建立连接必须要经过2次确认</strong>）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>四次挥手的原因</strong></p>
+<ul>
+<li>
+<p><strong>TCP终止连接</strong>需要<strong>四次挥手</strong></p>
+</li>
+<li>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/0dc25c2e6ae3de02cc4039553165d8cf.png" alt="在这里插入图片描述"></p>
+</li>
+<li>
+<p>举个例子
+张三和李四的对话</p>
+<p>张三：好的，那我先走了
+李四：好的，那你走吧
+李四：那我也走了？
+张三：好的，你走吧</p>
+</li>
+<li>
+<p><strong>第一次挥手</strong>：客户端 发出 连接释放报文，并且停止发送数据。释放数据报文首部，FIN=1，其序列号为seq=u（等于前面已经传送过来的数据的最后一个字节的序号加1），此时，客户端进入FIN-WAIT-1（终止等待1）状态</p>
+</li>
+<li>
+<p><strong>第二次挥手</strong>： 服务器端 接收到连接释放报文后，发出确认报文，ACK=1，ack=u+1，并且带上自己的序列号seq=v，此时，服务端就进入了CLOSE-WAIT 关闭等待状态</p>
+</li>
+<li>
+<p><strong>第三次挥手</strong>：客户端 接收到 服务器端 的确认请求后，客户端就会进入FIN-WAIT-2（终止等待2）状态，等待服务器发送连接释放报文，服务器将最后的数据发送完毕后，就向客户端发送连接释放报文，服务器就进入了LAST-ACK（最后确认）状态，等待客户端的确认。</p>
+</li>
+<li>
+<p><strong>第四次挥手</strong>：客户端 收到 服务器 的连接释放报文后，必须发出确认，ACK=1，ack=w+1，而自己的序列号是seq=u+1，此时，客户端就进入了TIME-WAIT（时间等待）状态，但此时TCP连接还未终止，必须要经过2MSL后（最长报文寿命），当客户端撤销相应的TCB后，客户端才会进入CLOSED关闭状态，服务器端接收到确认报文后，会立即进入CLOSED关闭状态，到这里TCP连接就断开了，四次挥手完成</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="tcpip协议层">
+<a class="header-anchor" href="#tcpip%e5%8d%8f%e8%ae%ae%e5%b1%82"></a>
+TCP/IP协议层
+</h2><ul>
+<li>
+<p>**TCP/IP（Transmission Control Protocol/Internet Protocol，传输控制协议/网际协议）**是指能够在 多个不同网络间 实现信息传输的 协议簇</p>
+<p>TCP/IP协议 不仅仅指的是TCP 和IP两个协议，而是指一个由FTP、SMTP、TCP、UDP、IP等协议构成的协议簇， 只是因为在TCP/IP协议中TCP协议和IP协议最具代表性，所以被称为TCP/IP协议</p>
+</li>
+<li>
+<p>TCP/IP是在网络的使用中的 <strong>最基本的通信协议</strong></p>
+</li>
+<li>
+<p>TCP/IP传输协议对<strong>互联网中各部分进行通信的标准和方法进行了规定</strong></p>
+</li>
+<li>
+<p>TCP/IP传输协议是保证 <strong>网络数据信息及时</strong>、<strong>完整传输</strong>的两个重要的协议</p>
+</li>
+<li>
+<p>TCP/IP传输协议是严格来说是一个 <strong>四层</strong> 的体系结构，<strong>应用层、传输层、网络层和数据链路层</strong>都包含其中。</p>
+</li>
+<li>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/a4e3ddb8b128ee1d95879b89a00bd53a.png#pic_center" alt="在这里插入图片描述"></p>
+</li>
+<li>
+<p><strong>应用层</strong> 就是 <strong>针对特定应用</strong> 的协议，如针对 <strong>邮箱</strong> 的 E-mail，针对 <strong>网络请求</strong> 的 HTTP</p>
+</li>
+<li>
+<p><strong>传输层</strong> 就是在 <strong>不同进程（不同应用）</strong> 之间通信的 协议，比如 <strong>TCP</strong> 和 <strong>UDP</strong>，是 <strong>端到端</strong> 的，需要 <strong>端口号</strong> 进行连接</p>
+</li>
+<li>
+<p><strong>网络层</strong> 就是在 <strong>不同网络（不同主机）</strong> 之间进行 通信，比如 <strong>IP</strong> 协议，通过 <strong>IP地址</strong> 进行 通信</p>
+</li>
+<li>
+<p><strong>数据链路层</strong> 就是在 <strong>不同设备</strong> 之间进行 通信，比如 <strong>电脑到路由器</strong>，是 <strong>网络层</strong> 之前要做的事。它把 <strong>0/1序列</strong> 变成 <strong>数据帧</strong>，包含 <strong>MAC地址</strong>，在报文中体现在 <strong>MAC帧</strong> 中</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>物理层</strong> 就是 <strong>0/1序列</strong> 与 <strong>物理设备的电压</strong> 等进行交换（通常由 <strong>网卡</strong> 来转 <strong>电信号 &lt;-&gt; 数字信号</strong></p>
+<p><strong>以太网</strong> 是一种 <strong>计算机局域网技术</strong>，用来制定 <strong>规则（包括物理层规则）</strong>，来保证 <strong>数据包在局域网中的有效传输</strong></p>
+<p><strong>交换机</strong> 就是 将 <strong>目标MAC地址</strong> 转成 在目标设备的 <strong>端口（这里和 传输层 的 端口号 不同，是 物理端口，也就是 网线插口）</strong>，然后将 <strong>数据</strong> 转发到 <strong>对应端口</strong></p>
+</blockquote>
+<ul>
+<li><strong>HTTP协议</strong>
+<ul>
+<li><strong>HTTP（HyperText Transfer Protocol）是一种应用层协议</strong>，旨在实现分布式、协作式和超媒体信息系统的通信</li>
+<li>它是万维网（WWW）上数据交换的基础，允许 <strong>客户端（如浏览器）<strong>向</strong>服务器</strong>发送请求，并接收响应（发送 HTTP 请求头，HTTP 响应头）</li>
+<li><strong>HTTP</strong> 是一种用作<strong>获取诸如 HTML 文档这类资源</strong>的协议。</li>
+</ul>
+</li>
+</ul>
+<h2 id="ebpf">
+<a class="header-anchor" href="#ebpf"></a>
+eBPF
+</h2><ul>
+<li>
+<p><strong>eBPF 全称 extended Berkeley Packet Filter，中文意思是 <code>扩展的伯克利包过滤器</code></strong></p>
+<p>一般来说，要向内核添加新功能，需要修改内核源代码或者编写 <code>内核模块</code> 来实现。而 eBPF 允许程序在不修改内核源代码，或添加额外的内核模块情况下运行</p>
+</li>
+<li>
+<p><strong>eBPF</strong> 的核心思想是提供一个 <strong>虚拟机</strong>，用户可以将编写的BPF程序 加载 到内核中执行</p>
+<p>这些程序在执行前会经过 严格的验证，以确保其不会对系统造成安全威胁</p>
+<p>eBPF程序 的执行非常高效，因为它们直接运行在 内核空间，避免了用户态与内核态之间的频繁切换</p>
+</li>
+<li>
+<p>eBPF 由于其高效、灵活和安全的特性，广泛应用于多个领域，包括但不限于：</p>
+<ul>
+<li><strong>网络数据包过滤</strong>：eBPF可以用于实现高效的网络防火墙和流量监控工具，如Cilium和Falco。</li>
+<li><strong>性能监控</strong>：eBPF可以用于实时监控系统性能指标，如CPU使用率、内存使用率等，帮助开发者快速定位性能瓶颈。</li>
+<li><strong>安全防护</strong>：eBPF可以用于实现入侵检测系统（IDS）和恶意软件防护工具，通过在内核中执行的安全策略来检测和阻止潜在的攻击。</li>
+</ul>
+</li>
+</ul>
+<h2 id="c函数的调用过程原理和栈分析">
+<a class="header-anchor" href="#c%e5%87%bd%e6%95%b0%e7%9a%84%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%e5%8e%9f%e7%90%86%e5%92%8c%e6%a0%88%e5%88%86%e6%9e%90"></a>
+C函数的调用过程原理和栈分析
+</h2><ul>
+<li>
+<p><strong>栈帧</strong></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/be5fd2f3e3cf05c9a1a89be6e6872283.png" alt="这里写图片描述"></p>
+<ul>
+<li>
+<p><strong>ebp（base pointer ）可称为“帧指针”或“基址指针”</strong>，其实语意是相同的。</p>
+<p>在未受改变之前始终指向栈帧的开始，也就是栈底，所以ebp的用途是在 <strong>堆栈</strong> 中寻址用的。</p>
+</li>
+<li>
+<p><strong>esp（stack pointer）可称为“ 栈指针”。</strong></p>
+<p>esp是会随着数据的入栈和出栈移动的，也就是说，esp始终指向栈顶。</p>
+</li>
+<li>
+<p>从上往下来说，地址从高向低，栈位于内核态之下，是向下生长的，所谓向下生长是指从内存高地址-&gt;低地址的路径延伸，那么就很明显了，栈有栈底和栈顶，那么 <strong>栈顶的地址要比栈底低</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>函数调用过程</strong></p>
+<ul>
+<li>
+<p>比如在 main 中调用了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span> 
+</span></span></code></pre></div><ul>
+<li>
+<p>func有两个局部的int变量。这里，main是调用者，func是被调用者</p>
+</li>
+<li>
+<p>ESP被func使用来指示栈顶。EBP相当于一个“基准指针”</p>
+<p>从main传递到func的参数以及func函数本身的局部变量都可以通过这个<strong>基准指针为参考，加上偏移量找到</strong></p>
+</li>
+<li>
+<p>由于 被调用者（func）允许使用 <strong>EAX，ECX和EDX寄存器</strong>，所以如果 调用者（main） 希望保存这些寄存器的值，就必须在调用子函数之前显式地把他们 <strong>压栈</strong>，<strong>保存在栈中</strong></p>
+</li>
+<li>
+<p>另一方面，如果除了上面提到的几个寄存器，被调用者（func） 还想使用<strong>别的寄存器，比如EBX，ESI和EDI</strong>，那么，被调用者（func） 就必须在<strong>栈中保存</strong>这些被额外使用的寄存器，并在 调用返回前 恢复他们</p>
+<p>也就是说，如果被调用者只使用约定的EAX，ECX和EDX寄存器，他们由调用者负责保存（push）并恢复（pop），但如果被调用这还额外使用了别的寄存器，则必须他们 <strong>自己保存</strong> 并回复这些寄存器的值</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>函数入参</strong></p>
+<ul>
+<li>
+<p>传递给func的参数 <strong>被压到栈</strong> 中，最后一个参数先进栈，所以 <strong>第一个参数 是位于 栈顶 的</strong></p>
+<p>所以说函数是 <strong>从右往左进行参数的入栈</strong> 的，这和变长参数有关</p>
+<p>此外，func中声明的<strong>局部变量以及函数执行过程中需要用到的一些临时变量</strong>也都存在栈中。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>返回值</strong></p>
+<ul>
+<li>
+<p><strong>小于等于4个字节</strong> 的返回值会被保存到 <strong>EAX</strong> 中</p>
+</li>
+<li>
+<p><strong>如果大于4字节，小于8字节</strong>，那么<strong>EDX</strong>也会被用来保存返回值</p>
+</li>
+<li>
+<p><strong>如果返回值占用的空间还要大</strong>，那么调用者会向被调用者传递一个额外的参数，这个额外的参数指向将要保存返回值的<strong>地址</strong>。用C语言来说，就是函数调用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>　　<span class="err">被转化为：</span>　<span class="n">func</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>注意，这仅仅在返回值占用大于8个字节时才发生</strong></p>
+<p>有的编译器不用EDX保存返回值，所以当返回值大于4个字节时，就用这种转换</p>
+</li>
+<li>
+<p>当然，并不是 所有函数调用 都直接赋值给一个变量，还可能是直接参与到某个<strong>表达式</strong>的计算中，如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="n">foo</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+</span></span></code></pre></div><p>又或者作为另外的函数的参数， 如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">fooo</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="mi">3</span><span class="p">);</span>
+</span></span></code></pre></div><p>这些情况下，foo的返回值会被保存在一个<strong>临时变量</strong>中参加后续的运算，所以，foo(a, b, c)还是可以被转化成</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">foo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tmp</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span><span class="err">。</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>调用过程</strong></p>
+<ul>
+<li>
+<p>假设 函数A 调用 函数B，我们称A函数为”调用者”,B函数为“被调用者”则函数调用过程可以这么描述：</p>
+<ul>
+<li>
+<p>先将调用者（A）的 堆栈 的<strong>基址（ebp）<strong>入栈，以</strong>保存之前任务的信息</strong>，函数返回之后可以继续执行之前的逻辑</p>
+</li>
+<li>
+<p>然后将调用者（A）的<strong>栈顶指针（esp）的值赋给ebp，作为新的基址（即被调用者B的栈底）</strong></p>
+</li>
+<li>
+<p>然后在**这个基址（被调用者B的栈底）**上开辟（一般用sub指令）相应的空间用作 <strong>被调用者B 的栈空间</strong>，进行 函数入参的压栈 等操作</p>
+</li>
+<li>
+<p>函数B <strong>返回</strong> 后，从<strong>当前栈帧的ebp即恢复为 调用者A 的栈顶（esp）</strong>，使<strong>栈顶 恢复 函数B被调用前的位置</strong></p>
+<p>然后 <strong>调用者A</strong> 再从 <strong>恢复后的栈顶</strong> 可 <strong>弹出之前的ebp值（可以这么做是因为这个值在函数调用前一步被压入堆栈）</strong>。<strong>这样，ebp和esp就都恢复了调用函数B前的位置，也就是栈恢复函数B调用前的状态</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>函数调用前调用者的动作</strong></p>
+<ul>
+<li>
+<p>在上面的示例中，调用者是main，它准备调用函数func</p>
+<p>在函数调用前，main<strong>正在用ESP和EBP寄存器 指示 它自己的栈帧</strong></p>
+<ul>
+<li>
+<p>首先，main<strong>把EAX，ECX和EDX压栈</strong></p>
+<p>这是一个可选的步骤，只在 <strong>这三个寄存器内容需要保留</strong> 的时候执行此步骤</p>
+</li>
+<li>
+<p>接着，main<strong>把传递给func的参数一一进栈，最后的参数最先进栈</strong>　　</p>
+</li>
+<li>
+<p>最后，main用<strong>call指令调用子函数：call func</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p>当 call指令 执行的时候，<strong>EIP指令指针寄存器</strong>的内容会先被压入栈中</p>
+<p>因为 <strong>EIP寄存器是指向main中的下一条指令</strong>，所以现在 <strong>返回地址就在栈顶了</strong></p>
+<p>在 call指令 执行完之后，下一个执行周期将从<strong>名为foo的标记处</strong>开始</p>
+</li>
+<li>
+<p>下图 展示了call指令 完成后 <strong>栈的内容</strong></p>
+<p>下图及后续图中的 <strong>粗线</strong> 指示了函数调用前 <strong>栈顶的位置</strong></p>
+<p>我们将会看到，当整个函数调用过程结束后，栈顶又回到了这个位置</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/42163e9324bfae03a3a7f002e857ef5f.png" alt="这里写图片描述"></p>
+</li>
+<li>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/1431c39b2a59d0a4b7c90f60bd726da1.gif" alt="img"></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>调用者局部变量创建</strong></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/d0e1603b19cf43310b76c246bddae4e0.gif" alt="img"></p>
+</li>
+<li>
+<p><strong>被调用者在函数调用后的动作</strong></p>
+<ul>
+<li><strong>建立它自己的栈帧</strong></li>
+<li><strong>为局部变量分配空间</strong></li>
+<li><strong>如果函数中需要使用寄存器EBX，ESI和EDI，则压栈保存寄存器的值，出栈时恢复</strong></li>
+</ul>
+<p>此时栈空间如下</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/fcb7cac44c4d7c7b0e5764214cf48b06.png" alt="这里写图片描述"></p>
+<ul>
+<li>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/7eba549ade3ff148a2078faa5758456f.gif" alt="img"></p>
+</li>
+<li>
+<p><strong>具体过程如下：</strong></p>
+<ul>
+<li>
+<p>首先被调用的函数必须<strong>建立它自己的栈帧</strong></p>
+<p><strong>EBP寄存器</strong> 现在正指向main的栈帧中的某个位置，这个值必须被保留，因此，<strong>EBP进栈（这个EBP是main函数的）</strong></p>
+<p>然后 <strong>旧的 ESP的内容赋值给了EBP</strong>，这使得 <strong>函数的参数</strong> 可以通过对 <strong>EBP附加一个偏移量得到</strong>，而<strong>栈寄存器ESP</strong>便可以空出来做其他事情</p>
+<p>第一个参数的地址是EBP加8，因为 <strong>main的EBP和返回地址各在栈中占了4个字节</strong></p>
+</li>
+<li>
+<p>下一步，被调用的函数必须为它的 <strong>局部变量</strong> 分配空间，同时，也必须为它可能用到的一些临时变量分配空间</p>
+<p>比如，foo中的一些C语句可能包括复杂的表达式，其子表达式的中间值就必须得有地方存放。这些存放中间值的地方同城被称为 <strong>临时的</strong>，因为他们可以为下一个复杂表达式所复用</p>
+</li>
+<li>
+<p>最后，如果foo用到EBX，ESI和EDI寄存器，则它f必须在栈里保存它们</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>被调用者返回前的动作</strong></p>
+<ul>
+<li>
+<p>被调用的函数 返回前，必须先把<strong>返回值保存在EAX寄存器</strong>中</p>
+<p>当 返回值 占用 多于4个或8个字节 时，接收 返回值 的 <strong>变量地址</strong> 会作为 一个额外的 <strong>指针参数</strong> 被传到函数中，而 函数 本身就 <strong>不需要返回值</strong> 了。这种情况下，被调用者 直接通过 <strong>内存拷贝</strong> 把 返回值 直接拷贝到<strong>接收地址</strong>，从而省去了一次通过栈的 中转拷贝</p>
+</li>
+<li>
+<p>其次，被调用的函数必须恢复 <strong>EBX，ESI和EDI寄存器</strong> 的值</p>
+<p>如果这些 寄存器 被修改，正如我们前面所说，我们会在foo执行开始时把它们的原始值压入栈中</p>
+</li>
+<li>
+<p>这两步之后，我们不再需要foo的 <strong>局部变量和临时存储</strong> 了，我们可以通过下面的指令消除栈帧：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">mov</span> <span class="n">esp</span><span class="p">,</span> <span class="n">ebp</span>
+</span></span><span class="line"><span class="cl"><span class="n">pop</span> <span class="n">ebp</span>
+</span></span></code></pre></div></li>
+<li>
+<p>最后直接执行 <strong>返回指令</strong></p>
+<p>从栈里弹出 <strong>返回地址</strong>，赋值给 <strong>EIP寄存器</strong></p>
+</li>
+<li>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/8a479f2c2c0f408b7f1269f3fb01319d.gif" alt="img"></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>调用者在返回后的动作</strong></p>
+<ul>
+<li>
+<p>在 程序控制权 返回到 调用者 后，<strong>传递给被调函数的参数已经不需要了</strong></p>
+<p>我们可以把所有个参数一起弹出栈，实现 堆栈平衡</p>
+</li>
+<li>
+<p>如果在 函数调用 前，EAX，ECX和EDX寄存器的值被保存在栈中，调用者main函数现在可以把它们弹出</p>
+<p>这个动作之后，栈顶就回到了我们 开始整个函数调用过程前的位置</p>
+</li>
+<li>
+<p>至此，函数的调用过程就已经分析完毕了</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="内存结构">
+<a class="header-anchor" href="#%e5%86%85%e5%ad%98%e7%bb%93%e6%9e%84"></a>
+内存结构
+</h2><ul>
+<li>
+<p>C/C++的 <strong>内存结构</strong>，主要分为五个区域：<strong>栈、堆、自由存储区、全局/静态存储区（static）、常量存储区（const）</strong>
+内存区域划分如图：</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/34da962c137c00e8bf9f69bab343b847.png" alt="在这里插入图片描述"></p>
+</li>
+<li>
+<p><strong>内存分布</strong></p>
+<ul>
+<li><strong>栈</strong>
+<ul>
+<li>编译器 和 操作系统 <strong>自动完成内存空间的分配和释放</strong></li>
+<li>**优点：**执行效率很高，使用方便【栈内存分配运算 内置于处理器的指令集中】</li>
+<li>**缺点：**分配的 内存容量有限，分配失败会提示栈错误</li>
+<li><strong>注意</strong>，<strong>const 局部变量</strong> 也储存在 <strong>栈区</strong> 内，栈区向 <strong>地址减小的方向增长（从上往下）</strong></li>
+</ul>
+</li>
+<li><strong>堆</strong>
+<ul>
+<li><strong>程序员向系统申请分配空间</strong>，当系统收到程序的申请时，会遍历一个 <strong>记录空闲内存地址的链表</strong>，<strong>寻找第一个空间大于所申请空间的 堆 结点</strong>，然后<strong>将该结点从空闲结点链表中删除，并将该结点的空间分配给程序</strong></li>
+<li><strong>缺点</strong>：分配速度慢，地址不连续，容易碎片化，容易造成内存泄漏。</li>
+<li>由 <strong>new</strong> 分配，<strong>delete</strong> 释放</li>
+<li><strong>堆区</strong> 向 <strong>地址增大的方向增长（从下往上）</strong></li>
+</ul>
+</li>
+<li><strong>自由存储区</strong>
+<ul>
+<li>管理机制 和 <strong>堆</strong> 类似</li>
+<li>区别就是由 <strong>new 分配内存，由 delete 来释放</strong></li>
+</ul>
+</li>
+<li><strong>全局/静态存储区</strong>
+<ul>
+<li><strong>全局变量和静态变量</strong> 被分配到同一块内存中，在以前的C语言中，<strong>全局变量</strong> 又分为 初始化的 和 未初始化的</li>
+<li>在C++里面没有这个区分了，他们共同占用同一块内存区</li>
+</ul>
+</li>
+<li><strong>常量存储区</strong>
+<ul>
+<li>这是一块比较特殊的存储区，他们里面存放的是 <strong>常量</strong>，不允许修改</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="socket">
+<a class="header-anchor" href="#socket"></a>
+Socket
+</h2><ul>
+<li>Socket（套接字）是 计算机网络编程 中用于 进程间通信的 媒介，允许 <strong>不同主机上的程序</strong> 通过 <strong>网络发送和接收数据</strong>
+你可以把它类比成一根“数据管道”，程序通过这根管道与远程设备进行交流。</li>
+</ul>
+<h2 id="栈对齐">
+<a class="header-anchor" href="#%e6%a0%88%e5%af%b9%e9%bd%90"></a>
+栈对齐
+</h2><ul>
+<li><strong>栈对齐</strong> 是指在计算机系统中，<strong>栈顶指针</strong> 必须是 <strong>16字节的整数倍</strong>，就和 <strong>内存对齐</strong> 差不多</li>
+<li>这种对齐方式有助于在 <strong>尽可能少的内存访问周期</strong> 内读取数据，从而提高系统性能</li>
+<li>尽管数据未对齐时程序仍能执行，但效率会降低，甚至在某些情况下无法正确执行</li>
+</ul>
+<h2 id="hook点">
+<a class="header-anchor" href="#hook%e7%82%b9"></a>
+hook点
+</h2><ul>
+<li><strong>Hook点</strong> 是 计算机编程和网络协议 中用于 <strong>拦截和处理数据流的关键机制</strong>，尤其在Linux内核的Netfilter框架中具有重要作用</li>
+<li><strong>Hook点</strong> 是指在程序执行过程中，允许开发者 插入自定义代码 的特定位置
+通过在这些点插入 <strong>钩子函数</strong>，开发者可以在 <strong>不修改原有代码</strong> 的情况下，<strong>改变程序的行为或收集信息</strong>
+Hook点广泛应用于网络协议、操作系统、应用程序等多个领域。</li>
+</ul>
+<h2 id="cgroup">
+<a class="header-anchor" href="#cgroup"></a>
+cgroup
+</h2><ul>
+<li>Cgroups全称Control Groups，是Linux内核提供的<strong>物理资源隔离</strong>机制，通过这种机制，可以实现对Linux进程或者进程组的 资源限制、隔离和统计功能</li>
+<li>比如可以通过 cgroup <strong>限制特定进程的资源使用</strong></li>
+<li>比如使用特定数目的cpu核数和特定大小的内存，如果资源超限的情况下，会被暂停或者杀掉。</li>
+</ul>
+<h2 id="kprobe">
+<a class="header-anchor" href="#kprobe"></a>
+Kprobe
+</h2><ul>
+<li>**Kprobe（Kernel Probe）**是 Linux 内核提供的一种强大的 <strong>动态调试</strong> 和 <strong>追踪机制</strong>，它允许你在 Linux 内核中的大部分位置（函数入口、函数内部特定指令、函数返回处）动态地插入“钩子”（回调函数），来收集内核运行时的信息，以方便我们进行调试、性能分析。我们甚至可以借助 Kprobe 修改内核的执行流程</li>
+<li><strong>Kprobe</strong> 的优势在于它是 动态 的，我们不需要修改内核源代码，重新编译内核，而是可以在系统运行时，根据需要 <strong>动态地插入或移除探测点</strong>。这使得它非常适合实时分析。Linux 上的一些高级的工具比如：perf，SystemTap，eBPF 等的底层基础设施都是 Kprobe。</li>
+</ul>
+<h2 id="协议栈">
+<a class="header-anchor" href="#%e5%8d%8f%e8%ae%ae%e6%a0%88"></a>
+协议栈
+</h2><ul>
+<li><strong>协议栈（Protocol Stack），又称协议堆叠</strong>，是 计算机网络协议套件 的一个具体的 软件实现</li>
+<li><strong>协议栈</strong>中的 每个协议模块 通常只为一个特定目的而设计，这样可以使得设计更容易</li>
+<li>每个协议模块通常都要和 上下两个其他协议模块通信，它们可以想象成是 协议栈 中的层</li>
+</ul>
+<p><img src="https://pic2.zhimg.com/v2-8978d883d2f350cb40afa868ea391ddd_1440w.jpg" alt="img"></p>
+<h2 id="iptables">
+<a class="header-anchor" href="#iptables"></a>
+iptables
+</h2><p><img src="https://i-blog.csdnimg.cn/blog_migrate/4380fae3a174c3df364c638ae48c404e.png" alt="img"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/235e6285b994363a17e2a04e45159a07.png" alt="img"></p>
+<ul>
+<li>
+<p>表（tables）<strong>提供特定的功能</strong>，iptables内置了4个表，即filter表、nat表、mangle表和raw表，分别用于实现包过滤，网络地址转换、包重构(修改)和数据跟踪处理。</p>
+</li>
+<li>
+<p>链（chains）是 <strong>数据包传播的路径，每一条链其实就是众多规则中的一个检查清单</strong>，每一条链中可以有一条或数条规则。当一个数据包到达一个链时，iptables就会从链中第一条规则开始检查，看该数据包是否满足规则所定义的条件。如果满足，系统就会根据该条规则所定义的方法处理该数据包；否则iptables将继续检查下一条规则，如果该数据包不符合链中任一条规则，iptables就会根据该链预先定义的默认策略来处理数据包。</p>
+</li>
+<li>
+<p><strong>四表</strong></p>
+<ul>
+<li>
+<p><strong>filter表</strong></p>
+<ul>
+<li>主要用于对 数据包 进行 <strong>过滤</strong>，根据具体的规则决定是否 <strong>放行</strong> 该数据包（如DROP、ACCEPT、REJECT、LOG）。filter 表对应的内核模块为iptable_filter，包含三个规则链：</li>
+<li>INPUT链：INPUT针对那些目的地是本地的包</li>
+<li>FORWARD链：FORWARD过滤所有不是本地产生的并且目的地不是本地(即本机只是负责转发)的包</li>
+<li>OUTPUT链：OUTPUT是用来过滤所有本地生成的包</li>
+</ul>
+</li>
+<li>
+<p><strong>nat表</strong></p>
+<ul>
+<li>
+<p>主要用于 <strong>修改数据包的IP地址、端口号等信息（网络地址转换，如SNAT、DNAT、MASQUERADE、REDIRECT）</strong></p>
+<p>属于一个流的包(因为包的大小限制导致数据可能会被分成多个数据包)只会经过这个表一次</p>
+<p>如果第一个包被允许做NAT或Masqueraded，那么余下的包都会自动地被做相同的操作，也就是说，余下的包不会再通过这个表。表对应的内核模块为 <strong>iptable_nat</strong>，包含三个链：</p>
+</li>
+<li>
+<p>PREROUTING链：作用是在包 刚刚到达 防火墙时改变它的目的地址</p>
+</li>
+<li>
+<p>OUTPUT链：改变本地产生的包的目的地址</p>
+</li>
+<li>
+<p>POSTROUTING链：在包就要 离开防火墙 之前改变其源地址</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>mangle表</strong>
+主要用于修改数据包的 <strong>TOS（Type Of Service，服务类型）、TTL（Time To Live，生存周期）指以及为数据包设置Mark标记</strong>，以实现Qos(Quality Of Service，服务质量)调整以及策略路由等应用，由于需要相应的路由设备支持，因此应用并不广泛</p>
+<p>包含五个规则链——PREROUTING，POSTROUTING，INPUT，OUTPUT，FORWARD。
+强烈建议不要在这个表里做任何过滤，不管是DANT，SNAT或者Masquerade。</p>
+</li>
+<li>
+<p><strong>raw表</strong>
+是自1.2.9以后版本的iptables新增的表，主要用于 <strong>决定数据包是否被状态跟踪机制处理</strong></p>
+<p>在 匹配数据包 时，raw表的规则要优先于其他表</p>
+<p>包含两条规则链——OUTPUT、PREROUTING
+iptables中数据包和4种被跟踪连接的4种不同状态：
+NEW：该包想要开始一个连接（重新连接或将连接重定向）
+RELATED：该包是属于某个已经建立的连接所建立的新连接。例如：FTP的数据传输连接就是控制连接所 RELATED出来的连接。<code>--icmp-type 0</code> ( ping 应答) 就是<code>--icmp-type 8</code> (ping 请求)所RELATED出来的。
+ESTABLISHED ：只要发送并接到应答，一个数据连接从NEW变为ESTABLISHED,而且该状态会继续匹配这个连接的后续数据包。
+INVALID：数据包不能被识别属于哪个连接或没有任何状态比如内存溢出，收到不知属于哪个连接的ICMP错误信息，一般应该DROP这个状态的任何数据。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="寄存器">
+<a class="header-anchor" href="#%e5%af%84%e5%ad%98%e5%99%a8"></a>
+寄存器
+</h2><ul>
+<li>
+<p><strong>寄存器</strong></p>
+<ul>
+<li>
+<p><strong>寄存器</strong> 是直接构建在 **处理器或CPU（中央处理单元） **中的 <strong>计算机存储类型</strong>，用于在 <strong>执行指令期间</strong> <strong>存储和操作数据或指令</strong>。</p>
+<p><strong>寄存器</strong> 可能包含 <strong>一条指令</strong>、<strong>一个 存储地址</strong> 或 <strong>任何类型的数据</strong>（例如比特序列或单个字符）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="inode">
+<a class="header-anchor" href="#inode"></a>
+inode
+</h2><ul>
+<li>
+<p>理解inode，要从 <strong>文件储存</strong> 说起。</p>
+<p>文件储存在硬盘上，<strong>硬盘的最小存储单位叫做”<a href="https://zhida.zhihu.com/search?content_id=173771498&amp;content_type=Article&amp;match_order=1&amp;q=%e6%89%87%e5%8c%ba&amp;zhida_source=entity">扇区</a>”（Sector）</strong>。每个扇区储存512字节（相当于0.5KB）。</p>
+<p>操作系统 读取硬盘的时候，不会一个个扇区地读取，这样效率太低，而是 <strong>一次性连续读取多个扇区，即一次性读取一个”<a href="https://zhida.zhihu.com/search?content_id=173771498&amp;content_type=Article&amp;match_order=1&amp;q=%e5%9d%97&amp;zhida_source=entity">块</a>”（block）。</strong></p>
+<p>这种由多个扇区组成的”块”，是 <strong>文件存取的最小单位</strong>。”块”的大小，最常见的是4KB，即连续八个 sector组成一个 block。</p>
+<p>文件数据都储存在”块”中，那么很显然，我们还必须 找到一个地方 <strong>储存文件的元信息</strong>，比如 **文件的创建者、文件的创建日期、文件的大小等等。**这种储存文件元信息的区域就叫做 <strong>inode，中文译名为”索引节点”。</strong></p>
+<p>每一个文件都有对应的inode，里面包含了与该文件有关的一些信息。</p>
+</li>
+<li>
+<p>inode包含文件的元信息，具体来说有以下内容：</p>
+<p>* 文件的字节数</p>
+<p>* 文件拥有者的<a href="https://zhida.zhihu.com/search?content_id=173771498&amp;content_type=Article&amp;match_order=1&amp;q=User&#43;ID&amp;zhida_source=entity">User ID</a></p>
+<p>* 文件的<a href="https://zhida.zhihu.com/search?content_id=173771498&amp;content_type=Article&amp;match_order=1&amp;q=Group&#43;ID&amp;zhida_source=entity">Group ID</a></p>
+<p>* 文件的<a href="https://zhida.zhihu.com/search?content_id=173771498&amp;content_type=Article&amp;match_order=1&amp;q=%e8%af%bb%e3%80%81%e5%86%99%e3%80%81%e6%89%a7%e8%a1%8c%e6%9d%83%e9%99%90&amp;zhida_source=entity">读、写、执行权限</a></p>
+<p>* 文件的时间戳，共有三个：<a href="https://zhida.zhihu.com/search?content_id=173771498&amp;content_type=Article&amp;match_order=1&amp;q=ctime&amp;zhida_source=entity">ctime</a>指inode上一次变动的时间，<a href="https://zhida.zhihu.com/search?content_id=173771498&amp;content_type=Article&amp;match_order=1&amp;q=mtime&amp;zhida_source=entity">mtime</a>指文件内容上一次变动的时间，<a href="https://zhida.zhihu.com/search?content_id=173771498&amp;content_type=Article&amp;match_order=1&amp;q=atime&amp;zhida_source=entity">atime</a>指文件上一次打开的时间。</p>
+<p>* 链接数，即有多少文件名指向这个inode</p>
+<p>* 文件数据block的位置</p>
+</li>
+<li>
+<p><strong>硬链接</strong></p>
+<p>一般情况下，文件名和inode号码是&quot;一一对应&quot;关系，每个inode号码对应一个文件名。但是，Unix/Linux系统允许，多个文件名指向同一个inode号码。</p>
+<p>这意味着，可以用不同的文件名访问同样的内容；对文件内容进行修改，会影响到所有文件名；但是，删除一个文件名，不影响另一个文件名的访问。这种情况就被称为&quot;硬链接&quot;（hard link）。</p>
+<p>ln命令可以创建硬链接：</p>
+<blockquote>
+<p>　　ln 源文件 目标文件</p>
+</blockquote>
+<p><img src="https://ruanyifeng.com/blogimg/asset/201112/bg2011120409.png" alt="img"></p>
+<p>运行上面这条命令以后，源文件与目标文件的inode号码相同，都指向同一个inode。inode信息中有一项叫做&quot;链接数&quot;，记录指向该inode的文件名总数，这时就会增加1。</p>
+<p>反过来，删除一个文件名，就会使得inode节点中的&quot;链接数&quot;减1。当这个值减到0，表明没有文件名指向这个inode，系统就会回收这个inode号码，以及其所对应block区域。</p>
+<p>这里顺便说一下目录文件的&quot;链接数&quot;。创建目录时，默认会生成两个目录项：&quot;.&ldquo;和&rdquo;..&quot;。前者的inode号码就是当前目录的inode号码，等同于当前目录的&quot;硬链接&quot;；后者的inode号码就是当前目录的父目录的inode号码，等同于父目录的&quot;硬链接&quot;。所以，任何一个目录的&quot;硬链接&quot;总数，总是等于2加上它的子目录总数（含隐藏目录）。</p>
+<p>** 软链接**</p>
+<p>除了硬链接以外，还有一种特殊情况。</p>
+<p>文件A和文件B的inode号码虽然不一样，但是文件A的内容是文件B的路径。读取文件A时，系统会自动将访问者导向文件B。因此，无论打开哪一个文件，最终读取的都是文件B。这时，文件A就称为文件B的&quot;软链接&quot;（soft link）或者&quot;符号链接（symbolic link）。</p>
+<p>这意味着，文件A依赖于文件B而存在，如果删除了文件B，打开文件A就会报错：&ldquo;No such file or directory&rdquo;。这是软链接与硬链接最大的不同：文件A指向文件B的文件名，而不是文件B的inode号码，文件B的inode&quot;链接数&quot;不会因此发生变化。</p>
+<p>ln -s命令可以创建软链接。</p>
+<blockquote>
+<p>　　ln -s 源文文件或目录 目标文件或目录</p>
+</blockquote>
+<p><img src="https://ruanyifeng.com/blogimg/asset/201112/bg2011120410.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="为什么-cd-不能用-execvp且不能当做-外部命令">
+<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88-cd-%e4%b8%8d%e8%83%bd%e7%94%a8-execvp%e4%b8%94%e4%b8%8d%e8%83%bd%e5%bd%93%e5%81%9a-%e5%a4%96%e9%83%a8%e5%91%bd%e4%bb%a4"></a>
+为什么 <code>cd</code> 不能用 <code>execvp</code>，且不能当做 外部命令
+</h2><ul>
+<li>因为在<strong>运行 shell 程序（.c）<strong>之后，当前进程</strong>变成执行的shell程序而不是bash</strong>，你使用一个 <strong>外部命令</strong> 其实就是先 <strong>fork</strong> 一个新的子进程，然后在子进程上用 <strong>execvp</strong> 替换 <strong>bash</strong>，这样 <strong>子进程就变成了命令的程序（比如ls）</strong>，然后结果就会返回到 <strong>原shell程序（通过 作业job 实现）</strong></li>
+<li>而 <strong>cd</strong> 如果这样像 <strong>外部命令</strong> 处理，就只是在 <strong>子进程</strong> 上改变目录，<strong>父进程没有改，所以只能用chdir</strong></li>
+</ul>
+<h2 id="linux-job">
+<a class="header-anchor" href="#linux-job"></a>
+Linux Job
+</h2><ul>
+<li><strong>Shell Job 机制的本质</strong></li>
+</ul>
+<p>一个 <strong>Job</strong>（作业）代表一个或多个通过管道连接的命令，例如：<code>command1 | command2 | command3</code>。</p>
+<ul>
+<li>
+<p><strong>进程（Process）</strong>: 对应 Job 中的每一个单独的命令，例如上面的 <code>command1</code>、<code>command2</code>、<code>command3</code>，它们都是通过 <code>fork()</code> 创建的子进程。</p>
+<ul>
+<li>在代码中用 <code>struct process</code> 表示。</li>
+</ul>
+</li>
+<li>
+<p><strong>作业（Job）</strong>: 对应整个命令管道序列。它是一个<strong>进程组</strong>（Process Group），由其进程组 ID (<code>pgid</code>) 标识。</p>
+<ul>
+<li>在代码中用 <code>struct job</code> 表示。</li>
+</ul>
+</li>
+<li>
+<p><strong>Job 机制的主要职责：</strong></p>
+</li>
+</ul>
+<h3 id="进程分组管理setpgid">
+<a class="header-anchor" href="#%e8%bf%9b%e7%a8%8b%e5%88%86%e7%bb%84%e7%ae%a1%e7%90%86setpgid"></a>
+进程分组管理（<code>setpgid</code>）
+</h3><ul>
+<li>当启动一个 Job 时，它会确保 Job 中的所有进程都属于同一个进程组 (<code>j-&gt;pgid</code>)。这使得 Shell 可以使用信号（如 <code>SIGINT</code>, <code>SIGTSTP</code>, <code>SIGCONT</code>）一次性控制整个 Job（即进程组）。</li>
+<li>代码中的 <code>setpgid(pid, pgid ? pgid : pid)</code> 实现了这一点。</li>
+</ul>
+<h3 id="前后台控制foregroundbackground">
+<a class="header-anchor" href="#%e5%89%8d%e5%90%8e%e5%8f%b0%e6%8e%a7%e5%88%b6foregroundbackground"></a>
+前后台控制（Foreground/Background）
+</h3><ul>
+<li><strong>前台 Job (<code>foreground</code> = true)</strong>: Shell 会将<strong>终端的控制权</strong> (<code>tcsetpgrp</code>) 交给 Job 的进程组，然后使用阻塞的 <code>wait_for_job(j)</code> 等待 Job 完成或停止。</li>
+<li><strong>后台 Job (<code>background</code> = true)</strong>: Shell 不会将终端控制权交给 Job，而是立即显示提示符。Job 的状态变化通过异步的 <code>SIGCHLD</code> 信号处理。</li>
+<li>代码中的 <code>fg</code> 和 <code>bg</code> 内建命令就是用来在两种状态之间切换 Job。</li>
+</ul>
+<h3 id="状态追踪和回收waitpid-和-sigchld">
+<a class="header-anchor" href="#%e7%8a%b6%e6%80%81%e8%bf%bd%e8%b8%aa%e5%92%8c%e5%9b%9e%e6%94%b6waitpid-%e5%92%8c-sigchld"></a>
+状态追踪和回收（<code>waitpid</code> 和 <code>SIGCHLD</code>）
+</h3><ul>
+<li>Job 机制持续追踪其包含的每个进程的状态 (<code>completed</code>, <code>stopped</code>)。</li>
+<li>通过安装 <code>SIGCHLD</code> 信号处理器 (<code>sigchld_handler</code>)，Shell 可以在子进程状态改变时（例如终止或停止）立即通过非阻塞的 <code>waitpid</code> 来更新 Job 状态并回收资源。</li>
+</ul>
+<h3 id="终端-io-控制">
+<a class="header-anchor" href="#%e7%bb%88%e7%ab%af-io-%e6%8e%a7%e5%88%b6"></a>
+终端 I/O 控制
+</h3><ul>
+<li>Job 机制负责将终端的输入/输出权限在 Shell 自身 (<code>shell_pgid</code>) 和前台 Job (<code>j-&gt;pgid</code>) 之间进行切换 (<code>tcsetpgrp</code>)，确保只有前台 Job 才能读写终端。</li>
+</ul>
+<p>因此，Job 机制确实是<strong>对子进程的高级处理和管理机制</strong>，它将单个的子进程组织成有逻辑关系的“作业”，以便进行统一的调度和控制。</p>
+<h2 id="惰性计算">
+<a class="header-anchor" href="#%e6%83%b0%e6%80%a7%e8%ae%a1%e7%ae%97"></a>
+惰性计算
+</h2><p><strong>singleton</strong></p>
+<p>　　<strong>单例模式</strong> 的实现一般都有两种方式，要么在<strong>调用之前就创建好单例对象（eager way）</strong>，要么在 <strong>第一次调用的时候生成单例对象（lazy way)</strong>，两者对象的代码大致是这样的：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> 1 class eager_meta(type):
+</span></span><span class="line"><span class="cl"> 2     def __init__(clz, name, bases, dic):
+</span></span><span class="line"><span class="cl"> 3         super(eager_meta, clz).__init__(name, bases, dic)
+</span></span><span class="line"><span class="cl"> 4         clz._instance = clz()
+</span></span><span class="line"><span class="cl"> 5 
+</span></span><span class="line"><span class="cl"> 6 class singleton_eager(object):
+</span></span><span class="line"><span class="cl"> 7     __metaclass__ = eager_meta
+</span></span><span class="line"><span class="cl"> 8 
+</span></span><span class="line"><span class="cl"> 9     @classmethod
+</span></span><span class="line"><span class="cl">10     def instance(clz):
+</span></span><span class="line"><span class="cl">11         return clz._instance
+</span></span><span class="line"><span class="cl">12 
+</span></span><span class="line"><span class="cl">13 
+</span></span><span class="line"><span class="cl">14 class singleton_lazy(object):
+</span></span><span class="line"><span class="cl">15     __instance = None
+</span></span><span class="line"><span class="cl">16     @classmethod
+</span></span><span class="line"><span class="cl">17     def instance(clz):
+</span></span><span class="line"><span class="cl">18         if clz.__instance is None:
+</span></span><span class="line"><span class="cl">19             clz.__instance = singleton_lazy()
+</span></span><span class="line"><span class="cl">20         return clz.__instance
+</span></span></code></pre></div><p>　PS：在python中，这样使用单例模式不是很pythonic，更好的办法可见在stackoverflow上的这篇文章《<a href="http://stackoverflow.com/questions/6760685/creating-a-singleton-in-python">creating-a-singleton-in-python</a>》。另外在多线程环境下，要实现线程安全的单例还是很复杂的，具体讨论可参见<a href="http://www.iteye.com/topic/575052">iteye</a>上的分析。</p>
+<p><strong>proxy：</strong></p>
+<p>　　<strong>代理模式</strong> 属于 <strong>责任型模式</strong>， 使得 <strong>一个对象代表另一个对象</strong> 进行各种操作，常用场景包括</p>
+<ul>
+<li>
+<p>remote proxy（远程代理），如RMI， RPC</p>
+</li>
+<li>
+<p>virtual proxy（虚代理），<strong>根据需要创建开销很大的对象，如文档中图片的加载</strong></p>
+</li>
+<li>
+<p>（保护代理）：控制对原始对象的访问， 如智能指针</p>
+</li>
+</ul>
+<p>　　其中 viatual proxy是使用lazy loading很好的例子</p>
+<p><strong>Short-circuit evaluation：</strong></p>
+<p>　　短路求值在绝大多数编程语言都有实现，比较常见的语法如下：</p>
+<p>　　　　x and y(x &amp;&amp; y)</p>
+<p>　　　　x or y(x || y)</p>
+<p>　　　　x if bool else y(bool？ x : y )</p>
+<p>　　短路求值基本上都是数学逻辑的体现，如果第一个参数已经能推导出这个表达式的意义，那么后面的参数是无需计算的。短路求值非常有用，不仅能避免无用的计算，对于逻辑判断也非常有用。比如在python中，判断一个对象的is_ok属性为True，我们一般这么写</p>
+<p>　　if(obj.is_ok)</p>
+<p>　　如果obj被赋值成了None，那么就会报一个异常，所以可以写成</p>
+<p>　　if(obj is not None and obj.is_ok)</p>
+<p>　　python中，一些函数也有短路求值的特性，比如在<a href="http://www.cnblogs.com/xybaby/p/6259823.html">这篇文章</a>中提到的any函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1     ret = any(self.calc_and_ret(e) for e in elements)
+</span></span><span class="line"><span class="cl">2     def self.calc_and_ret(self, e):
+</span></span><span class="line"><span class="cl">3         # do a lot of calc here which effect self
+</span></span><span class="line"><span class="cl">4         return True(or False)
+</span></span></code></pre></div><p>本意是希望对所有的element都计算，然后返回一个结果，但事实上由于短路求值， 可能后面很多的元素都不会再调用calc_and_ret</p>
+<p><strong>generator：</strong></p>
+<p>　　在python和javascript语言中都有generator，generator与普通的函数相比，可以多次（甚至无限次）返回，而且返回值是在需要的时候才生成。在python中，下面两段代码非常相似，但事实上差异非常大：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1 　　　　for x in [i*i for i in xrange(10000)]
+</span></span><span class="line"><span class="cl">2 　　　　　　# do sth with i
+</span></span><span class="line"><span class="cl">3 
+</span></span><span class="line"><span class="cl">4 　　　　for x in [i*i for i in xrange(10000)]
+</span></span><span class="line"><span class="cl">5 　　　　　　# do sth with i
+</span></span></code></pre></div><p>　　generator更广泛的应用可以参见<a href="http://www.cnblogs.com/xybaby/p/6322376.html">《python yield generator 详解》</a>。javascript中generator的语法和使用与python都非常类似，可以参见<a href="http://www.infoq.com/cn/articles/generator-and-asynchronous-programming/">这篇文章</a>。</p>
+<p><strong>函数式编程语言中的应用：</strong></p>
+<p>　　lazy evaluation在函数式编程语言中使用得非常频繁，python也可以当做函数式编程语言来使用，而更为明显的是<a href="https://www.haskell.org/">haskell</a>，在其首页的features介绍里面就有大大的“lazy”</p>
+<p><strong>cache：</strong></p>
+<p>　　cache也是一种lazy思想，如果之前有计算结果，那么直接复用之前的结果就行了，干嘛还要重新计算呢？而且最开始的缓存内容， 也是在需要的时候才计算的，而不是一开始就计算好。<a href="https://en.wikipedia.org/wiki/Lazy_initialization#Python">wiki</a>上有python实现的简单例子：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> 1 class Fruit:
+</span></span><span class="line"><span class="cl"> 2     def __init__(self, item):
+</span></span><span class="line"><span class="cl"> 3         self.item = item
+</span></span><span class="line"><span class="cl"> 4     
+</span></span><span class="line"><span class="cl"> 5 class Fruits:
+</span></span><span class="line"><span class="cl"> 6     def __init__(self):
+</span></span><span class="line"><span class="cl"> 7         self.items = {}
+</span></span><span class="line"><span class="cl"> 8     
+</span></span><span class="line"><span class="cl"> 9     def get_fruit(self, item):
+</span></span><span class="line"><span class="cl">10         if item not in self.items:
+</span></span><span class="line"><span class="cl">11             self.items[item] = Fruit(item)
+</span></span><span class="line"><span class="cl">12         
+</span></span><span class="line"><span class="cl">13         return self.items[item]
+</span></span><span class="line"><span class="cl">14 
+</span></span><span class="line"><span class="cl">15 if __name__ == &#39;__main__&#39;:
+</span></span><span class="line"><span class="cl">16     fruits = Fruits()
+</span></span><span class="line"><span class="cl">17     print(fruits.get_fruit(&#39;Apple&#39;))
+</span></span><span class="line"><span class="cl">18     print(fruits.get_fruit(&#39;Lime&#39;))
+</span></span></code></pre></div><p><strong>Dirty Flag：</strong></p>
+<p>　　在《<a href="http://www.cnblogs.com/xybaby/p/6399499.html">Dirty Flag模式及其应用</a>》一文中，列举了Dirty Flag模式的诸多应用场景。Dirty Flag显然也是很明显的lazy evaluation。比如《<a href="http://gameprogrammingpatterns.com/dirty-flag.html">game programming pattern</a>》中的例子：子模型的世界坐标取决于父模型的世界坐标以及子模型在父模型坐标空间的相对坐标，如果父模型的世界坐标变化时就主动去重新计算子模型的坐标，因为两帧之间父模型的坐标可能多次变换，往往会造成冗余的计算。所以Dirty Flag只是在父模型坐标变化的时候标记，绘制的时候再计划所有受影响的模型的世界坐标。</p>
+<p><strong>CopyOnWrite：</strong></p>
+<p>　　<a href="https://en.wikipedia.org/wiki/Copy-on-write">CopyOnWrite</a>即写时复制，如果大家对一份资源只有读请求时，那么资源是可以共享的，当某个访问者需要修改资源（写操作）时，就将资源拷贝一份给该访问者使用。即资源的拷贝被延迟到了第一次&quot;写&quot;的时候。CopyOnWrite最广为人知的两个应用场景，一个是Unix like系统fork调用产生的子进程共享父进程的地址空间，知道写操作才会拷贝一份。另一个是java中的copyonwrite容器，用于多线程并发情况下的高效访问，<a href="http://coolshell.cn/articles/11175.html">cookshell</a>上有对copyonwrite容器的详细介绍。</p>
+<p><strong>web开发中的惰性加载与惰性预加载：</strong></p>
+<p>　　在web前端和APP开发中，当提到惰性加载或者动态加载，大家往往会想到分页、轮播图、瀑布流，这些都体现了惰性加载的思想。其中，瀑布流在出诸多图片分享网站中使用非常广泛，比如<a href="http://huaban.com/">花瓣网</a>，当滑动到屏幕底部的时候才会去加载新的内容。为什么要使用惰性加载，第一个是用户体验的问题，图片资源流量比较大，一次加载太多对服务器和浏览器压力都很大，对带宽要求也很高；另外，可能用户根本就不会滑动到最下面，多加载的内容就白白浪费了。</p>
+<p>　　当然太”Lazy”了也是不好的，总不能让玩家滑动到底部才一边显示loading icon，一边开始加载。为了提高用户体验，这类网站也会做预加载（predictive loading），即多准备一两页的内容，或者在滑屏到一定程度时开始加载新的一页，不过这样的预加载也是惰性预加载（lazy predictive loading）。</p>
+<h2 id="工厂模式">
+<a class="header-anchor" href="#%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f"></a>
+工厂模式
+</h2><ul>
+<li>
+<p><strong>工厂模式：</strong>
+每一种设计模式都有它要解决的问题：
+工厂模式最主要解决的问题就是 <strong>创建者和调用者的耦合，那么代码层面其实就是 取消对new的使用。</strong></p>
+<p>工厂模式有三种：</p>
+<ol>
+<li>简单工厂模式</li>
+<li>工厂方法模式</li>
+<li>抽象方法模式</li>
+</ol>
+<p>先来看看，简单工厂模式——也叫静态工厂模式，这里举个例子：</p>
+<p><strong>你要去买一台手机，你不用关心手机是怎么生产出来的，里面的零件具体又是怎么制造的，这些通通都交给工厂去处理，你尽管去买手机就好了。</strong></p>
+</li>
+<li>
+<p>简单工厂模式图</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/5513f607693fb71578895f89939a5a1a.png" alt="在这里插入图片描述"></p>
+<p><strong>代码示例：</strong></p>
+<ul>
+<li>
+<p>Phone接口</p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Phone</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">getBrand</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>Meizu品牌类</p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Meizu</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Phone</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">getBrand</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;魅族&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>Xiaomi品牌类</p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Xiaomi</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Phone</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">getBrand</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;小米&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>PhoneFactory工厂类</p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PhoneFactory</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Phone</span><span class="w"> </span><span class="nf">getPhone</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">phone</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="s">&#34;小米&#34;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">phone</span><span class="p">)){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Xiaomi</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&#34;魅族&#34;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">phone</span><span class="p">)){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Meizu</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>Customer消费者类</p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Customer</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">PhoneFactory</span><span class="p">.</span><span class="na">getPhone</span><span class="p">(</span><span class="s">&#34;Xiaomi&#34;</span><span class="p">).</span><span class="na">getBrand</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">PhoneFactory</span><span class="p">.</span><span class="na">getPhone</span><span class="p">(</span><span class="s">&#34;Meizu&#34;</span><span class="p">).</span><span class="na">getBrand</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<blockquote>
+<p>不用工厂模式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Customer</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">Xiaomi</span><span class="w"> </span><span class="n">xiaomi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Xiaomi</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Meizu</span><span class="w"> </span><span class="n">meizu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Meizu</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">xiaomi</span><span class="p">.</span><span class="na">getBrand</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">meizu</span><span class="p">.</span><span class="na">getBrand</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div></blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>运行效果图</strong></p>
+<ul>
+<li><img src="https://i-blog.csdnimg.cn/blog_migrate/97b4e4f3020d32387717b322cf1e139e.png" alt="在这里插入图片描述"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="omega-test-完整概括">
+<a class="header-anchor" href="#omega-test-%e5%ae%8c%e6%95%b4%e6%a6%82%e6%8b%ac"></a>
+Omega Test 完整概括
+</h2><ul>
+<li>
+<p>一、问题定义</p>
+<ul>
+<li>输入：一组线性等式和不等式约束</li>
+<li>目标：判断是否存在整数解</li>
+<li>应用：编译器中的数组依赖分析</li>
+</ul>
+</li>
+<li>
+<p>二、等式约束消元</p>
+</li>
+<li>
+<p>单位系数情况：</p>
+<ul>
+<li>
+<p>存在 |aⱼ| = 1 → 直接求解 xⱼ 并代入所有约束</p>
+</li>
+<li>
+<p>无单位系数情况：</p>
+<ul>
+<li>选择系数绝对值最小的变量 xₖ
+<ul>
+<li>设 m = |aₖ| + 1，定义 a mod b = a - b⌊a/b + 1/2⌋</li>
+<li>引入新变量 σ：mσ = Σ(aᵢ mod m)xᵢ</li>
+<li>利用 aₖ mod m = -sign(aₖ) 求解 xₖ 并代入</li>
+<li>关键性质：其他变量系数最多减少到原来的 2/3</li>
+<li>重复直到出现单位系数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>三、不等式约束预处理</p>
+<ul>
+<li>矛盾检测：如 3x ≥ 5 和 3x ≤ 0 同时存在 → 无解</li>
+<li>紧约束转换：如 x ≤ 3 和 x ≥ 3 → 转为等式 x = 3</li>
+<li>冗余消除：如有 x ≥ 5 则删除 x ≥ 0</li>
+<li>无界变量：删除没有上界或下界的变量相关约束</li>
+</ul>
+</li>
+<li>
+<p>四、Fourier-Motzkin 消元核心</p>
+<ul>
+<li>实影（Real Shadow）：
+<ul>
+<li>
+<p>对变量 z：上界 az ≤ α，下界 bz ≥ β</p>
+</li>
+<li>
+<p>组合得到：aβ ≤ bα（n维物体在n-1维的投影）</p>
+</li>
+<li>
+<p>描述实数解空间</p>
+</li>
+<li>
+<p>暗影（Dark Shadow）：</p>
+<ul>
+<li>定义：bα - aβ ≥ (a-1)(b-1)</li>
+<li>物理意义：物体厚的地方投影更暗</li>
+<li>数学保证：暗影中的整数点，原空间必有对应整数点</li>
+</ul>
+</li>
+<li>
+<p>精确投影判定：</p>
+<ul>
+<li>当 a = 1 或 b = 1 时，实影 = 暗影
+此时投影是精确的，递归求解即可</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>五、整数解判定流程</p>
+<ul>
+<li>
+<p>实影 = 暗影（精确投影）：</p>
+<ul>
+<li>原问题有整数解 ⟺ 投影有整数解</li>
+<li>递归判定低维问题</li>
+</ul>
+</li>
+<li>
+<p>实影无整数解：</p>
+<ul>
+<li>原问题必然无整数解</li>
+</ul>
+</li>
+<li>
+<p>暗影有整数解：</p>
+<ul>
+<li>原问题必然有整数解</li>
+</ul>
+</li>
+<li>
+<p>实影有解但暗影无解（最复杂情况）：</p>
+<ul>
+<li>整数解必然&quot;紧贴&quot;在某个上下界之间</li>
+<li>枚举检查靠近下界的平面：bz = β + i，其中 0 ≤ i ≤ (ab-a-b)/a</li>
+<li>实践中极少发生</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+    <footer class="article-footer"><a
+          data-aos="zoom-in"
+          href="/post/cnss2025-mianshi/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="/post/cnss2025-mianshi/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/post/cnss2025-mianshi/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e9%9d%a2%e8%af%95"
+        rel="tag"
+        >面试</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/c&#43;&#43;"
+        rel="tag"
+        >C&#43;&#43;</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f"
+        rel="tag"
+        >操作系统</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/cnss"
+        rel="tag"
+        >CNSS</a
+      >
+    </li></ul>
+</footer>
+  </div></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>
+      MilLoong
+    </div><div>
+        <a
+          href="https://github.com/MilLoong"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noopener nofollow noreferrer"
+          style="display: inline-block; transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt="GitHub"
+            style="width: 32px; height: 32px; vertical-align: middle; background: transparent;"
+          >
+        </a>
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;14.1k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;01:12</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#内存对齐">内存对齐</a></li>
+    <li><a href="#c-类型转换">C++ 类型转换</a></li>
+    <li><a href="#jit">JIT</a></li>
+    <li><a href="#锁">锁</a></li>
+    <li><a href="#原子操作">原子操作</a></li>
+    <li><a href="#内存顺序memory-order">内存顺序（Memory Order）</a></li>
+    <li><a href="#虚拟内存-和-物理内存">虚拟内存 和 物理内存</a></li>
+    <li><a href="#分页">分页</a></li>
+    <li><a href="#页面置换算法">页面置换算法</a></li>
+    <li><a href="#内存映射">内存映射</a></li>
+    <li><a href="#扇区">扇区</a></li>
+    <li><a href="#slab-slub-slob分配器">Slab Slub Slob分配器</a></li>
+    <li><a href="#块设备使用-多队列muti-queue-的原因">块设备使用 多队列Muti-queue 的原因</a></li>
+    <li><a href="#user-space用户空间-与-kernel-space内核空间">User space(用户空间) 与 Kernel space(内核空间)</a></li>
+    <li><a href="#内核">内核</a></li>
+    <li><a href="#uefi启动-和-bios启动">UEFI启动 和 BIOS启动</a></li>
+    <li><a href="#汇编的-数据单位">汇编的 数据单位</a></li>
+    <li><a href="#gpu-和-cpu">GPU 和 CPU</a></li>
+    <li><a href="#tcp-和-udp">TCP 和 UDP</a></li>
+    <li><a href="#tcpip协议层">TCP/IP协议层</a></li>
+    <li><a href="#ebpf">eBPF</a></li>
+    <li><a href="#c函数的调用过程原理和栈分析">C函数的调用过程原理和栈分析</a></li>
+    <li><a href="#内存结构">内存结构</a></li>
+    <li><a href="#socket">Socket</a></li>
+    <li><a href="#栈对齐">栈对齐</a></li>
+    <li><a href="#hook点">hook点</a></li>
+    <li><a href="#cgroup">cgroup</a></li>
+    <li><a href="#kprobe">Kprobe</a></li>
+    <li><a href="#协议栈">协议栈</a></li>
+    <li><a href="#iptables">iptables</a></li>
+    <li><a href="#寄存器">寄存器</a></li>
+    <li><a href="#inode">inode</a></li>
+    <li><a href="#为什么-cd-不能用-execvp且不能当做-外部命令">为什么 <code>cd</code> 不能用 <code>execvp</code>，且不能当做 外部命令</a></li>
+    <li><a href="#linux-job">Linux Job</a>
+      <ul>
+        <li><a href="#进程分组管理setpgid">进程分组管理（<code>setpgid</code>）</a></li>
+        <li><a href="#前后台控制foregroundbackground">前后台控制（Foreground/Background）</a></li>
+        <li><a href="#状态追踪和回收waitpid-和-sigchld">状态追踪和回收（<code>waitpid</code> 和 <code>SIGCHLD</code>）</a></li>
+        <li><a href="#终端-io-控制">终端 I/O 控制</a></li>
+      </ul>
+    </li>
+    <li><a href="#惰性计算">惰性计算</a></li>
+    <li><a href="#工厂模式">工厂模式</a></li>
+    <li><a href="#omega-test-完整概括">Omega Test 完整概括</a></li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">11</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      5
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">39</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><meting-js
+        theme="var(--color-link)"
+        id="784227484"server="netease"type="playlist"fixed="true"autoplay="false"loop="all"order="list"preload="auto"volume="0.7"mutex="true"list-folded="false"lrc-type="0">
+      </meting-js><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "TT8YY4JPRF",
+        apiKey: "4d450286d17ecfeb7b0c6f78ebceb3d4",
+        indexName: "MilLoongBlog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+    if (window.firework) {
+      const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+      options.excludeElements = options.excludeelements;
+      delete options.excludeelements;
+      window.firework(options);
+    }
+  }
+</script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "MilLoong",
+          title: "CNSS \/ 面试笔记",
+          url: "https:\/\/MilLoong.github.io\/post\/cnss2025-mianshi\/",
+          description: " CNSS \/ 面试笔记 内存对齐 一些 编译器 都有 对齐数 的概念，而引入 内存对齐 是为了高效访问数据\n因为某些 编译器 随机访问的性能较差，只能访问特定区域，所以引入 内存对齐 就能解决一些重复访问和访问不到的问题\n对齐数=min(编译器的对齐数,数据类型大小(可以嵌套))\n成员 在内存中的位置一定要是本身 对齐数 的整数倍\n比如结构体：\n结构体 的 对齐数 是 min(max(成员对齐数),编译器的对齐数) 结构体 的 大小 是 结构体对齐数 的 整数倍\nstruct b{ int a; } struct node{ char c; int a; struct b; }; []里面就 …",
+          cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg43.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus', 'disqus'];
+  var commentConfig = {waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/vercelproject-sage-beta.vercel.app\/',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  0 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },};
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig?.[key]?.enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig?.[sys]?.enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script><script data-pjax>
+          window.MathJax = JSON.parse("[{\"loader\":{\"load\":[\"input/asciimath\",\"[tex]/noerrors\"]},\"options\":{\"ignoreHtmlClass\":\"tex2jax_ignore\",\"processHtmlClass\":\"tex2jax_process\",\"skipHtmlTags\":[\"script\",\"noscript\",\"style\",\"textarea\",\"pre\",\"code\"]},\"tex\":{\"autoload\":{\"color\":[],\"colorv2\":[\"color\"]},\"displayMath\":[[\"$$\",\"$$\"],[\"\\\\\\\\[\",\"\\\\\\\\]\"]],\"inlineMath\":[[\"$\",\"$\"],[\"\\\\\\\\(\",\"\\\\\\\\)\"]],\"packages\":{\"[+]\":[\"noerrors\",\"amssymb\",\"amsmath\"]},\"processEnvironments\":true,\"processEscapes\":true,\"tags\":\"ams\",\"useLabelIds\":true}}]")[0];
+        </script><script
+    src="https://npm.webcache.cn/mathjax@3.2.2/es5/tex-mml-chtml.js"
+    deferdata-pjaxintegrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.matchMedia('(max-width: 959px)').matches) {
+        const meting = _$('meting-js');
+        if (meting) {
+          meting.setAttribute('fixed', 'true');
+          const aside = meting.parentNode?.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            meting.parentNode.removeChild(meting);
+            document.body.appendChild(meting);
+          }
+        }
+      }
+      const script = document.createElement('script');
+      script.src = "https:\/\/npm.webcache.cn\/meting@2.0.1\/dist\/Meting.min.js";
+      script.integrity = "sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8\u002b0maanw1S\/IyB\u002bY4JG\u002bZDU7GpKE8";
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+  </script></body>
+</html>

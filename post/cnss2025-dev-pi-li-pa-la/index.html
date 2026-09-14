@@ -1,0 +1,1543 @@
+<!doctype html>
+<html
+  lang="zh-cn" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  CNSS 2025 招新：噼里啪啦动画 | MilLoong
+</title>
+<meta name="description" content="个人博客，记录学习日常"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":18},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="CNSS 2025 招新：噼里啪啦动画 | MilLoong" />
+  <meta
+    property="og:description"
+    content="个人博客，记录学习日常"
+  />
+  <meta property="og:url" content="https://MilLoong.github.io/post/cnss2025-dev-pi-li-pa-la/" />
+  <meta
+    property="og:site_name"
+    content="MilLoong的博客"
+  />
+  <meta
+    property="og:image"
+    content="/backgrounds/bg34.webp"
+  />
+  <meta property="article:author" content="MilLoong" />
+  <meta property="article:published_time" content="2025-10-30T14:41:00&#43;08:00" />
+  <meta property="article:modified_time" content="2025-10-30T14:41:00&#43;08:00" /><meta property="article:tag" content="CNSS招新DevOSWriteup" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/backgrounds/bg34.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/><link rel="stylesheet" href="/css/custom.css" /></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">咻——马上就加载好啦...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">关于</span>
+      </a><a class="main-nav-link-wrap" href="/friend">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">友链</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-whattoeat-link" class="nav-icon" href="/whattoeat" title="吃什么" aria-label="吃什么"></a>
+      <a id="nav-nailong-search-link" class="nav-icon" href="/nailong-search" title="奶龙表情库" aria-label="奶龙表情库"></a><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/backgrounds/bg34.webp" alt="CNSS 2025 招新：噼里啪啦动画"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">CNSS 2025 招新：噼里啪啦动画</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#30-在没有操作系统的虚拟机环境或者真的硬件环境如果你愿意中在屏幕上输出任何字符串如hello-world">30% 在没有操作系统的虚拟机环境（或者真的硬件环境，如果你愿意）中，在屏幕上输出任何字符串，如<code>Hello World!</code></a></li>
+    <li><a href="#40-基于上述要求在屏幕上播放字符画或其他形式的-bad-apple">40% 基于上述要求，在屏幕上播放字符画或其他形式的 Bad Apple</a></li>
+    <li><a href="#30-基于上述要求实现空格控制播放暂停和继续的功能">30% 基于上述要求，实现空格控制播放暂停和继续的功能</a></li>
+    <li><a href="#30-屏幕上播放的同时播放-bad-apple-的音频或者播放春日影或-ave-mujica">+30% 屏幕上播放的同时，播放 Bad Apple 的音频；或者，播放春日影或 Ave Mujica</a></li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">11</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      5
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">39</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-10-30 14:41:00 &#43;0800 CST" itemprop="datePublished"
+      >2025-10-30</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-10-30</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/%e5%ae%89%e5%85%a8"
+      data-aos="zoom-in"
+      >安全</a
+    ></div>
+</div><div class="hr-line"></div><div
+      class="e-content article-entry"
+      itemprop="articleBody"><h1 id="-噼里啪啦动画">
+<a class="header-anchor" href="#-%e5%99%bc%e9%87%8c%e5%95%aa%e5%95%a6%e5%8a%a8%e7%94%bb"></a>
+🎞️ 噼里啪啦动画
+</h1><h2 id="30-在没有操作系统的虚拟机环境或者真的硬件环境如果你愿意中在屏幕上输出任何字符串如hello-world">
+<a class="header-anchor" href="#30-%e5%9c%a8%e6%b2%a1%e6%9c%89%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e7%9a%84%e8%99%9a%e6%8b%9f%e6%9c%ba%e7%8e%af%e5%a2%83%e6%88%96%e8%80%85%e7%9c%9f%e7%9a%84%e7%a1%ac%e4%bb%b6%e7%8e%af%e5%a2%83%e5%a6%82%e6%9e%9c%e4%bd%a0%e6%84%bf%e6%84%8f%e4%b8%ad%e5%9c%a8%e5%b1%8f%e5%b9%95%e4%b8%8a%e8%be%93%e5%87%ba%e4%bb%bb%e4%bd%95%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%a6%82hello-world"></a>
+30% 在没有操作系统的虚拟机环境（或者真的硬件环境，如果你愿意）中，在屏幕上输出任何字符串，如<code>Hello World!</code>
+</h2><ul>
+<li>
+<p><strong>运行环境</strong></p>
+<ul>
+<li>这题我依然直接用 <strong>WSL</strong> 来做了，然后是 <strong>WSL2</strong></li>
+<li><strong>虚拟机</strong> 用的是 <strong>Qemu（qemu-system-x86_64）</strong></li>
+<li><strong>启动方式</strong> 用的是 <strong>UEFI</strong>，因为我不是很想用 BIOS 来做</li>
+<li><strong>指令集架构</strong> 是 x86</li>
+<li><strong>编译工具：</strong> <strong>mingw-w64</strong></li>
+<li><strong>UEFI库：</strong><code>gnu-efi</code></li>
+<li><strong>UEFI固件：</strong><code>OVMF.fd</code></li>
+<li><strong>磁盘工具：</strong><code>mtools</code></li>
+</ul>
+</li>
+<li>
+<p><strong>代码（./hello/hello.c）</strong></p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efi.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efilib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">EFI_STATUS</span> <span class="n">EFIAPI</span> <span class="nf">efi_main</span><span class="p">(</span><span class="n">EFI_HANDLE</span> <span class="n">ImageHandle</span><span class="p">,</span> <span class="n">EFI_SYSTEM_TABLE</span> <span class="o">*</span><span class="n">SystemTable</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//初始化 GNU-EFI
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">InitializeLib</span><span class="p">(</span><span class="n">ImageHandle</span><span class="p">,</span> <span class="n">SystemTable</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//清屏
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">ClearScreen</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//输出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">OutputString</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="p">,</span> <span class="sa">L</span><span class="s">&#34;Hello World!</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//让程序一直运行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>这里我直接用了 <code>gnu-efi</code> 库，这是一个 C 语言 编写 UEFI 应用的开发库，可以省去写 <code>EFI_SYSTEM_TABLE</code> 这些结构体</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>编译</strong></p>
+<ul>
+<li>同上用 Makefile，其中：
+<ul>
+<li><code>make</code>：编译</li>
+<li><code>make run</code>：运行</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>运行</strong></p>
+<ul>
+<li>
+<p>由于我用的是 <strong>Qemu</strong> 运行，而 <strong>Qemu</strong> 不自带 UEFI 固件，所以先手动安装：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo apt install qemu-system-x86 ovmf
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Qemu</strong> 要启动 <code>BOOTX64.EFI</code> 文件，要将其放到 FAT驱动器分区，而 <strong>Qemu</strong> 刚好有将 目录 挂载为 虚拟FAT驱动器 的功能，就能将 某个 <code>dir</code> 目录（我这里叫 <code>disk</code> ）当作 FAT驱动器分区，然后就能启动了</p>
+<p>先：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cp</span> <span class="n">BOOTX64</span><span class="p">.</span><span class="n">EFI</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span>
+</span></span></code></pre></div><p>然后用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">qemu</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">x86_64</span> <span class="o">-</span><span class="n">bios</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ovmf</span><span class="o">/</span><span class="n">OVMF</span><span class="p">.</span><span class="n">fd</span> <span class="o">-</span><span class="n">drive</span> <span class="n">file</span><span class="o">=</span><span class="nl">fat</span><span class="p">:</span><span class="nl">rw</span><span class="p">:</span><span class="n">disk</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="n">raw</span> <span class="o">-</span><span class="n">net</span> <span class="n">none</span>
+</span></span></code></pre></div><p>启动</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>运行截图</strong></p>
+<ul>
+<li><img src="/01_assets/cnss2025-dev-pi-li-pa-la_image-20251030144124493.png" alt="image-20251030144124493"></li>
+</ul>
+</li>
+</ul>
+<h2 id="40-基于上述要求在屏幕上播放字符画或其他形式的-bad-apple">
+<a class="header-anchor" href="#40-%e5%9f%ba%e4%ba%8e%e4%b8%8a%e8%bf%b0%e8%a6%81%e6%b1%82%e5%9c%a8%e5%b1%8f%e5%b9%95%e4%b8%8a%e6%92%ad%e6%94%be%e5%ad%97%e7%ac%a6%e7%94%bb%e6%88%96%e5%85%b6%e4%bb%96%e5%bd%a2%e5%bc%8f%e7%9a%84-bad-apple"></a>
+40% 基于上述要求，在屏幕上播放字符画或其他形式的 Bad Apple
+</h2><ul>
+<li>
+<p><strong>代码（./play_pilipala/play_pilipala.c）</strong></p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efi.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efilib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#define MAX_FRAME_SIZE (100 * 60) 
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">EFI_FILE_PROTOCOL</span> <span class="o">*</span><span class="n">root_dir</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//打开根文件系统
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">EFI_STATUS</span> <span class="nf">open_root_dir</span><span class="p">(</span><span class="n">EFI_HANDLE</span> <span class="n">ImageHandle</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_STATUS</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_LOADED_IMAGE_PROTOCOL</span> <span class="o">*</span><span class="n">LoadedImage</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_SIMPLE_FILE_SYSTEM_PROTOCOL</span> <span class="o">*</span><span class="n">FileSystem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//获取 Loaded Image Protocol
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">BS</span><span class="o">-&gt;</span><span class="n">HandleProtocol</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ImageHandle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">LoadedImageProtocol</span><span class="p">,</span> <span class="p">(</span><span class="n">VOID</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">LoadedImage</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//获取 File System Protocol
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">BS</span><span class="o">-&gt;</span><span class="n">HandleProtocol</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">LoadedImage</span><span class="o">-&gt;</span><span class="n">DeviceHandle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">FileSystemProtocol</span><span class="p">,</span> <span class="p">(</span><span class="n">VOID</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">FileSystem</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//打开根目录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">FileSystem</span><span class="o">-&gt;</span><span class="n">OpenVolume</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">FileSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">root_dir</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//读取单个帧文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">EFI_STATUS</span> <span class="nf">read_frame</span><span class="p">(</span><span class="n">CHAR16</span> <span class="o">*</span><span class="n">filename</span><span class="p">,</span> <span class="n">CHAR8</span> <span class="o">*</span><span class="n">buffer</span><span class="p">,</span> <span class="n">UINTN</span> <span class="n">buffer_size</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_STATUS</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_FILE_PROTOCOL</span> <span class="o">*</span><span class="n">file</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">UINTN</span> <span class="n">read_size</span> <span class="o">=</span> <span class="n">buffer_size</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//打开文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">root_dir</span><span class="o">-&gt;</span><span class="n">Open</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">file</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">EFI_FILE_MODE_READ</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//读取文件内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">file</span><span class="o">-&gt;</span><span class="n">Read</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">read_size</span><span class="p">,</span> <span class="n">buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//添加字符串结束符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">read_size</span> <span class="o">&lt;</span> <span class="n">buffer_size</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">buffer</span><span class="p">[</span><span class="n">read_size</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//关闭文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">file</span><span class="o">-&gt;</span><span class="n">Close</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">file</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//将 ASCII 字符串转换为宽字符并显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">display_frame</span><span class="p">(</span><span class="n">EFI_SIMPLE_TEXT_OUT_PROTOCOL</span> <span class="o">*</span><span class="n">ConOut</span><span class="p">,</span> <span class="n">CHAR8</span> <span class="o">*</span><span class="n">ascii_frame</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//移动光标到左上角
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">SetCursorPosition</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//逐字符转换并显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">CHAR16</span> <span class="n">wide_char</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">UINTN</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ascii_frame</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">ascii_frame</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;\n&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">OutputString</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="sa">L</span><span class="s">&#34;</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">wide_char</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">CHAR16</span><span class="p">)</span><span class="n">ascii_frame</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">OutputString</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="n">wide_char</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">EFI_STATUS</span> <span class="n">EFIAPI</span> <span class="nf">efi_main</span><span class="p">(</span><span class="n">EFI_HANDLE</span> <span class="n">ImageHandle</span><span class="p">,</span> <span class="n">EFI_SYSTEM_TABLE</span> <span class="o">*</span><span class="n">SystemTable</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_STATUS</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">InitializeLib</span><span class="p">(</span><span class="n">ImageHandle</span><span class="p">,</span> <span class="n">SystemTable</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_SIMPLE_TEXT_OUT_PROTOCOL</span> <span class="o">*</span><span class="n">ConOut</span> <span class="o">=</span> <span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//打开根文件系统
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">open_root_dir</span><span class="p">(</span><span class="n">ImageHandle</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nf">Print</span><span class="p">(</span><span class="sa">L</span><span class="s">&#34;Failed to open root directory: %r</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">Status</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//分配帧缓冲区
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">CHAR8</span> <span class="o">*</span><span class="n">frame_buffer</span> <span class="o">=</span> <span class="nf">AllocatePool</span><span class="p">(</span><span class="n">MAX_FRAME_SIZE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">frame_buffer</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nf">Print</span><span class="p">(</span><span class="sa">L</span><span class="s">&#34;Failed to allocate memory</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">EFI_OUT_OF_RESOURCES</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//清屏
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">ClearScreen</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">EnableCursor</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>  <span class="c1">//隐藏光标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//播放动画
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">UINTN</span> <span class="n">frame_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">CHAR16</span> <span class="n">filename</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//构造文件名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="nf">SPrint</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="sa">L</span><span class="s">&#34;frames</span><span class="se">\\</span><span class="s">frame_%06d.txt&#34;</span><span class="p">,</span> <span class="n">frame_num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//读取帧
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="n">Status</span> <span class="o">=</span> <span class="nf">read_frame</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">frame_buffer</span><span class="p">,</span> <span class="n">MAX_FRAME_SIZE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">//文件不存在，播放结束
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//显示帧
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="nf">display_frame</span><span class="p">(</span><span class="n">ConOut</span><span class="p">,</span> <span class="n">frame_buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//帧延时 微妙
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">BS</span><span class="o">-&gt;</span><span class="n">Stall</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">frame_num</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//播放完成
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">FreePool</span><span class="p">(</span><span class="n">frame_buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">EnableCursor</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span> <span class="c1">//显示光标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">ClearScreen</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">Print</span><span class="p">(</span><span class="sa">L</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">Playback finished! Total frames: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">frame_num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//让程序一直运行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">EFI_SUCCESS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>这里就用一些有关的 api（打开文件什么的） 和 协议（Protocol） 来做就好了</p>
+</li>
+<li>
+<p>具体的实现逻辑就是，加载 frames 下的 .txt 文件，然后读取每个帧文件内容到缓冲区，经过一些转换字符等操作后，一帧一帧地播放</p>
+</li>
+<li>
+<p>带有字符画文件的 frames 文件夹要放到 <code>./play_pilipala/disk</code> 下</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>编译</strong></p>
+<ul>
+<li>同上用 Makefile，其中：
+<ul>
+<li><code>make</code>：编译</li>
+<li><code>make run</code>：运行</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>运行</strong></p>
+<ul>
+<li>
+<p>同上</p>
+<p>先编译</p>
+<p>然后：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cp</span> <span class="n">BOOTX64</span><span class="p">.</span><span class="n">EFI</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span>
+</span></span></code></pre></div><p>再用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">qemu</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">x86_64</span> <span class="o">-</span><span class="n">bios</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ovmf</span><span class="o">/</span><span class="n">OVMF</span><span class="p">.</span><span class="n">fd</span> <span class="o">-</span><span class="n">drive</span> <span class="n">file</span><span class="o">=</span><span class="nl">fat</span><span class="p">:</span><span class="nl">rw</span><span class="p">:</span><span class="n">disk</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="n">raw</span> <span class="o">-</span><span class="n">net</span> <span class="n">none</span>
+</span></span></code></pre></div><p>启动</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>运行截图</strong></p>
+<ul>
+<li>
+<blockquote>
+<p>播放的话感觉不太好截，看代码应该就能证明我是 播放 而不是展示一张字符画的了，所以我这里就截个 代表 吧qwq</p>
+</blockquote>
+<p><img src="/01_assets/cnss2025-dev-pi-li-pa-la_image-20251030153437500.png" alt="image-20251030153437500"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="30-基于上述要求实现空格控制播放暂停和继续的功能">
+<a class="header-anchor" href="#30-%e5%9f%ba%e4%ba%8e%e4%b8%8a%e8%bf%b0%e8%a6%81%e6%b1%82%e5%ae%9e%e7%8e%b0%e7%a9%ba%e6%a0%bc%e6%8e%a7%e5%88%b6%e6%92%ad%e6%94%be%e6%9a%82%e5%81%9c%e5%92%8c%e7%bb%a7%e7%bb%ad%e7%9a%84%e5%8a%9f%e8%83%bd"></a>
+30% 基于上述要求，实现空格控制播放暂停和继续的功能
+</h2><ul>
+<li>
+<p><strong>代码（./play_pilipala_and_space_stop/play_pilipala_and_space_stop.c）</strong></p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efi.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efilib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#define MAX_FRAME_SIZE (100 * 60) </span><span class="c1">//帧缓冲区大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//根目录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">EFI_FILE_PROTOCOL</span> <span class="o">*</span><span class="n">root_dir</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//打开根文件系统
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">EFI_STATUS</span> <span class="nf">open_root_dir</span><span class="p">(</span><span class="n">EFI_HANDLE</span> <span class="n">ImageHandle</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_STATUS</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_LOADED_IMAGE_PROTOCOL</span> <span class="o">*</span><span class="n">LoadedImage</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_SIMPLE_FILE_SYSTEM_PROTOCOL</span> <span class="o">*</span><span class="n">FileSystem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//获取 Loaded Image Protocol
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">BS</span><span class="o">-&gt;</span><span class="n">HandleProtocol</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ImageHandle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">LoadedImageProtocol</span><span class="p">,</span> <span class="p">(</span><span class="n">VOID</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">LoadedImage</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//获取 File System Protocol
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">BS</span><span class="o">-&gt;</span><span class="n">HandleProtocol</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">LoadedImage</span><span class="o">-&gt;</span><span class="n">DeviceHandle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">FileSystemProtocol</span><span class="p">,</span> <span class="p">(</span><span class="n">VOID</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">FileSystem</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//打开根目录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">FileSystem</span><span class="o">-&gt;</span><span class="n">OpenVolume</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">FileSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">root_dir</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//读取单个帧文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">EFI_STATUS</span> <span class="nf">read_frame</span><span class="p">(</span><span class="n">CHAR16</span> <span class="o">*</span><span class="n">filename</span><span class="p">,</span> <span class="n">CHAR8</span> <span class="o">*</span><span class="n">buffer</span><span class="p">,</span> <span class="n">UINTN</span> <span class="n">buffer_size</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_STATUS</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_FILE_PROTOCOL</span> <span class="o">*</span><span class="n">file</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">UINTN</span> <span class="n">read_size</span> <span class="o">=</span> <span class="n">buffer_size</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//打开文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">root_dir</span><span class="o">-&gt;</span><span class="n">Open</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">file</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">EFI_FILE_MODE_READ</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//读取文件内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">file</span><span class="o">-&gt;</span><span class="n">Read</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">read_size</span><span class="p">,</span> <span class="n">buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//添加字符串结束符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">read_size</span> <span class="o">&lt;</span> <span class="n">buffer_size</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">buffer</span><span class="p">[</span><span class="n">read_size</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//关闭文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">file</span><span class="o">-&gt;</span><span class="n">Close</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">file</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//将 ASCII 字符串转换为宽字符并显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//显示一帧
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">display_frame</span><span class="p">(</span><span class="n">EFI_SIMPLE_TEXT_OUT_PROTOCOL</span> <span class="o">*</span><span class="n">ConOut</span><span class="p">,</span> <span class="n">CHAR8</span> <span class="o">*</span><span class="n">ascii_frame</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//移动光标到左上角
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">SetCursorPosition</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//逐字符转换并显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">CHAR16</span> <span class="n">wide_char</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">UINTN</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ascii_frame</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">ascii_frame</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;\n&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">OutputString</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="sa">L</span><span class="s">&#34;</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">wide_char</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">CHAR16</span><span class="p">)</span><span class="n">ascii_frame</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">OutputString</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="n">wide_char</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//显示暂停提示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">show_pause_hint</span><span class="p">(</span><span class="n">EFI_SIMPLE_TEXT_OUT_PROTOCOL</span> <span class="o">*</span><span class="n">ConOut</span><span class="p">,</span> <span class="n">BOOLEAN</span> <span class="n">paused</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//在屏幕左上角显示状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">SetCursorPosition</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">paused</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//暂停时显示黄色提示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">SetAttribute</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="nf">EFI_TEXT_ATTR</span><span class="p">(</span><span class="n">EFI_YELLOW</span><span class="p">,</span> <span class="n">EFI_BLACK</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">OutputString</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="sa">L</span><span class="s">&#34;Press SPACE to continue...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//播放时清除提示(用空格覆盖)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">SetAttribute</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="nf">EFI_TEXT_ATTR</span><span class="p">(</span><span class="n">EFI_LIGHTGRAY</span><span class="p">,</span> <span class="n">EFI_BLACK</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">OutputString</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="sa">L</span><span class="s">&#34;                                            &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//恢复默认颜色
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">SetAttribute</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="nf">EFI_TEXT_ATTR</span><span class="p">(</span><span class="n">EFI_LIGHTGRAY</span><span class="p">,</span> <span class="n">EFI_BLACK</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">EFI_STATUS</span> <span class="n">EFIAPI</span> <span class="nf">efi_main</span><span class="p">(</span><span class="n">EFI_HANDLE</span> <span class="n">ImageHandle</span><span class="p">,</span> <span class="n">EFI_SYSTEM_TABLE</span> <span class="o">*</span><span class="n">SystemTable</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_STATUS</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">InitializeLib</span><span class="p">(</span><span class="n">ImageHandle</span><span class="p">,</span> <span class="n">SystemTable</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_SIMPLE_TEXT_OUT_PROTOCOL</span> <span class="o">*</span><span class="n">ConOut</span> <span class="o">=</span> <span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">SIMPLE_INPUT_INTERFACE</span> <span class="o">*</span><span class="n">ConIn</span> <span class="o">=</span> <span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConIn</span><span class="p">;</span>  <span class="c1">// 键盘输入接口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//打开根文件系统
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">open_root_dir</span><span class="p">(</span><span class="n">ImageHandle</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nf">Print</span><span class="p">(</span><span class="sa">L</span><span class="s">&#34;Failed to open root directory: %r</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">Status</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//分配帧缓冲区
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">CHAR8</span> <span class="o">*</span><span class="n">frame_buffer</span> <span class="o">=</span> <span class="nf">AllocatePool</span><span class="p">(</span><span class="n">MAX_FRAME_SIZE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">frame_buffer</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nf">Print</span><span class="p">(</span><span class="sa">L</span><span class="s">&#34;Failed to allocate memory</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">EFI_OUT_OF_RESOURCES</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//清屏
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">ClearScreen</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">EnableCursor</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>  <span class="c1">//隐藏光标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//播放状态变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">BOOLEAN</span> <span class="n">paused</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>  <span class="c1">//暂停标志
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">UINTN</span> <span class="n">frame_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>     <span class="c1">//当前帧号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">CHAR16</span> <span class="n">filename</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EFI_INPUT_KEY</span> <span class="n">Key</span><span class="p">;</span>       <span class="c1">//按键结构
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//播放循环
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//非阻塞式检查键盘输入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//非阻塞式就是程序立即返回,不会卡住,然后循环检查输入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConIn</span><span class="o">-&gt;</span><span class="n">ReadKeyStroke</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConIn</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//如果有按键按下
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">UnicodeChar</span> <span class="o">==</span> <span class="sa">L</span><span class="sc">&#39; &#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="c1">//暂停播放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//检查是否按下空格键
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">                <span class="n">paused</span> <span class="o">=</span> <span class="o">!</span><span class="n">paused</span><span class="p">;</span>  <span class="c1">//切换暂停状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">                <span class="nf">show_pause_hint</span><span class="p">(</span><span class="n">ConOut</span><span class="p">,</span> <span class="n">paused</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">ScanCode</span> <span class="o">==</span> <span class="n">SCAN_ESC</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="c1">//退出播放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//检查是否按下 ESC 键
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="p">;</span>  <span class="c1">//退出播放循环
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//如果处于暂停状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">paused</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">//短暂延时,降低 CPU 占用,然后继续检查键盘输入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">BS</span><span class="o">-&gt;</span><span class="n">Stall</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">);</span>  <span class="c1">//10ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span><span class="p">;</span>  <span class="c1">//跳过帧播放逻辑
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//构造文件名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="nf">SPrint</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="sa">L</span><span class="s">&#34;frames</span><span class="se">\\</span><span class="s">frame_%06d.txt&#34;</span><span class="p">,</span> <span class="n">frame_num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//读取帧
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="n">Status</span> <span class="o">=</span> <span class="nf">read_frame</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">frame_buffer</span><span class="p">,</span> <span class="n">MAX_FRAME_SIZE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">//文件不存在，播放结束
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//显示帧
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="nf">display_frame</span><span class="p">(</span><span class="n">ConOut</span><span class="p">,</span> <span class="n">frame_buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//帧延时 微秒
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//控制播放速度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">BS</span><span class="o">-&gt;</span><span class="n">Stall</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">frame_num</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//播放完成
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">FreePool</span><span class="p">(</span><span class="n">frame_buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">EnableCursor</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span> <span class="c1">//显示光标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">ClearScreen</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">Print</span><span class="p">(</span><span class="sa">L</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">Playback finished! Total frames: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">frame_num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//让程序一直运行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">EFI_SUCCESS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>这里的话我好像没用到 时钟中断，就直接用 BS-&gt;Stall（熄火） 了，然后加个 paused 状态，每一帧检查一下（代码里改的是延迟检查）。不过感觉 播放性能 没什么影响，就 CPU 的利用率会有点影响，毕竟不用 时钟中断 的话 CPU 是一直运行的？不过这题感觉应该不用 时钟中断 也没什么影响，就先这样简单实现吧</p>
+</li>
+<li>
+<p>带有字符画文件的 frames 文件夹要放到 <code>./play_pilipala_and_space_stop/disk</code> 下</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>编译</strong></p>
+<ul>
+<li>同上用 Makefile，其中：
+<ul>
+<li><code>make</code>：编译</li>
+<li><code>make run</code>：运行</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>运行</strong></p>
+<ul>
+<li>
+<p>同上</p>
+<p>先编译</p>
+<p>然后：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cp</span> <span class="n">BOOTX64</span><span class="p">.</span><span class="n">EFI</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span>
+</span></span></code></pre></div><p>再用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">qemu</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">x86_64</span> <span class="o">-</span><span class="n">bios</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ovmf</span><span class="o">/</span><span class="n">OVMF</span><span class="p">.</span><span class="n">fd</span> <span class="o">-</span><span class="n">drive</span> <span class="n">file</span><span class="o">=</span><span class="nl">fat</span><span class="p">:</span><span class="nl">rw</span><span class="p">:</span><span class="n">disk</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="n">raw</span> <span class="o">-</span><span class="n">net</span> <span class="n">none</span>
+</span></span></code></pre></div><p>启动</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>运行截图</strong></p>
+<ul>
+<li>
+<blockquote>
+<p>同样不太好截，所以这里就截一个暂停界面</p>
+</blockquote>
+<p><img src="/01_assets/cnss2025-dev-pi-li-pa-la_image-20251030164045024.png" alt="image-20251030164045024"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="30-屏幕上播放的同时播放-bad-apple-的音频或者播放春日影或-ave-mujica">
+<a class="header-anchor" href="#30-%e5%b1%8f%e5%b9%95%e4%b8%8a%e6%92%ad%e6%94%be%e7%9a%84%e5%90%8c%e6%97%b6%e6%92%ad%e6%94%be-bad-apple-%e7%9a%84%e9%9f%b3%e9%a2%91%e6%88%96%e8%80%85%e6%92%ad%e6%94%be%e6%98%a5%e6%97%a5%e5%bd%b1%e6%88%96-ave-mujica"></a>
++30% 屏幕上播放的同时，播放 Bad Apple 的音频；或者，播放春日影或 Ave Mujica
+</h2><ul>
+<li>
+<p><strong>思考</strong></p>
+<ul>
+<li>
+<p><strong>播放音频</strong></p>
+<ul>
+<li>
+<p><strong>格式</strong></p>
+<ul>
+<li>
+<p>要 播放音频，需要先把 <code>.mp3</code> 或 <code>.wav</code> 解码，转成 PCM 文件 <code>badapple.raw</code></p>
+</li>
+<li>
+<p>那要生成上面的 <code>badapple.raw</code>，需要用到 <code>ffmpeg</code>，命令是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffmpeg -i badapple.mp3 -f s16le -ac <span class="m">1</span> -ar <span class="m">44100</span> badapple.raw
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>播放方式</strong></p>
+<ul>
+<li>
+<p>播放音频 需要 <strong>Qemu</strong> 有声卡，查了一下是有方法 模拟声卡 的。但我这里看了一下，好像 <strong>UEFI</strong>标准文档 里没有涉及和 <strong>播放音频</strong> 相关的 <strong>协议</strong>，如果要真的 <strong>播放音频</strong> 的话就要编写一个 <strong>驱动</strong></p>
+<p>我搜了一下找到一个 <strong>AudioPkg 驱动</strong> 的项目，不过虽然这个能 播放音频，但要做到像题目说的那样 边播放字符画 边播放音频 就会有点困难，我的一个想法是启动 播放字符画 的程序时，启动这个驱动，不过好像有点无从下手</p>
+<p>那就只能 手写一个 <strong>声卡驱动</strong> 了，不过感觉写起来好像有点复杂（</p>
+<p>然后另一种方法是 <strong>蜂鸣器</strong>，但这是不是真的符合题目要求的 <strong>播放 Bad Apple 的音频</strong> 呢？毕竟 <strong>蜂鸣器</strong> 只能播放 <strong>单频率蜂鸣声</strong> 的旋律（不过我实测了一下 <strong>蜂鸣器</strong> 还是太难绷了，像不了一点）</p>
+<p>不过我也暂时没查到什么其他做法了，难道真要手写一个 <strong>声卡驱动</strong>？那感觉要估算一下 <strong>工作量</strong> 了，所以在这次提交先要个 <strong>hint</strong>，如果确定是写 <strong>声卡驱动</strong> 的话，那我再去学着写一下吧（）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+    <footer class="article-footer"><a
+          data-aos="zoom-in"
+          href="/post/cnss2025-dev-pi-li-pa-la/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="/post/cnss2025-dev-pi-li-pa-la/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/post/cnss2025-dev-pi-li-pa-la/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/cnss"
+        rel="tag"
+        >CNSS</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e6%8b%9b%e6%96%b0"
+        rel="tag"
+        >招新</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/dev"
+        rel="tag"
+        >DEV</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/os"
+        rel="tag"
+        >OS</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/writeup"
+        rel="tag"
+        >WRITEUP</a
+      >
+    </li></ul>
+</footer>
+  </div></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>
+      MilLoong
+    </div><div>
+        <a
+          href="https://github.com/MilLoong"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noopener nofollow noreferrer"
+          style="display: inline-block; transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt="GitHub"
+            style="width: 32px; height: 32px; vertical-align: middle; background: transparent;"
+          >
+        </a>
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;14.1k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;01:12</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#30-在没有操作系统的虚拟机环境或者真的硬件环境如果你愿意中在屏幕上输出任何字符串如hello-world">30% 在没有操作系统的虚拟机环境（或者真的硬件环境，如果你愿意）中，在屏幕上输出任何字符串，如<code>Hello World!</code></a></li>
+    <li><a href="#40-基于上述要求在屏幕上播放字符画或其他形式的-bad-apple">40% 基于上述要求，在屏幕上播放字符画或其他形式的 Bad Apple</a></li>
+    <li><a href="#30-基于上述要求实现空格控制播放暂停和继续的功能">30% 基于上述要求，实现空格控制播放暂停和继续的功能</a></li>
+    <li><a href="#30-屏幕上播放的同时播放-bad-apple-的音频或者播放春日影或-ave-mujica">+30% 屏幕上播放的同时，播放 Bad Apple 的音频；或者，播放春日影或 Ave Mujica</a></li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">11</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      5
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">39</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><meting-js
+        theme="var(--color-link)"
+        id="784227484"server="netease"type="playlist"fixed="true"autoplay="false"loop="all"order="list"preload="auto"volume="0.7"mutex="true"list-folded="false"lrc-type="0">
+      </meting-js><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "TT8YY4JPRF",
+        apiKey: "4d450286d17ecfeb7b0c6f78ebceb3d4",
+        indexName: "MilLoongBlog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+    if (window.firework) {
+      const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+      options.excludeElements = options.excludeelements;
+      delete options.excludeelements;
+      window.firework(options);
+    }
+  }
+</script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "MilLoong",
+          title: "CNSS 2025 招新：噼里啪啦动画",
+          url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-pi-li-pa-la\/",
+          description: " 🎞️ 噼里啪啦动画 30% 在没有操作系统的虚拟机环境（或者真的硬件环境，如果你愿意）中，在屏幕上输出任何字符串，如Hello World! 运行环境\n这题我依然直接用 WSL 来做了，然后是 WSL2 虚拟机 用的是 Qemu（qemu-system-x86_64） 启动方式 用的是 UEFI，因为我不是很想用 BIOS 来做 指令集架构 是 x86 编译工具： mingw-w64 UEFI库：gnu-efi UEFI固件：OVMF.fd 磁盘工具：mtools 代码（.\/hello\/hello.c）\n#include \u0026lt;efi.h\u0026gt; #include …",
+          cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg34.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus', 'disqus'];
+  var commentConfig = {waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/vercelproject-sage-beta.vercel.app\/',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  0 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },};
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig?.[key]?.enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig?.[sys]?.enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.matchMedia('(max-width: 959px)').matches) {
+        const meting = _$('meting-js');
+        if (meting) {
+          meting.setAttribute('fixed', 'true');
+          const aside = meting.parentNode?.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            meting.parentNode.removeChild(meting);
+            document.body.appendChild(meting);
+          }
+        }
+      }
+      const script = document.createElement('script');
+      script.src = "https:\/\/npm.webcache.cn\/meting@2.0.1\/dist\/Meting.min.js";
+      script.integrity = "sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8\u002b0maanw1S\/IyB\u002bY4JG\u002bZDU7GpKE8";
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+  </script></body>
+</html>
