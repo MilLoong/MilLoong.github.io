@@ -113,7 +113,7 @@
     state.chapters.forEach((ch, i) => {
       const opt = document.createElement("option");
       opt.value = String(i);
-      opt.textContent = `${i + 1}. ${ch.title}`;
+      opt.textContent = ch.title;
       if (i === index) opt.selected = true;
       select.appendChild(opt);
     });

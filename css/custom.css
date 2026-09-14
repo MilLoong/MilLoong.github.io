@@ -119,3 +119,41 @@
   color: var(--red-1, #ff5252);
 }
 
+/* 目录树：始终展开，并拉开一/二/三级视觉层级 */
+.sidebar-toc-wrapper nav > ul ul,
+.sidebar-toc-wrapper nav > ol ol {
+  transform: none !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.sidebar-toc-wrapper nav > ul > li > a,
+.sidebar-toc-wrapper nav > ol > li > a {
+  font-weight: 700;
+  opacity: 1;
+}
+
+.sidebar-toc-wrapper nav > ul > li > ul,
+.sidebar-toc-wrapper nav > ol > li > ol,
+.sidebar-toc-wrapper nav > ul > li > ol,
+.sidebar-toc-wrapper nav > ol > li > ul {
+  margin-left: 14px;
+  padding-left: 6px;
+  border-left: 1px dashed color-mix(in srgb, var(--color-link) 28%, transparent);
+}
+
+.sidebar-toc-wrapper nav ul ul > li > a,
+.sidebar-toc-wrapper nav ol ol > li > a {
+  font-weight: 500;
+  opacity: 0.88;
+  font-size: 0.95em;
+}
+
+.sidebar-toc-wrapper nav ul ul ul > li > a,
+.sidebar-toc-wrapper nav ol ol ol > li > a {
+  font-weight: 400;
+  opacity: 0.75;
+  font-size: 0.9em;
+}
+
+
