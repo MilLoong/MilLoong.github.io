@@ -165,7 +165,8 @@
         </li>
         <li><a href="#代码理解">代码理解</a>
           <ul>
-            <li></li>
+            <li><a href="#求-next-数组">求 next 数组</a></li>
+            <li><a href="#进行字符串匹配-1">进行字符串匹配</a></li>
           </ul>
         </li>
         <li><a href="#结语">结语</a></li>
@@ -473,10 +474,10 @@ KMP算法——透彻的理论理解&amp;代码理解（c++）
 代码理解
 </h2><p>了解了定义之后我们就可以来讲一下 <strong>kmp算法</strong> 的代码了，讲讲这个 <strong>代码</strong> 究竟怎么理解。</p>
 <p><strong>注：本篇博客的代码是用c++写的，然后的话字符串下标是从0开始的，我并没有只用一个while循环来完成全部判断而不用在外边写if（有的博客可能引入一个k，然后在while循环里完成整个判断），然后next[0]初始化是0，这可能与别的博客讲的不同（有的博客可能会初始化成next[0]=-1，不过我理解的是既然next是前缀表，表示前缀长度，就不能出现负数，所以稍微引入了一个[虚前缀]的假想概念），不过我能保证代码是相对简单的。</strong></p>
-<h4 id="求next数组-1">
-<a class="header-anchor" href="#%e6%b1%82next%e6%95%b0%e7%bb%84-1"></a>
-求next数组
-</h4><p>为了方便理解，可以 <strong>先给出代码，然后解释，最后再给一个带注释的代码便于理解</strong> 。</p>
+<h3 id="求-next-数组">
+<a class="header-anchor" href="#%e6%b1%82-next-%e6%95%b0%e7%bb%84"></a>
+求 next 数组
+</h3><p>为了方便理解，可以 <strong>先给出代码，然后解释，最后再给一个带注释的代码便于理解</strong> 。</p>
 <p>代码如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//定义的变量
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">next</span><span class="p">[</span><span class="n">max_len</span><span class="p">];</span>
@@ -527,10 +528,10 @@ KMP算法——透彻的理论理解&amp;代码理解（c++）
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></div><p>那么这就是求next数组的代码解释了。</p>
 <p>要说明的是，上面那个 <strong>s[i]!=s[j]</strong> 的处理的情况的图我好像没在别的博客发现有雷同的，因为别的博客基本上都是用具体的例子来做解释，不过我初学的时候总觉得 <strong>拿具体的例子来理解kmp算法差点意思，</strong> 所以在这篇博客中举了一个 <strong>比较抽象，一般的例子</strong> ，自认为比具体的例子好理解，如果大家觉得用具体的例子比较好的话，也可以去看看其他的博客了。</p>
-<h4 id="进行字符串匹配-1">
+<h3 id="进行字符串匹配-1">
 <a class="header-anchor" href="#%e8%bf%9b%e8%a1%8c%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%8c%b9%e9%85%8d-1"></a>
-<strong>进行字符串匹配</strong>
-</h4><p>还是 <strong>先给代码，再给解释，最后给带注释的代码便于理解：</strong></p>
+进行字符串匹配
+</h3><p>还是 <strong>先给代码，再给解释，最后给带注释的代码便于理解：</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//i,j的含义在基本定义里讲有
 </span></span></span><span class="line"><span class="cl"><span class="c1">//t是文本串，s是模式串
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
@@ -721,7 +722,8 @@ KMP算法——透彻的理论理解&amp;代码理解（c++）
         </li>
         <li><a href="#代码理解">代码理解</a>
           <ul>
-            <li></li>
+            <li><a href="#求-next-数组">求 next 数组</a></li>
+            <li><a href="#进行字符串匹配-1">进行字符串匹配</a></li>
           </ul>
         </li>
         <li><a href="#结语">结语</a></li>
