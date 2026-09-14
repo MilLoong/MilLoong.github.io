@@ -54,3 +54,68 @@
 .article-entry h4 {
   font-size: 1.15em;
 }
+
+/* 长文分章导航 */
+.chapter-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.75rem;
+  margin: 0.5rem 0 1.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-default) 14%, transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--color-wrap) 88%, var(--red-1) 12%);
+}
+
+.chapter-pager-btn {
+  appearance: none;
+  border: 1px solid color-mix(in srgb, var(--red-1, #ff5252) 45%, transparent);
+  background: transparent;
+  color: var(--color-default);
+  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.3;
+  transition: 0.2s background, 0.2s color, 0.2s border-color;
+}
+
+.chapter-pager-btn:hover:not(:disabled) {
+  background: var(--red-1, #ff5252);
+  border-color: var(--red-1, #ff5252);
+  color: #fff;
+}
+
+.chapter-pager-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.chapter-pager-select {
+  flex: 1 1 12rem;
+  min-width: 10rem;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--color-default) 18%, transparent);
+  background: var(--color-wrap);
+  color: var(--color-default);
+  padding: 0.4rem 0.6rem;
+  font: inherit;
+}
+
+.chapter-pager-meta {
+  margin-left: auto;
+  opacity: 0.7;
+  font-size: 0.92em;
+  white-space: nowrap;
+}
+
+.chapter-pager-body > h1:first-child {
+  margin-top: 0.5em;
+}
+
+.sidebar-toc-wrapper a.chapter-pager-toc-active {
+  color: var(--red-1, #ff5252);
+}
+

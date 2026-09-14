@@ -11,7 +11,7 @@
   NLOJ——C&#43;&#43;20实现的轻量级OJ后端 | MilLoong
 </title>
 <meta name="description" content="个人博客，记录学习日常"/><script>
-  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":18},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -373,7 +373,9 @@
       data-aos="zoom-in"
       >后端</a
     ></div>
-</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="nloj-概述-">
+</div><div class="hr-line"></div><div
+      class="e-content article-entry"
+      itemprop="articleBody" data-chapter-pager="true"><h1 id="nloj-概述-">
 <a class="header-anchor" href="#nloj-%e6%a6%82%e8%bf%b0-"></a>
 NLOJ 概述 🚀
 </h1><h2 id="0-nloj-是什么-">
@@ -6143,7 +6145,7 @@ Worker / 开关：<a href="https://github.com/MilLoong/Nailong-OJ/blob/master/nl
 </h1><p>本项目也可以看作是 <strong>作者本人的 学习笔记</strong>，可以算是随心记录，所以如您有更好的设计和架构想法，可以在 <strong>Issue</strong> 里交流</p>
 <p>或者说对 <strong>项目排版、展开方式、实现细节</strong> 等有想要 <strong>纠正 或 建议</strong> 的，同样可以在 <strong>Issue</strong> 里说说你的看法</p>
 <p>最后，如果你喜欢本项目，可以给个 <code>star</code>，那会是对我的一个莫大的鼓励</p>
-</div>
+<script src="/js/chapter-pager.js"></script></div>
     <footer class="article-footer"><a
           data-aos="zoom-in"
           href="/post/nailong-oj/#comments"
@@ -6540,6 +6542,95 @@ Worker / 开关：<a href="https://github.com/MilLoong/Nailong-OJ/blob/master/nl
           description: " NLOJ 概述 🚀 0. NLOJ 是什么？ 🤔 NLOJ 是一个 自研的，用 C\u002b\u002b20 实现的 轻量级 OJ（Online Judge）后端：\n🌐 覆盖范围广： 覆盖 后端常用功能，如 用户鉴权、题目管理 CRUD、沙箱判题 等 覆盖 OJ 中的常见题型，如 标准题、交互题、通信题、Special Judge 🔧 工程上的选择： 使用 RAII 管理 连接 等资源，减少 泄漏 和 手工释放 使用 CMake 多模块 拆开 用户 \/ 题目 \/ 提交 \/ 判题，方便对照着看 📬 缓存和消息队列： 使用 Redis 缓存题目，用来扛 读多写少 使用 RabbitMQ 把 提交 和 判题 拆开： …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg11.webp",
         };
+      </script><script
+    src="https://npm.webcache.cn/mermaid@11.12.0/dist/mermaid.min.js"
+    data-pjaxintegrity="sha384-o&#43;g/BxPwhi0C3RK7oQBxQuNimeafQ3GE/ST4iT2BxVI4Wzt60SH4pq9iXVYujjaS" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/dompurify@3.2.6/dist/purify.min.js"
+    data-pjaxintegrity="sha384-JEyTNhjM6R1ElGoJns4U2Ln4ofPcqzSsynQkmEc/KGy6336qAZl70tDLufbkla&#43;3" crossorigin="anonymous"></script><script data-pjax>
+        if (window.mermaid) {
+          
+          const elementCode = '.mermaid'
+          const processElements = (callback) => {
+            const els = _$$(elementCode);
+            if (!els.length) return Promise.resolve();
+            
+            return new Promise((resolve, reject) => {
+              try {
+                els.forEach(callback);
+                resolve();
+              } catch (error) {
+                reject(error);
+              }
+            });
+          };
+          const saveOriginalData = () => processElements(el => {
+            if (!el.getAttribute('data-original-code')) {
+              el.setAttribute('data-original-code', el.innerHTML);
+            }
+          });
+
+          const resetProcessed = () => processElements(el => {
+            const originalCode = el.getAttribute('data-original-code');
+            if (originalCode) {
+              el.removeAttribute('data-processed');
+              el.innerHTML = DOMPurify.sanitize(originalCode);
+            }
+          });
+          const loadMermaid = async (theme) => {
+            window.mermaid.initialize({theme, startOnLoad: false})
+            await window.mermaid.run({querySelector: elementCode, suppressErrors: true})
+            if (window.svgPanZoom) {
+              window.__panZoomList?.forEach(panZoom => {try {panZoom.destroy()} catch {}});
+              window.__panZoomList = [];
+              _$$('.mermaid > svg').forEach(el => {
+                const bbox = el.getBBox();
+                el.setAttribute('height', Math.max(bbox.height, 80));
+                window.__panZoomList.push(window.svgPanZoom(el, {
+                  zoomEnabled: true,
+                  controlIconsEnabled: true,
+                  fit: true,
+                  center: true
+                }));
+              });
+              if (window.__resizeMermaidSvg) {
+                window.removeEventListener('resize', window.__resizeMermaidSvg);
+              }
+              window.__resizeMermaidSvg = () => {
+                try {
+                  window.__panZoomList.forEach(panZoom => {
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                  });
+                } catch {
+                  window.removeEventListener('resize', window.__resizeMermaidSvg);
+                  window.__panZoomList = [];
+                }
+              }
+              window.addEventListener('resize', window.__resizeMermaidSvg);
+            }
+          }
+          const initMermaid = async (theme) => {
+            try {
+              await saveOriginalData();
+              await resetProcessed();
+              await loadMermaid(theme);
+            } catch (error) {
+              console.error(error);
+            }
+          };
+          
+          document.body.addEventListener('dark-theme-set', () => initMermaid('dark'));
+          document.body.addEventListener('light-theme-set', () => initMermaid('default'));
+
+          const mode = localStorage.getItem('dark_mode');
+          if (mode === 'auto') {
+            const osMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            initMermaid(osMode ? 'dark' : 'default');
+          } else {
+            initMermaid(mode === 'true' ? 'dark' : 'default');
+          }
+        }
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
           if (_$$(`${gallery} ${children}`).length > 0) {
             new PhotoSwipeLightbox({
