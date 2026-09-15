@@ -408,4 +408,66 @@ DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
+BEGIN:VEVENT
+SUMMARY:计算机设计大赛 · 获奖公布
+DTSTART;VALUE=DATE:20260901
+UID:milestone-52@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
+ ds.blcu.edu.cn/info/1042/2904.htm\n证据: 1 件，其中一等奖 200 件
+ 、二等奖 1104 件 、 三等奖 2927 件。获奖名单详见附件。
+  特此公告。 2026年 （ 第19届 ）中国大学生计算机设计大
+ 赛组委
+URL:https://jsjds.blcu.edu.cn/info/1042/2904.htm
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 获奖公布（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 获奖公布（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 获奖公布（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 获奖公布（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:计算机设计大赛 · 获奖公布
+DTSTART;VALUE=DATE:20260901
+UID:milestone-51@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
+ ds.blcu.edu.cn/info/1041/2914.htm\n证据: 1 件，其中一等奖 200 件
+ 、二等奖 1104 件 、 三等奖 2927 件。获奖名单详见附件。
+  特此公告。 2026年 （ 第19届 ）中国大学生计算机设计大
+ 赛组委
+URL:https://jsjds.blcu.edu.cn/info/1041/2914.htm
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 获奖公布（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 获奖公布（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 获奖公布（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 计算机设计大赛 获奖公布（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
 END:VCALENDAR
