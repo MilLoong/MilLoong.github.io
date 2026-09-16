@@ -50,8 +50,8 @@
     content="/"
   />
   <meta property="article:author" content="MilLoong" />
-  <meta property="article:published_time" content="2026-09-09T21:13:00&#43;08:00" />
-  <meta property="article:modified_time" content="2026-09-09T21:13:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta property="article:published_time" content="2026-09-17T02:00:00&#43;08:00" />
+  <meta property="article:modified_time" content="2026-09-17T02:00:00&#43;08:00" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="https://MilLoong.github.io/index.xml" title="MilLoong的博客">
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -162,7 +162,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">11</div>
+    <div>文章</div><div class="sidebar-state-number">12</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -172,7 +172,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">39</div>
+    <div class="sidebar-state-number">40</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -378,7 +378,7 @@
             aria-label="标签: CUDA"
             >CUDA</a
           ><a
-            style="font-size:30px"
+            style="font-size:20px"
             href="/tags/dev/"
             aria-label="标签: Dev"
             >Dev</a
@@ -402,6 +402,11 @@
             href="/tags/mnist/"
             aria-label="标签: MNIST"
             >MNIST</a
+          ><a
+            style="font-size:10px"
+            href="/tags/musl/"
+            aria-label="标签: Musl"
+            >Musl</a
           ><a
             style="font-size:10px"
             href="/tags/oj/"
@@ -447,11 +452,6 @@
             href="/tags/windows/"
             aria-label="标签: Windows"
             >Windows</a
-          ><a
-            style="font-size:30px"
-            href="/tags/writeup/"
-            aria-label="标签: Writeup"
-            >Writeup</a
           ></div>
   </div>
 </div><div class="widget-wrapper">
@@ -462,6 +462,8 @@
       <h3 class="widget-title">最新文章</h3>
       <div class="widget">
         <ul><li>
+              <a href="/post/strcpy-strncpy-memcpy-memmove/" title="strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析">strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析</a>
+            </li><li>
               <a href="/post/nailong-oj/" title="NLOJ——C&#43;&#43;20实现的轻量级OJ后端">NLOJ——C&#43;&#43;20实现的轻量级OJ后端</a>
             </li><li>
               <a href="/post/git-education/" title="git教程——下载，SSH配置，clone，pull，push，pull request（PR）">git教程——下载，SSH配置，clone，pull，push，pull request（PR）</a>
@@ -469,8 +471,6 @@
               <a href="/post/cnf-dnf-truth-tables/" title="真值表计算主合取范式和主析取范式的理论依据">真值表计算主合取范式和主析取范式的理论依据</a>
             </li><li>
               <a href="/post/hello-world/" title="Hello World">Hello World</a>
-            </li><li>
-              <a href="/post/wsl-tutorial/" title="WSL下载，使用の教程">WSL下载，使用の教程</a>
             </li></ul>
       </div>
     </div>
@@ -483,13 +483,56 @@
     data-aos="fade-up"
   ><a
         class="post-link"
+        href="/post/strcpy-strncpy-memcpy-memmove/"
+        aria-label="strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析"
+        title="strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析"
+      >
+      </a><div
+      class="
+        post-cover left
+      "
+    ><img
+          data-src="/backgrounds/bg44.webp"
+          data-sizes="auto"
+          alt=""
+          class="lazyload"
+        /></div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span
+          ><span class="icon-calendar"></span
+          >2026-09-17</span
+        ><span
+          ><span class="icon-pencil"></span
+          >2388 字</span
+        >
+        <span
+          ><span class="icon-clock"></span
+          >12 分钟</span
+        >
+      </div>
+      <h2 class="post-title">strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析</h2>
+      <article class="post-article"> strcpy, strncpy, memcpy, memmove 的 C++ 实现及 musl 源码分析 前言 最近对 复制函数 比较感兴趣，因为某次在写项目的时候遇到 memcpy 造成一些错误结果，比如下面的代码：
+int arr[] = {1, 2, 3}; memcpy(arr + 1, arr, 2 * sizeof(int)); 这里 dest 是 arr + 1，要复制 2 个 int，源区间 [arr, arr + 2) 和目标区间 [arr + 1, arr + 3) 重叠。memcpy 不保证 能正确处理重叠，很多实现是从前往后抄，最终会变成：
+arr[] = {1, …</article>
+    </div>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div
+    class="
+      post-wrap right
+    "
+    data-aos="fade-up"
+  ><a
+        class="post-link"
         href="/post/nailong-oj/"
         aria-label="NLOJ——C&#43;&#43;20实现的轻量级OJ后端"
         title="NLOJ——C&#43;&#43;20实现的轻量级OJ后端"
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg11.webp"
@@ -520,7 +563,7 @@
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -531,7 +574,7 @@
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg3.webp"
@@ -565,7 +608,7 @@
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -576,7 +619,7 @@
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg1.webp"
@@ -610,7 +653,7 @@
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -621,7 +664,7 @@
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg2.webp"
@@ -652,7 +695,7 @@
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -663,7 +706,7 @@
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg4.webp"
@@ -696,7 +739,7 @@
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -707,7 +750,7 @@
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg6.webp"
@@ -741,7 +784,7 @@
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -752,7 +795,7 @@
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg5.webp"
@@ -784,7 +827,7 @@
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -795,7 +838,7 @@
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg7.webp"
@@ -829,7 +872,7 @@
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -840,7 +883,7 @@
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg8.webp"
@@ -878,50 +921,6 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
     </div>
   </div>
 </div>
-<div class="post-wrapper">
-  <div
-    class="
-      post-wrap right
-    "
-    data-aos="fade-up"
-  ><a
-        class="post-link"
-        href="/post/kmp-cpp/"
-        aria-label="KMP算法——透彻的理论理解&amp;代码理解（c&#43;&#43;）"
-        title="KMP算法——透彻的理论理解&amp;代码理解（c&#43;&#43;）"
-      >
-      </a><div
-      class="
-        post-cover right
-      "
-    ><img
-          data-src="/backgrounds/bg9.webp"
-          data-sizes="auto"
-          alt=""
-          class="lazyload"
-        /></div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span
-          ><span class="icon-calendar"></span
-          >2025-07-05</span
-        ><span
-          ><span class="icon-pencil"></span
-          >787 字</span
-        >
-        <span
-          ><span class="icon-clock"></span
-          >4 分钟</span
-        >
-      </div>
-      <h2 class="post-title">KMP算法——透彻的理论理解&amp;代码理解（c&#43;&#43;）</h2>
-      <article class="post-article"> KMP算法——透彻的理论理解&amp;代码理解（c++） 原文：https://blog.csdn.net/qq_30618989/article/details/149081820
-此原文也是本人所写
-前言 相信大家在学 字符串算法 的时候第一个接触的就是 kmp算法 ，因为 字符串匹配问题 太经典了，而kmp算法竟然能把一个 O(mn) 的时间复杂度用及其妙的前缀表来优化到线性的时间复杂度 O(m+n)。 不过虽然 kmp算法 是 字符串算法 中及其重要的算法，但实际上还是比较难理解的。
-以博主的经验来看，网上所讲的 kmp算法 以及 next数组（prefix数组） 的理解其实都差点意 …</article>
-    </div>
-  </div>
-</div>
 <nav id="page-nav" aria-label="Pagination navigation" data-aos="fade-up"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">
       下一页 &raquo;
     </a></nav>
@@ -951,10 +950,10 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
         </a>
       </div><div>
         <span class="icon-brush"
-          >&nbsp;14.1k</span
+          >&nbsp;16.5k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;01:12</span>
+        <span class="icon-coffee">&nbsp;01:24</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -988,7 +987,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">11</div>
+    <div>文章</div><div class="sidebar-state-number">12</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -998,7 +997,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">39</div>
+    <div class="sidebar-state-number">40</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
