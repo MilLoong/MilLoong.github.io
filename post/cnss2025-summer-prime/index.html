@@ -50,7 +50,7 @@
   />
   <meta property="article:author" content="MilLoong" />
   <meta property="article:published_time" content="2025-08-30T21:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-08-30T21:00:00&#43;08:00" /><meta property="article:tag" content="CNSS夏令营DevWriteup" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-08-30T21:00:00&#43;08:00" /><meta property="article:tag" content="夏令营DevWriteup" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/backgrounds/bg13.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -189,7 +189,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -268,13 +268,21 @@
 ✍问题一
 </h2><ul>
 <li>
-<p>本题筛素数的协程用了生成器，叫做 <strong>基于生成器的协程</strong>（<code>generator-based coroutine</code>）。
-而我稍微搜了一下，其实可以更详细一点：</p>
+<p>本题筛素数的协程用了生成器，叫做 <strong>基于生成器的协程</strong>（<code>generator-based coroutine</code>）。</p>
+<p>而我稍微搜了一下，其实可以更详细一点：</p>
 <ul>
-<li>它是 <strong>非对称协程</strong>（<code>asymmetric coroutine</code>）：挂起时控制权返回给调用者，而不是任意协程之间切换；</li>
-<li>它是 <strong>非栈式协程</strong>（<code>stackless coroutine</code>）：只保存 Python/JS 的执行帧，不保存完整的原生调用栈，因此不能在任意深度的普通函数中间点挂起；</li>
-<li>它是 <strong>第一类对象协程</strong>（<code>first-class coroutine</code>）：生成器对象可以自由创建、赋值、传递和组合，不受限于特定的语法结构。</li>
-<li>它是 <strong>嵌套协程</strong>（<code>nested coroutine</code>）：每层 <code>filter</code> 都生成一个新的生成器对象，包装前一层生成器，形成层层嵌套的协程结构，控制流从内层逐层传回外层，实现多层筛选逻辑。</li>
+<li>
+<p>它是 <strong>非对称协程</strong>（<code>asymmetric coroutine</code>）：挂起时控制权返回给调用者，而不是任意协程之间切换；</p>
+</li>
+<li>
+<p>它是 <strong>非栈式协程</strong>（<code>stackless coroutine</code>）：只保存 Python/JS 的执行帧，不保存完整的原生调用栈，因此不能在任意深度的普通函数中间点挂起；</p>
+</li>
+<li>
+<p>它是 <strong>第一类对象协程</strong>（<code>first-class coroutine</code>）：生成器对象可以自由创建、赋值、传递和组合，不受限于特定的语法结构。</p>
+</li>
+<li>
+<p>它是 <strong>嵌套协程</strong>（<code>nested coroutine</code>）：每层 <code>filter</code> 都生成一个新的生成器对象，包装前一层生成器，形成层层嵌套的协程结构，控制流从内层逐层传回外层，实现多层筛选逻辑。</p>
+</li>
 </ul>
 </li>
 <li>
@@ -283,9 +291,15 @@
 <li>
 <p><strong>大致原理</strong>：</p>
 <ul>
-<li>对于<strong>大于 1 的整数n</strong>，它的 $x$ 倍（$x>1$）就是合数；</li>
-<li>所以就可以从小到大考虑每一个数，然后把当前这个数的倍数 $nx$ 标记为合数（$nx>n$）</li>
-<li>这样子的话运行结束时没有被标记的就都是素数了</li>
+<li>
+<p>对于<strong>大于 1 的整数n</strong>，它的 $x$ 倍（$x>1$）就是合数；</p>
+</li>
+<li>
+<p>所以就可以从小到大考虑每一个数，然后把当前这个数的倍数 $nx$ 标记为合数（$nx>n$）</p>
+</li>
+<li>
+<p>这样子的话运行结束时没有被标记的就都是素数了</p>
+</li>
 </ul>
 </li>
 <li>
@@ -296,10 +310,12 @@
 <p>这里简要说一下大致的思路，具体的证明不赘述</p>
 </blockquote>
 <ul>
-<li>如果要筛掉 <strong>[1,n]</strong> 中所有的数的倍数，那它的时间复杂度是调和级数：
-$$
-        \sum^{n}_{k=1}\lfloor{\frac{n}{k}}\rfloor\approx nlogn
-        $$</li>
+<li>
+<p>如果要筛掉 <strong>[1,n]</strong> 中所有的数的倍数，那它的时间复杂度是调和级数：</p>
+<p>$$</p>
+<p>\sum^{n}_{k=1}\lfloor{\frac{n}{k}}\rfloor\approx nlogn</p>
+<p>$$</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -308,9 +324,10 @@ $$
 <p>那现在是要筛掉所有素数的倍数，可以证明时间复杂度就是：</p>
 </li>
 </ul>
-$$
-    \sum_{p\leqslant n,p\in prime}{\lfloor\frac{n}{p}\rfloor}=nloglogn
-    $$<p>​			  所以<strong>埃式筛</strong>的时间复杂度是</p>
+<p>$$</p>
+<p>\sum_{p\leqslant n,p\in prime}{\lfloor\frac{n}{p}\rfloor}=nloglogn</p>
+<p>$$</p>
+<p>​			  所以<strong>埃式筛</strong>的时间复杂度是</p>
 $$O(nloglogn)$$</li>
 </ul>
 <h2 id="基于协程的埃式筛">
@@ -319,9 +336,11 @@ $$O(nloglogn)$$</li>
 </h2><ul>
 <li><strong>iota</strong></li>
 </ul>
-<pre><code>- `iota(i, n)` 是一个**序列生成器**，会依次产生区间 `[i, n)` 的整数。
-
-- 在本题中，`iota(2, 100)` 就生成了从 `2` 到 `99` 的整数流，作为筛法的初始数据源。
+<pre><code>- `iota(i, n)` 是一个**序列生成器**，会依次产生区间 `[i, n)` 的整数。
+
+
+
+- 在本题中，`iota(2, 100)` 就生成了从 `2` 到 `99` 的整数流，作为筛法的初始数据源。
 </code></pre>
 <ul>
 <li>
@@ -340,18 +359,19 @@ $$O(nloglogn)$$</li>
 <ul>
 <li>
 <p>主循环中，每次取到一个 <code>value</code>（即一个素数），就用 <code>filter</code> 包装当前生成器，得到一个新的生成器 <code>g</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">  <span class="n">value</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">value</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="n">g</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="err">```</span>
 </span></span></code></pre></div></li>
 <li>
-<p>这样，生成器的结构就逐步变成了嵌套形式：
-</p>
-$$
-        g = filter(filter(\dots filter(iota, p_1), p_2), \dots, p_k)
-        $$</li>
+<p>这样，生成器的结构就逐步变成了嵌套形式：</p>
+<p>$$</p>
+<p>g = filter(filter(\dots filter(iota, p_1), p_2), \dots, p_k)</p>
+<p>$$</p>
+</li>
 <li>
 <p>其中，每一层 <code>filter</code> 都会<strong>记住当时的素数 <code>p</code></strong>（这个特性和闭包类似，后续代码错误的原因也和闭包有关），并在后续迭代时持续生效。</p>
 </li>
@@ -371,11 +391,16 @@ $$
 </h2><ul>
 <li>
 <p>第二份代码和第三份代码用的都是内置的 <code>filter</code> 函数，而里面传的第一个参数用的是（以第二份代码为例）：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">lambda</span> <span class="n">incoming</span><span class="p">:</span> <span class="n">incoming</span> <span class="o">%</span> <span class="n">value</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">lambda</span> <span class="n">incoming</span><span class="p">:</span> <span class="n">incoming</span> <span class="o">%</span> <span class="n">value</span>
 </span></span></code></pre></div><p>这是一个<code>lambda表达式</code>：</p>
 <ul>
-<li><code>incoming</code>：<code>filter</code>从传入的第二个参数（生成器 <code>g</code> ）里取的一个元素</li>
-<li><code>value</code>：从外部作用域捕获的<strong>变量引用</strong></li>
+<li>
+<p><code>incoming</code>：<code>filter</code>从传入的第二个参数（生成器 <code>g</code> ）里取的一个元素</p>
+</li>
+<li>
+<p><code>value</code>：从外部作用域捕获的<strong>变量引用</strong></p>
+</li>
 </ul>
 <p>由于 <code>lambda</code> 捕获的是 <strong>变量引用</strong>，而 <code>value</code> 会在主循环中不断变化，所有内层 <code>filter</code> 其实都在使用 <strong>同一个最新的 <code>value</code></strong> 进行判断。</p>
 <p>那这样在最外层<code>filter</code>或许传入的 <code>value</code> 是对的，但到内层的<code>filter</code>的时候，筛的数仍然是 <code>value</code> 的倍数，那结果自然就不对了。</p>
@@ -397,12 +422,21 @@ $$
 <p><strong>💻第二份代码修改</strong></p>
 <blockquote>
 <p>把<code>g=filter(lambda incoming: incoming % value, g)</code>改成：</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
 <p><code>g=filter(lambda incoming, p=value: incoming % p, g)</code></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
 <p>这里 <code>p=value</code> 会把当前 <code>value</code> 的值固定在 lambda 内部，避免随着外层循环变化而被覆盖。</p>
 </blockquote>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">iota</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">iota</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
@@ -432,12 +466,21 @@ $$
 <p><strong>💻第三份代码修改</strong></p>
 <blockquote>
 <p>把<code>g = filter(g, incoming =&gt; incoming % value)</code>改成：</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
 <p><code>g = filter(g, ((p) =&gt; (x) =&gt; x % p)(value))</code></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
 <p>这里通过立即执行函数 (IIFE) 固定了当时的 <code>value</code>，生成新的函数供 filter 使用，从而避免闭包共享同一变量引用的问题。</p>
 </blockquote>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span><span class="o">*</span> <span class="nx">iota</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span><span class="o">*</span> <span class="nx">iota</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">)</span> <span class="k">yield</span> <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -493,13 +536,6 @@ $$
           >
           <em class="post-meta-item-text">阅读量</em>
         </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/cnss"
-        rel="tag"
-        >CNSS</a
-      >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
         href="/tags/%e5%a4%8f%e4%bb%a4%e8%90%a5"
@@ -624,7 +660,7 @@ $$
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -740,7 +776,7 @@ $$
           author: "MilLoong",
           title: "CNSS 2025 夏令营：Prime",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-summer-prime\/",
-          description: " 🧮Prime ✍问题一 本题筛素数的协程用了生成器，叫做 基于生成器的协程（generator-based coroutine）。 而我稍微搜了一下，其实可以更详细一点：\n它是 非对称协程（asymmetric coroutine）：挂起时控制权返回给调用者，而不是任意协程之间切换； 它是 非栈式协程（stackless coroutine）：只保存 Python\/JS 的执行帧，不保存完整的原生调用栈，因此不能在任意深度的普通函数中间点挂起； 它是 第一类对象协程（first-class coroutine）：生成器对象可以自由创建、赋值、传递和组合，不受限于特定的语法结构。 它是 嵌套协 …",
+          description: " 🧮Prime ✍问题一 本题筛素数的协程用了生成器，叫做 基于生成器的协程（generator-based coroutine）。\n而我稍微搜了一下，其实可以更详细一点：\n它是 非对称协程（asymmetric coroutine）：挂起时控制权返回给调用者，而不是任意协程之间切换；\n它是 非栈式协程（stackless coroutine）：只保存 Python\/JS 的执行帧，不保存完整的原生调用栈，因此不能在任意深度的普通函数中间点挂起；\n它是 第一类对象协程（first-class coroutine）：生成器对象可以自由创建、赋值、传递和组合，不受限于特定的语法结构。\n它是 嵌套协 …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg13.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

@@ -50,7 +50,7 @@
   />
   <meta property="article:author" content="MilLoong" />
   <meta property="article:published_time" content="2025-09-28T22:37:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-09-28T22:37:00&#43;08:00" /><meta property="article:tag" content="CNSS招新DevWriteup" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-09-28T22:37:00&#43;08:00" /><meta property="article:tag" content="招新DevWriteup" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/backgrounds/bg30.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -189,7 +189,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -284,70 +284,24 @@
 <li><strong>格雷码任意两个相邻的代码只有一位二进制数不同</strong>，也就是说，相邻两项的 <code>popcount</code> 差 1 ，且相邻两项异或起来的值的 <code>popcount=1</code></li>
 </ul>
 <p>可以打个表来看一下：</p>
-<table>
-  <thead>
-      <tr>
-          <th>十进制</th>
-          <th>标准二进制</th>
-          <th>格雷码</th>
-          <th><code>popcount(格雷码)</code></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>0</td>
-          <td>000</td>
-          <td>000</td>
-          <td>0 (偶)</td>
-      </tr>
-      <tr>
-          <td>1</td>
-          <td>001</td>
-          <td>001</td>
-          <td>1 (奇)</td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>010</td>
-          <td>011</td>
-          <td>2 (偶)</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>011</td>
-          <td>010</td>
-          <td>1 (奇)</td>
-      </tr>
-      <tr>
-          <td>4</td>
-          <td>100</td>
-          <td>110</td>
-          <td>2 (偶)</td>
-      </tr>
-      <tr>
-          <td>5</td>
-          <td>101</td>
-          <td>111</td>
-          <td>3 (奇)</td>
-      </tr>
-      <tr>
-          <td>6</td>
-          <td>110</td>
-          <td>101</td>
-          <td>2 (偶)</td>
-      </tr>
-      <tr>
-          <td>7</td>
-          <td>111</td>
-          <td>100</td>
-          <td>1 (奇)</td>
-      </tr>
-  </tbody>
-</table>
+<p>| 十进制 | 标准二进制 | 格雷码 | <code>popcount(格雷码)</code> |</p>
+<p>| &mdash;&mdash; | &mdash;&mdash;&mdash;- | &mdash;&mdash; | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash; |</p>
+<p>| 0      | 000        | 000    | 0 (偶)             |</p>
+<p>| 1      | 001        | 001    | 1 (奇)             |</p>
+<p>| 2      | 010        | 011    | 2 (偶)             |</p>
+<p>| 3      | 011        | 010    | 1 (奇)             |</p>
+<p>| 4      | 100        | 110    | 2 (偶)             |</p>
+<p>| 5      | 101        | 111    | 3 (奇)             |</p>
+<p>| 6      | 110        | 101    | 2 (偶)             |</p>
+<p>| 7      | 111        | 100    | 1 (奇)             |</p>
 <p>可以看到，初态是 <code>0</code> 的时候：</p>
 <ul>
-<li>若 <code>popcount</code> 为偶数，则当前项 <code>+1</code> 就是 <code>^1</code>，<code>-1</code> 就是 <code>^1&lt;&lt;ctz(i)+1</code></li>
-<li>若 <code>popcount</code> 为奇数，则当前项 <code>+1</code> 就是 <code>^1&lt;&lt;ctz(i)+1</code>，<code>-1</code> 就是 <code>^1</code></li>
+<li>
+<p>若 <code>popcount</code> 为偶数，则当前项 <code>+1</code> 就是 <code>^1</code>，<code>-1</code> 就是 <code>^1&lt;&lt;ctz(i)+1</code></p>
+</li>
+<li>
+<p>若 <code>popcount</code> 为奇数，则当前项 <code>+1</code> 就是 <code>^1&lt;&lt;ctz(i)+1</code>，<code>-1</code> 就是 <code>^1</code></p>
+</li>
 </ul>
 <p>而这恰好和 <code>qab</code> 与 <code>pab</code> 中的 <code>popcount(i)&amp;1</code> 的判断相匹配，所以这题肯定就是这么写的</p>
 <p>那题目给的指针操作及内存操作都是有 <code>^1</code>、<code>^1&lt;&lt;ctz(i)+1</code>、<code>判断popcount&amp;1</code> 的操作的，所以两者可以分别实现 <code>&lt;&gt;</code> 和 <code>+-</code> 的</p>
@@ -355,7 +309,8 @@
 <p>然后 指针 就用 <strong>格雷码</strong> 保存了，这没问题</p>
 <p>不过 内存 是用 <code>getchar</code> 作为输入，<code>putchar</code> 作为输出，这两者都是输入或输出 <strong>标准二进制</strong> 的，要考虑输入以后怎么转换成 <strong>格雷码</strong>，以及怎么从 <strong>格雷码</strong> 转换为 <strong>标准二进制</strong> 来输出。</p>
 <p>这个时候可以利用 <code>mem[i]</code> 有而 <code>i</code> 没有的一些操作来证明了：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="nl">u</span><span class="p">:</span> <span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mem</span><span class="p">[</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nl">u</span><span class="p">:</span> <span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mem</span><span class="p">[</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nl">v</span><span class="p">:</span> <span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mem</span><span class="p">[</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">256</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">
@@ -381,48 +336,16 @@
 <a class="header-anchor" href="#%e8%af%81%e6%98%8e"></a>
 证明
 </h2><p>要证明所给的 <strong>Brainwash</strong> 可以实现 <strong>Brainfuck</strong> 的所有功能，其实就是证明 指令集 可以实现 <strong>Brainfuck</strong> 的 8 条命令：</p>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: center">字符</th>
-          <th style="text-align: center">含义</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center"><code>&gt;</code></td>
-          <td style="text-align: center">指针加一</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>&lt;</code></td>
-          <td style="text-align: center">指针减一</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>+</code></td>
-          <td style="text-align: center">指针所指字节的值加一</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>-</code></td>
-          <td style="text-align: center">指针所指字节的值减一</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>.</code></td>
-          <td style="text-align: center">输出指针所指字节内容（<a href="https://zh.wikipedia.org/wiki/ASCII%E7%A0%81">ASCII码</a>）</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>,</code></td>
-          <td style="text-align: center">向指针所指的字节输入内容（ASCII码）</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>[</code></td>
-          <td style="text-align: center">若指针所指字节的值为零，则向后跳转，跳转到其对应的<code>]</code>的下一个指令处</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>]</code></td>
-          <td style="text-align: center">若指针所指字节的值不为零，则向前跳转，跳转到其对应的<code>[</code>的下一个指令处</td>
-      </tr>
-  </tbody>
-</table>
+<p>| 字符 |                             含义                             |</p>
+<p>| :&ndash;: | :&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-: |</p>
+<p>| <code>&gt;</code>  |                           指针加一                           |</p>
+<p>| <code>&lt;</code>  |                           指针减一                           |</p>
+<p>| <code>+</code>  |                     指针所指字节的值加一                     |</p>
+<p>| <code>-</code>  |                     指针所指字节的值减一                     |</p>
+<p>| <code>.</code>  | 输出指针所指字节内容（<a href="https://zh.wikipedia.org/wiki/ASCII%E7%A0%81">ASCII码</a>） |</p>
+<p>| <code>,</code>  |             向指针所指的字节输入内容（ASCII码）              |</p>
+<p>| <code>[</code>  | 若指针所指字节的值为零，则向后跳转，跳转到其对应的<code>]</code>的下一个指令处 |</p>
+<p>| <code>]</code>  | 若指针所指字节的值不为零，则向前跳转，跳转到其对应的<code>[</code>的下一个指令处 |</p>
 <ul>
 <li>
 <p><code>[</code>，<code>]</code></p>
@@ -435,95 +358,75 @@
 <li>
 <p><code>&lt;</code>，<code>&gt;</code></p>
 <p><strong>Brainwash</strong> 中涉及 当前指针 移动的操作有：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="nl">x</span><span class="p">:</span> <span class="n">i</span> <span class="o">^=</span> <span class="mi">1</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nl">x</span><span class="p">:</span> <span class="n">i</span> <span class="o">^=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nl">y</span><span class="p">:</span> <span class="n">i</span> <span class="o">^=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">ctz</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nl">qab</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">popcount</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span>
 </span></span></code></pre></div><p>根据 <strong>思考</strong> 得知，<code>popcount(i)</code> 是奇数时，当前指针 <code>+1</code> 就是 <code>^1&lt;&lt;ctz(i)+1</code>，<code>-1</code> 就是 <code>^1</code>，偶数反之，所以 <code>&lt;</code> 的 <strong>Brainwash</strong> 表示是：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">qxy
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">qxy
 </span></span></code></pre></div><p><code>&gt;</code> 的 <strong>Brainwash</strong> 表示是：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">qyx
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">qyx
 </span></span></code></pre></div></li>
 <li>
 <p><code>+</code>，<code>-</code></p>
 <p><strong>Brainwash</strong> 中涉及 内存 加减的操作有：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="nl">s</span><span class="p">:</span> <span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^=</span> <span class="mi">1</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nl">s</span><span class="p">:</span> <span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nl">z</span><span class="p">:</span> <span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">min</span><span class="p">(</span><span class="n">ctz</span><span class="p">(</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nl">pab</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">popcount</span><span class="p">(</span><span class="n">mem</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span>
 </span></span></code></pre></div><p>那么就和 <code>&lt;</code>，<code>&gt;</code> 的处理同理，<code>+</code> 的 <strong>Brainwash</strong> 表示是：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">pzs</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pzs</span>
 </span></span></code></pre></div><p><code>-</code> 的 <strong>Brainwash</strong> 表示是：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">psz</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">psz</span>
 </span></span></code></pre></div></li>
 <li>
 <p><code>,</code>，<code>.</code></p>
 <p>如 <strong>思考</strong> 中所说，我们先执行 <code>stdlib.bw</code> 的打表指令，然后就能够用</p>
 <ul>
-<li><code>u</code>：<code>binary2gray</code></li>
-<li><code>v</code>：<code>gray2binary</code></li>
+<li>
+<p><code>u</code>：<code>binary2gray</code></p>
+</li>
+<li>
+<p><code>v</code>：<code>gray2binary</code></p>
+</li>
 </ul>
 <p>对于 <code>,</code>：</p>
 <ul>
 <li>
 <p><code>i</code> 输入进来的是 <code>binary</code>，并且会对 <code>mem[i]</code> 进行覆盖，所以在 <code>i</code> 之后直接执行 <code>u</code> 就好了，所以是：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">iu
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">iu
 </span></span></code></pre></div></li>
 </ul>
 <p>对于 <code>.</code>：</p>
 <ul>
 <li>
 <p><code>o</code> 要先用 <code>u</code> 把 <code>mem[i]</code> 的 格雷码 转换为 <code>bianry</code>，然后输出之后，还要用 <code>v</code> 转回去，所以是：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vou
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">vou
 </span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
 <p>所以这样我们就证明了 <strong>Brainwash</strong> 能实现 <strong>Brainfuck</strong> ，对应的 <strong>Brainfuck</strong> 命令与 <strong>Brainwash</strong> 等价实现 的关系是：</p>
-<table>
-  <thead>
-      <tr>
-          <th>Brainfuck 指令</th>
-          <th>Brainwash 等价实现</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>+</code></td>
-          <td><code>pzs</code></td>
-      </tr>
-      <tr>
-          <td><code>-</code></td>
-          <td><code>psz</code></td>
-      </tr>
-      <tr>
-          <td><code>&gt;</code></td>
-          <td><code>qyx</code></td>
-      </tr>
-      <tr>
-          <td><code>&lt;</code></td>
-          <td><code>qxy</code></td>
-      </tr>
-      <tr>
-          <td><code>.</code></td>
-          <td><code>vou</code></td>
-      </tr>
-      <tr>
-          <td><code>,</code></td>
-          <td><code>iu</code></td>
-      </tr>
-      <tr>
-          <td><code>[</code></td>
-          <td><code>[</code></td>
-      </tr>
-      <tr>
-          <td><code>]</code></td>
-          <td><code>]</code></td>
-      </tr>
-  </tbody>
-</table>
+<p>| Brainfuck 指令 | Brainwash 等价实现 |</p>
+<p>| &mdash;&mdash;&mdash;&mdash;&ndash; | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash; |</p>
+<p>| <code>+</code>            | <code>pzs</code>              |</p>
+<p>| <code>-</code>            | <code>psz</code>              |</p>
+<p>| <code>&gt;</code>            | <code>qyx</code>              |</p>
+<p>| <code>&lt;</code>            | <code>qxy</code>              |</p>
+<p>| <code>.</code>            | <code>vou</code>              |</p>
+<p>| <code>,</code>            | <code>iu</code>               |</p>
+<p>| <code>[</code>            | <code>[</code>                |</p>
+<p>| <code>]</code>            | <code>]</code>                |</p>
 <p>于是就能证明 <strong>Brainwash</strong> 是 <strong>图灵完备</strong> 的了</p>
 <h2 id="ch2---bonus-task">
 <a class="header-anchor" href="#ch2---bonus-task"></a>
@@ -546,7 +449,8 @@
 <p>同时这个项目也包含 <strong>Brainfuck</strong> 的 <code>JIT</code> 的实现了，所以也可以很方便地去做 <strong>Bonus Task</strong></p>
 <p>这里的话由于多加了个 <code>pab</code> 和 <code>qab</code> 这样的条件跳转，所以这里改动比较多，加了一些执行 单个操作 的函数</p>
 <p>关于 项目架构，参考上述 项目 的：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">.
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">├── Cargo.toml                <span class="c1"># Rust 项目配置文件</span>
 </span></span><span class="line"><span class="cl">
@@ -577,12 +481,14 @@
 </span></span><span class="line"><span class="cl">└── target/                   <span class="c1"># 编译输出目录</span>
 </span></span></code></pre></div><p>关于 平台与架构：</p>
 <ul>
-<li><strong>平台：</strong>
+<li>
+<p><strong>平台：</strong></p>
 <ul>
 <li><strong>Windows</strong> 平台</li>
 </ul>
 </li>
-<li><strong>架构：</strong>
+<li>
+<p><strong>架构：</strong></p>
 <ul>
 <li><strong>x86-64</strong> 架构</li>
 </ul>
@@ -610,16 +516,20 @@
 <ul>
 <li>
 <p>原始模式</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cargo run --release -- -or res/HelloWorld.bw
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cargo run --release -- -or res/HelloWorld.bw
 </span></span></code></pre></div><p>如果是下载已经编译的二进制文件，可以直接运行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./brainwash.exe -or ./yourcode.bw
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">./brainwash.exe -or ./yourcode.bw
 </span></span></code></pre></div><p>如需运行其他示例，将路径替换为对应 <code>.bw</code> 文件。</p>
 </li>
 <li>
 <p>IR 优化：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cargo run --release -- -ir res/HelloWorld.bw
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cargo run --release -- -ir res/HelloWorld.bw
 </span></span></code></pre></div><p>如果是下载已经编译的二进制文件，可以直接运行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./brainwash.exe -ir ./yourcode.bw
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">./brainwash.exe -ir ./yourcode.bw
 </span></span></code></pre></div><p>如需运行其他示例，将路径替换为对应 <code>.bw</code> 文件。</p>
 </li>
 </ul>
@@ -629,9 +539,11 @@
 <li>
 <p><strong>JIT 编译模式：</strong></p>
 <p>可通过命令行参数切换来启用 <code>JIT</code> 编译模式：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cargo run --release -- -jit res/HelloWorld.bw
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cargo run --release -- -jit res/HelloWorld.bw
 </span></span></code></pre></div><p>如果是下载已经编译的二进制文件，可以直接运行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./brainwash.exe -jit ./yourcode.bw
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">./brainwash.exe -jit ./yourcode.bw
 </span></span></code></pre></div><p>（具体参数请参考 <code>main.rs</code> 或命令行帮助）</p>
 <ul>
 <li>
@@ -650,8 +562,12 @@
 </ul>
 <p>关于 <strong>地址指针</strong>：</p>
 <ul>
-<li>**内存指针 (<code>rdi</code>)：**内部的数据指针 (<code>data_ptr</code>)</li>
-<li>**内存基地址 (<code>rbx</code>)：**用 <code>rbx</code> 寄存器保存了 <code>mem</code> 数组的基地址，以此来计算 偏移量</li>
+<li>
+<p>**内存指针 (<code>rdi</code>)：**内部的数据指针 (<code>data_ptr</code>)</p>
+</li>
+<li>
+<p>**内存基地址 (<code>rbx</code>)：**用 <code>rbx</code> 寄存器保存了 <code>mem</code> 数组的基地址，以此来计算 偏移量</p>
+</li>
 </ul>
 <p>各个 <strong>指令</strong> 翻译成 <strong>汇编</strong>：</p>
 <ul>
@@ -670,9 +586,15 @@
 <li>
 <p><strong><code>z</code> 和 <code>y</code></strong>：</p>
 <ul>
-<li>这两个指令需要计算 <code>ctz</code>，这在汇编中没有直接对应的指令</li>
-<li>所以要<strong>调用外部 Rust 函数</strong> <code>extern_ctz</code> 和 <code>extern_ctz_u32</code> 来完成计算</li>
-<li>先 <code>movzx rcx, BYTE [rdi]</code> 准备参数，然后 <code>call rax</code> 调用函数，最后利用返回值完成后续的位移和异或操作</li>
+<li>
+<p>这两个指令需要计算 <code>ctz</code>，这在汇编中没有直接对应的指令</p>
+</li>
+<li>
+<p>所以要<strong>调用外部 Rust 函数</strong> <code>extern_ctz</code> 和 <code>extern_ctz_u32</code> 来完成计算</p>
+</li>
+<li>
+<p>先 <code>movzx rcx, BYTE [rdi]</code> 准备参数，然后 <code>call rax</code> 调用函数，最后利用返回值完成后续的位移和异或操作</p>
+</li>
 </ul>
 </li>
 <li>
@@ -684,10 +606,12 @@
 <li>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"></code></pre></div></li>
 </ul>
-<p>call extern_getchar
-&hellip;
-mov BYTE [rdi], al</p>
+<p>call extern_getchar</p>
+<p>&hellip;</p>
+<p>mov BYTE [rdi], al</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">即先获取字符，再存入内存
 </span></span></code></pre></div></li>
 <li>
@@ -696,10 +620,12 @@ mov BYTE [rdi], al</p>
 <li>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"></code></pre></div></li>
 </ul>
-<p>movzx rcx, BYTE [rdi]
-&hellip;
-call extern_putchar</p>
+<p>movzx rcx, BYTE [rdi]</p>
+<p>&hellip;</p>
+<p>call extern_putchar</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">即先从内存加载格雷码，再调用打印函数
 </span></span></code></pre></div></li>
 </ul>
@@ -728,9 +654,15 @@ call extern_putchar</p>
 <li>
 <p>**<code>JIZ</code> / <code>JNZ</code> **:</p>
 <ul>
-<li>首先为每个 IR 指令创建了一个动态标签 <code>labels[i]</code></li>
-<li>然后 <code>JIZ</code> 指令被编译为 <code>cmp BYTE [rdi], 0</code> 和 <code>jz =&gt;labels[*target_idx]</code></li>
-<li><code>JNZ</code> 同理</li>
+<li>
+<p>首先为每个 IR 指令创建了一个动态标签 <code>labels[i]</code></p>
+</li>
+<li>
+<p>然后 <code>JIZ</code> 指令被编译为 <code>cmp BYTE [rdi], 0</code> 和 <code>jz =&gt;labels[*target_idx]</code></p>
+</li>
+<li>
+<p><code>JNZ</code> 同理</p>
+</li>
 </ul>
 </li>
 <li>
@@ -743,11 +675,21 @@ call extern_putchar</p>
 <li>
 <p><strong>主要文件说明：</strong></p>
 <ul>
-<li><code>src/Interpreter.rs</code>：<strong>Brainwash</strong> 解释器核心逻辑</li>
-<li><code>src/jit_compiler.rs</code>：<strong>JIT</strong> 编译器实现</li>
-<li><code>src/ir.rs</code>：中间表示定义与优化</li>
-<li><code>src/opcode.rs</code>：操作码与指令集定义</li>
-<li><code>src/main.rs</code>：命令行参数解析与程序入口</li>
+<li>
+<p><code>src/Interpreter.rs</code>：<strong>Brainwash</strong> 解释器核心逻辑</p>
+</li>
+<li>
+<p><code>src/jit_compiler.rs</code>：<strong>JIT</strong> 编译器实现</p>
+</li>
+<li>
+<p><code>src/ir.rs</code>：中间表示定义与优化</p>
+</li>
+<li>
+<p><code>src/opcode.rs</code>：操作码与指令集定义</p>
+</li>
+<li>
+<p><code>src/main.rs</code>：命令行参数解析与程序入口</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -863,13 +805,6 @@ call extern_putchar</p>
           >
           <em class="post-meta-item-text">阅读量</em>
         </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/cnss"
-        rel="tag"
-        >CNSS</a
-      >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
         href="/tags/%e6%8b%9b%e6%96%b0"
@@ -994,7 +929,7 @@ call extern_putchar</p>
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>

@@ -50,7 +50,7 @@
   />
   <meta property="article:author" content="MilLoong" />
   <meta property="article:published_time" content="2025-10-12T20:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-10-12T20:00:00&#43;08:00" /><meta property="article:tag" content="CNSS招新DevWriteup" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-10-12T20:00:00&#43;08:00" /><meta property="article:tag" content="招新DevWriteup" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/backgrounds/bg32.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -198,7 +198,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -286,7 +286,8 @@
 <blockquote>
 <p>这里为方便描述还是 <code>define</code> 一下</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define equ(a, b) (!(a &lt; b) &amp;&amp; !(b &lt; a))
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#define equ(a, b) (!(a &lt; b) &amp;&amp; !(b &lt; a))
 </span></span></span></code></pre></div></li>
 </ul>
 <h2 id="用偏序和等价关系外加逻辑运算符实现其余四种比较运算符">
@@ -298,7 +299,8 @@
 <ul>
 <li>
 <p>等价关系的否定：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define not_equ(a, b) (!equ(a, b))
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#define not_equ(a, b) (!equ(a, b))
 </span></span></span></code></pre></div></li>
 </ul>
 </li>
@@ -307,7 +309,8 @@
 <ul>
 <li>
 <p>小于的反向，也就是反向的偏序：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define gra(a, b) (b &lt; a)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#define gra(a, b) (b &lt; a)
 </span></span></span></code></pre></div></li>
 </ul>
 </li>
@@ -316,7 +319,8 @@
 <ul>
 <li>
 <p>大于的否定：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define less_equ(a, b) (!(b &lt; a))
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#define less_equ(a, b) (!(b &lt; a))
 </span></span></span></code></pre></div></li>
 </ul>
 </li>
@@ -325,7 +329,8 @@
 <ul>
 <li>
 <p>小于的否定：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define gra_equ(a, b) (!(a &lt; b))
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#define gra_equ(a, b) (!(a &lt; b))
 </span></span></span></code></pre></div></li>
 </ul>
 </li>
@@ -338,7 +343,8 @@
 原代码
 </h2><ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -359,7 +365,8 @@
 <p>其实不需要用具体的值，直接用表示 <code>a</code> 和 <code>b</code> 大小关系的 <code>bool</code> 就行了</p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
@@ -377,7 +384,8 @@
 </blockquote>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">reverse_compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">reverse_compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="n">compare</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
@@ -396,7 +404,8 @@
 </h2><ul>
 <li>
 <p>其实直接反转一下 <code>a</code> 和 <code>b</code> 就可以了：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">reverse_compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">reverse_compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">compare</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
@@ -422,46 +431,83 @@
 <li>
 <p><code>S1</code> 和 <code>S2</code></p>
 <ul>
-<li><code>UTF-8</code>：
+<li>
+<p><code>UTF-8</code>：</p>
 <ul>
-<li><code>S1</code>：<code>F0 90 80 80</code></li>
-<li><code>S2</code>：<code>EE 80 80</code></li>
-<li>由于 <code>0xF0&gt;0xEE</code> 所以 <code>S1&gt;S2</code></li>
+<li>
+<p><code>S1</code>：<code>F0 90 80 80</code></p>
+</li>
+<li>
+<p><code>S2</code>：<code>EE 80 80</code></p>
+</li>
+<li>
+<p>由于 <code>0xF0&gt;0xEE</code> 所以 <code>S1&gt;S2</code></p>
+</li>
 </ul>
 </li>
-<li><code>UTF-16</code>：
+<li>
+<p><code>UTF-16</code>：</p>
 <ul>
-<li><code>S1</code>：<code>D800 DC00</code></li>
-<li><code>S2</code>：<code>E000</code></li>
-<li>由于 <code>0xD800&lt;0xE000</code> 所以 <code>S1&lt;S2</code></li>
+<li>
+<p><code>S1</code>：<code>D800 DC00</code></p>
+</li>
+<li>
+<p><code>S2</code>：<code>E000</code></p>
+</li>
+<li>
+<p>由于 <code>0xD800&lt;0xE000</code> 所以 <code>S1&lt;S2</code></p>
+</li>
 </ul>
 </li>
-<li><code>UTF-32</code>：
+<li>
+<p><code>UTF-32</code>：</p>
 <ul>
-<li><code>S1</code>：<code>00010000</code></li>
-<li><code>S2</code>：<code>0000E000</code></li>
-<li>由于 <code>0x00010000&gt;0x0000E000</code> 所以 <code>S1&gt;S2</code></li>
+<li>
+<p><code>S1</code>：<code>00010000</code></p>
+</li>
+<li>
+<p><code>S2</code>：<code>0000E000</code></p>
+</li>
+<li>
+<p>由于 <code>0x00010000&gt;0x0000E000</code> 所以 <code>S1&gt;S2</code></p>
+</li>
 </ul>
 </li>
-<li>可以发现在这个例子中 <code>UTF-8</code> 和 <code>UTF-32</code> 的结果是相同的，均与 <code>UTF-16</code> 的结果不同</li>
+<li>
+<p>可以发现在这个例子中 <code>UTF-8</code> 和 <code>UTF-32</code> 的结果是相同的，均与 <code>UTF-16</code> 的结果不同</p>
+</li>
 </ul>
 <p>然后是怎么证明 <code>UTF-8</code> 和 <code>UTF-32</code> 有可能不同，这个样例有点难找，然后我搜到了一个比较奇怪的反例（</p>
 </li>
 <li>
 <p><code>Ā</code> 和 <code>A</code></p>
 <ul>
-<li><code>UTF-8</code>：
+<li>
+<p><code>UTF-8</code>：</p>
 <ul>
-<li><code>Ā</code>：<code>C4 80</code></li>
-<li><code>A</code>：<code>41</code></li>
-<li><code>0xC4&gt;0x41</code> 所以 <code>Ā&gt;A</code></li>
+<li>
+<p><code>Ā</code>：<code>C4 80</code></p>
+</li>
+<li>
+<p><code>A</code>：<code>41</code></p>
+</li>
+<li>
+<p><code>0xC4&gt;0x41</code> 所以 <code>Ā&gt;A</code></p>
+</li>
 </ul>
 </li>
-<li><code>UTF-32LE</code>（<code>UTF-32</code> 的小端序，大端序的话目前我没有找到qwq）：
+<li>
+<p><code>UTF-32LE</code>（<code>UTF-32</code> 的小端序，大端序的话目前我没有找到qwq）：</p>
 <ul>
-<li><code>Ā</code>：<code>00 01 00 00</code></li>
-<li><code>A</code>：<code>41 00 00 00</code></li>
-<li><code>0x00&lt;0x41</code> 所以 <code>Ā&lt;A</code></li>
+<li>
+<p><code>Ā</code>：<code>00 01 00 00</code></p>
+</li>
+<li>
+<p><code>A</code>：<code>41 00 00 00</code></p>
+</li>
+<li>
+<p><code>0x00&lt;0x41</code> 所以 <code>Ā&lt;A</code></p>
+</li>
 </ul>
 </li>
 </ul>
@@ -784,13 +830,6 @@
         </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
-        href="/tags/cnss"
-        rel="tag"
-        >CNSS</a
-      >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
         href="/tags/%e6%8b%9b%e6%96%b0"
         rel="tag"
         >招新</a
@@ -922,7 +961,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>

@@ -50,7 +50,7 @@
   />
   <meta property="article:author" content="MilLoong" />
   <meta property="article:published_time" content="2025-09-12T18:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-09-12T18:00:00&#43;08:00" /><meta property="article:tag" content="CNSS招新DevWriteup" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-09-12T18:00:00&#43;08:00" /><meta property="article:tag" content="招新DevWriteup" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/backgrounds/bg17.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -188,7 +188,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -272,7 +272,8 @@
 <p>一眼看上去，好像输出的是<strong>long long</strong>但递归里面是返回的 <code>int</code> ，这样的话应该会 <code>UB</code> ，不过这只会导致结果可能错误，运行失败好像不关这个事？所以我这里就不管了qwq</p>
 </blockquote>
 <ul>
-<li><strong>栈溢出：</strong>
+<li>
+<p><strong>栈溢出：</strong></p>
 <ul>
 <li>很明显由于函数递归要用到<strong>栈帧</strong>，所以如果递归深度太大的话会占用太大的<strong>栈空间</strong>，从而造成<strong>栈溢出</strong></li>
 </ul>
@@ -282,15 +283,20 @@
 <a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e7%ac%ac%e4%ba%8c%e4%bb%bd%e4%bb%a3%e7%a0%81%e5%9c%a8-o2%e5%90%8e%e8%83%bd%e8%bf%90%e8%a1%8c"></a>
 为什么第二份代码在<code>-O2</code>后能运行？
 </h2><ul>
-<li><strong>尾递归优化：</strong>
+<li>
+<p><strong>尾递归优化：</strong></p>
 <ul>
-<li>因为 <code>fib2</code> 在尾位置调用自身，函数的最后一次操作是<strong>递归调用</strong>，所以它属于尾递归。</li>
-<li><strong>没开 <code>-O2</code> 时：</strong>
+<li>
+<p>因为 <code>fib2</code> 在尾位置调用自身，函数的最后一次操作是<strong>递归调用</strong>，所以它属于尾递归。</p>
+</li>
+<li>
+<p><strong>没开 <code>-O2</code> 时：</strong></p>
 <ul>
 <li>如果不开 <code>-O2</code> 的话，它还是像普通的递归函数一样，每次<strong>新建栈帧</strong>，有很大的递归层数，所以还是会造成<strong>栈溢出</strong>。</li>
 </ul>
 </li>
-<li><strong>开 <code>-O2</code> 之后：</strong>
+<li>
+<p><strong>开 <code>-O2</code> 之后：</strong></p>
 <ul>
 <li>开了 <code>-O2</code> 之后，尾递归的情况就会变成<strong>覆盖当前栈帧而不是新建一个</strong>，编译器就会<strong>把尾递归优化成递推</strong>，那就能避免栈溢出了。</li>
 </ul>
@@ -307,7 +313,8 @@
 <h2 id="code">
 <a class="header-anchor" href="#code"></a>
 Code
-</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -393,13 +400,6 @@ Code
           >
           <em class="post-meta-item-text">阅读量</em>
         </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/cnss"
-        rel="tag"
-        >CNSS</a
-      >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
         href="/tags/%e6%8b%9b%e6%96%b0"
@@ -523,7 +523,7 @@ Code
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -639,7 +639,7 @@ Code
           author: "MilLoong",
           title: "CNSS 2025 招新：再看看你后面呢",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-zai-kan-kan\/",
-          description: " 👁再看看你后面呢 ❓CH1 为什么两份代码都运行失败？ 一眼看上去，好像输出的是long long但递归里面是返回的 int ，这样的话应该会 UB ，不过这只会导致结果可能错误，运行失败好像不关这个事？所以我这里就不管了qwq\n栈溢出： 很明显由于函数递归要用到栈帧，所以如果递归深度太大的话会占用太大的栈空间，从而造成栈溢出 为什么第二份代码在-O2后能运行？ 尾递归优化： 因为 fib2 在尾位置调用自身，函数的最后一次操作是递归调用，所以它属于尾递归。 没开 -O2 时： 如果不开 -O2 的话，它还是像普通的递归函数一样，每次新建栈帧，有很大的递归层数，所以还是会造成栈溢出。 开 …",
+          description: " 👁再看看你后面呢 ❓CH1 为什么两份代码都运行失败？ 一眼看上去，好像输出的是long long但递归里面是返回的 int ，这样的话应该会 UB ，不过这只会导致结果可能错误，运行失败好像不关这个事？所以我这里就不管了qwq\n栈溢出：\n很明显由于函数递归要用到栈帧，所以如果递归深度太大的话会占用太大的栈空间，从而造成栈溢出 为什么第二份代码在-O2后能运行？ 尾递归优化：\n因为 fib2 在尾位置调用自身，函数的最后一次操作是递归调用，所以它属于尾递归。\n没开 -O2 时：\n如果不开 -O2 的话，它还是像普通的递归函数一样，每次新建栈帧，有很大的递归层数，所以还是会造成栈溢出。 开 …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg17.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

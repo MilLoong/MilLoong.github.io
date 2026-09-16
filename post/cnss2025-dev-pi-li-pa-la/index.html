@@ -50,7 +50,7 @@
   />
   <meta property="article:author" content="MilLoong" />
   <meta property="article:published_time" content="2025-10-30T14:41:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-10-30T14:41:00&#43;08:00" /><meta property="article:tag" content="CNSS招新DevOSWriteup" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-10-30T14:41:00&#43;08:00" /><meta property="article:tag" content="招新DevOSWriteup" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/backgrounds/bg34.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -187,7 +187,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -268,24 +268,42 @@
 <li>
 <p><strong>运行环境</strong></p>
 <ul>
-<li>这题我依然直接用 <strong>WSL</strong> 来做了，然后是 <strong>WSL2</strong></li>
-<li><strong>虚拟机</strong> 用的是 <strong>Qemu（qemu-system-x86_64）</strong></li>
-<li><strong>启动方式</strong> 用的是 <strong>UEFI</strong>，因为我不是很想用 BIOS 来做</li>
-<li><strong>指令集架构</strong> 是 x86</li>
-<li><strong>编译工具：</strong> <strong>mingw-w64</strong></li>
-<li><strong>UEFI库：</strong><code>gnu-efi</code></li>
-<li><strong>UEFI固件：</strong><code>OVMF.fd</code></li>
-<li><strong>磁盘工具：</strong><code>mtools</code></li>
+<li>
+<p>这题我依然直接用 <strong>WSL</strong> 来做了，然后是 <strong>WSL2</strong></p>
+</li>
+<li>
+<p><strong>虚拟机</strong> 用的是 <strong>Qemu（qemu-system-x86_64）</strong></p>
+</li>
+<li>
+<p><strong>启动方式</strong> 用的是 <strong>UEFI</strong>，因为我不是很想用 BIOS 来做</p>
+</li>
+<li>
+<p><strong>指令集架构</strong> 是 x86</p>
+</li>
+<li>
+<p><strong>编译工具：</strong> <strong>mingw-w64</strong></p>
+</li>
+<li>
+<p><strong>UEFI库：</strong><code>gnu-efi</code></p>
+</li>
+<li>
+<p><strong>UEFI固件：</strong><code>OVMF.fd</code></p>
+</li>
+<li>
+<p><strong>磁盘工具：</strong><code>mtools</code></p>
+</li>
 </ul>
 </li>
 <li>
 <p><strong>代码（./hello/hello.c）</strong></p>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efi.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efi.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efilib.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">EFI_STATUS</span> <span class="n">EFIAPI</span> <span class="nf">efi_main</span><span class="p">(</span><span class="n">EFI_HANDLE</span> <span class="n">ImageHandle</span><span class="p">,</span> <span class="n">EFI_SYSTEM_TABLE</span> <span class="o">*</span><span class="n">SystemTable</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
@@ -294,14 +312,17 @@
 </span></span><span class="line"><span class="cl">    <span class="nf">InitializeLib</span><span class="p">(</span><span class="n">ImageHandle</span><span class="p">,</span> <span class="n">SystemTable</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//清屏
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">ClearScreen</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//输出
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">OutputString</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="p">,</span> <span class="sa">L</span><span class="s">&#34;Hello World!</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//让程序一直运行
@@ -318,10 +339,15 @@
 <li>
 <p><strong>编译</strong></p>
 <ul>
-<li>同上用 Makefile，其中：
+<li>
+<p>同上用 Makefile，其中：</p>
 <ul>
-<li><code>make</code>：编译</li>
-<li><code>make run</code>：运行</li>
+<li>
+<p><code>make</code>：编译</p>
+</li>
+<li>
+<p><code>make run</code>：运行</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -331,16 +357,19 @@
 <ul>
 <li>
 <p>由于我用的是 <strong>Qemu</strong> 运行，而 <strong>Qemu</strong> 不自带 UEFI 固件，所以先手动安装：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo apt install qemu-system-x86 ovmf
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ sudo apt install qemu-system-x86 ovmf
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Qemu</strong> 要启动 <code>BOOTX64.EFI</code> 文件，要将其放到 FAT驱动器分区，而 <strong>Qemu</strong> 刚好有将 目录 挂载为 虚拟FAT驱动器 的功能，就能将 某个 <code>dir</code> 目录（我这里叫 <code>disk</code> ）当作 FAT驱动器分区，然后就能启动了</p>
 <p>先：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">cp</span> <span class="n">BOOTX64</span><span class="p">.</span><span class="n">EFI</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span>
 </span></span></code></pre></div><p>然后用：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">qemu</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">x86_64</span> <span class="o">-</span><span class="n">bios</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ovmf</span><span class="o">/</span><span class="n">OVMF</span><span class="p">.</span><span class="n">fd</span> <span class="o">-</span><span class="n">drive</span> <span class="n">file</span><span class="o">=</span><span class="nl">fat</span><span class="p">:</span><span class="nl">rw</span><span class="p">:</span><span class="n">disk</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="n">raw</span> <span class="o">-</span><span class="n">net</span> <span class="n">none</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">qemu</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">x86_64</span> <span class="o">-</span><span class="n">bios</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ovmf</span><span class="o">/</span><span class="n">OVMF</span><span class="p">.</span><span class="n">fd</span> <span class="o">-</span><span class="n">drive</span> <span class="n">file</span><span class="o">=</span><span class="nl">fat</span><span class="p">:</span><span class="nl">rw</span><span class="p">:</span><span class="n">disk</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="n">raw</span> <span class="o">-</span><span class="n">net</span> <span class="n">none</span>
 </span></span></code></pre></div><p>启动</p>
 </li>
 </ul>
@@ -360,15 +389,19 @@
 <p><strong>代码（./play_pilipala/play_pilipala.c）</strong></p>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efi.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efi.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efilib.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">#define MAX_FRAME_SIZE (100 * 60) 
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">EFI_FILE_PROTOCOL</span> <span class="o">*</span><span class="n">root_dir</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//打开根文件系统
@@ -382,11 +415,13 @@
 </span></span><span class="line"><span class="cl">    <span class="n">EFI_SIMPLE_FILE_SYSTEM_PROTOCOL</span> <span class="o">*</span><span class="n">FileSystem</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//获取 Loaded Image Protocol
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">BS</span><span class="o">-&gt;</span><span class="n">HandleProtocol</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ImageHandle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">LoadedImageProtocol</span><span class="p">,</span> <span class="p">(</span><span class="n">VOID</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">LoadedImage</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//获取 File System Protocol
@@ -396,6 +431,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//打开根目录
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">FileSystem</span><span class="o">-&gt;</span><span class="n">OpenVolume</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">FileSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">root_dir</span><span class="p">);</span>
@@ -403,6 +439,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//读取单个帧文件
@@ -416,6 +453,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">UINTN</span> <span class="n">read_size</span> <span class="o">=</span> <span class="n">buffer_size</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//打开文件
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">root_dir</span><span class="o">-&gt;</span><span class="n">Open</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">file</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">EFI_FILE_MODE_READ</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
@@ -423,9 +461,11 @@
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//读取文件内容
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">file</span><span class="o">-&gt;</span><span class="n">Read</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">read_size</span><span class="p">,</span> <span class="n">buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//添加字符串结束符
@@ -437,14 +477,17 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//关闭文件
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">file</span><span class="o">-&gt;</span><span class="n">Close</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">file</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//将 ASCII 字符串转换为宽字符并显示
@@ -454,6 +497,7 @@
 </span></span><span class="line"><span class="cl">    <span class="c1">//移动光标到左上角
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">SetCursorPosition</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//逐字符转换并显示
@@ -479,6 +523,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">EFI_STATUS</span> <span class="n">EFIAPI</span> <span class="nf">efi_main</span><span class="p">(</span><span class="n">EFI_HANDLE</span> <span class="n">ImageHandle</span><span class="p">,</span> <span class="n">EFI_SYSTEM_TABLE</span> <span class="o">*</span><span class="n">SystemTable</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">EFI_STATUS</span> <span class="n">Status</span><span class="p">;</span>
@@ -486,7 +531,9 @@
 </span></span><span class="line"><span class="cl">    <span class="nf">InitializeLib</span><span class="p">(</span><span class="n">ImageHandle</span><span class="p">,</span> <span class="n">SystemTable</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">EFI_SIMPLE_TEXT_OUT_PROTOCOL</span> <span class="o">*</span><span class="n">ConOut</span> <span class="o">=</span> <span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//打开根文件系统
@@ -502,6 +549,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//分配帧缓冲区
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">CHAR8</span> <span class="o">*</span><span class="n">frame_buffer</span> <span class="o">=</span> <span class="nf">AllocatePool</span><span class="p">(</span><span class="n">MAX_FRAME_SIZE</span><span class="p">);</span>
@@ -515,12 +563,14 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//清屏
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">ClearScreen</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">EnableCursor</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>  <span class="c1">//隐藏光标
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//播放动画
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -529,11 +579,13 @@
 </span></span><span class="line"><span class="cl">    <span class="n">CHAR16</span> <span class="n">filename</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//构造文件名
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">        <span class="nf">SPrint</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="sa">L</span><span class="s">&#34;frames</span><span class="se">\\</span><span class="s">frame_%06d.txt&#34;</span><span class="p">,</span> <span class="n">frame_num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//读取帧
@@ -549,9 +601,11 @@
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//显示帧
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">        <span class="nf">display_frame</span><span class="p">(</span><span class="n">ConOut</span><span class="p">,</span> <span class="n">frame_buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//帧延时 微妙
@@ -559,9 +613,11 @@
 </span></span><span class="line"><span class="cl">        <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">BS</span><span class="o">-&gt;</span><span class="n">Stall</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">frame_num</span><span class="o">++</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//播放完成
@@ -575,9 +631,11 @@
 </span></span><span class="line"><span class="cl">    <span class="nf">Print</span><span class="p">(</span><span class="sa">L</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">Playback finished! Total frames: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">frame_num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//让程序一直运行
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">EFI_SUCCESS</span><span class="p">;</span>
@@ -598,10 +656,15 @@
 <li>
 <p><strong>编译</strong></p>
 <ul>
-<li>同上用 Makefile，其中：
+<li>
+<p>同上用 Makefile，其中：</p>
 <ul>
-<li><code>make</code>：编译</li>
-<li><code>make run</code>：运行</li>
+<li>
+<p><code>make</code>：编译</p>
+</li>
+<li>
+<p><code>make run</code>：运行</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -613,11 +676,13 @@
 <p>同上</p>
 <p>先编译</p>
 <p>然后：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">cp</span> <span class="n">BOOTX64</span><span class="p">.</span><span class="n">EFI</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span>
 </span></span></code></pre></div><p>再用：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">qemu</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">x86_64</span> <span class="o">-</span><span class="n">bios</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ovmf</span><span class="o">/</span><span class="n">OVMF</span><span class="p">.</span><span class="n">fd</span> <span class="o">-</span><span class="n">drive</span> <span class="n">file</span><span class="o">=</span><span class="nl">fat</span><span class="p">:</span><span class="nl">rw</span><span class="p">:</span><span class="n">disk</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="n">raw</span> <span class="o">-</span><span class="n">net</span> <span class="n">none</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">qemu</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">x86_64</span> <span class="o">-</span><span class="n">bios</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ovmf</span><span class="o">/</span><span class="n">OVMF</span><span class="p">.</span><span class="n">fd</span> <span class="o">-</span><span class="n">drive</span> <span class="n">file</span><span class="o">=</span><span class="nl">fat</span><span class="p">:</span><span class="nl">rw</span><span class="p">:</span><span class="n">disk</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="n">raw</span> <span class="o">-</span><span class="n">net</span> <span class="n">none</span>
 </span></span></code></pre></div><p>启动</p>
 </li>
 </ul>
@@ -642,17 +707,21 @@
 <p><strong>代码（./play_pilipala_and_space_stop/play_pilipala_and_space_stop.c）</strong></p>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efi.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efi.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;efilib.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">#define MAX_FRAME_SIZE (100 * 60) </span><span class="c1">//帧缓冲区大小
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//根目录
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="n">EFI_FILE_PROTOCOL</span> <span class="o">*</span><span class="n">root_dir</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//打开根文件系统
@@ -666,11 +735,13 @@
 </span></span><span class="line"><span class="cl">    <span class="n">EFI_SIMPLE_FILE_SYSTEM_PROTOCOL</span> <span class="o">*</span><span class="n">FileSystem</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//获取 Loaded Image Protocol
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">BS</span><span class="o">-&gt;</span><span class="n">HandleProtocol</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ImageHandle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">LoadedImageProtocol</span><span class="p">,</span> <span class="p">(</span><span class="n">VOID</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">LoadedImage</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//获取 File System Protocol
@@ -680,6 +751,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//打开根目录
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">FileSystem</span><span class="o">-&gt;</span><span class="n">OpenVolume</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">FileSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">root_dir</span><span class="p">);</span>
@@ -687,6 +759,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//读取单个帧文件
@@ -700,6 +773,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">UINTN</span> <span class="n">read_size</span> <span class="o">=</span> <span class="n">buffer_size</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//打开文件
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">root_dir</span><span class="o">-&gt;</span><span class="n">Open</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">file</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">EFI_FILE_MODE_READ</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
@@ -707,9 +781,11 @@
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">EFI_ERROR</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span> <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//读取文件内容
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">file</span><span class="o">-&gt;</span><span class="n">Read</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">read_size</span><span class="p">,</span> <span class="n">buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//添加字符串结束符
@@ -721,14 +797,17 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//关闭文件
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">file</span><span class="o">-&gt;</span><span class="n">Close</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">file</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//将 ASCII 字符串转换为宽字符并显示
@@ -740,6 +819,7 @@
 </span></span><span class="line"><span class="cl">    <span class="c1">//移动光标到左上角
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">SetCursorPosition</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//逐字符转换并显示
@@ -765,6 +845,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//显示暂停提示
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">show_pause_hint</span><span class="p">(</span><span class="n">EFI_SIMPLE_TEXT_OUT_PROTOCOL</span> <span class="o">*</span><span class="n">ConOut</span><span class="p">,</span> <span class="n">BOOLEAN</span> <span class="n">paused</span><span class="p">)</span> <span class="p">{</span>
@@ -772,6 +853,7 @@
 </span></span><span class="line"><span class="cl">    <span class="c1">//在屏幕左上角显示状态
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">SetCursorPosition</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">paused</span><span class="p">)</span> <span class="p">{</span>
@@ -793,11 +875,13 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//恢复默认颜色
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">SetAttribute</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="nf">EFI_TEXT_ATTR</span><span class="p">(</span><span class="n">EFI_LIGHTGRAY</span><span class="p">,</span> <span class="n">EFI_BLACK</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">EFI_STATUS</span> <span class="n">EFIAPI</span> <span class="nf">efi_main</span><span class="p">(</span><span class="n">EFI_HANDLE</span> <span class="n">ImageHandle</span><span class="p">,</span> <span class="n">EFI_SYSTEM_TABLE</span> <span class="o">*</span><span class="n">SystemTable</span><span class="p">)</span> <span class="p">{</span>
@@ -807,10 +891,12 @@
 </span></span><span class="line"><span class="cl">    <span class="nf">InitializeLib</span><span class="p">(</span><span class="n">ImageHandle</span><span class="p">,</span> <span class="n">SystemTable</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">EFI_SIMPLE_TEXT_OUT_PROTOCOL</span> <span class="o">*</span><span class="n">ConOut</span> <span class="o">=</span> <span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConOut</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">SIMPLE_INPUT_INTERFACE</span> <span class="o">*</span><span class="n">ConIn</span> <span class="o">=</span> <span class="n">SystemTable</span><span class="o">-&gt;</span><span class="n">ConIn</span><span class="p">;</span>  <span class="c1">// 键盘输入接口
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//打开根文件系统
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -823,6 +909,7 @@
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Status</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//分配帧缓冲区
@@ -838,12 +925,14 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//清屏
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">ClearScreen</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConOut</span><span class="o">-&gt;</span><span class="n">EnableCursor</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConOut</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>  <span class="c1">//隐藏光标
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//播放状态变量
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -856,6 +945,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">EFI_INPUT_KEY</span> <span class="n">Key</span><span class="p">;</span>       <span class="c1">//按键结构
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//播放循环
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
@@ -865,6 +955,7 @@
 </span></span><span class="line"><span class="cl">        <span class="c1">//非阻塞式就是程序立即返回,不会卡住,然后循环检查输入
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">        <span class="n">Status</span> <span class="o">=</span> <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">ConIn</span><span class="o">-&gt;</span><span class="n">ReadKeyStroke</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ConIn</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//如果有按键按下
@@ -894,6 +985,7 @@
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//如果处于暂停状态
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">paused</span><span class="p">)</span> <span class="p">{</span>
@@ -907,9 +999,11 @@
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//构造文件名
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">        <span class="nf">SPrint</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="sa">L</span><span class="s">&#34;frames</span><span class="se">\\</span><span class="s">frame_%06d.txt&#34;</span><span class="p">,</span> <span class="n">frame_num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//读取帧
@@ -925,9 +1019,11 @@
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//显示帧
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">        <span class="nf">display_frame</span><span class="p">(</span><span class="n">ConOut</span><span class="p">,</span> <span class="n">frame_buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//帧延时 微秒
@@ -937,9 +1033,11 @@
 </span></span><span class="line"><span class="cl">        <span class="nf">uefi_call_wrapper</span><span class="p">(</span><span class="n">BS</span><span class="o">-&gt;</span><span class="n">Stall</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">frame_num</span><span class="o">++</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//播放完成
@@ -953,9 +1051,11 @@
 </span></span><span class="line"><span class="cl">    <span class="nf">Print</span><span class="p">(</span><span class="sa">L</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">Playback finished! Total frames: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">frame_num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//让程序一直运行
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">EFI_SUCCESS</span><span class="p">;</span>
@@ -973,10 +1073,15 @@
 <li>
 <p><strong>编译</strong></p>
 <ul>
-<li>同上用 Makefile，其中：
+<li>
+<p>同上用 Makefile，其中：</p>
 <ul>
-<li><code>make</code>：编译</li>
-<li><code>make run</code>：运行</li>
+<li>
+<p><code>make</code>：编译</p>
+</li>
+<li>
+<p><code>make run</code>：运行</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -988,11 +1093,13 @@
 <p>同上</p>
 <p>先编译</p>
 <p>然后：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">cp</span> <span class="n">BOOTX64</span><span class="p">.</span><span class="n">EFI</span> <span class="n">disk</span><span class="o">/</span><span class="n">EFI</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span>
 </span></span></code></pre></div><p>再用：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">qemu</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">x86_64</span> <span class="o">-</span><span class="n">bios</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ovmf</span><span class="o">/</span><span class="n">OVMF</span><span class="p">.</span><span class="n">fd</span> <span class="o">-</span><span class="n">drive</span> <span class="n">file</span><span class="o">=</span><span class="nl">fat</span><span class="p">:</span><span class="nl">rw</span><span class="p">:</span><span class="n">disk</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="n">raw</span> <span class="o">-</span><span class="n">net</span> <span class="n">none</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">qemu</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">x86_64</span> <span class="o">-</span><span class="n">bios</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ovmf</span><span class="o">/</span><span class="n">OVMF</span><span class="p">.</span><span class="n">fd</span> <span class="o">-</span><span class="n">drive</span> <span class="n">file</span><span class="o">=</span><span class="nl">fat</span><span class="p">:</span><span class="nl">rw</span><span class="p">:</span><span class="n">disk</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="n">raw</span> <span class="o">-</span><span class="n">net</span> <span class="n">none</span>
 </span></span></code></pre></div><p>启动</p>
 </li>
 </ul>
@@ -1027,7 +1134,8 @@
 </li>
 <li>
 <p>那要生成上面的 <code>badapple.raw</code>，需要用到 <code>ffmpeg</code>，命令是：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffmpeg -i badapple.mp3 -f s16le -ac <span class="m">1</span> -ar <span class="m">44100</span> badapple.raw
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ffmpeg -i badapple.mp3 -f s16le -ac <span class="m">1</span> -ar <span class="m">44100</span> badapple.raw
 </span></span></code></pre></div></li>
 </ul>
 </li>
@@ -1071,13 +1179,6 @@
           >
           <em class="post-meta-item-text">阅读量</em>
         </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/cnss"
-        rel="tag"
-        >CNSS</a
-      >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
         href="/tags/%e6%8b%9b%e6%96%b0"
@@ -1207,7 +1308,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -1323,7 +1424,7 @@
           author: "MilLoong",
           title: "CNSS 2025 招新：噼里啪啦动画",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-pi-li-pa-la\/",
-          description: " 🎞️ 噼里啪啦动画 30% 在没有操作系统的虚拟机环境（或者真的硬件环境，如果你愿意）中，在屏幕上输出任何字符串，如Hello World! 运行环境\n这题我依然直接用 WSL 来做了，然后是 WSL2 虚拟机 用的是 Qemu（qemu-system-x86_64） 启动方式 用的是 UEFI，因为我不是很想用 BIOS 来做 指令集架构 是 x86 编译工具： mingw-w64 UEFI库：gnu-efi UEFI固件：OVMF.fd 磁盘工具：mtools 代码（.\/hello\/hello.c）\n#include \u0026lt;efi.h\u0026gt; #include …",
+          description: " 🎞️ 噼里啪啦动画 30% 在没有操作系统的虚拟机环境（或者真的硬件环境，如果你愿意）中，在屏幕上输出任何字符串，如Hello World! 运行环境\n这题我依然直接用 WSL 来做了，然后是 WSL2\n虚拟机 用的是 Qemu（qemu-system-x86_64）\n启动方式 用的是 UEFI，因为我不是很想用 BIOS 来做\n指令集架构 是 x86\n编译工具： mingw-w64\nUEFI库：gnu-efi\nUEFI固件：OVMF.fd\n磁盘工具：mtools\n代码（.\/hello\/hello.c）\n#include \u0026lt;efi.h\u0026gt; #include …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg34.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

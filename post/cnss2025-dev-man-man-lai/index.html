@@ -50,7 +50,7 @@
   />
   <meta property="article:author" content="MilLoong" />
   <meta property="article:published_time" content="2025-09-16T20:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-09-16T20:00:00&#43;08:00" /><meta property="article:tag" content="CNSS招新DevWriteup" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-09-16T20:00:00&#43;08:00" /><meta property="article:tag" content="招新DevWriteup" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/backgrounds/bg20.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -188,7 +188,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -273,15 +273,14 @@
 想法 1（错解）
 </h2><ul>
 <li>
-<p>它生成的是<strong>所有正整数</strong>，要想生成特定的<strong>斐波那契数列</strong>，可以对它进行 <code>filter</code> 过滤，因为有一个定理能够$O(1)$地判断一个数是否是<strong>斐波那契数</strong>：
-</p>
-$$
-    S_{x} = \frac{φ^x - ψ^x}{φ - ψ}\\
-    其中φ=\frac{1 + \sqrt{5}}{2}，ψ=1-φ=\frac{1-\sqrt{5}}{2}\\
-    那么有：\\
-    满足：5n^2+4或5n^2-4其中之一是完全平方数的n，是斐波那契数
-    $$<p>
-但这样不好处理相同的数的情况，比如<strong>斐波那契数</strong>就是$A_1=A_2=1$，而 <code>infiniteStream()</code> 里并没有两个 1，这样进行特判不太好</p>
+<p>它生成的是<strong>所有正整数</strong>，要想生成特定的<strong>斐波那契数列</strong>，可以对它进行 <code>filter</code> 过滤，因为有一个定理能够$O(1)$地判断一个数是否是<strong>斐波那契数</strong>：</p>
+<p>$$</p>
+<p>S_{x} = \frac{φ^x - ψ^x}{φ - ψ}\</p>
+<p>其中φ=\frac{1 + \sqrt{5}}{2}，ψ=1-φ=\frac{1-\sqrt{5}}{2}\</p>
+<p>那么有：\</p>
+<p>满足：5n^2+4或5n^2-4其中之一是完全平方数的n，是斐波那契数</p>
+<p>$$</p>
+<p>但这样不好处理相同的数的情况，比如<strong>斐波那契数</strong>就是$A_1=A_2=1$，而 <code>infiniteStream()</code> 里并没有两个 1，这样进行特判不太好</p>
 </li>
 <li>
 <p><strong>想法 2（正解）</strong></p>
@@ -291,7 +290,8 @@ $$
 </li>
 <li>
 <p>为了避免重复计算，可以利用 <code>infiniteStream()</code> 生成的正整数序列结合 <code>for</code> 迭代，然后利用<strong>斐波那契数列的递推求法</strong>就可以解决问题了：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">infiniteStream</span><span class="p">():</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">infiniteStream</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">
@@ -300,6 +300,7 @@ $$
 </span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="n">n</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fibStream</span><span class="p">():</span>
@@ -313,12 +314,15 @@ $$
 </span></span><span class="line"><span class="cl">        <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># f=fibStream()</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># for i in range(10):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#     print(f&#34;F({i+1})={next(f)}&#34;)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;
@@ -356,14 +360,21 @@ $$
 分析
 </h2><p>这个第二问提示有点明显了，既然是 <code>lazy calculation</code> 那就可以：</p>
 <ul>
-<li><strong>先不建当前节点的左子树和右子树</strong></li>
-<li>而是<strong>保存当前节点的左子树数组和右子树数组</strong></li>
-<li>在<strong>必要的时候</strong>才建子树，并且如果子树已经建好了就<strong>不重复建</strong></li>
+<li>
+<p><strong>先不建当前节点的左子树和右子树</strong></p>
+</li>
+<li>
+<p>而是<strong>保存当前节点的左子树数组和右子树数组</strong></p>
+</li>
+<li>
+<p>在<strong>必要的时候</strong>才建子树，并且如果子树已经建好了就<strong>不重复建</strong></p>
+</li>
 </ul>
 <p>所以这样的话就给<strong>当前节点</strong>新增加一个 <code>left_arr</code> 成员和一个 <code>right_arr</code> 成员就好了（实际上就是把原题代码中的<strong>局部变量</strong>变成<strong>节点的成员</strong>）</p>
 <p>然后就不需要 <code>size</code> 成员了，因为我们可以直接<code>len(self.left_arr)或len(self.right_arr)</code></p>
 <p>所以每个节点成员就变成了：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">head</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">head</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">left</span>
 </span></span><span class="line"><span class="cl">
@@ -375,7 +386,8 @@ $$
 </span></span></code></pre></div><h2 id="code">
 <a class="header-anchor" href="#code"></a>
 Code
-</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">LazyBST</span><span class="p">:</span>
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">LazyBST</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
@@ -478,13 +490,6 @@ Code
           >
           <em class="post-meta-item-text">阅读量</em>
         </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/cnss"
-        rel="tag"
-        >CNSS</a
-      >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
         href="/tags/%e6%8b%9b%e6%96%b0"
@@ -608,7 +613,7 @@ Code
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -724,7 +729,7 @@ Code
           author: "MilLoong",
           title: "CNSS 2025 招新：慢慢来",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-man-man-lai\/",
-          description: " 🕛慢慢来 ❓CH1 考虑到 infiniteStream() 是无限流，是一个生成器 想法 1（错解） 它生成的是所有正整数，要想生成特定的斐波那契数列，可以对它进行 filter 过滤，因为有一个定理能够$O(1)$地判断一个数是否是斐波那契数： $$\rS_{x} = \\frac{φ^x - ψ^x}{φ - ψ}\\\\\r其中φ=\\frac{1 \u002b \\sqrt{5}}{2}，ψ=1-φ=\\frac{1-\\sqrt{5}}{2}\\\\\r那么有：\\\\\r满足：5n^2\u002b4或5n^2-4其中之一是完全平方数的n，是斐波那契数\r$$ 但这样不好处理相同的数的情况，比如斐波那契数就是 …",
+          description: " 🕛慢慢来 ❓CH1 考虑到 infiniteStream() 是无限流，是一个生成器 想法 1（错解） 它生成的是所有正整数，要想生成特定的斐波那契数列，可以对它进行 filter 过滤，因为有一个定理能够$O(1)$地判断一个数是否是斐波那契数：\n$$\nS_{x} = \\frac{φ^x - ψ^x}{φ - ψ}\\\n其中φ=\\frac{1 \u002b \\sqrt{5}}{2}，ψ=1-φ=\\frac{1-\\sqrt{5}}{2}\\\n那么有：\\\n满足：5n^2\u002b4或5n^2-4其中之一是完全平方数的n，是斐波那契数\n$$\n但这样不好处理相同的数的情况，比如斐波那契数就是$A_1=A_2=1$，而 …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg20.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

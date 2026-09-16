@@ -50,7 +50,7 @@
   />
   <meta property="article:author" content="MilLoong" />
   <meta property="article:published_time" content="2025-10-27T17:03:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-10-27T17:03:00&#43;08:00" /><meta property="article:tag" content="CNSS招新Dev内核Writeup" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-10-27T17:03:00&#43;08:00" /><meta property="article:tag" content="招新Dev内核Writeup" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/backgrounds/bg33.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -187,7 +187,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -272,18 +272,21 @@
 <p><strong>代码（./bcache_module/bcache_basic.c）</strong></p>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/module.h&gt;      </span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/module.h&gt;      </span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/kernel.h&gt;      </span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/init.h&gt;        </span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">MODULE_LICENSE</span><span class="p">(</span><span class="s">&#34;GPL&#34;</span><span class="p">);</span>           
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">MODULE_AUTHOR</span><span class="p">(</span><span class="s">&#34;Nailong&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">MODULE_DESCRIPTION</span><span class="p">(</span><span class="s">&#34;Basic Block Cache Module&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//init function
@@ -297,6 +300,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//exit function
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="n">__exit</span> <span class="nf">bcache_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
@@ -304,6 +308,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_INFO</span> <span class="s">&#34;Block Cache Module Unloaded</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//init
@@ -327,7 +332,8 @@
 <p>我这里就直接用 wsl 来做了，由于 wsl 不自带，所以下了一下 wsl 的 对应版本 的 linux kernel 源码并 编译 和 切换内核</p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/module.h&gt;      </span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/module.h&gt;      </span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/kernel.h&gt;      </span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -339,7 +345,8 @@
 <p><strong>模块信息</strong></p>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">MODULE_LICENSE</span><span class="p">(</span><span class="s">&#34;GPL&#34;</span><span class="p">);</span> <span class="c1">//模块许可相关证明          
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">MODULE_LICENSE</span><span class="p">(</span><span class="s">&#34;GPL&#34;</span><span class="p">);</span> <span class="c1">//模块许可相关证明          
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="nf">MODULE_AUTHOR</span><span class="p">(</span><span class="s">&#34;Nailong&#34;</span><span class="p">);</span> <span class="c1">//模块作者
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -351,7 +358,8 @@
 <p><strong>模块加载函数</strong></p>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">//init function
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//init function
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="n">__init</span> <span class="nf">bcache_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
@@ -367,7 +375,8 @@
 <p><strong>模块卸载函数</strong></p>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">//exit function
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//exit function
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="n">__exit</span> <span class="nf">bcache_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
@@ -381,7 +390,8 @@
 <p><strong>模块注册</strong></p>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">//init
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//init
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="nf">module_init</span><span class="p">(</span><span class="n">bcache_init</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
@@ -396,41 +406,57 @@
 <li>
 <p><strong>运行</strong></p>
 <ul>
-<li>我写了一个 <strong>Makefile</strong> 来进行编译：
+<li>
+<p>我写了一个 <strong>Makefile</strong> 来进行编译：</p>
 <ul>
-<li><code>make all</code>
+<li>
+<p><code>make all</code></p>
 <ul>
 <li>编译</li>
 </ul>
 </li>
-<li><code>make clear</code>
+<li>
+<p><code>make clear</code></p>
 <ul>
 <li>清理</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>插入模块：</strong><code>sudo insmod bcache_basic.ko</code></li>
-<li><strong>卸载模块：</strong><code>sudo rmmod bcache_basic</code></li>
-<li><strong>查看模块信息：</strong><code>modinfo bcache_basic.ko</code></li>
-<li><strong>查看系统模块：</strong><code>lsmod</code></li>
-<li><strong>查看系统日志信息：</strong><code>dmesg</code></li>
+<li>
+<p><strong>插入模块：</strong><code>sudo insmod bcache_basic.ko</code></p>
+</li>
+<li>
+<p><strong>卸载模块：</strong><code>sudo rmmod bcache_basic</code></p>
+</li>
+<li>
+<p><strong>查看模块信息：</strong><code>modinfo bcache_basic.ko</code></p>
+</li>
+<li>
+<p><strong>查看系统模块：</strong><code>lsmod</code></p>
+</li>
+<li>
+<p><strong>查看系统日志信息：</strong><code>dmesg</code></p>
+</li>
 </ul>
 </li>
 <li>
 <p><strong>运行截图</strong></p>
 <ul>
-<li><strong>编译模块</strong>
+<li>
+<p><strong>编译模块</strong></p>
 <ul>
 <li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251027170346968.png" alt="image-20251027170346968"></li>
 </ul>
 </li>
-<li><strong>模块信息</strong>
+<li>
+<p><strong>模块信息</strong></p>
 <ul>
 <li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251027170411524.png" alt="image-20251027170411524"></li>
 </ul>
 </li>
-<li><strong>查看输出</strong>
+<li>
+<p><strong>查看输出</strong></p>
 <ul>
 <li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251027175247743.png" alt="image-20251027175247743"></li>
 </ul>
@@ -449,7 +475,8 @@
 <p>这里我就写一个 RAM 磁盘驱动了，然后模拟 1MB 的块设备</p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/module.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/module.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/kernel.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -464,16 +491,19 @@
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/bio.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">#define DEV_NAME &#34;ramdisk&#34;
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#define DISK_SIZE (1*1024*1024) </span><span class="c1">//1MB
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">MODULE_LICENSE</span><span class="p">(</span><span class="s">&#34;GPL&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">MODULE_AUTHOR</span><span class="p">(</span><span class="s">&#34;Nailong&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">MODULE_DESCRIPTION</span><span class="p">(</span><span class="s">&#34;Block Device Driver with Cache&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">dev_t</span> <span class="n">dev_num</span><span class="p">;</span> <span class="c1">//设备号
@@ -484,6 +514,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">disk_data</span><span class="p">;</span> <span class="c1">//磁盘数据
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//请求处理函数
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -502,9 +533,11 @@
 </span></span><span class="line"><span class="cl">    <span class="kt">size_t</span> <span class="n">len</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//启动请求
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">blk_mq_start_request</span><span class="p">(</span><span class="n">req</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//获取初始扇区
@@ -512,11 +545,13 @@
 </span></span><span class="line"><span class="cl">    <span class="n">sector</span> <span class="o">=</span> <span class="nf">blk_rq_pos</span><span class="p">(</span><span class="n">req</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//遍历所有bio
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">rq_for_each_segment</span><span class="p">(</span><span class="n">bvec</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">iter</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">len</span> <span class="o">=</span> <span class="n">bvec</span><span class="p">.</span><span class="n">bv_len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">sector</span> <span class="o">+</span> <span class="p">(</span><span class="n">len</span> <span class="o">&gt;&gt;</span> <span class="mi">9</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">DISK_SIZE</span> <span class="o">/</span> <span class="mi">512</span><span class="p">)</span> <span class="p">{</span>
@@ -528,9 +563,11 @@
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//建立映射
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">        <span class="n">buffer</span> <span class="o">=</span> <span class="nf">kmap_atomic</span><span class="p">(</span><span class="n">bvec</span><span class="p">.</span><span class="n">bv_page</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nf">rq_data_dir</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="o">==</span> <span class="n">READ</span><span class="p">)</span> <span class="p">{</span>
@@ -552,9 +589,11 @@
 </span></span><span class="line"><span class="cl">        <span class="nf">kunmap_atomic</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">sector</span> <span class="o">+=</span> <span class="n">len</span> <span class="o">&gt;&gt;</span> <span class="mi">9</span><span class="p">;</span><span class="c1">//转换为扇区数（512B/sector）
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//标记请求完成
@@ -566,6 +605,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//多队列操作集
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="k">struct</span> <span class="n">blk_mq_ops</span> <span class="n">bcache_mq_ops</span> <span class="o">=</span> <span class="p">{</span>
@@ -573,6 +613,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">queue_rq</span> <span class="o">=</span> <span class="n">bcache_queue_rq</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//块设备操作集fops
@@ -584,11 +625,13 @@
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//模块初始化
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="n">__init</span> <span class="nf">bcache_ramdisk_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">ret</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//分配设备号
@@ -599,6 +642,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">dev_num</span> <span class="o">=</span> <span class="nf">MKDEV</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">//主设备号由内核返回
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//分配模拟存储空间
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -613,6 +657,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">memset</span><span class="p">(</span><span class="n">disk_data</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DISK_SIZE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//初始化 tag_set
@@ -630,6 +675,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">tag_set</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">BLK_MQ_F_SHOULD_MERGE</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">ret</span> <span class="o">=</span> <span class="nf">blk_mq_alloc_tag_set</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tag_set</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
@@ -641,6 +687,7 @@
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//分配并初始化gendisk
@@ -660,6 +707,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">disk</span><span class="o">-&gt;</span><span class="n">major</span> <span class="o">=</span> <span class="nf">MAJOR</span><span class="p">(</span><span class="n">dev_num</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">disk</span><span class="o">-&gt;</span><span class="n">first_minor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -676,6 +724,8 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_INFO</span> <span class="s">&#34;bcache: disk=%p queue=%p capacity=%llu major=%d first_minor=%d fops=%p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">disk</span><span class="p">,</span> <span class="n">disk</span><span class="o">-&gt;</span><span class="n">queue</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="nf">get_capacity</span><span class="p">(</span><span class="n">disk</span><span class="p">),</span>
@@ -683,9 +733,11 @@
 </span></span><span class="line"><span class="cl">        <span class="n">disk</span><span class="o">-&gt;</span><span class="n">major</span><span class="p">,</span> <span class="n">disk</span><span class="o">-&gt;</span><span class="n">first_minor</span><span class="p">,</span> <span class="n">disk</span><span class="o">-&gt;</span><span class="n">fops</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//注册设备
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">ret</span> <span class="o">=</span> <span class="nf">add_disk</span><span class="p">(</span><span class="n">disk</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_INFO</span> <span class="s">&#34;%s: RAM disk initialized (%d MB)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">DEV_NAME</span><span class="p">,</span> <span class="n">DISK_SIZE</span> <span class="o">&gt;&gt;</span> <span class="mi">20</span><span class="p">);</span>
@@ -693,6 +745,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//模块退出
@@ -722,6 +775,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">module_init</span><span class="p">(</span><span class="n">bcache_ramdisk_init</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">module_exit</span><span class="p">(</span><span class="n">bcache_ramdisk_exit</span><span class="p">);</span>
@@ -735,53 +789,71 @@
 <li>
 <p><strong>运行截图</strong></p>
 <ul>
-<li><strong>编译模块</strong>
+<li>
+<p><strong>编译模块</strong></p>
 <ul>
 <li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029012058378.png" alt="image-20251029012058378"></li>
 </ul>
 </li>
-<li><strong>模块信息</strong>
+<li>
+<p><strong>模块信息</strong></p>
 <ul>
 <li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029012131356.png" alt="image-20251029012131356"></li>
 </ul>
 </li>
-<li><strong>验证设备</strong>
+<li>
+<p><strong>验证设备</strong></p>
 <ul>
 <li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029012242484.png" alt="image-20251029012242484"></li>
 </ul>
 </li>
-<li><strong>格式化并挂载文件系统</strong>
+<li>
+<p><strong>格式化并挂载文件系统</strong></p>
 <ul>
-<li><code>sudo mkfs.ext4 /dev/ramdisk</code>
+<li>
+<p><code>sudo mkfs.ext4 /dev/ramdisk</code></p>
 <ul>
-<li>创建 <code>ext4</code> 文件系统</li>
-<li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029012306417.png" alt="image-20251029012306417"></li>
+<li>
+<p>创建 <code>ext4</code> 文件系统</p>
+</li>
+<li>
+<p><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029012306417.png" alt="image-20251029012306417"></p>
+</li>
 </ul>
 </li>
-<li><code>sudo mkdir /mnt/ramdisk</code>
+<li>
+<p><code>sudo mkdir /mnt/ramdisk</code></p>
 <ul>
 <li>创建 挂载点 目录</li>
 </ul>
 </li>
-<li><code>sudo mount /dev/ramdisk /mnt/ramdisk</code>
+<li>
+<p><code>sudo mount /dev/ramdisk /mnt/ramdisk</code></p>
 <ul>
 <li>将 设备上的文件系统 连接到 <code>/mnt/ramdisk</code></li>
 </ul>
 </li>
-<li><code>mount | grep &quot;/mnt/ramdisk&quot;</code>
+<li>
+<p><code>mount | grep &quot;/mnt/ramdisk&quot;</code></p>
 <ul>
-<li>查看 挂载点来源，证明用的是自己写的块设备文件系统</li>
-<li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029015621905.png" alt="image-20251029015621905"></li>
-</ul>
+<li>
+<p>查看 挂载点来源，证明用的是自己写的块设备文件系统</p>
+</li>
+<li>
+<p><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029015621905.png" alt="image-20251029015621905"></p>
 </li>
 </ul>
 </li>
-<li><strong>测试 <code>ls</code></strong>
+</ul>
+</li>
+<li>
+<p><strong>测试 <code>ls</code></strong></p>
 <ul>
 <li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029013843350.png" alt="image-20251029013843350"></li>
 </ul>
 </li>
-<li><strong>测试读写</strong>
+<li>
+<p><strong>测试读写</strong></p>
 <ul>
 <li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029014940629.png" alt="image-20251029014940629"></li>
 </ul>
@@ -802,7 +874,8 @@
 <p><strong>代码（./bcache/bcache.c）</strong></p>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/module.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/module.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/kernel.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -821,11 +894,13 @@
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;linux/list.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">MODULE_LICENSE</span><span class="p">(</span><span class="s">&#34;GPL&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">MODULE_AUTHOR</span><span class="p">(</span><span class="s">&#34;Nailong&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">MODULE_DESCRIPTION</span><span class="p">(</span><span class="s">&#34;Buffer Cache inspired by XV6&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">#define DEV_NAME        &#34;bcache&#34;
@@ -836,6 +911,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#define NBUF            64 </span><span class="c1">//缓存块数量
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//缓存块
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -860,6 +936,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//缓存管理
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="p">{</span>
@@ -873,6 +950,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">bcache</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="n">dev_major</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//主设备号
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">dev_t</span> <span class="n">dev_num</span><span class="p">;</span> <span class="c1">//设备号
@@ -883,6 +961,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">disk_data</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">//磁盘数据
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//统计信息
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -897,6 +976,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">stats</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//块设备操作集
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="k">struct</span> <span class="n">block_device_operations</span> <span class="n">bcache_fops</span> <span class="o">=</span> <span class="p">{</span>
@@ -906,11 +986,13 @@
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//磁盘读写
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">disk_rw</span><span class="p">(</span><span class="k">struct</span> <span class="n">buf</span> <span class="o">*</span><span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">write</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">b</span><span class="o">-&gt;</span><span class="n">blockno</span> <span class="o">*</span> <span class="n">BSIZE</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">offset</span> <span class="o">+</span> <span class="n">BSIZE</span> <span class="o">&gt;</span> <span class="n">DISK_SIZE</span><span class="p">)</span> <span class="p">{</span>
@@ -920,6 +1002,7 @@
 </span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">write</span><span class="p">)</span> <span class="p">{</span>
@@ -943,6 +1026,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//查找或分配缓存块
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="k">struct</span> <span class="n">buf</span><span class="o">*</span> <span class="nf">bget</span><span class="p">(</span><span class="n">uint</span> <span class="n">dev</span><span class="p">,</span> <span class="kt">sector_t</span> <span class="n">blockno</span><span class="p">)</span> <span class="p">{</span>
@@ -952,7 +1036,9 @@
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">found</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">spin_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//查找缓存
@@ -964,15 +1050,19 @@
 </span></span><span class="line"><span class="cl">            <span class="n">found</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">b</span><span class="o">-&gt;</span><span class="n">refcnt</span><span class="o">++</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="nf">spin_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">lock</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="nf">spin_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">b</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">stats</span><span class="p">.</span><span class="n">hits</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_DEBUG</span> <span class="s">&#34;bcache: Cache hit for block %llu</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">blockno</span><span class="p">);</span>
@@ -984,6 +1074,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">found</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_DEBUG</span> <span class="s">&#34;bcache: Cache miss for block %llu</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">blockno</span><span class="p">);</span>
@@ -991,9 +1082,11 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//缓存未命中，需要回收
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">stats</span><span class="p">.</span><span class="n">misses</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//从 LRU 链表尾部开始查找
@@ -1004,6 +1097,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1">//找到可用块
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1">//如果是脏块，先写回
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -1016,6 +1110,7 @@
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">b</span><span class="o">-&gt;</span><span class="n">dev</span> <span class="o">=</span> <span class="n">dev</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">b</span><span class="o">-&gt;</span><span class="n">blockno</span> <span class="o">=</span> <span class="n">blockno</span><span class="p">;</span>
@@ -1025,14 +1120,17 @@
 </span></span><span class="line"><span class="cl">            <span class="n">b</span><span class="o">-&gt;</span><span class="n">refcnt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="nf">spin_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">lock</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="nf">spin_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">b</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">stats</span><span class="p">.</span><span class="n">evictions</span><span class="o">++</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_DEBUG</span> <span class="s">&#34;bcache: Evicted and allocated block %llu</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">blockno</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
@@ -1042,7 +1140,9 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">spin_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_ERR</span> <span class="s">&#34;bcache: bget: no buffers available</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
@@ -1050,6 +1150,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//释放缓存块
@@ -1061,12 +1162,15 @@
 </span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">spin_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">b</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">spin_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">lock</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="o">-&gt;</span><span class="n">refcnt</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="o">-&gt;</span><span class="n">refcnt</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
@@ -1078,9 +1182,11 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">spin_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">lock</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//读取块
@@ -1090,11 +1196,13 @@
 </span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="n">buf</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">b</span> <span class="o">=</span> <span class="nf">bget</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">blockno</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="o">-&gt;</span><span class="n">valid</span><span class="p">)</span> <span class="p">{</span>
@@ -1108,9 +1216,11 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//写入块
@@ -1124,6 +1234,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//标记块为脏块
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">bmark_dirty</span><span class="p">(</span><span class="k">struct</span> <span class="n">buf</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
@@ -1131,6 +1242,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="o">-&gt;</span><span class="n">dirty</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//请求处理函数
@@ -1150,9 +1262,11 @@
 </span></span><span class="line"><span class="cl">    <span class="kt">size_t</span> <span class="n">len</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">blk_mq_start_request</span><span class="p">(</span><span class="n">req</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">sector</span> <span class="o">=</span> <span class="nf">blk_rq_pos</span><span class="p">(</span><span class="n">req</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">rq_for_each_segment</span><span class="p">(</span><span class="n">bvec</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">iter</span><span class="p">)</span> <span class="p">{</span>
@@ -1164,7 +1278,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">struct</span> <span class="n">buf</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">len</span> <span class="o">=</span> <span class="n">bvec</span><span class="p">.</span><span class="n">bv_len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">sector</span> <span class="o">+</span> <span class="p">(</span><span class="n">len</span> <span class="o">&gt;&gt;</span> <span class="mi">9</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">DISK_SIZE</span> <span class="o">/</span> <span class="n">SECTOR_SIZE</span><span class="p">)</span> <span class="p">{</span>
@@ -1178,6 +1294,7 @@
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//BSIZE / SECTOR_SIZE 一个块内包含多少扇区
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">        <span class="c1">//sector / (BSIZE / SECTOR_SIZE) 计算块号
@@ -1189,7 +1306,9 @@
 </span></span><span class="line"><span class="cl">        <span class="n">offset_in_block</span> <span class="o">=</span> <span class="p">(</span><span class="n">sector</span> <span class="o">%</span> <span class="p">(</span><span class="n">BSIZE</span> <span class="o">/</span> <span class="n">SECTOR_SIZE</span><span class="p">))</span> <span class="o">*</span> <span class="n">SECTOR_SIZE</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">buffer</span> <span class="o">=</span> <span class="nf">kmap_atomic</span><span class="p">(</span><span class="n">bvec</span><span class="p">.</span><span class="n">bv_page</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">b</span> <span class="o">=</span> <span class="nf">bread</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">blockno</span><span class="p">);</span>  <span class="c1">//dev = 0
@@ -1203,6 +1322,7 @@
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">BLK_STS_IOERR</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nf">rq_data_dir</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="o">==</span> <span class="n">WRITE</span><span class="p">)</span> <span class="p">{</span>
@@ -1226,9 +1346,11 @@
 </span></span><span class="line"><span class="cl">        <span class="nf">kunmap_atomic</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">sector</span> <span class="o">+=</span> <span class="n">len</span> <span class="o">&gt;&gt;</span> <span class="mi">9</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">blk_mq_end_request</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">BLK_STS_OK</span><span class="p">);</span>
@@ -1236,6 +1358,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">BLK_STS_OK</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//多队列操作集
@@ -1247,6 +1370,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//初始化缓存
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">binit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
@@ -1256,9 +1380,11 @@
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">spin_lock_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">lock</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">INIT_LIST_HEAD</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">head</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//初始化所有缓存块并加入 LRU 链表
@@ -1266,6 +1392,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NBUF</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">b</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">b</span><span class="o">-&gt;</span><span class="n">valid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -1281,6 +1408,7 @@
 </span></span><span class="line"><span class="cl">        <span class="nf">spin_lock_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">b</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//加入 LRU 链表
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">        <span class="nf">list_add</span><span class="p">(</span><span class="o">&amp;</span><span class="n">b</span><span class="o">-&gt;</span><span class="n">lru</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">head</span><span class="p">);</span>
@@ -1288,11 +1416,13 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_INFO</span> <span class="s">&#34;bcache: Buffer cache initialized (XV6 style)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_INFO</span> <span class="s">&#34;bcache: %d buffers, %d bytes per buffer</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">NBUF</span><span class="p">,</span> <span class="n">BSIZE</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//同步所有脏块
@@ -1304,10 +1434,13 @@
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">dirty_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_INFO</span> <span class="s">&#34;bcache: Syncing all dirty blocks...</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">spin_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">list_for_each_entry</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">head</span><span class="p">,</span> <span class="n">lru</span><span class="p">)</span> <span class="p">{</span>
@@ -1327,7 +1460,9 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">spin_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bcache</span><span class="p">.</span><span class="n">lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_INFO</span> <span class="s">&#34;bcache: Synced %d dirty blocks</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">dirty_count</span><span class="p">);</span>
@@ -1335,11 +1470,13 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//模块初始化
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="n">__init</span> <span class="nf">bcache_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">ret</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//分配底层存储
@@ -1357,11 +1494,13 @@
 </span></span><span class="line"><span class="cl">    <span class="nf">memset</span><span class="p">(</span><span class="n">disk_data</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DISK_SIZE</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//初始化缓存
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">binit</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">stats</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">stats</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//注册块设备
@@ -1383,6 +1522,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">dev_num</span> <span class="o">=</span> <span class="nf">MKDEV</span><span class="p">(</span><span class="n">dev_major</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//初始化多队列
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tag_set</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">tag_set</span><span class="p">));</span>
@@ -1398,6 +1538,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">tag_set</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">BLK_MQ_F_SHOULD_MERGE</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">ret</span> <span class="o">=</span> <span class="nf">blk_mq_alloc_tag_set</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tag_set</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
@@ -1411,6 +1552,7 @@
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//分配磁盘
@@ -1434,6 +1576,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//设置磁盘属性
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">disk</span><span class="o">-&gt;</span><span class="n">major</span> <span class="o">=</span> <span class="nf">MAJOR</span><span class="p">(</span><span class="n">dev_num</span><span class="p">);</span>
@@ -1447,6 +1590,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nf">strcpy</span><span class="p">(</span><span class="n">disk</span><span class="o">-&gt;</span><span class="n">disk_name</span><span class="p">,</span> <span class="n">DEV_NAME</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">set_capacity</span><span class="p">(</span><span class="n">disk</span><span class="p">,</span> <span class="n">DISK_SIZE</span> <span class="o">/</span> <span class="n">SECTOR_SIZE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//添加磁盘
@@ -1470,12 +1614,15 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_INFO</span> <span class="s">&#34;%s: RAM disk initialized (%d MB)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">DEV_NAME</span><span class="p">,</span> <span class="n">DISK_SIZE</span> <span class="o">&gt;&gt;</span> <span class="mi">20</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//模块退出
@@ -1485,6 +1632,7 @@
 </span></span><span class="line"><span class="cl">    <span class="c1">//同步所有脏块
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="nf">bsync_all</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//清理块设备
@@ -1498,7 +1646,9 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">blk_mq_free_tag_set</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tag_set</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">dev_major</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
@@ -1506,12 +1656,15 @@
 </span></span><span class="line"><span class="cl">        <span class="nf">unregister_blkdev</span><span class="p">(</span><span class="n">dev_major</span><span class="p">,</span> <span class="n">DEV_NAME</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">vfree</span><span class="p">(</span><span class="n">disk_data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">printk</span><span class="p">(</span><span class="n">KERN_INFO</span> <span class="s">&#34;%s: unloaded</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">DEV_NAME</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">module_init</span><span class="p">(</span><span class="n">bcache_init</span><span class="p">);</span>
@@ -1550,26 +1703,38 @@
 <li>
 <p><strong>格式化并挂载文件系统</strong></p>
 <ul>
-<li><code>sudo mkfs.ext4 /dev/bcache</code>
+<li>
+<p><code>sudo mkfs.ext4 /dev/bcache</code></p>
 <ul>
-<li>创建 <code>ext4</code> 文件系统</li>
-<li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029160622572.png" alt="image-20251029160622572"></li>
+<li>
+<p>创建 <code>ext4</code> 文件系统</p>
+</li>
+<li>
+<p><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029160622572.png" alt="image-20251029160622572"></p>
+</li>
 </ul>
 </li>
-<li><code>sudo mkdir /mnt/bcache</code>
+<li>
+<p><code>sudo mkdir /mnt/bcache</code></p>
 <ul>
 <li>创建 挂载点 目录</li>
 </ul>
 </li>
-<li><code>sudo mount /dev/bcache /mnt/bcache</code>
+<li>
+<p><code>sudo mount /dev/bcache /mnt/bcache</code></p>
 <ul>
 <li>将 设备上的文件系统 连接到 <code>/mnt/ramdisk</code></li>
 </ul>
 </li>
-<li><code>mount | grep &quot;/mnt/bcache&quot;</code>
+<li>
+<p><code>mount | grep &quot;/mnt/bcache&quot;</code></p>
 <ul>
-<li>查看 挂载点来源，证明用的是自己写的块设备文件系统</li>
-<li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029160725209.png" alt="image-20251029160725209"></li>
+<li>
+<p>查看 挂载点来源，证明用的是自己写的块设备文件系统</p>
+</li>
+<li>
+<p><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029160725209.png" alt="image-20251029160725209"></p>
+</li>
 </ul>
 </li>
 </ul>
@@ -1583,18 +1748,30 @@
 <li>
 <p><strong>测试读写</strong></p>
 <ul>
-<li><code>echo &quot;111&quot; | sudo tee /mnt/bcache/test.txt &gt; /dev/null</code></li>
-<li><code>ls /mnt/bcache</code></li>
-<li><code>cat /mnt/bcache/test.txt</code></li>
-<li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029160900870.png" alt="image-20251029160900870"></li>
+<li>
+<p><code>echo &quot;111&quot; | sudo tee /mnt/bcache/test.txt &gt; /dev/null</code></p>
+</li>
+<li>
+<p><code>ls /mnt/bcache</code></p>
+</li>
+<li>
+<p><code>cat /mnt/bcache/test.txt</code></p>
+</li>
+<li>
+<p><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029160900870.png" alt="image-20251029160900870"></p>
+</li>
 </ul>
 </li>
 <li>
 <p><strong>验证块缓存功能</strong></p>
 <ul>
-<li>这里我就不用 查看 Cache 的工具 了
-而是直接在 代码 中写，如果 块缓存 成功的话，应该会有 Cache hit 字样</li>
-<li><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029161013508.png" alt="image-20251029161013508"></li>
+<li>
+<p>这里我就不用 查看 Cache 的工具 了</p>
+<p>而是直接在 代码 中写，如果 块缓存 成功的话，应该会有 Cache hit 字样</p>
+</li>
+<li>
+<p><img src="/01_assets/cnss2025-dev-fan-kong_image-20251029161013508.png" alt="image-20251029161013508"></p>
+</li>
 </ul>
 </li>
 </ul>
@@ -1716,13 +1893,6 @@
           >
           <em class="post-meta-item-text">阅读量</em>
         </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/cnss"
-        rel="tag"
-        >CNSS</a
-      >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
         href="/tags/%e6%8b%9b%e6%96%b0"
@@ -1852,7 +2022,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>

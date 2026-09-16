@@ -50,7 +50,7 @@
   />
   <meta property="article:author" content="MilLoong" />
   <meta property="article:published_time" content="2025-09-15T20:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-09-15T20:00:00&#43;08:00" /><meta property="article:tag" content="CNSS招新Dev进程Writeup" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-09-15T20:00:00&#43;08:00" /><meta property="article:tag" content="招新Dev进程Writeup" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/backgrounds/bg19.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -187,7 +187,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -268,12 +268,21 @@
 <a class="header-anchor" href="#%e6%98%af%e4%b8%bb%e8%bf%9b%e7%a8%8b%e5%85%88%e8%be%93%e5%87%ba%e8%bf%98%e6%98%af%e5%ad%90%e8%bf%9b%e7%a8%8b%e5%85%88%e8%be%93%e5%87%ba"></a>
 是主进程先输出还是子进程先输出？
 </h2><ul>
-<li><strong>子程序先输出</strong>
+<li>
+<p><strong>子程序先输出</strong></p>
 <ul>
-<li><strong>子进程和父进程并行</strong></li>
-<li>那么父进程就向 <code>pipe_fd1</code> 写入 <code>p</code>，然后在 <code>pipe_fd2</code> 等待子进程的写入，这时候阻塞后续代码。</li>
-<li>而子进程是先在 <code>pipe_fd1</code> 等待父进程的写入，这时候父进程已经发送了，所以先执行后面的输出代码，然后再在 <code>pipe_fd2</code> 写入 <code>c</code>。</li>
-<li>而父进程在子进程输出之后的 <code>write</code> 代码执行之后才能输出，所以<strong>先输出的是子进程的</strong>。</li>
+<li>
+<p><strong>子进程和父进程并行</strong></p>
+</li>
+<li>
+<p>那么父进程就向 <code>pipe_fd1</code> 写入 <code>p</code>，然后在 <code>pipe_fd2</code> 等待子进程的写入，这时候阻塞后续代码。</p>
+</li>
+<li>
+<p>而子进程是先在 <code>pipe_fd1</code> 等待父进程的写入，这时候父进程已经发送了，所以先执行后面的输出代码，然后再在 <code>pipe_fd2</code> 写入 <code>c</code>。</p>
+</li>
+<li>
+<p>而父进程在子进程输出之后的 <code>write</code> 代码执行之后才能输出，所以<strong>先输出的是子进程的</strong>。</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -286,7 +295,8 @@
 <h2 id="code">
 <a class="header-anchor" href="#code"></a>
 Code
-</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include&lt;stdio.h&gt;
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include&lt;stdio.h&gt;
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include&lt;stdlib.h&gt;
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -560,13 +570,6 @@ Code
         </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
-        href="/tags/cnss"
-        rel="tag"
-        >CNSS</a
-      >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
         href="/tags/%e6%8b%9b%e6%96%b0"
         rel="tag"
         >招新</a
@@ -694,7 +697,7 @@ Code
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -810,7 +813,7 @@ Code
           author: "MilLoong",
           title: "CNSS 2025 招新：Call of Process",
           url: "https:\/\/MilLoong.github.io\/post\/cnss2025-dev-call-of-process\/",
-          description: " 📞Call of Process ❓CH1 是主进程先输出还是子进程先输出？ 子程序先输出 子进程和父进程并行 那么父进程就向 pipe_fd1 写入 p，然后在 pipe_fd2 等待子进程的写入，这时候阻塞后续代码。 而子进程是先在 pipe_fd1 等待父进程的写入，这时候父进程已经发送了，所以先执行后面的输出代码，然后再在 pipe_fd2 写入 c。 而父进程在子进程输出之后的 write 代码执行之后才能输出，所以先输出的是子进程的。 ❓CH2 这个就写个程序递归就好，然后注意在递归函数里写一下分成子进程和父进程的逻辑。 Code #include\u0026lt;stdio.h\u0026gt; …",
+          description: " 📞Call of Process ❓CH1 是主进程先输出还是子进程先输出？ 子程序先输出\n子进程和父进程并行\n那么父进程就向 pipe_fd1 写入 p，然后在 pipe_fd2 等待子进程的写入，这时候阻塞后续代码。\n而子进程是先在 pipe_fd1 等待父进程的写入，这时候父进程已经发送了，所以先执行后面的输出代码，然后再在 pipe_fd2 写入 c。\n而父进程在子进程输出之后的 write 代码执行之后才能输出，所以先输出的是子进程的。\n❓CH2 这个就写个程序递归就好，然后注意在递归函数里写一下分成子进程和父进程的逻辑。 Code #include\u0026lt;stdio.h\u0026gt; …",
           cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg19.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

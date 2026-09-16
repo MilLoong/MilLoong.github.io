@@ -50,7 +50,7 @@
   />
   <meta property="article:author" content="MilLoong" />
   <meta property="article:published_time" content="2025-10-10T20:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-10-10T20:00:00&#43;08:00" /><meta property="article:tag" content="CNSS招新DevWriteup" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-10-10T20:00:00&#43;08:00" /><meta property="article:tag" content="招新DevWriteup" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/backgrounds/bg31.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -195,7 +195,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -297,7 +297,8 @@ CH1
 <li>
 <p>数据依赖关系 体现了两个 存储访问操作 的 执行顺序，必须按照该顺序执行两个操作才能得到正确的结果</p>
 <p>比如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">;</span>
 </span></span></code></pre></div></li>
@@ -319,7 +320,8 @@ CH1
 </li>
 <li>
 <p>比如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">...</span>
 </span></span><span class="line"><span class="cl">
@@ -338,7 +340,8 @@ CH1
 </li>
 <li>
 <p>比如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">...</span>
 </span></span><span class="line"><span class="cl">
@@ -357,7 +360,8 @@ CH1
 </li>
 <li>
 <p>比如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">c</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">c</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">...</span>
 </span></span><span class="line"><span class="cl">
@@ -379,7 +383,8 @@ CH1
 </li>
 <li>
 <p>比如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">...</span>
 </span></span><span class="line"><span class="cl">
@@ -393,7 +398,8 @@ CH1
 <h2 id="下面这个循环可以并行吗为什么">
 <a class="header-anchor" href="#%e4%b8%8b%e9%9d%a2%e8%bf%99%e4%b8%aa%e5%be%aa%e7%8e%af%e5%8f%af%e4%bb%a5%e5%b9%b6%e8%a1%8c%e5%90%97%e4%b8%ba%e4%bb%80%e4%b9%88"></a>
 下面这个循环可以并行吗？为什么？
-</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -405,9 +411,15 @@ CH1
 <p>首先理论上，只要有上面所说的 <strong>前三种数据依赖</strong>，循环 就不能并行</p>
 <p>也就是不能有：</p>
 <ul>
-<li><strong>读后写</strong></li>
-<li><strong>写后读</strong></li>
-<li><strong>写后写</strong></li>
+<li>
+<p><strong>读后写</strong></p>
+</li>
+<li>
+<p><strong>写后读</strong></p>
+</li>
+<li>
+<p><strong>写后写</strong></p>
+</li>
 </ul>
 <p>那就只需看看是否存在 <code>A[i][j]</code> 会出现上面 三种情况 的其中 一种 就好了</p>
 <ul>
@@ -438,14 +450,24 @@ CH1
 <p>首先理论上，只要有上面所说的 <strong>前三种数据依赖</strong>，循环 就不能并行</p>
 <p>也就是不能有：</p>
 <ul>
-<li><strong>读后写</strong></li>
-<li><strong>写后读</strong></li>
-<li><strong>写后写</strong></li>
+<li>
+<p><strong>读后写</strong></p>
+</li>
+<li>
+<p><strong>写后读</strong></p>
+</li>
+<li>
+<p><strong>写后写</strong></p>
+</li>
 </ul>
 <p>那么 循环 可以安全地并行执行，就是要：</p>
 <ul>
-<li>没有上面说的 <strong>三种数据依赖</strong></li>
-<li>可以有 <strong>输入依赖</strong></li>
+<li>
+<p>没有上面说的 <strong>三种数据依赖</strong></p>
+</li>
+<li>
+<p>可以有 <strong>输入依赖</strong></p>
+</li>
 </ul>
 <p>也就是说，<strong>不存在循环携带的数据依赖</strong></p>
 </li>
@@ -462,7 +484,8 @@ CH1
 </li>
 <li>
 <p>比如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
@@ -487,13 +510,15 @@ CH1
 <ul>
 <li>
 <p>地址依赖 和 数据依赖 很像，就是 访问的地址 要在上一次计算出来，比如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">r1</span> <span class="o">=</span> <span class="n">r2</span> <span class="o">+</span> <span class="n">r3</span>        
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">r1</span> <span class="o">=</span> <span class="n">r2</span> <span class="o">+</span> <span class="n">r3</span>        
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">r4</span> <span class="o">=</span> <span class="n">mem</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span>        
 </span></span></code></pre></div></li>
 <li>
 <p>那显然 <strong>循环携带的地址依赖</strong>，也是不能够让 循环 安全地并行的，这个例子只要用 嵌套数组 来说明一下就好了：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="p">[</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -519,9 +544,15 @@ CH2
 <a class="header-anchor" href="#%e7%ad%89%e5%bc%8f%e7%ba%a6%e6%9d%9f"></a>
 等式约束
 </h2><ul>
-<li>等式其实就是 丢番图方程组 嘛</li>
-<li>处理这个的话 二元 一般是用 <code>exgcd</code> 的，不过三元及以上好像不是很好用</li>
-<li>然后我查了一下发现一个 史密斯标准型（SNF），好像用这个解决二元以上的 丢番图方程 更稳定可靠一点，所以简单实现了一下</li>
+<li>
+<p>等式其实就是 丢番图方程组 嘛</p>
+</li>
+<li>
+<p>处理这个的话 二元 一般是用 <code>exgcd</code> 的，不过三元及以上好像不是很好用</p>
+</li>
+<li>
+<p>然后我查了一下发现一个 史密斯标准型（SNF），好像用这个解决二元以上的 丢番图方程 更稳定可靠一点，所以简单实现了一下</p>
+</li>
 </ul>
 <p>然后具体代码细节就不在这里讲了吧，为了提高精度我用了一下 int128，然后定义了一个 <code>Raditinal</code> 类来控制，包括重载运算符什么的</p>
 <h2 id="示例程序">
@@ -529,6 +560,10 @@ CH2
 示例程序
 </h2><blockquote>
 <p>示例程序的话 我的程序 的结果都是和预期相同的，不过更多的不知道行不行（）</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
 <p>感觉确实只是简单模拟 Omega Test 和 SNF，所以应该会有例子能卡的（</p>
 </blockquote>
 <ul>
@@ -537,7 +572,8 @@ CH2
 <ul>
 <li>
 <p><strong>Sample 0</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Sample</span> <span class="mi">0</span><span class="o">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Sample</span> <span class="mi">0</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span>
 </span></span><span class="line"><span class="cl">
@@ -551,7 +587,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Sample 1</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Sample</span> <span class="mi">1</span><span class="o">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Sample</span> <span class="mi">1</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
 </span></span><span class="line"><span class="cl">
@@ -563,7 +600,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Sample 2</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Sample</span> <span class="mi">2</span><span class="o">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Sample</span> <span class="mi">2</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">7</span><span class="n">x</span> <span class="o">+</span> <span class="mi">12</span><span class="n">y</span> <span class="o">+</span> <span class="mi">31</span><span class="n">z</span> <span class="o">=</span> <span class="mi">17</span>
 </span></span><span class="line"><span class="cl">
@@ -579,7 +617,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Sample 3</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Sample</span> <span class="mi">0</span><span class="o">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Sample</span> <span class="mi">0</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">10</span><span class="n">x</span> <span class="o">-</span> <span class="mi">15</span><span class="n">y</span> <span class="o">+</span> <span class="mi">20</span><span class="n">z</span> <span class="o">=</span> <span class="mi">30</span>
 </span></span><span class="line"><span class="cl">
@@ -597,7 +636,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Sample 4</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Sample</span> <span class="mi">4</span><span class="o">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Sample</span> <span class="mi">4</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">27</span> <span class="o">&lt;=</span> <span class="mi">11</span><span class="n">x</span> <span class="o">+</span> <span class="mi">13</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">45</span>
 </span></span><span class="line"><span class="cl">
@@ -612,7 +652,8 @@ CH2
 <ul>
 <li>
 <p><strong>Case 0</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">0</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">2</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
 </span></span><span class="line"><span class="cl">
@@ -620,7 +661,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 1</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">1</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">2</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>
 </span></span><span class="line"><span class="cl">
@@ -628,7 +670,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 2</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">2</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">2</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
 </span></span><span class="line"><span class="cl">
@@ -638,7 +681,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 3</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">3</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">3</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">2</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">
@@ -646,7 +690,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 4</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">4</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">4</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl">
@@ -656,7 +701,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 5</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">5</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">5</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">3</span><span class="n">x</span> <span class="o">+</span> <span class="mi">6</span><span class="n">y</span> <span class="o">+</span> <span class="mi">9</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">
@@ -664,7 +710,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 6</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">6</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">6</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl">
@@ -674,7 +721,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 7</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">7</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">7</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
 </span></span><span class="line"><span class="cl">
@@ -686,7 +734,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 8</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">8</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">8</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">2</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>
 </span></span><span class="line"><span class="cl">
@@ -696,7 +745,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 9</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">9</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">9</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">1000000007</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1000000009</span><span class="o">*</span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
 </span></span><span class="line"><span class="cl">
@@ -704,7 +754,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 10</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">10</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">10</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">2</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>
 </span></span><span class="line"><span class="cl">
@@ -714,7 +765,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 11</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">11</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">11</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span> <span class="o">+</span> <span class="n">x4</span> <span class="o">&gt;=</span> <span class="mi">10</span>
 </span></span><span class="line"><span class="cl">
@@ -730,7 +782,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 12</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">12</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">12</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">1000000</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2000000</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">5000001</span>
 </span></span><span class="line"><span class="cl">
@@ -740,7 +793,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 13</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">13</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">13</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">2</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="n">y</span> <span class="o">+</span> <span class="mi">4</span><span class="n">z</span> <span class="o">=</span> <span class="mi">12</span>
 </span></span><span class="line"><span class="cl">
@@ -760,7 +814,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 14</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">14</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">14</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">1000000007</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1000000009</span><span class="n">y</span> <span class="o">=</span> <span class="mi">1000000016</span>
 </span></span><span class="line"><span class="cl">
@@ -772,7 +827,8 @@ CH2
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Case 15</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">15</span><span class="o">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Case</span> <span class="mi">15</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">w</span> <span class="o">+</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 </span></span><span class="line"><span class="cl">
@@ -804,7 +860,8 @@ CH2
 </li>
 <li>
 <p><strong>运行结果（由于太长了就不截图了qwq）：</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Sample 0:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Sample 0:
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">a &gt; b
 </span></span><span class="line"><span class="cl">
@@ -813,9 +870,11 @@ CH2
 </span></span><span class="line"><span class="cl">c &gt; a
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Sample 1:
@@ -827,9 +886,11 @@ CH2
 </span></span><span class="line"><span class="cl">y &lt;<span class="o">=</span> <span class="m">4</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Sample 2:
@@ -843,9 +904,11 @@ CH2
 </span></span><span class="line"><span class="cl">-50 &lt;<span class="o">=</span> y &lt;<span class="o">=</span> <span class="m">50</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: true, <span class="nv">x</span> <span class="o">=</span> 38, <span class="nv">y</span> <span class="o">=</span> -13, <span class="nv">z</span> <span class="o">=</span> -3<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Sample 3:
@@ -861,9 +924,11 @@ CH2
 </span></span><span class="line"><span class="cl">z &lt;<span class="o">=</span> <span class="m">10</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: true, <span class="nv">x</span> <span class="o">=</span> 6, <span class="nv">y</span> <span class="o">=</span> 2, <span class="nv">z</span> <span class="o">=</span> 0<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Sample 4:
@@ -873,9 +938,11 @@ CH2
 </span></span><span class="line"><span class="cl">-10 &lt;<span class="o">=</span> 7x - 9y &lt;<span class="o">=</span> <span class="m">4</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 0:
@@ -883,9 +950,11 @@ CH2
 </span></span><span class="line"><span class="cl">2x + <span class="nv">4y</span> <span class="o">=</span> <span class="m">3</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 1:
@@ -893,9 +962,11 @@ CH2
 </span></span><span class="line"><span class="cl">2x + <span class="nv">4y</span> <span class="o">=</span> <span class="m">6</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 2:
@@ -905,9 +976,11 @@ CH2
 </span></span><span class="line"><span class="cl">x - <span class="nv">y</span> <span class="o">=</span> <span class="m">1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: true, <span class="nv">x</span> <span class="o">=</span> 3, <span class="nv">y</span> <span class="o">=</span> 2<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 3:
@@ -915,9 +988,11 @@ CH2
 </span></span><span class="line"><span class="cl">2x + <span class="nv">2y</span> <span class="o">=</span> <span class="m">1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 4:
@@ -927,9 +1002,11 @@ CH2
 </span></span><span class="line"><span class="cl">x &gt;<span class="o">=</span> <span class="m">0</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 5:
@@ -937,9 +1014,11 @@ CH2
 </span></span><span class="line"><span class="cl">3x + 6y + <span class="nv">9z</span> <span class="o">=</span> <span class="m">1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 6:
@@ -949,9 +1028,11 @@ CH2
 </span></span><span class="line"><span class="cl">-x - y &gt;<span class="o">=</span> <span class="m">1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 7:
@@ -963,9 +1044,11 @@ CH2
 </span></span><span class="line"><span class="cl">x + y &gt;<span class="o">=</span> <span class="m">3</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 8:
@@ -975,9 +1058,11 @@ CH2
 </span></span><span class="line"><span class="cl">x &gt;<span class="o">=</span> <span class="m">4</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 9:
@@ -985,9 +1070,11 @@ CH2
 </span></span><span class="line"><span class="cl">1000000007*x + 1000000009*y <span class="o">=</span> <span class="m">2</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 10:
@@ -997,9 +1084,11 @@ CH2
 </span></span><span class="line"><span class="cl">6x + <span class="nv">8y</span> <span class="o">=</span> <span class="m">18</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 11:
@@ -1015,9 +1104,11 @@ CH2
 </span></span><span class="line"><span class="cl">x4 &lt;<span class="o">=</span> <span class="m">2</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 12:
@@ -1027,9 +1118,11 @@ CH2
 </span></span><span class="line"><span class="cl">1000000x + 2000000y &lt;<span class="o">=</span> <span class="m">5000000</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 13:
@@ -1049,9 +1142,11 @@ CH2
 </span></span><span class="line"><span class="cl">z &lt;<span class="o">=</span> <span class="m">10</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: true, e.g., <span class="nv">x</span><span class="o">=</span>3, <span class="nv">y</span><span class="o">=</span>2, <span class="nv">z</span><span class="o">=</span>1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 14:
@@ -1063,9 +1158,11 @@ CH2
 </span></span><span class="line"><span class="cl">y &gt;<span class="o">=</span> -1000
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: true, e.g., <span class="nv">x</span><span class="o">=</span>1, <span class="nv">y</span><span class="o">=</span>1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Case 15:
@@ -1095,6 +1192,7 @@ CH2
 </span></span><span class="line"><span class="cl">x + z &gt;<span class="o">=</span> <span class="m">6</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">has integer solutions: <span class="nb">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Expected: <span class="nb">false</span><span class="o">)</span>
@@ -1115,11 +1213,13 @@ CH1 和 CH2 有什么关系？
 </li>
 <li>
 <p>比如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 </span></span></code></pre></div><p>对应的 约束系统是：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">=</span> <span class="n">j</span>           
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">=</span> <span class="n">j</span>           
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">0</span> <span class="err">≤</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span>          
 </span></span><span class="line"><span class="cl">
@@ -1148,23 +1248,37 @@ CH1 和 CH2 有什么关系？
 <li>
 <p><strong>循环交换</strong></p>
 <ul>
-<li>需要满足 依赖向量的方向向量 在交换后仍然是 字典序 正的</li>
-<li>不能违反原有的数据依赖关系</li>
+<li>
+<p>需要满足 依赖向量的方向向量 在交换后仍然是 字典序 正的</p>
+</li>
+<li>
+<p>不能违反原有的数据依赖关系</p>
+</li>
 </ul>
 </li>
 <li>
 <p><strong>循环反转</strong></p>
 <ul>
-<li>需要分析反转后 依赖关系 是否仍然合法</li>
-<li>依赖距离向量 在反转后需要保持合法方向</li>
+<li>
+<p>需要分析反转后 依赖关系 是否仍然合法</p>
+</li>
+<li>
+<p>依赖距离向量 在反转后需要保持合法方向</p>
+</li>
 </ul>
 </li>
 <li>
 <p><strong>循环延展、循环倾斜</strong></p>
 <ul>
-<li>需要保证变换后的 迭代空间 仍然是合法的，且 依赖距离向量 满足特定条件</li>
-<li>依赖距离向量 满足特定条件（通常用于消除某些方向的依赖）</li>
-<li>变换矩阵 必须是可逆的（行列式非零）</li>
+<li>
+<p>需要保证变换后的 迭代空间 仍然是合法的，且 依赖距离向量 满足特定条件</p>
+</li>
+<li>
+<p>依赖距离向量 满足特定条件（通常用于消除某些方向的依赖）</p>
+</li>
+<li>
+<p>变换矩阵 必须是可逆的（行列式非零）</p>
+</li>
 </ul>
 </li>
 <li>
@@ -1232,35 +1346,55 @@ CH1 和 CH2 有什么关系？
 <li>
 <p><strong>不改变指令实例执行顺序的变换</strong></p>
 <ul>
-<li><strong>分块分离</strong>
+<li>
+<p><strong>分块分离</strong></p>
 <ul>
 <li>主要考虑 代码大小 和 缓存效率，不需要依赖分析</li>
 </ul>
 </li>
-<li><strong>循环展开</strong>
+<li>
+<p><strong>循环展开</strong></p>
 <ul>
-<li>不改变执行顺序，主要考虑：
+<li>
+<p>不改变执行顺序，主要考虑：</p>
 <ul>
-<li>循环次数 是否已知</li>
-<li>代码膨胀 是否可接受</li>
-<li>寄存器压力</li>
-</ul>
+<li>
+<p>循环次数 是否已知</p>
+</li>
+<li>
+<p>代码膨胀 是否可接受</p>
+</li>
+<li>
+<p>寄存器压力</p>
 </li>
 </ul>
 </li>
-<li><strong>循环判断外提</strong>
-<ul>
-<li>需要保证提取出的条件在 循环外计算 是安全的</li>
-<li>不能有副作用 或 依赖于循环变量</li>
 </ul>
 </li>
-<li><strong>循环剥离</strong>
+<li>
+<p><strong>循环判断外提</strong></p>
 <ul>
-<li>需要识别出可以 单独处理 的 首尾迭代</li>
-<li>不改变 整体执行顺序</li>
+<li>
+<p>需要保证提取出的条件在 循环外计算 是安全的</p>
+</li>
+<li>
+<p>不能有副作用 或 依赖于循环变量</p>
+</li>
 </ul>
 </li>
-<li><strong>循环压紧</strong>
+<li>
+<p><strong>循环剥离</strong></p>
+<ul>
+<li>
+<p>需要识别出可以 单独处理 的 首尾迭代</p>
+</li>
+<li>
+<p>不改变 整体执行顺序</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>循环压紧</strong></p>
 <ul>
 <li>主要是 代码优化，需要保证 压紧 后逻辑等价</li>
 </ul>
@@ -1283,7 +1417,8 @@ CH2 的整数约束求解工具可以如何应用于并行等循环变换的分�
 </li>
 <li>
 <p>比如，把：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">7</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">
@@ -1293,7 +1428,8 @@ CH2 的整数约束求解工具可以如何应用于并行等循环变换的分�
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>变成：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">7</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">7</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">min</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">
@@ -1379,13 +1515,6 @@ CH2 的整数约束求解工具可以如何应用于并行等循环变换的分�
           >
           <em class="post-meta-item-text">阅读量</em>
         </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/cnss"
-        rel="tag"
-        >CNSS</a
-      >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
         href="/tags/%e6%8b%9b%e6%96%b0"
@@ -1516,7 +1645,7 @@ CH2 的整数约束求解工具可以如何应用于并行等循环变换的分�
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>

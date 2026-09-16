@@ -50,7 +50,7 @@
   />
   <meta property="article:author" content="MilLoong" />
   <meta property="article:published_time" content="2025-11-04T12:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-11-04T12:00:00&#43;08:00" /><meta property="article:tag" content="CNSS招新DevCUDAWriteup" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-11-04T12:00:00&#43;08:00" /><meta property="article:tag" content="招新DevCUDAWriteup" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/backgrounds/bg41.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -184,7 +184,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -276,9 +276,11 @@ train_mnist_gpu
 </li>
 <li>
 <p>所以 代码 就很好改了，只需改一下 引用库 的那个地方：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </span></span></code></pre></div><p>改为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># GPU 加速</span>
 </span></span><span class="line"><span class="cl">
@@ -298,7 +300,8 @@ train_mnist_gpu
 <p>加两个 <strong>辅助函数</strong></p>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">to_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">to_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 将在 GPU 上的 数组 转回 NumPy (CPU)</span>
 </span></span><span class="line"><span class="cl">
@@ -307,6 +310,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asnumpy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">to_gpu</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -325,7 +329,8 @@ train_mnist_gpu
 <p>然后改一下对应的地方</p>
 <ul>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 辅助函数</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 辅助函数</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">forward_np_batch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">x_np</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
@@ -342,13 +347,15 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">out</span>
 </span></span></code></pre></div></li>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evaluate_accuracy</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_loader</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evaluate_accuracy</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_loader</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 在给定的数据加载器上评估模型准确率</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">data_loader</span><span class="p">:</span>
@@ -358,9 +365,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">x_np</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 原始输出</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">logits</span> <span class="o">=</span> <span class="n">forward_np_batch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">x_np</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 预测类别</span>
@@ -370,6 +379,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">preds</span> <span class="o">=</span> <span class="n">to_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">logits</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 正确个数</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">preds</span> <span class="o">==</span> <span class="n">target</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -377,12 +387,14 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">total</span> <span class="o">+=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 正确个数 / 批次个数</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">correct</span> <span class="o">/</span> <span class="n">total</span>
 </span></span></code></pre></div></li>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">            <span class="c1"># 前向传播</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 前向传播</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 转到 GPU</span>
 </span></span><span class="line"><span class="cl">
@@ -393,7 +405,8 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="n">logits</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">)</span>
 </span></span></code></pre></div></li>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">            <span class="c1"># 统计训练集上的预测正确数(用于 epoch 结束后计算训练准确率)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 统计训练集上的预测正确数(用于 epoch 结束后计算训练准确率)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 要转回 CPU, 因为 y_np 是 CPU 上的</span>
 </span></span><span class="line"><span class="cl">
@@ -414,7 +427,8 @@ train_mnist_gpu
 <p>这里我就直接 复用 最后那个 <strong>对 MNIST 数据集进行分类并评估训练准确度</strong> 的代码了，然后像上面说的改为 <strong>cupy</strong></p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">np</span>
 </span></span><span class="line"><span class="cl">
@@ -425,6 +439,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">GPU_AVAILABLE</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">to_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -438,6 +453,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">to_gpu</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 将 NumPy 数组转到 GPU</span>
@@ -449,6 +465,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
@@ -456,6 +473,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">transforms</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">Subset</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Tensor</span><span class="p">:</span>
@@ -475,9 +493,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="c1"># 梯度初始化为 0</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 反向传播函数 </span>
@@ -485,9 +505,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="kc">None</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 记录当前 Tensor 的父节点</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">_prev</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">_parents</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 调试</span>
@@ -497,9 +519,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 是否需要计算梯度</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="n">requires_grad</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">zero_grad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -509,11 +533,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 调试</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;Tensor(data = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="si">}</span><span class="s2">, grad = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">grad</span><span class="si">}</span><span class="s2">)&#34;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 反向传播</span>
@@ -541,7 +567,9 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="n">topo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">build_topo</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 反向传播</span>
@@ -551,11 +579,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 反拓扑序</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">topo</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">v</span><span class="o">.</span><span class="n">_backward</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 算术运算</span>
@@ -573,11 +603,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 反向传播函数</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># a = b + c</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># dL/db = dL/da * da/db</span>
@@ -591,6 +623,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="c1"># d(b+c)/dc = 1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">grad_other</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 将梯度调整到正确的维度</span>
@@ -614,6 +647,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                    <span class="n">grad_self</span> <span class="o">=</span> <span class="n">grad_self</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">ndims_added_other</span> <span class="o">=</span> <span class="n">grad_other</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">ndim</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndims_added_other</span><span class="p">):</span>
@@ -633,6 +667,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                    <span class="n">grad_other</span> <span class="o">=</span> <span class="n">grad_other</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">grad_self</span>
@@ -642,7 +677,9 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="n">other</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">grad_other</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
@@ -654,11 +691,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span> <span class="o">+</span> <span class="n">other</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 取负</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__neg__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 减</span>
@@ -676,6 +715,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">other</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 乘</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
@@ -689,11 +729,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 反向传播函数</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># a = b * c</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># dL/db = dL/da * da/db</span>
@@ -707,6 +749,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="c1"># d(a*b)/db = a</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">grad_other</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 将梯度调整到正确的维度</span>
@@ -730,6 +773,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                    <span class="n">grad_self</span> <span class="o">=</span> <span class="n">grad_self</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">ndims_added_other</span> <span class="o">=</span> <span class="n">grad_other</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">ndim</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndims_added_other</span><span class="p">):</span>
@@ -749,6 +793,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                    <span class="n">grad_other</span> <span class="o">=</span> <span class="n">grad_other</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">grad_self</span>
@@ -758,7 +803,9 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="n">other</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">grad_other</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
@@ -768,6 +815,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span> <span class="o">*</span> <span class="n">other</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 除</span>
@@ -783,6 +831,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">other</span> <span class="o">*</span> <span class="bp">self</span><span class="o">**-</span><span class="mi">1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 幂运算</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__pow__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
@@ -794,6 +843,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">**</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="s1">&#39;**&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># d(x^y)/dx = y * x^(y-1)</span>
@@ -803,6 +853,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="c1"># 防止 0^负数</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">                <span class="n">grad_self</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">**</span> <span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">data</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">                <span class="c1"># 处理广播</span>
@@ -820,9 +871,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                        <span class="n">grad_self</span> <span class="o">=</span> <span class="n">grad_self</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">grad_self</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># d(x^y)/∂y = x^y * ln(x)</span>
@@ -832,6 +885,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="c1"># 防止 ln(负数) 或 ln(0)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">                <span class="n">grad_other</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">**</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">                <span class="c1"># 处理广播</span>
@@ -853,7 +907,9 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                    <span class="n">other</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">grad_other</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
@@ -867,12 +923,15 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="c1"># other^self，other 是常数，self 是变量</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 底数要大于0</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">assert</span> <span class="n">other</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&#34;base must be positive for general exponential&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">other</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">other</span><span class="si">}</span><span class="s1">**x&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
@@ -884,10 +943,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="p">(</span><span class="n">other</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># e^x</span>
@@ -899,6 +961,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;exp&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># d(e^x)/dx = e^x</span>
@@ -908,9 +971,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># log_a(x)</span>
@@ -924,7 +989,9 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">assert</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&#34;a must be positive and not equal to 1&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="sa">f</span><span class="s1">&#39;log_</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
@@ -936,10 +1003,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># ln</span>
@@ -949,12 +1019,15 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="c1"># ln(x)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 确保真数大于0</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&#34;log undefined for non-positive values&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
@@ -966,9 +1039,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 三角函数</span>
@@ -982,6 +1057,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;sin&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># d(sin(x))/dx = cos(x)</span>
@@ -991,10 +1067,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># cos</span>
@@ -1006,6 +1085,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;cos&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># d(cos(x))/dx = -sin(x)</span>
@@ -1015,10 +1095,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># tan</span>
@@ -1030,6 +1113,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;tan&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># d(tan(x))/dx = 1/((cos(x)^2)</span>
@@ -1039,10 +1123,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># cot</span>
@@ -1054,6 +1141,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;cot&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># d(cot(x))/dx = -1/(sin(x)^2)</span>
@@ -1063,10 +1151,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># sec</span>
@@ -1076,6 +1167,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="c1"># sec(x)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;sec&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
@@ -1091,10 +1183,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="p">(</span><span class="n">sec_val</span> <span class="o">*</span> <span class="n">tan_val</span><span class="p">)</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># csc</span>
@@ -1104,6 +1199,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="c1"># csc(x)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;csc&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
@@ -1119,10 +1215,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="n">csc_val</span> <span class="o">*</span> <span class="n">cot_val</span><span class="p">)</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 反三角函数</span>
@@ -1134,11 +1233,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="c1"># arcsin(x)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 判断x是否在[-1,1]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&#34;arcsin undefined outside [-1, 1]&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;arcsin&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
@@ -1150,10 +1251,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># arccos</span>
@@ -1163,12 +1267,15 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="c1"># arccos(x)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 判断x是否在[-1,1]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&#34;arccos undefined outside [-1, 1]&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;arccos&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
@@ -1180,10 +1287,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># arctan</span>
@@ -1195,6 +1305,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;arctan&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># d(arctan(x))/dx = 1/1+x^2</span>
@@ -1204,10 +1315,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 激活函数</span>
@@ -1219,6 +1333,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;relu&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 导数: 1 if x &gt; 0 else 0</span>
@@ -1228,10 +1343,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1241,6 +1359,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">sigmoid_val</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">sigmoid_val</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;sigmoid&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
@@ -1254,14 +1373,17 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">sig</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">sig</span><span class="p">)</span> <span class="o">*</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># softmax(x_i) = e^(x_i) / Σ(e^(x_j))</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 减去最大值</span>
@@ -1273,7 +1395,9 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">softmax_val</span> <span class="o">=</span> <span class="n">exp_x</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">exp_x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">softmax_val</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;softmax&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
@@ -1289,10 +1413,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">grad_input</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 规约操作</span>
@@ -1302,6 +1429,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="c1"># sum</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
@@ -1325,10 +1453,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="n">grad_expanded</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -1336,6 +1467,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="c1"># mean</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
@@ -1361,10 +1493,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="n">grad_expanded</span> <span class="o">/</span> <span class="n">n</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 形状操作</span>
@@ -1376,6 +1511,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">shape</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;reshape&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># x 的梯度: y 的梯度的 reshape</span>
@@ -1385,10 +1521,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nd">@property</span>
@@ -1402,6 +1541,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="s1">&#39;transpose&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># x 的梯度: y 的梯度的 转置</span>
@@ -1411,9 +1551,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">T</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">matmul</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
@@ -1425,6 +1567,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">@</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="s1">&#39;matmul&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># np.swapaxes是指定两个轴进行交换, 可以处理二维以上的情况</span>
@@ -1434,6 +1577,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="c1"># 如(A, B, C)表示有 A 批, 每批是 B × C 的矩阵</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 则(A, B, C)^T = (A, C, B)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># d(AB)/dA = grad @ B^T</span>
@@ -1453,15 +1597,19 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="n">other</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">self_T</span> <span class="o">@</span> <span class="n">out</span><span class="o">.</span><span class="n">grad</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__matmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 损失函数</span>
@@ -1477,6 +1625,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MSELoss</span><span class="p">(</span><span class="n">Loss</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># MSE</span>
@@ -1490,9 +1639,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="c1"># targets: Tensor, 真实值</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="n">Tensor</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">targets</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># MSE = mean((pred - target)^2)</span>
@@ -1504,7 +1655,9 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">loss</span> <span class="o">=</span> <span class="n">squared_diff</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">loss</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">CrossEntropyLoss</span><span class="p">(</span><span class="n">Loss</span><span class="p">):</span>
@@ -1514,6 +1667,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="c1"># L = -(1/n) * Σ y_true * log(y_pred)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logits</span><span class="p">,</span> <span class="n">targets</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># logits: Tensor, shape (batch_size, num_classes), 原始输出</span>
@@ -1521,9 +1675,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="c1"># targets: Tensor/np.ndarray, shape (batch_size,), 类别索引</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">targets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 每批次样本大小</span>
@@ -1531,10 +1687,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">batch_size</span> <span class="o">=</span> <span class="n">logits</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 前向传播</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># log(P) = log(exp(logits) / sum(exp(logits))) = logits - log(sum(exp(logits)))</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 减去最大值以防溢出</span>
@@ -1544,9 +1703,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">shifted_logits</span> <span class="o">=</span> <span class="n">logits</span><span class="o">.</span><span class="n">data</span> <span class="o">-</span> <span class="n">max_logits</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># LogSoftmax: log(P)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">log_softmax_data</span> <span class="o">=</span> <span class="n">shifted_logits</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">shifted_logits</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 选择正确类别的概率</span>
@@ -1558,9 +1719,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">targets_onehot</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">batch_size</span><span class="p">),</span> <span class="n">targets</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 只提取正确类别的 log 概率</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">correct_log_probs</span> <span class="o">=</span> <span class="n">log_softmax_data</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">batch_size</span><span class="p">),</span> <span class="n">targets</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># loss = - (1/N) * sum(log(P[target]))</span>
@@ -1568,7 +1731,9 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">loss_value</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">correct_log_probs</span><span class="p">)</span> <span class="o">/</span> <span class="n">batch_size</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 反向传播</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 新节点 记录 损失值</span>
@@ -1576,9 +1741,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">loss_value</span><span class="p">,</span> <span class="p">(</span><span class="n">logits</span><span class="p">,),</span> <span class="s1">&#39;ce_loss&#39;</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">_backward</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># dL/dz = P - Y_onehot (logits = z)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># P</span>
@@ -1586,14 +1753,17 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_softmax_data</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 梯度计算</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">grad_logits</span> <span class="o">=</span> <span class="n">P</span> <span class="o">-</span> <span class="n">targets_onehot</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 归一化</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">grad_logits</span> <span class="o">/=</span> <span class="n">batch_size</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">logits</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">:</span>
@@ -1603,10 +1773,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="n">logits</span><span class="o">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">grad_logits</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">_backward</span> <span class="o">=</span> <span class="n">_backward</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 神经网络层</span>
@@ -1620,6 +1793,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 前向传播</span>
@@ -1627,11 +1801,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 返回模块的所有参数</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">zero_grad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1643,6 +1819,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="n">param</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Linear</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 全连接层(线性层)</span>
@@ -1650,9 +1827,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="c1">#  y = Wx + b</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_features</span><span class="p">,</span> <span class="n">out_features</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 初始化</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># in_features: 输入特征数</span>
@@ -1664,6 +1843,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">in_features</span> <span class="o">=</span> <span class="n">in_features</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">out_features</span> <span class="o">=</span> <span class="n">out_features</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># Xavier 初始化</span>
@@ -1679,6 +1859,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">bias</span><span class="p">:</span>
@@ -1698,11 +1879,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="kc">None</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 前向传播</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># x: shape (batch_size, in_features) 或 (in_features,)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># y = Wx</span>
@@ -1712,6 +1895,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">x</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># y = y + b</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -1719,7 +1903,9 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="n">out</span> <span class="o">=</span> <span class="n">out</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1735,9 +1921,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">params</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;Linear(in_features=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">in_features</span><span class="si">}</span><span class="s2">, out_features=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">out_features</span><span class="si">}</span><span class="s2">, bias=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="si">}</span><span class="s2">)&#34;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Sequential</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
@@ -1749,6 +1937,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">layers</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
@@ -1756,6 +1945,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1771,11 +1961,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">params</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">layer_str</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">  &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&#34;(</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">layer</span><span class="si">}</span><span class="s2">&#34;</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">)])</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;Sequential(</span><span class="se">\n</span><span class="s2">  </span><span class="si">{</span><span class="n">layer_str</span><span class="si">}</span><span class="se">\n</span><span class="s2">)&#34;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ReLU</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
@@ -1787,6 +1979,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">relu</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Sigmoid</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># Sigmoid 激活函数层</span>
@@ -1794,6 +1987,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Softmax</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
@@ -1805,9 +1999,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="o">=</span> <span class="n">axis</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 优化器</span>
@@ -1823,11 +2019,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">=</span> <span class="n">lr</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 执行一步参数更新</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">zero_grad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1837,6 +2035,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">param</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SGD</span><span class="p">(</span><span class="n">Optimizer</span><span class="p">):</span>
@@ -1852,6 +2051,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">                <span class="c1"># θ = θ - lr * ∇θ</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">                <span class="n">param</span><span class="o">.</span><span class="n">data</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">*</span> <span class="n">param</span><span class="o">.</span><span class="n">grad</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 辅助函数</span>
@@ -1871,6 +2071,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">out</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evaluate_accuracy</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_loader</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 在给定的数据加载器上评估模型准确率</span>
@@ -1880,6 +2081,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">data_loader</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 将 PyTorch 的 tensor 转为 numpy 数组并展开为向量</span>
@@ -1887,9 +2089,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">x_np</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 原始输出</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">logits</span> <span class="o">=</span> <span class="n">forward_np_batch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">x_np</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 预测类别</span>
@@ -1899,6 +2103,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">preds</span> <span class="o">=</span> <span class="n">to_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">logits</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1"># 正确个数</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">preds</span> <span class="o">==</span> <span class="n">target</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -1906,9 +2111,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">total</span> <span class="o">+=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 正确个数 / 批次个数</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">correct</span> <span class="o">/</span> <span class="n">total</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
@@ -1930,6 +2137,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="n">train_subset</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># 若为整数, 则只使用前 train_subset 个训练样本</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 数据加载</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># torchvision 来 下载和加载 MNIST 数据集</span>
@@ -1941,14 +2149,17 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">train_subset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">train_dataset</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">train_subset</span><span class="p">)))</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">test_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">test_batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 2 层 MLP</span>
@@ -1964,11 +2175,13 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">    <span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 损失和优化器</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">criterion</span> <span class="o">=</span> <span class="n">CrossEntropyLoss</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 训练</span>
@@ -1982,9 +2195,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">train_correct</span> <span class="o">=</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">train_total</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
@@ -1994,6 +2209,7 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="n">x_np</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="c1"># (batch, 784)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">y_np</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span> <span class="c1"># (batch,)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 前向传播</span>
@@ -2007,9 +2223,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="n">logits</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 计算损失</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">y_np</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 反向传播</span>
@@ -2019,14 +2237,17 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 参数更新</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 清零梯度</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1"># 统计训练集上的预测正确数(用于 epoch 结束后计算训练准确率)</span>
@@ -2040,9 +2261,11 @@ train_mnist_gpu
 </span></span><span class="line"><span class="cl">            <span class="n">train_total</span> <span class="o">+=</span> <span class="n">y_np</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">train_acc</span> <span class="o">=</span> <span class="n">train_correct</span> <span class="o">/</span> <span class="n">train_total</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">test_acc</span> <span class="o">=</span> <span class="n">evaluate_accuracy</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">num_epochs</span><span class="si">}</span><span class="se">\n</span><span class="s2">train_acc: </span><span class="si">{</span><span class="n">train_acc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">test_acc: </span><span class="si">{</span><span class="n">test_acc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
@@ -2073,13 +2296,6 @@ train_mnist_gpu
           >
           <em class="post-meta-item-text">阅读量</em>
         </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/cnss"
-        rel="tag"
-        >CNSS</a
-      >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
         href="/tags/%e6%8b%9b%e6%96%b0"
@@ -2206,7 +2422,7 @@ train_mnist_gpu
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">40</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
