@@ -187,7 +187,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">12</div>
+    <div>文章</div><div class="sidebar-state-number">18</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -197,7 +197,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">39</div>
+    <div class="sidebar-state-number">34</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -450,11 +450,23 @@ KMP算法——透彻的理论理解&amp;代码理解（c++）
 <p>如果说用暴力匹配的方法，我们是 <strong>先有遍历S的 i 和遍历P的 j ，然后双重for循环，那这样我们知道是不行的，时间复杂度是O(mn)</strong></p>
 <p>但实际上我们可以发现， <strong>在每次发现不匹配后，实际上不用再从s[i+1]开始了，而是可以利用最长相等前后缀来进行处理的。</strong> 文字说的有点抽象，可以拿画图来说明：</p>
 <p>首先是暴力算法：</p>
-<p><img src="/01_assets/kmp-cpp_remote_1.png" alt=""></p>
+<p><img
+  class="article-img"
+  src="/01_assets/kmp-cpp_remote_1.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 <p>如上图①， <strong>红色框就是模式串P以及其在S中相等的部分，而绿色框就是S中与T不相等的地方。</strong></p>
 <p><strong>暴力算法的话就是直接遍历每个文本串S的位置，然后对于每个 i ，再在P中遍历 j ，如果匹配的话就 j 就往前，不匹配就移动 i ，这个过程在上图中就是从图①到图②。</strong></p>
 <p>kmp算法：</p>
-<p><img src="/01_assets/kmp-cpp_remote_2.png" alt=""></p>
+<p><img
+  class="article-img"
+  src="/01_assets/kmp-cpp_remote_2.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 <p>kmp算法的话就是利用最长相等前后缀。 <strong>在上图中蓝色框就是 0 到 i-1 子串的最长相等前后缀，</strong> 那我们可以从图中看到 <strong>，实际上如果s[i]和p[j]不匹配的话，我们移动指针的时候，其实就只需要移动 j 到 0 到 i-1 子串的最长相等前后缀的末尾，接着继续看s[i]和p[j]匹不匹配就好了。</strong></p>
 <p><strong>如果不匹配的话就继续往前面的最长相等前后缀的末尾去跳（就是最左边蓝色框的最长相等前后缀的末尾），直到p[j]=s[i]或者 j 不能再移动（j=0时）为止。</strong></p>
 <p><strong>如果匹配的话就能继续往后匹配（比如上图②中，如果p[j]=a，那么“s的右边蓝色框+a”=“p的左边蓝色框+p[j]”，然后继续看 j 后面的模式串是否和 i 后面的文本串是否匹配就行了）（图中字符串P实际上是没有“移动”的，实际上是 j 移动，这里这样画是为了让 j 和 i 对齐，便于观察）。</strong></p>
@@ -466,7 +478,13 @@ KMP算法——透彻的理论理解&amp;代码理解（c++）
 <p><strong>模式串（P）：</strong> bcbcb</p>
 <p><strong>（P）的next数组：0 0 1 2 3</strong></p>
 <p><strong>过程如下图：</strong></p>
-<p><img src="/01_assets/kmp-cpp_remote_3.png" alt=""></p>
+<p><img
+  class="article-img"
+  src="/01_assets/kmp-cpp_remote_3.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 </blockquote>
 <p>这里如果没看懂也没关系，在后面 <strong>“代码理解”</strong> 的部分会再次强调，不过这里如果能一下看懂的话，后面也不用花力去理解就是了。</p>
 <h2 id="代码理解">
@@ -504,7 +522,13 @@ KMP算法——透彻的理论理解&amp;代码理解（c++）
 <p>然后此时 <strong>s[i]!=s[j]</strong> ，然后的话 j 应该是要跳到 <strong>左边红色框部分前面的最长相等前后缀的末尾，就是图②中 j 的位置，</strong> 这个应该看图应该好理解，相当于你要 <strong>找到 0 到 (i-1) 这个子串前面的最长相等前后缀的末尾，就是图①中最左边绿色框后面的那个位置，记作pos，然后比较一下s[pos]和s[i]，如果相同的话“最左边绿色框+pos”就和“最右边绿色框+i”相等，那么这就是 0 到 i 子串的最长相等前后缀。</strong> 而 <strong>next[j-1]</strong> 就是 <strong>左边红色框部分的<!-- raw HTML omitted -->最长相等前后缀的长度<!-- raw HTML omitted -->，同时也是左边红色框部分的<!-- raw HTML omitted -->前面的最长相等前后缀的末尾<!-- raw HTML omitted -->（因为字符串下标从0开始，这个如果没看懂的话可以看看“基本定义”中关于指针 j 意义的理解，和这里的理解差不多）。</strong></p>
 <p><strong>如果 j 跳位置了之后s[j]和s[i]还是不相等，那么就继续跳，直到s[j]=s[i]或 j 不能往前跳为止（也就是 j =0），就像下图中②跳到③的过程，</strong> 这也就是为什么我们要用while而不是if，因为要跳的不止一次。</p>
 <p>而 <strong>如果s[i]=s[j]（如图③）或者 j 不能往前跳了（也就是 j =0）</strong> ，那么 j 就可以停下了。</p>
-<p><img src="/01_assets/kmp-cpp_0_4.png" alt=""></p>
+<p><img
+  class="article-img"
+  src="/01_assets/kmp-cpp_0_4.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 <p>从这个操作中我们也 <strong>可以理解为什么要叫next数组，其实就是 j 跳到的下一个位置嘛</strong> 。</p>
 <p><strong>注：可以看到代码中我们是先移动 j 的位置，再判断 j 是否相等的，也就是先判断s[i]!=s[j]，然后再判断s[i]=s[j]。</strong> 这个好理解， <strong>我们肯定是先移动 j 到s[i]=s[j]的地方（情况1）或 j 不能移动（也就是 j =0的地方）（情况2），然后再让 j 变成前缀末尾。</strong></p>
 <p><strong>情况1</strong> 可以从上图③中理解，此时 <strong>next[i]应该是要等于黄色框的长度的，所以要让 j ++，也就是变成黄色框的末尾，</strong> 否则j就代表黄色框内蓝色小框的长度。</p>
@@ -550,10 +574,22 @@ KMP算法——透彻的理论理解&amp;代码理解（c++）
 <p><strong>（2）用指针 i 遍历文本串，还是两种情况：</strong></p>
 <p><strong>①t[i]==s[j]，直接让 j ++就好，这里的意义就是当前s[j]已经匹配了，让 j ++去匹配模式串的下一个字符</strong></p>
 <p><strong>②t[i]!=s[j]，那么就让 j 跳到前缀末尾，这里的话在“基本原理”已经讲过了，就是用最长相等前缀去避免重复的比较嘛。举个例子：</strong></p>
-<p><img src="/01_assets/kmp-cpp_remote_4.png" alt=""></p>
+<p><img
+  class="article-img"
+  src="/01_assets/kmp-cpp_remote_4.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 <p>可以发现， <strong>从图①到图②实际上就是把 j 移动到next[j-1]，相当于<!-- raw HTML omitted -->s中前面的最长相等前后缀<!-- raw HTML omitted -->和<!-- raw HTML omitted -->t中后面的最长相同前后缀<!-- raw HTML omitted --><!-- raw HTML omitted -->已经是<!-- raw HTML omitted -->匹配的了，然后继续看t[i]和s[j]是否相等，相等的话就继续往下匹配（也就是在图②中在紫色框匹配，前面的不用管了），不相等就继续跳 j 就好了（s是实际上没有“移动”的，这里图上是为了让 j 和 i 在视觉上是对齐的，便于理解）</strong></p>
 <p><strong>（3）如果 j ==s.length()，也就是说 j 在模式串s的末尾了，那么就已经匹配完了一个模式串，由于</strong> <strong>这时候 i 应该是会在文本串的 0 到 i 子串的最后一个位置（也就是对于遍历时的每个 i ，开始时 j 始终在 i 的后一个位置），并且s的长度是s.length()，所以</strong> <strong>其起始位置就是i-s.length()+1（下标从0开始），我们就可以输出它的起始位置了。然后 j 继续回到前缀末尾，相当于接下来要继续匹配下一个位置。还是举个例子：</strong></p>
-<p><img src="/01_assets/kmp-cpp_0_6.png" alt=""></p>
+<p><img
+  class="article-img"
+  src="/01_assets/kmp-cpp_0_6.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 <p><strong>图①中是匹配成功的状态</strong> ，可以发现 <strong>起点位置就是i-s.length()+1，图②是利用最长相等前后缀来移动指针 j 。</strong></p>
 </blockquote>
 <p>带注释的代码：</p>
@@ -682,10 +718,10 @@ KMP算法——透彻的理论理解&amp;代码理解（c++）
         </a>
       </div><div>
         <span class="icon-brush"
-          >&nbsp;16.5k</span
+          >&nbsp;24.5k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;01:24</span>
+        <span class="icon-coffee">&nbsp;02:05</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -744,7 +780,7 @@ KMP算法——透彻的理论理解&amp;代码理解（c++）
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">12</div>
+    <div>文章</div><div class="sidebar-state-number">18</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -754,7 +790,7 @@ KMP算法——透彻的理论理解&amp;代码理解（c++）
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">39</div>
+    <div class="sidebar-state-number">34</div>
   </a>
 </div>
 <div class="sidebar-social"></div>

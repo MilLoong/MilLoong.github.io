@@ -202,7 +202,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">12</div>
+    <div>文章</div><div class="sidebar-state-number">18</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -212,7 +212,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">39</div>
+    <div class="sidebar-state-number">34</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -308,15 +308,33 @@
 <ul>
 <li>首先打开Downloads：</li>
 </ul>
-<p>​			<img src="/01_assets/0_26.png" alt="alt text"></p>
+<p>​			<img
+  class="article-img"
+  src="/01_assets/0_26.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <ul>
 <li>
 <p>接着进入对应操作系统（这里以windows为例）：
-<img src="/01_assets/0_2.png" alt=""></p>
+<img
+  class="article-img"
+  src="/01_assets/0_2.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 </li>
 <li>
 <p>接着选择这个版本（现在的操作系统大多都是64位的了）：
-<img src="/01_assets/0_3.png" alt=""></p>
+<img
+  class="article-img"
+  src="/01_assets/0_3.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 </li>
 <li>
 <p>接着就按照默认安装程序来做就好了（或者可以参考<a href="https://blog.csdn.net/sanxd/article/details/82624127">这篇文章</a>，里面有详细的安装教程）</p>
@@ -355,7 +373,13 @@ SSH配置：
 </span></span><span class="line"><span class="cl">	-b 指定密钥长度。对于RSA密钥，最小要求768位，默认是2048位。命令中的4096指的是RSA密钥长度为4096位。DSA密钥必须恰好是1024位<span class="o">(</span>FIPS 186-2 标准的要求<span class="o">)</span>。
 </span></span><span class="line"><span class="cl">	-C 表示要提供一个新注释，用于识别这个密钥。“”里面不一定非要填邮箱，可以是任何内容，邮箱仅仅是识别用的key。
 </span></span></code></pre></div><p>生成的部分大概类似如下（图取自参考文章）：</p>
-<p><img src="/01_assets/0_27.png" alt="alt text"></p>
+<p><img
+  class="article-img"
+  src="/01_assets/0_27.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <h2 id="将ssh-key添加到ssh-agent">
 <a class="header-anchor" href="#%e5%b0%86ssh-key%e6%b7%bb%e5%8a%a0%e5%88%b0ssh-agent"></a>
 将ssh-key添加到ssh-agent:
@@ -382,14 +406,32 @@ SSH配置：
 </span></span><span class="line"><span class="cl">PS C:<span class="se">\U</span>sers<span class="se">\x</span>xxx<span class="se">\.</span>ssh&gt; cat id_rsa.pub
 </span></span><span class="line"><span class="cl">ssh-rsa ....
 </span></span></code></pre></div><p>在账户选项中选择 “ <strong>Settings”–&gt;“SSH and GPG keys”–&gt;“New SSH key</strong> ”，然后打开之前新生成的 <strong>id_rsa.pub</strong> 文件，将密钥复制后填写到账户中：（图取自参考文章）</p>
-<p><img src="/01_assets/0_28.png" alt="alt text"></p>
+<p><img
+  class="article-img"
+  src="/01_assets/0_28.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <p>以下是点进 <strong>“New SSH key”</strong> 后的界面，这里的Title就是你的密钥的名字，可以随便取（最好用英文），然后key就填上面复制的密钥就可以了。最后记得 <strong>&ldquo;Add SSH key&rdquo;</strong>：
-<img src="/01_assets/0_29.png" alt="alt text"></p>
+<img
+  class="article-img"
+  src="/01_assets/0_29.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <h2 id="验证key">
 <a class="header-anchor" href="#%e9%aa%8c%e8%af%81key"></a>
 验证key：
 </h2><p>添加好了以后，可以用 <code>ssh -T git@github.com</code>，对ssh key进行验证：（图取自参考文章）</p>
-<p><img src="/01_assets/0_8.png" alt=""></p>
+<p><img
+  class="article-img"
+  src="/01_assets/0_8.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 <p>当上述界面出现时说明配置成功，那么恭喜你成功配置了SSH！</p>
 <h1 id="clone">
 <a class="header-anchor" href="#clone"></a>
@@ -397,7 +439,13 @@ clone：
 </h1><p>clone就是把远程仓库复制到本地进行使用。指令很简单，就是直接 <code>git clone https://github.com/(仓库地址)</code> 就可以了：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> clone https://github.com/......
 </span></span></code></pre></div><p>这里的仓库地址可以直接复制仓库的网址，或者 <strong>在进入仓库后，点击&quot;&lt;&gt; Code&quot;-&gt;&ldquo;HTTPS&quot;或者&quot;SSH&rdquo;，然后点击右边那个两个正方形的图案进行复制</strong> 即可：</p>
-<p><img src="/01_assets/0_9.png" alt=""></p>
+<p><img
+  class="article-img"
+  src="/01_assets/0_9.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 <p><strong>注：</strong></p>
 <ul>
 <li>
@@ -415,12 +463,30 @@ pull：
 <a class="header-anchor" href="#%e5%88%9b%e5%bb%ba%e4%bb%93%e5%ba%93"></a>
 创建仓库：
 </h2><p>那么在成功配置完SSH之后，就可以进行pull操作给自己的仓库添加文件了。在此之前，我们可以在github上创立自己的账户（这里不赘述），然后创建自己的仓库：<strong>点击右上角的&quot;+&quot;，然后点击&quot;New repository&quot;</strong> 进行创建：
-<img src="/01_assets/0_30.png" alt="alt text"></p>
+<img
+  class="article-img"
+  src="/01_assets/0_30.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <p><code>Respository name</code> 填写你的仓库名字，<code>Description</code> 是对你的仓库的描述，public还是private表示是否对外公开仓库，<code>Add a REAME file</code> 表示是否添加README文件（就相当于一个markdown文件，你可以在里面填写你想给仓库介绍的内容，比如仓库进程，简要描述等等），<code>.gitignore</code> 表示你要忽略的文件，如果填写的话上传到 github 上的时候就不会上传在 <code>.gitignore</code> 上配置的文件，<code>license</code> 就是告诉别人哪些代码可以碰哪些不可以（一般情况下不会用到）：
-<img src="/01_assets/0_31.png" alt="alt text"></p>
+<img
+  class="article-img"
+  src="/01_assets/0_31.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <p>创建好仓库之后，你就可以点击 <strong>右上角你的头像-&gt;Your Respositoris</strong> 来查看你的仓库了！</p>
 <p><strong>补充：</strong> README.md文件大概是显示在你的仓库的下面这个地方：
-<img src="/01_assets/0_12.png" alt=""></p>
+<img
+  class="article-img"
+  src="/01_assets/0_12.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 <p>如果你想要对README文件进行修改，可以点击README右边的那个小铅笔，然后用markdown语法来写就可以了（关于markdown语法可以自行查找资料），写完之后记得点击右上角的 <strong>Commit Changes，</strong> 然后README的内容就会改变了。</p>
 <h2 id="初始化">
 <a class="header-anchor" href="#%e5%88%9d%e5%a7%8b%e5%8c%96"></a>
@@ -430,9 +496,21 @@ pull：
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git init
 </span></span><span class="line"><span class="cl">Initialized empty Git repository in C:/test/.git/#这里是测试用，我不建议放在C盘
 </span></span></code></pre></div><p>如果不出意外的话，在该目录的文件夹里面应该会出现一个 <code>.git</code> 的隐藏文件：
-<img src="/01_assets/0_32.png" alt="alt text"></p>
+<img
+  class="article-img"
+  src="/01_assets/0_32.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <p>如果没有的话，点击上面的 <strong>查看-&gt;显示-&gt;勾选隐藏的项目（注：作者用的是win11）</strong> ：</p>
-<p><img src="/01_assets/0_33.png" alt="alt text"></p>
+<p><img
+  class="article-img"
+  src="/01_assets/0_33.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <p>那么这个时候就可以看到.git文件了，这个就是初始化成功后的结果。</p>
 <h2 id="连接远程仓库">
 <a class="header-anchor" href="#%e8%bf%9e%e6%8e%a5%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93"></a>
@@ -452,7 +530,13 @@ pull：
 </h2><p>以上准备工作做完了以后，我们就可以利用 <code>git pull origin master</code>（分支名字，github用master作为默认分支）来pull了。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~<span class="nv">$git</span> pull origin master
 </span></span></code></pre></div><p>那么这时候再回到原本的文件夹下查看，可以看到我们github仓库上的东西已经成功pull下来了
-<img src="/01_assets/0_34.png" alt="alt text"></p>
+<img
+  class="article-img"
+  src="/01_assets/0_34.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <h1 id="push">
 <a class="header-anchor" href="#push"></a>
 push：
@@ -498,7 +582,13 @@ push：
 </span></span><span class="line"><span class="cl">To https://github.com/......
 </span></span><span class="line"><span class="cl">   efd8d2d..fae8218  master -&gt; master
 </span></span></code></pre></div><p>接下来我们再到仓库的网址进行刷新，就可以看到我们更改的内容了：
-<img src="/01_assets/0_16.png" alt=""></p>
+<img
+  class="article-img"
+  src="/01_assets/0_16.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 <p><strong>注：</strong></p>
 <ul>
 <li>
@@ -526,8 +616,20 @@ pull request（PR）：
 <a class="header-anchor" href="#fork%e4%bb%93%e5%ba%93"></a>
 Fork仓库：
 </h2><p>首先找到开源项目，并进入其仓库，让后点击Fork按钮来Fork仓库：</p>
-<p><img src="/01_assets/0_35.png" alt="alt text">
-<img src="/01_assets/0_36.png" alt="alt text"></p>
+<p><img
+  class="article-img"
+  src="/01_assets/0_35.png"
+  alt="alt text"
+  loading="lazy"
+/>
+
+<img
+  class="article-img"
+  src="/01_assets/0_36.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <p>然后我们就能得到一个Fork原仓库后的分叉仓库了。</p>
 <h2 id="clone分叉仓库和添加上游仓库">
 <a class="header-anchor" href="#clone%e5%88%86%e5%8f%89%e4%bb%93%e5%ba%93%e5%92%8c%e6%b7%bb%e5%8a%a0%e4%b8%8a%e6%b8%b8%e4%bb%93%e5%ba%93"></a>
@@ -540,7 +642,13 @@ clone分叉仓库和添加上游仓库：
 </span></span><span class="line"><span class="cl">origin: https://github.com/...... <span class="o">(</span>fetch<span class="o">)</span>
 </span></span><span class="line"><span class="cl">origin: https://github.com/...... <span class="o">(</span>push<span class="o">)</span>
 </span></span></code></pre></div><p>然后我们回到Fork仓库的原仓库，这里可以点击forked from xxx的xxx来回到原仓库：</p>
-<p><img src="/01_assets/0_37.png" alt="alt text"></p>
+<p><img
+  class="article-img"
+  src="/01_assets/0_37.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <p>然后接下来就是要添加上游仓库：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ git remote add upstream https://github.com/......
 </span></span><span class="line"><span class="cl"><span class="c1">#这里填写的是原始仓库的地址</span>
@@ -579,12 +687,30 @@ clone分叉仓库和添加上游仓库：
 </span></span><span class="line"><span class="cl">~$ git commit -m <span class="s2">&#34;Test-PR&#34;</span>
 </span></span><span class="line"><span class="cl">~$ git push --set-upstream origin
 </span></span></code></pre></div><p>如果push成功了，那么在github上就会出现：</p>
-<p><img src="/01_assets/0_38.png" alt="alt text"></p>
+<p><img
+  class="article-img"
+  src="/01_assets/0_38.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <p>点击Compare &amp; pull request，接下来就是进行一个比较。</p>
-<p><img src="/01_assets/0_39.png" alt="alt text"></p>
+<p><img
+  class="article-img"
+  src="/01_assets/0_39.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <p>这里的意思就是把我们的本地仓库的 <code>upstream-local</code> 提交到原仓库的 <code>master</code>上面。</p>
 <p>然后写好标题和留言（comment）之后，就可以 <code>Create pull request</code> 了：</p>
-<p><img src="/01_assets/0_40.png" alt="alt text"></p>
+<p><img
+  class="article-img"
+  src="/01_assets/0_40.png"
+  alt="alt text"
+  loading="lazy"
+/>
+</p>
 <p>虽然上面的步骤看上去很复杂，但这只是在我们 <strong>刚使用PR</strong> 的时候需要稍微有点复杂的初始化罢了。实际上，后面如果要继续对文章进行贡献，上面的 <strong>Fork仓库、创建分支</strong> 等操作是不需要的，只需要：</p>
 <ul>
 <li>
@@ -618,12 +744,30 @@ clone分叉仓库和添加上游仓库：
 <p>如果存在文件冲突，界面大概是长下图这样，其中应该会有 <strong>打开合并编辑器</strong> （图中是
 <strong>Open Merge Editor</strong> ）：
 （下面的图取自 <a href="https://learn.microsoft.com/zh-cn/visualstudio/version-control/git-resolve-conflicts?view=vs-2022">这个教程</a> ）
-<img src="/01_assets/0_23.png" alt=""></p>
+<img
+  class="article-img"
+  src="/01_assets/0_23.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 <p>然后就可以解决冲突了。图中 <strong>Incoming: Remote</strong> 是 远程仓库的更新， <strong>Current: Local</strong> 是本地的修改（当然有可能是中文的）。
 下图中 <strong>橙色圈</strong> 的位置就是 是否要选择，然后 最终的结果 就会出现在下面的 <strong>Result</strong></p>
-<p><img src="/01_assets/0_24.png" alt=""></p>
+<p><img
+  class="article-img"
+  src="/01_assets/0_24.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 <p>修改完了之后，就可以点击 <strong>Accept Merge</strong> 来保存修改了：
-<img src="/01_assets/0_25.png" alt=""></p>
+<img
+  class="article-img"
+  src="/01_assets/0_25.png"
+  alt=""
+  loading="lazy"
+/>
+</p>
 </li>
 <li>
 <p>修改完之后，就可以用 <code>git add</code> 命令存入暂存区：</p>
@@ -783,10 +927,10 @@ clone分叉仓库和添加上游仓库：
         </a>
       </div><div>
         <span class="icon-brush"
-          >&nbsp;16.5k</span
+          >&nbsp;24.5k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;01:24</span>
+        <span class="icon-coffee">&nbsp;02:05</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -860,7 +1004,7 @@ clone分叉仓库和添加上游仓库：
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">12</div>
+    <div>文章</div><div class="sidebar-state-number">18</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -870,7 +1014,7 @@ clone分叉仓库和添加上游仓库：
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">39</div>
+    <div class="sidebar-state-number">34</div>
   </a>
 </div>
 <div class="sidebar-social"></div>

@@ -1,0 +1,1487 @@
+<!doctype html>
+<html
+  lang="zh-cn" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  Nailong Shell：用 Lua 配提示符、补全和高亮 | MilLoong
+</title>
+<meta name="description" content="个人博客，记录学习日常"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":18},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="Nailong Shell：用 Lua 配提示符、补全和高亮 | MilLoong" />
+  <meta
+    property="og:description"
+    content="个人博客，记录学习日常"
+  />
+  <meta property="og:url" content="https://MilLoong.github.io/post/nailong-shell/" />
+  <meta
+    property="og:site_name"
+    content="MilLoong的博客"
+  />
+  <meta
+    property="og:image"
+    content="/backgrounds/bg15.webp"
+  />
+  <meta property="article:author" content="MilLoong" />
+  <meta property="article:published_time" content="2025-09-11T09:00:00&#43;08:00" />
+  <meta property="article:modified_time" content="2025-09-11T09:00:00&#43;08:00" /><meta property="article:tag" content="LinuxShellC&#43;&#43;" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/backgrounds/bg15.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/><link rel="stylesheet" href="/css/custom.css" /></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">咻——马上就加载好啦...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">关于</span>
+      </a><a class="main-nav-link-wrap" href="/friend">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">友链</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-whattoeat-link" class="nav-icon" href="/whattoeat" title="吃什么" aria-label="吃什么"></a>
+      <a id="nav-nailong-search-link" class="nav-icon" href="/nailong-search" title="奶龙表情库" aria-label="奶龙表情库"></a><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/backgrounds/bg15.webp" alt="Nailong Shell：用 Lua 配提示符、补全和高亮"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">Nailong Shell：用 Lua 配提示符、补全和高亮</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#nailong-shell用-lua-配提示符补全和高亮">Nailong Shell：用 Lua 配提示符、补全和高亮</a>
+      <ul>
+        <li><a href="#依赖与构建">依赖与构建</a>
+          <ul>
+            <li><a href="#简述">简述</a></li>
+            <li><a href="#实现">实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#进程和作业">进程和作业</a></li>
+        <li><a href="#分词">分词</a></li>
+        <li><a href="#重定向与管道">重定向与管道</a></li>
+        <li><a href="#作业控制">作业控制</a></li>
+        <li><a href="#内建命令">内建命令</a>
+          <ul>
+            <li><a href="#为什么-cd-不能当外部命令">为什么 <code>cd</code> 不能当外部命令</a></li>
+          </ul>
+        </li>
+        <li><a href="#lua-配置">Lua 配置</a>
+          <ul>
+            <li><a href="#简述-1">简述</a></li>
+            <li><a href="#实现-1">实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#别名与通配">别名与通配</a>
+          <ul>
+            <li><a href="#简述-2">简述</a></li>
+            <li><a href="#实现-2">实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#tab-补全">Tab 补全</a>
+          <ul>
+            <li><a href="#简述-3">简述</a></li>
+            <li><a href="#实现-3">实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#语法高亮">语法高亮</a>
+          <ul>
+            <li><a href="#简述-4">简述</a></li>
+            <li><a href="#实现-4">实现</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">18</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      5
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">34</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-09-11 09:00:00 &#43;0800 CST" itemprop="datePublished"
+      >2025-09-11</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-09-11</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/%e5%90%8e%e7%ab%af"
+      data-aos="zoom-in"
+      >后端</a
+    ></div>
+</div><div class="hr-line"></div><div
+      class="e-content article-entry"
+      itemprop="articleBody"><h1 id="nailong-shell用-lua-配提示符补全和高亮">
+<a class="header-anchor" href="#nailong-shell%e7%94%a8-lua-%e9%85%8d%e6%8f%90%e7%a4%ba%e7%ac%a6%e8%a1%a5%e5%85%a8%e5%92%8c%e9%ab%98%e4%ba%ae"></a>
+Nailong Shell：用 Lua 配提示符、补全和高亮
+</h1><p>本文介绍一个交互式 Shell。先把 <strong>管道、重定向、作业控制、内建命令</strong> 跑通，再叠 <strong>行编辑、别名、通配、Tab 补全和语法高亮</strong></p>
+<p>配置用 Lua，文件名固定是 <code>.mini_shellrc</code></p>
+<p>源码在 <a href="https://github.com/MilLoong/Nailong-Shell">Nailong-Shell</a>，主程序是单文件 <code>nailong_shell.cpp</code></p>
+<p>跑起来大概是这样，<code>cd</code>、重定向、管道都能用：</p>
+<p><img
+  class="article-img"
+  src="basics.png"
+  alt="基本命令"
+  loading="lazy"
+/>
+</p>
+<p>作业控制也有，<code>sleep 5 &amp;</code> 之后可以用 <code>jobs</code> / <code>bg</code> / <code>fg</code>：</p>
+<p><img
+  class="article-img"
+  src="jobs.png"
+  alt="作业控制"
+  loading="lazy"
+/>
+</p>
+<p>行编辑没有自己从零搓，<code>getline</code> 搞不定补全和高亮，常见的 <code>linenoise</code>、<code>readline</code> 也不好同时接 Lua 着色</p>
+<p>后来用的是 <a href="https://github.com/AmokKrabacher/replxx">replxx</a> 库：历史、左右键、Tab、实时高亮都在它上面挂回调</p>
+<h2 id="依赖与构建">
+<a class="header-anchor" href="#%e4%be%9d%e8%b5%96%e4%b8%8e%e6%9e%84%e5%bb%ba"></a>
+依赖与构建
+</h2><h3 id="简述">
+<a class="header-anchor" href="#%e7%ae%80%e8%bf%b0"></a>
+简述
+</h3><p>环境按 Linux 来，C++17。依赖：</p>
+<ul>
+<li><code>g++</code></li>
+<li>Lua 5.4：<code>sudo apt-get install liblua5.4-dev</code>，头文件在 <code>/usr/include/lua5.4</code></li>
+<li>replxx：发行源里没有，要从源码编</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> replxx
+</span></span><span class="line"><span class="cl">mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+</span></span><span class="line"><span class="cl">cmake ..
+</span></span><span class="line"><span class="cl">make -j<span class="k">$(</span>nproc<span class="k">)</span>
+</span></span><span class="line"><span class="cl">sudo make install
+</span></span></code></pre></div><p>编译链接走 makefile：<code>-I/usr/local/include -I/usr/include/lua5.4</code>，<code>-lreplxx -llua5.4 -lm -ldl</code>。<code>CONFIG_PATH</code> 会打成宏 <code>DEFAULT_RC_PATH</code>，默认是当前目录下的 <code>.mini_shellrc</code>。</p>
+<h3 id="实现">
+<a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0"></a>
+实现
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl">./nailong_shell
+</span></span><span class="line"><span class="cl"><span class="c1"># 或</span>
+</span></span><span class="line"><span class="cl">make run
+</span></span></code></pre></div><p>指定配置文件时，文件名必须是 <code>.mini_shellrc</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make <span class="nv">CONFIG_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$PWD</span><span class="s2">/.mini_shellrc&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行时也可以</span>
+</span></span><span class="line"><span class="cl"><span class="nv">CONFIG_PATH</span><span class="o">=</span>/path/to/.mini_shellrc ./nailong_shell
+</span></span></code></pre></div><p><code>main</code> 里先用 <code>wordexp</code> 展开路径，再 <code>check_config_path</code>：后缀不对，或者文件打不开，直接退出</p>
+<p>启动后接管 <strong>终端进程组</strong>，装 <code>SIGCHLD</code> 等信号，再 <code>init_lua</code>、<code>init_default_completions</code>、<code>load_rc</code></p>
+<h2 id="进程和作业">
+<a class="header-anchor" href="#%e8%bf%9b%e7%a8%8b%e5%92%8c%e4%bd%9c%e4%b8%9a"></a>
+进程和作业
+</h2><p><strong>作业（Job）</strong> 代表一条管道上的 <strong>一组命令</strong>，比如 <code>command1 | command2 | command3</code></p>
+<ul>
+<li><strong>进程（Process）：</strong> Job 里的每一条命令，<code>fork()</code> 出来的子进程，代码里是 <code>struct process</code></li>
+<li><strong>作业（Job）：</strong> 整条管道，是一个 <strong>进程组</strong>，用 <code>pgid</code> 标识，代码里是 <code>struct job</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="k">struct</span> <span class="nc">process</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="nc">process</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span><span class="o">*</span> <span class="o">*</span> <span class="n">argv</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pid_t</span> <span class="n">pid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">completed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">stopped</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">infile</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">outfile</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">process</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="k">struct</span> <span class="nc">job</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="nc">job</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">process</span><span class="o">*</span> <span class="n">first_process</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pid_t</span> <span class="n">pgid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span><span class="o">*</span> <span class="n">command</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">notified</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">background</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="nc">termios</span> <span class="n">tmodes</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">job_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">job</span><span class="p">;</span>
+</span></span></code></pre></div><p>相关函数：</p>
+<ul>
+<li>
+<p><code>add_job(j)</code> / <code>find_job_by_id(id)</code> / <code>job_remove(target)</code>（辅助函数）：把作业挂进链表、按作业号找、从链表摘掉并释放</p>
+<ul>
+<li>
+<p><code>job_id</code> 从 <code>next_job_id</code> 往上加</p>
+</li>
+<li>
+<p>摘掉时把 <code>command</code>、每段 <code>process</code> 的 <code>argv</code> 一起 <code>free</code></p>
+</li>
+<li>
+<p>骨架：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">add_job</span><span class="p">(</span><span class="n">job</span><span class="o">*</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: j-&gt;job_id = next_job_id++
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 头插进 job_list
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="n">job</span><span class="o">*</span> <span class="nf">find_job_by_id</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: 顺着 job_list 找 job_id == id，找不到 return NULL
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">job_remove</span><span class="p">(</span><span class="n">job</span><span class="o">*</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: 从链表摘掉
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: free command，遍历 first_process 释放 argv 和节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><code>job_is_stopped(j)</code> / <code>job_is_completed(j)</code>（辅助函数）：看这条作业里的进程是不是都停了、都结束了</p>
+<ul>
+<li>
+<p>有一个进程既没 <code>completed</code> 也没 <code>stopped</code>，作业就还在跑</p>
+</li>
+<li>
+<p>有一个进程没 <code>completed</code>，作业就还没完成</p>
+</li>
+<li>
+<p>骨架：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">job_is_stopped</span><span class="p">(</span><span class="n">job</span><span class="o">*</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: 任一 process 未 completed 且未 stopped，return 0，否则 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">job_is_completed</span><span class="p">(</span><span class="n">job</span><span class="o">*</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: 任一 process 未 completed，return 0，否则 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="分词">
+<a class="header-anchor" href="#%e5%88%86%e8%af%8d"></a>
+分词
+</h2><p>分词器要同时处理引号、转义和分隔符 <code>|</code> <code>&lt;</code> <code>&gt;</code> <code>&amp;</code></p>
+<p>搞错的话，分隔符会进普通参数，后面重定向和管道都会脏</p>
+<p>相关函数：</p>
+<ul>
+<li>
+<p><code>parse_line(line)</code>：把一行拆成 <code>token</code> 数组，最后一项 <code>NULL</code></p>
+<ul>
+<li>
+<p>空白当分隔</p>
+</li>
+<li>
+<p><code>'</code> / <code>&quot;</code> 成对吃，中间的 <code>|</code> <code>&lt;</code> <code>&gt;</code> 不当分隔符</p>
+</li>
+<li>
+<p><code>\</code> 吃掉转义，下一个字符原样留下</p>
+</li>
+<li>
+<p>碰到 <code>|</code> <code>&lt;</code> <code>&gt;</code> <code>&amp;</code> 且不在引号里，单独做成一个 <code>token</code></p>
+</li>
+<li>
+<p>骨架：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">char</span><span class="o">**</span> <span class="nf">parse_line</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">line</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: 跳过空白
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 引号内原样拷，反斜杠吃转义
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: | &lt; &gt; &amp; 单独成 token
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: tokens[pos] = NULL 后 return
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="重定向与管道">
+<a class="header-anchor" href="#%e9%87%8d%e5%ae%9a%e5%90%91%e4%b8%8e%e7%ae%a1%e9%81%93"></a>
+重定向与管道
+</h2><p>这里只实现 <code>&lt;</code> 和 <code>&gt;</code>，即 <strong>覆盖重定向</strong></p>
+<p>因为要和管道一起处理，每段管道是一个 <code>process</code>，自己带着 <code>infile</code> / <code>outfile</code></p>
+<p>分词之后，在每个 <code>process</code> 上扫 <code>argv</code>（<code>argv[0]</code> 是程序名，其余是参数，最后 <code>NULL</code>）：</p>
+<ul>
+<li>遇到 <code>&gt;</code>：<code>open</code> 目标文件为 <code>O_WRONLY | O_CREAT | O_TRUNC</code>，记到 <code>process-&gt;outfile</code></li>
+<li>遇到 <code>&lt;</code>：<code>O_RDONLY</code> 打开，记到 <code>process-&gt;infile</code></li>
+<li>随后把符号和文件名这两个 <code>token</code> 从 <code>argv</code> 里挪掉</li>
+<li>遇到行尾 <code>&amp;</code>：标 <code>job-&gt;background = 1</code>，这个 <code>token</code> 也删掉</li>
+</ul>
+<p>执行时在 <strong>子进程里</strong> <code>dup2</code> 到 <code>STDIN_FILENO</code> / <code>STDOUT_FILENO</code>，再 <code>execvp</code></p>
+<p>有管道且没显式重定向时，用管道的读端或写端去填 <code>infile</code> / <code>outfile</code></p>
+<p>管道默认 IO，重定向优先覆盖。父进程要 <strong>及时关掉</strong> 用完的管道端，不然 <code>fd</code> 泄漏，下游读不到 <code>EOF</code></p>
+<p>相关函数：</p>
+<ul>
+<li>
+<p><code>handle_redirection_and_background(j)</code>：扫每个 process 的 <code>argv</code>，打开重定向文件、抠掉 token、看有没有 <code>&amp;</code></p>
+<ul>
+<li>
+<p>骨架：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">handle_redirection_and_background</span><span class="p">(</span><span class="n">job</span><span class="o">*</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: 每个 process 的 infile/outfile 先置 -1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 碰到 &gt; 打开 O_WRONLY|O_CREAT|O_TRUNC，记 outfile，memmove 掉两个 token
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 碰到 &lt; 打开 O_RDONLY，记 infile，同样抠掉
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 碰到行尾 &amp;，background = 1，token 置 NULL
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><code>launch_job(j, foreground)</code>：给相邻 process 建 <code>pipe</code>，<code>fork</code>，子进程里设进程组、<code>dup2</code>、<code>execvp</code></p>
+<ul>
+<li>
+<p>下一段没显式输入，就把上一根管道的读端给它</p>
+</li>
+<li>
+<p>父进程关掉自己那头，把读端留给下一段当 <code>infile</code></p>
+</li>
+<li>
+<p>前台就 <code>wait_for_job</code>，后台只打印 <code>[job_id] pgid</code></p>
+</li>
+<li>
+<p>骨架：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">launch_job</span><span class="p">(</span><span class="n">job</span><span class="o">*</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">foreground</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: 遍历 process
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 没有 outfile 且后面还有 process：pipe，写端给自己，读端给下一段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: fork：子进程 setpgid、需要的话 tcsetpgrp，信号改回 SIG_DFL
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: dup2 infile -&gt; stdin，dup2 outfile -&gt; stdout，关掉多余 fd
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: execvp，失败 _exit
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 父进程记下 pid，setpgid，关掉用完的管道端
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 前台 wait_for_job，后台 printf(&#34;[%d]%d\n&#34;, job_id, pgid)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="作业控制">
+<a class="header-anchor" href="#%e4%bd%9c%e4%b8%9a%e6%8e%a7%e5%88%b6"></a>
+作业控制
+</h2><p>Job 是对子进程的一层管理：把一条管道上的进程捆成进程组，统一调度、等结束、切前后台</p>
+<p>主要做四件事：</p>
+<ol>
+<li><strong>进程分组（<code>setpgid</code>）</strong>
+<ul>
+<li>一条 Job 里的进程都进同一个组 <code>j-&gt;pgid</code></li>
+<li>这样 <code>SIGINT</code> / <code>SIGTSTP</code> / <code>SIGCONT</code> 可以对整个组下手</li>
+<li>代码里是 <code>setpgid(pid, pgid ? pgid : pid)</code></li>
+</ul>
+</li>
+<li><strong>前后台</strong>
+<ul>
+<li><strong>前台：</strong> <code>tcsetpgrp</code> 把终端交给这个组，再 <code>wait_for_job</code> 阻塞到完成或停止</li>
+<li><strong>后台：</strong> 不抢终端，立刻出提示符，状态靠 <code>SIGCHLD</code> 更新</li>
+<li><code>fg</code> / <code>bg</code> 在这两种状态之间切</li>
+</ul>
+</li>
+<li><strong>状态追踪（<code>waitpid</code> 和 <code>SIGCHLD</code>）</strong>
+<ul>
+<li>每个 process 记 <code>completed</code> / <code>stopped</code></li>
+<li><code>sigchld_handler</code> 里非阻塞 <code>waitpid(-1, ..., WNOHANG | WUNTRACED | WCONTINUED)</code>，子进程一变就更新</li>
+</ul>
+</li>
+<li><strong>终端 I/O</strong>
+<ul>
+<li>终端控制权在 shell 自己的 <code>shell_pgid</code> 和前台 Job 的 <code>j-&gt;pgid</code> 之间切</li>
+<li>只有前台组能读写终端</li>
+</ul>
+</li>
+</ol>
+<p>启动时 shell 先把自己做成一个进程组，并忽略 <code>SIGINT</code> / <code>SIGTSTP</code> 这类，免得自己被 Ctrl+C 干掉。子进程 <code>execvp</code> 之前再改回 <code>SIG_DFL</code></p>
+<pre class="mermaid">
+  flowchart TB
+    A[读入一行] --> B[parse_line]
+    B --> C{"单段且是内建?"}
+    C -->|是| D[当前进程直接跑]
+    C -->|否| E[拆成 process 链表]
+    E --> F[handle_redirection_and_background]
+    F --> G[launch_job]
+    G --> H{"前台?"}
+    H -->|是| I[tcsetpgrp 交给作业]
+    I --> J[wait_for_job]
+    J --> K[终端夺回 shell]
+    H -->|否| L["打印作业号，SIGCHLD 收状态"]
+</pre><p>相关函数：</p>
+<ul>
+<li>
+<p><code>sigchld_handler(sig)</code>：子进程停了或退出时，更新对应 <code>process</code></p>
+<ul>
+<li>
+<p><code>waitpid</code> 要带 <code>WNOHANG | WUNTRACED | WCONTINUED</code></p>
+</li>
+<li>
+<p><code>WIFSTOPPED</code> 就标 <code>stopped</code>，否则标 <code>completed</code></p>
+</li>
+<li>
+<p>骨架：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">sigchld_handler</span><span class="p">(</span><span class="kt">int</span> <span class="n">sig</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: 保存 errno
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: while waitpid(-1, WNOHANG|WUNTRACED|WCONTINUED) &gt; 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 按 pid 找到 process，stopped 或 completed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 恢复 errno
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><code>wait_for_job(j)</code>：前台阻塞等这个进程组</p>
+<ul>
+<li>
+<p><code>waitpid(-j-&gt;pgid, ..., WUNTRACED)</code>，停了或做完就停循环</p>
+</li>
+<li>
+<p>然后 <code>tcsetpgrp</code> 把终端还给 shell，终端属性也换回来</p>
+</li>
+<li>
+<p>骨架：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">wait_for_job</span><span class="p">(</span><span class="n">job</span><span class="o">*</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: do waitpid(-j-&gt;pgid, WUNTRACED) 直到 stopped 或 completed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 更新对应 process 的 stopped/completed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: tcsetpgrp 还给 shell_pgid
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 把作业的 termios 存下来，shell 自己的模式设回去
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><code>fg</code> / <code>bg</code>：切前后台</p>
+<ul>
+<li>可以带 <code>%作业号</code>，不带就拿链表头那个</li>
+<li><code>fg</code>：<code>background = 0</code>，<code>tcsetpgrp</code> 交给作业，停着的就 <code>kill(-pgid, SIGCONT)</code>，再 <code>wait_for_job</code></li>
+<li><code>bg</code>：<code>background = 1</code>，停着的同样 <code>SIGCONT</code>，打印 <code>continued</code>，不等待</li>
+<li><code>jobs</code>：遍历链表，打 <code>Done</code> / <code>Stopped</code> / <code>Running</code> / <code>Foreground</code></li>
+</ul>
+</li>
+</ul>
+<p>作业控制和终端这块比较烦的是：进程组要设对，前后台切换要配 <code>SIGCONT</code>，<code>SIGCHLD</code> / <code>waitpid</code> 要把状态盯准，不然会出僵尸进程</p>
+<h2 id="内建命令">
+<a class="header-anchor" href="#%e5%86%85%e5%bb%ba%e5%91%bd%e4%bb%a4"></a>
+内建命令
+</h2><p>内建是 <strong>当前这个 shell 进程自己执行</strong> 的，不 <code>fork</code> + <code>execvp</code></p>
+<p>有：</p>
+<ul>
+<li><code>exit</code></li>
+<li><code>cd</code> / <code>pwd</code></li>
+<li><code>alias</code> / <code>unalias</code></li>
+<li><code>jobs</code> / <code>fg</code> / <code>bg</code></li>
+<li><code>reload</code></li>
+<li><code>test_config</code></li>
+</ul>
+<p><code>run_builtin</code> 认出来就返回 1，外面不再当外部命令启动。有管道时不当内建跑，整条还是走 Job</p>
+<h3 id="为什么-cd-不能当外部命令">
+<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88-cd-%e4%b8%8d%e8%83%bd%e5%bd%93%e5%a4%96%e9%83%a8%e5%91%bd%e4%bb%a4"></a>
+为什么 <code>cd</code> 不能当外部命令
+</h3><p>shell 跑起来之后，当前进程已经是这个 shell，不是原来的 bash</p>
+<p>外部命令的路径是：</p>
+<p><code>fork 子进程 -&gt; 子进程 execvp 换成 ls 这类程序 -&gt; 结果经作业返回到原来的 shell</code></p>
+<p><code>ls</code> 这么干没问题，它只在子进程里干活，父进程的 cwd 不用变</p>
+<p><code>cd</code> 如果也这么干，<code>chdir</code> 只发生在 <strong>子进程</strong> 里，子进程一结束目录就没了，<strong>父进程还停在原地</strong>，下一条提示符的路径不会变</p>
+<p>所以 <code>cd</code> 只能在当前 shell 进程里 <code>chdir</code>，没参数就 <code>chdir($HOME)</code></p>
+<p><code>pwd</code> 同理，直接 <code>getcwd</code> 打出来就行，没必要再起一个进程</p>
+<p>相关函数：</p>
+<ul>
+<li>
+<p><code>run_builtin(argv)</code>：认出内建就执行，返回 1，不是内建返回 0</p>
+<ul>
+<li>
+<p>骨架：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">run_builtin</span><span class="p">(</span><span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: exit -&gt; exit(0)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: cd -&gt; chdir(argv[1] 或 HOME)，失败 perror
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: pwd -&gt; getcwd 打印
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: jobs -&gt; 遍历 job_list 打状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: fg -&gt; 找作业，tcsetpgrp，必要时 SIGCONT，wait_for_job
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: bg -&gt; 找作业，必要时 SIGCONT，打印 continued
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: alias / unalias / reload / test_config
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 都不是 return 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="lua-配置">
+<a class="header-anchor" href="#lua-%e9%85%8d%e7%bd%ae"></a>
+Lua 配置
+</h2><h3 id="简述-1">
+<a class="header-anchor" href="#%e7%ae%80%e8%bf%b0-1"></a>
+简述
+</h3><p>配置不是自己解析 ini，而是开一个 Lua 状态机，把 C 函数注册进去，再 <code>luaL_dofile</code> 跑 rc</p>
+<p>rc 里能改提示符、别名、补全表、颜色、历史上限</p>
+<p>仓库里有一份示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="n">clear_aliases</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">clear_completions</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">set_prompt</span><span class="p">(</span><span class="s2">&#34;[nailong-shell]%CWD%BRANCH$ &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">set_flag</span><span class="p">(</span><span class="s2">&#34;COLORIZE&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">set_flag</span><span class="p">(</span><span class="s2">&#34;SHOW_GIT&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">set_alias</span><span class="p">(</span><span class="s2">&#34;lll&#34;</span><span class="p">,</span> <span class="s2">&#34;ls -l&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">set_completion</span><span class="p">(</span><span class="s2">&#34;git&#34;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&#34;fetch&#34;</span><span class="p">,</span> <span class="s2">&#34;merge&#34;</span><span class="p">,</span> <span class="s2">&#34;clone&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">set_color</span><span class="p">(</span><span class="s2">&#34;command&#34;</span><span class="p">,</span> <span class="s2">&#34;blue&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">set_color</span><span class="p">(</span><span class="s2">&#34;option&#34;</span><span class="p">,</span> <span class="s2">&#34;cyan&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">set_color</span><span class="p">(</span><span class="s2">&#34;special&#34;</span><span class="p">,</span> <span class="s2">&#34;yellow&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">set_color</span><span class="p">(</span><span class="s2">&#34;string&#34;</span><span class="p">,</span> <span class="s2">&#34;magenta&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">set_history_max</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</span></span></code></pre></div><p><code>%CWD</code> 展开成当前目录，<code>%BRANCH</code> 在 <code>SHOW_GIT</code> 打开时读 git 分支。没有 rc 文件会直接报错退出，不会自动创建。</p>
+<h3 id="实现-1">
+<a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0-1"></a>
+实现
+</h3><p><code>init_lua</code> 里 <code>luaL_newstate</code>、<code>luaL_openlibs</code>，再注册接口：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">lua_register</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&#34;set_alias&#34;</span><span class="p">,</span> <span class="n">lua_set_alias</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">lua_register</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&#34;set_prompt&#34;</span><span class="p">,</span> <span class="n">lua_set_prompt</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">lua_register</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&#34;set_color&#34;</span><span class="p">,</span> <span class="n">lua_set_color</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">lua_register</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&#34;set_completion&#34;</span><span class="p">,</span> <span class="n">lua_set_completion</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">lua_register</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&#34;set_flag&#34;</span><span class="p">,</span> <span class="n">lua_set_flag</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">lua_register</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&#34;clear_aliases&#34;</span><span class="p">,</span> <span class="n">lua_clear_aliases</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">lua_register</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&#34;clear_completions&#34;</span><span class="p">,</span> <span class="n">lua_clear_completions</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">lua_register</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&#34;set_history_max&#34;</span><span class="p">,</span> <span class="n">lua_set_history_max</span><span class="p">);</span>
+</span></span></code></pre></div><p><code>set_alias</code> 把头插进别名链表。<code>set_completion</code> 第二个参数是 Lua 表，按下标掏字符串，挂到对应 key。<code>set_color</code> 把 <code>blue</code>、<code>cyan</code>、<code>bright_*</code> 这类名字译成 ANSI，写进 <code>g_colors.command</code> / <code>option</code> / <code>special</code> / <code>string</code>。<code>set_flag</code> 只认 <code>COLORIZE</code> 和 <code>SHOW_GIT</code>。</p>
+<p><code>load_rc</code> 可以先清掉旧别名和补全，颜色重置成默认，再执行 rc。启动时 <code>load_rc(1)</code> 全清，热重载时 <code>load_rc(0)</code> 保留已经在内存里的表，只覆盖 rc 里写过的项。</p>
+<p>读每一行之前会看文件 <code>mtime</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">should_reload_config</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="nc">stat</span> <span class="n">st</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">stat</span><span class="p">(</span><span class="n">g_config_path</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">st</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">g_config_loaded</span> <span class="o">||</span> <span class="n">st</span><span class="p">.</span><span class="n">st_mtime</span> <span class="o">&gt;</span> <span class="n">g_config_mtime</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">g_config_mtime</span> <span class="o">=</span> <span class="n">st</span><span class="p">.</span><span class="n">st_mtime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>变新了就自动重载。内建命令 <code>reload</code> 也可以手动刷一次。<code>test_config</code> 把当前提示符、颜色、补全规则打出来，方便对配置。</p>
+<p>提示符由 <code>build_prompt_string</code> 扫 <code>g_prompt_fmt</code>，碰到 <code>%CWD</code>、<code>%BRANCH</code> 就替换。分支是读 <code>.git/HEAD</code>，<code>ref: refs/heads/...</code> 就取最后一段。<code>COLORIZE</code> 打开时，方括号标签、路径、<code>$</code> 会分别上色。</p>
+<h2 id="别名与通配">
+<a class="header-anchor" href="#%e5%88%ab%e5%90%8d%e4%b8%8e%e9%80%9a%e9%85%8d"></a>
+别名与通配
+</h2><h3 id="简述-2">
+<a class="header-anchor" href="#%e7%ae%80%e8%bf%b0-2"></a>
+简述
+</h3><p>别名可以写在 rc 里，也可以运行时用内建 <code>alias</code> / <code>unalias</code>。通配走 POSIX <code>glob</code>，支持 <code>*</code>、<code>?</code>、<code>[...]</code>，顺带 <code>GLOB_TILDE</code>。</p>
+<h3 id="实现-2">
+<a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0-2"></a>
+实现
+</h3><p>执行前先看第一个 token 在不在别名表里。命中就把别名展开值和后面的参数拼回一行，再 <code>parse_line</code> 一次：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">char</span><span class="o">*</span> <span class="o">*</span> <span class="nf">expand_alias</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="o">*</span> <span class="n">tokens</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="o">*</span> <span class="n">original_line_ref</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">val</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">alias_entry</span><span class="o">*</span> <span class="n">e</span> <span class="o">=</span> <span class="n">alias_head</span><span class="p">;</span> <span class="n">e</span><span class="p">;</span> <span class="n">e</span> <span class="o">=</span> <span class="n">e</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">,</span> <span class="n">tokens</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">val</span> <span class="o">=</span> <span class="n">e</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">tokens</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span><span class="o">*</span> <span class="n">new_line</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">strcat</span><span class="p">(</span><span class="n">new_line</span><span class="p">,</span> <span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">strcat</span><span class="p">(</span><span class="n">new_line</span><span class="p">,</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">parse_line</span><span class="p">(</span><span class="n">new_line</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>所以 <code>set_alias(&quot;lll&quot;, &quot;ls -l&quot;)</code> 之后，输入 <code>lll</code> 就等于 <code>ls -l</code>。</p>
+<p><img
+  class="article-img"
+  src="alias.png"
+  alt="别名"
+  loading="lazy"
+/>
+</p>
+<p>通配在每个参数上扫 <code>*?[</code>，有通配符才 <code>glob</code>，没有就原样拷：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">strpbrk</span><span class="p">(</span><span class="n">tok</span><span class="p">,</span> <span class="s">&#34;*?[&#34;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">glob_t</span> <span class="n">g</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">glob</span><span class="p">(</span><span class="n">tok</span><span class="p">,</span> <span class="n">GLOB_NOCHECK</span> <span class="o">|</span> <span class="n">GLOB_TILDE</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 把 gl_pathv 追加进新 argv
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p><code>GLOB_NOCHECK</code> 是一个都匹配不到时，把模式本身留下来，避免命令直接消失。</p>
+<p><img
+  class="article-img"
+  src="glob.png"
+  alt="通配符"
+  loading="lazy"
+/>
+</p>
+<h2 id="tab-补全">
+<a class="header-anchor" href="#tab-%e8%a1%a5%e5%85%a8"></a>
+Tab 补全
+</h2><h3 id="简述-3">
+<a class="header-anchor" href="#%e7%ae%80%e8%bf%b0-3"></a>
+简述
+</h3><p>补全挂在 replxx 的 <code>set_completion_callback</code> 上。当前 token 的 UTF-8 码点数记进 <code>contextLen</code>，这样中文路径也能把要替换的那段量对。候选项分几路：</p>
+<ul>
+<li>行首：内建命令，加上 <code>PATH</code> 里可执行文件</li>
+<li><code>cd</code>：只补目录</li>
+<li>已经有命令：补文件，或者查 rc / 默认表里注册过的子命令</li>
+<li>默认表里预置了 <code>git clone</code>、<code>git commit</code> 等，rc 还能再加</li>
+</ul>
+<p><code>git &lt;tab&gt;</code> 会给出 <code>fetch</code> / <code>merge</code> / <code>clone</code>。<code>git cl&lt;tab&gt;</code> 直接补成 <code>git clone</code>。<code>cd d&lt;tab&gt;</code> 在只有 <code>dev</code> 目录时会补成 <code>dev</code>。<code>cat t&lt;tab&gt;</code> 同样按文件名前缀收。</p>
+<h3 id="实现-3">
+<a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0-3"></a>
+实现
+</h3><p>回调先切开 <code>head</code>（最后一个空白之前）和 <code>token</code>（正在打的那一段），再交给 <code>collect_completions_for_replxx</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">toks</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">toks</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#34;cd&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">collect_dir_candidates</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">cands</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">arr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">toks</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">comp_collect_with_prefix</span><span class="p">(</span><span class="n">toks</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">prefix</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">cands</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="n">head_all_space</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">collect_builtin_candidates</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">cands</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">collect_path_candidates</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">cands</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">collect_file_candidates</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">cands</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><code>collect_path_candidates</code> 按 <code>:</code> 拆 <code>PATH</code>，<code>readdir</code> 之后还要 <code>stat</code> 看有没有执行位。文件和目录用 <code>glob(prefix*)</code>。rc 里的 <code>set_completion(&quot;git&quot;, {&quot;fetch&quot;, &quot;merge&quot;, &quot;clone&quot;})</code> 会覆盖/补充 key 为 <code>git</code> 的表。两段 key 也可以，默认就有 <code>git clone</code> 对仓库 URL 的候选。</p>
+<p>结果会排序去重，和当前 token 相同的丢掉，避免 Tab 原地空转。</p>
+<p><img
+  class="article-img"
+  src="complete.png"
+  alt="命令补全"
+  loading="lazy"
+/>
+</p>
+<p><img
+  class="article-img"
+  src="git-complete.png"
+  alt="git 子命令补全"
+  loading="lazy"
+/>
+</p>
+<p>方向键也是 replxx 自带的：左右移光标，上下翻历史，<code>Ctrl+←/→</code> 按词跳。历史条数由 <code>set_history_max</code> 卡住，超出就从链表头丢掉。</p>
+<h2 id="语法高亮">
+<a class="header-anchor" href="#%e8%af%ad%e6%b3%95%e9%ab%98%e4%ba%ae"></a>
+语法高亮
+</h2><h3 id="简述-4">
+<a class="header-anchor" href="#%e7%ae%80%e8%bf%b0-4"></a>
+简述
+</h3><p>高亮也是回调。<code>highlight_for_replxx</code> 先按 token 类型插 ANSI，再由 <code>parse_ansi_to_colors</code> 转成 replxx 的 <code>Color</code> 数组，按字符涂。</p>
+<p>颜色对应：</p>
+<ul>
+<li><code>command</code>：每段管道的第一个 token</li>
+<li><code>option</code>：以 <code>-</code> 开头的参数</li>
+<li><code>special</code>：<code>|</code> <code>&lt;</code> <code>&gt;</code> <code>&amp;</code></li>
+<li><code>string</code>：单引号、双引号里的内容</li>
+</ul>
+<h3 id="实现-4">
+<a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0-4"></a>
+实现
+</h3><p>扫输入时维护 <code>first_token</code>。碰到 <code>|</code> 会重新当成下一段命令的开头。引号里允许 <code>\</code> 转义。<code>COLORIZE</code> 关掉就不涂。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">rx</span><span class="p">.</span><span class="n">set_highlighter_callback</span><span class="p">([](</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="n">input</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                               <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">replxx</span><span class="o">::</span><span class="n">Replxx</span><span class="o">::</span><span class="n">Color</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">colors</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span><span class="o">*</span> <span class="n">h</span> <span class="o">=</span> <span class="n">highlight_for_replxx</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parse_ansi_to_colors</span><span class="p">(</span><span class="n">h</span> <span class="o">?</span> <span class="nl">h</span> <span class="p">:</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">colors</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="n">free</span><span class="p">(</span><span class="n">h</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div><p>rc 里改 <code>set_color</code> 之后，下一次读行就能看到新颜色。自动重载和 <code>reload</code> 走的是同一套 <code>load_rc</code></p>
+<p>管道、重定向、作业和交互层都在同一个 <code>nailong_shell.cpp</code> 里，仓库 README 有功能表</p>
+</div>
+    <footer class="article-footer"><a
+          data-aos="zoom-in"
+          href="/post/nailong-shell/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="/post/nailong-shell/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/post/nailong-shell/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/linux"
+        rel="tag"
+        >LINUX</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/shell"
+        rel="tag"
+        >SHELL</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/c&#43;&#43;"
+        rel="tag"
+        >C&#43;&#43;</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+            data-src="/backgrounds/bg4.webp"
+            data-sizes="auto"
+            alt="WSL下载，使用の教程"
+            class="lazyload"
+          /><a
+          href="/post/wsl-tutorial/"
+          aria-label="前一篇:WSL下载，使用の教程"
+          title="前一篇:WSL下载，使用の教程"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">WSL下载，使用の教程</h3>
+      </div><div class="article-nav-link-wrap right"><img
+            data-src="/backgrounds/bg32.webp"
+            data-sizes="auto"
+            alt="UTF-8、UTF-16、UTF-32 的字典序比较"
+            class="lazyload"
+          /><a
+          href="/post/utf-lexicographic-order/"
+          aria-label="后一篇:UTF-8、UTF-16、UTF-32 的字典序比较"
+          title="后一篇:UTF-8、UTF-16、UTF-32 的字典序比较"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">UTF-8、UTF-16、UTF-32 的字典序比较</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>
+      MilLoong
+    </div><div>
+        <a
+          href="https://github.com/MilLoong"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noopener nofollow noreferrer"
+          style="display: inline-block; transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt="GitHub"
+            style="width: 32px; height: 32px; vertical-align: middle; background: transparent;"
+          >
+        </a>
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;24.5k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;02:05</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#nailong-shell用-lua-配提示符补全和高亮">Nailong Shell：用 Lua 配提示符、补全和高亮</a>
+      <ul>
+        <li><a href="#依赖与构建">依赖与构建</a>
+          <ul>
+            <li><a href="#简述">简述</a></li>
+            <li><a href="#实现">实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#进程和作业">进程和作业</a></li>
+        <li><a href="#分词">分词</a></li>
+        <li><a href="#重定向与管道">重定向与管道</a></li>
+        <li><a href="#作业控制">作业控制</a></li>
+        <li><a href="#内建命令">内建命令</a>
+          <ul>
+            <li><a href="#为什么-cd-不能当外部命令">为什么 <code>cd</code> 不能当外部命令</a></li>
+          </ul>
+        </li>
+        <li><a href="#lua-配置">Lua 配置</a>
+          <ul>
+            <li><a href="#简述-1">简述</a></li>
+            <li><a href="#实现-1">实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#别名与通配">别名与通配</a>
+          <ul>
+            <li><a href="#简述-2">简述</a></li>
+            <li><a href="#实现-2">实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#tab-补全">Tab 补全</a>
+          <ul>
+            <li><a href="#简述-3">简述</a></li>
+            <li><a href="#实现-3">实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#语法高亮">语法高亮</a>
+          <ul>
+            <li><a href="#简述-4">简述</a></li>
+            <li><a href="#实现-4">实现</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">18</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      5
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">34</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><meting-js
+        theme="var(--color-link)"
+        id="784227484"server="netease"type="playlist"fixed="true"autoplay="false"loop="all"order="list"preload="auto"volume="0.7"mutex="true"list-folded="false"lrc-type="0">
+      </meting-js><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "TT8YY4JPRF",
+        apiKey: "4d450286d17ecfeb7b0c6f78ebceb3d4",
+        indexName: "MilLoongBlog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+    if (window.firework) {
+      const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+      options.excludeElements = options.excludeelements;
+      delete options.excludeelements;
+      window.firework(options);
+    }
+  }
+</script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "MilLoong",
+          title: "Nailong Shell：用 Lua 配提示符、补全和高亮",
+          url: "https:\/\/MilLoong.github.io\/post\/nailong-shell\/",
+          description: " Nailong Shell：用 Lua 配提示符、补全和高亮 本文介绍一个交互式 Shell。先把 管道、重定向、作业控制、内建命令 跑通，再叠 行编辑、别名、通配、Tab 补全和语法高亮\n配置用 Lua，文件名固定是 .mini_shellrc\n源码在 Nailong-Shell，主程序是单文件 nailong_shell.cpp\n跑起来大概是这样，cd、重定向、管道都能用：\n作业控制也有，sleep 5 \u0026amp; 之后可以用 jobs \/ bg \/ fg：\n行编辑没有自己从零搓，getline 搞不定补全和高亮，常见的 linenoise、readline 也不好同时接 Lua 着色 …",
+          cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg15.webp",
+        };
+      </script><script
+    src="https://npm.webcache.cn/mermaid@11.12.0/dist/mermaid.min.js"
+    data-pjaxintegrity="sha384-o&#43;g/BxPwhi0C3RK7oQBxQuNimeafQ3GE/ST4iT2BxVI4Wzt60SH4pq9iXVYujjaS" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/dompurify@3.2.6/dist/purify.min.js"
+    data-pjaxintegrity="sha384-JEyTNhjM6R1ElGoJns4U2Ln4ofPcqzSsynQkmEc/KGy6336qAZl70tDLufbkla&#43;3" crossorigin="anonymous"></script><script data-pjax>
+        if (window.mermaid) {
+          
+          const elementCode = '.mermaid'
+          const processElements = (callback) => {
+            const els = _$$(elementCode);
+            if (!els.length) return Promise.resolve();
+            
+            return new Promise((resolve, reject) => {
+              try {
+                els.forEach(callback);
+                resolve();
+              } catch (error) {
+                reject(error);
+              }
+            });
+          };
+          const saveOriginalData = () => processElements(el => {
+            if (!el.getAttribute('data-original-code')) {
+              el.setAttribute('data-original-code', el.innerHTML);
+            }
+          });
+
+          const resetProcessed = () => processElements(el => {
+            const originalCode = el.getAttribute('data-original-code');
+            if (originalCode) {
+              el.removeAttribute('data-processed');
+              el.innerHTML = DOMPurify.sanitize(originalCode);
+            }
+          });
+          const loadMermaid = async (theme) => {
+            window.mermaid.initialize({theme, startOnLoad: false})
+            await window.mermaid.run({querySelector: elementCode, suppressErrors: true})
+            if (window.svgPanZoom) {
+              window.__panZoomList?.forEach(panZoom => {try {panZoom.destroy()} catch {}});
+              window.__panZoomList = [];
+              _$$('.mermaid > svg').forEach(el => {
+                const bbox = el.getBBox();
+                el.setAttribute('height', Math.max(bbox.height, 80));
+                window.__panZoomList.push(window.svgPanZoom(el, {
+                  zoomEnabled: true,
+                  controlIconsEnabled: true,
+                  fit: true,
+                  center: true
+                }));
+              });
+              if (window.__resizeMermaidSvg) {
+                window.removeEventListener('resize', window.__resizeMermaidSvg);
+              }
+              window.__resizeMermaidSvg = () => {
+                try {
+                  window.__panZoomList.forEach(panZoom => {
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                  });
+                } catch {
+                  window.removeEventListener('resize', window.__resizeMermaidSvg);
+                  window.__panZoomList = [];
+                }
+              }
+              window.addEventListener('resize', window.__resizeMermaidSvg);
+            }
+          }
+          const initMermaid = async (theme) => {
+            try {
+              await saveOriginalData();
+              await resetProcessed();
+              await loadMermaid(theme);
+            } catch (error) {
+              console.error(error);
+            }
+          };
+          
+          document.body.addEventListener('dark-theme-set', () => initMermaid('dark'));
+          document.body.addEventListener('light-theme-set', () => initMermaid('default'));
+
+          const mode = localStorage.getItem('dark_mode');
+          if (mode === 'auto') {
+            const osMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            initMermaid(osMode ? 'dark' : 'default');
+          } else {
+            initMermaid(mode === 'true' ? 'dark' : 'default');
+          }
+        }
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus', 'disqus'];
+  var commentConfig = {waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/vercelproject-sage-beta.vercel.app\/',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  0 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },};
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig?.[key]?.enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig?.[sys]?.enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.matchMedia('(max-width: 959px)').matches) {
+        const meting = _$('meting-js');
+        if (meting) {
+          meting.setAttribute('fixed', 'true');
+          const aside = meting.parentNode?.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            meting.parentNode.removeChild(meting);
+            document.body.appendChild(meting);
+          }
+        }
+      }
+      const script = document.createElement('script');
+      script.src = "https:\/\/npm.webcache.cn\/meting@2.0.1\/dist\/Meting.min.js";
+      script.integrity = "sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8\u002b0maanw1S\/IyB\u002bY4JG\u002bZDU7GpKE8";
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+  </script></body>
+</html>

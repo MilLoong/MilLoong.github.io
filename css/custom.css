@@ -156,4 +156,13 @@
   font-size: 0.9em;
 }
 
+/* 正文截图按栏宽缩放，避免撑破版面 */
+.article-entry img,
+.article-entry a.article-gallery-item img {
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  opacity: 1;
+}
+
 
