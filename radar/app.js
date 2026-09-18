@@ -6,6 +6,27 @@ function fmtRange(start, end) {
   if (b && b !== a) return a + ' ~ ' + b;
   return a;
 }
+function renderGrades(data) {
+  const grades = data.grades || {};
+  const notices = grades.notices || [];
+  const meta = document.getElementById('grades-meta');
+  const feed = document.getElementById('grades-feed');
+  const portal = grades.portal_url || 'https://v45lmyn1.yichafen.com/';
+  if (!notices.length) {
+    meta.innerHTML = '暂未抓到成绩查询条目。可打开 <a href="' + portal + '" target="_blank" rel="noopener">易查分门户</a> 手动查看。';
+    feed.innerHTML = '';
+    return;
+  }
+  meta.innerHTML =
+    '来源：<a href="' + portal + '" target="_blank" rel="noopener">电子科大成绩查询（易查分）</a>' +
+    ' · 最近条目 ' + (grades.latest_published_at || '日期未知') +
+    ' · 共 ' + notices.length + ' 条';
+  feed.innerHTML = notices.map(n => `
+    <li class="grade-item">
+      <a href="${n.url}" target="_blank" rel="noopener">${escapeHtml(n.title)}</a>
+      <span class="meta">${escapeHtml(n.published_at || '日期未知')}</span>
+    </li>`).join('');
+}
 async function main() {
   const data = await (await fetch('./data.json', { cache: 'no-store' })).json();
   document.getElementById('generated-at').textContent =
@@ -14,6 +35,7 @@ async function main() {
   document.getElementById('stat-comp').textContent = data.competitions.length;
   document.getElementById('stat-node').textContent = nodes.length;
   document.getElementById('stat-group').textContent = data.milestone_groups.length;
+  renderGrades(data);
 
   const feed = document.getElementById('feed');
   if (!data.milestone_groups.length) {

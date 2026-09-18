@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T02:30:15.849220+00:00",
+  "generated_at": "2026-09-18T05:17:14.111798+00:00",
   "competitions": [
     {
       "id": "1",
@@ -555,25 +555,615 @@
   ],
   "milestone_groups": [
     {
+      "competition_id": "2",
+      "name": "挑战杯学术竞赛",
+      "full_name": "挑战杯全国大学生课外学术科技作品竞赛",
+      "count": 59,
+      "range_start": "2014-03-03",
+      "range_end": "2026-07-08",
+      "messages": [
+        {
+          "id": 28,
+          "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
+          "event_type": "semifinal",
+          "event_label": "复赛",
+          "starts_at": "2014-03-03T00:00:00+00:00",
+          "ends_at": "2014-03-03T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15606/"
+        },
+        {
+          "id": 29,
+          "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2014-03-28T00:00:00+00:00",
+          "ends_at": "2014-03-28T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15606/"
+        },
+        {
+          "id": 53,
+          "title": "第十九届“挑战杯”中国移动全国大学生课外学术科技作品竞赛组委会召开新闻通气会",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2024-10-31T00:00:00+00:00",
+          "ends_at": "2024-11-03T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15807/"
+        },
+        {
+          "id": 44,
+          "title": "2025年度中国青年科技创新“揭榜挂帅”擂台赛机器人领域主擂台赛圆满落幕",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2025-10-15T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15801/"
+        },
+        {
+          "id": 90,
+          "title": "2025年度中国青年科技创新“揭榜挂帅”擂台赛人工智能领域主擂台赛顺利举办",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2025-10-23T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15805/"
+        },
+        {
+          "id": 42,
+          "title": "2025年度中国青年科技创新“揭榜挂帅”擂台赛新一代信息技术领域主擂台赛圆满落幕！",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2025-10-29T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15806/"
+        },
+        {
+          "id": 89,
+          "title": "DAY1丨第十九届“挑战杯”竞赛终审决赛，开赛！",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2025-11-02T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15811/"
+        },
+        {
+          "id": 86,
+          "title": "第十九届“挑战杯”中国移动全国大学生课外学术科技作品竞赛组委会召开新闻通气会",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2025-11-02T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15807/"
+        },
+        {
+          "id": 52,
+          "title": "11月3日！与120家名企面对面：“挑战杯”竞赛专场招聘会，开启你的职业大门！",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2025-11-02T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15808/"
+        },
+        {
+          "id": 38,
+          "title": "第十九届“挑战杯”中国移动全国大学生课外学术科技作品竞赛主体赛拟授奖名单",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2025-11-02T00:00:00+00:00",
+          "ends_at": "2025-11-02T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15813/"
+        },
+        {
+          "id": 45,
+          "title": "DAY1丨第十九届“挑战杯”竞赛终审决赛，开赛！",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2025-11-03T00:00:00+00:00",
+          "ends_at": "2025-11-03T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15811/"
+        },
+        {
+          "id": 43,
+          "title": "2025年度中国青年科技创新“揭榜挂帅”擂台赛人工智能领域主擂台赛顺利举办",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2025-11-03T00:00:00+00:00",
+          "ends_at": "2025-11-03T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15805/"
+        },
+        {
+          "id": 19,
+          "title": "第二十届“挑战杯”全国大学生课外学术科技作品竞赛联合发起高校名单",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2025-11-14T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15812/"
+        },
+        {
+          "id": 92,
+          "title": "第十九届“挑战杯”中国移动全国大学生课外学术科技作品竞赛主体赛拟授奖名单",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-03-11T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15813/"
+        },
+        {
+          "id": 93,
+          "title": "第十八届“挑战杯”全国大学生课外学术科技作品竞赛“揭榜挂帅”专项赛拟授奖名单公示",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-03-12T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15817/"
+        },
+        {
+          "id": 37,
+          "title": "第十八届“挑战杯”全国大学生课外学术科技作品竞赛“揭榜挂帅”专项赛拟授奖名单公示",
+          "event_type": "award_announcement",
+          "event_label": "获奖公布",
+          "starts_at": "2026-03-12T00:00:00+00:00",
+          "ends_at": "2026-03-12T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15817/"
+        },
+        {
+          "id": 56,
+          "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛培训交流（上海站）顺利举办",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-04-20T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15831/"
+        },
+        {
+          "id": 65,
+          "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛培训交流云南站倒计时！",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-04-22T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15834/"
+        },
+        {
+          "id": 91,
+          "title": "谁有本事，谁就揭榜！2026年度中国青年科技创新“揭榜挂帅”擂台赛重磅启幕！",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-04-27T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15836/"
+        },
+        {
+          "id": 66,
+          "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛培训交流河北站倒计时！",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-04-28T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15837/"
+        },
+        {
+          "id": 55,
+          "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛培训交流（云南站）顺利举办",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-04-28T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15838/"
+        },
+        {
+          "id": 54,
+          "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛培训交流（河北站）顺利举办",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-05-13T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15839/"
+        },
+        {
+          "id": 40,
+          "title": "2026年度中国青年科技创新“揭榜挂帅”擂台赛第二批榜题等你来战！",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-05-20T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15841/"
+        },
+        {
+          "id": 18,
+          "title": "挑战杯丨关于举办第十五届“挑战杯”建设银行中国大学生创业计划竞赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-05-28T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15842/"
+        },
+        {
+          "id": 41,
+          "title": "谁有本事，谁就揭榜！2026年度中国青年科技创新“揭榜挂帅”擂台赛重磅启幕！",
+          "event_type": "registration_start",
+          "event_label": "报名开始",
+          "starts_at": "2026-05-30T00:00:00+00:00",
+          "ends_at": "2026-06-30T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15836/"
+        },
+        {
+          "id": 48,
+          "title": "挑战杯丨浙江省第十五届“挑战杯”大学生创业计划竞赛圆满落幕",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-06-16T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15843/"
+        },
+        {
+          "id": 88,
+          "title": "挑战杯丨第十五届“挑战杯”黑龙江省大学生创业计划竞赛终审决赛在东北林业大学举行",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-06-19T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15846/"
+        },
+        {
+          "id": 47,
+          "title": "挑战杯丨第十五届“挑战杯”黑龙江省大学生创业计划竞赛终审决赛在东北林业大学举行",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2026-06-19T00:00:00+00:00",
+          "ends_at": "2026-06-19T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15846/"
+        },
+        {
+          "id": 64,
+          "title": "挑战杯丨科创耀三秦，挑战正当时——第十三届“挑战杯”陕汽集团陕西省大学生创业计划竞赛成功举办",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-06-29T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15854/"
+        },
+        {
+          "id": 63,
+          "title": "挑战杯丨第十五届“挑战杯”甘肃省大学生创业计划竞赛青创报国汇报会暨颁奖典礼成功举办",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-06-30T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15855/"
+        },
+        {
+          "id": 51,
+          "title": "挑战杯丨第十五届“挑战杯”山西省大学生创业计划竞赛成功举办",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-06-30T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15856/"
+        },
+        {
+          "id": 50,
+          "title": "挑战杯丨第十二届“挑战杯”云南省大学生创业计划竞赛圆满落幕",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-02T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15857/"
+        },
+        {
+          "id": 46,
+          "title": "挑战杯丨第十五届“挑战杯”新疆维吾尔自治区大学生创业计划竞赛圆满落幕",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-02T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15858/"
+        },
+        {
+          "id": 94,
+          "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15606/"
+        },
+        {
+          "id": 87,
+          "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛重庆市选拔赛决赛成功举办",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15859/"
+        },
+        {
+          "id": 67,
+          "title": "2026国赛",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://2026.tiaozhanbei.net/"
+        },
+        {
+          "id": 62,
+          "title": "第七届“挑战杯”福建省大学生创业计划竞赛决赛圆满落幕",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/1012/"
+        },
+        {
+          "id": 61,
+          "title": "北京理工大学 校第九届“世纪杯”学生课外科技作品竞赛成绩公示",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/1168/"
+        },
+        {
+          "id": 60,
+          "title": "湘潭大学第九届“挑战杯”作品竞赛终审决赛",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/7807/"
+        },
+        {
+          "id": 59,
+          "title": "“挑战杯”网络虚拟运营专项竞赛常规赛第二赛季复赛相关说明",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15604/"
+        },
+        {
+          "id": 58,
+          "title": "“挑战杯”网络虚拟运营专项竞赛常规赛第二赛季决赛相关说明",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15607/"
+        },
+        {
+          "id": 57,
+          "title": "“挑战杯”网络虚拟运营专项竞赛常规赛第二赛季决赛成绩发布",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15613/"
+        },
+        {
+          "id": 49,
+          "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛重庆市选拔赛决赛成功举办",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": "2026-07-08T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15859/"
+        },
+        {
+          "id": 39,
+          "title": "关于2013年“挑战杯”中国大学生创业计划竞赛“网络虚拟运营”专项竞赛常规赛第二赛季的竞赛说明",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15576/"
+        },
+        {
+          "id": 36,
+          "title": "关于开展第十三届“挑战杯”全国大学生课外学术科技作品竞赛暨第九届“挑战杯”陕西省大学生课外学术科技作品竞赛西安财经学院校内选拔赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/7830/"
+        },
+        {
+          "id": 35,
+          "title": "上海应用技术学院 关于举办第十三届“挑战杯”全国大学生课外学术科技作品竞赛校内预选赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/7846/"
+        },
+        {
+          "id": 34,
+          "title": "关于首届“经纬杯”东华大学大学生课外学术科技作品竞赛 暨第十三届“挑战杯”全国大学生课外学术科技作品竞赛 东华大学选拔赛作品上交的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/11023/"
+        },
+        {
+          "id": 33,
+          "title": "江西师范大学 关于第十三届“挑战杯”大学生课外学术科技作品竞赛通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/11319/"
+        },
+        {
+          "id": 32,
+          "title": "北京邮电大学 关于征集第七届“挑战杯”首都大学生课外学术科技作品竞赛参赛作品的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/11859/"
+        },
+        {
+          "id": 31,
+          "title": "关于郑州大学第七届“挑战杯”大学生课外学术科技作品竞赛决赛的补充通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/11930/"
+        },
+        {
+          "id": 30,
+          "title": "【同济大学】关于第九届“挑战杯”中国大学生创业计划竞赛同济大学校内赛相关工作的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15605/"
+        },
+        {
+          "id": 27,
+          "title": "关于开展第七届“挑战杯”江苏省大学生创业计划竞赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/974/"
+        },
+        {
+          "id": 26,
+          "title": "关于举办第七届“挑战杯\"首都大学生创业计划竞赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/975/"
+        },
+        {
+          "id": 25,
+          "title": "关于组织开展第六届“挑战杯”吉林省大学生创业计划竞赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/976/"
+        },
+        {
+          "id": 24,
+          "title": "关于组织开展第十二届“挑战杯”广东大学生课外学术科技作品竞赛的预发通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/7833/"
+        },
+        {
+          "id": 23,
+          "title": "上海理工大学 关于下达第十三届“挑战杯”大学生课外学术科技作品竞赛校内培育计划课题的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/1192/"
+        },
+        {
+          "id": 22,
+          "title": "关于公布入围第六届“挑战杯”广东商学院大学生学术科技竞赛复赛作品的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/1228/"
+        },
+        {
+          "id": 21,
+          "title": "关于第十三届“挑战杯”全国大学生课外学术科技作品竞赛哲学社会科学类参赛作品参考选题的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/7796/"
+        },
+        {
+          "id": 20,
+          "title": "中国地质大学（武汉）第九届“挑战杯”大学生课外学术科技作品竞赛决赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-08T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/7816/"
+        }
+      ]
+    },
+    {
       "competition_id": "7",
       "name": "数学建模",
       "full_name": "全国大学生数学建模竞赛",
-      "count": 6,
-      "range_start": "2025-09-04",
+      "count": 5,
+      "range_start": "2025-11-02",
       "range_end": "2026-09-15",
       "messages": [
         {
           "id": 5,
-          "title": "2025年全国大学生数学建模竞赛赛题讲评与经验交流会通知",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2025-09-04T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "https://www.mcm.edu.cn/html_cn/node/f0cd9759627fb5d775892c3ce9334737.html"
-        },
-        {
-          "id": 4,
           "title": "关于2025年全国大学生数学建模竞赛中部分参赛论文相似度较高的通报",
           "event_type": "other",
           "event_label": "其他节点",
@@ -583,7 +1173,7 @@
           "source_url": "https://www.mcm.edu.cn/html_cn/node/270c01b62cdc7c7531065e3a65572054.html"
         },
         {
-          "id": 3,
+          "id": 4,
           "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第一次通知",
           "event_type": "other",
           "event_label": "其他节点",
@@ -593,7 +1183,7 @@
           "source_url": "https://www.mcm.edu.cn/html_cn/node/c579a2643888f6b2f6c7f2d285e09a81.html"
         },
         {
-          "id": 2,
+          "id": 3,
           "title": "2026高教社杯全国大学生数学建模竞赛第一次通知",
           "event_type": "other",
           "event_label": "其他节点",
@@ -603,7 +1193,7 @@
           "source_url": "https://www.mcm.edu.cn/html_cn/node/d6fd7a0ee8f3a3d525e30af1c365fcec.html"
         },
         {
-          "id": 1,
+          "id": 2,
           "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第二次通知",
           "event_type": "other",
           "event_label": "其他节点",
@@ -613,7 +1203,7 @@
           "source_url": "https://www.mcm.edu.cn/html_cn/node/3703fb7f6e16f999f45aac0593b1e1ff.html"
         },
         {
-          "id": 56,
+          "id": 1,
           "title": "2026年全国大学生数学建模竞赛赛题讲评与经验交流会通知",
           "event_type": "other",
           "event_label": "其他节点",
@@ -628,32 +1218,12 @@
       "competition_id": "13",
       "name": "信息安全竞赛",
       "full_name": "全国大学生信息安全竞赛",
-      "count": 20,
-      "range_start": "2026-05-29",
+      "count": 12,
+      "range_start": "2026-07-20",
       "range_end": "2026-09-03",
       "messages": [
         {
-          "id": 27,
-          "title": "关于举办第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）的通知",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-05-29T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "http://www.ciscn.cn/announcement/view/412"
-        },
-        {
-          "id": 26,
-          "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）初赛团队名单公示",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-07-10T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "http://www.ciscn.cn/announcement/view/413"
-        },
-        {
-          "id": 25,
+          "id": 78,
           "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）进入初赛评审阶段名单通知",
           "event_type": "other",
           "event_label": "其他节点",
@@ -663,7 +1233,7 @@
           "source_url": "http://www.ciscn.cn/announcement/view/414"
         },
         {
-          "id": 24,
+          "id": 77,
           "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛团队名单公示",
           "event_type": "other",
           "event_label": "其他节点",
@@ -673,7 +1243,7 @@
           "source_url": "http://www.ciscn.cn/announcement/view/415"
         },
         {
-          "id": 22,
+          "id": 75,
           "title": "第十九届全国大学生信息安全竞赛创新实践能力赛总决赛通知",
           "event_type": "final",
           "event_label": "决赛",
@@ -683,7 +1253,7 @@
           "source_url": "http://www.ciscn.cn/announcement/view/417"
         },
         {
-          "id": 23,
+          "id": 76,
           "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛开赛通知",
           "event_type": "other",
           "event_label": "其他节点",
@@ -693,7 +1263,7 @@
           "source_url": "http://www.ciscn.cn/announcement/view/416"
         },
         {
-          "id": 30,
+          "id": 85,
           "title": "第十九届全国大学生信息安全竞赛创新实践能力赛总决赛通知",
           "event_type": "other",
           "event_label": "其他节点",
@@ -703,7 +1273,7 @@
           "source_url": "http://www.ciscn.cn/announcement/view/417"
         },
         {
-          "id": 31,
+          "id": 83,
           "title": "第十九届全国大学生信息安全竞赛创新实践能力赛（总决赛）参赛手册",
           "event_type": "other",
           "event_label": "其他节点",
@@ -713,7 +1283,7 @@
           "source_url": "http://www.ciscn.cn/announcement/view/418"
         },
         {
-          "id": 21,
+          "id": 80,
           "title": "第十九届全国大学生信息安全竞赛创新实践能力赛（总决赛）参赛手册",
           "event_type": "final",
           "event_label": "决赛",
@@ -723,7 +1293,7 @@
           "source_url": "http://www.ciscn.cn/announcement/view/418"
         },
         {
-          "id": 20,
+          "id": 74,
           "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛奖项设置的通知",
           "event_type": "other",
           "event_label": "其他节点",
@@ -733,7 +1303,7 @@
           "source_url": "http://www.ciscn.cn/announcement/view/420"
         },
         {
-          "id": 19,
+          "id": 73,
           "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖团队名单公示",
           "event_type": "other",
           "event_label": "其他节点",
@@ -743,7 +1313,7 @@
           "source_url": "http://www.ciscn.cn/announcement/view/421"
         },
         {
-          "id": 48,
+          "id": 79,
           "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
           "event_type": "final",
           "event_label": "决赛",
@@ -753,27 +1323,7 @@
           "source_url": "http://www.ciscn.cn/announcement/view/422"
         },
         {
-          "id": 45,
-          "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
-          "event_type": "final",
-          "event_label": "决赛",
-          "starts_at": "2026-08-29T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "http://www.ciscn.cn/announcement/view/422"
-        },
-        {
-          "id": 42,
-          "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
-          "event_type": "final",
-          "event_label": "决赛",
-          "starts_at": "2026-08-29T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "http://www.ciscn.cn/announcement/view/422"
-        },
-        {
-          "id": 49,
+          "id": 84,
           "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
           "event_type": "other",
           "event_label": "其他节点",
@@ -783,47 +1333,7 @@
           "source_url": "http://www.ciscn.cn/announcement/view/422"
         },
         {
-          "id": 46,
-          "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-09-02T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "http://www.ciscn.cn/announcement/view/422"
-        },
-        {
-          "id": 43,
-          "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-09-02T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "http://www.ciscn.cn/announcement/view/422"
-        },
-        {
-          "id": 50,
-          "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖名单公布",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-09-03T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "http://www.ciscn.cn/announcement/view/423"
-        },
-        {
-          "id": 47,
-          "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖名单公布",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-09-03T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "http://www.ciscn.cn/announcement/view/423"
-        },
-        {
-          "id": 44,
+          "id": 72,
           "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖名单公布",
           "event_type": "other",
           "event_label": "其他节点",
@@ -835,25 +1345,65 @@
       ]
     },
     {
+      "competition_id": "17",
+      "name": "工程实践创新大赛",
+      "full_name": "中国大学生工程实践与创新能力大赛",
+      "count": 4,
+      "range_start": "2019-05-20",
+      "range_end": "2026-06-01",
+      "messages": [
+        {
+          "id": 70,
+          "title": "关于公布智能物流机器人项目决赛阶段任务码Wi-Fi通信程序源代码的通知 (点击： )",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2019-05-24T00:00:00+00:00",
+          "ends_at": "2019-05-24T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.gcxl.edu.cn/info/1049/1674.htm"
+        },
+        {
+          "id": 68,
+          "title": "第六届全国大学生工程训练综合能力竞赛-获奖名单 (点击： )",
+          "event_type": "award_announcement",
+          "event_label": "获奖公布",
+          "starts_at": "2019-06-10T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.gcxl.edu.cn/info/1049/1690.htm"
+        },
+        {
+          "id": 71,
+          "title": "第六届全国大学生工程训练综合能力竞赛-赛程安排 (点击： )",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2026-06-01T00:00:00+00:00",
+          "ends_at": "2026-06-01T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.gcxl.edu.cn/info/1049/1661.htm"
+        },
+        {
+          "id": 69,
+          "title": "第六届全国大学生工程训练综合能力竞赛-决赛参赛队名单 (点击： )",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": null,
+          "ends_at": "2019-05-20T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.gcxl.edu.cn/info/1049/1658.htm"
+        }
+      ]
+    },
+    {
       "competition_id": "21",
       "name": "计算机设计大赛",
       "full_name": "中国大学生计算机设计大赛",
-      "count": 28,
-      "range_start": "2025-09-08",
+      "count": 19,
+      "range_start": "2025-09-27",
       "range_end": "2026-09-14",
       "messages": [
         {
-          "id": 17,
-          "title": "2025年（第18届）中国大学生计算机设计大赛 评审结果公示",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2025-09-08T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1043/2424.htm"
-        },
-        {
-          "id": 33,
+          "id": 99,
           "title": "2025年（第18届）中国大学生计算机设计大赛获奖公告",
           "event_type": "other",
           "event_label": "其他节点",
@@ -863,7 +1413,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1043/2434.htm"
         },
         {
-          "id": 16,
+          "id": 9,
           "title": "2025年（第18届）中国大学生计算机设计大赛获奖公告",
           "event_type": "award_announcement",
           "event_label": "获奖公布",
@@ -873,7 +1423,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1043/2434.htm"
         },
         {
-          "id": 15,
+          "id": 8,
           "title": "2025年（第18届）中国大学生计算机设计大赛 申诉投诉处理结果公告",
           "event_type": "other",
           "event_label": "其他节点",
@@ -883,7 +1433,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1043/2204.htm"
         },
         {
-          "id": 32,
+          "id": 95,
           "title": "4C2026参赛作品提交要求（4月17日）",
           "event_type": "other",
           "event_label": "其他节点",
@@ -893,7 +1443,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1045/2013.htm"
         },
         {
-          "id": 18,
+          "id": 17,
           "title": "4C2026参赛作品提交要求（4月17日）",
           "event_type": "material_deadline",
           "event_label": "材料/作品截止",
@@ -903,37 +1453,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1045/2013.htm"
         },
         {
-          "id": 34,
-          "title": "24 2026.06 2026年（第19届）中国大学生计算机设计大赛关于参赛作品信息...",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-06-24T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2794.htm"
-        },
-        {
-          "id": 14,
-          "title": "24 2026.06 2026年（第19届）中国大学生计算机设计大赛国赛入围作品信息...",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-06-24T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2784.htm"
-        },
-        {
-          "id": 13,
-          "title": "24 2026.06 2026年（第19届）中国大学生计算机设计大赛关于参赛作品信息...",
-          "event_type": "final",
-          "event_label": "决赛",
-          "starts_at": "2026-06-25T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2794.htm"
-        },
-        {
-          "id": 12,
+          "id": 15,
           "title": "23 2026.07 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
           "event_type": "final",
           "event_label": "决赛",
@@ -943,27 +1463,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1042/2824.htm"
         },
         {
-          "id": 10,
-          "title": "07-23 .2026 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
-          "event_type": "final",
-          "event_label": "决赛",
-          "starts_at": "2026-07-20T00:00:00+00:00",
-          "ends_at": "2026-07-20T00:00:00+00:00",
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2804.htm"
-        },
-        {
-          "id": 37,
-          "title": "07-23 .2026 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-07-23T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2804.htm"
-        },
-        {
-          "id": 35,
+          "id": 97,
           "title": "23 2026.07 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
           "event_type": "other",
           "event_label": "其他节点",
@@ -971,59 +1471,29 @@
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://jsjds.blcu.edu.cn/info/1042/2824.htm"
+        },
+        {
+          "id": 16,
+          "title": "26 2026.07 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设...",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2026-07-25T00:00:00+00:00",
+          "ends_at": "2026-07-25T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2844.htm"
+        },
+        {
+          "id": 96,
+          "title": "26 2026.07 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设...",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-07-26T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2844.htm"
         },
         {
           "id": 11,
-          "title": "26 2026.07 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设...",
-          "event_type": "final",
-          "event_label": "决赛",
-          "starts_at": "2026-07-25T00:00:00+00:00",
-          "ends_at": "2026-07-25T00:00:00+00:00",
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2844.htm"
-        },
-        {
-          "id": 9,
-          "title": "07-26 .2026 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设计大赛杭州决赛区圆满落幕",
-          "event_type": "final",
-          "event_label": "决赛",
-          "starts_at": "2026-07-25T00:00:00+00:00",
-          "ends_at": "2026-07-25T00:00:00+00:00",
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2834.htm"
-        },
-        {
-          "id": 38,
-          "title": "07-26 .2026 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设计大赛杭州决赛区圆满落幕",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-07-26T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2834.htm"
-        },
-        {
-          "id": 36,
-          "title": "26 2026.07 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设...",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-07-26T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2844.htm"
-        },
-        {
-          "id": 8,
-          "title": "08-04 .2026 2026年（第19届）中国大学生计算机设计大赛 第3场国赛决赛在安徽大学圆满落幕",
-          "event_type": "other",
-          "event_label": "其他节点",
-          "starts_at": "2026-08-04T00:00:00+00:00",
-          "ends_at": null,
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2854.htm"
-        },
-        {
-          "id": 39,
           "title": "08-30 .2026 2026 年（第 19 届）中国大学生计算机设计大赛 第 6 场国赛决赛在江南大学圆满落幕",
           "event_type": "final",
           "event_label": "决赛",
@@ -1033,7 +1503,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1041/2884.htm"
         },
         {
-          "id": 7,
+          "id": 13,
           "title": "08-23 .2026 2026年（第19届）中国大学生计算机设计大赛第4场国赛决赛在长春圆满落幕",
           "event_type": "other",
           "event_label": "其他节点",
@@ -1043,7 +1513,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1041/2864.htm"
         },
         {
-          "id": 6,
+          "id": 12,
           "title": "08-24 .2026 2026年（第19届）中国大学生计算机设计大赛软件应用与开发类别全国决赛在青岛农业大学圆满落幕",
           "event_type": "other",
           "event_label": "其他节点",
@@ -1053,7 +1523,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1041/2874.htm"
         },
         {
-          "id": 40,
+          "id": 98,
           "title": "08-30 .2026 2026 年（第 19 届）中国大学生计算机设计大赛 第 6 场国赛决赛在江南大学圆满落幕",
           "event_type": "other",
           "event_label": "其他节点",
@@ -1063,27 +1533,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1041/2884.htm"
         },
         {
-          "id": 52,
-          "title": "14 2026.09 2026年（第19届）中国大学生计算机设计大赛获奖公告",
-          "event_type": "award_announcement",
-          "event_label": "获奖公布",
-          "starts_at": "2026-09-01T00:00:00+00:00",
-          "ends_at": "2026-09-01T00:00:00+00:00",
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2904.htm"
-        },
-        {
-          "id": 51,
-          "title": "09-14 .2026 2026年（第19届）中国大学生计算机设计大赛获奖公告",
-          "event_type": "award_announcement",
-          "event_label": "获奖公布",
-          "starts_at": "2026-09-01T00:00:00+00:00",
-          "ends_at": "2026-09-01T00:00:00+00:00",
-          "status": "unverified",
-          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2914.htm"
-        },
-        {
-          "id": 41,
+          "id": 10,
           "title": "09-01 .2026 2026年（第19届）中国大学生计算机设计大赛 评审结果公示",
           "event_type": "other",
           "event_label": "其他节点",
@@ -1093,7 +1543,27 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1041/2894.htm"
         },
         {
-          "id": 55,
+          "id": 7,
+          "title": "14 2026.09 2026年（第19届）中国大学生计算机设计大赛获奖公告",
+          "event_type": "award_announcement",
+          "event_label": "获奖公布",
+          "starts_at": "2026-09-01T00:00:00+00:00",
+          "ends_at": "2026-09-01T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1042/2904.htm"
+        },
+        {
+          "id": 6,
+          "title": "09-14 .2026 2026年（第19届）中国大学生计算机设计大赛获奖公告",
+          "event_type": "award_announcement",
+          "event_label": "获奖公布",
+          "starts_at": "2026-09-01T00:00:00+00:00",
+          "ends_at": "2026-09-01T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2914.htm"
+        },
+        {
+          "id": 101,
           "title": "09-14 .2026 2026年（第19届）中国大学生计算机设计大赛获奖公告",
           "event_type": "other",
           "event_label": "其他节点",
@@ -1103,7 +1573,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1041/2914.htm"
         },
         {
-          "id": 54,
+          "id": 100,
           "title": "14 2026.09 2026年（第19届）中国大学生计算机设计大赛获奖公告",
           "event_type": "other",
           "event_label": "其他节点",
@@ -1113,7 +1583,7 @@
           "source_url": "https://jsjds.blcu.edu.cn/info/1042/2904.htm"
         },
         {
-          "id": 53,
+          "id": 14,
           "title": "14 2026.09 2026年（第19届）中国大学生计算机设计大赛 申诉投诉处理结果...",
           "event_type": "other",
           "event_label": "其他节点",
@@ -1133,7 +1603,7 @@
       "range_end": "2026-01-11",
       "messages": [
         {
-          "id": 29,
+          "id": 82,
           "title": "关于服创大赛指定江苏万维艾斯网络智能产业创新中心有限公司为比赛运营商的说明",
           "event_type": "other",
           "event_label": "其他节点",
@@ -1143,7 +1613,7 @@
           "source_url": "https://www.fwwb.org.cn/news/show/594"
         },
         {
-          "id": 28,
+          "id": 81,
           "title": "关于中国大学生服务外包创新创业大赛开通D赛道的说明",
           "event_type": "other",
           "event_label": "其他节点",
@@ -1157,31 +1627,67 @@
   ],
   "milestones": [
     {
-      "id": 5,
-      "competition_id": "7",
-      "competition_name": "数学建模",
-      "title": "2025年全国大学生数学建模竞赛赛题讲评与经验交流会通知",
-      "event_type": "other",
-      "event_label": "其他节点",
-      "starts_at": "2025-09-04T00:00:00+00:00",
-      "ends_at": null,
+      "id": 28,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
+      "event_type": "semifinal",
+      "event_label": "复赛",
+      "starts_at": "2014-03-03T00:00:00+00:00",
+      "ends_at": "2014-03-03T00:00:00+00:00",
       "status": "unverified",
-      "source_url": "https://www.mcm.edu.cn/html_cn/node/f0cd9759627fb5d775892c3ce9334737.html"
+      "source_url": "https://www.tiaozhanbei.net/article/15606/"
     },
     {
-      "id": 17,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "2025年（第18届）中国大学生计算机设计大赛 评审结果公示",
-      "event_type": "other",
-      "event_label": "其他节点",
-      "starts_at": "2025-09-08T00:00:00+00:00",
-      "ends_at": null,
+      "id": 29,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": "2014-03-28T00:00:00+00:00",
+      "ends_at": "2014-03-28T00:00:00+00:00",
       "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1043/2424.htm"
+      "source_url": "https://www.tiaozhanbei.net/article/15606/"
     },
     {
-      "id": 33,
+      "id": 70,
+      "competition_id": "17",
+      "competition_name": "工程实践创新大赛",
+      "title": "关于公布智能物流机器人项目决赛阶段任务码Wi-Fi通信程序源代码的通知 (点击： )",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": "2019-05-24T00:00:00+00:00",
+      "ends_at": "2019-05-24T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.gcxl.edu.cn/info/1049/1674.htm"
+    },
+    {
+      "id": 68,
+      "competition_id": "17",
+      "competition_name": "工程实践创新大赛",
+      "title": "第六届全国大学生工程训练综合能力竞赛-获奖名单 (点击： )",
+      "event_type": "award_announcement",
+      "event_label": "获奖公布",
+      "starts_at": "2019-06-10T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.gcxl.edu.cn/info/1049/1690.htm"
+    },
+    {
+      "id": 53,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "第十九届“挑战杯”中国移动全国大学生课外学术科技作品竞赛组委会召开新闻通气会",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": "2024-10-31T00:00:00+00:00",
+      "ends_at": "2024-11-03T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15807/"
+    },
+    {
+      "id": 99,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "2025年（第18届）中国大学生计算机设计大赛获奖公告",
@@ -1193,7 +1699,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1043/2434.htm"
     },
     {
-      "id": 16,
+      "id": 9,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "2025年（第18届）中国大学生计算机设计大赛获奖公告",
@@ -1205,7 +1711,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1043/2434.htm"
     },
     {
-      "id": 15,
+      "id": 8,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "2025年（第18届）中国大学生计算机设计大赛 申诉投诉处理结果公告",
@@ -1217,7 +1723,91 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1043/2204.htm"
     },
     {
-      "id": 4,
+      "id": 44,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "2025年度中国青年科技创新“揭榜挂帅”擂台赛机器人领域主擂台赛圆满落幕",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2025-10-15T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15801/"
+    },
+    {
+      "id": 90,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "2025年度中国青年科技创新“揭榜挂帅”擂台赛人工智能领域主擂台赛顺利举办",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2025-10-23T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15805/"
+    },
+    {
+      "id": 42,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "2025年度中国青年科技创新“揭榜挂帅”擂台赛新一代信息技术领域主擂台赛圆满落幕！",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2025-10-29T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15806/"
+    },
+    {
+      "id": 89,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "DAY1丨第十九届“挑战杯”竞赛终审决赛，开赛！",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2025-11-02T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15811/"
+    },
+    {
+      "id": 86,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "第十九届“挑战杯”中国移动全国大学生课外学术科技作品竞赛组委会召开新闻通气会",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2025-11-02T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15807/"
+    },
+    {
+      "id": 52,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "11月3日！与120家名企面对面：“挑战杯”竞赛专场招聘会，开启你的职业大门！",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2025-11-02T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15808/"
+    },
+    {
+      "id": 38,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "第十九届“挑战杯”中国移动全国大学生课外学术科技作品竞赛主体赛拟授奖名单",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": "2025-11-02T00:00:00+00:00",
+      "ends_at": "2025-11-02T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15813/"
+    },
+    {
+      "id": 5,
       "competition_id": "7",
       "competition_name": "数学建模",
       "title": "关于2025年全国大学生数学建模竞赛中部分参赛论文相似度较高的通报",
@@ -1229,7 +1819,43 @@
       "source_url": "https://www.mcm.edu.cn/html_cn/node/270c01b62cdc7c7531065e3a65572054.html"
     },
     {
-      "id": 29,
+      "id": 45,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "DAY1丨第十九届“挑战杯”竞赛终审决赛，开赛！",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": "2025-11-03T00:00:00+00:00",
+      "ends_at": "2025-11-03T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15811/"
+    },
+    {
+      "id": 43,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "2025年度中国青年科技创新“揭榜挂帅”擂台赛人工智能领域主擂台赛顺利举办",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": "2025-11-03T00:00:00+00:00",
+      "ends_at": "2025-11-03T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15805/"
+    },
+    {
+      "id": 19,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "第二十届“挑战杯”全国大学生课外学术科技作品竞赛联合发起高校名单",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2025-11-14T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15812/"
+    },
+    {
+      "id": 82,
       "competition_id": "23",
       "competition_name": "服务外包大赛",
       "title": "关于服创大赛指定江苏万维艾斯网络智能产业创新中心有限公司为比赛运营商的说明",
@@ -1241,7 +1867,7 @@
       "source_url": "https://www.fwwb.org.cn/news/show/594"
     },
     {
-      "id": 28,
+      "id": 81,
       "competition_id": "23",
       "competition_name": "服务外包大赛",
       "title": "关于中国大学生服务外包创新创业大赛开通D赛道的说明",
@@ -1253,7 +1879,7 @@
       "source_url": "https://www.fwwb.org.cn/news/show/595"
     },
     {
-      "id": 3,
+      "id": 4,
       "competition_id": "7",
       "competition_name": "数学建模",
       "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第一次通知",
@@ -1265,7 +1891,43 @@
       "source_url": "https://www.mcm.edu.cn/html_cn/node/c579a2643888f6b2f6c7f2d285e09a81.html"
     },
     {
-      "id": 2,
+      "id": 92,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "第十九届“挑战杯”中国移动全国大学生课外学术科技作品竞赛主体赛拟授奖名单",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-03-11T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15813/"
+    },
+    {
+      "id": 93,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "第十八届“挑战杯”全国大学生课外学术科技作品竞赛“揭榜挂帅”专项赛拟授奖名单公示",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-03-12T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15817/"
+    },
+    {
+      "id": 37,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "第十八届“挑战杯”全国大学生课外学术科技作品竞赛“揭榜挂帅”专项赛拟授奖名单公示",
+      "event_type": "award_announcement",
+      "event_label": "获奖公布",
+      "starts_at": "2026-03-12T00:00:00+00:00",
+      "ends_at": "2026-03-12T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15817/"
+    },
+    {
+      "id": 3,
       "competition_id": "7",
       "competition_name": "数学建模",
       "title": "2026高教社杯全国大学生数学建模竞赛第一次通知",
@@ -1277,7 +1939,7 @@
       "source_url": "https://www.mcm.edu.cn/html_cn/node/d6fd7a0ee8f3a3d525e30af1c365fcec.html"
     },
     {
-      "id": 32,
+      "id": 95,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "4C2026参赛作品提交要求（4月17日）",
@@ -1289,7 +1951,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1045/2013.htm"
     },
     {
-      "id": 18,
+      "id": 17,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "4C2026参赛作品提交要求（4月17日）",
@@ -1301,55 +1963,223 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1045/2013.htm"
     },
     {
-      "id": 27,
-      "competition_id": "13",
-      "competition_name": "信息安全竞赛",
-      "title": "关于举办第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）的通知",
+      "id": 56,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛培训交流（上海站）顺利举办",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-05-29T00:00:00+00:00",
+      "starts_at": "2026-04-20T00:00:00+00:00",
       "ends_at": null,
       "status": "unverified",
-      "source_url": "http://www.ciscn.cn/announcement/view/412"
+      "source_url": "https://www.tiaozhanbei.net/article/15831/"
     },
     {
-      "id": 34,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "24 2026.06 2026年（第19届）中国大学生计算机设计大赛关于参赛作品信息...",
+      "id": 65,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛培训交流云南站倒计时！",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-06-24T00:00:00+00:00",
+      "starts_at": "2026-04-22T00:00:00+00:00",
       "ends_at": null,
       "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1042/2794.htm"
+      "source_url": "https://www.tiaozhanbei.net/article/15834/"
     },
     {
-      "id": 14,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "24 2026.06 2026年（第19届）中国大学生计算机设计大赛国赛入围作品信息...",
+      "id": 91,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "谁有本事，谁就揭榜！2026年度中国青年科技创新“揭榜挂帅”擂台赛重磅启幕！",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-06-24T00:00:00+00:00",
+      "starts_at": "2026-04-27T00:00:00+00:00",
       "ends_at": null,
       "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1042/2784.htm"
+      "source_url": "https://www.tiaozhanbei.net/article/15836/"
     },
     {
-      "id": 13,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "24 2026.06 2026年（第19届）中国大学生计算机设计大赛关于参赛作品信息...",
+      "id": 66,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛培训交流河北站倒计时！",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-04-28T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15837/"
+    },
+    {
+      "id": 55,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛培训交流（云南站）顺利举办",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-04-28T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15838/"
+    },
+    {
+      "id": 54,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛培训交流（河北站）顺利举办",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-05-13T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15839/"
+    },
+    {
+      "id": 40,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "2026年度中国青年科技创新“揭榜挂帅”擂台赛第二批榜题等你来战！",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-05-20T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15841/"
+    },
+    {
+      "id": 18,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨关于举办第十五届“挑战杯”建设银行中国大学生创业计划竞赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-05-28T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15842/"
+    },
+    {
+      "id": 41,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "谁有本事，谁就揭榜！2026年度中国青年科技创新“揭榜挂帅”擂台赛重磅启幕！",
+      "event_type": "registration_start",
+      "event_label": "报名开始",
+      "starts_at": "2026-05-30T00:00:00+00:00",
+      "ends_at": "2026-06-30T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15836/"
+    },
+    {
+      "id": 71,
+      "competition_id": "17",
+      "competition_name": "工程实践创新大赛",
+      "title": "第六届全国大学生工程训练综合能力竞赛-赛程安排 (点击： )",
       "event_type": "final",
       "event_label": "决赛",
-      "starts_at": "2026-06-25T00:00:00+00:00",
-      "ends_at": null,
+      "starts_at": "2026-06-01T00:00:00+00:00",
+      "ends_at": "2026-06-01T00:00:00+00:00",
       "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1042/2794.htm"
+      "source_url": "https://www.gcxl.edu.cn/info/1049/1661.htm"
     },
     {
-      "id": 1,
+      "id": 48,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨浙江省第十五届“挑战杯”大学生创业计划竞赛圆满落幕",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-06-16T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15843/"
+    },
+    {
+      "id": 88,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”黑龙江省大学生创业计划竞赛终审决赛在东北林业大学举行",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-06-19T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15846/"
+    },
+    {
+      "id": 47,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”黑龙江省大学生创业计划竞赛终审决赛在东北林业大学举行",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": "2026-06-19T00:00:00+00:00",
+      "ends_at": "2026-06-19T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15846/"
+    },
+    {
+      "id": 64,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨科创耀三秦，挑战正当时——第十三届“挑战杯”陕汽集团陕西省大学生创业计划竞赛成功举办",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-06-29T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15854/"
+    },
+    {
+      "id": 63,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”甘肃省大学生创业计划竞赛青创报国汇报会暨颁奖典礼成功举办",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-06-30T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15855/"
+    },
+    {
+      "id": 51,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”山西省大学生创业计划竞赛成功举办",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-06-30T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15856/"
+    },
+    {
+      "id": 50,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十二届“挑战杯”云南省大学生创业计划竞赛圆满落幕",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-02T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15857/"
+    },
+    {
+      "id": 46,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”新疆维吾尔自治区大学生创业计划竞赛圆满落幕",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-02T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15858/"
+    },
+    {
+      "id": 2,
       "competition_id": "7",
       "competition_name": "数学建模",
       "title": "2026年全国大学生数学建模竞赛培训与应用研究研讨会第二次通知",
@@ -1361,19 +2191,319 @@
       "source_url": "https://www.mcm.edu.cn/html_cn/node/3703fb7f6e16f999f45aac0593b1e1ff.html"
     },
     {
-      "id": 26,
-      "competition_id": "13",
-      "competition_name": "信息安全竞赛",
-      "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）初赛团队名单公示",
+      "id": 94,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
       "event_type": "other",
       "event_label": "其他节点",
-      "starts_at": "2026-07-10T00:00:00+00:00",
+      "starts_at": "2026-07-08T00:00:00+00:00",
       "ends_at": null,
       "status": "unverified",
-      "source_url": "http://www.ciscn.cn/announcement/view/413"
+      "source_url": "https://www.tiaozhanbei.net/article/15606/"
+    },
+    {
+      "id": 87,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛重庆市选拔赛决赛成功举办",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15859/"
+    },
+    {
+      "id": 67,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "2026国赛",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://2026.tiaozhanbei.net/"
+    },
+    {
+      "id": 62,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "第七届“挑战杯”福建省大学生创业计划竞赛决赛圆满落幕",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/1012/"
+    },
+    {
+      "id": 61,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "北京理工大学 校第九届“世纪杯”学生课外科技作品竞赛成绩公示",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/1168/"
+    },
+    {
+      "id": 60,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "湘潭大学第九届“挑战杯”作品竞赛终审决赛",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/7807/"
+    },
+    {
+      "id": 59,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "“挑战杯”网络虚拟运营专项竞赛常规赛第二赛季复赛相关说明",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15604/"
+    },
+    {
+      "id": 58,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "“挑战杯”网络虚拟运营专项竞赛常规赛第二赛季决赛相关说明",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15607/"
+    },
+    {
+      "id": 57,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "“挑战杯”网络虚拟运营专项竞赛常规赛第二赛季决赛成绩发布",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15613/"
+    },
+    {
+      "id": 49,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "挑战杯丨第十五届“挑战杯”中国大学生创业计划竞赛重庆市选拔赛决赛成功举办",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": "2026-07-08T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15859/"
+    },
+    {
+      "id": 39,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于2013年“挑战杯”中国大学生创业计划竞赛“网络虚拟运营”专项竞赛常规赛第二赛季的竞赛说明",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15576/"
+    },
+    {
+      "id": 36,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于开展第十三届“挑战杯”全国大学生课外学术科技作品竞赛暨第九届“挑战杯”陕西省大学生课外学术科技作品竞赛西安财经学院校内选拔赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/7830/"
+    },
+    {
+      "id": 35,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "上海应用技术学院 关于举办第十三届“挑战杯”全国大学生课外学术科技作品竞赛校内预选赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/7846/"
+    },
+    {
+      "id": 34,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于首届“经纬杯”东华大学大学生课外学术科技作品竞赛 暨第十三届“挑战杯”全国大学生课外学术科技作品竞赛 东华大学选拔赛作品上交的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/11023/"
+    },
+    {
+      "id": 33,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "江西师范大学 关于第十三届“挑战杯”大学生课外学术科技作品竞赛通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/11319/"
+    },
+    {
+      "id": 32,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "北京邮电大学 关于征集第七届“挑战杯”首都大学生课外学术科技作品竞赛参赛作品的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/11859/"
+    },
+    {
+      "id": 31,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于郑州大学第七届“挑战杯”大学生课外学术科技作品竞赛决赛的补充通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/11930/"
+    },
+    {
+      "id": 30,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "【同济大学】关于第九届“挑战杯”中国大学生创业计划竞赛同济大学校内赛相关工作的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15605/"
+    },
+    {
+      "id": 27,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于开展第七届“挑战杯”江苏省大学生创业计划竞赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/974/"
+    },
+    {
+      "id": 26,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于举办第七届“挑战杯\"首都大学生创业计划竞赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/975/"
     },
     {
       "id": 25,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于组织开展第六届“挑战杯”吉林省大学生创业计划竞赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/976/"
+    },
+    {
+      "id": 24,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于组织开展第十二届“挑战杯”广东大学生课外学术科技作品竞赛的预发通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/7833/"
+    },
+    {
+      "id": 23,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "上海理工大学 关于下达第十三届“挑战杯”大学生课外学术科技作品竞赛校内培育计划课题的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/1192/"
+    },
+    {
+      "id": 22,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于公布入围第六届“挑战杯”广东商学院大学生学术科技竞赛复赛作品的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/1228/"
+    },
+    {
+      "id": 21,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于第十三届“挑战杯”全国大学生课外学术科技作品竞赛哲学社会科学类参赛作品参考选题的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/7796/"
+    },
+    {
+      "id": 20,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "中国地质大学（武汉）第九届“挑战杯”大学生课外学术科技作品竞赛决赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-07-08T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/7816/"
+    },
+    {
+      "id": 78,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）进入初赛评审阶段名单通知",
@@ -1385,7 +2515,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/414"
     },
     {
-      "id": 12,
+      "id": 15,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "23 2026.07 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
@@ -1397,31 +2527,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1042/2824.htm"
     },
     {
-      "id": 10,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "07-23 .2026 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
-      "event_type": "final",
-      "event_label": "决赛",
-      "starts_at": "2026-07-20T00:00:00+00:00",
-      "ends_at": "2026-07-20T00:00:00+00:00",
-      "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2804.htm"
-    },
-    {
-      "id": 37,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "07-23 .2026 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
-      "event_type": "other",
-      "event_label": "其他节点",
-      "starts_at": "2026-07-23T00:00:00+00:00",
-      "ends_at": null,
-      "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2804.htm"
-    },
-    {
-      "id": 35,
+      "id": 97,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "23 2026.07 第19届中国大学生计算机设计大赛上海决赛区圆满落幕",
@@ -1433,7 +2539,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1042/2824.htm"
     },
     {
-      "id": 11,
+      "id": 16,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "26 2026.07 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设...",
@@ -1445,31 +2551,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1042/2844.htm"
     },
     {
-      "id": 9,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "07-26 .2026 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设计大赛杭州决赛区圆满落幕",
-      "event_type": "final",
-      "event_label": "决赛",
-      "starts_at": "2026-07-25T00:00:00+00:00",
-      "ends_at": "2026-07-25T00:00:00+00:00",
-      "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2834.htm"
-    },
-    {
-      "id": 38,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "07-26 .2026 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设计大赛杭州决赛区圆满落幕",
-      "event_type": "other",
-      "event_label": "其他节点",
-      "starts_at": "2026-07-26T00:00:00+00:00",
-      "ends_at": null,
-      "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2834.htm"
-    },
-    {
-      "id": 36,
+      "id": 96,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "26 2026.07 物联赋能创新 青春唱响钱塘—2026年第19届中国大学生计算机设...",
@@ -1481,7 +2563,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1042/2844.htm"
     },
     {
-      "id": 24,
+      "id": 77,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛团队名单公示",
@@ -1493,7 +2575,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/415"
     },
     {
-      "id": 22,
+      "id": 75,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛创新实践能力赛总决赛通知",
@@ -1505,19 +2587,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/417"
     },
     {
-      "id": 8,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "08-04 .2026 2026年（第19届）中国大学生计算机设计大赛 第3场国赛决赛在安徽大学圆满落幕",
-      "event_type": "other",
-      "event_label": "其他节点",
-      "starts_at": "2026-08-04T00:00:00+00:00",
-      "ends_at": null,
-      "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2854.htm"
-    },
-    {
-      "id": 23,
+      "id": 76,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛开赛通知",
@@ -1529,7 +2599,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/416"
     },
     {
-      "id": 30,
+      "id": 85,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛创新实践能力赛总决赛通知",
@@ -1541,7 +2611,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/417"
     },
     {
-      "id": 31,
+      "id": 83,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛创新实践能力赛（总决赛）参赛手册",
@@ -1553,7 +2623,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/418"
     },
     {
-      "id": 21,
+      "id": 80,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛创新实践能力赛（总决赛）参赛手册",
@@ -1565,7 +2635,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/418"
     },
     {
-      "id": 39,
+      "id": 11,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "08-30 .2026 2026 年（第 19 届）中国大学生计算机设计大赛 第 6 场国赛决赛在江南大学圆满落幕",
@@ -1577,7 +2647,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1041/2884.htm"
     },
     {
-      "id": 20,
+      "id": 74,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛奖项设置的通知",
@@ -1589,7 +2659,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/420"
     },
     {
-      "id": 7,
+      "id": 13,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "08-23 .2026 2026年（第19届）中国大学生计算机设计大赛第4场国赛决赛在长春圆满落幕",
@@ -1601,7 +2671,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1041/2864.htm"
     },
     {
-      "id": 6,
+      "id": 12,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "08-24 .2026 2026年（第19届）中国大学生计算机设计大赛软件应用与开发类别全国决赛在青岛农业大学圆满落幕",
@@ -1613,7 +2683,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1041/2874.htm"
     },
     {
-      "id": 19,
+      "id": 73,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖团队名单公示",
@@ -1625,7 +2695,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/421"
     },
     {
-      "id": 48,
+      "id": 79,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
@@ -1637,31 +2707,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/422"
     },
     {
-      "id": 45,
-      "competition_id": "13",
-      "competition_name": "信息安全竞赛",
-      "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
-      "event_type": "final",
-      "event_label": "决赛",
-      "starts_at": "2026-08-29T00:00:00+00:00",
-      "ends_at": null,
-      "status": "unverified",
-      "source_url": "http://www.ciscn.cn/announcement/view/422"
-    },
-    {
-      "id": 42,
-      "competition_id": "13",
-      "competition_name": "信息安全竞赛",
-      "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
-      "event_type": "final",
-      "event_label": "决赛",
-      "starts_at": "2026-08-29T00:00:00+00:00",
-      "ends_at": null,
-      "status": "unverified",
-      "source_url": "http://www.ciscn.cn/announcement/view/422"
-    },
-    {
-      "id": 40,
+      "id": 98,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "08-30 .2026 2026 年（第 19 届）中国大学生计算机设计大赛 第 6 场国赛决赛在江南大学圆满落幕",
@@ -1673,31 +2719,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1041/2884.htm"
     },
     {
-      "id": 52,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "14 2026.09 2026年（第19届）中国大学生计算机设计大赛获奖公告",
-      "event_type": "award_announcement",
-      "event_label": "获奖公布",
-      "starts_at": "2026-09-01T00:00:00+00:00",
-      "ends_at": "2026-09-01T00:00:00+00:00",
-      "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1042/2904.htm"
-    },
-    {
-      "id": 51,
-      "competition_id": "21",
-      "competition_name": "计算机设计大赛",
-      "title": "09-14 .2026 2026年（第19届）中国大学生计算机设计大赛获奖公告",
-      "event_type": "award_announcement",
-      "event_label": "获奖公布",
-      "starts_at": "2026-09-01T00:00:00+00:00",
-      "ends_at": "2026-09-01T00:00:00+00:00",
-      "status": "unverified",
-      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2914.htm"
-    },
-    {
-      "id": 41,
+      "id": 10,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "09-01 .2026 2026年（第19届）中国大学生计算机设计大赛 评审结果公示",
@@ -1709,7 +2731,31 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1041/2894.htm"
     },
     {
-      "id": 49,
+      "id": 7,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "14 2026.09 2026年（第19届）中国大学生计算机设计大赛获奖公告",
+      "event_type": "award_announcement",
+      "event_label": "获奖公布",
+      "starts_at": "2026-09-01T00:00:00+00:00",
+      "ends_at": "2026-09-01T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1042/2904.htm"
+    },
+    {
+      "id": 6,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "09-14 .2026 2026年（第19届）中国大学生计算机设计大赛获奖公告",
+      "event_type": "award_announcement",
+      "event_label": "获奖公布",
+      "starts_at": "2026-09-01T00:00:00+00:00",
+      "ends_at": "2026-09-01T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2914.htm"
+    },
+    {
+      "id": 84,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
@@ -1721,31 +2767,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/422"
     },
     {
-      "id": 46,
-      "competition_id": "13",
-      "competition_name": "信息安全竞赛",
-      "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
-      "event_type": "other",
-      "event_label": "其他节点",
-      "starts_at": "2026-09-02T00:00:00+00:00",
-      "ends_at": null,
-      "status": "unverified",
-      "source_url": "http://www.ciscn.cn/announcement/view/422"
-    },
-    {
-      "id": 43,
-      "competition_id": "13",
-      "competition_name": "信息安全竞赛",
-      "title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）顺利举行",
-      "event_type": "other",
-      "event_label": "其他节点",
-      "starts_at": "2026-09-02T00:00:00+00:00",
-      "ends_at": null,
-      "status": "unverified",
-      "source_url": "http://www.ciscn.cn/announcement/view/422"
-    },
-    {
-      "id": 50,
+      "id": 72,
       "competition_id": "13",
       "competition_name": "信息安全竞赛",
       "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖名单公布",
@@ -1757,31 +2779,7 @@
       "source_url": "http://www.ciscn.cn/announcement/view/423"
     },
     {
-      "id": 47,
-      "competition_id": "13",
-      "competition_name": "信息安全竞赛",
-      "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖名单公布",
-      "event_type": "other",
-      "event_label": "其他节点",
-      "starts_at": "2026-09-03T00:00:00+00:00",
-      "ends_at": null,
-      "status": "unverified",
-      "source_url": "http://www.ciscn.cn/announcement/view/423"
-    },
-    {
-      "id": 44,
-      "competition_id": "13",
-      "competition_name": "信息安全竞赛",
-      "title": "第十九届全国大学生信息安全竞赛（作品赛）暨第三届“长城杯” 网数智安全大赛（作品赛）决赛获奖名单公布",
-      "event_type": "other",
-      "event_label": "其他节点",
-      "starts_at": "2026-09-03T00:00:00+00:00",
-      "ends_at": null,
-      "status": "unverified",
-      "source_url": "http://www.ciscn.cn/announcement/view/423"
-    },
-    {
-      "id": 55,
+      "id": 101,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "09-14 .2026 2026年（第19届）中国大学生计算机设计大赛获奖公告",
@@ -1793,7 +2791,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1041/2914.htm"
     },
     {
-      "id": 54,
+      "id": 100,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "14 2026.09 2026年（第19届）中国大学生计算机设计大赛获奖公告",
@@ -1805,7 +2803,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1042/2904.htm"
     },
     {
-      "id": 53,
+      "id": 14,
       "competition_id": "21",
       "competition_name": "计算机设计大赛",
       "title": "14 2026.09 2026年（第19届）中国大学生计算机设计大赛 申诉投诉处理结果...",
@@ -1817,7 +2815,7 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1042/2934.htm"
     },
     {
-      "id": 56,
+      "id": 1,
       "competition_id": "7",
       "competition_name": "数学建模",
       "title": "2026年全国大学生数学建模竞赛赛题讲评与经验交流会通知",
@@ -1827,6 +2825,44 @@
       "ends_at": null,
       "status": "unverified",
       "source_url": "https://www.mcm.edu.cn/html_cn/node/74ca2bd675a8399782a41dffa15f0910.html"
+    },
+    {
+      "id": 69,
+      "competition_id": "17",
+      "competition_name": "工程实践创新大赛",
+      "title": "第六届全国大学生工程训练综合能力竞赛-决赛参赛队名单 (点击： )",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": null,
+      "ends_at": "2019-05-20T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.gcxl.edu.cn/info/1049/1658.htm"
     }
-  ]
+  ],
+  "grades": {
+    "portal_url": "https://v45lmyn1.yichafen.com/",
+    "checked_at": "2026-09-18T05:17:15Z",
+    "latest_published_at": "2026-09-18",
+    "has_recent": true,
+    "notices": [
+      {
+        "title": "24级大二学年排名",
+        "url": "https://v45lmyn1.yichafen.com/qz/162thUDBPt",
+        "published_at": "2026-09-18",
+        "source": "yichafen"
+      },
+      {
+        "title": "20级档案去向核对",
+        "url": "https://v45lmyn1.yichafen.com/qz/O8A5WjFAht",
+        "published_at": "2024-07-05",
+        "source": "yichafen"
+      },
+      {
+        "title": "16级档案去向查询",
+        "url": "https://v45lmyn1.yichafen.com/qz/p9v1UBELmt",
+        "published_at": "2022-01-24",
+        "source": "yichafen"
+      }
+    ]
+  }
 }

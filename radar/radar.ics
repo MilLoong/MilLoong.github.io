@@ -4,9 +4,169 @@ PRODID:-//UESTC Baoyan Competition Radar //CN
 CALSCALE:GREGORIAN
 X-WR-CALNAME:电子科大推免竞赛日程雷达
 BEGIN:VEVENT
+SUMMARY:挑战杯学术竞赛 · 复赛
+DTSTART;VALUE=DATE:20140303
+UID:milestone-28@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .tiaozhanbei.net/article/15606/\n证据: （二）复赛（10月下旬至1
+ 4年3月上旬） 1、进入复赛的各参赛团队，须在接到参加
+ 复赛通知的5个工作日内提交复赛阶段工作计划，并可根
+ 据实际需要申请一定额度的立项资金用
+URL:https://www.tiaozhanbei.net/article/15606/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 复赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 复赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 复赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 复赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:挑战杯学术竞赛 · 决赛
+DTSTART;VALUE=DATE:20140328
+UID:milestone-29@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.45\n官方链接: https://www
+ .tiaozhanbei.net/article/15606/\n证据: 4纸打印。 3、在2014年3月
+ 上旬举行复赛书面评审，评出20件左右作品进入终审决赛
+ 。 （三）决赛（14年3月下旬） 1、在2014年3月28日前提交
+ 进一步修改完善
+URL:https://www.tiaozhanbei.net/article/15606/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:工程实践创新大赛 · 决赛
+DTSTART;VALUE=DATE:20190524
+UID:milestone-70@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .gcxl.edu.cn/info/1049/1674.htm\n证据: 中通过 Wi-Fi 发送、接收
+ 任务码的源程序代码（ C# ），任务码数据格式将在决赛
+ 阶段现场公布。 全国大学生工程训练综合能力竞赛 组委
+ 会 秘书处 2019 年 5
+URL:https://www.gcxl.edu.cn/info/1049/1674.htm
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:工程实践创新大赛 · 获奖公布
+DTSTART;VALUE=DATE:20190610
+UID:milestone-68@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.65\n官方链接: https://www
+ .gcxl.edu.cn/info/1049/1690.htm\n证据: ，具体名单见附件。天津
+ 职业技术师范大学获得优秀组织奖。 全国大学生工程训
+ 练综合能力竞赛组委会秘书处 2019.6.10 附件【 第六届全
+ 国工训竞赛-“S”型赛道常规赛获奖名单1.pdf 】 已下载 
+ 次 附件【 第六届全
+URL:https://www.gcxl.edu.cn/info/1049/1690.htm
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 获奖公布（提前 30 天
+ ）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 获奖公布（提前 14 天
+ ）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 获奖公布（提前 7 天
+ ）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 获奖公布（提前 1 天
+ ）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:挑战杯学术竞赛 · 决赛
+DTSTART;VALUE=DATE:20241031
+DTEND;VALUE=DATE:20241103
+UID:milestone-53@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .tiaozhanbei.net/article/15807/\n证据: 2 7 00 多所高校的 4 0 余万
+ 件作品、 3 00 多万名学生参赛， 终审决赛于 10 月 31 日
+ 到 11 月 3 日在 南京 大学举行，共有 640 件
+URL:https://www.tiaozhanbei.net/article/15807/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 获奖公布
 DTSTART;VALUE=DATE:20250928
-UID:milestone-16@uestc-baoyan-radar
+UID:milestone-9@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1043/2434.htm\n证据: 评选出获奖作品3625件，
  其中一等奖147件、二等奖989件、三等奖2489件。获奖名单
@@ -35,9 +195,133 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:挑战杯学术竞赛 · 决赛
+DTSTART;VALUE=DATE:20251102
+UID:milestone-38@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .tiaozhanbei.net/article/15813/\n证据: 移动全国大学生课外学术
+ 科技作品竞赛主体赛于2025年11月2日在江苏南京举行终审
+ 决赛，在国家公证人员监督公证下，完成了成绩统计和
+ 奖项评定工作。竞赛评审委员会拟授特等
+URL:https://www.tiaozhanbei.net/article/15813/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:挑战杯学术竞赛 · 决赛
+DTSTART;VALUE=DATE:20251103
+UID:milestone-45@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .tiaozhanbei.net/article/15811/\n证据: 报备 高校专区 首页 挑战
+ 杯动态 赛事通知 DAY1丨第十九届“挑战杯”竞赛终审决
+ 赛，开赛！ DAY1丨第十九届“挑战杯”竞赛终审决赛，开
+ 赛！ 组委会 发表于 20
+URL:https://www.tiaozhanbei.net/article/15811/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:挑战杯学术竞赛 · 决赛
+DTSTART;VALUE=DATE:20251103
+UID:milestone-43@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .tiaozhanbei.net/article/15805/\n证据: 领域主擂台赛圆满落幕！
+  2025年“挑战杯”吉林省大学生课外学术科技作品竞赛终
+ 审决赛成功举办 11月3日！与120家名企面对面：“挑战杯
+ ”竞赛专场招聘会，开启你的职
+URL:https://www.tiaozhanbei.net/article/15805/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:挑战杯学术竞赛 · 获奖公布
+DTSTART;VALUE=DATE:20260312
+UID:milestone-37@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .tiaozhanbei.net/article/15817/\n证据: 绩公布 第十八届“挑战
+ 杯”全国大学生课外学术科技作品竞赛“揭榜挂帅”专
+ 项赛拟授奖名单公示 第十八届“挑战杯”全国大学生课
+ 外学术科技作品竞赛“揭榜挂帅”专项赛拟授奖名单公
+URL:https://www.tiaozhanbei.net/article/15817/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 获奖公布（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 获奖公布（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 获奖公布（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 获奖公布（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 材料/作品截止
 DTSTART;VALUE=DATE:20260417
-UID:milestone-18@uestc-baoyan-radar
+UID:milestone-17@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1045/2013.htm\n证据: 4C2026参赛作品提交要求
  （4月17日）
@@ -68,40 +352,134 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:计算机设计大赛 · 决赛
-DTSTART;VALUE=DATE:20260625
-UID:milestone-13@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
- ds.blcu.edu.cn/info/1042/2794.htm\n证据: 者：  时间：2026-06-24 
-  浏览： 为了让参赛作品能以更高质量参加国赛决赛，
- 经大赛组委会研究决定，参赛作者可以在限定时间内对
- 报名表和参赛作品相关内容进行核
-URL:https://jsjds.blcu.edu.cn/info/1042/2794.htm
+SUMMARY:挑战杯学术竞赛 · 报名开始
+DTSTART;VALUE=DATE:20260530
+DTEND;VALUE=DATE:20260630
+UID:milestone-41@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .tiaozhanbei.net/article/15836/\n证据: 系统 审核。请参赛 选手 
+ 注意查看审核状态，如审核不通过，需重新提交。 3.系
+ 统开放报名时 间为 2026 年 5 月 30 日 —6 月 30 日，逾期
+ 后系统将自动关
+URL:https://www.tiaozhanbei.net/article/15836/
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
+DESCRIPTION:提醒: 挑战杯学术竞赛 报名开始（提前 30 天）
 TRIGGER:-P30D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
+DESCRIPTION:提醒: 挑战杯学术竞赛 报名开始（提前 14 天）
 TRIGGER:-P14D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
+DESCRIPTION:提醒: 挑战杯学术竞赛 报名开始（提前 7 天）
 TRIGGER:-P7D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
+DESCRIPTION:提醒: 挑战杯学术竞赛 报名开始（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:工程实践创新大赛 · 决赛
+DTSTART;VALUE=DATE:20260601
+UID:milestone-71@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .gcxl.edu.cn/info/1049/1661.htm\n证据: 6:30 ～ 17:30 闭幕式 注： 
+ ① 6 月 1 日 12:30 ，机器人决赛队每队一名选手在体育馆
+ 副馆检录处检录取车，统一乘车抵赛场，其余选手自行
+ 前往竞赛社
+URL:https://www.gcxl.edu.cn/info/1049/1661.htm
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:挑战杯学术竞赛 · 决赛
+DTSTART;VALUE=DATE:20260619
+UID:milestone-47@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .tiaozhanbei.net/article/15846/\n证据: 挑战杯动态 活动风采 挑
+ 战杯丨第十五届“挑战杯”黑龙江省大学生创业计划竞
+ 赛终审决赛在东北林业大学举行 挑战杯丨第十五届“挑
+ 战杯”黑龙江省大学生创业计划竞赛终审决赛
+URL:https://www.tiaozhanbei.net/article/15846/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:挑战杯学术竞赛 · 决赛
+DTSTART;VALUE=DATE:20260708
+UID:milestone-49@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .tiaozhanbei.net/article/15859/\n证据: 战杯动态 活动风采 挑战
+ 杯丨第十五届“挑战杯”中国大学生创业计划竞赛重庆
+ 市选拔赛决赛成功举办 挑战杯丨第十五届“挑战杯”中
+ 国大学生创业计划竞赛重庆市选拔赛决赛成功举
+URL:https://www.tiaozhanbei.net/article/15859/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20260720
-UID:milestone-12@uestc-baoyan-radar
+UID:milestone-15@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1042/2824.htm\n证据: 特色成果集中涌现，充
  分体现大赛科创美育深度耦合的办赛特色。 7月20日下午
@@ -131,39 +509,8 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
-DTSTART;VALUE=DATE:20260720
-UID:milestone-10@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
- ds.blcu.edu.cn/info/1041/2804.htm\n证据: 特色成果集中涌现，充
- 分体现大赛科创美育深度耦合的办赛特色。 7月20日下午
- ，上海决赛区闭幕式暨颁奖典礼如期举行，大赛组织委
- 员会法人单位北京语言大学校党委书记曲昭伟教
-URL:https://jsjds.blcu.edu.cn/info/1041/2804.htm
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20260725
-UID:milestone-11@uestc-baoyan-radar
+UID:milestone-16@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1042/2844.htm\n证据: 解读中华优秀传统文化
  ，用数字作品搭建起中外文化交流的桥梁。 7月25日下午
@@ -192,40 +539,9 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:计算机设计大赛 · 决赛
-DTSTART;VALUE=DATE:20260725
-UID:milestone-9@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
- ds.blcu.edu.cn/info/1041/2834.htm\n证据: 解读中华优秀传统文化
- ，用数字作品搭建起中外文化交流的桥梁。 7月25日下午
- ，杭州决赛区闭幕式暨颁奖典礼如期举行 ， 原教育部高
- 等学校文科计算机基础教学指导委员会副主
-URL:https://jsjds.blcu.edu.cn/info/1041/2834.htm
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 计算机设计大赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:20260802
-UID:milestone-22@uestc-baoyan-radar
+UID:milestone-75@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
  ciscn.cn/announcement/view/417\n证据: 参与。经过全国线上初赛
  和全国五大赛区层层选拔，最终遴选出80支优秀队伍入围
@@ -256,7 +572,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:20260811
-UID:milestone-21@uestc-baoyan-radar
+UID:milestone-80@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
  ciscn.cn/announcement/view/418\n证据: 院代章） 2026年8月11 日 第
  十九届全国大学生信息安全竞赛创新实践能力赛（总决
@@ -287,7 +603,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 决赛
 DTSTART;VALUE=DATE:20260816
-UID:milestone-39@uestc-baoyan-radar
+UID:milestone-11@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1041/2884.htm\n证据: 创意赋能科创实践，集
  中展现新时代本科青年学子的创新思维与技术实践能力
@@ -318,69 +634,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:信息安全竞赛 · 决赛
 DTSTART;VALUE=DATE:20260829
-UID:milestone-48@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
- ciscn.cn/announcement/view/422\n证据: 库 首页 公告列表 公告详
- 情 第十九届全国大学生信息安全竞赛（创新实践能力赛
- ）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）
- 顺利举行 8月29日至30日，第十九届全
-URL:http://www.ciscn.cn/announcement/view/422
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:信息安全竞赛 · 决赛
-DTSTART;VALUE=DATE:20260829
-UID:milestone-45@uestc-baoyan-radar
-DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
- ciscn.cn/announcement/view/422\n证据: 库 首页 公告列表 公告详
- 情 第十九届全国大学生信息安全竞赛（创新实践能力赛
- ）总决赛暨颁奖仪式在齐鲁工业大学（山东省科学院）
- 顺利举行 8月29日至30日，第十九届全
-URL:http://www.ciscn.cn/announcement/view/422
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 30 天）
-TRIGGER:-P30D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 14 天）
-TRIGGER:-P14D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 7 天）
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒: 信息安全竞赛 决赛（提前 1 天）
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:信息安全竞赛 · 决赛
-DTSTART;VALUE=DATE:20260829
-UID:milestone-42@uestc-baoyan-radar
+UID:milestone-79@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: http://www.
  ciscn.cn/announcement/view/422\n证据: 库 首页 公告列表 公告详
  情 第十九届全国大学生信息安全竞赛（创新实践能力赛
@@ -411,7 +665,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 获奖公布
 DTSTART;VALUE=DATE:20260901
-UID:milestone-52@uestc-baoyan-radar
+UID:milestone-7@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1042/2904.htm\n证据: 1 件，其中一等奖 200 件
  、二等奖 1104 件 、 三等奖 2927 件。获奖名单详见附件。
@@ -442,7 +696,7 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:计算机设计大赛 · 获奖公布
 DTSTART;VALUE=DATE:20260901
-UID:milestone-51@uestc-baoyan-radar
+UID:milestone-6@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://jsj
  ds.blcu.edu.cn/info/1041/2914.htm\n证据: 1 件，其中一等奖 200 件
  、二等奖 1104 件 、 三等奖 2927 件。获奖名单详见附件。
@@ -467,6 +721,37 @@ END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:提醒: 计算机设计大赛 获奖公布（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:工程实践创新大赛 · 决赛
+DTSTART;VALUE=DATE:20190520
+UID:milestone-69@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.50\n官方链接: https://www
+ .gcxl.edu.cn/info/1049/1658.htm\n证据: 9-05-20 00:39 (点击： ) 第六
+ 届全国大学生工程训练综合能力竞赛-决赛参赛队名单 工
+ 训赛字6-14【2019】 详细内容见附件 全国大学生工程训练
+ 综合
+URL:https://www.gcxl.edu.cn/info/1049/1658.htm
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 工程实践创新大赛 决赛（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT

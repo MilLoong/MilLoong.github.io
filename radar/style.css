@@ -413,6 +413,26 @@ article.cat-row {
   gap: 0;
   min-height: 0;
 }
+.grades-feed {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+.grade-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.7rem 0.85rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.grade-item .meta {
+  white-space: nowrap;
+}
 .cat-box {
   display: flex;
   flex-direction: column;
