@@ -279,6 +279,7 @@
             <li><a href="#543-通信communication">5.4.3 通信（<code>COMMUNICATION</code>）</a></li>
           </ul>
         </li>
+        <li><a href="#55-判题负载均衡-">5.5 判题负载均衡 ⚖️</a></li>
       </ul>
     </li>
     <li><a href="#6-api-模块-">6. API 模块 🌐</a>
@@ -558,6 +559,7 @@ NLOJ 概述 🚀
 <a class="header-anchor" href="#7-%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9-"></a>
 7. 注意事项 ⚠️
 </h2><p>本项目是编者 <strong>自研的、结合相关知识自己架构</strong> 的 <strong>MVP（Minimum Viable Product，最小可行产品）</strong>，所以难免会有 <strong>考虑不周、实现不足</strong> 的地方，还望读者 <strong>批判性地 学习 和 看待</strong>。</p>
+<hr>
 <h1 id="1-公共模块-">
 <a class="header-anchor" href="#1-%e5%85%ac%e5%85%b1%e6%a8%a1%e5%9d%97-"></a>
 1. 公共模块 🧩
@@ -1939,6 +1941,7 @@ NLOJ 概述 🚀
 <p>Doxygen 接口：<a href="https://github.com/MilLoong/Nailong-OJ/blob/master/nl-common/include/nloj/common/log.h"><code>log.h</code></a><br>
 实现：<a href="https://github.com/MilLoong/Nailong-OJ/blob/master/nl-common/src/log.cpp"><code>log.cpp</code></a></p>
 </blockquote>
+<hr>
 <h1 id="2-用户模块-">
 <a class="header-anchor" href="#2-%e7%94%a8%e6%88%b7%e6%a8%a1%e5%9d%97-"></a>
 2. 用户模块 👤
@@ -5005,13 +5008,14 @@ NLOJ 概述 🚀
 <h1 id="5-判题模块-">
 <a class="header-anchor" href="#5-%e5%88%a4%e9%a2%98%e6%a8%a1%e5%9d%97-"></a>
 5. 判题模块 ⚖️
-</h1><p><strong>判题模块</strong>（<code>nl-judge</code>）负责 <strong>沙箱跑代码、消费判题任务写回终态，以及独立判题节点的心跳 / 超时回收</strong></p>
+</h1><p><strong>判题模块</strong>（<code>nl-judge</code>）负责 <strong>沙箱跑代码、消费判题任务写回终态，以及独立判题节点的心跳 / 最小负载 / 超时回收</strong></p>
 <p>无单独 HTTP 接口，任务来自消息队列里的 <code>JudgeTaskMessage</code></p>
 <p>包含：</p>
 <ul>
 <li>🧪 <strong>判题沙箱</strong>（编译一次 + 单容器跑完全部用例）</li>
 <li>⚙️ <strong>执行判题任务</strong>（<code>run_judge_task</code>）</li>
 <li>🖥️ <strong>判题节点</strong>（心跳、取任务、超时回收）</li>
+<li>⚖️ <strong>负载均衡</strong>（在线节点里选当前任务数最少的一台）</li>
 <li>🧩 <strong>特殊题型</strong>（<code>SPJ</code> / 交互 / 通信）</li>
 </ul>
 <h2 id="51-判题沙箱-">
@@ -5274,7 +5278,7 @@ NLOJ 概述 🚀
 <p><code>KEYS nloj:judge:node:*</code>，去掉前缀</p>
 </li>
 <li>
-<p>给 health / 展示用，<strong>不</strong>靠它派活</p>
+<p>给 health 展示在线节点，也给 <code>least_loaded_online_node</code> 选机器</p>
 </li>
 <li>
 <p><strong>骨架：</strong></p>
@@ -5348,7 +5352,10 @@ NLOJ 概述 🚀
     C -->|"是"| D["reclaim_stale_judging"]
     C -->|"否"| E["try_pop_judge_task"]
     D --> E
-    E -->|"有任务"| F["run_judge_task"]
+    E -->|"有任务"| L{"归自己跑?"}
+    L -->|"让给更闲的节点"| R["重新入队并 ack"]
+    R --> B
+    L -->|"是"| F["run_judge_task"]
     F --> G["ack_judge_task"]
     G --> B
     E -->|"无"| H["sleep 50ms"]
@@ -5364,8 +5371,10 @@ NLOJ 概述 🚀
 <p><strong>骨架：</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">JudgeNode</span><span class="o">::</span><span class="n">run</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// TODO: hb_.start()
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 循环直到 stop_：到期则 reclaim；弹出任务则 run_judge_task + ack；否则短睡
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: hb_.stop()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 循环直到 stop_：到期则 reclaim
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 弹出任务后，RabbitMQ 且更闲节点不是自己，则重新入队并 ack
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 否则 set_load+1，run_judge_task，ack，set_load-1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 队列空则短睡；退出时 hb_.stop()
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></div></li>
 </ul>
@@ -5543,6 +5552,128 @@ NLOJ 概述 🚀
 </pre><blockquote>
 <p>语言辅助：<a href="https://github.com/MilLoong/Nailong-OJ/blob/master/nl-judge/include/nloj/judge/language.h"><code>language.h</code></a><br>
 <code>write_job_files</code> / <code>runner</code> / <code>run_host_spj</code>：<a href="https://github.com/MilLoong/Nailong-OJ/blob/master/nl-judge/src/sandbox.cpp"><code>sandbox.cpp</code></a></p>
+</blockquote>
+<h2 id="55-判题负载均衡-">
+<a class="header-anchor" href="#55-%e5%88%a4%e9%a2%98%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1-"></a>
+5.5 判题负载均衡 ⚖️
+</h2><p><strong>负载均衡</strong> 决定多台 <code>nloj_judge_node</code> 同时在线时，<strong>谁来跑这一题</strong>：选 <strong>当前任务数最少</strong> 的 <strong>在线节点</strong></p>
+<p>节点取到之后，若自己不是当前最闲的那台，就把消息放回去</p>
+<p>类型是 <strong><code>JudgeMachine</code></strong> / <strong><code>LoadBalance</code></strong>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">JudgeMachine</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">id</span><span class="p">;</span>  <span class="c1">// 节点 id
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">load</span><span class="p">;</span>        <span class="c1">// 正在处理的任务数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">online</span><span class="p">;</span>      <span class="c1">// 1=可派活
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">LoadBalance</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">upsert</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">load</span><span class="p">,</span> <span class="kt">int</span> <span class="n">online</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">set_online</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">online</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">inc_load</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">dec_load</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">pick</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>相关函数：</p>
+<ul>
+<li>
+<p><code>LoadBalance::upsert</code> / <code>set_online</code> / <code>inc_load</code> / <code>dec_load</code>（辅助函数）：维护内存里的 <strong>机器表</strong></p>
+<ul>
+<li>
+<p><code>upsert</code> 按 <code>id</code> 覆盖，没有则追加；<code>load &lt; 0</code> 写成 0</p>
+</li>
+<li>
+<p><code>inc_load</code> / <code>dec_load</code> 找不到这台机器返回 <code>-1</code>；<code>dec_load</code> 不低于 0</p>
+</li>
+<li>
+<p><strong>骨架：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">LoadBalance</span><span class="o">::</span><span class="n">upsert</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">load</span><span class="p">,</span> <span class="kt">int</span> <span class="n">online</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: id 空则 return
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 已有则覆盖 load / online，否则 push
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><code>LoadBalance::pick(out)</code>：选出 <strong>在线 且 负载最低</strong> 的节点</p>
+<ul>
+<li>
+<p>跳过 <code>online != 1</code></p>
+</li>
+<li>
+<p>负载相同取 <code>id</code> 字典序较小者</p>
+</li>
+<li>
+<p>没有在线机器返回 0</p>
+</li>
+<li>
+<p><strong>骨架：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">LoadBalance</span><span class="o">::</span><span class="n">pick</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: 加锁扫 machines_，跳过下线
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 负载更小，或负载相同且 id 更小，则记下
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 一个都没有 return 0，否则写入 out 并 return 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><code>write_judge_load(node_id, load, ttl_sec)</code>：把本节点任务数写到 Redis</p>
+<ul>
+<li>
+<p>key：<code>nloj:judge:load:{id}</code>，<code>SET EX</code>，值和心跳同一套 TTL</p>
+</li>
+<li>
+<p>心跳线程续约时顺手再写一遍，节点退出时删掉</p>
+</li>
+<li>
+<p><strong>骨架：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">write_judge_load</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">node_id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">load</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ttl_sec</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: id 空或 ttl&lt;=0 return 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: load&lt;0 写成 0，redis_set_ex
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><code>least_loaded_online_node(out)</code>：用 <code>list_judge_nodes</code> 和负载做一次 <code>pick</code></p>
+<ul>
+<li>
+<p><code>list_judge_nodes</code> 为空则返回 0（Redis 不可用也走这里）</p>
+</li>
+<li>
+<p>负载 key 没有，按 0 算</p>
+</li>
+<li>
+<p><strong>骨架：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">least_loaded_online_node</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO: list_judge_nodes，空则 return 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: 每台 upsert 进 LoadBalance（读不到负载当 0，online=1）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// TODO: return pick(out)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><code>JudgeNode::run</code> 里怎么用：</p>
+<ul>
+<li>只有 <strong>RabbitMQ</strong> 才让活。进程内队列别的节点看不见，取到就自己跑</li>
+<li><code>least_loaded_online_node</code> 选中的不是自己：把消息 <code>delivery_tag</code> 清掉再 <code>publish</code>，成功后 <code>ack</code> 原消息，短睡再循环</li>
+<li>选中自己，或选不出来：<code>set_load(+1)</code> → <code>run_judge_task</code> → <code>ack</code> → <code>set_load(-1)</code></li>
+<li>内嵌在 API 里的 <code>judge_worker_loop</code> <strong>不走</strong> 这套选择。多节点时把 <code>NLOJ_EMBED_WORKER</code> 设成 <code>0</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>流程示意：</strong></p>
+<pre class="mermaid">
+  flowchart TB
+    A["try_pop 到一条任务"] --> B{"RabbitMQ 且有更闲节点?"}
+    B -->|"是"| C["重新入队 + ack"]
+    B -->|"否"| D["本节点 load+1"]
+    D --> E["run_judge_task"]
+    E --> F["ack，load-1"]
+</pre><blockquote>
+<p>选择算法：<a href="https://github.com/MilLoong/Nailong-OJ/blob/master/nl-judge/include/nloj/judge/load_balance.h"><code>load_balance.h</code></a><br>
+实现：<a href="https://github.com/MilLoong/Nailong-OJ/blob/master/nl-judge/src/load_balance.cpp"><code>load_balance.cpp</code></a><br>
+节点接入：<a href="https://github.com/MilLoong/Nailong-OJ/blob/master/nl-judge/src/node.cpp"><code>node.cpp</code></a></p>
 </blockquote>
 <h1 id="6-api-模块-">
 <a class="header-anchor" href="#6-api-%e6%a8%a1%e5%9d%97-"></a>
@@ -6265,10 +6396,10 @@ Worker / 开关：<a href="https://github.com/MilLoong/Nailong-OJ/blob/master/nl
         </a>
       </div><div>
         <span class="icon-brush"
-          >&nbsp;31.6k</span
+          >&nbsp;31.8k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;02:39</span>
+        <span class="icon-coffee">&nbsp;02:40</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -6419,6 +6550,7 @@ Worker / 开关：<a href="https://github.com/MilLoong/Nailong-OJ/blob/master/nl
             <li><a href="#543-通信communication">5.4.3 通信（<code>COMMUNICATION</code>）</a></li>
           </ul>
         </li>
+        <li><a href="#55-判题负载均衡-">5.5 判题负载均衡 ⚖️</a></li>
       </ul>
     </li>
     <li><a href="#6-api-模块-">6. API 模块 🌐</a>
