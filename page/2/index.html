@@ -50,8 +50,8 @@
     content="/"
   />
   <meta property="article:author" content="MilLoong" />
-  <meta property="article:published_time" content="2026-09-18T10:40:00&#43;08:00" />
-  <meta property="article:modified_time" content="2026-09-18T10:40:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta property="article:published_time" content="2026-09-19T19:45:00&#43;08:00" />
+  <meta property="article:modified_time" content="2026-09-19T19:45:00&#43;08:00" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="https://MilLoong.github.io/index.xml" title="MilLoong的博客">
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -162,7 +162,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">19</div>
+    <div>文章</div><div class="sidebar-state-number">20</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -172,7 +172,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">36</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -257,6 +257,15 @@
         <ul class="tag-list" itemprop="keywords"><li class="tag-item">
                 <a
                   class="tag-link"
+                  href="/tags/asan/"
+                  aria-label="标签: ASan"
+                  title="ASan"
+                >
+                  ASan
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
                   href="/tags/bios/"
                   aria-label="标签: BIOS"
                   title="BIOS"
@@ -335,15 +344,6 @@
                 >
                   KMP
                 </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/linux/"
-                  aria-label="标签: Linux"
-                  title="Linux"
-                >
-                  Linux
-                </a>
               </li></ul>
       </div>
     </div>
@@ -353,6 +353,11 @@
     data-aos="fade-up"
   >
     <h3 class="widget-title">标签云</h3><div class="widget tagcloud"><a
+            style="font-size:10px"
+            href="/tags/asan/"
+            aria-label="标签: ASan"
+            >ASan</a
+          ><a
             style="font-size:10px"
             href="/tags/bios/"
             aria-label="标签: BIOS"
@@ -447,11 +452,6 @@
             href="/tags/uefi/"
             aria-label="标签: UEFI"
             >UEFI</a
-          ><a
-            style="font-size:10px"
-            href="/tags/unicode/"
-            aria-label="标签: Unicode"
-            >Unicode</a
           ></div>
   </div>
 </div><div class="widget-wrapper">
@@ -462,6 +462,8 @@
       <h3 class="widget-title">最新文章</h3>
       <div class="widget">
         <ul><li>
+              <a href="/post/valgrind-asan/" title="C&#43;&#43; 内存泄漏检测：Valgrind 和 ASan">C&#43;&#43; 内存泄漏检测：Valgrind 和 ASan</a>
+            </li><li>
               <a href="/post/nailong-platform/" title="NaiLong-platform——Spring Boot 招新平台后端">NaiLong-platform——Spring Boot 招新平台后端</a>
             </li><li>
               <a href="/post/strcpy-strncpy-memcpy-memmove/" title="strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析">strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析</a>
@@ -469,8 +471,6 @@
               <a href="/post/nailong-oj/" title="NLOJ——C&#43;&#43;20实现的轻量级OJ后端">NLOJ——C&#43;&#43;20实现的轻量级OJ后端</a>
             </li><li>
               <a href="/post/git-education/" title="git教程——下载，SSH配置，clone，pull，push，pull request（PR）">git教程——下载，SSH配置，clone，pull，push，pull request（PR）</a>
-            </li><li>
-              <a href="/post/cnf-dnf-truth-tables/" title="真值表计算主合取范式和主析取范式的理论依据">真值表计算主合取范式和主析取范式的理论依据</a>
             </li></ul>
       </div>
     </div>
@@ -483,13 +483,59 @@
     data-aos="fade-up"
   ><a
         class="post-link"
+        href="/post/linux-blkdev-cache/"
+        aria-label="手写 Linux 块设备：RAM 磁盘和 Buffer Cache"
+        title="手写 Linux 块设备：RAM 磁盘和 Buffer Cache"
+      >
+      </a><div
+      class="
+        post-cover left
+      "
+    ><img
+          data-src="/backgrounds/bg33.webp"
+          data-sizes="auto"
+          alt=""
+          class="lazyload"
+        /></div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span
+          ><span class="icon-calendar"></span
+          >2025-10-27</span
+        ><span
+          ><span class="icon-pencil"></span
+          >2223 字</span
+        >
+        <span
+          ><span class="icon-clock"></span
+          >11 分钟</span
+        >
+      </div>
+      <h2 class="post-title">手写 Linux 块设备：RAM 磁盘和 Buffer Cache</h2>
+      <article class="post-article"> 手写 Linux 块设备：RAM 磁盘和 Buffer Cache 前言 本文是关于 内核模块 的，从最简单的 hello 模块开始，再做成 1MB 的 RAM 磁盘，最后按 xv6 的 Buffer Cache 加一层块缓存
+内核版本是 6.6.87.2，环境是 WSL
+感觉好像就 请求处理 有点区别，就懒得往 4.x / 5.x 上弄了
+内核模块 简述 内核 是操作系统的核心，基于硬件的第一层软件扩充，提供最基本的功能，决定性能和稳定性
+用户程序跑在 用户空间（User space），内核跑在 内核空间（Kernel space）
+Kernel space 可以执行 任意命令，调用系统的 …</article>
+    </div>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div
+    class="
+      post-wrap right
+    "
+    data-aos="fade-up"
+  ><a
+        class="post-link"
         href="/post/utf-lexicographic-order/"
         aria-label="UTF-8、UTF-16、UTF-32 的字典序比较"
         title="UTF-8、UTF-16、UTF-32 的字典序比较"
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg32.webp"
@@ -523,7 +569,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -534,7 +580,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg15.webp"
@@ -569,7 +615,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -580,7 +626,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg4.webp"
@@ -613,7 +659,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -624,7 +670,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg6.webp"
@@ -658,7 +704,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -669,7 +715,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg5.webp"
@@ -701,7 +747,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -712,7 +758,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg7.webp"
@@ -746,7 +792,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -757,7 +803,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg8.webp"
@@ -798,7 +844,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -809,7 +855,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg9.webp"
@@ -842,7 +888,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -853,7 +899,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg10.webp"
@@ -913,10 +959,10 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
         </a>
       </div><div>
         <span class="icon-brush"
-          >&nbsp;30.7k</span
+          >&nbsp;31.6k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;02:34</span>
+        <span class="icon-coffee">&nbsp;02:39</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -950,7 +996,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">19</div>
+    <div>文章</div><div class="sidebar-state-number">20</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -960,7 +1006,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">36</div>
+    <div class="sidebar-state-number">39</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
