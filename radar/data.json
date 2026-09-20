@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T05:17:14.111798+00:00",
+  "generated_at": "2026-09-20T02:41:23.418241+00:00",
   "competitions": [
     {
       "id": "1",
@@ -1398,9 +1398,9 @@
       "competition_id": "21",
       "name": "计算机设计大赛",
       "full_name": "中国大学生计算机设计大赛",
-      "count": 19,
+      "count": 20,
       "range_start": "2025-09-27",
-      "range_end": "2026-09-14",
+      "range_end": "2026-09-18",
       "messages": [
         {
           "id": 99,
@@ -1591,6 +1591,16 @@
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://jsjds.blcu.edu.cn/info/1042/2934.htm"
+        },
+        {
+          "id": 102,
+          "title": "09-18 .2026 中国大学生计算机设计大赛二十周年征文通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-09-18T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://jsjds.blcu.edu.cn/info/1041/2944.htm"
         }
       ]
     },
@@ -2827,6 +2837,18 @@
       "source_url": "https://www.mcm.edu.cn/html_cn/node/74ca2bd675a8399782a41dffa15f0910.html"
     },
     {
+      "id": 102,
+      "competition_id": "21",
+      "competition_name": "计算机设计大赛",
+      "title": "09-18 .2026 中国大学生计算机设计大赛二十周年征文通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-09-18T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://jsjds.blcu.edu.cn/info/1041/2944.htm"
+    },
+    {
       "id": 69,
       "competition_id": "17",
       "competition_name": "工程实践创新大赛",
@@ -2841,7 +2863,7 @@
   ],
   "grades": {
     "portal_url": "https://v45lmyn1.yichafen.com/",
-    "checked_at": "2026-09-18T05:17:15Z",
+    "checked_at": "2026-09-20T02:41:25Z",
     "latest_published_at": "2026-09-18",
     "has_recent": true,
     "notices": [
