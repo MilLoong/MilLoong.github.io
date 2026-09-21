@@ -50,8 +50,8 @@
     content="/"
   />
   <meta property="article:author" content="MilLoong" />
-  <meta property="article:published_time" content="2026-09-19T19:45:00&#43;08:00" />
-  <meta property="article:modified_time" content="2026-09-19T19:45:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta property="article:published_time" content="2026-09-21T17:37:00&#43;08:00" />
+  <meta property="article:modified_time" content="2026-09-21T17:37:00&#43;08:00" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="https://MilLoong.github.io/index.xml" title="MilLoong的博客">
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -162,7 +162,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">20</div>
+    <div>文章</div><div class="sidebar-state-number">21</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -172,7 +172,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">39</div>
+    <div class="sidebar-state-number">40</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -462,6 +462,8 @@
       <h3 class="widget-title">最新文章</h3>
       <div class="widget">
         <ul><li>
+              <a href="/post/bubble-sort/" title="深入了解 冒泡排序">深入了解 冒泡排序</a>
+            </li><li>
               <a href="/post/valgrind-asan/" title="C&#43;&#43; 内存泄漏检测：Valgrind 和 ASan">C&#43;&#43; 内存泄漏检测：Valgrind 和 ASan</a>
             </li><li>
               <a href="/post/nailong-platform/" title="NaiLong-platform——Spring Boot 招新平台后端">NaiLong-platform——Spring Boot 招新平台后端</a>
@@ -469,8 +471,6 @@
               <a href="/post/strcpy-strncpy-memcpy-memmove/" title="strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析">strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析</a>
             </li><li>
               <a href="/post/nailong-oj/" title="NLOJ——C&#43;&#43;20实现的轻量级OJ后端">NLOJ——C&#43;&#43;20实现的轻量级OJ后端</a>
-            </li><li>
-              <a href="/post/git-education/" title="git教程——下载，SSH配置，clone，pull，push，pull request（PR）">git教程——下载，SSH配置，clone，pull，push，pull request（PR）</a>
             </li></ul>
       </div>
     </div>
@@ -483,13 +483,60 @@
     data-aos="fade-up"
   ><a
         class="post-link"
+        href="/post/uefi-hello/"
+        aria-label="UEFI 应用：固件接口和 QEMU 上的 Hello World"
+        title="UEFI 应用：固件接口和 QEMU 上的 Hello World"
+      >
+      </a><div
+      class="
+        post-cover left
+      "
+    ><img
+          data-src="/backgrounds/bg34.webp"
+          data-sizes="auto"
+          alt=""
+          class="lazyload"
+        /></div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span
+          ><span class="icon-calendar"></span
+          >2025-10-30</span
+        ><span
+          ><span class="icon-pencil"></span
+          >543 字</span
+        >
+        <span
+          ><span class="icon-clock"></span
+          >3 分钟</span
+        >
+      </div>
+      <h2 class="post-title">UEFI 应用：固件接口和 QEMU 上的 Hello World</h2>
+      <article class="post-article"> UEFI 应用：固件接口和 QEMU 上的 Hello World 最近学习了 OS 中的启动方式，BIOS 和 UEFI，然后发现现在主流的是 UEFI，于是写个文章记录一下
+本文介绍一份最小的 UEFI 应用，在 QEMU 里清屏并打印 Hello World
+环境是 WSL2，固件用 OVMF.fd，库用 gnu-efi
+固件 固件 可以理解成计算机启动时 第一个加载的软件，负责硬件初始化和系统启动
+许多硬件在内部的只读存储器（ROM）里预置了软件，这就是 固件
+正确地调用固件提供的接口，就能在操作系统起来之前 直接操作硬件
+BIOS 和 Legacy 启动 BIOS（基本输入输出系统 …</article>
+    </div>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div
+    class="
+      post-wrap right
+    "
+    data-aos="fade-up"
+  ><a
+        class="post-link"
         href="/post/linux-blkdev-cache/"
         aria-label="手写 Linux 块设备：RAM 磁盘和 Buffer Cache"
         title="手写 Linux 块设备：RAM 磁盘和 Buffer Cache"
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg33.webp"
@@ -524,7 +571,7 @@ Kernel space 可以执行 任意命令，调用系统的 …</article>
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -535,7 +582,7 @@ Kernel space 可以执行 任意命令，调用系统的 …</article>
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg32.webp"
@@ -569,7 +616,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -580,7 +627,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg15.webp"
@@ -615,7 +662,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -626,7 +673,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg4.webp"
@@ -659,7 +706,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -670,7 +717,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg6.webp"
@@ -704,7 +751,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -715,7 +762,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg5.webp"
@@ -747,7 +794,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -758,7 +805,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg7.webp"
@@ -792,7 +839,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -803,7 +850,7 @@ UTF-32：码元 4 字节，格子里直接写这个编号，所以 1 个码点 1
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg8.webp"
@@ -844,7 +891,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -855,7 +902,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg9.webp"
@@ -885,54 +932,11 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
     </div>
   </div>
 </div>
-<div class="post-wrapper">
-  <div
-    class="
-      post-wrap right
-    "
-    data-aos="fade-up"
-  ><a
-        class="post-link"
-        href="/post/ctf-bugku-qiumingshan/"
-        aria-label="CTFWeb-Python爬虫入门——Bugku秋名山车神"
-        title="CTFWeb-Python爬虫入门——Bugku秋名山车神"
-      >
-      </a><div
-      class="
-        post-cover right
-      "
-    ><img
-          data-src="/backgrounds/bg10.webp"
-          data-sizes="auto"
-          alt=""
-          class="lazyload"
-        /></div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span
-          ><span class="icon-calendar"></span
-          >2025-07-02</span
-        ><span
-          ><span class="icon-pencil"></span
-          >75 字</span
-        >
-        <span
-          ><span class="icon-clock"></span
-          >1 分钟</span
-        >
-      </div>
-      <h2 class="post-title">CTFWeb-Python爬虫入门——Bugku秋名山车神</h2>
-      <article class="post-article"> CTFWeb-Python爬虫入门——Bugku秋名山车神 原文：https://blog.csdn.net/qq_30618989/article/details/145620111
-此原文也是本人所写
-题目网址： Bugku秋名山车神 题目概况： 打开环境后可以发现，是要在2s内计算出表达式的值：
-可以看到，没有提交结果按钮的表单，所以猜测是用post请求提交答案，先用 HackBar （当然可以用其他抓包软件）随便post一个键值对，可以得到：
-这说明要提交键为value的键值对。但是显然人脑不可能在2s内计算出着一长串的表达式，而且表达式是在响应请求之后才能得到的，所以不能用抓包的方 …</article>
-    </div>
-  </div>
-</div>
 <nav id="page-nav" aria-label="Pagination navigation" data-aos="fade-up"><a class="extend prev" rel="prev" href="/">
       &laquo;
-      上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span></nav>
+      上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">
+      下一页 &raquo;
+    </a></nav>
 </section>
         </div><footer id="footer" aria-label="Site footer">
   <div style="width: 100%; overflow: hidden">
@@ -959,10 +963,10 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
         </a>
       </div><div>
         <span class="icon-brush"
-          >&nbsp;31.8k</span
+          >&nbsp;32.9k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;02:40</span>
+        <span class="icon-coffee">&nbsp;02:45</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -996,7 +1000,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">20</div>
+    <div>文章</div><div class="sidebar-state-number">21</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -1006,7 +1010,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">39</div>
+    <div class="sidebar-state-number">40</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
