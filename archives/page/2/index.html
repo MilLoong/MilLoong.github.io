@@ -161,7 +161,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">22</div>
+    <div>文章</div><div class="sidebar-state-number">23</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -171,7 +171,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">43</div>
+    <div class="sidebar-state-number">45</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -297,6 +297,15 @@
               </li><li class="tag-item">
                 <a
                   class="tag-link"
+                  href="/tags/concurrency/"
+                  aria-label="标签: Concurrency"
+                  title="Concurrency"
+                >
+                  Concurrency
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
                   href="/tags/ctf/"
                   aria-label="标签: CTF"
                   title="CTF"
@@ -339,15 +348,6 @@
                 >
                   Iptables
                 </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/java/"
-                  aria-label="标签: Java"
-                  title="Java"
-                >
-                  Java
-                </a>
               </li></ul>
       </div>
     </div>
@@ -376,6 +376,11 @@
             href="/tags/c&#43;&#43;/"
             aria-label="标签: C&#43;&#43;"
             >C&#43;&#43;</a
+          ><a
+            style="font-size:10px"
+            href="/tags/concurrency/"
+            aria-label="标签: Concurrency"
+            >Concurrency</a
           ><a
             style="font-size:10px"
             href="/tags/ctf/"
@@ -451,11 +456,6 @@
             href="/tags/shell/"
             aria-label="标签: Shell"
             >Shell</a
-          ><a
-            style="font-size:10px"
-            href="/tags/spring-boot/"
-            aria-label="标签: Spring Boot"
-            >Spring Boot</a
           ></div>
   </div>
 </div><div class="widget-wrapper">
@@ -466,6 +466,8 @@
       <h3 class="widget-title">最新文章</h3>
       <div class="widget">
         <ul><li>
+              <a href="/post/cpp-thread-pool/" title="现代 C&#43;&#43; 应用：设计线程池">现代 C&#43;&#43; 应用：设计线程池</a>
+            </li><li>
               <a href="/post/volatile/" title="C 语言：深入理解 volatile 关键字">C 语言：深入理解 volatile 关键字</a>
             </li><li>
               <a href="/post/bubble-sort/" title="深入了解 冒泡排序">深入了解 冒泡排序</a>
@@ -473,8 +475,6 @@
               <a href="/post/valgrind-asan/" title="C&#43;&#43; 内存泄漏检测：Valgrind 和 ASan">C&#43;&#43; 内存泄漏检测：Valgrind 和 ASan</a>
             </li><li>
               <a href="/post/nailong-platform/" title="NaiLong-platform——Spring Boot 招新平台后端">NaiLong-platform——Spring Boot 招新平台后端</a>
-            </li><li>
-              <a href="/post/strcpy-strncpy-memcpy-memmove/" title="strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析">strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析</a>
             </li></ul>
       </div>
     </div>
@@ -509,6 +509,13 @@
     >
       <a class="archives-tag-list-link" href="/tags/c&#43;&#43;/"
         >C&#43;&#43;</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/concurrency/"
+        >Concurrency</a
       >
     </div><div
       class="archives-tag-list-item"
@@ -766,6 +773,13 @@
       class="archives-tag-list-item"
       data-aos="zoom-in"
     >
+      <a class="archives-tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B%E6%B1%A0/"
+        >线程池</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
       <a class="archives-tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%99%A8/"
         >编译器</a
       >
@@ -831,6 +845,18 @@
       <span class="archive-year">2025</span>
     </div>
     <ul><li class="archive-article">
+          <div class="archive-article-date">
+            <span>
+              <time
+                class="dt-published"
+                datetime="2025-11-05 01:21:00 &#43;0800 CST"
+                itemprop="datePublished"
+                >2025-11</time
+              >
+            </span>
+          </div><a class="archive-article-title" href="/post/connect-redirect/"
+              >改写 connect 目标地址的方案：eBPF、iptables 和 WinDivert</a
+            ></li><li class="archive-article">
           <div class="archive-article-date">
             <span>
               <time
@@ -938,18 +964,6 @@
             </span>
           </div><a class="archive-article-title" href="/post/two-pointers-template/"
               >类似于双指针的线性遍历模板</a
-            ></li><li class="archive-article">
-          <div class="archive-article-date">
-            <span>
-              <time
-                class="dt-published"
-                datetime="2025-07-06 17:28:25 &#43;0800 CST"
-                itemprop="datePublished"
-                >2025-07</time
-              >
-            </span>
-          </div><a class="archive-article-title" href="/post/xcpc-binary-search/"
-              >xcpc中二分的几种写法的细节&amp;记忆</a
             ></li></ul>
   </section></div><nav id="page-nav" aria-label="Pagination navigation" data-aos="fade-up"><a class="extend prev" rel="prev" href="/archives/">
       &laquo;
@@ -982,10 +996,10 @@
         </a>
       </div><div>
         <span class="icon-brush"
-          >&nbsp;33.3k</span
+          >&nbsp;34.8k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;02:47</span>
+        <span class="icon-coffee">&nbsp;02:55</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -1019,7 +1033,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">22</div>
+    <div>文章</div><div class="sidebar-state-number">23</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -1029,7 +1043,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">43</div>
+    <div class="sidebar-state-number">45</div>
   </a>
 </div>
 <div class="sidebar-social"></div>

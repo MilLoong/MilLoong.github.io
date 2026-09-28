@@ -50,8 +50,8 @@
     content="/"
   />
   <meta property="article:author" content="MilLoong" />
-  <meta property="article:published_time" content="2026-09-27T15:37:00&#43;08:00" />
-  <meta property="article:modified_time" content="2026-09-27T15:37:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta property="article:published_time" content="2026-09-29T01:04:00&#43;08:00" />
+  <meta property="article:modified_time" content="2026-09-29T01:04:00&#43;08:00" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="https://MilLoong.github.io/index.xml" title="MilLoong的博客">
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -162,7 +162,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">22</div>
+    <div>文章</div><div class="sidebar-state-number">23</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -172,7 +172,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">43</div>
+    <div class="sidebar-state-number">45</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -298,6 +298,15 @@
               </li><li class="tag-item">
                 <a
                   class="tag-link"
+                  href="/tags/concurrency/"
+                  aria-label="标签: Concurrency"
+                  title="Concurrency"
+                >
+                  Concurrency
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
                   href="/tags/ctf/"
                   aria-label="标签: CTF"
                   title="CTF"
@@ -340,15 +349,6 @@
                 >
                   Iptables
                 </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/java/"
-                  aria-label="标签: Java"
-                  title="Java"
-                >
-                  Java
-                </a>
               </li></ul>
       </div>
     </div>
@@ -377,6 +377,11 @@
             href="/tags/c&#43;&#43;/"
             aria-label="标签: C&#43;&#43;"
             >C&#43;&#43;</a
+          ><a
+            style="font-size:10px"
+            href="/tags/concurrency/"
+            aria-label="标签: Concurrency"
+            >Concurrency</a
           ><a
             style="font-size:10px"
             href="/tags/ctf/"
@@ -452,11 +457,6 @@
             href="/tags/shell/"
             aria-label="标签: Shell"
             >Shell</a
-          ><a
-            style="font-size:10px"
-            href="/tags/spring-boot/"
-            aria-label="标签: Spring Boot"
-            >Spring Boot</a
           ></div>
   </div>
 </div><div class="widget-wrapper">
@@ -467,6 +467,8 @@
       <h3 class="widget-title">最新文章</h3>
       <div class="widget">
         <ul><li>
+              <a href="/post/cpp-thread-pool/" title="现代 C&#43;&#43; 应用：设计线程池">现代 C&#43;&#43; 应用：设计线程池</a>
+            </li><li>
               <a href="/post/volatile/" title="C 语言：深入理解 volatile 关键字">C 语言：深入理解 volatile 关键字</a>
             </li><li>
               <a href="/post/bubble-sort/" title="深入了解 冒泡排序">深入了解 冒泡排序</a>
@@ -474,8 +476,6 @@
               <a href="/post/valgrind-asan/" title="C&#43;&#43; 内存泄漏检测：Valgrind 和 ASan">C&#43;&#43; 内存泄漏检测：Valgrind 和 ASan</a>
             </li><li>
               <a href="/post/nailong-platform/" title="NaiLong-platform——Spring Boot 招新平台后端">NaiLong-platform——Spring Boot 招新平台后端</a>
-            </li><li>
-              <a href="/post/strcpy-strncpy-memcpy-memmove/" title="strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析">strcpy, strncpy, memcpy, memmove 的 C&#43;&#43; 实现及 musl 源码分析</a>
             </li></ul>
       </div>
     </div>
@@ -488,13 +488,65 @@
     data-aos="fade-up"
   ><a
         class="post-link"
+        href="/post/xcpc-binary-search/"
+        aria-label="xcpc中二分的几种写法的细节&amp;记忆"
+        title="xcpc中二分的几种写法的细节&amp;记忆"
+      >
+      </a><div
+      class="
+        post-cover left
+      "
+    ><img
+          data-src="/backgrounds/bg8.webp"
+          data-sizes="auto"
+          alt=""
+          class="lazyload"
+        /></div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span
+          ><span class="icon-calendar"></span
+          >2025-07-06</span
+        ><span
+          ><span class="icon-pencil"></span
+          >203 字</span
+        >
+        <span
+          ><span class="icon-clock"></span
+          >1 分钟</span
+        >
+      </div>
+      <h2 class="post-title">xcpc中二分的几种写法的细节&amp;记忆</h2>
+      <article class="post-article"> xcpc中二分的几种写法的细节&amp;记忆 原文：https://blog.csdn.net/qq_30618989/article/details/149154809
+此原文也是本人所写
+下标 从 1 开始，以 n 结束
+左指针：l
+右指针：r
+中间指针：mid=(l+r)&raquo;1
+假设要找的数为x
+假设数组为a，并且值是从小到大的有序数组
+目的就是找所有使得a[id]==x的下标id（如果有多个a[id]==x，取id最小的）
+左闭右开区间 总：[l,r)
+l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
+所以 在while中只能 l &lt; r ，不能 …</article>
+    </div>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div
+    class="
+      post-wrap right
+    "
+    data-aos="fade-up"
+  ><a
+        class="post-link"
         href="/post/kmp-cpp/"
         aria-label="KMP算法——透彻的理论理解&amp;代码理解（c&#43;&#43;）"
         title="KMP算法——透彻的理论理解&amp;代码理解（c&#43;&#43;）"
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg9.webp"
@@ -527,7 +579,7 @@
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -538,7 +590,7 @@
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg10.webp"
@@ -598,10 +650,10 @@
         </a>
       </div><div>
         <span class="icon-brush"
-          >&nbsp;33.3k</span
+          >&nbsp;34.8k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;02:47</span>
+        <span class="icon-coffee">&nbsp;02:55</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -635,7 +687,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">22</div>
+    <div>文章</div><div class="sidebar-state-number">23</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -645,7 +697,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">43</div>
+    <div class="sidebar-state-number">45</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
