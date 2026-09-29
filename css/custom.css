@@ -1,28 +1,98 @@
 /* 站点自定义样式 */
 
-/* 页脚额外页面入口 */
+/* 页脚额外页面入口：图标芯片，参考常见博客页脚 social / tools 区 */
 .footer-apps {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch;
+  gap: 0.7rem;
+  margin: 0 0 18px;
+}
+
+.footer-app {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.35rem 0.55rem;
-  margin: 0 0 12px;
-  font-size: 0.95em;
+  justify-content: center;
+  gap: 0.45rem;
+  min-width: 6.4rem;
+  padding: 0.85rem 1rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--color-default) 12%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--color-wrap, #fff) 92%, var(--red-1, #ff5252) 8%);
+  color: var(--color-default);
+  text-decoration: none !important;
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--color-default) 6%, transparent);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
-.footer-apps a {
-  color: var(--color-link);
-  text-decoration: none;
+.footer-app:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--red-1, #ff5252) 55%, transparent);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--red-1, #ff5252) 18%, transparent);
+  color: var(--red-1, #ff5252);
+  background: color-mix(in srgb, var(--color-wrap, #fff) 86%, var(--red-1, #ff5252) 14%);
 }
 
-.footer-apps a:hover {
-  text-decoration: underline;
+.footer-app-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--red-1, #ff5252) 12%, transparent);
+  color: var(--red-1, #ff5252);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.footer-apps-sep {
-  opacity: 0.45;
-  user-select: none;
+.footer-app:hover .footer-app-icon {
+  background: var(--red-1, #ff5252);
+  color: #fff;
+  transform: scale(1.04);
+}
+
+.footer-app-icon-whattoeat:before,
+.footer-app-icon-nailong:before {
+  font-family: "iconfont";
+  font-size: 1.15rem;
+  line-height: 1;
+  speak: never;
+}
+
+.footer-app-icon-whattoeat:before {
+  content: "\e607";
+}
+
+.footer-app-icon-nailong:before {
+  content: "\e648";
+}
+
+.footer-app-icon-radar svg {
+  display: block;
+}
+
+.footer-app-label {
+  font-size: 0.86em;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .footer-apps {
+    gap: 0.55rem;
+  }
+
+  .footer-app {
+    min-width: 5.6rem;
+    padding: 0.75rem 0.7rem 0.65rem;
+  }
+
+  .footer-app-label {
+    font-size: 0.8em;
+  }
 }
 
 /* 导航图标垂直对齐 */
