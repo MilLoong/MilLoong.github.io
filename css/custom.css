@@ -7,9 +7,9 @@
   justify-content: center;
   align-items: center;
   gap: 1.35rem;
-  /* 与上方「友链」菜单项的垂直间距 */
-  margin: 1.35rem 0 0.2rem;
-  padding: 0.25rem 0.4rem 0;
+  /* 与上方「友链」菜单项的垂直间距：拉近 */
+  margin: 0.2rem 0 0.1rem;
+  padding: 0;
 }
 
 .sidebar-app {
