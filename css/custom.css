@@ -1,5 +1,30 @@
 /* 站点自定义样式 */
 
+/* 页脚额外页面入口 */
+.footer-apps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem 0.55rem;
+  margin: 0 0 12px;
+  font-size: 0.95em;
+}
+
+.footer-apps a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.footer-apps a:hover {
+  text-decoration: underline;
+}
+
+.footer-apps-sep {
+  opacity: 0.45;
+  user-select: none;
+}
+
 /* 导航图标垂直对齐 */
 .main-nav-icon {
   display: flex;
