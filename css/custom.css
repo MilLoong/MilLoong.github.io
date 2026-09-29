@@ -1,5 +1,14 @@
 /* 站点自定义样式 */
 
+/* 侧栏菜单：收紧图标与文字间距 */
+.sidebar-menu-icon {
+  padding: 8px 2px 8px 12px !important;
+}
+
+.sidebar-menu-link {
+  padding: 8px 12px 8px 4px !important;
+}
+
 /* 侧栏额外页面入口：友链下方，纯图标无圆底 */
 .sidebar-apps {
   display: flex;
