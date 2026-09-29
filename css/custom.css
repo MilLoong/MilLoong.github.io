@@ -6,17 +6,16 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.55rem;
-  margin: 0.45rem 0 0.05rem;
-  padding: 0.15rem 0 0;
+  gap: 1.35rem;
+  margin: 0.7rem 0 0.2rem;
+  padding: 0.25rem 0.4rem 0;
 }
 
 .sidebar-app {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 0.95rem;
-  height: 0.95rem;
+  padding: 0.2rem;
   color: var(--red-1, #ff5252);
   text-decoration: none !important;
   line-height: 1;
@@ -33,14 +32,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1em;
-  height: 1em;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   line-height: 1;
 }
 
 .sidebar-app-icon-whattoeat:before,
-.sidebar-app-icon-nailong:before {
+.sidebar-app-icon-nailong:before,
+.sidebar-app-icon-radar:before {
   font-family: "iconfont";
   font-size: 1em;
   line-height: 1;
@@ -55,10 +53,9 @@
   content: "\e648";
 }
 
-.sidebar-app-icon-radar svg {
-  display: block;
-  width: 1em;
-  height: 1em;
+/* 竞赛日程：用主题日历图标，和另两个同为实心字形 */
+.sidebar-app-icon-radar:before {
+  content: "\e605";
 }
 
 /* 导航图标垂直对齐 */
