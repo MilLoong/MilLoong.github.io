@@ -1,14 +1,5 @@
 /* 站点自定义样式 */
 
-/* 侧栏菜单：收紧图标与文字间距 */
-.sidebar-menu-icon {
-  padding: 8px 2px 8px 12px !important;
-}
-
-.sidebar-menu-link {
-  padding: 8px 12px 8px 4px !important;
-}
-
 /* 侧栏额外页面入口：友链下方，纯图标无圆底 */
 .sidebar-apps {
   display: flex;
@@ -16,7 +7,8 @@
   justify-content: center;
   align-items: center;
   gap: 1.35rem;
-  margin: 0.7rem 0 0.2rem;
+  /* 与上方「友链」菜单项的垂直间距 */
+  margin: 1.35rem 0 0.2rem;
   padding: 0.25rem 0.4rem 0;
 }
 
