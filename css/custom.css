@@ -1,62 +1,56 @@
 /* 站点自定义样式 */
 
-/* 页脚额外页面入口：只显示图标，悬停看 title */
-.footer-apps {
+/* 侧栏额外页面入口：友链下方，纯图标无圆底 */
+.sidebar-apps {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.85rem;
-  margin: 0 0 18px;
+  gap: 1.1rem;
+  margin: 0.85rem 0 0.15rem;
+  padding: 0.35rem 0 0;
 }
 
-.footer-app {
+.sidebar-app {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.55rem;
-  height: 2.55rem;
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--color-default) 12%, transparent);
-  background: color-mix(in srgb, var(--color-wrap, #fff) 90%, var(--red-1, #ff5252) 10%);
   color: var(--red-1, #ff5252);
   text-decoration: none !important;
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--color-default) 6%, transparent);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  line-height: 1;
+  transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 }
 
-.footer-app:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--red-1, #ff5252) 55%, transparent);
-  box-shadow: 0 8px 16px color-mix(in srgb, var(--red-1, #ff5252) 18%, transparent);
-  background: var(--red-1, #ff5252);
-  color: #fff;
+.sidebar-app:hover {
+  transform: translateY(-1px);
+  color: var(--red-3, #ff1744);
+  opacity: 0.92;
 }
 
-.footer-app-icon {
+.sidebar-app-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
 }
 
-.footer-app-icon-whattoeat:before,
-.footer-app-icon-nailong:before {
+.sidebar-app-icon-whattoeat:before,
+.sidebar-app-icon-nailong:before {
   font-family: "iconfont";
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   line-height: 1;
   speak: never;
 }
 
-.footer-app-icon-whattoeat:before {
+.sidebar-app-icon-whattoeat:before {
   content: "\e607";
 }
 
-.footer-app-icon-nailong:before {
+.sidebar-app-icon-nailong:before {
   content: "\e648";
 }
 
-.footer-app-icon-radar svg {
+.sidebar-app-icon-radar svg {
   display: block;
 }
 
