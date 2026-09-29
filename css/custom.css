@@ -6,15 +6,17 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1.1rem;
-  margin: 0.85rem 0 0.15rem;
-  padding: 0.35rem 0 0;
+  gap: 0.75rem;
+  margin: 0.55rem 0 0.1rem;
+  padding: 0.2rem 0 0;
 }
 
 .sidebar-app {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
   color: var(--red-1, #ff5252);
   text-decoration: none !important;
   line-height: 1;
@@ -31,13 +33,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 1em;
+  height: 1em;
+  font-size: 1.05rem;
   line-height: 1;
 }
 
 .sidebar-app-icon-whattoeat:before,
 .sidebar-app-icon-nailong:before {
   font-family: "iconfont";
-  font-size: 1.35rem;
+  font-size: 1em;
   line-height: 1;
   speak: never;
 }
@@ -52,6 +57,8 @@
 
 .sidebar-app-icon-radar svg {
   display: block;
+  width: 1em;
+  height: 1em;
 }
 
 /* 导航图标垂直对齐 */
