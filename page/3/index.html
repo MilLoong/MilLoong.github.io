@@ -50,8 +50,8 @@
     content="/"
   />
   <meta property="article:author" content="MilLoong" />
-  <meta property="article:published_time" content="2026-09-29T01:04:00&#43;08:00" />
-  <meta property="article:modified_time" content="2026-09-29T01:04:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta property="article:published_time" content="2026-10-07T17:50:00&#43;08:00" />
+  <meta property="article:modified_time" content="2026-10-07T17:50:00&#43;08:00" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="https://MilLoong.github.io/index.xml" title="MilLoong的博客">
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -160,7 +160,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">23</div>
+    <div>文章</div><div class="sidebar-state-number">24</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -170,7 +170,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">45</div>
+    <div class="sidebar-state-number">47</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -271,6 +271,15 @@
         <ul class="tag-list" itemprop="keywords"><li class="tag-item">
                 <a
                   class="tag-link"
+                  href="/tags/_generic/"
+                  aria-label="标签: _Generic"
+                  title="_Generic"
+                >
+                  _Generic
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
                   href="/tags/asan/"
                   aria-label="标签: ASan"
                   title="ASan"
@@ -349,15 +358,6 @@
                 >
                   Git
                 </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/iptables/"
-                  aria-label="标签: Iptables"
-                  title="Iptables"
-                >
-                  Iptables
-                </a>
               </li></ul>
       </div>
     </div>
@@ -367,6 +367,11 @@
     data-aos="fade-up"
   >
     <h3 class="widget-title">标签云</h3><div class="widget tagcloud"><a
+            style="font-size:10px"
+            href="/tags/_generic/"
+            aria-label="标签: _Generic"
+            >_Generic</a
+          ><a
             style="font-size:10px"
             href="/tags/asan/"
             aria-label="标签: ASan"
@@ -461,11 +466,6 @@
             href="/tags/redis/"
             aria-label="标签: Redis"
             >Redis</a
-          ><a
-            style="font-size:10px"
-            href="/tags/shell/"
-            aria-label="标签: Shell"
-            >Shell</a
           ></div>
   </div>
 </div><div class="widget-wrapper">
@@ -476,6 +476,8 @@
       <h3 class="widget-title">最新文章</h3>
       <div class="widget">
         <ul><li>
+              <a href="/post/macro-definition-compare/" title="C 语言：利用宏定义比较两个数大小">C 语言：利用宏定义比较两个数大小</a>
+            </li><li>
               <a href="/post/cpp-thread-pool/" title="现代 C&#43;&#43; 应用：设计线程池">现代 C&#43;&#43; 应用：设计线程池</a>
             </li><li>
               <a href="/post/volatile/" title="C 语言：深入理解 volatile 关键字">C 语言：深入理解 volatile 关键字</a>
@@ -483,8 +485,6 @@
               <a href="/post/bubble-sort/" title="深入了解 冒泡排序">深入了解 冒泡排序</a>
             </li><li>
               <a href="/post/valgrind-asan/" title="C&#43;&#43; 内存泄漏检测：Valgrind 和 ASan">C&#43;&#43; 内存泄漏检测：Valgrind 和 ASan</a>
-            </li><li>
-              <a href="/post/nailong-platform/" title="NaiLong-platform——Spring Boot 招新平台后端">NaiLong-platform——Spring Boot 招新平台后端</a>
             </li></ul>
       </div>
     </div>
@@ -497,13 +497,58 @@
     data-aos="fade-up"
   ><a
         class="post-link"
+        href="/post/two-pointers-template/"
+        aria-label="类似于双指针的线性遍历模板"
+        title="类似于双指针的线性遍历模板"
+      >
+      </a><div
+      class="
+        post-cover left
+      "
+    ><img
+          data-src="/backgrounds/bg7.webp"
+          data-sizes="auto"
+          alt=""
+          class="lazyload"
+        /></div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span
+          ><span class="icon-calendar"></span
+          >2025-08-04</span
+        ><span
+          ><span class="icon-pencil"></span
+          >57 字</span
+        >
+        <span
+          ><span class="icon-clock"></span
+          >1 分钟</span
+        >
+      </div>
+      <h2 class="post-title">类似于双指针的线性遍历模板</h2>
+      <article class="post-article"> 类似于双指针的线性遍历模板 原文：https://blog.csdn.net/qq_30618989/article/details/149909172
+此原文也是本人所写
+引入 有一些题目可能具有类似于 “单调性” 的特征，就是其实只需要 考虑当前位置的后面的位置就好了，前面位置可以不用考虑 ，但我们正常写的话其实不是很好写的，用while或者for都容易让思路变乱。
+那这样的话其实就可以维护一个指针来找到最右边的位置，来达到线性的时间复杂度，这就类似于双指针。
+我的习惯就是： 一个指针 i 遍历数组，另一个指针 j 来基于 i 向后推进，找到适合的最右边的位置，最后 i 再切换为 j 或 …</article>
+    </div>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div
+    class="
+      post-wrap right
+    "
+    data-aos="fade-up"
+  ><a
+        class="post-link"
         href="/post/xcpc-binary-search/"
         aria-label="xcpc中二分的几种写法的细节&amp;记忆"
         title="xcpc中二分的几种写法的细节&amp;记忆"
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg8.webp"
@@ -544,7 +589,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -555,7 +600,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg9.webp"
@@ -588,7 +633,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -599,7 +644,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg10.webp"
@@ -659,10 +704,10 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
         </a>
       </div><div>
         <span class="icon-brush"
-          >&nbsp;34.8k</span
+          >&nbsp;35.7k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;02:55</span>
+        <span class="icon-coffee">&nbsp;02:59</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -696,7 +741,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">23</div>
+    <div>文章</div><div class="sidebar-state-number">24</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -706,7 +751,7 @@ l != r ，否则如果l==r，那么就是[l,l)，不存在这个区间。
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">45</div>
+    <div class="sidebar-state-number">47</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
