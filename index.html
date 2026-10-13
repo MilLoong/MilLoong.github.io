@@ -50,8 +50,8 @@
     content="/"
   />
   <meta property="article:author" content="MilLoong" />
-  <meta property="article:published_time" content="2026-10-12T17:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2026-10-12T17:00:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta property="article:published_time" content="2026-10-13T16:40:00&#43;08:00" />
+  <meta property="article:modified_time" content="2026-10-13T16:40:00&#43;08:00" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="https://MilLoong.github.io/index.xml" title="MilLoong的博客">
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
 <link
@@ -160,7 +160,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">25</div>
+    <div>文章</div><div class="sidebar-state-number">26</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -170,7 +170,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">49</div>
+    <div class="sidebar-state-number">50</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -433,6 +433,11 @@
             >KMP</a
           ><a
             style="font-size:10px"
+            href="/tags/kprobe/"
+            aria-label="标签: Kprobe"
+            >Kprobe</a
+          ><a
+            style="font-size:10px"
             href="/tags/linux/"
             aria-label="标签: Linux"
             >Linux</a
@@ -461,11 +466,6 @@
             href="/tags/python/"
             aria-label="标签: Python"
             >Python</a
-          ><a
-            style="font-size:10px"
-            href="/tags/qemu/"
-            aria-label="标签: QEMU"
-            >QEMU</a
           ></div>
   </div>
 </div><div class="widget-wrapper">
@@ -476,6 +476,8 @@
       <h3 class="widget-title">最新文章</h3>
       <div class="widget">
         <ul><li>
+              <a href="/post/kprobe/" title="深入理解 Linux Kprobe">深入理解 Linux Kprobe</a>
+            </li><li>
               <a href="/post/proc/" title="深入理解 Linux 中的 proc 目录">深入理解 Linux 中的 proc 目录</a>
             </li><li>
               <a href="/post/macro-definition-compare/" title="C 语言：利用宏定义比较两个数大小">C 语言：利用宏定义比较两个数大小</a>
@@ -483,8 +485,6 @@
               <a href="/post/cpp-thread-pool/" title="现代 C&#43;&#43; 应用：设计线程池">现代 C&#43;&#43; 应用：设计线程池</a>
             </li><li>
               <a href="/post/volatile/" title="C 语言：深入理解 volatile 关键字">C 语言：深入理解 volatile 关键字</a>
-            </li><li>
-              <a href="/post/bubble-sort/" title="深入了解 冒泡排序">深入了解 冒泡排序</a>
             </li></ul>
       </div>
     </div>
@@ -497,13 +497,58 @@
     data-aos="fade-up"
   ><a
         class="post-link"
+        href="/post/kprobe/"
+        aria-label="深入理解 Linux Kprobe"
+        title="深入理解 Linux Kprobe"
+      >
+      </a><div
+      class="
+        post-cover left
+      "
+    ><img
+          data-src="/backgrounds/bg17.webp"
+          data-sizes="auto"
+          alt=""
+          class="lazyload"
+        /></div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span
+          ><span class="icon-calendar"></span
+          >2026-10-13</span
+        ><span
+          ><span class="icon-pencil"></span
+          >674 字</span
+        >
+        <span
+          ><span class="icon-clock"></span
+          >4 分钟</span
+        >
+      </div>
+      <h2 class="post-title">深入理解 Linux Kprobe</h2>
+      <article class="post-article"> 深入理解 Linux Kprobe 介绍 简要介绍 Kprobe 让你在 几乎任意 内核指令地址 上 动态打断点，命中时执行你提供的 pre_handler / post_handler，在 尽量少破坏现场 的前提下 采集信息
+常见写法是做成一个 内核模块：init 里 register_*probe，exit 里 unregister_*probe
+内核需要打开 CONFIG_KPROBES，并且支持 模块加载卸载
+探针形态 现在文档里主推两类：
+形态 作用 kprobe 挂在 任意内核指令（常挂 函数入口，也可挂 函数中间某条） kretprobe（返回探针） 在目标函数 返回 时打回调 …</article>
+    </div>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div
+    class="
+      post-wrap right
+    "
+    data-aos="fade-up"
+  ><a
+        class="post-link"
         href="/post/proc/"
         aria-label="深入理解 Linux 中的 proc 目录"
         title="深入理解 Linux 中的 proc 目录"
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg16.webp"
@@ -538,7 +583,7 @@ The proc file system acts as an interface to internal data structures in the …
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -549,7 +594,7 @@ The proc file system acts as an interface to internal data structures in the …
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg14.webp"
@@ -581,7 +626,7 @@ The proc file system acts as an interface to internal data structures in the …
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -592,7 +637,7 @@ The proc file system acts as an interface to internal data structures in the …
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg13.webp"
@@ -626,7 +671,7 @@ The proc file system acts as an interface to internal data structures in the …
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -637,7 +682,7 @@ The proc file system acts as an interface to internal data structures in the …
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg12.webp"
@@ -671,7 +716,7 @@ The proc file system acts as an interface to internal data structures in the …
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -682,7 +727,7 @@ The proc file system acts as an interface to internal data structures in the …
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg45.webp"
@@ -714,7 +759,7 @@ The proc file system acts as an interface to internal data structures in the …
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -725,7 +770,7 @@ The proc file system acts as an interface to internal data structures in the …
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg41.webp"
@@ -758,7 +803,7 @@ alloc-but-not-free：malloc / new 之后忘记 free / delete 指针重新赋值�
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -769,7 +814,7 @@ alloc-but-not-free：malloc / new 之后忘记 free / delete 指针重新赋值�
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg43.webp"
@@ -800,7 +845,7 @@ alloc-but-not-free：malloc / new 之后忘记 free / delete 指针重新赋值�
 <div class="post-wrapper">
   <div
     class="
-      post-wrap right
+      post-wrap left
     "
     data-aos="fade-up"
   ><a
@@ -811,7 +856,7 @@ alloc-but-not-free：malloc / new 之后忘记 free / delete 指针重新赋值�
       >
       </a><div
       class="
-        post-cover right
+        post-cover left
       "
     ><img
           data-src="/backgrounds/bg44.webp"
@@ -843,7 +888,7 @@ arr[] = {1, …</article>
 <div class="post-wrapper">
   <div
     class="
-      post-wrap left
+      post-wrap right
     "
     data-aos="fade-up"
   ><a
@@ -854,7 +899,7 @@ arr[] = {1, …</article>
       >
       </a><div
       class="
-        post-cover left
+        post-cover right
       "
     ><img
           data-src="/backgrounds/bg11.webp"
@@ -879,51 +924,6 @@ arr[] = {1, …</article>
       <h2 class="post-title">NLOJ——C&#43;&#43;20实现的轻量级OJ后端</h2>
       <article class="post-article"> NLOJ 概述 🚀 0. NLOJ 是什么？ 🤔 NLOJ 是一个 自研的，用 C++20 实现的 轻量级 OJ（Online Judge）后端：
 🌐 覆盖范围广： 覆盖 后端常用功能，如 用户鉴权、题目管理 CRUD、沙箱判题 等 覆盖 OJ 中的常见题型，如 标准题、交互题、通信题、Special Judge 🔧 工程上的选择： 使用 RAII 管理 连接 等资源，减少 泄漏 和 手工释放 使用 CMake 多模块 拆开 用户 / 题目 / 提交 / 判题，方便对照着看 📬 缓存和消息队列： 使用 Redis 缓存题目，用来扛 读多写少 使用 RabbitMQ 把 提交 和 判题 拆开： …</article>
-    </div>
-  </div>
-</div>
-<div class="post-wrapper">
-  <div
-    class="
-      post-wrap right
-    "
-    data-aos="fade-up"
-  ><a
-        class="post-link"
-        href="/post/git-education/"
-        aria-label="git教程——下载，SSH配置，clone，pull，push，pull request（PR）"
-        title="git教程——下载，SSH配置，clone，pull，push，pull request（PR）"
-      >
-      </a><div
-      class="
-        post-cover right
-      "
-    ><img
-          data-src="/backgrounds/bg3.webp"
-          data-sizes="auto"
-          alt=""
-          class="lazyload"
-        /></div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span
-          ><span class="icon-calendar"></span
-          >2025-11-24</span
-        ><span
-          ><span class="icon-pencil"></span
-          >969 字</span
-        >
-        <span
-          ><span class="icon-clock"></span
-          >5 分钟</span
-        >
-      </div>
-      <h2 class="post-title">git教程——下载，SSH配置，clone，pull，push，pull request（PR）</h2>
-      <article class="post-article"> 原文：https://blog.csdn.net/qq_30618989/article/details/145622471
-此原文也是本人所写
-前言： git 是 开源的分布式版本控制系统 （版本控制就是支持一些版本的操作，比如你想找到你之前的版本；分布式就是区别于中心式的，相当于把整个项目的内容都放到每一个用户而不是一个中央用户，这样能保证一些操作可以离线处理。）
-由于本人在初学git时尝遇多次困难，而且在找文章的时候发现分布不均，不是能找到一个很系统的教学（要么就是不全，要么就是过时了用不了，还有的要钱。。），所以在此总结一下有关git的基本操作教程，如有不对之处，还望各位海涵
-下载： …</article>
     </div>
   </div>
 </div>
@@ -956,10 +956,10 @@ arr[] = {1, …</article>
         </a>
       </div><div>
         <span class="icon-brush"
-          >&nbsp;36.8k</span
+          >&nbsp;37.5k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;03:05</span>
+        <span class="icon-coffee">&nbsp;03:09</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -993,7 +993,7 @@ arr[] = {1, …</article>
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">25</div>
+    <div>文章</div><div class="sidebar-state-number">26</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -1003,7 +1003,7 @@ arr[] = {1, …</article>
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">49</div>
+    <div class="sidebar-state-number">50</div>
   </a>
 </div>
 <div class="sidebar-social"></div>

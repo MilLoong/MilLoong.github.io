@@ -1,0 +1,1158 @@
+<!doctype html>
+<html
+  lang="zh-cn" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  深入理解 Linux Kprobe | MilLoong
+</title>
+<meta name="description" content="个人博客，记录学习日常"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://MilLoong.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":18},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="深入理解 Linux Kprobe | MilLoong" />
+  <meta
+    property="og:description"
+    content="个人博客，记录学习日常"
+  />
+  <meta property="og:url" content="https://MilLoong.github.io/post/kprobe/" />
+  <meta
+    property="og:site_name"
+    content="MilLoong的博客"
+  />
+  <meta
+    property="og:image"
+    content="/backgrounds/bg17.webp"
+  />
+  <meta property="article:author" content="MilLoong" />
+  <meta property="article:published_time" content="2026-10-13T16:40:00&#43;08:00" />
+  <meta property="article:modified_time" content="2026-10-13T16:40:00&#43;08:00" /><meta property="article:tag" content="Linux内核kprobe" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/backgrounds/bg17.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.bcb22bdbcbdb781729782ce6c110a50ab57f5167e943107f947e9d2561f595c3.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/><link rel="stylesheet" href="/css/custom.css?v=20260929-sidebar-apps7" /></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">咻——马上就加载好啦...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">关于</span>
+      </a><a class="main-nav-link-wrap" href="/friend">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <span class="main-nav-link">友链</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/backgrounds/bg17.webp" alt="深入理解 Linux Kprobe"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">深入理解 Linux Kprobe</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#深入理解-linux-kprobe">深入理解 Linux Kprobe</a>
+      <ul>
+        <li><a href="#介绍">介绍</a>
+          <ul>
+            <li><a href="#简要介绍">简要介绍</a></li>
+            <li><a href="#探针形态">探针形态</a></li>
+            <li><a href="#特点和注意事项">特点和注意事项</a></li>
+          </ul>
+        </li>
+        <li><a href="#原理">原理</a>
+          <ul>
+            <li><a href="#注册时发生了什么">注册时发生了什么</a></li>
+            <li><a href="#命中后的执行顺序">命中后的执行顺序</a></li>
+            <li><a href="#kretprobe怎么钩返回">kretprobe：怎么钩返回</a></li>
+            <li><a href="#跳转优化与黑名单">跳转优化与黑名单</a></li>
+          </ul>
+        </li>
+        <li><a href="#源码要点">源码要点</a>
+          <ul>
+            <li><a href="#struct-kprobe-关键字段"><code>struct kprobe</code> 关键字段</a></li>
+            <li><a href="#注册register_kprobe">注册：<code>register_kprobe</code></a></li>
+            <li><a href="#x86写成-int3再进-handler">x86：写成 <code>int3</code>，再进 handler</a></li>
+            <li><a href="#kretprobe-注册">kretprobe 注册</a></li>
+          </ul>
+        </li>
+        <li><a href="#应用">应用</a>
+          <ul>
+            <li><a href="#内核模块示例">内核模块示例</a></li>
+            <li><a href="#perf-probe">perf probe</a></li>
+            <li><a href="#bpftrace">bpftrace</a></li>
+            <li><a href="#和-ebpfsystemtap-的关系">和 eBPF、SystemTap 的关系</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">26</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      6
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">50</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div><nav class="sidebar-apps" aria-label="Extra pages">
+    <a class="sidebar-app" href="/whattoeat/" title="吃什么" aria-label="吃什么">
+      <span class="sidebar-app-icon sidebar-app-icon-whattoeat" aria-hidden="true"></span>
+    </a>
+    <a class="sidebar-app" href="/nailong-search/" title="奶龙表情库" aria-label="奶龙表情库">
+      <span class="sidebar-app-icon sidebar-app-icon-nailong" aria-hidden="true"></span>
+    </a>
+    <a class="sidebar-app" href="/radar/" title="竞赛日程雷达" aria-label="竞赛日程雷达">
+      <span class="sidebar-app-icon sidebar-app-icon-radar" aria-hidden="true"></span>
+    </a>
+  </nav>
+</div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-10-13 16:40:00 &#43;0800 CST" itemprop="datePublished"
+      >2026-10-13</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2026-10-13</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/%e5%ba%95%e5%b1%82"
+      data-aos="zoom-in"
+      >底层</a
+    ></div>
+</div><div class="hr-line"></div><div
+      class="e-content article-entry"
+      itemprop="articleBody"><h1 id="深入理解-linux-kprobe">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e7%90%86%e8%a7%a3-linux-kprobe"></a>
+深入理解 Linux Kprobe
+</h1><h2 id="介绍">
+<a class="header-anchor" href="#%e4%bb%8b%e7%bb%8d"></a>
+介绍
+</h2><h3 id="简要介绍">
+<a class="header-anchor" href="#%e7%ae%80%e8%a6%81%e4%bb%8b%e7%bb%8d"></a>
+简要介绍
+</h3><p><strong>Kprobe</strong> 让你在 <strong>几乎任意 内核指令地址</strong> 上 <strong>动态打断点</strong>，命中时执行你提供的 <code>pre_handler</code> / <code>post_handler</code>，在 <strong>尽量少破坏现场</strong> 的前提下 <strong>采集信息</strong></p>
+<p>常见写法是做成一个 <strong>内核模块</strong>：<code>init</code> 里 <code>register_*probe</code>，<code>exit</code> 里 <code>unregister_*probe</code></p>
+<p>内核需要打开 <code>CONFIG_KPROBES</code>，并且支持 <strong>模块加载卸载</strong></p>
+<h3 id="探针形态">
+<a class="header-anchor" href="#%e6%8e%a2%e9%92%88%e5%bd%a2%e6%80%81"></a>
+探针形态
+</h3><p>现在文档里主推两类：</p>
+<table>
+  <thead>
+      <tr>
+          <th>形态</th>
+          <th>作用</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>kprobe</strong></td>
+          <td>挂在 <strong>任意内核指令</strong>（常挂 函数入口，也可挂 函数中间某条）</td>
+      </tr>
+      <tr>
+          <td><strong>kretprobe</strong>（返回探针）</td>
+          <td>在目标函数 <strong>返回</strong> 时打回调</td>
+      </tr>
+  </tbody>
+</table>
+<p>历史上还有 <strong>jprobe</strong>（函数入口、参数签名对齐 的一种 封装），现已 <strong>弃用</strong></p>
+<h3 id="特点和注意事项">
+<a class="header-anchor" href="#%e7%89%b9%e7%82%b9%e5%92%8c%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9"></a>
+特点和注意事项
+</h3><ul>
+<li><strong>动态：</strong> <strong>运行时</strong> 插入 / 删除，适合临时看一条 <strong>内核路径</strong></li>
+<li><strong>覆盖面广：</strong> 很多 内核函数 都能挂，但仍有 <strong>黑名单</strong></li>
+<li><strong>符号不稳定：</strong> 函数名、参数、角色 会随 <strong>内核版本</strong> 变，脚本 跨版本 可能挂不上</li>
+<li><strong>改执行流危险：</strong> 在 <code>pre_handler</code> 里改 <code>regs</code> 的 <strong>指令指针</strong>（x86_64 上是 <code>RIP</code>）可以跳走，但 栈帧、并发、架构细节 都要自己去想办法兜底</li>
+</ul>
+<p>有稳定 <strong>tracepoint</strong> 时，优先用 tracepoint</p>
+<p>Kprobe 更适合 <strong>没有 现成追点（tracepoint）、又必须盯某条 内核路径</strong> 的时候</p>
+<h2 id="原理">
+<a class="header-anchor" href="#%e5%8e%9f%e7%90%86"></a>
+原理
+</h2><h3 id="注册时发生了什么">
+<a class="header-anchor" href="#%e6%b3%a8%e5%86%8c%e6%97%b6%e5%8f%91%e7%94%9f%e4%ba%86%e4%bb%80%e4%b9%88"></a>
+注册时发生了什么
+</h3><p>以常见架构为例（x86 用 <code>int3</code>）：</p>
+<ol>
+<li>把 探测点 上的 <strong>原指令拷一份</strong> 存起来</li>
+<li>把 原指令开头 若干字节 <strong>换成 断点指令</strong>（x86：<code>int3</code>，操作码 <code>0xcc</code>）</li>
+<li>之后 CPU 跑到这里就会进 <strong>陷阱（trap）</strong>，再交给 <strong>Kprobe 框架</strong></li>
+</ol>
+<pre class="mermaid">
+  flowchart TB
+    A["register_kprobe"] --> B["解析 symbol_name 或 addr"]
+    B --> C["拷贝原指令到指令槽"]
+    C --> D["用断点指令盖住探测点首字节"]
+    D --> E["等待命中"]
+</pre><h3 id="命中后的执行顺序">
+<a class="header-anchor" href="#%e5%91%bd%e4%b8%ad%e5%90%8e%e7%9a%84%e6%89%a7%e8%a1%8c%e9%a1%ba%e5%ba%8f"></a>
+命中后的执行顺序
+</h3><p>一次典型 <strong>kprobe 命中</strong>：</p>
+<ol>
+<li>CPU 撞上断点，保存 寄存器，进入 Kprobe</li>
+<li>调用 <strong><code>pre_handler</code></strong>（此时 原指令 还没真正按原样执行完）</li>
+<li>在 <strong>指令副本</strong> 上 <strong>单步执行</strong> 被探测 的 那条指令（不在原址临时 撕掉断点 再 单步，是为了 <strong>避免 多核窗口 里别的 CPU 从 断点空档 穿过去</strong>）</li>
+<li>若有 <strong><code>post_handler</code></strong>，<strong>单步结束</strong> 后再去调用</li>
+<li>从探测点 <strong>下一条指令</strong> 继续往下跑</li>
+</ol>
+<pre class="mermaid">
+  flowchart TB
+    A["CPU 执行到断点"] --> B["pre_handler"]
+    B --> C{"pre_handler 返回值"}
+    C -->|0| D["单步执行指令副本"]
+    C -->|非 0| E["认为已改执行路径，跳过单步"]
+    D --> F["post_handler（若有）"]
+    F --> G["回到探测点之后继续执行"]
+    E --> G
+</pre><p>若在 <code>pre_handler</code> 里改了 <strong>指令指针</strong>，并返回 <strong>非 0</strong>，框架会 <strong>跳过单步 和 <code>post_handler</code></strong>，直接按你 <strong>设好的地址</strong> 回去</p>
+<h3 id="kretprobe怎么钩返回">
+<a class="header-anchor" href="#kretprobe%e6%80%8e%e4%b9%88%e9%92%a9%e8%bf%94%e5%9b%9e"></a>
+kretprobe：怎么钩返回
+</h3><p><code>register_kretprobe()</code> 本质上会在函数 <strong>入口</strong> 先挂一个 kprobe：</p>
+<ol>
+<li>入口命中时，把真正的 <strong>返回地址</strong> 存进 <code>kretprobe_instance</code></li>
+<li>把 栈上（或对应位置）的返回地址 <strong>改成 trampoline</strong></li>
+<li>函数 <code>ret</code> 时先落到 trampoline，再跑你的 <strong>返回 handler</strong></li>
+<li>最后把 <strong>指令指针</strong> 恢复成 <strong>当初保存 的 返回地址</strong></li>
+</ol>
+<p>注册前要设好 <strong><code>maxactive</code></strong>：同时允许多少个 <strong>已进入、尚未返回</strong> 的实例，太小会丢事件，丢的次数记在 <strong><code>nmissed</code></strong></p>
+<p>还可以设可选的 <strong><code>entry_handler</code></strong>：<strong>入口回调</strong> 返回 0 才保证这次调用会配一个 <strong>返回回调</strong>，返回非 0 则这次 <strong>不再跟 返回探针</strong></p>
+<h3 id="跳转优化与黑名单">
+<a class="header-anchor" href="#%e8%b7%b3%e8%bd%ac%e4%bc%98%e5%8c%96%e4%b8%8e%e9%bb%91%e5%90%8d%e5%8d%95"></a>
+跳转优化与黑名单
+</h3><p>在打开 <code>CONFIG_OPTPROBES</code>、且 <code>debug.kprobes_optimization=1</code> 时，框架可能把 断点 <strong>优化成跳转</strong>，跳到一段 detour 缓冲里跑 handler，<strong>降低 热点开销</strong></p>
+<p>优化 有 <strong>安全检查</strong>（优化区 不能有 乱入跳转、异常回流 等），有 <code>post_handler</code> 等条件时也可能 <strong>不优化</strong></p>
+<p><strong>黑名单：</strong> Kprobe <strong>不能</strong> 无脑挂在实现 Kprobe 自己的代码上，否则容易 <strong>递归陷阱</strong>，内核用 <code>NOKPROBE_SYMBOL()</code> 等机制维护 黑名单，注册时撞上会 失败</p>
+<h2 id="源码要点">
+<a class="header-anchor" href="#%e6%ba%90%e7%a0%81%e8%a6%81%e7%82%b9"></a>
+源码要点
+</h2><p>路径以 upstream Linux 为准，具体 行号 随 版本 会略微不同，对照 符号名 即可</p>
+<h3 id="struct-kprobe-关键字段">
+<a class="header-anchor" href="#struct-kprobe-%e5%85%b3%e9%94%ae%e5%ad%97%e6%ae%b5"></a>
+<code>struct kprobe</code> 关键字段
+</h3><p>头文件：<a href="https://github.com/torvalds/linux/blob/master/include/linux/kprobes.h"><code>include/linux/kprobes.h</code></a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">kprobe</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">kprobe_opcode_t</span> <span class="o">*</span><span class="n">addr</span><span class="p">;</span>           <span class="c1">// 探测点地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">symbol_name</span><span class="p">;</span>         <span class="c1">// 按符号名解析（与 addr 二选一）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">offset</span><span class="p">;</span>             <span class="c1">// 相对符号的字节偏移
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">kprobe_pre_handler_t</span> <span class="n">pre_handler</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">kprobe_post_handler_t</span> <span class="n">post_handler</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">kprobe_opcode_t</span> <span class="n">opcode</span><span class="p">;</span>          <span class="c1">// 被替换掉的原操作码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">struct</span> <span class="n">arch_specific_insn</span> <span class="n">ainsn</span><span class="p">;</span> <span class="c1">// 架构相关：指令副本槽等
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">u32</span> <span class="n">flags</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">nmissed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* ... */</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>约定：</p>
+<ul>
+<li><strong><code>symbol_name</code> 和 <code>addr</code> 只能给一个</strong>，两个都给会 <code>-EINVAL</code></li>
+<li>可用 <code>offset</code> 挂到 <strong>符号内部 某条指令</strong>（CISC 上要自己保证 <strong>对齐 指令边界</strong>）</li>
+</ul>
+<h3 id="注册register_kprobe">
+<a class="header-anchor" href="#%e6%b3%a8%e5%86%8cregister_kprobe"></a>
+注册：<code>register_kprobe</code>
+</h3><p>对外入口是 <code>register_kprobe(p)</code>，大致会做这些事：</p>
+<ol>
+<li>用 <code>symbol_name</code> / <code>offset</code> 或 <code>addr</code> 算出 <strong>最终探测地址</strong></li>
+<li>做 <strong>地址安全检查</strong>（是否 可探测、是否落在 模块文本 等）</li>
+<li>架构侧 <code>prepare</code>：拷贝 <strong>原指令</strong>、准备 <strong>指令槽</strong></li>
+<li>链入内部表，再 <code>arm</code>：真正 <strong>把 断点 写进 探测点</strong></li>
+</ol>
+<p>流程可以看成：</p>
+<p><code>解析地址 -&gt; 安全检查 -&gt; prepare -&gt; 挂表 -&gt; arm 断点</code></p>
+<p>实现见 <a href="https://github.com/torvalds/linux/blob/master/kernel/kprobes.c"><code>kernel/kprobes.c</code></a> 里的 <code>register_kprobe</code></p>
+<p>卸载对称：<code>unregister_kprobe</code> → 先 <strong>disarm</strong>，再删除 <strong>架构侧指令槽</strong></p>
+<h3 id="x86写成-int3再进-handler">
+<a class="header-anchor" href="#x86%e5%86%99%e6%88%90-int3%e5%86%8d%e8%bf%9b-handler"></a>
+x86：写成 <code>int3</code>，再进 handler
+</h3><p>x86 上和 <strong>插桩</strong> 直接相关的几步：</p>
+<ul>
+<li><code>arch_prepare_kprobe</code>：<strong>检查地址</strong>，从 <code>get_insn_slot()</code> 拿 可执行槽，拷贝指令</li>
+<li><code>arch_arm_kprobe</code>：用 <code>text_poke</code> 把 <strong>探测点 第一字节</strong> 写成 <code>0xcc</code>（<code>int3</code>），并做 <strong>多核同步</strong></li>
+<li><code>arch_disarm_kprobe</code>：把原 <code>opcode</code> 写回去</li>
+</ul>
+<p><code>arm</code> 时的 <strong>核心动作</strong> 可以理解成：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">arch_arm_kprobe</span><span class="p">(</span><span class="k">struct</span> <span class="n">kprobe</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">kprobe_opcode_t</span> <span class="n">int3</span> <span class="o">=</span> <span class="n">BREAKPOINT_INSTRUCTION</span><span class="p">;</span> <span class="c1">// 0xcc
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">text_poke</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">addr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">int3</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 再保证各 CPU 看见新指令
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p><strong>命中断点</strong> 后进 <code>kprobe_int3_handler</code>：</p>
+<ol>
+<li><strong>用户态</strong> 则交给 别的路径</li>
+<li>用 <code>ip - 1</code> 找到 <strong>探测点</strong> 对应的 <code>struct kprobe</code></li>
+<li>调 <code>pre_handler</code></li>
+<li>返回 0 则准备 <strong>单步执行</strong> 指令副本，非 0 则认为 <strong>已经改过 执行路径</strong></li>
+<li>返回 1 表示这个 异常 <strong>已被 kprobe 吃掉</strong></li>
+</ol>
+<p>实现见 <a href="https://github.com/torvalds/linux/blob/master/arch/x86/kernel/kprobes/core.c"><code>arch/x86/kernel/kprobes/core.c</code></a></p>
+<p>单步跑完 副本 后，会走到 <strong>post</strong> 处理，再把 <strong>执行流</strong> 接回 <strong>探测点后面 的 指令</strong></p>
+<h3 id="kretprobe-注册">
+<a class="header-anchor" href="#kretprobe-%e6%b3%a8%e5%86%8c"></a>
+kretprobe 注册
+</h3><p><code>register_kretprobe(rp)</code> 会：</p>
+<ol>
+<li>校验 <code>maxactive</code> / <code>handler</code></li>
+<li>预分配一批 <code>kretprobe_instance</code>（<code>maxactive &lt;= 0</code> 时落到和 <code>NR_CPUS</code> 相关的默认值）</li>
+<li>给 <code>rp-&gt;kp</code> 配好入口逻辑后，再 <code>register_kprobe(&amp;rp-&gt;kp)</code></li>
+</ol>
+<p>入口命中时 <strong>换返回地址</strong>，trampoline 上的 探针 再触发 <strong>返回 handler</strong></p>
+<h2 id="应用">
+<a class="header-anchor" href="#%e5%ba%94%e7%94%a8"></a>
+应用
+</h2><h3 id="内核模块示例">
+<a class="header-anchor" href="#%e5%86%85%e6%a0%b8%e6%a8%a1%e5%9d%97%e7%a4%ba%e4%be%8b"></a>
+内核模块示例
+</h3><p>内核树自带示例：<a href="https://github.com/torvalds/linux/blob/master/samples/kprobes/kprobe_example.c"><code>samples/kprobes/kprobe_example.c</code></a></p>
+<p>思路：对 <code>kernel_clone</code>（可用 <strong>模块参数</strong> 改 符号名）挂 <code>pre_handler</code> / <code>post_handler</code>，命中时 <code>pr_info</code> 打出 <strong>地址 和 部分寄存器</strong></p>
+<p><strong>模块骨架</strong> 大概是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">static</span> <span class="k">struct</span> <span class="n">kprobe</span> <span class="n">kp</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">symbol_name</span> <span class="o">=</span> <span class="s">&#34;kernel_clone&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="n">__init</span> <span class="nf">kprobe_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">kp</span><span class="p">.</span><span class="n">pre_handler</span> <span class="o">=</span> <span class="n">handler_pre</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">kp</span><span class="p">.</span><span class="n">post_handler</span> <span class="o">=</span> <span class="n">handler_post</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nf">register_kprobe</span><span class="p">(</span><span class="o">&amp;</span><span class="n">kp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="n">__exit</span> <span class="nf">kprobe_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">unregister_kprobe</span><span class="p">(</span><span class="o">&amp;</span><span class="n">kp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>加载后看 <code>dmesg</code>：每次 <strong>创建进程</strong> 走到 <code>kernel_clone</code> 就会打一行</p>
+<p>示例模块需 <code>GPL</code>，且 内核 要编进 sample，或 自己拷贝 出来用对应 headers 编译</p>
+<h3 id="perf-probe">
+<a class="header-anchor" href="#perf-probe"></a>
+perf probe
+</h3><p><strong>不必手写模块</strong> 时，可以用 <code>perf probe</code> 在 内核函数 上 <strong>定义 动态事件</strong>，再 <code>perf record</code> / <code>perf trace</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看某函数里哪些行可探（有 debuginfo 更友好）</span>
+</span></span><span class="line"><span class="cl">perf probe --line schedule
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 在 schedule 某行挂探，并采一个字段（示例）</span>
+</span></span><span class="line"><span class="cl">perf probe --add<span class="o">=</span><span class="s1">&#39;schedule:12 cpu&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">perf probe --list
+</span></span><span class="line"><span class="cl">perf probe --del<span class="o">=</span><span class="s1">&#39;schedule*&#39;</span>
+</span></span></code></pre></div><p>底层仍会走到 kprobe / ftrace 的 kprobe 事件机制，权限上通常要能用 <code>tracefs</code> 和 <code>kallsyms</code></p>
+<h3 id="bpftrace">
+<a class="header-anchor" href="#bpftrace"></a>
+bpftrace
+</h3><p><code>bpftrace</code> 把 kprobe / kretprobe 收成 <strong>脚本语法</strong>，适合 <strong>快速摸路径</strong>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 函数入口</span>
+</span></span><span class="line"><span class="cl">bpftrace -e <span class="s1">&#39;kprobe:vfs_read { @[comm] = count(); }&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 函数返回，看返回值分布</span>
+</span></span><span class="line"><span class="cl">bpftrace -e <span class="s1">&#39;kretprobe:vfs_read { @bytes = hist(retval); }&#39;</span>
+</span></span></code></pre></div><p>和裸 Kprobe 一样：<strong>符号随内核变</strong>，能稳定用 tracepoint 的地方，优先 <code>tracepoint:</code>，避免因为 <strong>版本</strong> 而出错</p>
+<h3 id="和-ebpfsystemtap-的关系">
+<a class="header-anchor" href="#%e5%92%8c-ebpfsystemtap-%e7%9a%84%e5%85%b3%e7%b3%bb"></a>
+和 eBPF、SystemTap 的关系
+</h3><ul>
+<li><strong>eBPF：</strong> 很多 <code>kprobe</code> / <code>kretprobe</code> 程序类型，最终仍依赖 <strong>内核探测框架</strong>，再叠加 <strong>验证器、映射表</strong> 等</li>
+<li><strong>SystemTap：</strong> 高层脚本，后端 可降到 kprobe 等</li>
+<li><strong>自己改流程：</strong> 仅在 <code>pre_handler</code> 里改 <code>regs</code> 并返回非 0，生产环境 更常见的是 <strong>只读观测</strong>，<strong>少改控制流</strong></li>
+</ul>
+</div>
+    <footer class="article-footer"><a
+          data-aos="zoom-in"
+          href="/post/kprobe/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="/post/kprobe/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/post/kprobe/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/linux"
+        rel="tag"
+        >LINUX</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e5%86%85%e6%a0%b8"
+        rel="tag"
+        >内核</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/kprobe"
+        rel="tag"
+        >KPROBE</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+            data-src="/backgrounds/bg16.webp"
+            data-sizes="auto"
+            alt="深入理解 Linux 中的 proc 目录"
+            class="lazyload"
+          /><a
+          href="/post/proc/"
+          aria-label="前一篇:深入理解 Linux 中的 proc 目录"
+          title="前一篇:深入理解 Linux 中的 proc 目录"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">深入理解 Linux 中的 proc 目录</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>
+      MilLoong
+    </div><div>
+        <a
+          href="https://github.com/MilLoong"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noopener nofollow noreferrer"
+          style="display: inline-block; transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt="GitHub"
+            style="width: 32px; height: 32px; vertical-align: middle; background: transparent;"
+          >
+        </a>
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;37.5k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;03:09</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#深入理解-linux-kprobe">深入理解 Linux Kprobe</a>
+      <ul>
+        <li><a href="#介绍">介绍</a>
+          <ul>
+            <li><a href="#简要介绍">简要介绍</a></li>
+            <li><a href="#探针形态">探针形态</a></li>
+            <li><a href="#特点和注意事项">特点和注意事项</a></li>
+          </ul>
+        </li>
+        <li><a href="#原理">原理</a>
+          <ul>
+            <li><a href="#注册时发生了什么">注册时发生了什么</a></li>
+            <li><a href="#命中后的执行顺序">命中后的执行顺序</a></li>
+            <li><a href="#kretprobe怎么钩返回">kretprobe：怎么钩返回</a></li>
+            <li><a href="#跳转优化与黑名单">跳转优化与黑名单</a></li>
+          </ul>
+        </li>
+        <li><a href="#源码要点">源码要点</a>
+          <ul>
+            <li><a href="#struct-kprobe-关键字段"><code>struct kprobe</code> 关键字段</a></li>
+            <li><a href="#注册register_kprobe">注册：<code>register_kprobe</code></a></li>
+            <li><a href="#x86写成-int3再进-handler">x86：写成 <code>int3</code>，再进 handler</a></li>
+            <li><a href="#kretprobe-注册">kretprobe 注册</a></li>
+          </ul>
+        </li>
+        <li><a href="#应用">应用</a>
+          <ul>
+            <li><a href="#内核模块示例">内核模块示例</a></li>
+            <li><a href="#perf-probe">perf probe</a></li>
+            <li><a href="#bpftrace">bpftrace</a></li>
+            <li><a href="#和-ebpfsystemtap-的关系">和 eBPF、SystemTap 的关系</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="MilLoong"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">MilLoong</div>
+  <div class="sidebar-description">个人博客，记录学习日常</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">26</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      6
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">50</div>
+  </a>
+</div>
+<div class="sidebar-social"></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">友链</div>
+    </div><nav class="sidebar-apps" aria-label="Extra pages">
+    <a class="sidebar-app" href="/whattoeat/" title="吃什么" aria-label="吃什么">
+      <span class="sidebar-app-icon sidebar-app-icon-whattoeat" aria-hidden="true"></span>
+    </a>
+    <a class="sidebar-app" href="/nailong-search/" title="奶龙表情库" aria-label="奶龙表情库">
+      <span class="sidebar-app-icon sidebar-app-icon-nailong" aria-hidden="true"></span>
+    </a>
+    <a class="sidebar-app" href="/radar/" title="竞赛日程雷达" aria-label="竞赛日程雷达">
+      <span class="sidebar-app-icon sidebar-app-icon-radar" aria-hidden="true"></span>
+    </a>
+  </nav>
+</div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><meting-js
+        theme="var(--color-link)"
+        id="784227484"server="netease"type="playlist"fixed="true"autoplay="false"loop="all"order="list"preload="auto"volume="0.7"mutex="true"list-folded="false"lrc-type="0">
+      </meting-js><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "TT8YY4JPRF",
+        apiKey: "4d450286d17ecfeb7b0c6f78ebceb3d4",
+        indexName: "MilLoongBlog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+    if (window.firework) {
+      const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+      options.excludeElements = options.excludeelements;
+      delete options.excludeelements;
+      window.firework(options);
+    }
+  }
+</script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "MilLoong",
+          title: "深入理解 Linux Kprobe",
+          url: "https:\/\/MilLoong.github.io\/post\/kprobe\/",
+          description: " 深入理解 Linux Kprobe 介绍 简要介绍 Kprobe 让你在 几乎任意 内核指令地址 上 动态打断点，命中时执行你提供的 pre_handler \/ post_handler，在 尽量少破坏现场 的前提下 采集信息\n常见写法是做成一个 内核模块：init 里 register_*probe，exit 里 unregister_*probe\n内核需要打开 CONFIG_KPROBES，并且支持 模块加载卸载\n探针形态 现在文档里主推两类：\n形态 作用 kprobe 挂在 任意内核指令（常挂 函数入口，也可挂 函数中间某条） kretprobe（返回探针） 在目标函数 返回 时打回调 …",
+          cover: "https:\/\/MilLoong.github.io\/backgrounds\/bg17.webp",
+        };
+      </script><script
+    src="https://npm.webcache.cn/mermaid@11.12.0/dist/mermaid.min.js"
+    data-pjaxintegrity="sha384-o&#43;g/BxPwhi0C3RK7oQBxQuNimeafQ3GE/ST4iT2BxVI4Wzt60SH4pq9iXVYujjaS" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/dompurify@3.2.6/dist/purify.min.js"
+    data-pjaxintegrity="sha384-JEyTNhjM6R1ElGoJns4U2Ln4ofPcqzSsynQkmEc/KGy6336qAZl70tDLufbkla&#43;3" crossorigin="anonymous"></script><script data-pjax>
+        if (window.mermaid) {
+          
+          const elementCode = '.mermaid'
+          const processElements = (callback) => {
+            const els = _$$(elementCode);
+            if (!els.length) return Promise.resolve();
+            
+            return new Promise((resolve, reject) => {
+              try {
+                els.forEach(callback);
+                resolve();
+              } catch (error) {
+                reject(error);
+              }
+            });
+          };
+          const saveOriginalData = () => processElements(el => {
+            if (!el.getAttribute('data-original-code')) {
+              el.setAttribute('data-original-code', el.innerHTML);
+            }
+          });
+
+          const resetProcessed = () => processElements(el => {
+            const originalCode = el.getAttribute('data-original-code');
+            if (originalCode) {
+              el.removeAttribute('data-processed');
+              el.innerHTML = DOMPurify.sanitize(originalCode);
+            }
+          });
+          const loadMermaid = async (theme) => {
+            window.mermaid.initialize({theme, startOnLoad: false})
+            await window.mermaid.run({querySelector: elementCode, suppressErrors: true})
+            if (window.svgPanZoom) {
+              window.__panZoomList?.forEach(panZoom => {try {panZoom.destroy()} catch {}});
+              window.__panZoomList = [];
+              _$$('.mermaid > svg').forEach(el => {
+                const bbox = el.getBBox();
+                el.setAttribute('height', Math.max(bbox.height, 80));
+                window.__panZoomList.push(window.svgPanZoom(el, {
+                  zoomEnabled: true,
+                  controlIconsEnabled: true,
+                  fit: true,
+                  center: true
+                }));
+              });
+              if (window.__resizeMermaidSvg) {
+                window.removeEventListener('resize', window.__resizeMermaidSvg);
+              }
+              window.__resizeMermaidSvg = () => {
+                try {
+                  window.__panZoomList.forEach(panZoom => {
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                  });
+                } catch {
+                  window.removeEventListener('resize', window.__resizeMermaidSvg);
+                  window.__panZoomList = [];
+                }
+              }
+              window.addEventListener('resize', window.__resizeMermaidSvg);
+            }
+          }
+          const initMermaid = async (theme) => {
+            try {
+              await saveOriginalData();
+              await resetProcessed();
+              await loadMermaid(theme);
+            } catch (error) {
+              console.error(error);
+            }
+          };
+          
+          document.body.addEventListener('dark-theme-set', () => initMermaid('dark'));
+          document.body.addEventListener('light-theme-set', () => initMermaid('default'));
+
+          const mode = localStorage.getItem('dark_mode');
+          if (mode === 'auto') {
+            const osMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            initMermaid(osMode ? 'dark' : 'default');
+          } else {
+            initMermaid(mode === 'true' ? 'dark' : 'default');
+          }
+        }
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus', 'disqus'];
+  var commentConfig = {waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/vercelproject-sage-beta.vercel.app\/',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  0 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },};
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig?.[key]?.enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig?.[sys]?.enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.matchMedia('(max-width: 959px)').matches) {
+        const meting = _$('meting-js');
+        if (meting) {
+          meting.setAttribute('fixed', 'true');
+          const aside = meting.parentNode?.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            meting.parentNode.removeChild(meting);
+            document.body.appendChild(meting);
+          }
+        }
+      }
+      const script = document.createElement('script');
+      script.src = "https:\/\/npm.webcache.cn\/meting@2.0.1\/dist\/Meting.min.js";
+      script.integrity = "sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8\u002b0maanw1S\/IyB\u002bY4JG\u002bZDU7GpKE8";
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+  </script></body>
+</html>
