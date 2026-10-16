@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T02:36:46.020895+00:00",
+  "generated_at": "2026-10-16T02:32:28.581309+00:00",
   "competitions": [
     {
       "id": "1",
@@ -1218,9 +1218,9 @@
       "competition_id": "13",
       "name": "信息安全竞赛",
       "full_name": "全国大学生信息安全竞赛",
-      "count": 12,
+      "count": 13,
       "range_start": "2026-07-20",
-      "range_end": "2026-09-03",
+      "range_end": "2026-10-15",
       "messages": [
         {
           "id": 78,
@@ -1341,6 +1341,16 @@
           "ends_at": null,
           "status": "unverified",
           "source_url": "http://www.ciscn.cn/announcement/view/423"
+        },
+        {
+          "id": 103,
+          "title": "第十九届全国网络空间安全学科专业建设与人才培养研讨会会议通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-10-15T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "http://www.ciscn.cn/announcement/view/424"
         }
       ]
     },
@@ -2849,6 +2859,18 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1041/2944.htm"
     },
     {
+      "id": 103,
+      "competition_id": "13",
+      "competition_name": "信息安全竞赛",
+      "title": "第十九届全国网络空间安全学科专业建设与人才培养研讨会会议通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-10-15T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "http://www.ciscn.cn/announcement/view/424"
+    },
+    {
       "id": 69,
       "competition_id": "17",
       "competition_name": "工程实践创新大赛",
@@ -2863,7 +2885,7 @@
   ],
   "grades": {
     "portal_url": "https://v45lmyn1.yichafen.com/",
-    "checked_at": "2026-10-15T02:36:48Z",
+    "checked_at": "2026-10-16T02:32:30Z",
     "latest_published_at": "2026-09-18",
     "has_recent": true,
     "notices": [
