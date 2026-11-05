@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T04:16:05.366206+00:00",
+  "generated_at": "2026-11-05T04:36:16.882170+00:00",
   "competitions": [
     {
       "id": "1",
@@ -558,10 +558,20 @@
       "competition_id": "2",
       "name": "挑战杯学术竞赛",
       "full_name": "挑战杯全国大学生课外学术科技作品竞赛",
-      "count": 59,
+      "count": 77,
       "range_start": "2014-03-03",
-      "range_end": "2026-07-08",
+      "range_end": "2026-11-05",
       "messages": [
+        {
+          "id": 114,
+          "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
+          "event_type": "semifinal",
+          "event_label": "复赛",
+          "starts_at": "2014-03-03T00:00:00+00:00",
+          "ends_at": "2014-03-03T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15606/"
+        },
         {
           "id": 28,
           "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
@@ -569,6 +579,16 @@
           "event_label": "复赛",
           "starts_at": "2014-03-03T00:00:00+00:00",
           "ends_at": "2014-03-03T00:00:00+00:00",
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15606/"
+        },
+        {
+          "id": 115,
+          "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
+          "event_type": "final",
+          "event_label": "决赛",
+          "starts_at": "2014-03-28T00:00:00+00:00",
+          "ends_at": "2014-03-28T00:00:00+00:00",
           "status": "unverified",
           "source_url": "https://www.tiaozhanbei.net/article/15606/"
         },
@@ -1151,6 +1171,166 @@
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.tiaozhanbei.net/article/7816/"
+        },
+        {
+          "id": 123,
+          "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15606/"
+        },
+        {
+          "id": 122,
+          "title": "关于开展第十三届“挑战杯”全国大学生课外学术科技作品竞赛暨第九届“挑战杯”陕西省大学生课外学术科技作品竞赛西安财经学院校内选拔赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/7830/"
+        },
+        {
+          "id": 121,
+          "title": "上海应用技术学院 关于举办第十三届“挑战杯”全国大学生课外学术科技作品竞赛校内预选赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/7846/"
+        },
+        {
+          "id": 120,
+          "title": "关于首届“经纬杯”东华大学大学生课外学术科技作品竞赛 暨第十三届“挑战杯”全国大学生课外学术科技作品竞赛 东华大学选拔赛作品上交的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/11023/"
+        },
+        {
+          "id": 119,
+          "title": "江西师范大学 关于第十三届“挑战杯”大学生课外学术科技作品竞赛通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/11319/"
+        },
+        {
+          "id": 118,
+          "title": "北京邮电大学 关于征集第七届“挑战杯”首都大学生课外学术科技作品竞赛参赛作品的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/11859/"
+        },
+        {
+          "id": 117,
+          "title": "关于郑州大学第七届“挑战杯”大学生课外学术科技作品竞赛决赛的补充通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/11930/"
+        },
+        {
+          "id": 116,
+          "title": "【同济大学】关于第九届“挑战杯”中国大学生创业计划竞赛同济大学校内赛相关工作的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/15605/"
+        },
+        {
+          "id": 113,
+          "title": "关于开展第七届“挑战杯”江苏省大学生创业计划竞赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/974/"
+        },
+        {
+          "id": 112,
+          "title": "关于举办第七届“挑战杯\"首都大学生创业计划竞赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/975/"
+        },
+        {
+          "id": 111,
+          "title": "关于组织开展第六届“挑战杯”吉林省大学生创业计划竞赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/976/"
+        },
+        {
+          "id": 110,
+          "title": "关于组织开展第十二届“挑战杯”广东大学生课外学术科技作品竞赛的预发通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/7833/"
+        },
+        {
+          "id": 109,
+          "title": "上海理工大学 关于下达第十三届“挑战杯”大学生课外学术科技作品竞赛校内培育计划课题的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/1192/"
+        },
+        {
+          "id": 108,
+          "title": "关于公布入围第六届“挑战杯”广东商学院大学生学术科技竞赛复赛作品的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/1228/"
+        },
+        {
+          "id": 107,
+          "title": "关于第十三届“挑战杯”全国大学生课外学术科技作品竞赛哲学社会科学类参赛作品参考选题的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/7796/"
+        },
+        {
+          "id": 106,
+          "title": "中国地质大学（武汉）第九届“挑战杯”大学生课外学术科技作品竞赛决赛的通知",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-05T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.tiaozhanbei.net/article/7816/"
         }
       ]
     },
@@ -1667,6 +1847,18 @@
   ],
   "milestones": [
     {
+      "id": 114,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
+      "event_type": "semifinal",
+      "event_label": "复赛",
+      "starts_at": "2014-03-03T00:00:00+00:00",
+      "ends_at": "2014-03-03T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15606/"
+    },
+    {
       "id": 28,
       "competition_id": "2",
       "competition_name": "挑战杯学术竞赛",
@@ -1675,6 +1867,18 @@
       "event_label": "复赛",
       "starts_at": "2014-03-03T00:00:00+00:00",
       "ends_at": "2014-03-03T00:00:00+00:00",
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15606/"
+    },
+    {
+      "id": 115,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
+      "event_type": "final",
+      "event_label": "决赛",
+      "starts_at": "2014-03-28T00:00:00+00:00",
+      "ends_at": "2014-03-28T00:00:00+00:00",
       "status": "unverified",
       "source_url": "https://www.tiaozhanbei.net/article/15606/"
     },
@@ -2915,6 +3119,198 @@
       "source_url": "http://www.ciscn.cn/announcement/view/425"
     },
     {
+      "id": 123,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "【华东交通大学】关于举办第九届“挑战杯”中国大学生创业计划竞赛华东交通大学选拔赛有关工作的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15606/"
+    },
+    {
+      "id": 122,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于开展第十三届“挑战杯”全国大学生课外学术科技作品竞赛暨第九届“挑战杯”陕西省大学生课外学术科技作品竞赛西安财经学院校内选拔赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/7830/"
+    },
+    {
+      "id": 121,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "上海应用技术学院 关于举办第十三届“挑战杯”全国大学生课外学术科技作品竞赛校内预选赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/7846/"
+    },
+    {
+      "id": 120,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于首届“经纬杯”东华大学大学生课外学术科技作品竞赛 暨第十三届“挑战杯”全国大学生课外学术科技作品竞赛 东华大学选拔赛作品上交的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/11023/"
+    },
+    {
+      "id": 119,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "江西师范大学 关于第十三届“挑战杯”大学生课外学术科技作品竞赛通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/11319/"
+    },
+    {
+      "id": 118,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "北京邮电大学 关于征集第七届“挑战杯”首都大学生课外学术科技作品竞赛参赛作品的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/11859/"
+    },
+    {
+      "id": 117,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于郑州大学第七届“挑战杯”大学生课外学术科技作品竞赛决赛的补充通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/11930/"
+    },
+    {
+      "id": 116,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "【同济大学】关于第九届“挑战杯”中国大学生创业计划竞赛同济大学校内赛相关工作的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/15605/"
+    },
+    {
+      "id": 113,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于开展第七届“挑战杯”江苏省大学生创业计划竞赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/974/"
+    },
+    {
+      "id": 112,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于举办第七届“挑战杯\"首都大学生创业计划竞赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/975/"
+    },
+    {
+      "id": 111,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于组织开展第六届“挑战杯”吉林省大学生创业计划竞赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/976/"
+    },
+    {
+      "id": 110,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于组织开展第十二届“挑战杯”广东大学生课外学术科技作品竞赛的预发通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/7833/"
+    },
+    {
+      "id": 109,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "上海理工大学 关于下达第十三届“挑战杯”大学生课外学术科技作品竞赛校内培育计划课题的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/1192/"
+    },
+    {
+      "id": 108,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于公布入围第六届“挑战杯”广东商学院大学生学术科技竞赛复赛作品的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/1228/"
+    },
+    {
+      "id": 107,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "关于第十三届“挑战杯”全国大学生课外学术科技作品竞赛哲学社会科学类参赛作品参考选题的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/7796/"
+    },
+    {
+      "id": 106,
+      "competition_id": "2",
+      "competition_name": "挑战杯学术竞赛",
+      "title": "中国地质大学（武汉）第九届“挑战杯”大学生课外学术科技作品竞赛决赛的通知",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-05T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.tiaozhanbei.net/article/7816/"
+    },
+    {
       "id": 69,
       "competition_id": "17",
       "competition_name": "工程实践创新大赛",
@@ -2929,7 +3325,7 @@
   ],
   "grades": {
     "portal_url": "https://v45lmyn1.yichafen.com/",
-    "checked_at": "2026-11-04T04:16:06Z",
+    "checked_at": "2026-11-05T04:36:18Z",
     "latest_published_at": "2026-09-18",
     "has_recent": true,
     "notices": [

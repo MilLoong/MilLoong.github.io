@@ -6,6 +6,37 @@ X-WR-CALNAME:电子科大推免竞赛日程雷达
 BEGIN:VEVENT
 SUMMARY:挑战杯学术竞赛 · 复赛
 DTSTART;VALUE=DATE:20140303
+UID:milestone-114@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
+ .tiaozhanbei.net/article/15606/\n证据: （二）复赛（10月下旬至1
+ 4年3月上旬） 1、进入复赛的各参赛团队，须在接到参加
+ 复赛通知的5个工作日内提交复赛阶段工作计划，并可根
+ 据实际需要申请一定额度的立项资金用
+URL:https://www.tiaozhanbei.net/article/15606/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 复赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 复赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 复赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 复赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:挑战杯学术竞赛 · 复赛
+DTSTART;VALUE=DATE:20140303
 UID:milestone-28@uestc-baoyan-radar
 DESCRIPTION:状态: unverified\n置信度: 0.85\n官方链接: https://www
  .tiaozhanbei.net/article/15606/\n证据: （二）复赛（10月下旬至1
@@ -31,6 +62,37 @@ END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:提醒: 挑战杯学术竞赛 复赛（提前 1 天）
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:挑战杯学术竞赛 · 决赛
+DTSTART;VALUE=DATE:20140328
+UID:milestone-115@uestc-baoyan-radar
+DESCRIPTION:状态: unverified\n置信度: 0.45\n官方链接: https://www
+ .tiaozhanbei.net/article/15606/\n证据: 4纸打印。 3、在2014年3月
+ 上旬举行复赛书面评审，评出20件左右作品进入终审决赛
+ 。 （三）决赛（14年3月下旬） 1、在2014年3月28日前提交
+ 进一步修改完善
+URL:https://www.tiaozhanbei.net/article/15606/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 30 天）
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 14 天）
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 7 天）
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:提醒: 挑战杯学术竞赛 决赛（提前 1 天）
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
