@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T04:03:58.721645+00:00",
+  "generated_at": "2026-11-12T05:13:05.792809+00:00",
   "competitions": [
     {
       "id": "1",
@@ -2368,9 +2368,9 @@
       "competition_id": "23",
       "name": "服务外包大赛",
       "full_name": "中国大学生服务外包创新创业大赛",
-      "count": 2,
+      "count": 3,
       "range_start": "2026-01-11",
-      "range_end": "2026-01-11",
+      "range_end": "2026-11-12",
       "messages": [
         {
           "id": 82,
@@ -2391,6 +2391,16 @@
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.fwwb.org.cn/news/show/595"
+        },
+        {
+          "id": 179,
+          "title": "关于收取第十七届中国大学生服务外包创 新创业大赛赛题服务费的函",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-12T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/news/show/664"
         }
       ]
     }
@@ -4521,6 +4531,18 @@
       "source_url": "https://jsjds.blcu.edu.cn/info/1041/2954.htm"
     },
     {
+      "id": 179,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "关于收取第十七届中国大学生服务外包创 新创业大赛赛题服务费的函",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-12T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/news/show/664"
+    },
+    {
       "id": 69,
       "competition_id": "17",
       "competition_name": "工程实践创新大赛",
@@ -4535,7 +4557,7 @@
   ],
   "grades": {
     "portal_url": "https://v45lmyn1.yichafen.com/",
-    "checked_at": "2026-11-11T04:04:00Z",
+    "checked_at": "2026-11-12T05:13:07Z",
     "latest_published_at": "2026-09-18",
     "has_recent": true,
     "notices": [
