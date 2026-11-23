@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T04:26:42.566601+00:00",
+  "generated_at": "2026-11-23T05:04:26.168161+00:00",
   "competitions": [
     {
       "id": "1",
@@ -2368,7 +2368,7 @@
       "competition_id": "23",
       "name": "服务外包大赛",
       "full_name": "中国大学生服务外包创新创业大赛",
-      "count": 7,
+      "count": 9,
       "range_start": "2026-01-11",
       "range_end": "2026-11-20",
       "messages": [
@@ -2401,6 +2401,26 @@
           "ends_at": null,
           "status": "unverified",
           "source_url": "https://www.fwwb.org.cn/news/show/664"
+        },
+        {
+          "id": 185,
+          "title": "十八届服创大赛D赛道开通征集及招标说明",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-20T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/news/show/665"
+        },
+        {
+          "id": 184,
+          "title": "关于收取第十八届中国大学生服务外包创 新创业大赛赛题服务费的函",
+          "event_type": "other",
+          "event_label": "其他节点",
+          "starts_at": "2026-11-20T00:00:00+00:00",
+          "ends_at": null,
+          "status": "unverified",
+          "source_url": "https://www.fwwb.org.cn/news/show/666"
         },
         {
           "id": 183,
@@ -4583,6 +4603,30 @@
       "source_url": "https://www.fwwb.org.cn/news/show/664"
     },
     {
+      "id": 185,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "十八届服创大赛D赛道开通征集及招标说明",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-20T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/news/show/665"
+    },
+    {
+      "id": 184,
+      "competition_id": "23",
+      "competition_name": "服务外包大赛",
+      "title": "关于收取第十八届中国大学生服务外包创 新创业大赛赛题服务费的函",
+      "event_type": "other",
+      "event_label": "其他节点",
+      "starts_at": "2026-11-20T00:00:00+00:00",
+      "ends_at": null,
+      "status": "unverified",
+      "source_url": "https://www.fwwb.org.cn/news/show/666"
+    },
+    {
       "id": 183,
       "competition_id": "23",
       "competition_name": "服务外包大赛",
@@ -4645,7 +4689,7 @@
   ],
   "grades": {
     "portal_url": "https://v45lmyn1.yichafen.com/",
-    "checked_at": "2026-11-22T04:26:44Z",
+    "checked_at": "2026-11-23T05:04:28Z",
     "latest_published_at": null,
     "has_recent": false,
     "notices": []
